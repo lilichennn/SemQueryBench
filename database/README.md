@@ -31,6 +31,11 @@ After extraction, the full database files should be located under:
 database/full/
 ```
 
+To verify the downloaded archive, compare its SHA256 hash with database/checksums.txt:
+
+```
+Get-FileHash SemQueryBench_database_full.zip -Algorithm SHA256
+```
 ## Load into MySQL
 The CSV files are used only as a portable release format. During evaluation, all tables should be loaded into MySQL and SQL predictions should be executed against the reconstructed relational databases.
 ```
