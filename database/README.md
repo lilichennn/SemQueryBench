@@ -13,7 +13,7 @@ database/full/
 ├── [db_name]/
 │   ├── [table_name].csv
 │   └── ...
-
+```
 Each subdirectory corresponds to one database, and each CSV file corresponds to one table.
 
 ## Download
@@ -35,6 +35,7 @@ database/full/
 The CSV files are used only as a portable release format. During evaluation, all tables should be loaded into MySQL and SQL predictions should be executed against the reconstructed relational databases.
 ```
 python database/load_to_mysql.py --database_root database/full
-Sample Databases
 ```
+
+## Sample Databases
 The database/sample/ directory provides small sample databases for checking the expected file format. These files are not the full benchmark databases.
