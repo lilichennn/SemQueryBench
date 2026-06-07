@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Full database files
+database/full/
+database/raw/
+*.zip
+
+# Hidden evaluation files
+hidden/
+
+# Local configs
+*.env
+configs/*.yaml
+!configs/*.example.yaml

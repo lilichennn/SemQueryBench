@@ -1,0 +1,76 @@
+id,r_date,node_code,inout_type,mtrl_alias_show,plan_total_amount,daily_amount,total_amount,bal_amount_daily,raw_amount_daily
+1763,2015/5/5,CDU1,1,Raw Material B,\N,930,930,\N,\N
+1764,2015/5/5,CDU1,0,Raw Material A,\N,1100,1100,\N,\N
+1765,2015/5/5,RHI1,0,Unit-supplied Light Butane,\N,195,195,\N,\N
+1766,2015/5/5,RHI1,1,Raw Material C,\N,170,170,\N,\N
+3216,\N,ALU1,0,Chemical Raffinate C4,\N,189.795,\N,\N,\N
+3217,\N,ALU1,0,Gas Fractionation C4,\N,1213.4,\N,\N,\N
+3218,\N,ALU1,0,Make-up Isobutane,\N,180.3,\N,\N,\N
+3219,\N,ALU1,0,Hydrogen,\N,\N,\N,\N,\N
+3220,\N,ALU1,1,Dry Gas,\N,\N,\N,\N,\N
+3221,\N,ALU1,1,Propane,\N,1.7058,\N,\N,\N
+3222,\N,ALU1,1,n-Butane,\N,298.4767,\N,\N,\N
+3223,\N,ALU1,1,Alkylate Oil,\N,1351,\N,\N,\N
+3224,\N,ALU1,1,Isobutane,\N,\N,\N,\N,\N
+3225,\N,ALU1,0,Chemical Raffinate C4,\N,189.795,\N,\N,\N
+3226,\N,ALU1,0,Gas Fractionation C4,\N,1213.4,\N,\N,\N
+3227,\N,ALU1,0,Make-up Isobutane,\N,180.3,\N,\N,\N
+3228,\N,ALU1,0,Hydrogen,\N,\N,\N,\N,\N
+3229,\N,ALU1,1,Dry Gas,\N,\N,\N,\N,\N
+3230,\N,ALU1,1,Propane,\N,1.7058,\N,\N,\N
+3231,\N,ALU1,1,n-Butane,\N,298.4767,\N,\N,\N
+3232,\N,ALU1,1,Alkylate Oil,\N,1351,\N,\N,\N
+3233,\N,ALU1,1,Isobutane,\N,\N,\N,\N,\N
+3234,2018/1/2,CDU1,0,Raw Material A,\N,26164.28,26164.28,\N,\N
+3235,2018/1/2,CDU1,0,Mixed Naphtha,\N,572.169,572.169,\N,\N
+3236,2018/1/2,CDU2,0,Raw Material A,\N,23809.6,23809.6,\N,\N
+3237,2018/1/2,CKU1,0,Raw Material B,\N,7156.494,7156.494,\N,\N
+3238,2018/1/2,CKU1,0,Product A,\N,24.21,24.21,\N,\N
+3239,2018/1/2,CKU1,0,Product B,\N,43.6026,43.6026,\N,\N
+3240,2018/1/2,CKU1,0,Hydrotreated Naphtha,\N,548.6667,548.6667,\N,\N
+3241,2018/1/2,CKU2,0,Raw Material B,\N,7156.494,7156.494,\N,\N
+3242,2018/1/2,CKU2,0,Distillation Non-condensable Gas,\N,66.8126,66.8126,\N,\N
+3243,2018/1/2,CKU2,0,Hydrotreated Naphtha,\N,548.6667,548.6667,\N,\N
+3244,2018/1/2,LHS1,0,Hydrogenation Dry Gas,\N,438.2175,438.2175,\N,\N
+3245,2018/1/2,LHS1,0,Hydrogenation LPG,\N,795.9,795.9,\N,\N
+3246,2018/1/2,LHS1,0,Atmospheric and Vacuum LPG,\N,327.73,327.73,\N,\N
+3247,2018/1/2,LHS1,0,Heavy Naphtha,\N,9,9,\N,\N
+3248,2018/1/2,DGS1,0,Catalytic Dry Gas,\N,263.45,263.45,\N,\N
+3249,2018/1/2,DGS1,0,Coker Dry Gas,\N,372.04,372.04,\N,\N
+3250,2018/1/2,DGS1,0,Make-up n-Butane,\N,90.1533,90.1533,\N,\N
+3251,2018/1/2,DGS1,0,Make-up Heavy Naphtha,\N,19.76,19.76,\N,\N
+3252,2018/1/2,HCU1,0,Distilled Heavy Wax Oil,\N,1625.4983,1625.4983,\N,\N
+3253,2018/1/2,HCU1,0,Tank Farm Wax Oil,\N,4999,4999,\N,\N
+3254,2018/1/2,HCU1,0,Coker Wax Oil,\N,1541.8182,1541.8182,\N,\N
+3255,2018/1/2,FCC1,0,Unit-supplied Wax Oil,\N,5438.9,5438.9,\N,\N
+3256,2018/1/2,FCC1,0,Tank Farm-supplied Wax Oil,\N,3895,3895,\N,\N
+3257,2018/1/2,FCC1,0,Catalytic Gasoline Dry Gas,\N,6.87,6.87,\N,\N
+3258,2018/1/2,FCC1,0,Gas Fractionation Ethane,\N,12.72,12.72,\N,\N
+3259,2018/1/2,CGH1,0,Catalytic Gasoline,\N,3609.3,3609.3,\N,\N
+3260,2018/1/2,GSU1,0,Tank Farm-supplied LPG,\N,1499,1499,\N,\N
+3261,2018/1/2,GSU1,0,Unit-supplied LPG,\N,669.7999,669.7999,\N,\N
+3262,2018/1/2,ALU1,0,Gas Fractionation C4,\N,1213.4,1213.4,\N,\N
+3263,2018/1/2,ALU1,0,Chemical Raffinate C4,\N,189.795,189.795,\N,\N
+3264,2018/1/2,ALU1,0,Make-up Isobutane,\N,180.3,180.3,\N,\N
+3265,2018/1/2,DHU1,0,Tank Farm-supplied Diesel,\N,1836,1836,\N,\N
+3266,2018/1/2,DHU1,0,Unit-supplied Diesel,\N,4309.213,4309.213,\N,\N
+3267,2018/1/2,DHU1,0,Raw Material C,\N,5342.6,5342.6,\N,\N
+3268,2018/1/2,DHU2,0,Tank Farm-supplied Diesel,\N,3644.2,3644.2,\N,\N
+3269,2018/1/2,DHU2,0,Unit-supplied Diesel,\N,4589.9751,4589.9751,\N,\N
+3270,2018/1/2,AKH1,0,Unit-supplied Atmospheric Oil,\N,1899.7733,1899.7733,\N,\N
+3271,2018/1/2,AKH1,0,Tank Farm-supplied Atmospheric Oil,\N,768.42,768.42,\N,\N
+3272,2018/1/2,HLU1,0,Tank Farm-supplied Wax Oil,\N,4085,4085,\N,\N
+3273,2018/1/2,HLU1,0,Unit-supplied Wax Oil,\N,4648.9433,4648.9433,\N,\N
+3274,2018/1/2,NHU1,0,Unit-supplied Coker Oil,\N,1214.2267,1214.2267,\N,\N
+3275,2018/1/2,NHU1,0,Tank Farm-supplied Coker Oil,\N,635.41,635.41,\N,\N
+3276,2018/1/2,RHI1,0,Unit-supplied Light Butane,\N,1915.1745,1915.1745,\N,\N
+3277,2018/1/2,RHI1,0,Tank Farm-supplied Light Butane,\N,499,499,\N,\N
+3278,2018/1/2,HRU1,0,Hydrogenation Low-pressure Separator Gas,\N,204.97,204.97,\N,\N
+3279,2018/1/2,HRU1,0,Reforming Hydrogen,\N,1240.9334,1240.9334,\N,\N
+3280,2018/1/2,RAU1,0,Mixed Heavy Naphtha,\N,3804.7417,3804.7417,\N,\N
+3281,2018/1/2,RAU2,0,Mixed Heavy Naphtha,\N,3804.7417,3804.7417,\N,\N
+3282,2018/1/2,NHU2,0,Mixed Naphtha,\N,5649.4667,5649.4667,\N,\N
+3283,2018/1/2,AHC1,0,Reformate,\N,9078.1466,9078.1466,\N,\N
+3284,2018/1/2,AHC1,0,Chemical Benzene/Toluene,\N,52.5,52.5,\N,\N
+3285,2018/1/2,AHC1,0,Oxygen,\N,126.5,126.5,\N,\N
+3286,2018/1/2,ETU1,0,Hydrotreated Light Naphtha,\N,1999,1999,\N,\N
