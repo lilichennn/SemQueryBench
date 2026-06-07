@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+legal_area_code,legal_area_code,,TEXT,
+aff_geo_code,aff_geo_code,,TEXT,
+county_fips_code,county_fips_code,,TEXT,
+county_gnis_code,county_gnis_code,,TEXT,
+geo_id,geo_id,,TEXT,
+state_fips_code,state_fips_code,,TEXT,
+county_geom,county_geom,,BLOB,
+area_water_meters,area_water_meters,,DOUBLE,
+county_name,county_name,,TEXT,
+area_land_meters,area_land_meters,,DOUBLE,

@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+sched_name,sched_name,,TEXT,
+trigger_name,trigger_name,,TEXT,
+trigger_group,trigger_group,,TEXT,
+cron_expression,cron_expression,,TEXT,
+time_zone_id,time_zone_id,,TEXT,

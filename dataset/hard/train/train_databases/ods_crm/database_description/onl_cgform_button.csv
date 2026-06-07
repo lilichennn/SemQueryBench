@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+button_code,button_code,,TEXT,
+button_icon,button_icon,,TEXT,
+button_name,button_name,,TEXT,
+button_status,button_status,,TEXT,
+button_style,button_style,,TEXT,
+exp,exp,,TEXT,
+cgform_head_id,cgform_head_id,,TEXT,
+opt_type,opt_type,,TEXT,
+order_num,order_num,,BIGINT,
+opt_position,opt_position,,TEXT,

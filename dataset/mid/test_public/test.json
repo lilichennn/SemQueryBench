@@ -1,0 +1,326 @@
+[
+  {
+    "question_id": 1,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "How many active sellers on this site have appeared in the order details so far? I'd like to get a rough idea of the overall size of the seller pool.",
+    "evidence": ""
+  },
+  {
+    "question_id": 2,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to see who the most active sellers on the platform are. Give me the top 1000 sellers by order event volume.",
+    "evidence": ""
+  },
+  {
+    "question_id": 3,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to view the total number of orders placed on the platform in January 2024, based on the order placement time.",
+    "evidence": ""
+  },
+  {
+    "question_id": 4,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to see the payment method breakdown for platform orders. Count order events by payment method and give me the first 1000.",
+    "evidence": ""
+  },
+  {
+    "question_id": 5,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "From the payment collection perspective, how much transaction amount does each payment method contribute? Show the top 1000 payment methods.",
+    "evidence": ""
+  },
+  {
+    "question_id": 6,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to investigate orders on the platform that are fulfilled by multiple sellers. Give me the first 3 abnormal/mixed orders where one order is associated with multiple sellers.",
+    "evidence": ""
+  },
+  {
+    "question_id": 7,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to see the seller retention: how many sellers continuously had orders during both 1–3 p.m. and 5–7 p.m. on June 1, 2018?",
+    "evidence": ""
+  },
+  {
+    "question_id": 8,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to compare the changes in order volume by payment method between the two time slots on June 1, 2018: 1 PM to 3 PM and 5 PM to 7 PM on the same day, to see which payment methods are heating up and which are weakening, and first look at the top 3.",
+    "evidence": ""
+  },
+  {
+    "question_id": 9,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "During the time window from 3:00 PM to 5:00 PM on May 23, 2018, how much collection amount did each payment method contribute, and what is its proportion of the total collection amount?",
+    "evidence": ""
+  },
+  {
+    "question_id": 10,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to find peak days with abnormally high order volume within the window from February 1 to February 6, 2018, to see which dates are significantly higher than the normal level of the previous 7 days.",
+    "evidence": ""
+  },
+  {
+    "question_id": 11,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to view the order status structure by seller. For example, which seller has the highest proportion of \"delivered\", provided that the seller has at least two samples, and only show the top 3 sellers.",
+    "evidence": ""
+  },
+  {
+    "question_id": 12,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "I want to perform a quality check on customer primary key mapping: Are there any cases where a customer_id corresponds to multiple customer_unique_id?",
+    "evidence": ""
+  },
+  {
+    "question_id": 13,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "How many ZIP Codes are covered in this mapping sample? I'd like to see the geographic coverage first.",
+    "evidence": ""
+  },
+  {
+    "question_id": 14,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "I want to see which ZIP Codes appear most frequently in the result of joining these two residential mapping tables. Give me the top 1000.",
+    "evidence": ""
+  },
+  {
+    "question_id": 15,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "I want to see how these ACS metric values are distributed across theme categories, and which metric categories have the most coverage.",
+    "evidence": ""
+  },
+  {
+    "question_id": 16,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "If summarized by indicator theme, what themes are the main focuses of the total census value count at the block group level? Let's first look at the top 1000 themes.",
+    "evidence": ""
+  },
+  {
+    "question_id": 17,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "I want to search the ACS metrics dictionary for metric topic descriptions containing keywords such as age, income, housing, and give me the first 5 metrics.",
+    "evidence": ""
+  },
+  {
+    "question_id": 18,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "I want to view the ACS indicators that contain topic terms like Median and Means, see which major indicator categories they are primarily concentrated in, and first show the top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 19,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "I want to see the distribution of ZIP Code types by state, such as how many PO Box, Standard, and similar types exist in each state; first, show the top 20 results among combinations that occur at least 5 times.",
+    "evidence": ""
+  },
+  {
+    "question_id": 20,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "How many different products have been sold in this sales sample? I'd like to first check the SKU coverage.",
+    "evidence": ""
+  },
+  {
+    "question_id": 21,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to first see the distribution of the customer pool by country, and get the top 1000 countries ranked by customer record count.",
+    "evidence": ""
+  },
+  {
+    "question_id": 22,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "How many sales records occurred during the period from 2024-01-01 to 2024-01-31, counted by the sales date?",
+    "evidence": ""
+  },
+  {
+    "question_id": 23,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to see how many sales events are driven by different promo categories. First, give me the top 1000 promo categories.",
+    "evidence": ""
+  },
+  {
+    "question_id": 24,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In terms of sales revenue, how much revenue did each promotion category contribute? Give me the top 1000 promotion categories.",
+    "evidence": ""
+  },
+  {
+    "question_id": 25,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to view the product active retention: how many SKUs sold in both the first and last ten days of March 2019?",
+    "evidence": ""
+  },
+  {
+    "question_id": 26,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to compare the difference in sales record counts for different promotion categories between the two periods: March 1–10, 2019 and March 20–31, 2019, to see which campaign types were more popular in the earlier period than in the later one. Show me the top 3 first.",
+    "evidence": ""
+  },
+  {
+    "question_id": 27,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In the specified period of early March 2019, how much of the sales revenue share was consumed by each type of promotion? I want to see how the revenue structure is distributed.",
+    "evidence": ""
+  },
+  {
+    "question_id": 28,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to find the dates between March 20 and March 31, 2019, where the number of sales records is higher than the average over a previous period, and first look at the top 3 days with the largest difference.",
+    "evidence": ""
+  },
+  {
+    "question_id": 29,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to check the product master data for source key mapping anomalies: whether there is a prod_id that corresponds to multiple external source numbers, and first list the top 10 records.",
+    "evidence": ""
+  },
+  {
+    "question_id": 30,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "I want to see which specific sales channel actually has the highest volume within each major channel category.",
+    "evidence": ""
+  },
+  {
+    "question_id": 88,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I would like to first check how many starting stations are covered in this batch of Citi Bike ride samples.",
+    "evidence": ""
+  },
+  {
+    "question_id": 89,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see which routes in the New York City Subway GTFS carry the most trip records. First, give me the top 1000 routes.",
+    "evidence": ""
+  },
+  {
+    "question_id": 90,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to count the number of yellow taxi trips between '2024-01-01' and '2024-01-31', using the pickup time.",
+    "evidence": ""
+  },
+  {
+    "question_id": 91,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see which complaint types the 311 work orders mainly concentrate on. First, give me the top 1000 complaint types.",
+    "evidence": ""
+  },
+  {
+    "question_id": 92,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see the taxi revenue contributed by different payment methods. First, show me the top 1000 payment types.",
+    "evidence": ""
+  },
+  {
+    "question_id": 93,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to check if the primary key of subway trip is clean: whether the same trip_id is mapped to multiple route_ids, and first list up to 3 records.",
+    "evidence": ""
+  },
+  {
+    "question_id": 94,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see the active retention of Citi Bike stations: how many origin stations had trips departing consistently in both June 1–2, 2018 and July 1–2, 2018?",
+    "evidence": ""
+  },
+  {
+    "question_id": 95,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "During the period from September 1 to September 30, 2022, how much revenue did each payment method generate for yellow taxis, and what is the proportion of each to the total yellow taxi revenue?",
+    "evidence": ""
+  },
+  {
+    "question_id": 96,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to identify peak days with abnormally high yellow taxi trip volumes within the window of September 1 and 2, 2022, and see which dates are significantly higher than the normal levels of the previous week.",
+    "evidence": ""
+  },
+  {
+    "question_id": 97,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to check if the mapping between the tree census primary key and block identifier is abnormal: whether the same tree is attached to too many block_ids, and first list the top 10 records.",
+    "evidence": ""
+  },
+  {
+    "question_id": 98,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to search for work orders in the 311 disposition notes that contain disposition keywords such as inspected, duplicate, repaired. Please fetch the first 5.",
+    "evidence": ""
+  },
+  {
+    "question_id": 99,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see the most frequently recorded tree species under different census reporting entity types.",
+    "evidence": ""
+  },
+  {
+    "question_id": 100,
+    "db_id": "NEW_YORK_PLUS",
+    "question": "I want to see the most concentrated 311 complaint types in different boroughs, examine how the urban issue profiles vary across districts, count combinations with at least 10 occurrences, and preview the top 20 records.",
+    "evidence": ""
+  },
+  {
+    "question_id": 157,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to first see how many product SKUs are covered in the monthly sales sample.",
+    "evidence": ""
+  },
+  {
+    "question_id": 158,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see which order numbers have the highest record count. First, give me the top 1000 order numbers.",
+    "evidence": ""
+  },
+  {
+    "question_id": 159,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to count the number of records where the order number can be parsed as a date between January 1, 2024 and January 30, 2024.",
+    "evidence": ""
+  },
+  {
+    "question_id": 160,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see which stock symbols have the densest price records in the market data sample. First, give me the top 1000 symbols.",
+    "evidence": ""
+  },
+  {
+    "question_id": 161,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see how large the cumulative value of purchase dates is for different product IDs, first give me the top 1000 product IDs.",
+    "evidence": ""
+  },
+  {
+    "question_id": 162,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see which orders contain the most distinct products. Return the top 3 orders with the most complex product combinations first.",
+    "evidence": ""
+  },
+  {
+    "question_id": 163,
+    "db_id": "ORACLE_SQL",
+    "question": "I'd like to view active product retention: the number of SKUs that had continuous sales records in both Q1 and Q4 of 2018.",
+    "evidence": ""
+  },
+  {
+    "question_id": 164,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to identify the peak days with abnormally high site traffic within the first half of 2019, to see which dates are significantly higher than the normal level of the previous week. First, give me the top 3.",
+    "evidence": ""
+  },
+  {
+    "question_id": 165,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see which apps have the most hanging page IDs. First, give me the top 10 apps with the largest page scale.",
+    "evidence": ""
+  },
+  {
+    "question_id": 166,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see what the most representative product name is for each product group.",
+    "evidence": ""
+  },
+  {
+    "question_id": 167,
+    "db_id": "ORACLE_SQL",
+    "question": "I want to see which applications are mainly accessed by different source IPs, check if there is obvious source concentration in the traffic distribution, only consider source IP-application combinations with at least 10 occurrences, and provide the top 20 first.",
+    "evidence": ""
+  }
+]

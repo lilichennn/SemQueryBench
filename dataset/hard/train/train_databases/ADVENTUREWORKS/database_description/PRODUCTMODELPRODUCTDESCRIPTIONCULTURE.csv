@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+cultureid,cultureid,,TEXT,
+productmodelid,productmodelid,,DOUBLE,
+productdescriptionid,productdescriptionid,,DOUBLE,
+modifieddate,modifieddate,,TEXT,

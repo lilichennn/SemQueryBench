@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+primary_id,primary_id,,TEXT,
+display_order,display_order,,DOUBLE,
+vendor_name,vendor_name,,TEXT,
+region_name,region_name,,TEXT,
+customer_industry_code,customer_industry_code,,TEXT,
+customer_order,customer_order,,TEXT,
+data_date,data_date,,DATE,
+data_value,data_value,,DOUBLE,
+business_type_code,business_type_code,,TEXT,
+customer_type_display,customer_type_display,,TEXT,
+customer_type_code,customer_type_code,,TEXT,

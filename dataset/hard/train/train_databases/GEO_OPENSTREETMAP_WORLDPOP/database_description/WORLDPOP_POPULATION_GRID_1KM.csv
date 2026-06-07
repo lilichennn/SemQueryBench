@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+alpha_3_code,alpha_3_code,,TEXT,
+geo_id,geo_id,,TEXT,
+last_updated,last_updated,,DATE,
+longitude_centroid,longitude_centroid,,DOUBLE,
+latitude_centroid,latitude_centroid,,DOUBLE,
+population,population,,DOUBLE,
+country_name,country_name,,TEXT,
+geog,geog,,BLOB,

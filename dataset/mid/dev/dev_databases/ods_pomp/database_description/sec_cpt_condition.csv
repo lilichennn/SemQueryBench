@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+IID,IID,,TEXT,
+MAINID,MAINID,,TEXT,
+IYEAR,IYEAR,,TEXT,
+BUSINESSFEE,BUSINESSFEE,,"DECIMAL(16,4)",
+STAFFSIZE,STAFFSIZE,,TEXT,
+PERCAPITAGDP,PERCAPITAGDP,,TEXT,

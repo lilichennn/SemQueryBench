@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+revision_guid,revision_guid,,TEXT,
+id,id,,DOUBLE,
+creation_date,creation_date,,DOUBLE,
+post_history_type_id,post_history_type_id,,DOUBLE,
+user_id,user_id,,DOUBLE,
+comment,comment,,TEXT,
+post_id,post_id,,DOUBLE,
+text,text,,TEXT,

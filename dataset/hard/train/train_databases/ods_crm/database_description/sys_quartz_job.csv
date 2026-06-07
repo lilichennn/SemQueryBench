@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+del_flag,del_flag,,BIGINT,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+job_class_name,job_class_name,,TEXT,
+cron_expression,cron_expression,,TEXT,
+parameter,parameter,,TEXT,
+description,description,,TEXT,
+status,status,,BIGINT,

@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+neighbors_fips_code,neighbors_fips_code,,JSON,
+state_fips_code,state_fips_code,,TEXT,
+state,state,,TEXT,
+state_name,state_name,,TEXT,
+neighbors_state,neighbors_state,,JSON,

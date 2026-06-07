@@ -1,0 +1,326 @@
+[
+  {
+    "question_id": 81,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Please count the total number of records in the ACS 2021 block group indicator value data.",
+    "evidence": ""
+  },
+  {
+    "question_id": 82,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Help me count the number of distinct Block Group IDs in the ACS 2021 block group-level data.",
+    "evidence": ""
+  },
+  {
+    "question_id": 83,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Help me count how many distinct target ZIP Codes there are in the tract-to-ZIP mapping data for residential areas.",
+    "evidence": ""
+  },
+  {
+    "question_id": 84,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Find the top 10 states with the highest number of Block Groups in the geographic dimension data, sorted in descending order.",
+    "evidence": ""
+  },
+  {
+    "question_id": 85,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Find the County FIPS codes for counties whose names contain \"Kings\", and return the first 10 sorted by code.",
+    "evidence": ""
+  },
+  {
+    "question_id": 86,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Check in the geographic extension data which cities cover the most ZIP Codes, and give me the top 10 cities sorted by count from high to low.",
+    "evidence": ""
+  },
+  {
+    "question_id": 183,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, pull the App Session start records from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (in reverse chronological order), and show the first 10 sessions.",
+    "evidence": ""
+  },
+  {
+    "question_id": 184,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In the BRAZE_USER_EVENT_DEMO_DATASET, how many session start events occurred in the app between '2001-01-01 00:00:00' and '2026-01-31 23:59:59'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 185,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In the user behavior custom table in BRAZE_USER_EVENT_DEMO_DATASET, during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct apps (by APP_ID) are covered by custom events?",
+    "evidence": ""
+  },
+  {
+    "question_id": 186,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In the BRAZE_USER_EVENT_DEMO_DATASET, during the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, what are the number of session starts for iOS and Android respectively? And list the top 10 by platform.",
+    "evidence": ""
+  },
+  {
+    "question_id": 187,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in the user behavior custom table of BRAZE_USER_EVENT_DEMO_DATASET, how many distinct Apps (deduplicated by APP_ID) are associated with each platform (PLATFORM)? I want to see the platform-side coverage, and list the top 10 results with the highest counts.",
+    "evidence": ""
+  },
+  {
+    "question_id": 188,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "Which device models had the most session starts during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET? Top 10 by session start count for Device Model.",
+    "evidence": ""
+  },
+  {
+    "question_id": 189,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which users opened emails the most? Retrieve the top 10 by USER_ID.",
+    "evidence": ""
+  },
+  {
+    "question_id": 190,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "Pull the daily active trend from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in the BRAZE_USER_EVENT_DEMO_DATASET by day: how many session starts occurred each day?",
+    "evidence": ""
+  },
+  {
+    "question_id": 191,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, we want to see changes in platform structure: during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what are the daily counts of session start for iOS and Android respectively? Sort by day and count.",
+    "evidence": ""
+  },
+  {
+    "question_id": 192,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, which device models have a launch count reaching or exceeding 10?",
+    "evidence": ""
+  },
+  {
+    "question_id": 193,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, which platforms have a session start volume higher than overall average? List the top 10 platforms by volume from high to low.",
+    "evidence": ""
+  },
+  {
+    "question_id": 194,
+    "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, view email sending volume by user and IP pool: which users have the most concentrated sends on a certain IP_POOL? Retrieve the top 10 combinations.",
+    "evidence": ""
+  },
+  {
+    "question_id": 203,
+    "db_id": "CRYPTO",
+    "question": "Filter the on-chain transaction data for me: which recent transactions contain call parameters or data content like “Mint”? Give me the top 10 transaction IDs in reverse chronological order by block time.",
+    "evidence": ""
+  },
+  {
+    "question_id": 204,
+    "db_id": "CRYPTO",
+    "question": "What are the transaction IDs that occurred on-chain within the block time window from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? Show the top 10 in reverse chronological order.",
+    "evidence": ""
+  },
+  {
+    "question_id": 205,
+    "db_id": "CRYPTO",
+    "question": "Pick out the transactions with execution result 'Business' (e.g., success=true/false), I want to quickly check the most recent 10 transaction IDs.",
+    "evidence": ""
+  },
+  {
+    "question_id": 206,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', filter out transactions where the execution result is True and the transaction data contains “Mint”, and give me the top 10, sorted by latest first.",
+    "evidence": ""
+  },
+  {
+    "question_id": 207,
+    "db_id": "CRYPTO",
+    "question": "How many transactions were packaged on-chain during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 208,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct wallet addresses have initiated transactions (deduplicated by sender)?",
+    "evidence": ""
+  },
+  {
+    "question_id": 209,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the approximate cumulative total of the transfer/amount field (amount) for the on-chain contract transition?",
+    "evidence": ""
+  },
+  {
+    "question_id": 210,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the approximate average gas_price for transactions? And what is the average gas_limit?",
+    "evidence": ""
+  },
+  {
+    "question_id": 211,
+    "db_id": "CRYPTO",
+    "question": "During the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, how many times did each transition type (tag) occur? List the top 10 by occurrence count.",
+    "evidence": ""
+  },
+  {
+    "question_id": 212,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct contracts/addresses (deduplicated by addr) are involved in each type of transition (tag)? Show the top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 213,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which tokens have the largest transfer scale? Summarize the transfer value by token name and take the Top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 214,
+    "db_id": "CRYPTO",
+    "question": "Check transaction activity for the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' on a daily basis: how many transactions were packed each day?",
+    "evidence": ""
+  },
+  {
+    "question_id": 215,
+    "db_id": "CRYPTO",
+    "question": "View the monthly trend of the amount scale for on-chain transition from '2001-01-01 00:00:00' to '2026-01-31 23:59:59': what is the total for each month?",
+    "evidence": ""
+  },
+  {
+    "question_id": 216,
+    "db_id": "CRYPTO",
+    "question": "I want to see the structural change of call types: during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many times does each type of transition (tag) occur per day respectively?",
+    "evidence": ""
+  },
+  {
+    "question_id": 217,
+    "db_id": "CRYPTO",
+    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', which tokens have larger per-transaction transfer sizes? Calculate the average transfer value by token name and retrieve the Top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 218,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which transition types (tags) have a call count higher than the overall average? List the top 10 in descending order by count.",
+    "evidence": ""
+  },
+  {
+    "question_id": 219,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', aggregate amount by transition type (tag). Which types have the largest fund/amount scale? What are the top 10?",
+    "evidence": ""
+  },
+  {
+    "question_id": 220,
+    "db_id": "CRYPTO",
+    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', which transition types (tag) have a cumulative amount that reaches or exceeds 1000? List the amount from high to low.",
+    "evidence": ""
+  },
+  {
+    "question_id": 221,
+    "db_id": "CRYPTO",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the proportion of records with accepted=False for each transition type (tag)? I need to find the top 10 types with the highest accept rate.",
+    "evidence": ""
+  },
+  {
+    "question_id": 222,
+    "db_id": "CRYPTO",
+    "question": "What is the total amount of gas_limit set for transactions during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? I want to see the overall scale of resource demand.",
+    "evidence": ""
+  },
+  {
+    "question_id": 223,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "I want to quickly view the course offering records during the academic year range from '2009' to '2010'. Sort by academic year in descending order and give me the top 10 offering IDs.",
+    "evidence": ""
+  },
+  {
+    "question_id": 224,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "How many course offerings did the school offer in total during the academic years from '2009' to '2010'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 225,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "How many distinct courses (deduplicated by CourseNo) were covered during the academic years from '2009' to '2010'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 226,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "What is the total sales amount (USD) of online orders between '2001-01-01 00:00:00' and '2026-01-31 23:59:59'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 227,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "What are the approximate average order sales amount (USD) and average number of items during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
+    "evidence": ""
+  },
+  {
+    "question_id": 228,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "Among the academic years from 2001 to 2025, which terms (e.g., SUMMER) have the highest course offering density? Return the top 10 by the number of course offerings.",
+    "evidence": ""
+  },
+  {
+    "question_id": 229,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "In the academic year range from '2009' to '2010', how many distinct courses (deduplicated by CourseNo) were covered in each semester? Select the top 10 semesters with the broadest course coverage.",
+    "evidence": ""
+  },
+  {
+    "question_id": 230,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "In the academic years from '2009' to '2010', which course names have the highest number of offerings? Return the top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 231,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which customer accounts contributed the highest online sales revenue? Summarize the top 10 customers by sales revenue.",
+    "evidence": ""
+  },
+  {
+    "question_id": 232,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "In the academic years from '2009' to '2010', which instructors (by FacNo) taught the most courses? Give me the top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 233,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "I want to see the monthly trend of online sales from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (total monthly sales).",
+    "evidence": ""
+  },
+  {
+    "question_id": 234,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "During the academic years from '2009' to '2010', which courses are classified as \"popular course\" (offered at least 5 times)? List them in descending order of the number of times offered.",
+    "evidence": ""
+  },
+  {
+    "question_id": 235,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which customer accounts have the highest average amount per order? (Filter out orders with null amounts) Top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 236,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "Within the academic year range from '2009' to '2010', which semesters have a significantly higher number of course offerings than overall average ? Pick out these busier semesters and give me the top 10.",
+    "evidence": ""
+  },
+  {
+    "question_id": 237,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "During the academic years from '2009' to '2010', which teachers had the most intensive course offerings in a given semester? Give me the Top 10 combinations by \"teacher × semester\" based on the number of courses offered.",
+    "evidence": ""
+  },
+  {
+    "question_id": 238,
+    "db_id": "EDUCATION_BUSINESS",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many items were sold in total for online orders (summarized by the order total quantity, total)?",
+    "evidence": ""
+  }
+]

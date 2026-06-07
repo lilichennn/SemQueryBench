@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+aliquot_barcode,aliquot_barcode,,TEXT,
+mirna_id,mirna_id,,TEXT,
+sample_barcode,sample_barcode,,TEXT,
+case_barcode,case_barcode,,TEXT,
+reads_per_million_miRNA_mapped,reads_per_million_miRNA_mapped,,DOUBLE,
+read_count,read_count,,DOUBLE,
+cross_mapped,cross_mapped,,TEXT,
+project_short_name,project_short_name,,TEXT,

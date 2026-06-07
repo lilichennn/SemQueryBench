@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+creation_date,creation_date,,DOUBLE,
+user_id,user_id,,DOUBLE,
+score,score,,DOUBLE,
+text,text,,TEXT,
+user_display_name,user_display_name,,TEXT,
+post_id,post_id,,DOUBLE,

@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+geo_id,geo_id,,TEXT,
+csa_code,csa_code,,TEXT,
+internal_point_lon,internal_point_lon,,DOUBLE,
+internal_point_geom,internal_point_geom,,BLOB,
+internal_point_lat,internal_point_lat,,DOUBLE,
+lsad_name,lsad_name,,TEXT,
+area_water_meters,area_water_meters,,DOUBLE,
+area_land_meters,area_land_meters,,DOUBLE,
+msa_lsad_code,msa_lsad_code,,TEXT,
+mtfcc_feature_class_code,mtfcc_feature_class_code,,TEXT,
+name,name,,TEXT,
+csa_geom,csa_geom,,BLOB,

@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+entityId,entityId,,TEXT,
+HTAN_Data_File_ID,HTAN_Data_File_ID,,TEXT,
+drs_uri,drs_uri,,TEXT,
+name,name,,TEXT,

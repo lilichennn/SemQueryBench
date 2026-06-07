@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+w_st_knowledgeproperty_del_id,w_st_knowledgeproperty_del_id,,TEXT,
+w_st_knowledgeproperty_id,w_st_knowledgeproperty_id,,TEXT,
+aptitude_name,aptitude_name,,TEXT,
+aptitude_number,aptitude_number,,TEXT,
+patent_type,patent_type,,TEXT,
+aptitude_type,aptitude_type,,TEXT,
+is_original,is_original,,TEXT,
+is_scanner,is_scanner,,TEXT,
+szkj_id,szkj_id,,TEXT,

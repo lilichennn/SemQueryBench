@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+Pb,Pb,,DOUBLE,
+gene_j,gene_j,,TEXT,
+Na,Na,,DOUBLE,
+Nb,Nb,,DOUBLE,
+gene_i,gene_i,,TEXT,
+Pa,Pa,,DOUBLE,
+PDiff,PDiff,,DOUBLE,

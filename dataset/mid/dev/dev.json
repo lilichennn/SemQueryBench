@@ -1,0 +1,366 @@
+[
+  {
+    "question_id": 116,
+    "db_id": "ods_klerp",
+    "question": "I would like to first check how many project objects are associated with this batch of contract transaction records, in order to assess the business coverage.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.POID) AS distinct_entity_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.POID IS NOT NULL;"
+  },
+  {
+    "question_id": 117,
+    "db_id": "ods_klerp",
+    "question": "I want to see which project objects have the most accumulated contract transaction records; give me the top 1000 objects.",
+    "evidence": "",
+    "SQL": "SELECT t.POID, COUNT(*) AS event_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.POID IS NOT NULL AND t.CONTRACTID IS NOT NULL GROUP BY t.POID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 118,
+    "db_id": "ods_klerp",
+    "question": "I want to count how many contract transaction records were newly formed between January 1, 2024 and January 30, 2024, based on the creation date.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2024-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2024-01-31';"
+  },
+  {
+    "question_id": 119,
+    "db_id": "ods_klerp",
+    "question": "I want to see the main currency used for the contract target amount. Please give me the top 1000 currency categories first.",
+    "evidence": "",
+    "SQL": "SELECT t.A_OBJECTSSUMTYPE, COUNT(*) AS event_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.A_OBJECTSSUMTYPE IS NOT NULL GROUP BY t.A_OBJECTSSUMTYPE ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 120,
+    "db_id": "ods_klerp",
+    "question": "I want to see the cumulative contract subject amount under different currency breakdowns; first, show me the top 1000 currencies.",
+    "evidence": "",
+    "SQL": "SELECT t.A_OBJECTSSUMTYPE, SUM(t.A_OBJECTSSUM) AS total_amount FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.A_OBJECTSSUMTYPE IS NOT NULL AND t.A_OBJECTSSUM IS NOT NULL GROUP BY t.A_OBJECTSSUMTYPE ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 121,
+    "db_id": "ods_klerp",
+    "question": "I need to check whether contract numbers are linked to multiple project objects to identify any contract ownership mapping anomalies. Show me the first three results.",
+    "evidence": "",
+    "SQL": "SELECT t.CONTRACTID, COUNT(DISTINCT t.POID) AS entity_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.CONTRACTID IS NOT NULL GROUP BY t.CONTRACTID HAVING COUNT(DISTINCT t.POID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 122,
+    "db_id": "ods_klerp",
+    "question": "I want to view the active retention of project objects: How many project objects had continuous contract transaction records in both Q1 2025 and Q4 2025?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.POID FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.POID IS NOT NULL AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2025-04-01' ), b AS ( SELECT DISTINCT t.POID FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.POID IS NOT NULL AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-10-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2026-01-01' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (POID);"
+  },
+  {
+    "question_id": 123,
+    "db_id": "ods_klerp",
+    "question": "I would like to compare the changes in the number of contract records under different currency scopes between Q1 and Q4 of 2025, starting with the top 3 currency scopes with the most noticeable changes.",
+    "evidence": "",
+    "SQL": "SELECT t.A_OBJECTSSUMTYPE, SUM(CASE WHEN STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2025-04-01' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-10-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2026-01-01' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2025-04-01' THEN 1 ELSE 0 END) - SUM(CASE WHEN STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-10-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2026-01-01' THEN 1 ELSE 0 END) ) AS delta_cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.A_OBJECTSSUMTYPE IS NOT NULL GROUP BY t.A_OBJECTSSUMTYPE ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 124,
+    "db_id": "ods_klerp",
+    "question": "I'd like to identify, within the Q1 2025 window, the peak days where the contract transaction record volume surged abnormally, and see which dates are significantly above the normal level of the preceding week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') AS d, COUNT(*) AS cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2025-04-01' GROUP BY STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 125,
+    "db_id": "ods_klerp",
+    "question": "I want to identify the peak days with abnormally high contract transaction volumes within the Q1 2025 window, focusing on dates that significantly exceed the normal levels of the preceding week. Please give me the top 3 first.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') AS d, COUNT(*) AS cnt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') >= '2025-01-01' AND STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') < '2025-04-01' GROUP BY STR_TO_DATE(CAST(t.ERDAT AS CHAR), '%Y%m%d') ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
+  },
+  {
+    "question_id": 126,
+    "db_id": "ods_klerp",
+    "question": "I want to check the customer master data mapping quality to see if there are cases where the same customer primary key corresponds to multiple different customer codes. Give me the first 10.",
+    "evidence": "",
+    "SQL": "SELECT c.OID, COUNT(DISTINCT c.CODE) AS external_cnt FROM ods_klerp.d1_customer c GROUP BY c.OID HAVING COUNT(DISTINCT c.CODE) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 127,
+    "db_id": "ods_klerp",
+    "question": "I want to search for entries that mention “ZZ”, “JR” or “LH” in the accounting subject description. First give me the first 5 subject codes.",
+    "evidence": "",
+    "SQL": "SELECT a.CODE AS id_external FROM ods_klerp.d1_account a WHERE COALESCE(a.NOTES, '') LIKE '%ZZ%' or '%JR%' or '%LH%' LIMIT 5;"
+  },
+  {
+    "question_id": 128,
+    "db_id": "ods_klerp",
+    "question": "I want to see the definition of the currency name with the highest contribution amount under each currency code.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.A_OBJECTSSUMTYPE AS topic, t.A_OBJECTSSUMTYPENAME AS entity_name, SUM(t.A_OBJECTSSUM) AS amt FROM ods_klerp.efi_cms_zp0fiaif0017s t WHERE t.A_OBJECTSSUMTYPE IS NOT NULL AND t.A_OBJECTSSUMTYPENAME IS NOT NULL GROUP BY t.A_OBJECTSSUMTYPE, t.A_OBJECTSSUMTYPENAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
+  },
+  {
+    "question_id": 129,
+    "db_id": "ods_pomp",
+    "question": "I would like to first see how many projects this batch of temporary contract records covers in total, in order to assess the business coverage on the project side.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.PROJECTID) AS distinct_entity_cnt FROM ods_pomp.sec_tempcontract t WHERE t.PROJECTID IS NOT NULL;"
+  },
+  {
+    "question_id": 130,
+    "db_id": "ods_pomp",
+    "question": "I want to see which projects have the most backlogged contract records. First, give me the top 1000 projects.",
+    "evidence": "",
+    "SQL": "SELECT t.PROJECTID, COUNT(*) AS event_cnt FROM ods_pomp.sec_tempcontract t WHERE t.PROJECTID IS NOT NULL AND t.CONTRACTCODE IS NOT NULL GROUP BY t.PROJECTID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 131,
+    "db_id": "ods_pomp",
+    "question": "I want to count how many sales project initiation process records were initiated between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the sales project initiation time.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM ods_pomp.bus_baseinfo_fld t WHERE t.XSLXFQDATE >= '2024-01-01 00:00:00' AND t.XSLXFQDATE < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 132,
+    "db_id": "ods_pomp",
+    "question": "I want to see which currency types are mainly used in the contract. Please show me the first 1000 currency categories.",
+    "evidence": "",
+    "SQL": "SELECT t.CURRENCY, COUNT(*) AS event_cnt FROM ods_pomp.sec_tempcontract t WHERE t.CURRENCY IS NOT NULL GROUP BY t.CURRENCY ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 133,
+    "db_id": "ods_pomp",
+    "question": "I want to see how large the cumulative contract amount is under different currency dimensions. First, give me the top 1000 currencies.",
+    "evidence": "",
+    "SQL": "SELECT t.CURRENCY, SUM(t.TOTALMONEY) AS total_amount FROM ods_pomp.sec_tempcontract t WHERE t.CURRENCY IS NOT NULL AND t.TOTALMONEY IS NOT NULL GROUP BY t.CURRENCY ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 134,
+    "db_id": "ods_pomp",
+    "question": "I want to check whether a contract number is assigned to multiple projects, to see if there are any contract ownership mapping anomalies. First, give me the first 3.",
+    "evidence": "",
+    "SQL": "SELECT t.CONTRACTCODE, COUNT(DISTINCT t.PROJECTID) AS entity_cnt FROM ods_pomp.sec_tempcontract t WHERE t.CONTRACTCODE IS NOT NULL GROUP BY t.CONTRACTCODE HAVING COUNT(DISTINCT t.PROJECTID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 135,
+    "db_id": "ods_pomp",
+    "question": "I want to see the active retention of opportunity objects: how many business objects continuously entered the sales project initiation process in both Q1 and Q4 of 2020?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.OBJID FROM ods_pomp.bus_baseinfo_fld t WHERE t.OBJID IS NOT NULL AND t.XSLXFQDATE >= '2020-01-01 00:00:00' AND t.XSLXFQDATE < '2020-04-01 00:00:00' ), b AS ( SELECT DISTINCT t.OBJID FROM ods_pomp.bus_baseinfo_fld t WHERE t.OBJID IS NOT NULL AND t.XSLXFQDATE >= '2020-10-01 00:00:00' AND t.XSLXFQDATE < '2021-01-01 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (OBJID);"
+  },
+  {
+    "question_id": 136,
+    "db_id": "ods_pomp",
+    "question": "In the specified period of the first quarter of 2020, what tax-inclusive amounts were carried by different business objects, and what were their proportions of the total?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.OBJID AS topic, SUM(t.HSJE) AS amt FROM ods_pomp.bus_baseinfo_fld t WHERE t.XSLXFQDATE >= '2020-01-01 00:00:00' AND t.XSLXFQDATE < '2020-04-01 00:00:00' AND t.OBJID IS NOT NULL AND t.HSJE IS NOT NULL GROUP BY t.OBJID ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 137,
+    "db_id": "ods_pomp",
+    "question": "I want to identify, within the Q1 2021 window, the peak days when the volume of sales project initiation surged abnormally, to see which dates were significantly above the normal level of the preceding week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( t.XSLXFQDATE) AS d, COUNT(*) AS cnt FROM ods_pomp.bus_baseinfo_fld t WHERE CAST(t.XSLXFQDATE AS DATETIME) >= '2021-01-01 00:00:00' AND CAST(t.XSLXFQDATE AS DATETIME) < '2021-04-01 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 138,
+    "db_id": "ods_pomp",
+    "question": "I want to check the customer master data mapping quality to see if there are cases where the same customer primary key maps to multiple different customer codes. First, give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT c.IID, COUNT(DISTINCT c.SCODE) AS external_cnt FROM ods_pomp.cus_baseinfo c GROUP BY c.IID HAVING COUNT(DISTINCT c.SCODE) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 139,
+    "db_id": "ods_pomp",
+    "question": "I want to search for records containing specific clues such as a customer, product line, or special business terms in the Opportunity/Process Supplementary Description. First, show me the first 5 records.",
+    "evidence": "",
+    "SQL": "SELECT t.CRMID AS id_external FROM ods_pomp.bus_baseinfo_fld t WHERE COALESCE(t.MOREINFO, '') LIKE '%客户%' or '%产品线%' or '%特殊商务条款线索%' LIMIT 5;"
+  },
+  {
+    "question_id": 140,
+    "db_id": "ods_pomp",
+    "question": "I want to see, for each currency dimension, which project name has the highest amount contribution.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.CURRENCY AS topic, t.PROJECTNAME AS entity_name, SUM(t.TOTALMONEY) AS amt FROM ods_pomp.sec_tempcontract t WHERE t.CURRENCY IS NOT NULL AND t.PROJECTNAME IS NOT NULL AND t.TOTALMONEY IS NOT NULL GROUP BY t.CURRENCY, t.PROJECTNAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
+  },
+  {
+    "question_id": 141,
+    "db_id": "ods_pomp",
+    "question": "I want to see, across the six years from 2020 to 2025, the top 10 business objects where business opportunities that mention \"新产品\" in the supplementary description are mainly concentrated. First, give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT t.OBJID AS category_topic, COUNT(*) AS event_cnt FROM ods_pomp.bus_baseinfo_fld t WHERE str_to_date(t.XSLXFQDATE, '%Y-%m-%d') >= '2020-01-01' AND str_to_date(t.XSLXFQDATE, '%Y-%m-%d') < '2026-01-01' AND COALESCE(t.MOREINFO, '') LIKE '%新产品%' GROUP BY t.OBJID ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 228,
+    "db_id": "智能运营中心-天然气",
+    "question": "I would like to first see how many receiving terminals/operating entities are involved in this batch of LNG shipping operations.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.OU_ID) AS distinct_entity_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL;"
+  },
+  {
+    "question_id": 229,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see which receiving terminals/operating entities have handled the most LNG voyages; first give me the top 1000 entities.",
+    "evidence": "",
+    "SQL": "SELECT t.OU_ID, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL AND t.SHIP_NUM IS NOT NULL GROUP BY t.OU_ID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 230,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to count the number of LNG carrier voyages scheduled to arrive between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the planned arrival time.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.PLAN_ARRIVE_TIME >= '2024-01-01 00:00:00' AND t.PLAN_ARRIVE_TIME < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 231,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see which industry types the real-time user-side data is mainly concentrated in. First, give me the top 1,000 industry categories.",
+    "evidence": "",
+    "SQL": "SELECT t.INDUSTRY_TYPE, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_GAS_REALTIME_USER_DATA t WHERE t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.INDUSTRY_TYPE ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 232,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see the cumulative working gas volume under different gas storage capacity categories. First, give me the top 1000 categories.",
+    "evidence": "",
+    "SQL": "SELECT t.CATEGORY, SUM(t.DATA_VALUE) AS total_amount FROM `智能运营中心-天然气`.NG_DAILY_MAX_WORKING_GAS_CAPACITY t WHERE t.CATEGORY IS NOT NULL AND t.DATA_VALUE IS NOT NULL GROUP BY t.CATEGORY ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 233,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to check whether a voyage number has been associated with multiple receiving stations/operating entities, and see if there are any voyage ownership mapping anomalies. First, give me the top 3.",
+    "evidence": "",
+    "SQL": "SELECT t.SHIP_NUM, COUNT(DISTINCT t.OU_ID) AS entity_cnt FROM `智能运营中心-天然气`.`NG_LNG_SHIP` t WHERE t.SHIP_NUM IS NOT NULL GROUP BY t.SHIP_NUM HAVING COUNT(DISTINCT t.OU_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 234,
+    "db_id": "智能运营中心-天然气",
+    "question": "During the specified period from July 6 to July 7, 2025, how much daily cumulative traffic did each industry type contribute, and what is their proportion of the total traffic?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.INDUSTRY_TYPE AS topic, SUM(t.DAILY_TOTAL_FLOW) AS amt FROM `智能运营中心-天然气`.`NG_GAS_REALTIME_USER_DATA` t WHERE STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') >= '2025-07-06 00:00:00' AND STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') < '2025-07-08 00:00:00' AND t.INDUSTRY_TYPE IS NOT NULL AND t.DAILY_TOTAL_FLOW IS NOT NULL GROUP BY t.INDUSTRY_TYPE ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 235,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to identify the peak day of abnormally large planned LNG vessel arrivals within the window of January 1 to 7, 2020, and see which dates are significantly higher than the normal level of the previous week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( t.PLAN_ARRIVE_TIME) AS d, COUNT(*) AS cnt FROM `智能运营中心-天然气`.`NG_LNG_SHIP` t WHERE CAST(t.PLAN_ARRIVE_TIME AS DATETIME) >= '2020-01-01 00:00:00' AND CAST(t.PLAN_ARRIVE_TIME AS DATETIME) < '2020-01-08 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 236,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to check the mapping quality of LNG shipping master data: whether there are cases where the same primary key record corresponds to multiple different voyage numbers. First, give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT t.ID, COUNT(DISTINCT t.SHIP_NUM) AS external_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t GROUP BY t.ID HAVING COUNT(DISTINCT t.SHIP_NUM) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 237,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to search for indicator records contained in the real-time operation remarks, such as operation clues like maintenance, alarm, and limit input. Show me the first 5 records.",
+    "evidence": "",
+    "SQL": "SELECT t.INDICATOR_CODE AS id_external FROM `智能运营中心-天然气`.NG_GAS_REALTIME_SCREEN_DATA t WHERE COALESCE(t.REMARK, '') LIKE '%检修%' or '%报警%' or '%限输%' LIMIT 5;"
+  },
+  {
+    "question_id": 238,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see, for each production category, which units have the highest number of self-owned wells.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.CATEGORY AS topic, t.UNIT_NAME AS entity_name, SUM(t.SELF_WELL_COUNT) AS qty FROM `智能运营中心-天然气`.NG_NATURAL_GAS_PRODUCTION t WHERE t.CATEGORY IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.SELF_WELL_COUNT IS NOT NULL GROUP BY t.CATEGORY, t.UNIT_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 239,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see the records from 2022 to 2023 where \"有问题\" is mentioned in the daily instruction/daily allocation remarks, focusing on which report types they are mainly concentrated in, and give me the top 10 first.",
+    "evidence": "",
+    "SQL": "SELECT t.REPORT_TYPE_CODE AS category_topic, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_DAILY_ASSIGN_DATA t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2022-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2024-01-01' AND COALESCE(t.RESERVE1, '') LIKE '%有问题%' GROUP BY t.REPORT_TYPE_CODE ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 240,
+    "db_id": "智能运营中心-天然气",
+    "question": "I want to see which industry types the downstream users in different provinces are mainly concentrated in, to check whether there are significant differences in regional gas consumption structures. Only show province-industry type combinations with no fewer than 10 records, and first give me the top 20.",
+    "evidence": "",
+    "SQL": "SELECT t.USER_PROVINCE AS location, t.INDUSTRY_TYPE AS category_topic, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_GAS_REALTIME_USER_DATA t WHERE t.USER_PROVINCE IS NOT NULL AND t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.USER_PROVINCE, t.INDUSTRY_TYPE HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 241,
+    "db_id": "炼化",
+    "question": "I want to first see how many device units this batch of refining nodes covers in total.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.UNIT_ID) AS distinct_entity_cnt FROM 炼化.node_information t WHERE t.UNIT_ID IS NOT NULL;"
+  },
+  {
+    "question_id": 242,
+    "db_id": "炼化",
+    "question": "I want to see which equipment units have the most process nodes attached, first give me the top 1000 units.",
+    "evidence": "",
+    "SQL": "SELECT t.UNIT_ID, COUNT(*) AS event_cnt FROM 炼化.node_information t WHERE t.UNIT_ID IS NOT NULL AND t.NODE_ID IS NOT NULL GROUP BY t.UNIT_ID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 243,
+    "db_id": "炼化",
+    "question": "I want to count the total number of node balance records generated between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', calculated based on the shift start time.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2024-01-01 00:00:00' AND t.begin_shift_time < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 244,
+    "db_id": "炼化",
+    "question": "I want to see which business page types the balance data is mainly distributed across. First, give me the top 1,000 page types.",
+    "evidence": "",
+    "SQL": "SELECT t.page_type, COUNT(*) AS event_cnt FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 245,
+    "db_id": "炼化",
+    "question": "I want to see how large the cumulative balance is under different business page types. First, give me the top 1000 types.",
+    "evidence": "",
+    "SQL": "SELECT t.page_type, SUM(t.amount) AS total_amount FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL AND t.amount IS NOT NULL GROUP BY t.page_type ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 246,
+    "db_id": "炼化",
+    "question": "I need to identify which nodes appear under multiple page type calibers to check for caliber switching or configuration overlap. Please give me the three most typical ones first.",
+    "evidence": "",
+    "SQL": "SELECT t.NODE_ID, COUNT(DISTINCT t.page_type) AS entity_cnt FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL GROUP BY t.NODE_ID HAVING COUNT(DISTINCT t.page_type) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 247,
+    "db_id": "炼化",
+    "question": "I want to see the active retention of workflow nodes: how many nodes continuously generated balance records during both April 1–3 and April 6–7, 2023?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.NODE_ID FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' ), b AS ( SELECT DISTINCT t.NODE_ID FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (NODE_ID);"
+  },
+  {
+    "question_id": 248,
+    "db_id": "炼化",
+    "question": "I want to compare the changes in balance record activity across different page types for the two periods of April 1 to April 3, 2023, and April 6 to April 7, 2023, focusing first on the top 3 page types with the most significant changes.",
+    "evidence": "",
+    "SQL": "SELECT t.page_type, SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 249,
+    "db_id": "炼化",
+    "question": "During the specified period from April 1 to 3, 2023, how much balanced quantity was carried by different page types, and what was their proportion of the total balanced quantity?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.page_type AS topic, SUM(t.amount) AS amt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' AND t.page_type IS NOT NULL GROUP BY t.page_type ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 250,
+    "db_id": "炼化",
+    "question": "I want to identify the peak days within the window of April 1–3, 2023, when the node balance record volume experienced an abnormal spike, and determine which dates are significantly higher than the normal level of the preceding week. First, provide me with the three most prominent dates.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( t.begin_shift_time) AS d, COUNT(*) AS cnt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
+  },
+  {
+    "question_id": 251,
+    "db_id": "炼化",
+    "question": "I want to view the input/output type structure by device node. Which three nodes are more concentrated on a specific feed/discharge status and have a sufficiently large data volume (greater than 50 records)?",
+    "evidence": "",
+    "SQL": "SELECT t.node_code, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM 炼化.rpt_t_daily_refinery_unit t WHERE t.node_code IS NOT NULL GROUP BY t.node_code HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 252,
+    "db_id": "炼化",
+    "question": "I want to check the quality of the device master data mapping: are there any cases where the same UNIT_ID corresponds to multiple different device codes? Please provide the first 10 results.",
+    "evidence": "",
+    "SQL": "SELECT t.UNIT_ID, COUNT(DISTINCT t.UNIT_CODE) AS external_cnt FROM 炼化.pm_unit_t t GROUP BY t.UNIT_ID HAVING COUNT(DISTINCT t.UNIT_CODE) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 253,
+    "db_id": "炼化",
+    "question": "Show the device name with the highest design capacity for each device type.",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT t.UNIT_TYPE_ID AS topic, t.UNIT_NAME AS entity_name, t.CAPACITY AS qty, ROW_NUMBER() OVER (PARTITION BY t.UNIT_TYPE_ID ORDER BY t.CAPACITY DESC, t.UNIT_NAME) AS rn FROM 炼化.pm_unit_t t WHERE t.UNIT_TYPE_ID IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.CAPACITY IS NOT NULL ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  }
+]

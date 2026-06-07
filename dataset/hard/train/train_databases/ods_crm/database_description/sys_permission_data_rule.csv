@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+permission_id,permission_id,,TEXT,
+rule_name,rule_name,,TEXT,
+rule_column,rule_column,,TEXT,
+rule_conditions,rule_conditions,,TEXT,
+rule_value,rule_value,,TEXT,
+status,status,,TEXT,
+create_time,create_time,,DATETIME,
+create_by,create_by,,TEXT,
+update_time,update_time,,DATETIME,
+update_by,update_by,,TEXT,

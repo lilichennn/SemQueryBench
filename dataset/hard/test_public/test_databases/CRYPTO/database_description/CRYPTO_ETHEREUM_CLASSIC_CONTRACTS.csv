@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+address,address,,TEXT,
+block_hash,block_hash,,TEXT,
+block_number,block_number,,DOUBLE,
+is_erc20,is_erc20,,BOOLEAN,
+function_sighashes,function_sighashes,,JSON,
+bytecode,bytecode,,TEXT,
+is_erc721,is_erc721,,BOOLEAN,
+block_timestamp,block_timestamp,,DOUBLE,

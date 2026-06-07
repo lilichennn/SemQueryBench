@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+product_id,product_id,,DOUBLE,
+purchased,purchased,,TEXT,
+cost,cost,,DOUBLE,
+qty,qty,,DOUBLE,
+brewery_id,brewery_id,,DOUBLE,

@@ -1,0 +1,1031 @@
+[
+  {
+    "question_id": 31,
+    "db_id": "EU_SOCCER",
+    "question": "How many distinct home teams have appeared in this match sample? I'd like to first see the scale of teams covered by the league.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT m.home_team_api_id) AS distinct_entity_cnt FROM EU_SOCCER.MATCH m;"
+  },
+  {
+    "question_id": 32,
+    "db_id": "EU_SOCCER",
+    "question": "I want to see which leagues have the most match records in this batch of European football data. First, give me the top 1000 leagues.",
+    "evidence": "",
+    "SQL": "SELECT m.league_id, COUNT(*) AS event_cnt FROM EU_SOCCER.MATCH m GROUP BY m.league_id ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 33,
+    "db_id": "EU_SOCCER",
+    "question": "I want to count how many official matches were played between '2024-01-01' and '2024-01-31', using the match date dimension.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM EU_SOCCER.MATCH m WHERE CAST(m.date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 34,
+    "db_id": "EU_SOCCER",
+    "question": "I want to see how many match records have been accumulated for each season, starting with the first 1000 seasons.",
+    "evidence": "",
+    "SQL": "SELECT m.season, COUNT(*) AS event_cnt FROM EU_SOCCER.MATCH m GROUP BY m.season ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 35,
+    "db_id": "EU_SOCCER",
+    "question": "I want to get a rough overview of the average home win odds across different seasons to see in which seasons the home team was generally more undervalued.",
+    "evidence": "",
+    "SQL": "SELECT m.season, AVG(m.B365H) AS avg_home_win_odds FROM EU_SOCCER.MATCH m WHERE m.B365H IS NOT NULL GROUP BY m.season ORDER BY avg_home_win_odds DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 36,
+    "db_id": "EU_SOCCER",
+    "question": "I want to check if the match primary key is clean: is there any anomaly where the same match_api_id is mapped to multiple home teams? First list the top 3 records.",
+    "evidence": "",
+    "SQL": "SELECT m.match_api_id, COUNT(DISTINCT m.home_team_api_id) AS entity_cnt FROM EU_SOCCER.MATCH m GROUP BY m.match_api_id HAVING COUNT(DISTINCT m.home_team_api_id) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 37,
+    "db_id": "EU_SOCCER",
+    "question": "I want to check the continuous coverage of team attribute profiles: how many teams have tactical attribute snapshots in both 2012 and 2014?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT ta.team_api_id FROM EU_SOCCER.TEAM_ATTRIBUTES ta WHERE CAST(ta.date AS DATETIME) >= '2012-01-01 00:00:00' AND CAST(ta.date AS DATETIME) < '2013-01-01 00:00:00' ), b AS ( SELECT DISTINCT ta.team_api_id FROM EU_SOCCER.TEAM_ATTRIBUTES ta WHERE CAST(ta.date AS DATETIME) >= '2014-01-01 00:00:00' AND CAST(ta.date AS DATETIME) < '2015-01-01 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (team_api_id);"
+  },
+  {
+    "question_id": 38,
+    "db_id": "EU_SOCCER",
+    "question": "I want to compare the difference in the number of match records under different season tags for the full year periods of 2012 and 2014, first looking at the 3 seasons with the largest differences.",
+    "evidence": "",
+    "SQL": "SELECT m.season, SUM(CASE WHEN CAST(m.date AS DATETIME) >= '2012-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2013-01-01 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN CAST(m.date AS DATETIME) >= '2014-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2015-01-01 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN CAST(m.date AS DATETIME) >= '2012-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2013-01-01 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN CAST(m.date AS DATETIME) >= '2014-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2015-01-01 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM EU_SOCCER.MATCH m GROUP BY m.season ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 39,
+    "db_id": "EU_SOCCER",
+    "question": "In the time window of the full year 2012, using the average home win odds to create a rough cross-section, what proportion does each season label account for?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT m.season AS topic, AVG(m.B365H) AS amt FROM EU_SOCCER.MATCH m WHERE m.B365H IS NOT NULL AND CAST(m.date AS DATETIME) >= '2012-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2013-01-01 00:00:00' GROUP BY m.season ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 40,
+    "db_id": "EU_SOCCER",
+    "question": "I want to identify the abnormal peak days with the densest schedule within the full-year 2012 window from the match sample, examine which dates have match counts significantly higher than the previous week's baseline, and first look at the top 3 days with the largest difference.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( CAST(m.date AS DATETIME)) AS d, COUNT(*) AS cnt FROM EU_SOCCER.MATCH m WHERE CAST(m.date AS DATETIME) >= '2012-01-01 00:00:00' AND CAST(m.date AS DATETIME) < '2013-01-01 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
+  },
+  {
+    "question_id": 41,
+    "db_id": "EU_SOCCER",
+    "question": "I want to see which players more consistently exhibit a specific attacking work rate in attribute snapshots, such as high or medium, and first give me the top 3 with the highest proportion.",
+    "evidence": "",
+    "SQL": "SELECT pa.player_api_id, SUM(CASE WHEN pa.attacking_work_rate ='high' or pa.attacking_work_rate ='medium' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN pa.attacking_work_rate ='high' or pa.attacking_work_rate ='medium' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM EU_SOCCER.PLAYER_ATTRIBUTES pa GROUP BY pa.player_api_id HAVING COUNT(*) >= 1 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 42,
+    "db_id": "EU_SOCCER",
+    "question": "I want to check if the primary key mapping in the player attribute detail table is abnormal: whether a single attribute record id is associated with multiple player_api_ids, and list the top 10 first.",
+    "evidence": "",
+    "SQL": "SELECT pa.id, COUNT(DISTINCT pa.player_api_id) AS external_cnt FROM EU_SOCCER.PLAYER_ATTRIBUTES pa GROUP BY pa.id HAVING COUNT(DISTINCT pa.player_api_id) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 43,
+    "db_id": "EU_SOCCER",
+    "question": "I want to see which team has the richest and most frequently occurring tactical archives under different build-up speed styles.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT ta.buildUpPlaySpeedClass AS topic, t.team_long_name AS entity_name, COUNT(*) AS qty FROM EU_SOCCER.TEAM_ATTRIBUTES ta JOIN EU_SOCCER.TEAM t ON ta.team_api_id = t.team_api_id GROUP BY ta.buildUpPlaySpeedClass, t.team_long_name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 44,
+    "db_id": "EU_SOCCER",
+    "question": "I want to see the distribution of match coverage across different countries and seasons, to find out which country-season combinations have the thickest samples. Count combinations with a frequency of at least 5, and show the top 20 first.",
+    "evidence": "",
+    "SQL": "SELECT c.name AS location, m.season AS category_topic, COUNT(*) AS event_cnt FROM EU_SOCCER.MATCH m JOIN EU_SOCCER.LEAGUE l ON m.league_id = l.id JOIN EU_SOCCER.COUNTRY c ON l.country_id = c.id GROUP BY c.name, m.season HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 45,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "How many types of federal regulatory bodies are involved in this batch of financial institution master data? I would like to first examine the coverage of regulatory affiliation.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT fie.FEDERAL_REGULATOR) AS distinct_entity_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_ENTITIES fie;"
+  },
+  {
+    "question_id": 46,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to see which states consumer financial complaints are mainly concentrated in, and give me the top 1000 states by complaint count.",
+    "evidence": "",
+    "SQL": "SELECT c.ID_STATE, COUNT(*) AS event_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c GROUP BY c.ID_STATE ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 47,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to count the total number of financial consumer complaints received by the platform during the period from '2024-01-01' to '2024-01-31', using the complaint received date metric.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c WHERE c.DATE_RECEIVED >= '2024-01-01 00:00:00' AND c.DATE_RECEIVED < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 48,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to see the complaint volume distribution across key financial product lines, such as credit reporting and mortgages.",
+    "evidence": "",
+    "SQL": "SELECT c.PRODUCT, COUNT(*) AS event_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c GROUP BY c.PRODUCT ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 49,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to roughly see the cumulative scale of price values for different security asset classes in the market data sample. First, give me the top 1000 asset classes.",
+    "evidence": "",
+    "SQL": "SELECT s.ASSET_CLASS, SUM(s.VALUE) AS total_amount FROM FINANCE__ECONOMICS.CYBERSYN_STOCK_PRICE_TIMESERIES s GROUP BY s.ASSET_CLASS ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 50,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to investigate whether there are cases in the organizational restructuring chain where the same predecessor RSSD is mapped to multiple successor types, to check for classification label or merger chain anomalies, and first show the top 3 most prominent instances.",
+    "evidence": "",
+    "SQL": "SELECT e.ID_RSSD_PREDECESSOR, COUNT(DISTINCT e.CATEGORY_SUCCESSOR) AS entity_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_EVENTS e GROUP BY e.ID_RSSD_PREDECESSOR HAVING COUNT(DISTINCT e.CATEGORY_SUCCESSOR) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 51,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to see the continuity of time-series coverage for banking institutions: how many institutions have consistently reported financial indicators in both June and December 2025.",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.ID_RSSD FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_TIMESERIES t WHERE t.DATE >= '2025-06-01' AND t.DATE < '2025-07-01' ), b AS ( SELECT DISTINCT t.ID_RSSD FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_TIMESERIES t WHERE t.DATE >= '2025-12-01' AND t.DATE < '2026-01-01' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (ID_RSSD);"
+  },
+  {
+    "question_id": 52,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In the specified market window of November 2024, what is the cumulative proportion of price values across different asset classes? I want to see which security types the sample is mainly concentrated on.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT s.ASSET_CLASS AS topic, SUM(s.VALUE) AS amt FROM FINANCE__ECONOMICS.CYBERSYN_STOCK_PRICE_TIMESERIES s WHERE CAST(s.DATE AS DATETIME) >= '2024-11-01' AND CAST(s.DATE AS DATETIME) < '2024-12-01' GROUP BY s.ASSET_CLASS ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 53,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to identify the peak days with abnormally high complaint volumes within the window from July 1 to July 30, 2024, to see which dates are significantly higher than the normal level of the previous week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( c.DATE_RECEIVED) AS d, COUNT(*) AS cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c WHERE CAST(c.DATE_RECEIVED AS DATETIME) >= '2024-07-01' AND CAST(c.DATE_RECEIVED AS DATETIME) < '2024-07-31' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 54,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to see the complaint handling timeliness structure by state, for example, which states are more likely to have timely responses for complaints, only considering states with a sample size ≥ 50, give me the top 3 first.",
+    "evidence": "",
+    "SQL": "SELECT c.ID_STATE, SUM(CASE WHEN c.TIMELY_RESPONSE = 1 THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN c.TIMELY_RESPONSE = 1 THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c GROUP BY c.ID_STATE HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 55,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to check the quality of the company master data mapping: whether there are any internal company_id associated with multiple PermID company identifiers, and first list the top 10 records.",
+    "evidence": "",
+    "SQL": "SELECT ci.COMPANY_ID, COUNT(DISTINCT ci.PERMID_COMPANY_ID) AS external_cnt FROM FINANCE__ECONOMICS.CYBERSYN_COMPANY_INDEX ci GROUP BY ci.COMPANY_ID HAVING COUNT(DISTINCT ci.PERMID_COMPANY_ID) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 56,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I would like to retrieve cases containing keywords such as fraud, collection, identity theft in the consumer original complaint narrative, first give me the first 5 corresponding ZIP leads.",
+    "evidence": "",
+    "SQL": "SELECT c.ID_ZIP FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c WHERE c.CONSUMER_COMPLAINT_NARRATIVE LIKE '%fraud%' or '%collection%' or '%identity theft%' LIMIT 5;"
+  },
+  {
+    "question_id": 57,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I would like to see, over the two years 2024–2025, which financial product lines the complaints mentioned in the narratives primarily concentrate on — for example, issues like fraud, harassment, identity theft — first looking at the top 10 product lines.",
+    "evidence": "",
+    "SQL": "SELECT c.PRODUCT, COUNT(*) AS event_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c WHERE str_to_date(c.DATE_RECEIVED,'%Y-%m-%d') >= '2024-01-01' AND str_to_date(c.DATE_RECEIVED,'%Y-%m-%d') < '2026-01-01' AND c.CONSUMER_COMPLAINT_NARRATIVE LIKE '%fraud%' or '%harassment%' or '%identity theft%' GROUP BY c.PRODUCT ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 58,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "I want to see the most prominent complaint product combinations by state, to see which states have the most concentrated customer complaints on which type of financial product. Count combinations occurring no fewer than 5 times, and first look at the top 20 results.",
+    "evidence": "",
+    "SQL": "SELECT c.STATE, c.PRODUCT, COUNT(*) AS event_cnt FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_CFPB_COMPLAINT c GROUP BY c.STATE, c.PRODUCT HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 59,
+    "db_id": "IPL",
+    "question": "How many teams have appeared as the batting side in this batch of ball-by-ball samples? I would like to first check the coverage of participating teams.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT b.team_batting) AS distinct_entity_cnt FROM IPL.BALL_BY_BALL b;"
+  },
+  {
+    "question_id": 60,
+    "db_id": "IPL",
+    "question": "I want to identify the most active teams in player appearance records and get the top 1000 teams based on match-player record count.",
+    "evidence": "",
+    "SQL": "SELECT pm.team_id, COUNT(*) AS event_cnt FROM IPL.PLAYER_MATCH pm GROUP BY pm.team_id ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 61,
+    "db_id": "IPL",
+    "question": "I want to count the total number of match records from 2024-01-01 to 2024-01-31, using the match date as the statistical dimension.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM IPL.MATCH m WHERE DATE_FORMAT(STR_TO_DATE(m.match_date, '%Y-%m-%d'), '%Y-%m-%d') >= '2024-01-01' AND DATE_FORMAT(STR_TO_DATE(m.match_date, '%Y-%m-%d'), '%Y-%m-%d') < '2024-01-31';"
+  },
+  {
+    "question_id": 62,
+    "db_id": "IPL",
+    "question": "I want to see what types of extras make up the extra runs, such as wides, leg byes, and no balls, and how many times each type occurs.",
+    "evidence": "",
+    "SQL": "SELECT er.extra_type, COUNT(*) AS event_cnt FROM IPL.EXTRA_RUNS er GROUP BY er.extra_type ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 63,
+    "db_id": "IPL",
+    "question": "I'd like to see how large the average victory margin is under different win methods, for example, which usually leads to a more dominant win — by runs or by wickets.",
+    "evidence": "",
+    "SQL": "SELECT m.win_type, AVG(m.win_margin) AS avg_margin FROM IPL.MATCH m GROUP BY m.win_type ORDER BY avg_margin DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 64,
+    "db_id": "IPL",
+    "question": "I want to check how many teams are associated with each match to confirm whether the match roster definition is correct; first, list the matches with more than 1 team_id, showing the first 3 matches.",
+    "evidence": "",
+    "SQL": "SELECT pm.match_id, COUNT(DISTINCT pm.team_id) AS entity_cnt FROM IPL.PLAYER_MATCH pm GROUP BY pm.match_id HAVING COUNT(DISTINCT pm.team_id) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 65,
+    "db_id": "IPL",
+    "question": "I want to check the active retention of teams by wins: How many teams achieved wins in both May and September 2008?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT m.match_winner FROM IPL.MATCH m WHERE CAST(m.match_date AS DATETIME) >= '2008-05-01' AND CAST(m.match_date AS DATETIME) < '2008-06-01' ), b AS ( SELECT DISTINCT m.match_winner FROM IPL.MATCH m WHERE CAST(m.match_date AS DATETIME) >= '2008-09-01' AND CAST(m.match_date AS DATETIME) < '2008-10-01' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (match_winner);"
+  },
+  {
+    "question_id": 66,
+    "db_id": "IPL",
+    "question": "I want to compare the difference in the number of match records for different winning methods between May 2008 and September 2008, and first look at the top 3 with the largest differences.",
+    "evidence": "",
+    "SQL": "SELECT m.win_type, SUM(CASE WHEN CAST(m.match_date AS DATETIME) >= '2008-05-01' AND CAST(m.match_date AS DATETIME) < '2008-06-01' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN CAST(m.match_date AS DATETIME) >= '2008-09-01' AND CAST(m.match_date AS DATETIME) < '2008-10-01' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN CAST(m.match_date AS DATETIME) >= '2008-05-01' AND CAST(m.match_date AS DATETIME) < '2008-06-01' THEN 1 ELSE 0 END) - SUM(CASE WHEN CAST(m.match_date AS DATETIME) >= '2008-09-01' AND CAST(m.match_date AS DATETIME) < '2008-10-01' THEN 1 ELSE 0 END) ) AS delta_cnt FROM IPL.MATCH m GROUP BY m.win_type ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 67,
+    "db_id": "IPL",
+    "question": "During the specified period of May 2008, what was the cumulative contribution of different winning methods to the win-loss difference, and what were their respective proportions of the total win-loss difference?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT m.win_type AS topic, SUM(m.win_margin) AS amt FROM IPL.MATCH m WHERE CAST(m.match_date AS DATETIME) >= '2008-05-01' AND CAST(m.match_date AS DATETIME) < '2008-06-01' GROUP BY m.win_type ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 68,
+    "db_id": "IPL",
+    "question": "I want to view the roster role structure by team — for example, which team has the highest proportion of Captain marks in player appearance records — only considering teams with a sample size of no fewer than 50. Give me the top 3 first.",
+    "evidence": "",
+    "SQL": "SELECT pm.team_id, SUM(CASE WHEN pm.role = 'Captain' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN pm.role = 'Captain' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM IPL.PLAYER_MATCH pm GROUP BY pm.team_id HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 69,
+    "db_id": "IPL",
+    "question": "I want to check if there is any anomaly in the mapping between the match primary key and the season identifier: whether the same match_id has been associated with multiple season_id values, and list the top 10 first.",
+    "evidence": "",
+    "SQL": "SELECT m.match_id, COUNT(DISTINCT m.season_id) AS external_cnt FROM IPL.MATCH m GROUP BY m.match_id HAVING COUNT(DISTINCT m.season_id) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 70,
+    "db_id": "IPL",
+    "question": "I want to retrieve matches in the outcome description, such as result tags like Result, Tie, etc. First, give me the first 5 corresponding season clues.",
+    "evidence": "",
+    "SQL": "SELECT m.season_id AS id_external FROM IPL.MATCH m WHERE COALESCE(m.outcome_type, '') LIKE '%Result%' or '%Tie%' LIMIT 5;"
+  },
+  {
+    "question_id": 71,
+    "db_id": "IPL",
+    "question": "I want to see which team appears most frequently under different player role labels, such as which team the role Captain is mainly concentrated in.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT pm.role AS topic, t.name AS entity_name, COUNT(*) AS qty FROM IPL.PLAYER_MATCH pm JOIN IPL.TEAM t ON pm.team_id = t.team_id GROUP BY pm.role, t.name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 72,
+    "db_id": "IPL",
+    "question": "I would like to see, during the three years from 2011 to 2013, in the matches where the outcome description contains Result, which method of victory is most concentrated.",
+    "evidence": "",
+    "SQL": "SELECT m.win_type, COUNT(*) AS event_cnt FROM IPL.MATCH m WHERE str_to_date(m.match_date,'%Y-%m-%d') >= '2011-01-01' AND str_to_date(m.match_date,'%Y-%m-%d') < '2014-01-01' AND COALESCE(m.outcome_type, '') LIKE '%Result%' GROUP BY m.win_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 73,
+    "db_id": "IPL",
+    "question": "I want to see the distribution of match result styles across different venues — which venues more often have results by runs and which more often by wickets. Only count combinations with a frequency of at least 10, and show the top 20 records first.",
+    "evidence": "",
+    "SQL": "SELECT m.venue AS location, m.win_type AS category_topic, COUNT(*) AS event_cnt FROM IPL.MATCH m GROUP BY m.venue, m.win_type HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 74,
+    "db_id": "META_KAGGLE",
+    "question": "I want to first see how many institutional entities this batch of Kaggle datasets covers, to assess the supply breadth on the organizational side.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT d.OwnerOrganizationId) AS distinct_entity_cnt FROM META_KAGGLE.DATASETS d WHERE d.OwnerOrganizationId IS NOT NULL;"
+  },
+  {
+    "question_id": 75,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see the most active users who initiate dataset tasks, and show me the top 1000 initiators by task volume.",
+    "evidence": "",
+    "SQL": "SELECT dt.OwnerUserId, COUNT(*) AS event_cnt FROM META_KAGGLE.DATASETTASKS dt GROUP BY dt.OwnerUserId ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 76,
+    "db_id": "META_KAGGLE",
+    "question": "I want to count how many notebook votes occurred in the community from '2024-01-01' to '2024-01-31', calculated using the vote date criterion.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM META_KAGGLE.KERNELVOTES kv WHERE kv.VoteDate >= '2024-01-01 00:00:00' AND kv.VoteDate < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 77,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see the distribution of Kaggle competitions by reward type, for example how many competitions there are for types like Knowledge and Prize.",
+    "evidence": "",
+    "SQL": "SELECT c.RewardType, COUNT(*) AS event_cnt FROM META_KAGGLE.COMPETITIONS c GROUP BY c.RewardType ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 78,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see the total reward accumulated under different agent states. First, give me the top 1000 states.",
+    "evidence": "",
+    "SQL": "SELECT ea.State, SUM(ea.Reward) AS total_amount FROM META_KAGGLE.EPISODEAGENTS ea GROUP BY ea.State ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 79,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see which competitions have been tagged with the most distinct tags. First, give me the top 3 competitions with the widest tag coverage.",
+    "evidence": "",
+    "SQL": "SELECT ct.CompetitionId, COUNT(DISTINCT ct.TagId) AS entity_cnt FROM META_KAGGLE.COMPETITIONTAGS ct GROUP BY ct.CompetitionId HAVING COUNT(DISTINCT ct.TagId) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 80,
+    "db_id": "META_KAGGLE",
+    "question": "I want to view notebook author retention: how many authors publicly published kernels in both July–August 2022 and July–August 2023?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT k.AuthorUserId FROM META_KAGGLE.KERNELS k WHERE k.MadePublicDate >= '2022-07-01' AND k.MadePublicDate < '2022-09-01' ), b AS ( SELECT DISTINCT k.AuthorUserId FROM META_KAGGLE.KERNELS k WHERE k.MadePublicDate >= '2023-07-01' AND k.MadePublicDate < '2023-09-01' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (AuthorUserId);"
+  },
+  {
+    "question_id": 81,
+    "db_id": "META_KAGGLE",
+    "question": "During the episode window from September 1 to September 29, 2020, how much reward was allocated to each different agent state, and what is the proportion of the total reward for each?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT ea.State AS topic, SUM(ea.Reward) AS amt FROM META_KAGGLE.EPISODEAGENTS ea JOIN META_KAGGLE.EPISODES e ON ea.EpisodeId = e.Id WHERE e.EndTime >= '2020-09-01' AND e.EndTime < '2020-09-30' GROUP BY ea.State ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 82,
+    "db_id": "META_KAGGLE",
+    "question": "I want to identify the peak dates for an abnormal spike in notebook votes within the window of July 1 to July 8, 2019, to see which dates are significantly higher than the community interaction norm of the preceding week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( kv.VoteDate) AS d, COUNT(*) AS cnt FROM META_KAGGLE.KERNELVOTES kv WHERE CAST(kv.VoteDate AS DATETIME) >= '2019-07-01' AND CAST(kv.VoteDate AS DATETIME) < '2019-07-08' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 83,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see which episodes have a particularly high proportion of a specific agent state, e.g., whether the completed or failed state is noticeably overrepresented. First, give me the top 3 by proportion.",
+    "evidence": "",
+    "SQL": "SELECT ea.EpisodeId, SUM(CASE WHEN ea.State = '2' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN ea.State = '2' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM META_KAGGLE.EPISODEAGENTS ea GROUP BY ea.EpisodeId HAVING COUNT(*) >= 1 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 84,
+    "db_id": "META_KAGGLE",
+    "question": "I want to check if there is an anomaly in the mapping between the dataset primary key and the current version number: whether there are multiple current versions associated with the same dataset id, and list the first 10 entries first.",
+    "evidence": "",
+    "SQL": "SELECT d.Id, COUNT(DISTINCT d.CurrentDatasetVersionId) AS external_cnt FROM META_KAGGLE.DATASETS d GROUP BY d.Id HAVING COUNT(DISTINCT d.CurrentDatasetVersionId) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 85,
+    "db_id": "META_KAGGLE",
+    "question": "I want to search the original forum posts for discussions containing keywords like bug, submission, GPU, etc. First, give me the top 5 topic clue.",
+    "evidence": "",
+    "SQL": "SELECT fm.ForumTopicId AS id_external FROM META_KAGGLE.FORUMMESSAGES fm WHERE COALESCE(fm.RawMarkdown, '') LIKE '%bug%' or '%submission%' or '%GPU%' LIMIT 5;"
+  },
+  {
+    "question_id": 86,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see, for competitions with different reward types, what the most common evaluation metrics are — such as RMSE and AUC — and which of these metrics appears most frequently.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT c.RewardType AS topic, c.EvaluationAlgorithmName AS entity_name, COUNT(*) AS qty FROM META_KAGGLE.COMPETITIONS c WHERE c.EvaluationAlgorithmName IS NOT NULL GROUP BY c.RewardType, c.EvaluationAlgorithmName ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 87,
+    "db_id": "META_KAGGLE",
+    "question": "I want to see the top 10 topics discussed in the forum threads from 2021 to 2024, such as \"submission error\", \"GPU\", \"dataset link\", and similar issues.",
+    "evidence": "",
+    "SQL": "SELECT fm.ForumTopicId AS category_topic, COUNT(*) AS event_cnt FROM META_KAGGLE.FORUMMESSAGES fm WHERE str_to_date(fm.PostDate, '%m/%d/%Y %H:%i:%s') >= '2021-01-01' AND str_to_date(fm.PostDate, '%m/%d/%Y %H:%i:%s') < '2024-01-01' AND COALESCE(fm.RawMarkdown, '') LIKE '%submission error%' or '%GPU%' or '%dataset link%' GROUP BY fm.ForumTopicId ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 101,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "How many states does this 2016 fatal traffic accident sample cover? I would like to see the state-level coverage first.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT a.state_number) AS distinct_entity_cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a;"
+  },
+  {
+    "question_id": 102,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see which vehicle numbers most frequently appear in vehicle damage records within the fatal accident sample. First, give me the top 1000 vehicle numbers.",
+    "evidence": "",
+    "SQL": "SELECT d.vehicle_number, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES.DAMAGE_2016 d GROUP BY d.vehicle_number ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 103,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to count the total number of fatal traffic accidents that occurred between '2024-01-01' and '2024-01-31', using the crash timestamp as the dimension.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2024-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 104,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see the distribution of drunk driving involvement status among vehicles involved in fatal accidents, for example, the counts of \"Drinking\" and \"Not Reported\".",
+    "evidence": "",
+    "SQL": "SELECT v.driver_drinking, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES.VEHICLE_2016 v GROUP BY v.driver_drinking ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 105,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see the distribution of cumulative deaths for each state in this batch of samples. First, give me the first 1000 states.",
+    "evidence": "",
+    "SQL": "SELECT a.state_name, SUM(a.number_of_fatalities) AS total_quantity FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a GROUP BY a.state_name ORDER BY total_quantity DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 106,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see which fatal accidents involve damage records from multiple vehicles. First, give me the top 3 accidents with the most complex vehicle involvement.",
+    "evidence": "",
+    "SQL": "SELECT d.consecutive_number, COUNT(DISTINCT d.vehicle_number) AS entity_cnt FROM NHTSA_TRAFFIC_FATALITIES.DAMAGE_2016 d GROUP BY d.consecutive_number HAVING COUNT(DISTINCT d.vehicle_number) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 107,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see the state-level accident active retention: How many states had fatal accident records in both Q1 and Q4 of 2016?",
+    "evidence": "",
+    "SQL": "WITH a_win AS ( SELECT DISTINCT a.state_number FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2016-04-01 00:00:00' ), b_win AS ( SELECT DISTINCT a.state_number FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-10-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2017-01-01 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a_win JOIN b_win USING (state_number);"
+  },
+  {
+    "question_id": 108,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to compare the changes in fatal accident scale under different lighting conditions between the first quarter and the fourth quarter of 2016, to check whether risk exposure has increased during night, daytime, or twilight conditions. First, display the top three with the largest differences.",
+    "evidence": "",
+    "SQL": "SELECT a.light_condition_name, SUM(CASE WHEN FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2016-04-01 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-10-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2017-01-01 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2016-04-01 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-10-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2017-01-01 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a GROUP BY a.light_condition_name ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 109,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "In the specified period of Q1 2016, how many traffic fatalities did each state contribute, and what is the proportion of total fatalities?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT a.state_name AS topic, SUM(a.number_of_fatalities) AS qty FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2016-04-01 00:00:00' GROUP BY a.state_name ), tot AS ( SELECT SUM(qty) AS total_qty FROM agg ) SELECT topic, qty, qty / NULLIF((SELECT total_qty FROM tot), 0) AS qty_share FROM agg ORDER BY qty_share DESC;"
+  },
+  {
+    "question_id": 110,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to identify the peak days within the Q1 2016 window where fatal traffic accident counts are abnormally elevated, see which dates are significantly higher than the baseline level of the preceding week, and first look at the top 3 days with the largest difference.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( FROM_UNIXTIME(a.timestamp_of_crash / 1000000)) AS d, COUNT(*) AS cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash / 1000000) >= '2016-01-01 00:00:00' AND FROM_UNIXTIME(a.timestamp_of_crash / 1000000) < '2016-04-01 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
+  },
+  {
+    "question_id": 111,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to check the reuse of the person number field: whether the same person_number appears repeatedly across multiple accidents, which may indicate that the number is only a sequence within an accident and not suitable as a global primary key, and first list the top 10 records.",
+    "evidence": "",
+    "SQL": "SELECT p.person_number, COUNT(DISTINCT p.consecutive_number) AS external_cnt FROM NHTSA_TRAFFIC_FATALITIES.PERSON_2016 p GROUP BY p.person_number HAVING COUNT(DISTINCT p.consecutive_number) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 112,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to retrieve the fatal accident cases whose First-Level Contributing Factor descriptions contain clues such as distraction, weather, and speeding. Please give me the first 5 accidents.",
+    "evidence": "",
+    "SQL": "SELECT a.consecutive_number AS id_external FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE COALESCE(a.related_factors_crash_level_1_name, '') LIKE '%distraction%' or '%weather%' or '%speeding%' LIMIT 5;"
+  },
+  {
+    "question_id": 113,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see the most common types of involved persons under different injury severity levels, such as whether drivers, passengers, or non-motor vehicle participants are the most common in fatal injuries.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT p.injury_severity_name AS topic, p.person_type_name AS entity_name, COUNT(*) AS qty FROM NHTSA_TRAFFIC_FATALITIES.PERSON_2016 p GROUP BY p.injury_severity_name, p.person_type_name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 114,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I would like to see the fatal accidents that occurred in January and February 2016, that the accident factor description mentions \"Crash\", which lighting conditions did they mainly occurre?",
+    "evidence": "",
+    "SQL": "SELECT a.light_condition_name, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a WHERE FROM_UNIXTIME(a.timestamp_of_crash/ 1000000) >= '2016-01-01' AND FROM_UNIXTIME(a.timestamp_of_crash/ 1000000) < '2016-03-01' AND COALESCE(a.related_factors_crash_level_1_name, '') LIKE '%Crash%' GROUP BY a.light_condition_name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 115,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES",
+    "question": "I want to see the distribution of fatal accidents by state and lighting condition, to find out which states have a more pronounced nighttime accident profile. Count the combinations with a frequency of no less than 10, and first look at the top 20 entries.",
+    "evidence": "",
+    "SQL": "SELECT a.state_name AS location, a.light_condition_name AS category_topic, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2016 a GROUP BY a.state_name, a.light_condition_name HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 142,
+    "db_id": "OPENAQ",
+    "question": "I'd like to first check how many state-level monitoring jurisdictions are covered by this batch of PM2.5 FRM daily summary samples.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.state_code) AS distinct_entity_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM25_FRM_DAILY_SUMMARY t WHERE t.state_code IS NOT NULL;"
+  },
+  {
+    "question_id": 143,
+    "db_id": "OPENAQ",
+    "question": "I want to see which county-level districts have accumulated the most PM2.5 daily monitoring records. First, give me the top 1,000 counties.",
+    "evidence": "",
+    "SQL": "SELECT t.county_code, COUNT(*) AS event_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM25_FRM_DAILY_SUMMARY t WHERE t.county_code IS NOT NULL AND t.site_num IS NOT NULL GROUP BY t.county_code ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 144,
+    "db_id": "OPENAQ",
+    "question": "I want to count how many observation records were collected by the global air quality network from '2024-01-01 00:00:00' to '2024-01-31 23:59:59'.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM OPENAQ.OPENAQ_GLOBAL_AIR_QUALITY t WHERE FROM_UNIXTIME(t.timestamp / 1000000) >= '2024-01-01 00:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 145,
+    "db_id": "OPENAQ",
+    "question": "I would like to see which pollutant indicators global site observations mainly focus on, such as pm10, pm2.5, and no2, and how many records there are for each category.",
+    "evidence": "",
+    "SQL": "SELECT t.pollutant, COUNT(*) AS event_cnt FROM OPENAQ.OPENAQ_GLOBAL_AIR_QUALITY t WHERE t.pollutant IS NOT NULL GROUP BY t.pollutant ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 146,
+    "db_id": "OPENAQ",
+    "question": "I want to take a rough look at the average observed concentration levels of different pollutants to see which indicators have higher overall readings.",
+    "evidence": "",
+    "SQL": "SELECT t.pollutant, AVG(t.value) AS avg_value FROM OPENAQ.OPENAQ_GLOBAL_AIR_QUALITY t WHERE t.pollutant IS NOT NULL AND t.value IS NOT NULL GROUP BY t.pollutant ORDER BY avg_value DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 147,
+    "db_id": "OPENAQ",
+    "question": "I want to check which stations have multiple monitoring method codes in the daily PM10 summary, to see if there are method switches or mixed specifications. Show me the first 3.",
+    "evidence": "",
+    "SQL": "SELECT t.site_num, COUNT(DISTINCT t.method_code) AS entity_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM10_DAILY_SUMMARY t WHERE t.site_num IS NOT NULL GROUP BY t.site_num HAVING COUNT(DISTINCT t.method_code) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 148,
+    "db_id": "OPENAQ",
+    "question": "I want to view the active retention of monitoring sites: How many global sites continuously reported observation data during both the 09:00–11:00 and 13:00–15:00 periods on May 4, 2022?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.location FROM OPENAQ.openaq_global_air_quality t WHERE t.location IS NOT NULL AND FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 09:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 11:00:00' ), b AS ( SELECT DISTINCT t.location FROM OPENAQ.openaq_global_air_quality t WHERE t.location IS NOT NULL AND FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 13:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 15:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (location);"
+  },
+  {
+    "question_id": 149,
+    "db_id": "OPENAQ",
+    "question": "I want to compare the changes in observed values of different pollutants between the two time periods: 9 AM to 11 AM and 1 PM to 3 PM on May 4, 2022, and first look at the top three pollutants with the most significant changes.",
+    "evidence": "",
+    "SQL": "SELECT t.pollutant, SUM(CASE WHEN FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 09:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 11:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 13:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 15:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 09:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 11:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 13:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 15:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM OPENAQ.openaq_global_air_quality t WHERE t.pollutant IS NOT NULL GROUP BY t.pollutant ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 150,
+    "db_id": "OPENAQ",
+    "question": "In the time window from 9:00 AM to 11:00 AM on May 4, 2022, if a rough cross-section is taken using average concentrations, what proportion does each pollutant account for?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.pollutant AS topic, AVG(t.value) AS amt FROM OPENAQ.openaq_global_air_quality t WHERE FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-04 09:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-04 11:00:00' AND t.pollutant IS NOT NULL AND t.value IS NOT NULL GROUP BY t.pollutant ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 151,
+    "db_id": "OPENAQ",
+    "question": "I would like to identify the peak days within the window of May 3 to 4, 2022, where global air quality observations exhibited amplified anomalies, and see which dates are significantly above the baseline levels of the preceding week. Please give me the top 3 first.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( FROM_UNIXTIME(t.timestamp / 1000000)) AS d, COUNT(*) AS cnt FROM OPENAQ.openaq_global_air_quality t WHERE FROM_UNIXTIME(t.timestamp / 1000000) >= '2022-05-03 00:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2022-05-05 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 152,
+    "db_id": "OPENAQ",
+    "question": "I want to check if the mapping between pollutant parameter codes and parameter names is abnormal: see if there are cases where the same parameter_code corresponds to multiple different parameter_names. Show me the first 10.",
+    "evidence": "",
+    "SQL": "SELECT t.parameter_code, COUNT(DISTINCT t.parameter_name) AS external_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_AIR_QUALITY_ANNUAL_SUMMARY t GROUP BY t.parameter_code HAVING COUNT(DISTINCT t.parameter_name) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 153,
+    "db_id": "OPENAQ",
+    "question": "I want to retrieve stations where the pollutant standard description mentions rule clues such as “标准版本”, “8-hour” or “annual”. Give me the first 5.",
+    "evidence": "",
+    "SQL": "SELECT t.site_num AS id_external FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM25_NONFRM_DAILY_SUMMARY t WHERE COALESCE(t.pollutant_standard, '') LIKE '%标准版本%' or '%8-hour%' or '%annual%' LIMIT 5;"
+  },
+  {
+    "question_id": 154,
+    "db_id": "OPENAQ",
+    "question": "I want to see what the most frequent local monitoring site names are in each state's annual air quality summary.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.state_name AS topic, t.local_site_name AS entity_name, COUNT(*) AS qty FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_AIR_QUALITY_ANNUAL_SUMMARY t WHERE t.state_name IS NOT NULL AND t.local_site_name IS NOT NULL GROUP BY t.state_name, t.local_site_name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 155,
+    "db_id": "OPENAQ",
+    "question": "I want to see the monitoring records from May and June 1996 where the standard description mentions \"PM10\", focusing on which parameter indicators are mainly involved. First, give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT t.parameter_name AS category_topic, COUNT(*) AS event_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM10_DAILY_SUMMARY t WHERE str_to_date(t.date_local, '%Y-%m-%d') >= '1996-05-01' AND str_to_date(t.date_local, '%Y-%m-%d') < '1996-07-01' AND COALESCE(t.pollutant_standard, '') LIKE '%PM10%' GROUP BY t.parameter_name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 156,
+    "db_id": "OPENAQ",
+    "question": "I want to see which pollutants/parameter indicators are mainly monitored at different monitoring site addresses, and examine the differences in site function distribution. Only show the address‑parameter combinations that appear no fewer than 5 times, and give me the top 20 first.",
+    "evidence": "",
+    "SQL": "SELECT t.address AS location, t.parameter_name AS category_topic, COUNT(*) AS event_cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_PM25_NONFRM_DAILY_SUMMARY t WHERE t.address IS NOT NULL AND t.parameter_name IS NOT NULL GROUP BY t.address, t.parameter_name HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 168,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I would like to first see how many origin stations are covered by this batch of bike trip samples.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.start_station_id) AS distinct_entity_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS t WHERE t.start_station_id IS NOT NULL;"
+  },
+  {
+    "question_id": 169,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see which fire/EMS response units handle the most service calls. First, give me the top 1000 units.",
+    "evidence": "",
+    "SQL": "SELECT t.unit_id, COUNT(*) AS event_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS t WHERE t.unit_id IS NOT NULL AND t.call_number IS NOT NULL GROUP BY t.unit_id ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 170,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to count how many police incident records occurred between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', calculated based on the event time.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFPD_INCIDENTS_SFPD_INCIDENTS t WHERE FROM_UNIXTIME(t.timestamp / 1000000) >= '2024-01-01 00:00:00' AND FROM_UNIXTIME(t.timestamp / 1000000) < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 171,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see which service categories the 311 work orders are mainly concentrated in. First, give me the top 1000 categories.",
+    "evidence": "",
+    "SQL": "SELECT t.category, COUNT(*) AS event_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS t WHERE t.category IS NOT NULL GROUP BY t.category ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 172,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I would like to examine the differences in average ride duration across different rider types, such as Customer and Subscriber, to see which type tends to have longer single rides.",
+    "evidence": "",
+    "SQL": "SELECT t.subscriber_type, AVG(t.duration_sec) AS avg_duration_sec FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS t WHERE t.subscriber_type IS NOT NULL AND t.duration_sec IS NOT NULL GROUP BY t.subscriber_type ORDER BY avg_duration_sec DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 173,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I would like to see which fire calls involved the simultaneous dispatch of multiple response units. First, give me the top 3 calls with the most complex dispatch coordination.",
+    "evidence": "",
+    "SQL": "SELECT t.call_number, COUNT(DISTINCT t.unit_id) AS entity_cnt FROM SAN_FRANCISCO_PLUS.san_francisco_sffd_service_calls_sffd_service_calls t WHERE t.call_number IS NOT NULL GROUP BY t.call_number HAVING COUNT(DISTINCT t.unit_id) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 174,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see the active retention of bike stations: how many origin stations continuously generated rides during the periods 2 PM to 3 PM and 4 PM to 5 PM on February 15, 2018?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.start_station_id FROM SAN_FRANCISCO_PLUS.san_francisco_bikeshare_bikeshare_trips t WHERE t.start_station_id IS NOT NULL AND FROM_UNIXTIME(t.start_date / 1000000) >= '2018-02-15 14:00:00' AND FROM_UNIXTIME(t.start_date / 1000000) < '2018-02-15 15:00:00' ), b AS ( SELECT DISTINCT t.start_station_id FROM SAN_FRANCISCO_PLUS.san_francisco_bikeshare_bikeshare_trips t WHERE t.start_station_id IS NOT NULL AND FROM_UNIXTIME(t.start_date / 1000000) >= '2018-02-15 16:00:00' AND FROM_UNIXTIME(t.start_date / 1000000) < '2018-02-15 17:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (start_station_id);"
+  },
+  {
+    "question_id": 175,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "During the specified period from February 1, 2018 to March 31, 2018, how much total ride duration did each user type contribute, and what is the proportion of total ride duration?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.subscriber_type AS topic, SUM(t.duration_sec) AS amt FROM SAN_FRANCISCO_PLUS.san_francisco_bikeshare_bikeshare_trips t WHERE FROM_UNIXTIME(t.start_date / 1000000) >= '2018-02-01 00:00:00' AND FROM_UNIXTIME(t.start_date / 1000000) < '2018-04-01 00:00:00' AND t.subscriber_type IS NOT NULL GROUP BY t.subscriber_type ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 176,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to identify the peak days within the window from October 10 to October 17, 2011, where fire/emergency medical service call volumes spiked abnormally, and see which dates were significantly higher than the baseline levels of the previous week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( t.call_date) AS d, COUNT(*) AS cnt FROM SAN_FRANCISCO_PLUS.san_francisco_sffd_service_calls_sffd_service_calls t WHERE CAST(t.call_date AS DATETIME) >= '2011-10-10 00:00:00' AND CAST(t.call_date AS DATETIME) < '2011-10-18 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 177,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see which 311 service requests are highly concentrated in the Closed status at the record level — first give me the top 3.",
+    "evidence": "",
+    "SQL": "SELECT t.unique_key AS rel_entity, SUM(CASE WHEN t.status = 'Closed' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.status = 'Closed' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS t GROUP BY t.unique_key HAVING COUNT(*) >= 1 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 178,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to check whether the mapping between the primary key of bike stations and the external station identifier is abnormal, specifically to see if there are cases where the same station_id corresponds to multiple different external_ids. Give me the first 10 results.",
+    "evidence": "",
+    "SQL": "SELECT t.station_id, COUNT(DISTINCT t.external_id) AS external_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_STATION_INFO t GROUP BY t.station_id HAVING COUNT(DISTINCT t.external_id) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 179,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I'd like to retrieve work orders containing resolution clues like transferred, duplicate, referred from the 311 resolution notes. Please provide the first 5 records.",
+    "evidence": "",
+    "SQL": "SELECT t.unique_key AS id_external FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS t WHERE COALESCE(t.status_notes, '') LIKE '%transferred%' or '%duplicate%' or '%referred%' LIMIT 5;"
+  },
+  {
+    "question_id": 180,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see, for each type of 311 issue, the responsible agency who handles the work orders most frequently?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.category AS topic, t.agency_name AS entity_name, COUNT(*) AS qty FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS t WHERE t.category IS NOT NULL AND t.agency_name IS NOT NULL GROUP BY t.category, t.agency_name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 181,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see the top 10 service categories that 311 work orders with disposal notes mentioning \"Case Transferred\" are concentrated in during the three-year period of 2020-2022.",
+    "evidence": "",
+    "SQL": "SELECT t.category, COUNT(*) AS event_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS t WHERE FROM_UNIXTIME(created_date / 1000000) >= '2020-01-01' AND FROM_UNIXTIME(created_date / 1000000) < '2023-01-01' AND COALESCE(t.status_notes, '') LIKE '%Case Transferred%' GROUP BY t.category ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 182,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "I want to see the predominant incident categories at different crime scene addresses and find the most concentrated address–incident category combinations. Only consider combinations with a frequency of at least 10, and show me the top 20.",
+    "evidence": "",
+    "SQL": "SELECT t.address AS location, t.category AS category_topic, COUNT(*) AS event_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFPD_INCIDENTS_SFPD_INCIDENTS t WHERE t.address IS NOT NULL AND t.category IS NOT NULL GROUP BY t.address, t.category HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 183,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I'd like to first see how many fulfillment warehouses or distribution centers this batch of inventory/sales details covers.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT ii.product_distribution_center_id) AS distinct_entity_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_distribution_center_id IS NOT NULL;"
+  },
+  {
+    "question_id": 184,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to see which fulfillment centers have accumulated the most product inventory/sales records. First, give me the top 1000 centers.",
+    "evidence": "",
+    "SQL": "SELECT ii.product_distribution_center_id, COUNT(*) AS event_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_distribution_center_id IS NOT NULL AND ii.product_sku IS NOT NULL GROUP BY ii.product_distribution_center_id ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 185,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to count how many items were sold between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the sold_at field.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE FROM_UNIXTIME(ii.sold_at / 1000000) >= '2024-01-01 00:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 186,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to see which product categories the sales records are mainly concentrated in. First, give me the top 1000 categories.",
+    "evidence": "",
+    "SQL": "SELECT ii.product_category, COUNT(*) AS event_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_category IS NOT NULL GROUP BY ii.product_category ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 187,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to see the cumulative retail amount contributed by different department lines, and first give me the top 1,000 departments.",
+    "evidence": "",
+    "SQL": "SELECT ii.product_department, SUM(ii.product_retail_price) AS total_amount FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_department IS NOT NULL AND ii.product_retail_price IS NOT NULL GROUP BY ii.product_department ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 188,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to investigate whether SKUs are assigned to multiple distribution centers, checking for multi-warehouse mappings or inconsistent master data ownership. Show me the first 3 records.",
+    "evidence": "",
+    "SQL": "SELECT p.sku, COUNT(DISTINCT p.distribution_center_id) AS entity_cnt FROM THELOOK_ECOMMERCE.PRODUCTS p WHERE p.sku IS NOT NULL GROUP BY p.sku HAVING COUNT(DISTINCT p.distribution_center_id) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 189,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to see the active retention of the fulfillment center: how many distribution centers continuously sold goods during the periods from 10:00 am to 11:00 am and from 1:00 pm to 2:00 pm on January 14, 2023?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT ii.product_distribution_center_id FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_distribution_center_id IS NOT NULL AND FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 10:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 11:00:00' ), b AS ( SELECT DISTINCT ii.product_distribution_center_id FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_distribution_center_id IS NOT NULL AND FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 13:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 14:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (product_distribution_center_id);"
+  },
+  {
+    "question_id": 190,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to compare the sales activity changes of different product categories between the two time periods of 10:00 to 11:00 a.m. and 1:00 to 2:00 p.m. on January 14, 2023, and first look at the top 3 product categories with the most noticeable changes.",
+    "evidence": "",
+    "SQL": "SELECT ii.product_category, SUM(CASE WHEN FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 10:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 11:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 13:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 14:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 10:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 11:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-01-14 13:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-01-14 14:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_category IS NOT NULL GROUP BY ii.product_category ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 191,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "During the specified period from February 1, 2023 to March 31, 2023, what retail revenue was contributed by each department, and what was its proportion of the total?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT ii.product_department AS topic, SUM(ii.product_retail_price) AS amt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-02-01 00:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-04-01 00:00:00' AND ii.product_department IS NOT NULL GROUP BY ii.product_department ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 192,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to identify the peak days within the July 10–23, 2023 window where the number of items sold surged abnormally, and determine which dates were significantly higher than the normal level of the previous week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( FROM_UNIXTIME(ii.sold_at / 1000000)) AS d, COUNT(*) AS cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE FROM_UNIXTIME(ii.sold_at / 1000000) >= '2023-07-10 00:00:00' AND FROM_UNIXTIME(ii.sold_at / 1000000) < '2023-07-24 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 193,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to view the order status distribution by user — specifically, which users have a disproportionately high percentage of Cancelled orders, with a sufficient sample size (e.g., at least 10 orders). Show me the top 3 first.",
+    "evidence": "",
+    "SQL": "SELECT o.user_id, SUM(CASE WHEN o.status = 'Cancelled' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN o.status = 'Cancelled' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM THELOOK_ECOMMERCE.ORDERS o WHERE o.user_id IS NOT NULL GROUP BY o.user_id HAVING COUNT(*) >= 10 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 194,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to check the quality of product master data mapping, to see if there are cases where the same product id corresponds to multiple different SKUs. First, give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT p.id, COUNT(DISTINCT p.sku) AS external_cnt FROM THELOOK_ECOMMERCE.PRODUCTS p GROUP BY p.id HAVING COUNT(DISTINCT p.sku) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 195,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I would like to see which brand has the highest retail sales contribution in each product category.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT ii.product_category AS topic, ii.product_brand AS entity_name, SUM(ii.product_retail_price) AS amt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii WHERE ii.product_category IS NOT NULL AND ii.product_brand IS NOT NULL AND ii.product_retail_price IS NOT NULL GROUP BY ii.product_category, ii.product_brand ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
+  },
+  {
+    "question_id": 196,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "I want to see which department lines are mainly handled by different fulfillment centers, to understand the differences in warehouse network division of labor. Only show fulfillment center–department line combinations with a count of no fewer than 5, and give me the top 20.",
+    "evidence": "",
+    "SQL": "SELECT dc.name AS location, ii.product_department AS category_topic, COUNT(*) AS event_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ii JOIN THELOOK_ECOMMERCE.DISTRIBUTION_CENTERS dc ON ii.product_distribution_center_id = dc.id WHERE dc.name IS NOT NULL AND ii.product_department IS NOT NULL GROUP BY dc.name, ii.product_department HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 197,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I would like to first check how many ordering customers are covered in the sales order sample.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT o.CustomerID) AS distinct_entity_cnt FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.CustomerID IS NOT NULL;"
+  },
+  {
+    "question_id": 198,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to see which customers have accumulated the most purchase order numbers; first give me the top 1000 customers.",
+    "evidence": "",
+    "SQL": "SELECT o.CustomerID, COUNT(*) AS event_cnt FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.CustomerID IS NOT NULL AND o.CustomerPurchaseOrderNumber IS NOT NULL GROUP BY o.CustomerID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 199,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to count how many sales orders came in between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the order date.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.OrderDate >= '2024-01-01 00:00:00' AND o.OrderDate < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 200,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I'd like to see which transaction types the supplier transactions are mainly concentrated in. First, give me the top 1000 transaction types.",
+    "evidence": "",
+    "SQL": "SELECT t.TransactionTypeID, COUNT(*) AS event_cnt FROM WIDE_WORLD_IMPORTERS.PURCHASING_SUPPLIERTRANSACTIONS t WHERE t.TransactionTypeID IS NOT NULL GROUP BY t.TransactionTypeID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 201,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to see the deposited transaction amounts for different customer transaction types; first, give me the top 1000 categories.",
+    "evidence": "",
+    "SQL": "SELECT t.TransactionTypeID, SUM(t.TransactionAmount) AS total_amount FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERTRANSACTIONS t WHERE t.TransactionTypeID IS NOT NULL AND t.TransactionAmount IS NOT NULL GROUP BY t.TransactionTypeID ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 202,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to check whether customer purchase order numbers are linked to multiple customers to see if there are any external order number mapping anomalies. Give me the first 3.",
+    "evidence": "",
+    "SQL": "SELECT o.CustomerPurchaseOrderNumber, COUNT(DISTINCT o.CustomerID) AS entity_cnt FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.CustomerPurchaseOrderNumber IS NOT NULL GROUP BY o.CustomerPurchaseOrderNumber HAVING COUNT(DISTINCT o.CustomerID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 203,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I would like to view customer active retention: How many customers placed orders continuously during both the 10th to 15th and the 20th to 25th of September 2015?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT o.CustomerID FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.CustomerID IS NOT NULL AND o.OrderDate >= '2015-09-10' AND o.OrderDate < '2015-09-16' ), b AS ( SELECT DISTINCT o.CustomerID FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS o WHERE o.CustomerID IS NOT NULL AND o.OrderDate >= '2015-09-20' AND o.OrderDate < '2015-09-26' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (CustomerID);"
+  },
+  {
+    "question_id": 204,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to compare the activity changes of different customer transaction types between September 10 to 15, 2015, and September 20 to 25, 2015, starting with the top 3 customer transaction types that show the most noticeable changes.",
+    "evidence": "",
+    "SQL": "SELECT t.TransactionTypeID, SUM(CASE WHEN t.TransactionDate >= '2015-09-10' AND t.TransactionDate < '2015-09-16' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.TransactionDate >= '2015-09-20' AND t.TransactionDate < '2015-09-26' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.TransactionDate >= '2015-09-10' AND t.TransactionDate < '2015-09-16' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.TransactionDate >= '2015-09-20' AND t.TransactionDate < '2015-09-26' THEN 1 ELSE 0 END) ) AS delta_cnt FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERTRANSACTIONS t WHERE t.TransactionTypeID IS NOT NULL GROUP BY t.TransactionTypeID ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 205,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "During the specified period from February 1, 2013 to March 1, 2013, how much of the transaction amount plate did different customer transaction types account for, and what was their proportion of the total amount?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.TransactionTypeID AS topic, SUM(t.TransactionAmount) AS amt FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERTRANSACTIONS t WHERE CAST(t.TransactionDate AS DATETIME) >= '2013-02-01' AND CAST(t.TransactionDate AS DATETIME) < '2013-03-01' AND t.TransactionTypeID IS NOT NULL GROUP BY t.TransactionTypeID ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 206,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I would like to identify, within the window from March 10 to March 17, 2016, the peak days when the temperature return volume of cold chain vehicles surged abnormally, and determine which dates significantly exceeded the normal level of the previous week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( FROM_UNIXTIME(t.RecordedWhen / 1000000)) AS d, COUNT(*) AS cnt FROM WIDE_WORLD_IMPORTERS.WAREHOUSE_VEHICLETEMPERATURES t WHERE FROM_UNIXTIME(t.RecordedWhen / 1000000) >= '2016-03-10' AND FROM_UNIXTIME(t.RecordedWhen / 1000000) < '2016-03-18' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 207,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to view the purchase line status structure by product, for example, which stock items have the highest final completion rate of order lines with a sample size of at least 50. Give me the top 3 first.",
+    "evidence": "",
+    "SQL": "SELECT l.StockItemID, SUM(CASE WHEN l.IsOrderLineFinalized = '1' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN l.IsOrderLineFinalized = '1' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM WIDE_WORLD_IMPORTERS.PURCHASING_PURCHASEORDERLINES l WHERE l.StockItemID IS NOT NULL GROUP BY l.StockItemID HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 208,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to check the quality of product master data mapping: are there any StockItemID with too many barcodes? First, show me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT s.StockItemID, COUNT(DISTINCT s.Barcode) AS external_cnt FROM WIDE_WORLD_IMPORTERS.WAREHOUSE_STOCKITEMS s GROUP BY s.StockItemID HAVING COUNT(DISTINCT s.Barcode) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 209,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to retrieve invoice records from the delivery feedback data that contain fulfillment clues such as \"Ready for collection\" and \"EventTime\", and give me the first 5 invoices.",
+    "evidence": "",
+    "SQL": "SELECT i.InvoiceID AS id_external FROM WIDE_WORLD_IMPORTERS.SALES_INVOICES i WHERE COALESCE(i.ReturnedDeliveryData, '') LIKE '%Ready for collection%' or '%EventTime%' LIMIT 5;"
+  },
+  {
+    "question_id": 210,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to see the most representative customer's names under each buying group.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT bg.BuyingGroupName AS topic, c.CustomerName AS entity_name, COUNT(*) AS qty FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERS c JOIN WIDE_WORLD_IMPORTERS.SALES_BUYINGGROUPS bg ON c.BuyingGroupID = bg.BuyingGroupID WHERE c.CustomerName IS NOT NULL GROUP BY bg.BuyingGroupName, c.CustomerName ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+  },
+  {
+    "question_id": 211,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to see which delivery methods the orders with \"undecided\" mentioned in the purchase remarks in the years 2014 and 2015 mainly focus on, and show me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT t.DeliveryMethodID AS category_topic, COUNT(*) AS event_cnt FROM WIDE_WORLD_IMPORTERS.PURCHASING_PURCHASEORDER t WHERE str_to_date(t.OrderDate, '%Y-%m-%d') >= '2014-01-01' AND str_to_date(t.OrderDate, '%Y-%m-%d') < '2016-01-01' AND COALESCE(t.Comments, '') LIKE '%undecided%' GROUP BY t.DeliveryMethodID ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 212,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "I want to see the main delivery methods used under different delivery addresses/instructions, check if there are any obvious patterns in the fulfillment distribution, only include combinations that occur no less than 10 times, and first give me the top 20.",
+    "evidence": "",
+    "SQL": "SELECT i.DeliveryInstructions AS location, i.DeliveryMethodID AS category_topic, COUNT(*) AS event_cnt FROM WIDE_WORLD_IMPORTERS.SALES_INVOICES i WHERE i.DeliveryInstructions IS NOT NULL AND i.DeliveryMethodID IS NOT NULL GROUP BY i.DeliveryInstructions, i.DeliveryMethodID HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 213,
+    "db_id": "数管平台",
+    "question": "I would like to first check how many business organization entities this batch of crude oil commodity volume monthly dynamic data covers.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.ORG_ID) AS distinct_entity_cnt FROM 数管平台.原油商品量月动态表 t WHERE t.ORG_ID IS NOT NULL;"
+  },
+  {
+    "question_id": 214,
+    "db_id": "数管平台",
+    "question": "I would like to see which business organizations have accumulated the most daily crude oil sales records; first, show the top 1,000 organizations.",
+    "evidence": "",
+    "SQL": "SELECT t.ORG_ID, COUNT(*) AS event_cnt FROM 数管平台.原油销售日报 t WHERE t.ORG_ID IS NOT NULL AND t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.ORG_ID ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 215,
+    "db_id": "数管平台",
+    "question": "I want to count how many crude oil daily production records were created between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the business date.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.ORDER_DATE >= '2024-01-01 00:00:00' AND t.ORDER_DATE < '2024-01-31 23:59:59';"
+  },
+  {
+    "question_id": 216,
+    "db_id": "数管平台",
+    "question": "Show the movement types on which the daily crude oil commodity volume is primarily concentrated. First, provide the top 1,000 business action categories.",
+    "evidence": "",
+    "SQL": "SELECT t.BWART, COUNT(*) AS event_cnt FROM `数管平台`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY event_cnt DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 217,
+    "db_id": "数管平台",
+    "question": "I want to see how large the cumulative monthly commodity volume is under different energy category dimensions. First, give me the top 1000 categories.",
+    "evidence": "",
+    "SQL": "SELECT t.ENERGY_SORT, SUM(t.MONTH_MERCHANDISE_VOLUME) AS total_amount FROM 数管平台.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT ORDER BY total_amount DESC LIMIT 1000;"
+  },
+  {
+    "question_id": 218,
+    "db_id": "数管平台",
+    "question": "I want to investigate whether sales daily report numbers are mapped to multiple organizations, to see if there are any report ownership mapping anomalies. First, give me the first 3.",
+    "evidence": "",
+    "SQL": "SELECT t.REPORT_FORM_DAILY_ID, COUNT(DISTINCT t.ORG_ID) AS entity_cnt FROM `数管平台`.`原油销售日报` t WHERE t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.REPORT_FORM_DAILY_ID HAVING COUNT(DISTINCT t.ORG_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 219,
+    "db_id": "数管平台",
+    "question": "I want to see active retention from the business document perspective: how many document reference numbers had daily production records consistently in January 1-2 and January 5-6, 2025?",
+    "evidence": "",
+    "SQL": "WITH a AS ( SELECT DISTINCT t.SGTXT FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' ), b AS ( SELECT DISTINCT t.SGTXT FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (SGTXT);"
+  },
+  {
+    "question_id": 220,
+    "db_id": "数管平台",
+    "question": "I want to compare the changes in product volume records across different movement types between the periods from January 1 to 2, 2025, and from January 5 to 6, 2025. First, examine the top 3 business actions with the most significant changes.",
+    "evidence": "",
+    "SQL": "SELECT t.BWART, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM `数管平台`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 221,
+    "db_id": "数管平台",
+    "question": "During the specified period from January 1, 2025 to January 31, 2025, how much monthly production did each inventory/source category carry, and what was each category's share of total production?",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.BWTAR AS topic, SUM(t.AMOUNT) AS amt FROM `数管平台`.`原油月产量(A8 2.0)` t WHERE CAST(t.ORDER_DATE AS DATETIME) >= '2025-01-01 00:00:00' AND CAST(t.ORDER_DATE AS DATETIME) < '2025-02-01 00:00:00' AND t.BWTAR IS NOT NULL GROUP BY t.BWTAR ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+  },
+  {
+    "question_id": 222,
+    "db_id": "数管平台",
+    "question": "I want to identify the peak day within the window from January 21 to 27, 2025, where the daily crude oil sales recorded volume shows an abnormal surge, and determine which dates are significantly higher than the normal level of the preceding week.",
+    "evidence": "",
+    "SQL": "WITH daily AS ( SELECT DATE( t.DATA_DATE) AS d, COUNT(*) AS cnt FROM `数管平台`.`原油销售日报` t WHERE CAST(t.DATA_DATE AS DATETIME) >= '2025-01-21 00:00:00' AND CAST(t.DATA_DATE AS DATETIME) < '2025-01-28 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+  },
+  {
+    "question_id": 223,
+    "db_id": "数管平台",
+    "question": "I want to view the approval status structure by unified task and see which tasks have the highest proportion of approved status (APPROVAL_STATUS not equal to 0). Show me the top 3 first.",
+    "evidence": "",
+    "SQL": "SELECT t.UNIFY_TASK_ID, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) / COUNT(*) AS hit_ratio FROM 数管平台.原油销售日报 t WHERE t.UNIFY_TASK_ID IS NOT NULL GROUP BY t.UNIFY_TASK_ID ORDER BY hit_ratio DESC LIMIT 3;"
+  },
+  {
+    "question_id": 224,
+    "db_id": "数管平台",
+    "question": "I want to search for records containing “海外单位” in the company code special handling instructions, and first give me the top 5 company code clues.",
+    "evidence": "",
+    "SQL": "SELECT t.COMPANY AS id_external FROM 数管平台.公司代码信息 t WHERE COALESCE(t.ZZTP_REMK, '') LIKE '%海外单位%' LIMIT 5;"
+  },
+  {
+    "question_id": 225,
+    "db_id": "数管平台",
+    "question": "I want to see, for each energy type, the organization name with the highest commodity volume contribution.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT t.ENERGY_SORT AS topic, t.ORG_NAME AS entity_name, SUM(t.MONTH_MERCHANDISE_VOLUME) AS amt FROM 数管平台.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.ORG_NAME IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT, t.ORG_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
+  },
+  {
+    "question_id": 226,
+    "db_id": "数管平台",
+    "question": "I’d like to see the top 10 project types where sales daily reports with REMARKS = 1 are mainly concentrated from January to February 2025.",
+    "evidence": "",
+    "SQL": "SELECT t.PROJ_TYPE AS category_topic, COUNT(*) AS event_cnt FROM 数管平台.原油销售日报 t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2025-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2025-03-01' AND t.REMARKS = 1 GROUP BY t.PROJ_TYPE ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 227,
+    "db_id": "数管平台",
+    "question": "I would like to see which energy categories mainly accumulate monthly commodity volume records across different regions, to check if there are obvious regional distribution differences. Only consider region–energy category combinations with at least 10 records, and first provide the top 20.",
+    "evidence": "",
+    "SQL": "SELECT t.DATA_REGION AS location, t.ENERGY_SORT AS category_topic, COUNT(*) AS event_cnt FROM 数管平台.原油商品量月动态表 t WHERE t.DATA_REGION IS NOT NULL AND t.ENERGY_SORT IS NOT NULL GROUP BY t.DATA_REGION, t.ENERGY_SORT HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  }
+]

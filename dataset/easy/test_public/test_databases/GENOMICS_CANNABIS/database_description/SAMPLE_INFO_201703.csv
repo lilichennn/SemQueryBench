@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+SRA_Sample_s,SRA_Sample_s,,TEXT,
+cultivar_s,cultivar_s,,TEXT,
+Sample_Name_s,Sample_Name_s,,TEXT,
+Library_Name_s,Library_Name_s,,TEXT,

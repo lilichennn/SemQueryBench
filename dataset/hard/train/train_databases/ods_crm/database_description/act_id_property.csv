@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+NAME_,NAME_,,TEXT,
+VALUE_,VALUE_,,TEXT,
+REV_,REV_,,BIGINT,

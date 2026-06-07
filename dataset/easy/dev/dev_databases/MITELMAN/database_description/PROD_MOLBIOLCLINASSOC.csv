@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+RefNo,RefNo,,DOUBLE,
+InvNo,InvNo,,DOUBLE,
+GeneShort,GeneShort,,TEXT,
+GeneLength,GeneLength,,TEXT,
+Topo,Topo,,TEXT,
+KaryShort,KaryShort,,TEXT,
+MolClin,MolClin,,TEXT,
+KaryLength,KaryLength,,DOUBLE,
+Immunology,Immunology,,TEXT,
+Morph,Morph,,TEXT,
+GeneLong,GeneLong,,TEXT,
+KaryLong,KaryLong,,TEXT,

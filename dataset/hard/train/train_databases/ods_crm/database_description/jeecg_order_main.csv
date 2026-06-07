@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+order_code,order_code,,TEXT,
+ctype,ctype,,TEXT,
+order_date,order_date,,DATETIME,
+order_money,order_money,,TEXT,
+content,content,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,

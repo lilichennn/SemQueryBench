@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+ID,ID,,BIGINT,
+NUM,NUM,,TEXT,
+SCODE_JF,SCODE_JF,,TEXT,
+COUNTRY,COUNTRY,,TEXT,
+COUNTRY_S,COUNTRY_S,,TEXT,
+COUNTRYXZ_S,COUNTRYXZ_S,,TEXT,
+SHENGFEN,SHENGFEN,,TEXT,
+SHENGFEN_S,SHENGFEN_S,,TEXT,

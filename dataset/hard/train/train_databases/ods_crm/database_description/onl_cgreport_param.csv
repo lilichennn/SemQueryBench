@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+cgrhead_id,cgrhead_id,,TEXT,
+param_name,param_name,,TEXT,
+param_txt,param_txt,,TEXT,
+param_value,param_value,,TEXT,
+order_num,order_num,,BIGINT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,

@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+project_info_uuid,project_info_uuid,,TEXT,
+instance_uuid,instance_uuid,,TEXT,
+instance_type,instance_type,,TEXT,
+review_score,review_score,,BIGINT,
+entry_time,entry_time,,DATETIME,
+del,del,,BIGINT,
+creator,creator,,BIGINT,
+create_time,create_time,,DATETIME,
+updator,updator,,BIGINT,
+update_time,update_time,,DATETIME,

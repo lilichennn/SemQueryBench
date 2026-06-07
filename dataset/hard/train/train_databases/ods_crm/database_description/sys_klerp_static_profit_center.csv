@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+org_name,org_name,,TEXT,
+company_code,company_code,,TEXT,
+profit_center,profit_center,,TEXT,
+erp_org_id,erp_org_id,,TEXT,
+erp_org_name,erp_org_name,,TEXT,
+create_time,create_time,,DATETIME,

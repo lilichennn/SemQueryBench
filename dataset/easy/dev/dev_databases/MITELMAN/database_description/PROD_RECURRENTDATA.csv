@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+TotalCases,TotalCases,,TEXT,
+Chromosome,Chromosome,,TEXT,
+Arm,Arm,,TEXT,
+Type,Type,,TEXT,
+Band,Band,,TEXT,
+Topo,Topo,,TEXT,
+Abnormality,Abnormality,,TEXT,
+Morph,Morph,,TEXT,
+Gene,Gene,,TEXT,
+ChrOrder,ChrOrder,,DOUBLE,

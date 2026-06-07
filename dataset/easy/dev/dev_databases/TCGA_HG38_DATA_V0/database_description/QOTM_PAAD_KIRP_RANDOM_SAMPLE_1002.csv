@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+ID,ID,,TEXT,
+project_short_name,project_short_name,,TEXT,
+Phenotype,Phenotype,,DOUBLE,
+ERank,ERank,,DOUBLE,
+Expr,Expr,,DOUBLE,
+Gene,Gene,,TEXT,

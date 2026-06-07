@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+product_code,product_code,,TEXT,
+product,product,,TEXT,
+division,division,,TEXT,
+category,category,,TEXT,
+segment,segment,,TEXT,
+variant,variant,,TEXT,

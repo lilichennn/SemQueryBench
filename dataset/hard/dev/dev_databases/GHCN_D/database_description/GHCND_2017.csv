@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+element,element,,TEXT,
+sflag,sflag,,TEXT,
+mflag,mflag,,TEXT,
+date,date,,DATE,
+etl_timestamp,etl_timestamp,,DOUBLE,
+source_url,source_url,,TEXT,
+time,time,,TEXT,
+value,value,,DOUBLE,
+qflag,qflag,,TEXT,

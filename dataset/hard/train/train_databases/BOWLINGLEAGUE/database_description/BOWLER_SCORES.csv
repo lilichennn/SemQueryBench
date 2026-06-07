@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+HandiCapScore,HandiCapScore,,DOUBLE,
+BowlerID,BowlerID,,DOUBLE,
+MatchID,MatchID,,DOUBLE,
+RawScore,RawScore,,DOUBLE,
+GameNumber,GameNumber,,DOUBLE,
+WonGame,WonGame,,DOUBLE,

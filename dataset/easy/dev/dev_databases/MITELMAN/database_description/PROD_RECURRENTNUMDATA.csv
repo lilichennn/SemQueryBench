@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+Chromosome,Chromosome,,TEXT,
+Topo,Topo,,TEXT,
+Abnormality,Abnormality,,TEXT,
+ChrOrder,ChrOrder,,DOUBLE,
+Morph,Morph,,TEXT,
+TotalCases,TotalCases,,TEXT,

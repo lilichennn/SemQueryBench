@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+TransactionTypeID,TransactionTypeID,,DOUBLE,
+TransactionTypeName,TransactionTypeName,,TEXT,
+ValidFrom,ValidFrom,,DOUBLE,
+LastEditedBy,LastEditedBy,,DOUBLE,
+ValidTo,ValidTo,,DOUBLE,

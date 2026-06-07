@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+wmoid,wmoid,,DOUBLE,
+id,id,,TEXT,
+latitude,latitude,,DOUBLE,
+state,state,,TEXT,
+gsn_flag,gsn_flag,,TEXT,
+hcn_crn_flag,hcn_crn_flag,,TEXT,
+elevation,elevation,,DOUBLE,
+name,name,,TEXT,
+etl_timestamp,etl_timestamp,,DOUBLE,
+source_url,source_url,,TEXT,
+longitude,longitude,,DOUBLE,

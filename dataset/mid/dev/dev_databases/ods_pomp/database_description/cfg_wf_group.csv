@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+IID,IID,,TEXT,
+GROUPNAME,GROUPNAME,,TEXT,
+USERNUM,USERNUM,,TEXT,
+DELFLAG,DELFLAG,,TEXT,
+MODIFYDATE,MODIFYDATE,,DATETIME,
+MODIFYUSERID,MODIFYUSERID,,TEXT,

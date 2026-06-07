@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+aliquot_barcode,aliquot_barcode,,TEXT,
+case_barcode,case_barcode,,TEXT,
+sample_barcode,sample_barcode,,TEXT,
+end_pos,end_pos,,DOUBLE,
+segment_mean,segment_mean,,DOUBLE,
+start_pos,start_pos,,DOUBLE,
+chromosome,chromosome,,TEXT,
+project_short_name,project_short_name,,TEXT,
+num_probes,num_probes,,DOUBLE,
+platform,platform,,TEXT,

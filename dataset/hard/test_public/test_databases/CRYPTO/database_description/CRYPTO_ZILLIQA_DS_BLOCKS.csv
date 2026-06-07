@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+prev_hash,prev_hash,,TEXT,
+signature,signature,,BLOB,
+number,number,,DOUBLE,
+ds_leader_pub_key,ds_leader_pub_key,,TEXT,
+ds_leader_address,ds_leader_address,,TEXT,
+difficulty_ds,difficulty_ds,,DOUBLE,
+gas_price,gas_price,,DOUBLE,
+timestamp,timestamp,,DOUBLE,
+difficulty,difficulty,,DOUBLE,

@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+StarsCount,StarsCount,,DOUBLE,
+ForksCount,ForksCount,,DOUBLE,
+Type,Type,,TEXT,
+Homepage,Homepage,,TEXT,
+OpenIssuesCount,OpenIssuesCount,,DOUBLE,
+SnapshotAt,SnapshotAt,,DOUBLE,
+Licenses,Licenses,,JSON,
+Description,Description,,TEXT,
+OSSFuzz,OSSFuzz,,JSON,
+Name,Name,,TEXT,

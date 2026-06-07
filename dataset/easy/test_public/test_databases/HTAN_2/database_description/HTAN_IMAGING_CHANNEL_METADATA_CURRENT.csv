@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+lineNum,lineNum,,DOUBLE,
+Channel_Metadata_ID,Channel_Metadata_ID,,TEXT,
+Imaging_Assay_Type,Imaging_Assay_Type,,TEXT,
+channel_attributes,channel_attributes,,JSON,
+Channel_Metadata_Filename,Channel_Metadata_Filename,,TEXT,
+HTAN_Center,HTAN_Center,,TEXT,

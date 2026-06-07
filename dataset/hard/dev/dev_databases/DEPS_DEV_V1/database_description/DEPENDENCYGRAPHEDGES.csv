@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+System,System,,TEXT,
+Requirement,Requirement,,TEXT,
+SnapshotAt,SnapshotAt,,DOUBLE,
+Name,Name,,TEXT,
+Version,Version,,TEXT,
+From,From,,JSON,
+To,To,,JSON,

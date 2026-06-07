@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+geolocation_zip_code_prefix,geolocation_zip_code_prefix,,DOUBLE,
+geolocation_lng,geolocation_lng,,DOUBLE,
+geolocation_city,geolocation_city,,TEXT,
+geolocation_lat,geolocation_lat,,DOUBLE,
+geolocation_state,geolocation_state,,TEXT,

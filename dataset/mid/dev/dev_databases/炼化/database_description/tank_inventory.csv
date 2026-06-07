@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+MTRL_ID,MTRL_ID,,BIGINT,
+MES_TK_ID,MES_TK_ID,,BIGINT,
+tank_con_val,tank_con_val,,DOUBLE,
+chk_time,chk_time,,DATETIME,

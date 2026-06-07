@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+Uniprot,Uniprot,,TEXT,
+pathID,pathID,,TEXT,
+wikiID,wikiID,,TEXT,
+entrez,entrez,,TEXT,
+pathway,pathway,,TEXT,
+Symbol,Symbol,,TEXT,

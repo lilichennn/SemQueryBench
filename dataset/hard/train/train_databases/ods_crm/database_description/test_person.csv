@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+sex,sex,,TEXT,
+name,name,,TEXT,
+content,content,,TEXT,
+be_date,be_date,,DATETIME,
+qj_days,qj_days,,BIGINT,

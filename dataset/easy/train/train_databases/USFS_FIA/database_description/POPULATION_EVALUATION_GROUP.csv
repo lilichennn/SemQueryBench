@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+evaluation_group,evaluation_group,,DOUBLE,
+evaluation_group_sequence_number,evaluation_group_sequence_number,,DOUBLE,
+pop_evaluation_group_modified_in_instance,pop_evaluation_group_modified_in_instance,,DOUBLE,
+region_or_station_code,region_or_station_code,,DOUBLE,
+state_code,state_code,,DOUBLE,
+pop_evaluation_group_created_in_instance,pop_evaluation_group_created_in_instance,,DOUBLE,
+notes,notes,,TEXT,
+evaluation_group_description,evaluation_group_description,,TEXT,
+pop_evaluation_group_created_by,pop_evaluation_group_created_by,,TEXT,
+pop_evaluation_group_created_date,pop_evaluation_group_created_date,,DATE,
+pop_evaluation_group_modified_date,pop_evaluation_group_modified_date,,DATE,
+pop_evaluation_group_modified_by,pop_evaluation_group_modified_by,,TEXT,

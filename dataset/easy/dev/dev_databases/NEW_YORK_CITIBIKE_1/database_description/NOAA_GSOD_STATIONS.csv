@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+usaf,usaf,,TEXT,
+wban,wban,,TEXT,
+elev,elev,,TEXT,
+country,country,,TEXT,
+lon,lon,,DOUBLE,
+call,call,,TEXT,
+name,name,,TEXT,
+begin,begin,,TEXT,
+state,state,,TEXT,
+lat,lat,,DOUBLE,
+end,end,,TEXT,

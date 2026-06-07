@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+msg_index,msg_index,,DOUBLE,
+log_index,log_index,,DOUBLE,
+txhash,txhash,,TEXT,
+block_height,block_height,,DOUBLE,
+events,events,,JSON,
+block_timestamp,block_timestamp,,DOUBLE,
+log,log,,TEXT,
+block_timestamp_truncated,block_timestamp_truncated,,DOUBLE,

@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+StockItemID,StockItemID,,DOUBLE,
+BinLocation,BinLocation,,TEXT,
+LastEditedBy,LastEditedBy,,DOUBLE,
+LastStocktakeQuantity,LastStocktakeQuantity,,DOUBLE,
+TargetStockLevel,TargetStockLevel,,DOUBLE,
+LastEditedWhen,LastEditedWhen,,DOUBLE,
+ReorderLevel,ReorderLevel,,DOUBLE,
+QuantityOnHand,QuantityOnHand,,DOUBLE,
+LastCostPrice,LastCostPrice,,DOUBLE,

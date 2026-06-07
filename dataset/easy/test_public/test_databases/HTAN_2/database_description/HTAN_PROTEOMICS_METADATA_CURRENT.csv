@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+entityId,entityId,,TEXT,
+HTAN_Data_File_ID,HTAN_Data_File_ID,,TEXT,
+md5,md5,,TEXT,
+HTAN_Center,HTAN_Center,,TEXT,
+Component,Component,,TEXT,
+Base_Filename,Base_Filename,,TEXT,
+Assay_Type,Assay_Type,,TEXT,
+File_Size,File_Size,,DOUBLE,
+Filename,Filename,,TEXT,
+Data_Release,Data_Release,,TEXT,
+HTAN_Parent_Biospecimen_ID,HTAN_Parent_Biospecimen_ID,,TEXT,
+File_Format,File_Format,,TEXT,

@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+GEO_ID,GEO_ID,,TEXT,
+VARIABLE,VARIABLE,,TEXT,
+VARIABLE_NAME,VARIABLE_NAME,,TEXT,
+UNIT,UNIT,,TEXT,
+DATE,DATE,,DATE,
+VALUE_COMMENT,VALUE_COMMENT,,TEXT,
+VALUE,VALUE,,DOUBLE,

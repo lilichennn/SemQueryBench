@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+case_barcode,case_barcode,,TEXT,
+sample_barcode,sample_barcode,,TEXT,
+aliquot_barcode,aliquot_barcode,,TEXT,
+protein_name,protein_name,,TEXT,
+protein_expression,protein_expression,,DOUBLE,
+project_short_name,project_short_name,,TEXT,
+phospho,phospho,,TEXT,
+gene_name,gene_name,,TEXT,
+antibody_source,antibody_source,,TEXT,
+validation_status,validation_status,,TEXT,
+protein_base_name,protein_base_name,,TEXT,

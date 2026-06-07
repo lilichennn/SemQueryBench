@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+Id,Id,,DOUBLE,
+TotalGold,TotalGold,,DOUBLE,
+TierAchievementDate,TierAchievementDate,,DATE,
+HighestRanking,HighestRanking,,DOUBLE,
+CurrentRanking,CurrentRanking,,DOUBLE,
+UserId,UserId,,DOUBLE,
+TotalSilver,TotalSilver,,DOUBLE,
+Tier,Tier,,DOUBLE,
+AchievementType,AchievementType,,TEXT,
+Points,Points,,DOUBLE,
+TotalBronze,TotalBronze,,DOUBLE,

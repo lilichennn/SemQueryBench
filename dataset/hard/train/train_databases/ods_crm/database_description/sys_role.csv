@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+role_name,role_name,,TEXT,
+role_code,role_code,,TEXT,
+description,description,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+del_flag,del_flag,,TEXT,

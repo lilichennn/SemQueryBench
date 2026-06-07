@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+index,index,,DOUBLE,
+Salary,Salary,,TEXT,
+CompanyName,CompanyName,,TEXT,
+SalariesReported,SalariesReported,,DOUBLE,
+Location,Location,,TEXT,
+JobTitle,JobTitle,,TEXT,

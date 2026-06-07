@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+state_number,state_number,,DOUBLE,
+consecutive_number,consecutive_number,,DOUBLE,
+state_name,state_name,,TEXT,
+vehicle_number,vehicle_number,,DOUBLE,
+condition_impairment_at_time_of_crash_non_motorist_name,condition_impairment_at_time_of_crash_non_motorist_name,,TEXT,
+person_number,person_number,,DOUBLE,
+condition_impairment_at_time_of_crash_non_motorist,condition_impairment_at_time_of_crash_non_motorist,,DOUBLE,

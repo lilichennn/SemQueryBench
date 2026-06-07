@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+mflag,mflag,,TEXT,
+sflag,sflag,,TEXT,
+value,value,,DOUBLE,
+qflag,qflag,,TEXT,
+time,time,,TEXT,
+date,date,,DATE,
+element,element,,TEXT,

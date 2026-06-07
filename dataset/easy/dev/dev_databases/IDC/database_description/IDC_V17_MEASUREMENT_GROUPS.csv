@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+segmentationInstanceUID,segmentationInstanceUID,,TEXT,
+trackingUniqueIdentifier,trackingUniqueIdentifier,,TEXT,
+measurementGroup_number,measurementGroup_number,,DOUBLE,
+SOPInstanceUID,SOPInstanceUID,,TEXT,
+sourceSegmentedSeriesUID,sourceSegmentedSeriesUID,,TEXT,
+PatientID,PatientID,,TEXT,
+segmentationSegmentNumber,segmentationSegmentNumber,,JSON,
+findingSite,findingSite,,JSON,
+trackingIdentifier,trackingIdentifier,,TEXT,
+SeriesDescription,SeriesDescription,,TEXT,
+contentSequence,contentSequence,,JSON,
+finding,finding,,JSON,

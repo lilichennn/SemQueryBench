@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+sender,sender,,TEXT,
+txhash,txhash,,TEXT,
+block_height,block_height,,DOUBLE,
+gas_used,gas_used,,DOUBLE,
+block_timestamp_truncated,block_timestamp_truncated,,DOUBLE,
+gas_wanted,gas_wanted,,DOUBLE,
+memo,memo,,TEXT,
+fee,fee,,JSON,
+transaction_type,transaction_type,,TEXT,
+block_timestamp,block_timestamp,,TEXT,

@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+intellectual_type,intellectual_type,,TEXT,
+intellectual_type_name,intellectual_type_name,,TEXT,
+intellectual_name,intellectual_name,,TEXT,
+application_id,application_id,,TEXT,
+application_name,application_name,,TEXT,
+apply_time,apply_time,,DATE,
+intellectual_no,intellectual_no,,TEXT,
+patent_type,patent_type,,TEXT,
+patent_type_name,patent_type_name,,TEXT,

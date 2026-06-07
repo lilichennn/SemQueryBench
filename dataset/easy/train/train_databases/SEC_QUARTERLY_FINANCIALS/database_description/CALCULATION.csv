@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+group,group,,DOUBLE,
+arc,arc,,DOUBLE,
+submission_number,submission_number,,TEXT,
+parent_tag,parent_tag,,TEXT,
+negative,negative,,DOUBLE,
+child_version,child_version,,TEXT,
+child_tag,child_tag,,TEXT,
+parent_version,parent_version,,TEXT,

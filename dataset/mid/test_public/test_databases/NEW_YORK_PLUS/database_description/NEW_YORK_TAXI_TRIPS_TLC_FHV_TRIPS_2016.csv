@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+dispatching_base_num,dispatching_base_num,,TEXT,
+location_id,location_id,,DOUBLE,
+zone,zone,,TEXT,
+pickup_datetime,pickup_datetime,,DOUBLE,
+service_zone,service_zone,,TEXT,
+borough,borough,,TEXT,

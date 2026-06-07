@@ -1,0 +1,289 @@
+[
+  {
+    "question_id": 18,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York City bike share station data, which stations have the largest capacity? Please list the top 5 stations.",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY capacity DESC LIMIT 5;"
+  },
+  {
+    "question_id": 19,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike share station data, for each rental method, which station has the largest capacity?",
+    "evidence": "",
+    "SQL": "SELECT rental_methods, name FROM ( SELECT rental_methods, name, capacity, ROW_NUMBER() OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 20,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Among the New York bike-sharing station data, which stations have capacities above the overall average?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS);"
+  },
+  {
+    "question_id": 21,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike sharing system, which stations have never been used as a trip origin?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS s WHERE NOT EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS t WHERE t.start_station_id = s.station_id );"
+  },
+  {
+    "question_id": 22,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Which stations have been used as trip start points in the New York bike-sharing system?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE station_id IN (SELECT start_station_id FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS);"
+  },
+  {
+    "question_id": 23,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike share station data, for each rental method, which stations have a capacity higher than the average capacity for that rental method?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t1 WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t2 WHERE t2.rental_methods = t1.rental_methods);"
+  },
+  {
+    "question_id": 24,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "For each rental method in the New York bike share station data, which stations have capacities falling within the typical range for that method?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), method_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), method_percentiles AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM method_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_percentiles mp ON t.rental_methods = mp.rental_methods WHERE t.capacity BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 25,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike-sharing ride records, for each user type, which starting stations have ride records in consecutive years?",
+    "evidence": "",
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT usertype AS Category, start_station_id AS Entity, EXTRACT(YEAR FROM CAST(starttime AS DATETIME)) AS Time FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE starttime IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 26,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have the capacity in the highest tier?",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT rental_methods AS Category, name AS Entity, capacity AS Measure, NTILE(5) OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS quintile FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 27,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have capacity above the average for that type and also account for the largest proportion of the total capacity of that type? Please list the top 5 stations.",
+    "evidence": "",
+    "SQL": "WITH category_stats AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_measure, SUM(capacity) AS total_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, cs.avg_measure, cs.total_measure, t.capacity / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity / cs.total_measure DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_stats cs ON t.rental_methods = cs.Category WHERE t.capacity > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 28,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Which stations in the New York bike-sharing station data have a capacity higher than the median for the same rental method and have actually been used as a trip start point?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), category_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), category_median AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_capacity FROM category_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_median m ON t.rental_methods = m.rental_methods WHERE t.capacity > m.median_capacity AND EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS tr WHERE tr.start_station_id = t.station_id );"
+  },
+  {
+    "question_id": 29,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the NYC bike share station data, for each rental method, what are the top 3 stations with the largest capacity? How much higher is their capacity than the average level of that rental method?",
+    "evidence": "",
+    "SQL": "WITH method_avg AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, ma.avg_capacity, (t.capacity - ma.avg_capacity) / ma.avg_capacity * 100 AS pct_above_avg, t.station_id, t.latitude, t.longitude, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_avg ma ON t.rental_methods = ma.Category WHERE t.capacity IS NOT NULL ) SELECT Category, Entity, Measure, avg_capacity, pct_above_avg, station_id, latitude, longitude FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 72,
+    "db_id": "IDC",
+    "question": "In the Imaging Data Commons (IDC), which original datasets have the highest number of samples? List the top five.",
+    "evidence": "",
+    "SQL": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ORDER BY Subjects DESC LIMIT 5;"
+  },
+  {
+    "question_id": 73,
+    "db_id": "IDC",
+    "question": "Which original datasets in the Image Data Commons (IDC) contain multiple different types of imaging data?",
+    "evidence": "",
+    "SQL": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA GROUP BY collection_name HAVING COUNT(DISTINCT ImageTypes) > 1;"
+  },
+  {
+    "question_id": 74,
+    "db_id": "IDC",
+    "question": "In the image data sharing platform, for each image type, which original dataset has the largest number of samples?",
+    "evidence": "",
+    "SQL": "SELECT ImageTypes, collection_name FROM ( SELECT ImageTypes, collection_name, Subjects, ROW_NUMBER() OVER (PARTITION BY ImageTypes ORDER BY Subjects DESC) AS rn FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 75,
+    "db_id": "IDC",
+    "question": "In the Imaging Data Commons (IDC), which original datasets have exceptionally large sample sizes that belong to rare large-scale cohort studies?",
+    "evidence": "",
+    "SQL": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE Subjects > (SELECT AVG(Subjects) FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA);"
+  },
+  {
+    "question_id": 76,
+    "db_id": "IDC",
+    "question": "In the image data sharing platform, which original dataset's names also appear in the TCGA biospecimen information (project_short_name), suggesting a potential association between them?",
+    "evidence": "",
+    "SQL": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE collection_name IN (SELECT project_short_name FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9);"
+  },
+  {
+    "question_id": 77,
+    "db_id": "IDC",
+    "question": "In the Imaging Data Commons (IDC), for each imaging type, which original datasets have sample sizes far exceeding the mean of similar datasets, thus qualifying as rare large-scale cohort studies?",
+    "evidence": "",
+    "SQL": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t1 WHERE Subjects > (SELECT AVG(Subjects) FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t2 WHERE t2.ImageTypes = t1.ImageTypes);"
+  },
+  {
+    "question_id": 78,
+    "db_id": "IDC",
+    "question": "In the imaging data sharing platform, for each sample type, which project recently collected biological samples?",
+    "evidence": "",
+    "SQL": "SELECT sample_type, project_short_name FROM ( SELECT sample_type, project_short_name, days_to_collection, ROW_NUMBER() OVER (PARTITION BY sample_type ORDER BY days_to_collection DESC) AS rn FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 79,
+    "db_id": "IDC",
+    "question": "In the imaging data sharing platform, which research projects had an increasing number of samples obtained in each of the three consecutive sample collections, possibly corresponding to an expanding research scale?",
+    "evidence": "",
+    "SQL": "WITH base AS ( SELECT project_short_name AS Entity, days_to_collection AS Time, num_portions AS Measure, LAG(num_portions, 1) OVER (PARTITION BY project_short_name ORDER BY days_to_collection) AS prev1, LAG(num_portions, 2) OVER (PARTITION BY project_short_name ORDER BY days_to_collection) AS prev2 FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 WHERE days_to_collection IS NOT NULL AND num_portions IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 80,
+    "db_id": "IDC",
+    "question": "In the imaging data sharing platform, for each imaging type, which original datasets have sample sizes in the top 20% and are considered as exemplars of large cohort studies?",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT ImageTypes AS Category, collection_name AS Entity, Subjects AS Measure, NTILE(5) OVER (PARTITION BY ImageTypes ORDER BY Subjects DESC) AS quintile FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE Subjects IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 81,
+    "db_id": "IDC",
+    "question": "In the image data sharing platform, for each image type, which datasets have sample sizes not only exceeding the average level of that type but also serving as the primary source of the total sample size for that type? Please list the top five datasets with the greatest contribution for each image type.",
+    "evidence": "",
+    "SQL": "WITH category_stats AS ( SELECT ImageTypes AS Category, AVG(Subjects) AS avg_measure, SUM(Subjects) AS total_measure FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA GROUP BY ImageTypes ), ranked AS ( SELECT t.ImageTypes AS Category, t.collection_name AS Entity, t.Subjects AS Measure, cs.avg_measure, cs.total_measure, t.Subjects / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.ImageTypes ORDER BY t.Subjects / cs.total_measure DESC) AS rn FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t JOIN category_stats cs ON t.ImageTypes = cs.Category WHERE t.Subjects > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 82,
+    "db_id": "IDC",
+    "question": "In the biological sample information of the imaging data sharing platform, for each sample type, which projects have experienced a significant surge in sample collection volume in subsequent acquisitions, indicating rapid expansion of the research scale? Please list the top five projects with the most significant increase for each sample type.",
+    "evidence": "",
+    "SQL": "WITH lagged AS ( SELECT sample_type AS Category, project_short_name AS Entity, days_to_collection AS Time, num_portions AS Measure, LAG(num_portions) OVER (PARTITION BY sample_type, project_short_name ORDER BY days_to_collection) AS prev_measure FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 WHERE num_portions IS NOT NULL AND days_to_collection IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 83,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, which genes are associated with multiple different molecular clinical classifications?",
+    "evidence": "",
+    "SQL": "SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE GROUP BY Gene HAVING COUNT(DISTINCT MolClin) > 1;"
+  },
+  {
+    "question_id": 84,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, for which journals do distinct literature entries have no log records generated during the cytogenetic data conversion process, suggesting that they may not have been converted or that the conversion failed?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE r WHERE NOT EXISTS ( SELECT 1 FROM MITELMAN.PROD_CYTOCONVERTEDLOG l WHERE l.RefNo = r.RefNo );"
+  },
+  {
+    "question_id": 85,
+    "db_id": "MITELMAN",
+    "question": "In Mitelman, which journals' literature entries (deduplicated) generated log records during the cytogenetic data conversion process?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE WHERE RefNo IN (SELECT RefNo FROM MITELMAN.PROD_CYTOCONVERTEDLOG);"
+  },
+  {
+    "question_id": 86,
+    "db_id": "MITELMAN",
+    "question": "What are the three cytogenetic abnormalities with the highest total case counts in Mitelman?",
+    "evidence": "",
+    "SQL": "SELECT Abnormality AS Category, SUM(TotalCases) AS total_cases FROM MITELMAN.PROD_RECURRENTNUMDATA GROUP BY Abnormality ORDER BY total_cases DESC LIMIT 3;"
+  },
+  {
+    "question_id": 87,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, what are the top three journals that have the highest number of literature collected?",
+    "evidence": "",
+    "SQL": "SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 153,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "Which genes have the highest expression levels in random samples of pancreatic cancer and kidney cancer from TCGA_HG38_DATA_V0? Please list the top five genes.",
+    "evidence": "",
+    "SQL": "SELECT Gene FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ORDER BY Expr DESC LIMIT 5;"
+  },
+  {
+    "question_id": 154,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "Which case samples in the TCGA_HG38_DATA_V0 clinical annotation data have multiple different types of annotation information (e.g., pathology, follow-up, treatment, etc.)?",
+    "evidence": "",
+    "SQL": "SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS GROUP BY case_barcode HAVING COUNT(DISTINCT category) > 1;"
+  },
+  {
+    "question_id": 155,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 of TCGA_HG38_DATA_V0, which genes exhibit abnormally high expression levels (above average) that are highly likely to be key drivers of tumorigenesis?",
+    "evidence": "",
+    "SQL": "SELECT Gene FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 WHERE Expr > (SELECT AVG(Expr) FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002);"
+  },
+  {
+    "question_id": 156,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In the TCGA_BIOCLIN_V0_CLINICAL table within the TCGA_HG38_DATA_V0 clinical data, which patient records have no additional clinical annotations, possibly representing cases with complete basic information but no special annotations?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_CLINICAL c WHERE NOT EXISTS ( SELECT 1 FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS a WHERE a.case_barcode = c.case_barcode );"
+  },
+  {
+    "question_id": 157,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In the clinical data of TCGA_HG38_DATA_V0, specifically in TCGA_BIOCLIN_V0_CLINICAL, which patients' records have additional clinical annotation information that can be used for in-depth analysis?",
+    "evidence": "",
+    "SQL": "SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_CLINICAL WHERE case_barcode IN (SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS);"
+  },
+  {
+    "question_id": 158,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In the TCGA_HG38_DATA_V0 pancreatic cancer and kidney cancer research projects, specifically in QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002, which genes have the highest expression levels (top 20%) in each project and may be key drivers of tumorigenesis?",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT project_short_name AS Category, Gene AS Entity, Expr AS Measure, NTILE(5) OVER (PARTITION BY project_short_name ORDER BY Expr DESC) AS quintile FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 WHERE Expr IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 159,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In the TCGA_HG38_DATA_V0 pancreatic cancer and kidney cancer samples of QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002, which genes have expression levels not only far exceeding the common level in similar projects (by more than 50%), but also have corresponding protein expression data available for validation, which may be key driver genes?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT project_short_name, Expr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ORDER BY project_short_name, Expr ), category_arrays AS ( SELECT project_short_name, JSON_ARRAYAGG(Expr) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY project_short_name ), category_median AS ( SELECT project_short_name, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_expr FROM category_arrays ) SELECT t.project_short_name, t.Gene, t.Expr, t.ID, t.Expr AS expression_level FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 t JOIN category_median m ON t.project_short_name = m.project_short_name WHERE t.Expr > m.median_expr AND EXISTS ( SELECT 1 FROM TCGA_HG38_DATA_V0.TCGA_HG38_DATA_V0_PROTEIN_EXPRESSION p WHERE p.gene_name = t.Gene );"
+  },
+  {
+    "question_id": 160,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In the pancreatic and renal cancer random sample QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 from TCGA_HG38_DATA_V0, what are the three research projects with the highest total gene expression?",
+    "evidence": "",
+    "SQL": "SELECT project_short_name AS Category, SUM(Expr) AS total_expr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 GROUP BY project_short_name ORDER BY total_expr DESC LIMIT 3;"
+  },
+  {
+    "question_id": 161,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "What are the top three data categories with the highest number of files in the metadata of TCGA_HG38_DATA_V0?",
+    "evidence": "",
+    "SQL": "SELECT data_category AS Category, COUNT(*) AS record_count FROM TCGA_HG38_DATA_V0.TCGA_HG38_DATA_V0_TCGA_METADATA_DATA_HG38_R14 GROUP BY data_category ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 162,
+    "db_id": "TCGA_HG38_DATA_V0",
+    "question": "In QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 within the pancreatic cancer and kidney cancer samples from TCGA_HG38_DATA_V0, for each cancer project, which genes have expression levels ranking in the top 25% of that project that may be key highly expressed genes?",
+    "evidence": "",
+    "SQL": "WITH proj_q3 AS ( SELECT project_short_name AS Category, MIN(Expr) AS q3 FROM ( SELECT project_short_name, Expr, PERCENT_RANK() OVER (PARTITION BY project_short_name ORDER BY Expr) AS pr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ) t WHERE pr >= 0.75 GROUP BY project_short_name ) SELECT t.project_short_name, t.Gene, t.Expr, t.ID FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 t JOIN proj_q3 q ON t.project_short_name = q.Category WHERE t.Expr > q.q3;"
+  },
+  {
+    "question_id": 163,
+    "db_id": "NOAA_PORTS",
+    "question": "According to the NOAA International Port Index, which ports worldwidely have the largest tidal ranges? Please list the top five.",
+    "evidence": "",
+    "SQL": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX ORDER BY tide_range DESC LIMIT 5;"
+  },
+  {
+    "question_id": 164,
+    "db_id": "NOAA_PORTS",
+    "question": "According to the NOAA International Port Index, which ports worldwidely are renowned for enormous tidal ranges (exceeding the average) that are suitable for tidal power development?",
+    "evidence": "",
+    "SQL": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX WHERE tide_range > (SELECT AVG(tide_range) FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX);"
+  },
+  {
+    "question_id": 165,
+    "db_id": "NOAA_PORTS",
+    "question": "In the U.S. railway geographic data, classified by MTFCC level, what are the top three railway feature types with the largest number of records?",
+    "evidence": "",
+    "SQL": "SELECT mtfcc_feature_class_code AS Category, COUNT(*) AS record_count FROM NOAA_PORTS.GEO_US_BOUNDARIES_RAILWAYS GROUP BY mtfcc_feature_class_code ORDER BY record_count DESC LIMIT 3;"
+  }
+]

@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+rule_name,rule_name,,TEXT,
+rule_code,rule_code,,TEXT,
+rule_json,rule_json,,TEXT,
+rule_description,rule_description,,TEXT,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,

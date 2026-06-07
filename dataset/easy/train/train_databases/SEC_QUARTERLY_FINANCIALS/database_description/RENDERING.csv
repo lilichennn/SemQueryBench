@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+report,report,,DOUBLE,
+submission_number,submission_number,,TEXT,
+file_type,file_type,,TEXT,
+parentreport,parentreport,,DOUBLE,
+menu_category,menu_category,,TEXT,
+ultimate_parent_report,ultimate_parent_report,,DOUBLE,
+longname,longname,,TEXT,
+roleuri,roleuri,,TEXT,
+shortname,shortname,,TEXT,
+parentroleuri,parentroleuri,,TEXT,

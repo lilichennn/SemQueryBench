@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+customer_code,customer_code,,DOUBLE,
+region,region,,TEXT,
+channel,channel,,TEXT,
+market,market,,TEXT,
+sub_zone,sub_zone,,TEXT,
+platform,platform,,TEXT,
+customer,customer,,TEXT,

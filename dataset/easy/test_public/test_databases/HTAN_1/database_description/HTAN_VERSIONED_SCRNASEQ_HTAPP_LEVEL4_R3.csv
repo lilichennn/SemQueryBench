@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+Source_entityId,Source_entityId,,TEXT,
+Biospecimen,Biospecimen,,TEXT,
+batchID,batchID,,TEXT,
+HTAPP_ID,HTAPP_ID,,TEXT,
+Top_Level_Cell_Subset,Top_Level_Cell_Subset,,TEXT,
+Source_filename,Source_filename,,TEXT,
+X,X,,DOUBLE,
+HTAN_Center,HTAN_Center,,TEXT,
+CellType,CellType,,TEXT,
+Y,Y,,DOUBLE,
+NAME,NAME,,TEXT,
+Cell_Subset,Cell_Subset,,TEXT,

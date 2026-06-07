@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+log_index,log_index,,DOUBLE,
+transaction_hash,transaction_hash,,TEXT,
+block_hash,block_hash,,TEXT,
+address,address,,TEXT,
+transaction_index,transaction_index,,DOUBLE,
+block_number,block_number,,DOUBLE,
+data,data,,TEXT,
+topics,topics,,JSON,
+block_timestamp,block_timestamp,,DOUBLE,

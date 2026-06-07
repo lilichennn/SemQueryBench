@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+osm_way_id,osm_way_id,,DOUBLE,
+osm_id,osm_id,,DOUBLE,
+geometry,geometry,,BLOB,
+osm_timestamp,osm_timestamp,,DOUBLE,
+osm_version,osm_version,,DOUBLE,
+all_tags,all_tags,,JSON,

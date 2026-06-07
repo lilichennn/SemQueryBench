@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+case_id,case_id,,TEXT,
+diag__treat__treatment_id,diag__treat__treatment_id,,TEXT,
+diag__diagnosis_id,diag__diagnosis_id,,TEXT,
+diag__treat__treatment_type,diag__treat__treatment_type,,TEXT,
+diag__treat__created_datetime,diag__treat__created_datetime,,DOUBLE,
+diag__treat__state,diag__treat__state,,TEXT,
+diag__treat__treatment_or_therapy,diag__treat__treatment_or_therapy,,BOOLEAN,
+diag__treat__updated_datetime,diag__treat__updated_datetime,,DOUBLE,

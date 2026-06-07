@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+IID,IID,,TEXT,
+WFID,WFID,,TEXT,
+ACTNAME,ACTNAME,,TEXT,
+ACTCODE,ACTCODE,,TEXT,
+MODIFYUSERID,MODIFYUSERID,,TEXT,
+MODIFYDATE,MODIFYDATE,,DATETIME,

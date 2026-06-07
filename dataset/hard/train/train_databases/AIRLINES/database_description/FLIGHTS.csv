@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+aircraft_code,aircraft_code,,TEXT,
+actual_departure,actual_departure,,TEXT,
+departure_airport,departure_airport,,TEXT,
+scheduled_departure,scheduled_departure,,TEXT,
+flight_id,flight_id,,DOUBLE,
+scheduled_arrival,scheduled_arrival,,TEXT,
+actual_arrival,actual_arrival,,TEXT,
+arrival_airport,arrival_airport,,TEXT,
+status,status,,TEXT,
+flight_no,flight_no,,TEXT,

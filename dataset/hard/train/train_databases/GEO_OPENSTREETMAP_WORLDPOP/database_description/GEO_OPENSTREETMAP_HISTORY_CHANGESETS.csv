@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+osm_timestamp_min,osm_timestamp_min,,DOUBLE,
+ways,ways,,JSON,
+osm_timestamp_max,osm_timestamp_max,,DOUBLE,
+relations,relations,,JSON,
+nodes,nodes,,JSON,

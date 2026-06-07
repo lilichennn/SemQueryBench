@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+date,date,,TEXT,
+customer_code,customer_code,,DOUBLE,
+sold_quantity,sold_quantity,,DOUBLE,
+product_code,product_code,,TEXT,
+fiscal_year,fiscal_year,,DOUBLE,

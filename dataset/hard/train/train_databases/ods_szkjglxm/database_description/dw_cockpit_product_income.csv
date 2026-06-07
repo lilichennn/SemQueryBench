@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+uuid,uuid,,TEXT,
+product_name,product_name,,TEXT,
+product_code,product_code,,TEXT,
+product_uuid,product_uuid,,TEXT,
+income,income,,DOUBLE,
+sale_annual,sale_annual,,BIGINT,
+expect_gross_profit,expect_gross_profit,,DOUBLE,

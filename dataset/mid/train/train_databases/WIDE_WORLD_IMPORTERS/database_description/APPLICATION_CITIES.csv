@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+CityID,CityID,,DOUBLE,
+LastEditedBy,LastEditedBy,,DOUBLE,
+CityName,CityName,,TEXT,
+LatestRecordedPopulation,LatestRecordedPopulation,,TEXT,
+Location,Location,,DOUBLE,
+ValidTo,ValidTo,,DOUBLE,
+StateProvinceID,StateProvinceID,,DOUBLE,
+ValidFrom,ValidFrom,,DOUBLE,

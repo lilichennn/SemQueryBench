@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+VARIABLE,VARIABLE,,TEXT,
+UNIT,UNIT,,TEXT,
+VARIABLE_GROUP,VARIABLE_GROUP,,TEXT,
+FREQUENCY,FREQUENCY,,TEXT,
+MARKET,MARKET,,TEXT,
+VARIABLE_NAME,VARIABLE_NAME,,TEXT,

@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+plot_sequence_number,plot_sequence_number,,DOUBLE,
+evaluation_group,evaluation_group,,DOUBLE,
+state_code,state_code,,DOUBLE,
+macroplot_acres,macroplot_acres,,DOUBLE,
+evaluation_type,evaluation_type,,TEXT,
+state_name,state_name,,TEXT,
+inventory_year,inventory_year,,DOUBLE,
+subplot_acres,subplot_acres,,DOUBLE,
+evaluation_description,evaluation_description,,TEXT,

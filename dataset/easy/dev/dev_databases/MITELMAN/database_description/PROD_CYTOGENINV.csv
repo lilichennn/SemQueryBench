@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+RefNo,RefNo,,DOUBLE,
+CaseOrder,CaseOrder,,TEXT,
+InvNo,InvNo,,DOUBLE,
+CaseNo,CaseNo,,TEXT,
+Tissue,Tissue,,TEXT,
+KaryLong,KaryLong,,TEXT,
+KaryShort,KaryShort,,TEXT,
+Clones,Clones,,DOUBLE,
+KaryLength,KaryLength,,DOUBLE,
+InvDate,InvDate,,TEXT,

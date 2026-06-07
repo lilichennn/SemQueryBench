@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+ID,ID,,BIGINT,
+NUM,NUM,,TEXT,
+SCODE,SCODE,,TEXT,
+CYSSBM,CYSSBM,,TEXT,
+CYSSBM_S,CYSSBM_S,,TEXT,

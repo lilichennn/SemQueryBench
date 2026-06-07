@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+gene_id,gene_id,,TEXT,
+exons,exons,,TEXT,
+biotype,biotype,,TEXT,
+description,description,,TEXT,
+chr,chr,,TEXT,
+start,start,,DOUBLE,
+end,end,,DOUBLE,
+fwdstrand,fwdstrand,,DOUBLE,
+gene_name,gene_name,,TEXT,
+tss,tss,,DOUBLE,

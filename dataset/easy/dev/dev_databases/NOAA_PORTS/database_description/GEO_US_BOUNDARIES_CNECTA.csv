@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+geo_id,geo_id,,TEXT,
+cnecta_fips_code,cnecta_fips_code,,TEXT,
+lsad,lsad,,TEXT,
+mtfcc_feature_class_code,mtfcc_feature_class_code,,TEXT,
+cnecta_geom,cnecta_geom,,BLOB,
+int_point_lat,int_point_lat,,DOUBLE,
+int_point_lon,int_point_lon,,DOUBLE,
+area_water_meters,area_water_meters,,DOUBLE,
+name_lsad,name_lsad,,TEXT,
+name,name,,TEXT,
+area_land_meters,area_land_meters,,DOUBLE,

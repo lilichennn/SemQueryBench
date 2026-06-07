@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+metadata_synapseID,metadata_synapseID,,TEXT,
+HTAN_Image_File_ID,HTAN_Image_File_ID,,TEXT,
+image_synapseID,image_synapseID,,TEXT,
+Channel_Metadata_Filename,Channel_Metadata_Filename,,TEXT,
+metadata_synapse_file_path,metadata_synapse_file_path,,TEXT,
+HTAN_Center,HTAN_Center,,TEXT,
+channel_attributes,channel_attributes,,JSON,
+image_filename,image_filename,,TEXT,
+Imaging_Assay_Type,Imaging_Assay_Type,,TEXT,
+lineNum,lineNum,,DOUBLE,

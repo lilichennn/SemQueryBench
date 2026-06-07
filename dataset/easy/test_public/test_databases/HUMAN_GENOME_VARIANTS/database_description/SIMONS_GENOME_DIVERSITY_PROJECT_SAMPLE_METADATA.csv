@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+SGDP_ID,SGDP_ID,,TEXT,
+Coverage,Coverage,,DOUBLE,
+Panel,Panel,,TEXT,
+Gender,Gender,,TEXT,
+HetRateAuto,HetRateAuto,,DOUBLE,
+Region,Region,,TEXT,
+Longitude,Longitude,,DOUBLE,
+Population_ID,Population_ID,,TEXT,
+Latitude,Latitude,,DOUBLE,
+Country,Country,,TEXT,
+Contributor,Contributor,,TEXT,

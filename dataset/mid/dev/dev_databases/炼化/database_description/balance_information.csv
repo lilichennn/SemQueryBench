@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+NODE_ID,NODE_ID,,BIGINT,
+begin_shift_time,begin_shift_time,,DATETIME,
+inout_name,inout_name,,TEXT,
+amount,amount,,DOUBLE,
+page_type,page_type,,TEXT,

@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+case_barcode,case_barcode,,TEXT,
+gene_id,gene_id,,DOUBLE,
+sample_barcode,sample_barcode,,TEXT,
+aliquot_barcode,aliquot_barcode,,TEXT,
+original_gene_symbol,original_gene_symbol,,TEXT,
+HGNC_gene_symbol,HGNC_gene_symbol,,TEXT,
+normalized_count,normalized_count,,DOUBLE,
+project_short_name,project_short_name,,TEXT,
+platform,platform,,TEXT,

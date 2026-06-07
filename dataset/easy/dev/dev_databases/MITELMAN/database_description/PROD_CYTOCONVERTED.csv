@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+Clone,Clone,,DOUBLE,
+CaseNo,CaseNo,,TEXT,
+InvNo,InvNo,,DOUBLE,
+RefNo,RefNo,,DOUBLE,
+Type,Type,,TEXT,
+End,End,,DOUBLE,
+CellsPresent,CellsPresent,,TEXT,
+ChrOrd,ChrOrd,,DOUBLE,
+Chr,Chr,,TEXT,
+Start,Start,,DOUBLE,

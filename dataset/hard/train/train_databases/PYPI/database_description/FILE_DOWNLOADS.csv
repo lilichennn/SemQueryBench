@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+url,url,,TEXT,
+project,project,,TEXT,
+details,details,,JSON,
+tls_cipher,tls_cipher,,TEXT,
+tls_protocol,tls_protocol,,TEXT,
+country_code,country_code,,TEXT,
+file,file,,JSON,
+timestamp,timestamp,,DOUBLE,

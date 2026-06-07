@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+geo_id,geo_id,,DOUBLE,
+railway_geom,railway_geom,,TEXT,
+mtfcc_feature_class_code,mtfcc_feature_class_code,,TEXT,
+full_name,full_name,,TEXT,

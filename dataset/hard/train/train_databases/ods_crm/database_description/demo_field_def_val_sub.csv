@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+code,code,,TEXT,
+name,name,,TEXT,
+date,date,,TEXT,
+main_id,main_id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+sys_org_code,sys_org_code,,TEXT,

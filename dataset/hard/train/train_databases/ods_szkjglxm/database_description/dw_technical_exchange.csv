@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+cooperative_company,cooperative_company,,TEXT,
+Technology_type_name,Technology_type_name,,TEXT,
+tightness,tightness,,DOUBLE,
+belong_plate_name,belong_plate_name,,TEXT,
+agreement,agreement,,TEXT,
+cooperation_content,cooperation_content,,TEXT,
+communication,communication,,TEXT,

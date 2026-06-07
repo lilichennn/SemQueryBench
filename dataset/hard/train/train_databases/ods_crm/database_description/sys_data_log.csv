@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+data_table,data_table,,TEXT,
+data_id,data_id,,TEXT,
+data_content,data_content,,TEXT,
+data_version,data_version,,BIGINT,

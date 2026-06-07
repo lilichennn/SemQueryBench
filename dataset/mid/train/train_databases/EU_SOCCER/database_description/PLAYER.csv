@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+player_api_id,player_api_id,,DOUBLE,
+player_fifa_api_id,player_fifa_api_id,,DOUBLE,
+weight,weight,,DOUBLE,
+birthday,birthday,,TEXT,
+height,height,,DOUBLE,
+player_name,player_name,,TEXT,

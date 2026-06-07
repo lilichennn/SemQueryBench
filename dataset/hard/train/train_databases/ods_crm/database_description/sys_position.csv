@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+code,code,,TEXT,
+name,name,,TEXT,
+post_rank,post_rank,,TEXT,
+company_id,company_id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+sys_org_code,sys_org_code,,TEXT,
+sorter,sorter,,BIGINT,
+del_flag,del_flag,,TEXT,

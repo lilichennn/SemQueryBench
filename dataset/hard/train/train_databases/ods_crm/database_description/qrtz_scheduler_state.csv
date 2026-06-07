@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+sched_name,sched_name,,TEXT,
+instance_name,instance_name,,TEXT,
+last_checkin_time,last_checkin_time,,BIGINT,
+checkin_interval,checkin_interval,,BIGINT,

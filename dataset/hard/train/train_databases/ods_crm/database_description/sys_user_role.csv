@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+user_id,user_id,,TEXT,
+role_id,role_id,,TEXT,

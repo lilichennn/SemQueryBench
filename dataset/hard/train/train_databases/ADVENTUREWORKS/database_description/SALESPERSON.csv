@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+salesytd,salesytd,,DOUBLE,
+salesquota,salesquota,,TEXT,
+rowguid,rowguid,,TEXT,
+saleslastyear,saleslastyear,,DOUBLE,
+commissionpct,commissionpct,,DOUBLE,
+modifieddate,modifieddate,,TEXT,
+bonus,bonus,,DOUBLE,
+businessentityid,businessentityid,,DOUBLE,
+territoryid,territoryid,,TEXT,

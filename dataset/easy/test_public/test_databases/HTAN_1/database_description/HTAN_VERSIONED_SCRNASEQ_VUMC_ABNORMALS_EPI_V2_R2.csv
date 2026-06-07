@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+HTAN_Biospecimen_ID,HTAN_Biospecimen_ID,,TEXT,
+HTAN_Parent_Data_File_ID,HTAN_Parent_Data_File_ID,,TEXT,
+iVar,iVar,,DOUBLE,
+iObs,iObs,,DOUBLE,
+X_value,X_value,,DOUBLE,
+Gene_Name,Gene_Name,,TEXT,
+Cell_Barcode_Number,Cell_Barcode_Number,,TEXT,
+Tissue_Subtype,Tissue_Subtype,,TEXT,
+Tissue_Type,Tissue_Type,,TEXT,

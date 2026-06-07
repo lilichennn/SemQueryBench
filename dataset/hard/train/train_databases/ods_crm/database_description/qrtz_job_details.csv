@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+sched_name,sched_name,,TEXT,
+job_name,job_name,,TEXT,
+job_group,job_group,,TEXT,
+description,description,,TEXT,
+job_class_name,job_class_name,,TEXT,
+is_durable,is_durable,,TEXT,
+is_nonconcurrent,is_nonconcurrent,,TEXT,
+is_update_data,is_update_data,,TEXT,
+requests_recovery,requests_recovery,,TEXT,
+job_data,job_data,,TEXT,

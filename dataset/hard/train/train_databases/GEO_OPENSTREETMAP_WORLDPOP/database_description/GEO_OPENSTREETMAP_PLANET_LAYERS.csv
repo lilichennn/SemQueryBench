@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+osm_id,osm_id,,DOUBLE,
+osm_way_id,osm_way_id,,DOUBLE,
+layer_name,layer_name,,TEXT,
+all_tags,all_tags,,JSON,
+geometry,geometry,,BLOB,
+gdal_type,gdal_type,,TEXT,
+layer_code,layer_code,,DOUBLE,
+osm_timestamp,osm_timestamp,,DOUBLE,
+osm_version,osm_version,,DOUBLE,
+layer_class,layer_class,,TEXT,

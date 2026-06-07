@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+button_code,button_code,,TEXT,
+cgb_sql,cgb_sql,,TEXT,
+cgb_sql_name,cgb_sql_name,,TEXT,
+content,content,,TEXT,
+cgform_head_id,cgform_head_id,,TEXT,

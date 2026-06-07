@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+case_barcode,case_barcode,,TEXT,
+case_gdc_id,case_gdc_id,,TEXT,
+aliquot_barcode,aliquot_barcode,,TEXT,
+sample_barcode,sample_barcode,,TEXT,
+entity_barcode,entity_barcode,,TEXT,
+project_short_name,project_short_name,,TEXT,
+date_edited,date_edited,,TEXT,
+entity_type,entity_type,,TEXT,
+category,category,,TEXT,
+date_created,date_created,,TEXT,
+notes,notes,,TEXT,
+classification,classification,,TEXT,

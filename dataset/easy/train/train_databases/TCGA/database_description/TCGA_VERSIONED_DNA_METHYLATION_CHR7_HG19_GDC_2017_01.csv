@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+aliquot_barcode,aliquot_barcode,,TEXT,
+sample_barcode,sample_barcode,,TEXT,
+probe_id,probe_id,,TEXT,
+case_barcode,case_barcode,,TEXT,
+project_short_name,project_short_name,,TEXT,
+beta_value,beta_value,,DOUBLE,
+platform,platform,,TEXT,

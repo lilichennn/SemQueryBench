@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+_part,_part,,DOUBLE,
+start_position,start_position,,DOUBLE,
+reference_bases,reference_bases,,TEXT,
+names,names,,JSON,
+end_position,end_position,,DOUBLE,
+alternate_bases,alternate_bases,,JSON,
+filter,filter,,JSON,
+call,call,,JSON,
+reference_name,reference_name,,TEXT,
+quality,quality,,DOUBLE,
+geometry,geometry,,BLOB,

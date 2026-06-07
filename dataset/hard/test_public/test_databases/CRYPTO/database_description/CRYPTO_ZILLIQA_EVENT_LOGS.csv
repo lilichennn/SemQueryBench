@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+block_number,block_number,,DOUBLE,
+index,index,,DOUBLE,
+transaction_id,transaction_id,,TEXT,
+block_timestamp,block_timestamp,,DOUBLE,
+event_name,event_name,,TEXT,
+address,address,,TEXT,
+params,params,,JSON,

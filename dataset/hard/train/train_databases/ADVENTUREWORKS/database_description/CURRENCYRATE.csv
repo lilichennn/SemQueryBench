@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+currencyrateid,currencyrateid,,DOUBLE,
+tocurrencycode,tocurrencycode,,TEXT,
+endofdayrate,endofdayrate,,DOUBLE,
+modifieddate,modifieddate,,TEXT,
+currencyratedate,currencyratedate,,TEXT,
+fromcurrencycode,fromcurrencycode,,TEXT,
+averagerate,averagerate,,DOUBLE,

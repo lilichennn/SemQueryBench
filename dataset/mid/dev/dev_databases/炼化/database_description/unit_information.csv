@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+UNIT_ID,UNIT_ID,,BIGINT,
+UNIT_ALIAS,UNIT_ALIAS,,TEXT,
+CAPACITY,CAPACITY,,DOUBLE,
+OPERATING_HOURS,OPERATING_HOURS,,DOUBLE,

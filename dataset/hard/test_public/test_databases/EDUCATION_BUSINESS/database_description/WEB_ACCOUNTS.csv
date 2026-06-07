@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+sales_rep_id,sales_rep_id,,DOUBLE,
+primary_poc,primary_poc,,TEXT,
+website,website,,TEXT,
+lat,lat,,DOUBLE,
+name,name,,TEXT,
+long,long,,DOUBLE,

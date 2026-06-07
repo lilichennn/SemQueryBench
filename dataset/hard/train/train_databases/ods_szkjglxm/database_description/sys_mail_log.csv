@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+uuid,uuid,,TEXT,
+from_addr,from_addr,,TEXT,
+to_addr,to_addr,,TEXT,
+copy_to,copy_to,,TEXT,
+subject,subject,,TEXT,
+content,content,,TEXT,
+attachments,attachments,,BIGINT,
+del,del,,BIGINT,
+creator,creator,,BIGINT,
+create_time,create_time,,DATETIME,

@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+MatchID,MatchID,,TEXT,
+EvenLaneTeamID,EvenLaneTeamID,,TEXT,
+TourneyID,TourneyID,,TEXT,
+OddLaneTeamID,OddLaneTeamID,,TEXT,
+Lanes,Lanes,,TEXT,

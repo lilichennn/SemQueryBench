@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+HTAN_Data_File_ID,HTAN_Data_File_ID,,TEXT,
+iObs,iObs,,DOUBLE,
+iVar,iVar,,DOUBLE,
+HTAN_Biospecimen_ID,HTAN_Biospecimen_ID,,TEXT,
+featureID,featureID,,TEXT,
+X_value,X_value,,DOUBLE,
+Source_entityId,Source_entityId,,TEXT,
+index,index,,TEXT,
+Source_filename,Source_filename,,TEXT,
+HTAN_Center,HTAN_Center,,TEXT,

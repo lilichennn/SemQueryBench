@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+poster_amt_usd,poster_amt_usd,,DOUBLE,
+standard_qty,standard_qty,,DOUBLE,
+occurred_at,occurred_at,,TEXT,
+gloss_qty,gloss_qty,,DOUBLE,
+poster_qty,poster_qty,,DOUBLE,
+standard_amt_usd,standard_amt_usd,,DOUBLE,
+total,total,,DOUBLE,
+gloss_amt_usd,gloss_amt_usd,,DOUBLE,
+account_id,account_id,,DOUBLE,
+total_amt_usd,total_amt_usd,,DOUBLE,

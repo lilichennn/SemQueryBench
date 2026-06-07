@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+string_field_0,string_field_0,,TEXT,
+string_field_1,string_field_1,,TEXT,
+string_field_2,string_field_2,,TEXT,

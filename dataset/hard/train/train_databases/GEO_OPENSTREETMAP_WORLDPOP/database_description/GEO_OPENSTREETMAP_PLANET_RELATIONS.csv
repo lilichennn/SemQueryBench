@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+changeset,changeset,,DOUBLE,
+username,username,,TEXT,
+members,members,,JSON,
+osm_timestamp,osm_timestamp,,DOUBLE,
+visible,visible,,BOOLEAN,
+version,version,,DOUBLE,
+geometry,geometry,,BLOB,
+all_tags,all_tags,,JSON,

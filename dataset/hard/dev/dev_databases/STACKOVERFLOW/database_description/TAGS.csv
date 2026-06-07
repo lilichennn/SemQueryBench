@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,DOUBLE,
+tag_name,tag_name,,TEXT,
+excerpt_post_id,excerpt_post_id,,DOUBLE,
+wiki_post_id,wiki_post_id,,DOUBLE,
+count,count,,DOUBLE,

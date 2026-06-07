@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+book_date,book_date,,TEXT,
+total_amount,total_amount,,DOUBLE,
+book_ref,book_ref,,TEXT,

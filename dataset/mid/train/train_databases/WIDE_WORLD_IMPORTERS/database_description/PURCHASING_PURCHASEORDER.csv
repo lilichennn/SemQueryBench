@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+SupplierReference,SupplierReference,,TEXT,
+PurchaseOrderID,PurchaseOrderID,,DOUBLE,
+DeliveryMethodID,DeliveryMethodID,,DOUBLE,
+ContactPersonID,ContactPersonID,,DOUBLE,
+ExpectedDeliveryDate,ExpectedDeliveryDate,,DATE,
+OrderDate,OrderDate,,DATE,
+LastEditedBy,LastEditedBy,,DOUBLE,
+SupplierID,SupplierID,,DOUBLE,
+IsOrderFinalized,IsOrderFinalized,,DOUBLE,
+Comments,Comments,,TEXT,
+InternalComments,InternalComments,,TEXT,
+LastEditedWhen,LastEditedWhen,,DOUBLE,

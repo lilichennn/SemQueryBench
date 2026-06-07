@@ -1,0 +1,248 @@
+[
+  {
+    "question_id": 30,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data from 2018, which patients experienced examinations with multiple different imaging modalities?",
+    "evidence": ""
+  },
+  {
+    "question_id": 31,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient's slice thickness is the highest?",
+    "evidence": ""
+  },
+  {
+    "question_id": 32,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data of 2018, for each imaging modality, which patients had slice thickness higher than the average of that modality?",
+    "evidence": ""
+  },
+  {
+    "question_id": 33,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient does the most recent imaging record belong to?",
+    "evidence": ""
+  },
+  {
+    "question_id": 34,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have slice thicknesses within the typical range for that modality?",
+    "evidence": ""
+  },
+  {
+    "question_id": 35,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have imaging records in consecutive years?",
+    "evidence": ""
+  },
+  {
+    "question_id": 36,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data of 2018, for each imaging modality, who are the top 3 patients with the highest slice thickness? How much higher is their slice thickness compared to the average level of that modality?",
+    "evidence": ""
+  },
+  {
+    "question_id": 37,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients had a slice thickness for two consecutive years exceeding that year's average level of that modality?",
+    "evidence": ""
+  },
+  {
+    "question_id": 71,
+    "db_id": "HTAN_1",
+    "question": "In HTAN_1, for the combined sample of small cell lung cancer, which five cell types have the highest number of genes?",
+    "evidence": ""
+  },
+  {
+    "question_id": 141,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations exhibit the highest autosomal heterozygosity? Please list the top five.",
+    "evidence": ""
+  },
+  {
+    "question_id": 142,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations have samples that include both male and female individuals?",
+    "evidence": ""
+  },
+  {
+    "question_id": 143,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations have the highest autosomal heterozygosity rates among male and female groups respectively?",
+    "evidence": ""
+  },
+  {
+    "question_id": 144,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations in the Simons Genome Diversity Project exhibit particularly high genetic diversity (above the average level) and may represent groups with long-term admixture in history?",
+    "evidence": ""
+  },
+  {
+    "question_id": 145,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations within the Simons Genome Diversity Project have autosomal heterozygosity rates that exceed the sex-specific averages in males and females, respectively, suggesting more complex population histories?",
+    "evidence": ""
+  },
+  {
+    "question_id": 146,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations among males and females in the Simons Genome Diversity Project exhibit autosomal heterozygosity within the typical range for each sex (between 30% and 70%), representing the average level of population genetic diversity?",
+    "evidence": ""
+  },
+  {
+    "question_id": 147,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female populations, which populations exhibit the most prominent genetic diversity (in the top 20%) that belongs to the group with the highest heterozygosity rates?",
+    "evidence": ""
+  },
+  {
+    "question_id": 148,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female groups, which populations have autosomal heterozygosity rates that are not only higher than the average level for that sex, but also account for a significant share of the total genetic diversity of that sex? Please list the top five populations with the most prominent contributions for males and females, respectively.",
+    "evidence": ""
+  },
+  {
+    "question_id": 149,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which regions have populations with the highest autosomal heterozygosity rates among males and females? By how much do their heterozygosity rates exceed the average level for each sex group, and do they reflect special population history? The results should display sex, population, autosomal heterozygosity rate, average autosomal heterozygosity rate, proportion by which autosomal heterozygosity exceeds the average, region, and country.",
+    "evidence": ""
+  },
+  {
+    "question_id": 150,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "What are the three geographical regions with the highest total autosomal heterozygosity in the Simons Genome Diversity Project?",
+    "evidence": ""
+  },
+  {
+    "question_id": 151,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which are the top three geographical regions with the largest number of samples?",
+    "evidence": ""
+  },
+  {
+    "question_id": 152,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, within each geographic region, which populations have autosomal heterozygosity in the top quartile of that region and may have unique population histories?",
+    "evidence": ""
+  },
+  {
+    "question_id": 166,
+    "db_id": "HTAN_2",
+    "question": "Which cell types have been detected across multiple distinct experimental stages in SCRNASEQ_CHOP_SEURAT_POOL_LOGNORM_GINI_FIVEHD_DOWNSAMPLE_CURRENT from HTAN_2?",
+    "evidence": ""
+  },
+  {
+    "question_id": 167,
+    "db_id": "HTAN_2",
+    "question": "In HTAN_2, for each exposure factor, i.e., Component, which participant has the record time farthest from the baseline date (the longest follow-up time)?",
+    "evidence": ""
+  },
+  {
+    "question_id": 186,
+    "db_id": "WORD_VECTORS_US",
+    "question": "In the word frequency statistics based on American English, which words have the highest occurrence frequency? List the top five high-frequency words.",
+    "evidence": ""
+  },
+  {
+    "question_id": 187,
+    "db_id": "WORD_VECTORS_US",
+    "question": "In the Nature journal dataset, which articles have titles assigned to multiple different article categories?",
+    "evidence": ""
+  },
+  {
+    "question_id": 188,
+    "db_id": "WORD_VECTORS_US",
+    "question": "Which words in an American English corpus are considered ultra-high-frequency words that are ubiquitous in daily life?",
+    "evidence": ""
+  },
+  {
+    "question_id": 189,
+    "db_id": "WORD_VECTORS_US",
+    "question": "What are the category names and titles of the articles with the latest publication dates under each article category in the Nature journal dataset?",
+    "evidence": ""
+  },
+  {
+    "question_id": 190,
+    "db_id": "WORD_VECTORS_US",
+    "question": "In the Nature journal, which articles have publication records in consecutive years within each subject category, possibly indicating series studies or long-term tracking results?",
+    "evidence": ""
+  },
+  {
+    "question_id": 191,
+    "db_id": "WORD_VECTORS_US",
+    "question": "In the Nature journal dataset, what are the top three subject categories with the highest number of articles?",
+    "evidence": ""
+  },
+  {
+    "question_id": 192,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "Which genetic variant sites were classified into multiple different variant types in the Cannabis genomics study of March 2017?",
+    "evidence": ""
+  },
+  {
+    "question_id": 193,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the March 2017 study of cannabis genomics, for each genetic variant type, which variant site has the highest allele frequency?",
+    "evidence": ""
+  },
+  {
+    "question_id": 194,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the cannabis genomics project, which samples from March 2017 have raw project information that is not recorded in the detailed sample information table, possibly due to incomplete annotation or data incompleteness?",
+    "evidence": ""
+  },
+  {
+    "question_id": 195,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "Which samples' raw data from March 2017 in the cannabis genomics project were simultaneously recorded in the detailed sample information table?",
+    "evidence": ""
+  },
+  {
+    "question_id": 196,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the March 2017 study on cannabis genomics, for each type of genetic variation, which variant sites have allele frequencies significantly higher than the general level of that type, potentially being hotspots of natural selection?",
+    "evidence": ""
+  },
+  {
+    "question_id": 197,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the March 2017 cannabis genomics study, which variant sites have the highest sequencing depth under each type of genetic variation and are considered high-confidence detection sites?",
+    "evidence": ""
+  },
+  {
+    "question_id": 198,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the March 2017 study on cannabis genomics, for each type of genetic variation, which variant sites have allele frequencies not only higher than the average level of that type but also predominantly reflect the main characteristics of that variation type? Please list the top five sites with the most prominent contribution in each variation category.",
+    "evidence": ""
+  },
+  {
+    "question_id": 199,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the cannabis genomics study from March 2017, for each variant type, where are the three loci with the highest allele frequencies located? How much higher are their frequencies compared to the average frequency of the same variant type, and could they be important functional loci?",
+    "evidence": ""
+  },
+  {
+    "question_id": 200,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the cannabis genomics study of March 2017, for each type of genetic variant, which variant loci exhibit a significant leap in sequencing depth along chromosomal positions, becoming hotspot regions where detection confidence dramatically increases? Please list the top five loci with the largest jump magnitude within each variant type.",
+    "evidence": ""
+  },
+  {
+    "question_id": 201,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the Cannabis genomics study of March 2017, what are the three variant types with the highest total sequencing depth?",
+    "evidence": ""
+  },
+  {
+    "question_id": 202,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "What are the top three organisms with the most samples in the cannabis genomics project?",
+    "evidence": ""
+  },
+  {
+    "question_id": 203,
+    "db_id": "GENOMICS_CANNABIS",
+    "question": "In the March 2017 study of cannabis genomics, for each variant type, which loci have allele frequencies that are high-frequency within that type that significantly higher than most other loci?",
+    "evidence": ""
+  }
+]

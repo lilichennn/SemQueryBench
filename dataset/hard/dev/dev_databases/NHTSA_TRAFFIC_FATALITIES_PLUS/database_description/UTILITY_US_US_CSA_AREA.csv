@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+aff_geo_code,aff_geo_code,,TEXT,
+csa_code,csa_code,,TEXT,
+geo_code,geo_code,,TEXT,
+name,name,,TEXT,
+lsad_code,lsad_code,,TEXT,
+area_water_meters,area_water_meters,,DOUBLE,
+area_land_meters,area_land_meters,,DOUBLE,
+csa_geom,csa_geom,,BLOB,

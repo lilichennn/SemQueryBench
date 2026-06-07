@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+IID,IID,,TEXT,
+MAINID,MAINID,,TEXT,
+CONDNAME,CONDNAME,,TEXT,
+POSITION,POSITION,,TEXT,
+PHONE,PHONE,,TEXT,
+ADDRESS,ADDRESS,,TEXT,
+EMAIL,EMAIL,,TEXT,
+BUSINESS,BUSINESS,,TEXT,

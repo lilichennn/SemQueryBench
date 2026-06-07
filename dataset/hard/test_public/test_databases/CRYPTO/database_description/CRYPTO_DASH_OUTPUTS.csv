@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+block_hash,block_hash,,TEXT,
+index,index,,DOUBLE,
+transaction_hash,transaction_hash,,TEXT,
+block_number,block_number,,DOUBLE,
+value,value,,DOUBLE,
+block_timestamp,block_timestamp,,DOUBLE,
+type,type,,TEXT,
+script_asm,script_asm,,TEXT,
+addresses,addresses,,JSON,
+required_signatures,required_signatures,,DOUBLE,
+script_hex,script_hex,,TEXT,

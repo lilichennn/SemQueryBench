@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+HTAN_Originating_Biospecimen_ID,HTAN_Originating_Biospecimen_ID,,TEXT,
+HTAN_Data_File_ID,HTAN_Data_File_ID,,TEXT,
+entityId,entityId,,TEXT,
+HTAN_Assayed_Biospecimen_ID,HTAN_Assayed_Biospecimen_ID,,TEXT,
+HTAN_Participant_ID,HTAN_Participant_ID,,TEXT,
+HTAN_Parent_Data_File_ID,HTAN_Parent_Data_File_ID,,TEXT,
+Filename,Filename,,TEXT,
+HTAN_Center,HTAN_Center,,TEXT,
+Data_Release,Data_Release,,TEXT,
+Component,Component,,TEXT,
+Biospecimen_Path,Biospecimen_Path,,TEXT,
+CDS_Release,CDS_Release,,TEXT,

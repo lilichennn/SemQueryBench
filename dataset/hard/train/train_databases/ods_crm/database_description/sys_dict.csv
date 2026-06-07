@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+dict_name,dict_name,,TEXT,
+dict_code,dict_code,,TEXT,
+description,description,,TEXT,
+del_flag,del_flag,,BIGINT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+type,type,,BIGINT,

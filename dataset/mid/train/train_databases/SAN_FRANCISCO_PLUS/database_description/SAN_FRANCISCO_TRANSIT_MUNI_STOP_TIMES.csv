@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+arrival_time,arrival_time,,TIME,
+exact_timepoint,exact_timepoint,,BOOLEAN,
+stop_sequence,stop_sequence,,DOUBLE,
+stop_id,stop_id,,DOUBLE,
+arrives_next_day,arrives_next_day,,BOOLEAN,
+trip_id,trip_id,,DOUBLE,
+departure_time,departure_time,,TIME,
+dropoff_type,dropoff_type,,TEXT,
+departs_next_day,departs_next_day,,BOOLEAN,

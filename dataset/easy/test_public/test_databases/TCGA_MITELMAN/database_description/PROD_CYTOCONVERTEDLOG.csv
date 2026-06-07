@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+InvNo,InvNo,,DOUBLE,
+CaseNo,CaseNo,,TEXT,
+Clone,Clone,,DOUBLE,
+RefNo,RefNo,,DOUBLE,
+Message,Message,,TEXT,
+Type,Type,,TEXT,

@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+nature,nature,,TEXT,
+insurance_fee,insurance_fee,,"DECIMAL(18,2)",
+risk_consulting_fee,risk_consulting_fee,,"DECIMAL(18,2)",
+evaluation_fee,evaluation_fee,,"DECIMAL(18,2)",
+insurance_evaluation_fee,insurance_evaluation_fee,,"DECIMAL(18,2)",
+bidding_consulting_fee,bidding_consulting_fee,,"DECIMAL(18,2)",
+interol_consulting_fee,interol_consulting_fee,,"DECIMAL(18,2)",

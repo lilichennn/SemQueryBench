@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+OfferNo,OfferNo,,DOUBLE,
+OffYear,OffYear,,DOUBLE,
+OffTerm,OffTerm,,TEXT,
+CourseNo,CourseNo,,TEXT,
+OffLocation,OffLocation,,TEXT,
+FacNo,FacNo,,DOUBLE,
+OffTime,OffTime,,TEXT,
+OffDays,OffDays,,TEXT,

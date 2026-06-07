@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+SeriesInstanceUID,SeriesInstanceUID,,TEXT,
+ObjectiveLensPower,ObjectiveLensPower,,DOUBLE,
+max_TotalPixelMatrixRows,max_TotalPixelMatrixRows,,DOUBLE,
+Modality,Modality,,TEXT,
+primaryAnatomicStructure_code_designator_value_str,primaryAnatomicStructure_code_designator_value_str,,TEXT,
+illuminationType_code_designator_value_str,illuminationType_code_designator_value_str,,TEXT,
+illuminationType_CodeMeaning,illuminationType_CodeMeaning,,TEXT,
+min_PixelSpacing_2sf,min_PixelSpacing_2sf,,DOUBLE,
+primaryAnatomicStructure_CodeMeaning,primaryAnatomicStructure_CodeMeaning,,TEXT,
+max_TotalPixelMatrixColumns,max_TotalPixelMatrixColumns,,DOUBLE,

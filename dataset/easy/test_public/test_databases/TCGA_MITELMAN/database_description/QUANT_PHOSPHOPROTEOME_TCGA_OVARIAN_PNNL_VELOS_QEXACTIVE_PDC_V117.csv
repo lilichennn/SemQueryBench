@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+sample_id,sample_id,,TEXT,
+aliquot_submitter_id,aliquot_submitter_id,,TEXT,
+aliquot_id,aliquot_id,,TEXT,
+refseq_id,refseq_id,,TEXT,
+case_id,case_id,,TEXT,
+aliquot_run_metadata_id,aliquot_run_metadata_id,,TEXT,
+study_name,study_name,,TEXT,
+protein_abundance_log2ratio,protein_abundance_log2ratio,,TEXT,
+phosphorylation_sites,phosphorylation_sites,,TEXT,

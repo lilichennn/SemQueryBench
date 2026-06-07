@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+w_st_knowledgeproperty_id,w_st_knowledgeproperty_id,,TEXT,
+user_name,user_name,,TEXT,
+org_name,org_name,,TEXT,
+apply_time,apply_time,,DATE,
+phone_number,phone_number,,TEXT,
+borrow_number,borrow_number,,BIGINT,
+borrow_purpose_id,borrow_purpose_id,,TEXT,
+borrow_purpose,borrow_purpose,,TEXT,
+purpose_detail,purpose_detail,,TEXT,
+createtime,createtime,,DATETIME,
+modifytime,modifytime,,DATETIME,

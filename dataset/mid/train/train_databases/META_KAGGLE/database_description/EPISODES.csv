@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+Id,Id,,DOUBLE,
+CompetitionId,CompetitionId,,DOUBLE,
+EndTime,EndTime,,DOUBLE,
+CreateTime,CreateTime,,DOUBLE,
+Type,Type,,DOUBLE,

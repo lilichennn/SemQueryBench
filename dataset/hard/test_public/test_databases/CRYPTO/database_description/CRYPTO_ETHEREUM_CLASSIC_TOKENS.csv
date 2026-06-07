@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+address,address,,TEXT,
+block_hash,block_hash,,TEXT,
+name,name,,TEXT,
+symbol,symbol,,TEXT,
+decimals,decimals,,TEXT,
+block_number,block_number,,DOUBLE,
+block_timestamp,block_timestamp,,DOUBLE,
+total_supply,total_supply,,TEXT,

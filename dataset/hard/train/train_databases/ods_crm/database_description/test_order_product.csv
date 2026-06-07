@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,TEXT,
+create_by,create_by,,TEXT,
+create_time,create_time,,DATETIME,
+update_by,update_by,,TEXT,
+update_time,update_time,,DATETIME,
+product_name,product_name,,TEXT,
+price,price,,TEXT,
+num,num,,BIGINT,
+descc,descc,,TEXT,
+order_fk_id,order_fk_id,,TEXT,
+pro_type,pro_type,,TEXT,

@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+Family_ID,Family_ID,,TEXT,
+Individual_ID,Individual_ID,,TEXT,
+Maternal_ID,Maternal_ID,,TEXT,
+Other_Comments,Other_Comments,,TEXT,
+Relationship,Relationship,,TEXT,
+Paternal_ID,Paternal_ID,,TEXT,
+Siblings,Siblings,,TEXT,
+Second_Order,Second_Order,,TEXT,
+Third_Order,Third_Order,,TEXT,
+Gender,Gender,,DOUBLE,
+Population,Population,,TEXT,
+Phenotype,Phenotype,,DOUBLE,

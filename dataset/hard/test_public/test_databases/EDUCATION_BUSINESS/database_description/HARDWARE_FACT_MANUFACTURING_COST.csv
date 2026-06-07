@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+product_code,product_code,,TEXT,
+manufacturing_cost,manufacturing_cost,,DOUBLE,
+cost_year,cost_year,,DOUBLE,

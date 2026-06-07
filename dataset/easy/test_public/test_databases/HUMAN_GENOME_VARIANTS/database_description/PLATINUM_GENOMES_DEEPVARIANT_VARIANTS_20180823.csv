@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+names,names,,JSON,
+alternate_bases,alternate_bases,,JSON,
+start_position,start_position,,DOUBLE,
+reference_name,reference_name,,TEXT,
+end_position,end_position,,DOUBLE,
+partition_date_please_ignore,partition_date_please_ignore,,DATE,
+filter,filter,,JSON,
+reference_bases,reference_bases,,TEXT,
+call,call,,JSON,
+quality,quality,,DOUBLE,

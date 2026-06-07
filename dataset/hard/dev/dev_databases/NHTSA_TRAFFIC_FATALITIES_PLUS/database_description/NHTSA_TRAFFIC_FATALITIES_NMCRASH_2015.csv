@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+consecutive_number,consecutive_number,,DOUBLE,
+non_motorist_contributing_circumstances,non_motorist_contributing_circumstances,,DOUBLE,
+non_motorist_contributing_circumstances_name,non_motorist_contributing_circumstances_name,,TEXT,
+person_number,person_number,,DOUBLE,
+vehicle_number,vehicle_number,,DOUBLE,
+state_number,state_number,,DOUBLE,

@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+company,company,,TEXT,
+date,date,,TEXT,
+cooperation_direction,cooperation_direction,,TEXT,
+contact_person,contact_person,,TEXT,
+achievements,achievements,,TEXT,

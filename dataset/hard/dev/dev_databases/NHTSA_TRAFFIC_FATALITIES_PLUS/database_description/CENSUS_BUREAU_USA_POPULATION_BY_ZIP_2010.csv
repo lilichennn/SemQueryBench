@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+geo_id,geo_id,,TEXT,
+zipcode,zipcode,,TEXT,
+minimum_age,minimum_age,,DOUBLE,
+gender,gender,,TEXT,
+population,population,,DOUBLE,
+maximum_age,maximum_age,,DOUBLE,

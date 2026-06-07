@@ -1,0 +1,4 @@
+original_column_name,column_name,column_description,data_format,value_description
+seat_no,seat_no,,TEXT,
+fare_conditions,fare_conditions,,TEXT,
+aircraft_code,aircraft_code,,TEXT,

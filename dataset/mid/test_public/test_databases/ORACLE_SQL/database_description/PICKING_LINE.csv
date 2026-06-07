@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+picklist_id,picklist_id,,DOUBLE,
+line_no,line_no,,DOUBLE,
+qty,qty,,DOUBLE,
+product_id,product_id,,DOUBLE,
+order_id,order_id,,DOUBLE,
+location_id,location_id,,DOUBLE,

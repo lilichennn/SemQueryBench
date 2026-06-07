@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,BIGINT,
+attachment_uuid,attachment_uuid,,TEXT,
+object_uuid,object_uuid,,TEXT,
+object_id,object_id,,TEXT,
+object_table_name,object_table_name,,TEXT,
+auth_bean,auth_bean,,TEXT,
+category,category,,TEXT,

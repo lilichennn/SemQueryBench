@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+Attribute,Attribute,,TEXT,
+Validation_Rules,Validation_Rules,,TEXT,
+DependsOn,DependsOn,,TEXT,
+DependsOn_Component,DependsOn_Component,,TEXT,
+Required,Required,,TEXT,
+Properties,Properties,,TEXT,
+Valid_Values,Valid_Values,,TEXT,
+Description,Description,,TEXT,
+Parent,Parent,,TEXT,
+Source,Source,,TEXT,
