@@ -31,10 +31,7 @@ baselines/**/*.pyo
 baselines/**/vector_cache/
 baselines/**/*.7z
 baselines/**/*.zip
-baselines/**/dataset/
-baselines/**/bird/
 baselines/**/outputs/
-baselines/**/results/
 baselines/**/logs/
 baselines/**/cache/
 baselines/**/.cache/
