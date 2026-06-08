@@ -1,0 +1,20 @@
+
+============================================================
+指标汇总
+============================================================
+执行准确率 (EX): 0/1 = 0.0000 (0.00%)
+精确匹配率 (EM): 0/1 = 0.0000 (0.00%)
+语法错误数: 0
+黄金 SQL 错误: 0
+============================================================
+[
+  {
+    "index": 1,
+    "db_id": "炼化",
+    "gold_query": "SELECT t.UNIT_ID, COUNT(*) AS event_cnt FROM 炼化.node_information t WHERE t.UNIT_ID IS NOT NULL AND t.NODE_ID IS NOT NULL GROUP BY t.UNIT_ID ORDER BY event_cnt DESC LIMIT 1000;",
+    "pred_query": "SELECT u.UNIT_ALIAS, COUNT(n.UNIT_ID) AS node_count FROM node_information n JOIN unit_information u ON n.UNIT_ID = u.UNIT_ID GROUP BY u.UNIT_ALIAS ORDER BY node_count DESC LIMIT 1000",
+    "execution_match": false,
+    "exact_match": false,
+    "error": null
+  }
+]

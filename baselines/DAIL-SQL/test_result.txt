@@ -1,0 +1,6 @@
+SELECT 
+    MAX(`Percent (%) Eligible Free (K-12)`) AS HighestEligibleFreeRate
+FROM 
+    frpm
+WHERE 
+    `County Name` = 'Alameda';

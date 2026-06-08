@@ -23,3 +23,24 @@ scripts_tmp/
 hidden/
 internal/
 sqa_hidden/
+
+# Baseline generated/local files
+baselines/**/__pycache__/
+baselines/**/*.pyc
+baselines/**/*.pyo
+baselines/**/vector_cache/
+baselines/**/*.7z
+baselines/**/*.zip
+baselines/**/dataset/
+baselines/**/bird/
+baselines/**/outputs/
+baselines/**/results/
+baselines/**/logs/
+baselines/**/cache/
+baselines/**/.cache/
+baselines/**/*.sqlite
+baselines/**/*.db
+baselines/**/*.pt
+baselines/**/*.pth
+baselines/**/*.bin
+baselines/**/*.safetensors

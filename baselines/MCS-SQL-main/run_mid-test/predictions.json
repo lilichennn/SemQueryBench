@@ -1,0 +1,7 @@
+[
+  {
+    "question_id": 242,
+    "db_id": "炼化",
+    "predicted_sql": "SELECT u.UNIT_ALIAS, COUNT(n.UNIT_ID) AS node_count FROM node_information n JOIN unit_information u ON n.UNIT_ID = u.UNIT_ID GROUP BY u.UNIT_ALIAS ORDER BY node_count DESC LIMIT 1000"
+  }
+]
