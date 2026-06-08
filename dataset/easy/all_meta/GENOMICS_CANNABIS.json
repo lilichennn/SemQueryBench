@@ -1,0 +1,991 @@
+{
+    "CS10_GFF": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "derived_features",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "strand",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "source",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "start",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "attributes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "phase",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "end",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "child_features",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "_part",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "seq_id",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": null
+            }
+        ]
+    },
+    "CS3K_PROJECT_INFO": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Library_Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "RSP10601"
+            },
+            {
+                "col_name": "Run",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "RSP10601"
+            },
+            {
+                "col_name": "Platform",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Instrument",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LibrarySource",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "GENOMIC"
+            },
+            {
+                "col_name": "LibrarySelection",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SRA_Study",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Kannapedia"
+            },
+            {
+                "col_name": "Sample_Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Boss Hog"
+            },
+            {
+                "col_name": "Consent",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LibraryLayout",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "PAIRED"
+            },
+            {
+                "col_name": "ReleaseDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "LoadDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "Assay_Type",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Center_Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BioProject",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BioSample",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "RSP10601"
+            },
+            {
+                "col_name": "SRA_Sample",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "RSP10601"
+            },
+            {
+                "col_name": "Experiment",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATASTORE_filetype",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "AvgSpotLen",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Organism",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cannabis sativa"
+            },
+            {
+                "col_name": "DATASTORE_provider",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MBases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "MBytes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATASTORE_region",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "InsertSize",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "CS3K_VCF_CS10_DV090": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "_part",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "start_position",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14895495
+            },
+            {
+                "col_name": "reference_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "names",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "end_position",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14895496
+            },
+            {
+                "col_name": "alternate_bases",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"alt\": \"C\"\n  }\n]"
+            },
+            {
+                "col_name": "filter",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"PASS\"\n]"
+            },
+            {
+                "col_name": "call",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"AD\": [\n      5,\n      6\n    ],\n    \"DP\": 11,\n    \"GQ\": 2,\n    \"PL\": [\n      0,\n      0,\n "
+            },
+            {
+                "col_name": "reference_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "chr2"
+            },
+            {
+                "col_name": "quality",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 4.9
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\xd5^D\\xdb1\\xd5\\xf7?\\x00\\x00\\x00\\x00\\x00\\x00\\x00\\x00"
+            }
+        ]
+    },
+    "MNPR01_201703": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "variant_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CKXG8eKP9qOf8wESIGdpfDEwOTg0OTY2MTB8Z2J8TU5QUjAxMDAwMjE3LjF8GMTaCyCKnMehlsjq-LsB"
+            },
+            {
+                "col_name": "PQA",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "LEN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "DPB",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4.66667
+            },
+            {
+                "col_name": "quality",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 4.72822e-05
+            },
+            {
+                "col_name": "alternate_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"TAAG\"\n]"
+            },
+            {
+                "col_name": "RPPR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 7.35324
+            },
+            {
+                "col_name": "NUMALT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CIGAR",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"1M1I2M\"\n]"
+            },
+            {
+                "col_name": "EPPR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 3.0103
+            },
+            {
+                "col_name": "reference_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TAG"
+            },
+            {
+                "col_name": "GTI",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "start",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 191812
+            },
+            {
+                "col_name": "PAO",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "AO",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "PRO",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "SRF",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RPR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "SAP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ins\"\n]"
+            },
+            {
+                "col_name": "reference_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "gi|1098496610|gb|MNPR01000217.1|"
+            },
+            {
+                "col_name": "AB",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "names",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "MQMR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 26.0
+            },
+            {
+                "col_name": "SRP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 3.0103
+            },
+            {
+                "col_name": "SRR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PQR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "QA",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  4\n]"
+            },
+            {
+                "col_name": "NS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ABP",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "PAIRED",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "filter",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "end",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 191815
+            },
+            {
+                "col_name": "RPL",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "ODDS",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 12.0154
+            },
+            {
+                "col_name": "SAF",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "MEANALT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "AC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "PAIREDR",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "AN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "QR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 79
+            },
+            {
+                "col_name": "RUN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "RO",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MQM",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "EPP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "DPRA",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "DP",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "RPP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "SAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "call",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"AD\": [\n      2,\n      2\n    ],\n    \"AO\": [\n      2\n    ],\n    \"DP\": 4,\n    \"QA\": [\n      "
+            }
+        ]
+    },
+    "MNPR01_REFERENCE_201703": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "length",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4096
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "gi|1098477440|gb|MNPR01010102.1|"
+            }
+        ]
+    },
+    "MNPR01_TRANSCRIPTOME_201703": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "variant_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CKXG8eKP9qOf8wESIGdpfDEwOTg0OTY2MTB8Z2J8TU5QUjAxMDAwMjE3LjF8GMTaCyCKnMehlsjq-LsB"
+            },
+            {
+                "col_name": "PQA",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "LEN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "DPB",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4.66667
+            },
+            {
+                "col_name": "quality",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 4.72822e-05
+            },
+            {
+                "col_name": "alternate_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"TAAG\"\n]"
+            },
+            {
+                "col_name": "RPPR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 7.35324
+            },
+            {
+                "col_name": "NUMALT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CIGAR",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"1M1I2M\"\n]"
+            },
+            {
+                "col_name": "EPPR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 3.0103
+            },
+            {
+                "col_name": "reference_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TAG"
+            },
+            {
+                "col_name": "GTI",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "start",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 191812
+            },
+            {
+                "col_name": "PAO",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "AO",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "PRO",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "SRF",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RPR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "SAP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ins\"\n]"
+            },
+            {
+                "col_name": "reference_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "gi|1098496610|gb|MNPR01000217.1|"
+            },
+            {
+                "col_name": "AB",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "names",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "MQMR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 26.0
+            },
+            {
+                "col_name": "SRP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 3.0103
+            },
+            {
+                "col_name": "SRR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PQR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "QA",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  4\n]"
+            },
+            {
+                "col_name": "NS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ABP",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "PAIRED",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "filter",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "end",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 191815
+            },
+            {
+                "col_name": "RPL",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "ODDS",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 12.0154
+            },
+            {
+                "col_name": "SAF",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "MEANALT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "AC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "PAIREDR",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "AN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "QR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 79
+            },
+            {
+                "col_name": "RUN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "RO",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MQM",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "EPP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "DPRA",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0\n]"
+            },
+            {
+                "col_name": "DP",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "RPP",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  7.353240000000000e+00\n]"
+            },
+            {
+                "col_name": "SAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2\n]"
+            },
+            {
+                "col_name": "call",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"AD\": [\n      2,\n      2\n    ],\n    \"AO\": [\n      2\n    ],\n    \"DP\": 4,\n    \"QA\": [\n      "
+            }
+        ]
+    },
+    "SAMPLE_INFO_201703": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SRA_Sample_s",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "SRS266829"
+            },
+            {
+                "col_name": "cultivar_s",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Sample_Name_s",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "PK-RT"
+            },
+            {
+                "col_name": "Library_Name_s",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "PK-RT"
+            }
+        ]
+    }
+}

@@ -1,0 +1,2691 @@
+{
+    "ANIMALS_PRODUCTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "CENSUS2002": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "CENSUS2007": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "CENSUS2012": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "CENSUS_2002": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CROPS"
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED: (25.0 TO 49.9 ACRES)"
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIELD CROPS"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IA"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2002
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "HAY - ACRES HARVESTED"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 9000
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL CLASSES"
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "HAY"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1325376000000000
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "zip_5",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ACRES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "cv_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 269090.0
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "value_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CENSUS_2007": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CROPS"
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED: (25.0 TO 49.9 ACRES)"
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIELD CROPS"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IA"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2002
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "HAY - ACRES HARVESTED"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 9000
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL CLASSES"
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "HAY"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1325376000000000
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "zip_5",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ACRES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "cv_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 269090.0
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "value_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CENSUS_2012": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CROPS"
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED: (25.0 TO 49.9 ACRES)"
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIELD CROPS"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IA"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2002
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "HAY - ACRES HARVESTED"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 9000
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL CLASSES"
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "HAY"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1325376000000000
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "zip_5",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ACRES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "cv_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 269090.0
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "value_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CROPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CROPS"
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED: (25.0 TO 49.9 ACRES)"
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIELD CROPS"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IA"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2002
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "HAY - ACRES HARVESTED"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 9000
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL CLASSES"
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "HAY"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1325376000000000
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "zip_5",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ACRES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "cv_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 269090.0
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "value_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "DEMOGRAPHICS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "ECONOMICS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_5",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24.0"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9000"
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2002"
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ANIMALS & PRODUCTS"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE, CALVES - OPERATIONS WITH SALES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SALES"
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OPERATIONS"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MARYLAND"
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1,614"
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CALVES"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2012-01-01 00:00:00"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NOT SPECIFIED"
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CATTLE"
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "LIVESTOCK"
+            },
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "ENVIRONMENTAL": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "begin_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "end_code",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "sector_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CROPS"
+            },
+            {
+                "col_name": "domaincat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED: (25.0 TO 49.9 ACRES)"
+            },
+            {
+                "col_name": "county_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "group_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIELD CROPS"
+            },
+            {
+                "col_name": "state_alpha",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IA"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2002
+            },
+            {
+                "col_name": "asd_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "statisticcat_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "short_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "HAY - ACRES HARVESTED"
+            },
+            {
+                "col_name": "prodn_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL PRODUCTION PRACTICES"
+            },
+            {
+                "col_name": "reference_period_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "YEAR"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 9000
+            },
+            {
+                "col_name": "region_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "class_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL CLASSES"
+            },
+            {
+                "col_name": "commodity_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "HAY"
+            },
+            {
+                "col_name": "cv_percent",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "week_ending",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "asd_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "county_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED STATES"
+            },
+            {
+                "col_name": "load_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1325376000000000
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "zip_5",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CENSUS"
+            },
+            {
+                "col_name": "util_practice_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ALL UTILIZATION PRACTICES"
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "watershed_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "unit_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ACRES"
+            },
+            {
+                "col_name": "location_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "IOWA"
+            },
+            {
+                "col_name": "cv_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "state_ansi",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 269090.0
+            },
+            {
+                "col_name": "agg_level_desc",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "STATE"
+            },
+            {
+                "col_name": "watershed_desc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "congr_district_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "domain_desc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AREA HARVESTED"
+            },
+            {
+                "col_name": "freq_desc",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "ANNUAL"
+            },
+            {
+                "col_name": "value_suppression_code",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    }
+}

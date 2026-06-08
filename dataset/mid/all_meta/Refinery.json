@@ -1,0 +1,366 @@
+{
+    "balance_information": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "NODE_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 334
+            },
+            {
+                "col_name": "begin_shift_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2023-04-01 06:00:00"
+            },
+            {
+                "col_name": "inout_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": "进"
+            },
+            {
+                "col_name": "amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 165.759
+            },
+            {
+                "col_name": "page_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(10)",
+                "sample_value": "ZU"
+            }
+        ]
+    },
+    "material_information": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "MTRL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "MTRL_ALIAS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "原料"
+            },
+            {
+                "col_name": "UPPER_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "INT",
+                "sample_value": -1
+            }
+        ]
+    },
+    "node_information": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "NODE_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 279
+            },
+            {
+                "col_name": "NODE_ALIAS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "常减压Ⅰ原油进料线"
+            },
+            {
+                "col_name": "UNIT_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "INT",
+                "sample_value": 138
+            }
+        ]
+    },
+    "tank_information": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "MES_TK_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "INT",
+                "sample_value": 204
+            },
+            {
+                "col_name": "MES_TK_ALIAS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "TK1101"
+            }
+        ]
+    },
+    "tank_inventory": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "MTRL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 558
+            },
+            {
+                "col_name": "MES_TK_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 204
+            },
+            {
+                "col_name": "tank_con_val",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 50100.0
+            },
+            {
+                "col_name": "chk_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2018-01-01 06:00:01"
+            }
+        ]
+    },
+    "unit_information": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "UNIT_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "INT",
+                "sample_value": 138
+            },
+            {
+                "col_name": "UNIT_ALIAS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "常减压装置Ⅰ"
+            },
+            {
+                "col_name": "CAPACITY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1000
+            },
+            {
+                "col_name": "OPERATING_HOURS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 8400
+            }
+        ]
+    },
+    "pm_unit_t": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "UNIT_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "INT",
+                "sample_value": 138
+            },
+            {
+                "col_name": "UNIT_NUM",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 10001
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(400)",
+                "sample_value": "CDU1"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(400)",
+                "sample_value": "1000万吨/年Ⅰ套常减压蒸馏装置"
+            },
+            {
+                "col_name": "UNIT_ALIAS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(400)",
+                "sample_value": "常减压装置Ⅰ"
+            },
+            {
+                "col_name": "UNIT_TYPE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(256)",
+                "sample_value": 1
+            },
+            {
+                "col_name": "NODE_AREA_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "INT",
+                "sample_value": 105
+            },
+            {
+                "col_name": "UNIT_DES",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(4000)",
+                "sample_value": "装置由成都宏骏有限公司（CPECC）总承包、深圳嘉计瑞骏有限公司（CEI）设计、北京华天一建设有限公司施工建设。装置设计规模为1000万吨/年，操作弹性为60～110％，年操作时数为8400小时，采用"
+            },
+            {
+                "col_name": "CAPACITY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(8",
+                "sample_value": 1000
+            },
+            {
+                "col_name": "OPERATING_HOURS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(8",
+                "sample_value": 8400
+            },
+            {
+                "col_name": "ISSCRAPPED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SCRAPPED_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "ISACCESS",
+                "col_tag": "STATUS_WORK",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "USE_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DES",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(200)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DISPLAY_ORDER",
+                "col_tag": "LEVEL",
+                "col_type": "DECIMAL(8",
+                "sample_value": 10
+            },
+            {
+                "col_name": "CREATE_USER",
+                "col_tag": "REL_PERSON",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "MODIFY_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "MODIFY_USER",
+                "col_tag": "REL_PERSON",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "IS_DELETE",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MES_FCTR_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "INT",
+                "sample_value": 208
+            },
+            {
+                "col_name": "MES_WSP_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "INT",
+                "sample_value": 604
+            }
+        ]
+    },
+    "rpt_t_daily_refinery_unit": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "INT",
+                "sample_value": 1763
+            },
+            {
+                "col_name": "node_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "CDU1"
+            },
+            {
+                "col_name": "r_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2015-05-05"
+            },
+            {
+                "col_name": "inout_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR(2)",
+                "sample_value": 1
+            },
+            {
+                "col_name": "mtrl_alias_show",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "原料B"
+            },
+            {
+                "col_name": "plan_total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE(21",
+                "sample_value": null
+            },
+            {
+                "col_name": "daily_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20",
+                "sample_value": "930.0000"
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE(21",
+                "sample_value": "930.0000"
+            },
+            {
+                "col_name": "bal_amount_daily",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20",
+                "sample_value": null
+            },
+            {
+                "col_name": "raw_amount_daily",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20",
+                "sample_value": null
+            }
+        ]
+    }
+}

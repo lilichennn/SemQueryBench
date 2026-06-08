@@ -1,0 +1,44 @@
+ {
+    "REFERENCE": {
+        "TIME_EVENT": [],
+        "ID_MAIN": [],
+        "NAME_ENTITY": [],
+        "VAL_PERCENT": [],
+        "STATUS_LIFE": [],
+        "REL_PERSON": [],
+        "NAME_SHORT": [],
+        "LOCATION": [],
+        "ID_EXTERNAL": [],
+        "REL_ENTITY": [],
+        "TIME_BIRTH": [],
+        "CATEGORY_TOPIC": [],
+        "VAL_QUANTITY": [],
+        "DESC_LONG": [],
+        "VAL_AMOUNT": []
+    },
+    "MASTER": {
+        "REL_ENTITY": [],
+        "ID_MAIN": [],
+        "NAME_ENTITY": [],
+        "ID_EXTERNAL": []
+    },
+    "TRANSACTION": {
+        "ID_MAIN": [],
+        "NAME_ENTITY": [],
+        "REL_PERSON": [],
+        "ID_EXTERNAL": [],
+        "REL_ENTITY": []
+    },
+    "RELATION": {
+        "NAME_ENTITY": [],
+        "ID_EXTERNAL": []
+    },
+    "LOG": {
+        "ID_EXTERNAL": []
+    },
+    "DIMENSION": {
+        "ID_MAIN": [],
+        "NAME_ENTITY": [],
+        "ID_EXTERNAL": []
+    }
+}

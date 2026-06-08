@@ -1,0 +1,680 @@
+{
+    "HARDWARE_DIM_CUSTOMER": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "customer_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 70002017
+            },
+            {
+                "col_name": "region",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "APAC"
+            },
+            {
+                "col_name": "channel",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Direct"
+            },
+            {
+                "col_name": "market",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "India"
+            },
+            {
+                "col_name": "sub_zone",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "India"
+            },
+            {
+                "col_name": "platform",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Brick & Mortar"
+            },
+            {
+                "col_name": "customer",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Atliq Exclusive"
+            }
+        ]
+    },
+    "HARDWARE_DIM_PRODUCT": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "product_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "A0118150101"
+            },
+            {
+                "col_name": "product",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "AQ Dracula HDD – 3.5 Inch SATA 6 Gb/s 5400 RPM 256 MB Cache"
+            },
+            {
+                "col_name": "division",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "P & A"
+            },
+            {
+                "col_name": "category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Internal HDD"
+            },
+            {
+                "col_name": "segment",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Peripherals"
+            },
+            {
+                "col_name": "variant",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Standard"
+            }
+        ]
+    },
+    "HARDWARE_FACT_GROSS_PRICE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "product_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "A0118150102"
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            },
+            {
+                "col_name": "gross_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 19.8577
+            }
+        ]
+    },
+    "HARDWARE_FACT_MANUFACTURING_COST": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "product_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "A0118150101"
+            },
+            {
+                "col_name": "manufacturing_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 5.5172
+            },
+            {
+                "col_name": "cost_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2021
+            }
+        ]
+    },
+    "HARDWARE_FACT_PRE_INVOICE_DEDUCTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "pre_invoice_discount_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0735
+            },
+            {
+                "col_name": "customer_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 70002017
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            }
+        ]
+    },
+    "HARDWARE_FACT_SALES_MONTHLY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-09-01"
+            },
+            {
+                "col_name": "customer_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 70002017
+            },
+            {
+                "col_name": "sold_quantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 137
+            },
+            {
+                "col_name": "product_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "A0118150101"
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            }
+        ]
+    },
+    "SALARYDATASET": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "Salary",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "₹6,48,573/yr"
+            },
+            {
+                "col_name": "CompanyName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Mu Sigma"
+            },
+            {
+                "col_name": "SalariesReported",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 105.0
+            },
+            {
+                "col_name": "Location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Bangalore"
+            },
+            {
+                "col_name": "JobTitle",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Data Scientist"
+            }
+        ]
+    },
+    "STAFFHOURS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "EventDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-15"
+            },
+            {
+                "col_name": "EventType",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Exit"
+            },
+            {
+                "col_name": "StaffMember",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "EventTime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "08:00"
+            }
+        ]
+    },
+    "UNIVERSITY_COURSE": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "CourseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FIN450"
+            },
+            {
+                "col_name": "CrsDesc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "PRINCIPLES OF INVESTMENTS"
+            },
+            {
+                "col_name": "CrsUnits",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            }
+        ]
+    },
+    "UNIVERSITY_ENROLLMENT": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "EnrGrade",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 3.5
+            },
+            {
+                "col_name": "StdNo",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 234567890
+            },
+            {
+                "col_name": "OfferNo",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1234
+            }
+        ]
+    },
+    "UNIVERSITY_FACULTY": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "FacNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 98765432
+            },
+            {
+                "col_name": "FacFirstName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "LEONARD"
+            },
+            {
+                "col_name": "FacRank",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "ASST"
+            },
+            {
+                "col_name": "FacCity",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SEATTLE"
+            },
+            {
+                "col_name": "FacSalary",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 35000
+            },
+            {
+                "col_name": "FacState",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "WA"
+            },
+            {
+                "col_name": "FacDept",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MS"
+            },
+            {
+                "col_name": "FacHireDate",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "1997-04-10"
+            },
+            {
+                "col_name": "FacLastName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "VINCE"
+            },
+            {
+                "col_name": "FacSupervisor",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 654321098.0
+            },
+            {
+                "col_name": "FacZipCode",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "98111-9921"
+            }
+        ]
+    },
+    "UNIVERSITY_OFFERING": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "OfferNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2222
+            },
+            {
+                "col_name": "OffYear",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2009
+            },
+            {
+                "col_name": "OffTerm",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SUMMER"
+            },
+            {
+                "col_name": "CourseNo",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IS460"
+            },
+            {
+                "col_name": "OffLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "BLM412"
+            },
+            {
+                "col_name": "FacNo",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 765432109.0
+            },
+            {
+                "col_name": "OffTime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "1:30 PM"
+            },
+            {
+                "col_name": "OffDays",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TTH"
+            }
+        ]
+    },
+    "UNIVERSITY_STUDENT": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "StdNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 124567890
+            },
+            {
+                "col_name": "StdClass",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "JR"
+            },
+            {
+                "col_name": "StdMajor",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "FIN"
+            },
+            {
+                "col_name": "StdCity",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "BOTHELL"
+            },
+            {
+                "col_name": "StdFirstName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "BOB"
+            },
+            {
+                "col_name": "StdGPA",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 2.7
+            },
+            {
+                "col_name": "StdState",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "WA"
+            },
+            {
+                "col_name": "StdLastName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "NORBERT"
+            },
+            {
+                "col_name": "StdZip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "98011-2121"
+            }
+        ]
+    },
+    "WEB_ACCOUNTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1011
+            },
+            {
+                "col_name": "sales_rep_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 321510
+            },
+            {
+                "col_name": "primary_poc",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Sung Shields"
+            },
+            {
+                "col_name": "website",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "www.exxonmobil.com"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 41.1691563
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Exxon Mobil"
+            },
+            {
+                "col_name": "long",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.84937379
+            }
+        ]
+    },
+    "WEB_EVENTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "channel",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "direct"
+            },
+            {
+                "col_name": "account_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1001
+            },
+            {
+                "col_name": "occurred_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2015-11-05T03:08:26.000Z"
+            }
+        ]
+    },
+    "WEB_ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "poster_amt_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 194.88
+            },
+            {
+                "col_name": "standard_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 123
+            },
+            {
+                "col_name": "occurred_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2015-10-06T17:31:14.000Z"
+            },
+            {
+                "col_name": "gloss_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            },
+            {
+                "col_name": "poster_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 24
+            },
+            {
+                "col_name": "standard_amt_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 613.77
+            },
+            {
+                "col_name": "total",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 169
+            },
+            {
+                "col_name": "gloss_amt_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 164.78
+            },
+            {
+                "col_name": "account_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1001
+            },
+            {
+                "col_name": "total_amt_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 973.43
+            }
+        ]
+    },
+    "WEB_REGION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Midwest"
+            }
+        ]
+    },
+    "WEB_SALES_REPS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 321540
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Cara Clarke"
+            },
+            {
+                "col_name": "region_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    }
+}

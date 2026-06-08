@@ -1,0 +1,371 @@
+{
+  "MASTER": {
+    "ID_EXTERNAL": [
+      {
+        "path": "main.CUSTOMERS.customer_id",
+        "type": "TEXT",
+        "sample": "06b8999e2fba1a1fbc88172c00ba8bc7"
+      },
+      {
+        "path": "main.CUSTOMERS.customer_unique_id",
+        "type": "TEXT",
+        "sample": "861eff4711a542e4b93843c6dd7febb0"
+      },
+      {
+        "path": "main.PRODUCTS.product_id",
+        "type": "TEXT",
+        "sample": "1e9e8ef04dbcff4541ed26657ea517e5"
+      },
+      {
+        "path": "main.SELLERS.seller_id",
+        "type": "TEXT",
+        "sample": "3442f8959a84dea7ee197c632cb2df15"
+      }
+    ],
+    "ID_MAIN": [
+      {
+        "path": "main.CUSTOMERS.index",
+        "type": "NUMBER",
+        "sample": 0
+      },
+      {
+        "path": "main.PRODUCTS.index",
+        "type": "NUMBER",
+        "sample": 0
+      },
+      {
+        "path": "main.SELLERS.index",
+        "type": "NUMBER",
+        "sample": 0
+      }
+    ],
+    "LOCATION": [
+      {
+        "path": "main.CUSTOMERS.customer_city",
+        "type": "TEXT",
+        "sample": "franca"
+      },
+      {
+        "path": "main.CUSTOMERS.customer_state",
+        "type": "TEXT",
+        "sample": "SP"
+      },
+      {
+        "path": "main.CUSTOMERS.customer_zip_code_prefix",
+        "type": "NUMBER",
+        "sample": 14409
+      },
+      {
+        "path": "main.SELLERS.seller_city",
+        "type": "TEXT",
+        "sample": "campinas"
+      },
+      {
+        "path": "main.SELLERS.seller_state",
+        "type": "TEXT",
+        "sample": "SP"
+      },
+      {
+        "path": "main.SELLERS.seller_zip_code_prefix",
+        "type": "NUMBER",
+        "sample": 13023
+      }
+    ],
+    "CATEGORY_TOPIC": [
+      {
+        "path": "main.PRODUCTS.product_category_name",
+        "type": "TEXT",
+        "sample": "perfumaria"
+      }
+    ],
+    "VAL_QUANTITY": [
+      {
+        "path": "main.PRODUCTS.product_description_lenght",
+        "type": "FLOAT",
+        "sample": 287.0
+      },
+      {
+        "path": "main.PRODUCTS.product_height_cm",
+        "type": "FLOAT",
+        "sample": 10.0
+      },
+      {
+        "path": "main.PRODUCTS.product_length_cm",
+        "type": "FLOAT",
+        "sample": 16.0
+      },
+      {
+        "path": "main.PRODUCTS.product_name_lenght",
+        "type": "FLOAT",
+        "sample": 40.0
+      },
+      {
+        "path": "main.PRODUCTS.product_photos_qty",
+        "type": "FLOAT",
+        "sample": 1.0
+      },
+      {
+        "path": "main.PRODUCTS.product_weight_g",
+        "type": "FLOAT",
+        "sample": 225.0
+      },
+      {
+        "path": "main.PRODUCTS.product_width_cm",
+        "type": "FLOAT",
+        "sample": 14.0
+      }
+    ]
+  },
+  "REFERENCE": {
+    "ID_EXTERNAL": [
+      {
+        "path": "main.GEOLOCATION.geolocation_zip_code_prefix",
+        "type": "NUMBER",
+        "sample": 89745
+      }
+    ],
+    "ID_MAIN": [
+      {
+        "path": "main.GEOLOCATION.index",
+        "type": "NUMBER",
+        "sample": 933888
+      },
+      {
+        "path": "main.PRODUCT_CATEGORY_NAME_TRANSLATION.index",
+        "type": "NUMBER",
+        "sample": 1
+      }
+    ],
+    "NAME_ENTITY": [
+      {
+        "path": "main.GEOLOCATION.geolocation_city",
+        "type": "TEXT",
+        "sample": "presidente castello branco"
+      },
+      {
+        "path": "main.PRODUCT_CATEGORY_NAME_TRANSLATION.product_category_name",
+        "type": "TEXT",
+        "sample": "informatica_acessorios"
+      },
+      {
+        "path": "main.PRODUCT_CATEGORY_NAME_TRANSLATION.product_category_name_english",
+        "type": "TEXT",
+        "sample": "computers_accessories"
+      }
+    ],
+    "LOCATION": [
+      {
+        "path": "main.GEOLOCATION.geolocation_lat",
+        "type": "FLOAT",
+        "sample": -27.22083994710839
+      },
+      {
+        "path": "main.GEOLOCATION.geolocation_lng",
+        "type": "FLOAT",
+        "sample": -51.81102224706286
+      }
+    ],
+    "NAME_SHORT": [
+      {
+        "path": "main.GEOLOCATION.geolocation_state",
+        "type": "TEXT",
+        "sample": "SC"
+      }
+    ]
+  },
+  "TRANSACTION": {
+    "ID_MAIN": [
+      {
+        "path": "main.ORDERS.index",
+        "type": "NUMBER",
+        "sample": 1
+      },
+      {
+        "path": "main.ORDER_PAYMENTS.index",
+        "type": "NUMBER",
+        "sample": 0
+      },
+      {
+        "path": "main.ORDER_REVIEWS.index",
+        "type": "NUMBER",
+        "sample": 1
+      }
+    ],
+    "ID_EXTERNAL": [
+      {
+        "path": "main.ORDERS.order_id",
+        "type": "TEXT",
+        "sample": "53cdb2fc8bc7dce0b6741e2150273451"
+      },
+      {
+        "path": "main.ORDER_REVIEWS.review_id",
+        "type": "TEXT",
+        "sample": "80e641a11e56f04c1ad469d5645fdfde"
+      }
+    ],
+    "REL_PERSON": [
+      {
+        "path": "main.ORDERS.customer_id",
+        "type": "TEXT",
+        "sample": "b0830fb4747a6c6d20dea0b8c802d7ef"
+      }
+    ],
+    "TIME_EVENT": [
+      {
+        "path": "main.ORDERS.order_approved_at",
+        "type": "TEXT",
+        "sample": "2018-07-26 03:24:27"
+      },
+      {
+        "path": "main.ORDERS.order_delivered_carrier_date",
+        "type": "TEXT",
+        "sample": "2018-07-26 14:31:00"
+      },
+      {
+        "path": "main.ORDERS.order_delivered_customer_date",
+        "type": "TEXT",
+        "sample": "2018-08-07 15:27:45"
+      },
+      {
+        "path": "main.ORDERS.order_purchase_timestamp",
+        "type": "TEXT",
+        "sample": "2018-07-24 20:41:37"
+      },
+      {
+        "path": "main.ORDER_REVIEWS.review_answer_timestamp",
+        "type": "TEXT",
+        "sample": "2018-03-11 03:05:13"
+      },
+      {
+        "path": "main.ORDER_REVIEWS.review_creation_date",
+        "type": "TEXT",
+        "sample": "2018-03-10 00:00:00"
+      }
+    ],
+    "TIME_DEADLINE": [
+      {
+        "path": "main.ORDERS.order_estimated_delivery_date",
+        "type": "TEXT",
+        "sample": "2018-08-13 00:00:00"
+      }
+    ],
+    "STATUS_WORK": [
+      {
+        "path": "main.ORDERS.order_status",
+        "type": "TEXT",
+        "sample": "delivered"
+      }
+    ],
+    "REL_ENTITY": [
+      {
+        "path": "main.ORDER_PAYMENTS.order_id",
+        "type": "TEXT",
+        "sample": "b81ef226f3fe1789b1e8b2acac839d17"
+      },
+      {
+        "path": "main.ORDER_REVIEWS.order_id",
+        "type": "TEXT",
+        "sample": "a548910a1c6147796b98fdf73dbeba33"
+      }
+    ],
+    "VAL_QUANTITY": [
+      {
+        "path": "main.ORDER_PAYMENTS.payment_installments",
+        "type": "NUMBER",
+        "sample": 8
+      }
+    ],
+    "VAL_RATING": [
+      {
+        "path": "main.ORDER_PAYMENTS.payment_sequential",
+        "type": "NUMBER",
+        "sample": 1
+      },
+      {
+        "path": "main.ORDER_REVIEWS.review_score",
+        "type": "NUMBER",
+        "sample": 5
+      }
+    ],
+    "CATEGORY_TOPIC": [
+      {
+        "path": "main.ORDER_PAYMENTS.payment_type",
+        "type": "TEXT",
+        "sample": "credit_card"
+      }
+    ],
+    "VAL_AMOUNT": [
+      {
+        "path": "main.ORDER_PAYMENTS.payment_value",
+        "type": "FLOAT",
+        "sample": 99.33
+      }
+    ],
+    "DESC_LONG": [
+      {
+        "path": "main.ORDER_REVIEWS.review_comment_message",
+        "type": "TEXT",
+        "sample": ""
+      }
+    ],
+    "NAME_SHORT": [
+      {
+        "path": "main.ORDER_REVIEWS.review_comment_title",
+        "type": "TEXT",
+        "sample": ""
+      }
+    ]
+  },
+  "RELATION": {
+    "ID_MAIN": [
+      {
+        "path": "main.ORDER_ITEMS.index",
+        "type": "NUMBER",
+        "sample": 2
+      }
+    ],
+    "ID_EXTERNAL": [
+      {
+        "path": "main.ORDER_ITEMS.order_item_id",
+        "type": "NUMBER",
+        "sample": 1
+      }
+    ],
+    "VAL_AMOUNT": [
+      {
+        "path": "main.ORDER_ITEMS.freight_value",
+        "type": "FLOAT",
+        "sample": 17.87
+      },
+      {
+        "path": "main.ORDER_ITEMS.price",
+        "type": "FLOAT",
+        "sample": 199.0
+      }
+    ],
+    "REL_ENTITY": [
+      {
+        "path": "main.ORDER_ITEMS.order_id",
+        "type": "TEXT",
+        "sample": "000229ec398224ef6ca0657da4fc703e"
+      },
+      {
+        "path": "main.ORDER_ITEMS.product_id",
+        "type": "TEXT",
+        "sample": "c777355d18b72b67abbeef9df44fd0fd"
+      },
+      {
+        "path": "main.ORDER_ITEMS.seller_id",
+        "type": "TEXT",
+        "sample": "5b51032eddd242adc84c38acab88f23d"
+      }
+    ],
+    "TIME_DEADLINE": [
+      {
+        "path": "main.ORDER_ITEMS.shipping_limit_date",
+        "type": "TEXT",
+        "sample": "2018-01-18 14:48:30"
+      }
+    ]
+  }
+}

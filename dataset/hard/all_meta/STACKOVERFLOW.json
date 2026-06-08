@@ -1,0 +1,1450 @@
+{
+    "BADGES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 28291962
+            },
+            {
+                "col_name": "tag_based",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1527259383990000
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 9846917
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Informed"
+            },
+            {
+                "col_name": "class",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            }
+        ]
+    },
+    "COMMENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2048980
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1264110960193000
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 32632
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "text",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "This Won't work for non-virtual methods, as it will return the name of the type that the method is d"
+            },
+            {
+                "col_name": "user_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2113099
+            }
+        ]
+    },
+    "POSTS_ANSWERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5686086
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 5686118
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 155861
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1302954623957000
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 155861.0
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>first do</p>\n\n<pre><code>// only for the GUY who didn't read the complete answer :(\n$param=addsla"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1302952732137000
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1302954623957000.0
+            }
+        ]
+    },
+    "POSTS_MODERATOR_NOMINATION": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4729565
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>I am detail oriented and would like to moderate this site to keep it a clean and fun place to vis"
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            }
+        ]
+    },
+    "POSTS_ORPHANED_TAG_WIKI": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4729565
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>I am detail oriented and would like to moderate this site to keep it a clean and fun place to vis"
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            }
+        ]
+    },
+    "POSTS_PRIVILEGE_WIKI": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 15111874
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1583
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<h3>What is edit questions and answers?</h3>\n\n<p>We believe in the power of community editing. That "
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "POSTS_QUESTIONS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 5501349
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1301584153647000.0
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5501615.0
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 302677
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "c#|.net|desktop-application"
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1301584636283000
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>I would like to open a website in a user's default web browser, however since the url is user-def"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Open website in the user's default browser without letting them launch anything else?"
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13116
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1301581207630000
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 302677.0
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2.0
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            }
+        ]
+    },
+    "POSTS_TAG_WIKI": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4729565
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>I am detail oriented and would like to moderate this site to keep it a clean and fun place to vis"
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            }
+        ]
+    },
+    "POSTS_TAG_WIKI_EXCERPT": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4729565
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 171206
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>I am detail oriented and would like to moderate this site to keep it a clean and fun place to vis"
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1295388234897000
+            }
+        ]
+    },
+    "POSTS_WIKI_PLACEHOLDER": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 15111874
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1583
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1361967204423000
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<h3>What is edit questions and answers?</h3>\n\n<p>We believe in the power of community editing. That "
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "POST_HISTORY": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "revision_guid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8b6aaedc-d207-4081-97a9-7035207f386d"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 54201121
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1387754944993000
+            },
+            {
+                "col_name": "post_history_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 3128057
+            },
+            {
+                "col_name": "comment",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "added 2 characters in body"
+            },
+            {
+                "col_name": "post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20735186
+            },
+            {
+                "col_name": "text",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "I am converting tutorials for students (2nd language speakers, 9 to 12 yrs old) to access in an offl"
+            }
+        ]
+    },
+    "POST_LINKS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 880002256
+            },
+            {
+                "col_name": "post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22342898
+            },
+            {
+                "col_name": "related_post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21111070
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1394603209690000
+            },
+            {
+                "col_name": "link_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "STACKOVERFLOW_POSTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 12043418
+            },
+            {
+                "col_name": "tags",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "last_editor_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "last_edit_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1345489443110000.0
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 12043365
+            },
+            {
+                "col_name": "favorite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1345488922380000
+            },
+            {
+                "col_name": "answer_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "owner_display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "body",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<pre><code>lis = ['fi' 'do' 'ca'] for item in lis: for name in glob.glob('*.html'): if item in name:"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "community_owned_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "last_activity_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1345489443110000
+            },
+            {
+                "col_name": "last_editor_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 846892.0
+            },
+            {
+                "col_name": "owner_user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 846892
+            },
+            {
+                "col_name": "post_type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "view_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "accepted_answer_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "TAGS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2136
+            },
+            {
+                "col_name": "tag_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "regsvr32"
+            },
+            {
+                "col_name": "excerpt_post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10051236
+            },
+            {
+                "col_name": "wiki_post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10051235
+            },
+            {
+                "col_name": "count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 256
+            }
+        ]
+    },
+    "USERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4391515
+            },
+            {
+                "col_name": "display_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Jaideep Datta"
+            },
+            {
+                "col_name": "profile_image_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://www.gravatar.com/avatar/9a78031187f403ddbdd4a98498324819?s=128&d=identicon&r=PG&f=1"
+            },
+            {
+                "col_name": "last_access_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1647675999303000
+            },
+            {
+                "col_name": "views",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "about_me",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "up_votes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "reputation",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "age",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "website_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "down_votes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1419420461190000
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "VOTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 57399609
+            },
+            {
+                "col_name": "creation_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1384473600000000
+            },
+            {
+                "col_name": "vote_type_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "post_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20009129
+            }
+        ]
+    }
+}

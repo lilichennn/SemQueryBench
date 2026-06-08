@@ -1,0 +1,354 @@
+{
+    "BALL_BY_BALL": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ball_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "striker_batting_position",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "striker",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "team_batting",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "innings_no",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "match_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 335987
+            },
+            {
+                "col_name": "team_bowling",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "bowler",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 106
+            },
+            {
+                "col_name": "over_id",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "non_striker",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            }
+        ]
+    },
+    "BATSMAN_SCORED": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ball_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "over_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "runs_scored",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "match_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 335987
+            },
+            {
+                "col_name": "innings_no",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            }
+        ]
+    },
+    "EXTRA_RUNS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "over_id",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 18
+            },
+            {
+                "col_name": "match_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 501229
+            },
+            {
+                "col_name": "innings_no",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "ball_id",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "extra_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "legbyes"
+            },
+            {
+                "col_name": "extra_runs",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            }
+        ]
+    },
+    "MATCH": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "season_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "match_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 335987
+            },
+            {
+                "col_name": "man_of_the_match",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "outcome_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Result"
+            },
+            {
+                "col_name": "venue",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "M Chinnaswamy Stadium"
+            },
+            {
+                "col_name": "team_2",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "match_winner",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "match_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2008-04-18"
+            },
+            {
+                "col_name": "win_margin",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 140
+            },
+            {
+                "col_name": "toss_winner",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "team_1",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "win_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "runs"
+            },
+            {
+                "col_name": "toss_decision",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "field"
+            }
+        ]
+    },
+    "PLAYER": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "player_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "dob",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "1981-09-27"
+            },
+            {
+                "col_name": "batting_hand",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Right-hand bat"
+            },
+            {
+                "col_name": "bowling_skill",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Right-arm medium"
+            },
+            {
+                "col_name": "player_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "BB McCullum"
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New Zealand"
+            }
+        ]
+    },
+    "PLAYER_MATCH": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "match_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 392220
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "player_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 133
+            },
+            {
+                "col_name": "role",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Captain"
+            }
+        ]
+    },
+    "TEAM": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "team_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Royal Challengers Bangalore"
+            }
+        ]
+    },
+    "WICKET_TAKEN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ball_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "over_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "match_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 419167
+            },
+            {
+                "col_name": "innings_no",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "kind_out",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "caught"
+            },
+            {
+                "col_name": "player_out",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 154
+            }
+        ]
+    }
+}

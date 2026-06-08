@@ -1,0 +1,1248 @@
+{
+    "COUNTRY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Belgium"
+            }
+        ]
+    },
+    "LEAGUE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "country_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Belgium Jupiler League"
+            }
+        ]
+    },
+    "MATCH": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "match_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 838858
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 16387
+            },
+            {
+                "col_name": "LBD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y11",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-29 00:00:00"
+            },
+            {
+                "col_name": "home_player_Y2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PSA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 47249.0
+            },
+            {
+                "col_name": "away_player_X9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "B365H",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "possession",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "GBD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GBH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SJA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VCD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 68962.0
+            },
+            {
+                "col_name": "goal",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "WHH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "league_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15722
+            },
+            {
+                "col_name": "home_player_Y3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 11061.0
+            },
+            {
+                "col_name": "IWA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "season",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "2010/2011"
+            },
+            {
+                "col_name": "home_team_goal",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "away_player_X11",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y11",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X11",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PSH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "IWD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SJH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 27371.0
+            },
+            {
+                "col_name": "away_player_6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 239253.0
+            },
+            {
+                "col_name": "home_player_2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 210978.0
+            },
+            {
+                "col_name": "home_player_Y6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "country_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15722
+            },
+            {
+                "col_name": "B365D",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 182075.0
+            },
+            {
+                "col_name": "away_player_10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 69479.0
+            },
+            {
+                "col_name": "away_player_Y4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 69242.0
+            },
+            {
+                "col_name": "GBA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 68840.0
+            },
+            {
+                "col_name": "home_player_X1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 30275.0
+            },
+            {
+                "col_name": "SJD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_X8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 148487.0
+            },
+            {
+                "col_name": "away_team_goal",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "BWD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 118530.0
+            },
+            {
+                "col_name": "away_player_Y7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LBA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_X7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "corner",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "home_player_Y7",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 105535.0
+            },
+            {
+                "col_name": "away_player_X3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VCH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WHA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VCA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_team_api_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8030
+            },
+            {
+                "col_name": "away_player_3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 13474.0
+            },
+            {
+                "col_name": "foulcommit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "away_player_X2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "shoton",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "away_player_1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 115006.0
+            },
+            {
+                "col_name": "away_player_X6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_team_api_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8021
+            },
+            {
+                "col_name": "BSH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "B365A",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 69043.0
+            },
+            {
+                "col_name": "cross",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "away_player_Y1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "card",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "home_player_X8",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_X10",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_X1",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_Y5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "stage",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 30
+            },
+            {
+                "col_name": "WHD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LBH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_2",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 68782.0
+            },
+            {
+                "col_name": "home_player_6",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 69238.0
+            },
+            {
+                "col_name": "away_player_X4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_11",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 197560.0
+            },
+            {
+                "col_name": "home_player_X9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 13538.0
+            },
+            {
+                "col_name": "shotoff",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "away_player_Y3",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_X4",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_player_11",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 91473.0
+            },
+            {
+                "col_name": "home_player_X5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_Y9",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_player_X5",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSA",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "IWH",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PSD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    },
+    "PLAYER": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "player_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 505942
+            },
+            {
+                "col_name": "player_fifa_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 218353
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 187
+            },
+            {
+                "col_name": "birthday",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "1992-02-29 00:00:00"
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 182.88
+            },
+            {
+                "col_name": "player_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Aaron Appindangoye"
+            }
+        ]
+    },
+    "PLAYER_ATTRIBUTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "player_fifa_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 218353
+            },
+            {
+                "col_name": "player_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 505942
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "curve",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 45.0
+            },
+            {
+                "col_name": "vision",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 54.0
+            },
+            {
+                "col_name": "gk_handling",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 11.0
+            },
+            {
+                "col_name": "marking",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 65.0
+            },
+            {
+                "col_name": "interceptions",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 70.0
+            },
+            {
+                "col_name": "shot_power",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 55.0
+            },
+            {
+                "col_name": "attacking_work_rate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "medium"
+            },
+            {
+                "col_name": "finishing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 44.0
+            },
+            {
+                "col_name": "short_passing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 61.0
+            },
+            {
+                "col_name": "stamina",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 54.0
+            },
+            {
+                "col_name": "volleys",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 44.0
+            },
+            {
+                "col_name": "free_kick_accuracy",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 39.0
+            },
+            {
+                "col_name": "gk_positioning",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 8.0
+            },
+            {
+                "col_name": "positioning",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 45.0
+            },
+            {
+                "col_name": "ball_control",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 49.0
+            },
+            {
+                "col_name": "gk_diving",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 6.0
+            },
+            {
+                "col_name": "dribbling",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 51.0
+            },
+            {
+                "col_name": "potential",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 71.0
+            },
+            {
+                "col_name": "crossing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 49.0
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-02-18 00:00:00"
+            },
+            {
+                "col_name": "gk_reflexes",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 8.0
+            },
+            {
+                "col_name": "penalties",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 48.0
+            },
+            {
+                "col_name": "jumping",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 58.0
+            },
+            {
+                "col_name": "defensive_work_rate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "medium"
+            },
+            {
+                "col_name": "sprint_speed",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 64.0
+            },
+            {
+                "col_name": "standing_tackle",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 69.0
+            },
+            {
+                "col_name": "balance",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 65.0
+            },
+            {
+                "col_name": "long_passing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 64.0
+            },
+            {
+                "col_name": "sliding_tackle",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 69.0
+            },
+            {
+                "col_name": "gk_kicking",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 10.0
+            },
+            {
+                "col_name": "aggression",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 71.0
+            },
+            {
+                "col_name": "overall_rating",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 67.0
+            },
+            {
+                "col_name": "agility",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 59.0
+            },
+            {
+                "col_name": "preferred_foot",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "right"
+            },
+            {
+                "col_name": "reactions",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 47.0
+            },
+            {
+                "col_name": "heading_accuracy",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 71.0
+            },
+            {
+                "col_name": "strength",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 76.0
+            },
+            {
+                "col_name": "long_shots",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 35.0
+            },
+            {
+                "col_name": "acceleration",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 60.0
+            }
+        ]
+    },
+    "SQLITE_SEQUENCE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "seq",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 51958
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Match"
+            }
+        ]
+    },
+    "TEAM": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "team_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 9987
+            },
+            {
+                "col_name": "team_fifa_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": 673.0
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "team_long_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "KRC Genk"
+            },
+            {
+                "col_name": "team_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "GEN"
+            }
+        ]
+    },
+    "TEAM_ATTRIBUTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "team_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 9930
+            },
+            {
+                "col_name": "team_fifa_api_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 434
+            },
+            {
+                "col_name": "buildUpPlayDribbling",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 48.0
+            },
+            {
+                "col_name": "buildUpPlayPassing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 56
+            },
+            {
+                "col_name": "defenceAggressionClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Press"
+            },
+            {
+                "col_name": "chanceCreationShooting",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 64
+            },
+            {
+                "col_name": "defenceTeamWidth",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 54
+            },
+            {
+                "col_name": "defencePressure",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 47
+            },
+            {
+                "col_name": "defencePressureClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Medium"
+            },
+            {
+                "col_name": "chanceCreationPositioningClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Organised"
+            },
+            {
+                "col_name": "chanceCreationPassingClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Normal"
+            },
+            {
+                "col_name": "defenceDefenderLineClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Cover"
+            },
+            {
+                "col_name": "chanceCreationCrossing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 63
+            },
+            {
+                "col_name": "buildUpPlayDribblingClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Normal"
+            },
+            {
+                "col_name": "chanceCreationCrossingClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Normal"
+            },
+            {
+                "col_name": "buildUpPlaySpeed",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 52
+            },
+            {
+                "col_name": "defenceTeamWidthClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Normal"
+            },
+            {
+                "col_name": "chanceCreationPassing",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 54
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2014-09-19 00:00:00"
+            },
+            {
+                "col_name": "chanceCreationShootingClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Normal"
+            },
+            {
+                "col_name": "buildUpPlayPositioningClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Organised"
+            },
+            {
+                "col_name": "buildUpPlaySpeedClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Balanced"
+            },
+            {
+                "col_name": "buildUpPlayPassingClass",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Mixed"
+            },
+            {
+                "col_name": "defenceAggression",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 44
+            }
+        ]
+    }
+}

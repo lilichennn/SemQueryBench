@@ -1,0 +1,1765 @@
+{
+    "SAN_FRANCISCO_311__311_SERVICE_REQUESTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "unique_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2985411
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "neighborhood",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Closed"
+            },
+            {
+                "col_name": "police_district",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agency_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "SSP - MTA Feedback Queue"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "status_notes",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Case Transferred - transfer psr 442213"
+            },
+            {
+                "col_name": "supervisor_district",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "closed_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1382927320000000
+            },
+            {
+                "col_name": "source",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Web"
+            },
+            {
+                "col_name": "descriptor",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "incident_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Not associated with a specific address"
+            },
+            {
+                "col_name": "resolution_action_updated_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1382927320000000
+            },
+            {
+                "col_name": "category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MUNI Feedback"
+            },
+            {
+                "col_name": "complaint_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MUNI  -"
+            },
+            {
+                "col_name": "created_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1382690175000000
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(0.0, 0.0)"
+            },
+            {
+                "col_name": "media_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "SAN_FRANCISCO_BIKESHARE_BIKESHARE_REGIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "region_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "San Francisco"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_BIKESHARE_BIKESHARE_STATION_INFO": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "region_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "external_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "station_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "523"
+            },
+            {
+                "col_name": "has_kiosk",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Lafayette Park (Laguna St at Washington St)"
+            },
+            {
+                "col_name": "short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SF-E21"
+            },
+            {
+                "col_name": "rental_methods",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.429315
+            },
+            {
+                "col_name": "eightd_has_key_dispenser",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "station_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xaa+\\x9f\\xe5y\\x9b^\\xc0\\xa0\\xc5R$_\\xe5B@')"
+            },
+            {
+                "col_name": "capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.791965999999995
+            }
+        ]
+    },
+    "SAN_FRANCISCO_BIKESHARE_BIKESHARE_STATION_STATUS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "station_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "46b4ef45-b06b-40eb-9fdf-9bc8ff104a4f"
+            },
+            {
+                "col_name": "is_renting",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "is_installed",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "num_bikes_available",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "eightd_has_available_keys",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "num_docks_disabled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "last_reported",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1729209514
+            },
+            {
+                "col_name": "is_returning",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "num_ebikes_available",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "num_bikes_disabled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "num_docks_available",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15
+            }
+        ]
+    },
+    "SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "trip_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "20170821170804431"
+            },
+            {
+                "col_name": "bike_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 431
+            },
+            {
+                "col_name": "end_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503348292000000
+            },
+            {
+                "col_name": "end_station_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 222
+            },
+            {
+                "col_name": "start_station_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x01\\x00\\x00\\x00]zE\\x01\\xec\\x8f^\\xc0\\'\\xc9\\x84\\xa9w\\xe5B@\")"
+            },
+            {
+                "col_name": "start_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503335284000000
+            },
+            {
+                "col_name": "end_station_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x01\\x00\\x00\\x00]zE\\x01\\xec\\x8f^\\xc0\\'\\xc9\\x84\\xa9w\\xe5B@\")"
+            },
+            {
+                "col_name": "start_station_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.2487796
+            },
+            {
+                "col_name": "member_gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Male"
+            },
+            {
+                "col_name": "end_station_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.7927143
+            },
+            {
+                "col_name": "start_station_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "10th Ave at E 15th St"
+            },
+            {
+                "col_name": "zip_code",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "end_station_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.2487796
+            },
+            {
+                "col_name": "end_station_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "10th Ave at E 15th St"
+            },
+            {
+                "col_name": "c_subscription_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "duration_sec",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 13008
+            },
+            {
+                "col_name": "start_station_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 222
+            },
+            {
+                "col_name": "start_station_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.7927143
+            },
+            {
+                "col_name": "subscriber_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Customer"
+            },
+            {
+                "col_name": "member_birth_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1986.0
+            },
+            {
+                "col_name": "bike_share_for_all_trip",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_FILM_LOCATIONS_FILM_LOCATIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "writer",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Eric von Stroheim"
+            },
+            {
+                "col_name": "locations",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Cliff House (1090 Point Lobos Avenue)"
+            },
+            {
+                "col_name": "actor_3",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Jean Hersholt"
+            },
+            {
+                "col_name": "production_company",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Metro-Goldwyn-Mayer (MGM)"
+            },
+            {
+                "col_name": "actor_1",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Zasu Pitts"
+            },
+            {
+                "col_name": "fun_facts",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "In 1887, the Cliff House was severely damaged when the schooner Parallel, abandoned and loaded with "
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Greed"
+            },
+            {
+                "col_name": "release_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1924
+            },
+            {
+                "col_name": "director",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Eric von Stroheim"
+            },
+            {
+                "col_name": "distributor",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Metro-Goldwyn-Mayer (MGM)"
+            },
+            {
+                "col_name": "actor_2",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Gibson Gowland"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_NEIGHBORHOODS_BOUNDARIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00w\\xa8&T!\\x99^\\xc0e\\x83\\xf0,.\\xdcB@')"
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.39265922332002
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.720159165800204
+            },
+            {
+                "col_name": "neighborhood_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00q\\x00\\x00\\x00G\\xed\\x11\\x0cU\\x99^\\xc0x\\x03\\x9e\\xb1x\\x"
+            },
+            {
+                "col_name": "neighborhood",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bret Harte"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "call_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 203401353
+            },
+            {
+                "col_name": "incident_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 20138897
+            },
+            {
+                "col_name": "row_id",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "203401353-BLS839"
+            },
+            {
+                "col_name": "location_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "als_unit",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "watch_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2020-12-05"
+            },
+            {
+                "col_name": "priority",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "on_scene_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607130613000000.0
+            },
+            {
+                "col_name": "hospital_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "entry_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607171700000000
+            },
+            {
+                "col_name": "transport_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "call_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Medical Incident"
+            },
+            {
+                "col_name": "final_priority",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "call_type_group",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Fire"
+            },
+            {
+                "col_name": "response_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607171700000000
+            },
+            {
+                "col_name": "call_final_disposition",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Other"
+            },
+            {
+                "col_name": "dispatch_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607171700000000
+            },
+            {
+                "col_name": "station_area",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "fire_prevention_district",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "unit_type",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CHIEF"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "original_priority",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "neighborhood_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "supervisor_district",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "available_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607133256000000
+            },
+            {
+                "col_name": "received_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1607171700000000
+            },
+            {
+                "col_name": "city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "zipcode_of_incident",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "battalion",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "B12"
+            },
+            {
+                "col_name": "unit_sequence_in_call_dispatch",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "call_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2020-12-05"
+            },
+            {
+                "col_name": "unit_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BLS839"
+            },
+            {
+                "col_name": "number_of_alarms",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "box",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "SAN_FRANCISCO_SFPD_INCIDENTS_SFPD_INCIDENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "pdid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4075398068020
+            },
+            {
+                "col_name": "unique_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 40753980
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "I-280 / CESAR CHAVEZ ST"
+            },
+            {
+                "col_name": "resolution",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "NONE"
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "POINT (-120.50000000000001 90)"
+            },
+            {
+                "col_name": "pddistrict",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "BAYVIEW"
+            },
+            {
+                "col_name": "category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "OTHER OFFENSES"
+            },
+            {
+                "col_name": "dayofweek",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Friday"
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 90.0
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -120.5
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1088775780000000
+            },
+            {
+                "col_name": "descript",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "MISCELLANEOUS INVESTIGATION"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_CALENDAR": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "service_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "73692"
+            },
+            {
+                "col_name": "friday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "exception_type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "thursday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "wednesday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "monday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "service_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Weekday"
+            },
+            {
+                "col_name": "sunday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "saturday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "tuesday",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "exceptions",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2019-12-25"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_FARES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "rider_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "fare_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5398"
+            },
+            {
+                "col_name": "transfer_duration",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5400
+            },
+            {
+                "col_name": "transfers_permitted",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "payment_method",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "rider_desc",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Senior"
+            },
+            {
+                "col_name": "price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "3.000000000"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_ROUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "route_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "83X"
+            },
+            {
+                "col_name": "route_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "3"
+            },
+            {
+                "col_name": "route_long_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MID-MARKET EXPRESS"
+            },
+            {
+                "col_name": "route_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "83X"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_SHAPES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "shape_point_sequence",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 195
+            },
+            {
+                "col_name": "shape_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "173976"
+            },
+            {
+                "col_name": "shape_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00K\\x8f\\xa6z2\\x9b^\\xc08\\x87k\\xb5\\x87\\xdbB@')"
+            },
+            {
+                "col_name": "shape_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.715079
+            },
+            {
+                "col_name": "shape_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.424956
+            },
+            {
+                "col_name": "shape_distance_traveled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 14391.0
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_STOPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "stop_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "14343"
+            },
+            {
+                "col_name": "stop_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.39565
+            },
+            {
+                "col_name": "stop_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "101 Dakota St"
+            },
+            {
+                "col_name": "stop_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.75374
+            },
+            {
+                "col_name": "stop_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00d\\xaa`TR\\x99^\\xc0\\xf2\\xd7d\\x8dz\\xe0B@')"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_STOP_MONITORING": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "route_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "15"
+            },
+            {
+                "col_name": "aimed_arrival_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1620745990000000
+            },
+            {
+                "col_name": "direction",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "IB"
+            },
+            {
+                "col_name": "trip_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "9757413"
+            },
+            {
+                "col_name": "stop_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "3rd St & Stevenson St"
+            },
+            {
+                "col_name": "trip_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-05-11"
+            },
+            {
+                "col_name": "time_recorded",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1620745923000000
+            },
+            {
+                "col_name": "route_long_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BAYVIEW HUNTERS POINT EXPRESS"
+            },
+            {
+                "col_name": "vehicle_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "8887"
+            },
+            {
+                "col_name": "vehicle_at_stop",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "aimed_departure_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1620745990000000
+            },
+            {
+                "col_name": "vehicle_location_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.7802238
+            },
+            {
+                "col_name": "stop_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "13136"
+            },
+            {
+                "col_name": "vehicle_location",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xab\\xcej\\x81=\\x99^\\xc0\\xcaG\\x9c_\\xde\\xe3B@')"
+            },
+            {
+                "col_name": "vehicle_location_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.394379
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_STOP_TIMES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "arrival_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIME",
+                "sample_value": "06:54:55"
+            },
+            {
+                "col_name": "exact_timepoint",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "stop_sequence",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 51
+            },
+            {
+                "col_name": "stop_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15759
+            },
+            {
+                "col_name": "arrives_next_day",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "trip_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8951406
+            },
+            {
+                "col_name": "departure_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIME",
+                "sample_value": "06:54:55"
+            },
+            {
+                "col_name": "dropoff_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "regular"
+            },
+            {
+                "col_name": "departs_next_day",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_VEHICLE_MONITORING": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "vehicle_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1442"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_5",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296090000000.0
+            },
+            {
+                "col_name": "onward_stop_id_7",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_1",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296098000000.0
+            },
+            {
+                "col_name": "onward_stop_id_10",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_8",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_7",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_7",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_name_9",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "vehicle_location_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -122.39519
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_6",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296137000000.0
+            },
+            {
+                "col_name": "onward_stop_id_1",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "The Embarcadero & Brannan St"
+            },
+            {
+                "col_name": "onward_stop_id_9",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "next_stop_aimed_arrival_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639295880000000
+            },
+            {
+                "col_name": "onward_stop_name_2",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "15234"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_10",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_id_5",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "San Jose Ave & Mt Vernon Ave"
+            },
+            {
+                "col_name": "vehicle_location",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00|3j\\xbeJ\\x99^\\xc0\\x11I>\\xc0\\xa4\\xe5B@')"
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_2",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296265000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_1",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296035000000.0
+            },
+            {
+                "col_name": "onward_stop_id_8",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_4",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296006000000.0
+            },
+            {
+                "col_name": "vehicle_location_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.79409
+            },
+            {
+                "col_name": "next_stop_expected_departure_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "trip_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "10420258"
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_3",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296381000000.0
+            },
+            {
+                "col_name": "onward_stop_name_10",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_id_6",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "San Jose Ave & Niagra Ave"
+            },
+            {
+                "col_name": "onward_stop_name_1",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "14506"
+            },
+            {
+                "col_name": "route_long_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "JUDAH"
+            },
+            {
+                "col_name": "next_stop_expected_arrival_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639295947000000
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_7",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_name_3",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "15239"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_8",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "time_recorded",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1639295864000000
+            },
+            {
+                "col_name": "onward_stop_name_4",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "16266"
+            },
+            {
+                "col_name": "onward_stop_name_5",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "16268"
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_1",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296098000000.0
+            },
+            {
+                "col_name": "route_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "trip_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-12-11"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_3",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296420000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_2",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296148000000.0
+            },
+            {
+                "col_name": "onward_stop_id_2",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "King St & 2nd St"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_9",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_4",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296128000000.0
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_6",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296137000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_9",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "next_stop_aimed_departure_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639295880000000
+            },
+            {
+                "col_name": "next_stop_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "14509"
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_2",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296265000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_8",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_name_6",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "16269"
+            },
+            {
+                "col_name": "onward_stop_id_3",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "King St & 4th St"
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_3",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296420000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_6",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296272000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_5",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296186000000.0
+            },
+            {
+                "col_name": "onward_stop_name_7",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_9",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "direction",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "IB"
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_5",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296090000000.0
+            },
+            {
+                "col_name": "onward_stop_aimed_departure_time_10",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_aimed_arrival_time_4",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1639296006000000.0
+            },
+            {
+                "col_name": "onward_stop_expected_arrival_time_10",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "onward_stop_id_4",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "San Jose Ave & Lakeview Ave"
+            },
+            {
+                "col_name": "onward_stop_name_8",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "next_stop_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "The Embarcadero & Folsom St"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TRANSIT_MUNI_TRIPS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "trip_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8999873"
+            },
+            {
+                "col_name": "trip_headsign",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Caltrain Depot"
+            },
+            {
+                "col_name": "block_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "8302"
+            },
+            {
+                "col_name": "route_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "83X"
+            },
+            {
+                "col_name": "shape_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "174188"
+            },
+            {
+                "col_name": "trip_shape",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "service_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "direction",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "O"
+            }
+        ]
+    },
+    "SAN_FRANCISCO_TREES_STREET_TREES": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "tree_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 45997
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "species",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Tree(s) ::"
+            },
+            {
+                "col_name": "site_info",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Sidewalk: Curb side : Cutout"
+            },
+            {
+                "col_name": "care_assistant",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "y_coordinate",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "plant_date",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1007640000000000
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "permit_notes",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Permit Number 44451"
+            },
+            {
+                "col_name": "dbh",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "care_taker",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Private"
+            },
+            {
+                "col_name": "site_order",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 115
+            },
+            {
+                "col_name": "legal_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Permitted Site"
+            },
+            {
+                "col_name": "plant_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Tree"
+            },
+            {
+                "col_name": "x_coordinate",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "plot_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    }
+}

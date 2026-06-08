@@ -1,0 +1,621 @@
+{
+    "GEO_OPENSTREETMAP_HISTORY_CHANGESETS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 12029340
+            },
+            {
+                "col_name": "osm_timestamp_min",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1340735868
+            },
+            {
+                "col_name": "ways",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  24012734,\n  24013188,\n  32787862,\n  122430881,\n  122445966,\n  129713279,\n  34883701,\n  169141542"
+            },
+            {
+                "col_name": "osm_timestamp_max",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1340735870
+            },
+            {
+                "col_name": "relations",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "nodes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1270750198,\n  1270750190,\n  977802739,\n  279326703,\n  1803085216,\n  1803085218,\n  1803085222,\n  "
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_LAYERS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 741825328
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 741825328
+            },
+            {
+                "col_name": "layer_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "parking"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"amenity\",\n    \"value\": \"parking\"\n  }\n]"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x0b\\x00\\x00\\x00\\xdb\\x12^\\'\\x9aL4@\\x08\\xc6f\\xec\\xf0\\"
+            },
+            {
+                "col_name": "gdal_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "layer_code",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 5260
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1589776763000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "layer_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "traffic"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_NODES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6927827940
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 76357152
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": "-40.892892400"
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "importES"
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": "-19.787685100"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1572369059000000
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00ilTLJrD\\xc0\\xe7\\x0b\\x10\\xbb\\xa5\\xc93\\xc0')"
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_RELATIONS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2348169
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 69292905
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "ksairus"
+            },
+            {
+                "col_name": "members",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 4025962078,\n    \"role\": \"stop\",\n    \"type\": \"n\"\n  },\n  {\n    \"id\": 2781144802,\n    \""
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1555470815000000
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 343
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x04\\x00\\x00\\x00/\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00\\x07\\x86)\\x80\\x18}>@[\\xfa\\xe11M8I@\\"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"to\",\n    \"value\": \"Київ\"\n  },\n  {\n    \"key\": \"ref\",\n    \"value\": \"107/108\"\n  },\n  "
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_FEATURES_POINTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 8069642225
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xa2\\x9bX;\\xe5,\\x1e@\\xac59!\\x19\\xbcH@')"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1604175532000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"ID\",\n    \"value\": \"Friedhof Kottweiler\"\n  }\n]"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_LAYERS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 741825328
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 741825328
+            },
+            {
+                "col_name": "layer_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "parking"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"amenity\",\n    \"value\": \"parking\"\n  }\n]"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x0b\\x00\\x00\\x00\\xdb\\x12^\\'\\x9aL4@\\x08\\xc6f\\xec\\xf0\\"
+            },
+            {
+                "col_name": "gdal_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "layer_code",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 5260
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1589776763000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "layer_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "traffic"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_NODES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6927827940
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 76357152
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": "-40.892892400"
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "importES"
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": "-19.787685100"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1572369059000000
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00ilTLJrD\\xc0\\xe7\\x0b\\x10\\xbb\\xa5\\xc93\\xc0')"
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_RELATIONS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2348169
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 69292905
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "ksairus"
+            },
+            {
+                "col_name": "members",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 4025962078,\n    \"role\": \"stop\",\n    \"type\": \"n\"\n  },\n  {\n    \"id\": 2781144802,\n    \""
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1555470815000000
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 343
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x04\\x00\\x00\\x00/\\x00\\x00\\x00\\x01\\x01\\x00\\x00\\x00\\x07\\x86)\\x80\\x18}>@[\\xfa\\xe11M8I@\\"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"to\",\n    \"value\": \"Київ\"\n  },\n  {\n    \"key\": \"ref\",\n    \"value\": \"107/108\"\n  },\n  "
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_WAYS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 73165139
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 10475054
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x02\\x00\\x00\\x00\\x0b\\x00\\x00\\x00o\\xdc\\x18\\xf1\\xd3 ^\\xc0\\xedf\\xa1\\xf8\\x8c\\xb6A@\\xfaA]"
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "jumbanho"
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"gnis:fcode\",\n    \"value\": \"46003\"\n  },\n  {\n    \"key\": \"gnis:ftype\",\n    \"value\": \""
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1327342614000000
+            },
+            {
+                "col_name": "nodes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 866315580\n  },\n  {\n    \"id\": 866469140\n  },\n  {\n    \"id\": 867906160\n  },\n  {\n    \"id"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_FEATURES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 838028090
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x05\\x00\\x00\\x00\\xb8q0@Ga^@\\xb8\\x10\\x9a\\x13j\\x880@Z$"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1597721403000000
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"building\",\n    \"value\": \"residential\"\n  }\n]"
+            },
+            {
+                "col_name": "feature_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "multipolygons"
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "WORLDPOP_POPULATION_GRID_1KM": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "alpha_3_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GIB"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "wpeykjqrd2ev"
+            },
+            {
+                "col_name": "last_updated",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2018-01-01"
+            },
+            {
+                "col_name": "longitude_centroid",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -5.347083296988231
+            },
+            {
+                "col_name": "latitude_centroid",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 36.120416721983034
+            },
+            {
+                "col_name": "population",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1650.8153076171875
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Gibraltar"
+            },
+            {
+                "col_name": "geog",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x05\\x00\\x00\\x00W\\x88\\t\\x12\\xaeg\\x15\\xc0\\x19K(H\\xe1\\"
+            }
+        ]
+    }
+}

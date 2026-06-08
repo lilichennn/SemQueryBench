@@ -1,0 +1,413 @@
+{
+    "CUSTOMERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "customer_unique_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "861eff4711a542e4b93843c6dd7febb0"
+            },
+            {
+                "col_name": "customer_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06b8999e2fba1a1fbc88172c00ba8bc7"
+            },
+            {
+                "col_name": "customer_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SP"
+            },
+            {
+                "col_name": "customer_zip_code_prefix",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 14409
+            },
+            {
+                "col_name": "customer_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "franca"
+            }
+        ]
+    },
+    "GEOLOCATION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geolocation_zip_code_prefix",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 89745
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 933888
+            },
+            {
+                "col_name": "geolocation_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "presidente castello branco"
+            },
+            {
+                "col_name": "geolocation_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -27.22083994710839
+            },
+            {
+                "col_name": "geolocation_lng",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -51.81102224706286
+            },
+            {
+                "col_name": "geolocation_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SC"
+            }
+        ]
+    },
+    "ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "order_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "53cdb2fc8bc7dce0b6741e2150273451"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "customer_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "b0830fb4747a6c6d20dea0b8c802d7ef"
+            },
+            {
+                "col_name": "order_approved_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-07-26 03:24:27"
+            },
+            {
+                "col_name": "order_purchase_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-07-24 20:41:37"
+            },
+            {
+                "col_name": "order_delivered_carrier_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-07-26 14:31:00"
+            },
+            {
+                "col_name": "order_delivered_customer_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-08-07 15:27:45"
+            },
+            {
+                "col_name": "order_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "delivered"
+            },
+            {
+                "col_name": "order_estimated_delivery_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2018-08-13 00:00:00"
+            }
+        ]
+    },
+    "ORDER_ITEMS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "order_item_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "000229ec398224ef6ca0657da4fc703e"
+            },
+            {
+                "col_name": "freight_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 17.87
+            },
+            {
+                "col_name": "seller_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "5b51032eddd242adc84c38acab88f23d"
+            },
+            {
+                "col_name": "price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 199.0
+            },
+            {
+                "col_name": "shipping_limit_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2018-01-18 14:48:30"
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "c777355d18b72b67abbeef9df44fd0fd"
+            }
+        ]
+    },
+    "ORDER_PAYMENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "payment_sequential",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "payment_installments",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "payment_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 99.33
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "b81ef226f3fe1789b1e8b2acac839d17"
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "credit_card"
+            }
+        ]
+    },
+    "ORDER_REVIEWS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "review_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "80e641a11e56f04c1ad469d5645fdfde"
+            },
+            {
+                "col_name": "review_comment_message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "review_comment_title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "review_creation_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-03-10 00:00:00"
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "a548910a1c6147796b98fdf73dbeba33"
+            },
+            {
+                "col_name": "review_answer_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-03-11 03:05:13"
+            },
+            {
+                "col_name": "review_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            }
+        ]
+    },
+    "PRODUCTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1e9e8ef04dbcff4541ed26657ea517e5"
+            },
+            {
+                "col_name": "product_name_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 40.0
+            },
+            {
+                "col_name": "product_length_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "product_description_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 287.0
+            },
+            {
+                "col_name": "product_width_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 14.0
+            },
+            {
+                "col_name": "product_weight_g",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 225.0
+            },
+            {
+                "col_name": "product_photos_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "product_category_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "perfumaria"
+            },
+            {
+                "col_name": "product_height_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 10.0
+            }
+        ]
+    },
+    "PRODUCT_CATEGORY_NAME_TRANSLATION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "product_category_name_english",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "computers_accessories"
+            },
+            {
+                "col_name": "product_category_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "informatica_acessorios"
+            }
+        ]
+    },
+    "SELLERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "seller_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3442f8959a84dea7ee197c632cb2df15"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "seller_zip_code_prefix",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 13023
+            },
+            {
+                "col_name": "seller_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "campinas"
+            },
+            {
+                "col_name": "seller_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SP"
+            }
+        ]
+    }
+}

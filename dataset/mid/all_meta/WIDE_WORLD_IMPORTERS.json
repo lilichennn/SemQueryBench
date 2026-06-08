@@ -1,0 +1,2365 @@
+{
+    "APPLICATION_CITIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CityID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 323
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CityName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Alberta"
+            },
+            {
+                "col_name": "LatestRecordedPopulation",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "Location",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 8.607660043233205e+52
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "StateProvinceID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "APPLICATION_COUNTRIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CountryID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 18
+            },
+            {
+                "col_name": "IsoAlpha3Code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BHS"
+            },
+            {
+                "col_name": "IsoNumericCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 44
+            },
+            {
+                "col_name": "FormalName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Commonwealth of the Bahamas"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "CountryName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bahamas"
+            },
+            {
+                "col_name": "Region",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Americas"
+            },
+            {
+                "col_name": "LatestRecordedPopulation",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 309156
+            },
+            {
+                "col_name": "CountryType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "UN Member State"
+            },
+            {
+                "col_name": "Continent",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "North America"
+            },
+            {
+                "col_name": "Border",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": Infinity
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Subregion",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Caribbean"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "APPLICATION_DELIVERYMETHODS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "DeliveryMethodID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "DeliveryMethodName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Post"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "APPLICATION_PAYMENTMETHODS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "PaymentMethodID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PaymentMethodName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cash"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "APPLICATION_PEOPLE": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "PersonID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 39
+            },
+            {
+                "col_name": "LogonName",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "elizas@northwindelectriccars.com"
+            },
+            {
+                "col_name": "IsSystemUser",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "HashedPassword",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x2787527C41F2131B0C1314FA84D727BCA95A6AF9F7F3DD5A028344E4BD5E1B87"
+            },
+            {
+                "col_name": "FullName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Eliza Soderberg"
+            },
+            {
+                "col_name": "EmailAddress",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "elizas@northwindelectriccars.com"
+            },
+            {
+                "col_name": "FaxNumber",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "(201) 555-0106"
+            },
+            {
+                "col_name": "Photo",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "UserPreferences",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"theme\":\"ui-darkness\",\"dateFormat\":\"mm/dd/yy\",\"timeZone\": \"PST\",\"table\":{\"pagingType\":\"simple\",\"pag"
+            },
+            {
+                "col_name": "PhoneNumber",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "(201) 555-0101"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PreferredName",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Eliza"
+            },
+            {
+                "col_name": "IsExternalLogonProvider",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SearchName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Eliza Eliza Soderberg"
+            },
+            {
+                "col_name": "OtherLanguages",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1464736440000000
+            },
+            {
+                "col_name": "IsSalesperson",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "IsEmployee",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CustomFields",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "IsPermittedToLogon",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "APPLICATION_STATEPROVINCES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "StateProvinceID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 12
+            },
+            {
+                "col_name": "CountryID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 230
+            },
+            {
+                "col_name": "StateProvinceName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Hawaii"
+            },
+            {
+                "col_name": "SalesTerritory",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Far West"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "LatestRecordedPopulation",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1404054
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998460000000
+            },
+            {
+                "col_name": "Border",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\xd3\\x11:\\xd7M4\\xd3M5\\xd3\\x81\\x01\\xd3M4\\xd3M=\\xd7\\xd0\\xbc\\x07p\\x81\\x0b\\xbd\\xf7\\xe3@\\xfa\\"
+            },
+            {
+                "col_name": "StateProvinceCode",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "HI"
+            }
+        ]
+    },
+    "APPLICATION_SYSTEMPARAMETERS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SystemParameterID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryPostalCode",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryCityID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "PostalAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PostalAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PostalCityID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PostalPostalCode",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ApplicationSettings",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "APPLICATION_TRANSACTIONTYPES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "TransactionTypeID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "TransactionTypeName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Customer Refund"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            }
+        ]
+    },
+    "PURCHASING_PURCHASEORDER": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "SupplierReference",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BC0280982"
+            },
+            {
+                "col_name": "PurchaseOrderID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 42
+            },
+            {
+                "col_name": "DeliveryMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "ContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "ExpectedDeliveryDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATE",
+                "sample_value": "2013-02-01"
+            },
+            {
+                "col_name": "OrderDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2013-01-12"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "SupplierID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "IsOrderFinalized",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "InternalComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1358146800000000
+            }
+        ]
+    },
+    "PURCHASING_PURCHASEORDERLINES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "PurchaseOrderID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 40
+            },
+            {
+                "col_name": "PurchaseOrderLineID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 234
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 25
+            },
+            {
+                "col_name": "ExpectedUnitPricePerOuter",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4.5
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1358146800000000
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "DBA joke mug - I will get you in order (Black)"
+            },
+            {
+                "col_name": "IsOrderLineFinalized",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "LastReceiptDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-14"
+            },
+            {
+                "col_name": "OrderedOuters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 26
+            },
+            {
+                "col_name": "ReceivedOuters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 26
+            },
+            {
+                "col_name": "PackageTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            }
+        ]
+    },
+    "PURCHASING_SUPPLIERCATEGORIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SupplierCategoryID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "SupplierCategoryName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Novelty Goods Supplier"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "PURCHASING_SUPPLIERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "BankAccountCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 358698
+            },
+            {
+                "col_name": "SupplierID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "SupplierReference",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B2084020"
+            },
+            {
+                "col_name": "BankAccountNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4587965215
+            },
+            {
+                "col_name": "PostalAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "PO Box 1012"
+            },
+            {
+                "col_name": "BankInternationalCode",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 25868
+            },
+            {
+                "col_name": "PrimaryContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 23
+            },
+            {
+                "col_name": "InternalComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "DeliveryLocation",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 8.607660043233234e+52
+            },
+            {
+                "col_name": "FaxNumber",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "(360) 555-0101"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1356998700000000
+            },
+            {
+                "col_name": "PostalAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Jolimont"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DeliveryAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "2934 Night Road"
+            },
+            {
+                "col_name": "SupplierCategoryID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "DeliveryMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "DeliveryCityID",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 13870
+            },
+            {
+                "col_name": "DeliveryAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Unit 2"
+            },
+            {
+                "col_name": "BankAccountName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Contoso Ltd"
+            },
+            {
+                "col_name": "PostalPostalCode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 98253
+            },
+            {
+                "col_name": "PaymentDays",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "PhoneNumber",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "(360) 555-0100"
+            },
+            {
+                "col_name": "SupplierName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Contoso, Ltd."
+            },
+            {
+                "col_name": "PostalCityID",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 13870
+            },
+            {
+                "col_name": "WebsiteURL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "http://www.contoso.com"
+            },
+            {
+                "col_name": "DeliveryPostalCode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 98253
+            },
+            {
+                "col_name": "AlternateContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 24
+            },
+            {
+                "col_name": "BankAccountBranch",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Woodgrove Bank Greenbank"
+            }
+        ]
+    },
+    "PURCHASING_SUPPLIERTRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "SupplierInvoiceNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8940"
+            },
+            {
+                "col_name": "PurchaseOrderID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "153"
+            },
+            {
+                "col_name": "SupplierTransactionID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 21470
+            },
+            {
+                "col_name": "FinalizationDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-04-08"
+            },
+            {
+                "col_name": "PaymentMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "IsFinalized",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "TaxAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10863.9
+            },
+            {
+                "col_name": "OutstandingBalance",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "SupplierID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "TransactionAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 83289.9
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1365411600000000
+            },
+            {
+                "col_name": "AmountExcludingTax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 72426.0
+            },
+            {
+                "col_name": "TransactionTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "TransactionDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2013-04-02"
+            }
+        ]
+    },
+    "SALES_BUYINGGROUPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "BuyingGroupID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "BuyingGroupName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Tailspin Toys"
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "SALES_CUSTOMERCATEGORIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CustomerCategoryID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "CustomerCategoryName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Wholesaler"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            }
+        ]
+    },
+    "SALES_CUSTOMERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "BillToCustomerID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 51
+            },
+            {
+                "col_name": "PhoneNumber",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "(201) 555-0100"
+            },
+            {
+                "col_name": "DeliveryAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Suite 12"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DeliveryLocation",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 8.607660043233228e+52
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "PostalPostalCode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 90051
+            },
+            {
+                "col_name": "PrimaryContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1101
+            },
+            {
+                "col_name": "PostalAddressLine1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "PO Box 5129"
+            },
+            {
+                "col_name": "DeliveryRun",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "IsOnCreditHold",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "WebsiteURL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "http://www.tailspintoys.com/Imlaystown"
+            },
+            {
+                "col_name": "FaxNumber",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "(201) 555-0101"
+            },
+            {
+                "col_name": "CustomerCategoryID",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "AlternateContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "1102"
+            },
+            {
+                "col_name": "DeliveryCityID",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 16430
+            },
+            {
+                "col_name": "PostalAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Ghateville"
+            },
+            {
+                "col_name": "AccountOpenedDate",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATE",
+                "sample_value": "2013-01-01"
+            },
+            {
+                "col_name": "StandardDiscountPercentage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "RunPosition",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CreditLimit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "IsStatementSent",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CustomerName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Tailspin Toys (Imlaystown, NJ)"
+            },
+            {
+                "col_name": "PaymentDays",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "DeliveryMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "DeliveryAddressLine2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "1305 Kaleja Street"
+            },
+            {
+                "col_name": "PostalCityID",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 16430
+            },
+            {
+                "col_name": "BuyingGroupID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "DeliveryPostalCode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 90051
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "SALES_CUSTOMERTRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "InvoiceID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": 2.0
+            },
+            {
+                "col_name": "CustomerTransactionID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "OutstandingBalance",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "FinalizationDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-02"
+            },
+            {
+                "col_name": "TransactionAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 465.75
+            },
+            {
+                "col_name": "PaymentMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TransactionTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 803
+            },
+            {
+                "col_name": "TaxAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 60.75
+            },
+            {
+                "col_name": "IsFinalized",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "AmountExcludingTax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 405.0
+            },
+            {
+                "col_name": "TransactionDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-01"
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-02 11:30:00.0000000"
+            }
+        ]
+    },
+    "SALES_INVOICELINES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "InvoiceLineID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 209233
+            },
+            {
+                "col_name": "TaxRate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 15.0
+            },
+            {
+                "col_name": "LineProfit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": -14.0
+            },
+            {
+                "col_name": "UnitPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.5
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Quantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "USB missile launcher (Green)"
+            },
+            {
+                "col_name": "TaxAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.75
+            },
+            {
+                "col_name": "ExtendedPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 5.75
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1456488000000000
+            },
+            {
+                "col_name": "InvoiceID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 64608
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "PackageTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            }
+        ]
+    },
+    "SALES_INVOICES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "InvoiceID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 63692
+            },
+            {
+                "col_name": "CustomerPurchaseOrderNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 15472
+            },
+            {
+                "col_name": "RunPosition",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryInstructions",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Unit 20, 231 Kaulina Street"
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2016-02-12 07:00:00.0000000"
+            },
+            {
+                "col_name": "ConfirmedReceivedBy",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Anda Liepa"
+            },
+            {
+                "col_name": "ContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2227
+            },
+            {
+                "col_name": "IsCreditNote",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalChillerItems",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SalespersonPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "DeliveryRun",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DeliveryMethodID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "InternalComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BillToCustomerID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 401
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 514
+            },
+            {
+                "col_name": "Comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PackedByPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 18
+            },
+            {
+                "col_name": "TotalDryItems",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "AccountsPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2001
+            },
+            {
+                "col_name": "InvoiceDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-02-11"
+            },
+            {
+                "col_name": "CreditNoteReason",
+                "col_tag": "DESC_LONG",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ReturnedDeliveryData",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"Events\": [{ \"Event\":\"Ready for collection\",\"EventTime\":\"2016-02-11T12:00:00\",\"ConNote\":\"EAN-125-64"
+            },
+            {
+                "col_name": "OrderID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 66440
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 11
+            },
+            {
+                "col_name": "ConfirmedDeliveryTime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-02-12 07:40:00.0000000"
+            }
+        ]
+    },
+    "SALES_ORDERLINES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "OrderLineID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 8107
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PickedQuantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PackageTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "PickingCompletedWhen",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-02-21 11:00:00.0000000"
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1361444400000000
+            },
+            {
+                "col_name": "UnitPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 25.0
+            },
+            {
+                "col_name": "OrderID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2538
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "USB missile launcher (Green)"
+            },
+            {
+                "col_name": "Quantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "TaxRate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 15.0
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 17
+            }
+        ]
+    },
+    "SALES_ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "OrderID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 70080
+            },
+            {
+                "col_name": "CustomerPurchaseOrderNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 15124
+            },
+            {
+                "col_name": "BackorderOrderID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "ExpectedDeliveryDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATE",
+                "sample_value": "2016-04-11"
+            },
+            {
+                "col_name": "SalespersonPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 89
+            },
+            {
+                "col_name": "Comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1460196000000000
+            },
+            {
+                "col_name": "PickingCompletedWhen",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "PickedByPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DeliveryInstructions",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "InternalComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "IsUndersupplyBackordered",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ContactPersonID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1177
+            },
+            {
+                "col_name": "OrderDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2016-04-09"
+            }
+        ]
+    },
+    "SALES_SPECIALDEALS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "SpecialDealID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DealDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DiscountAmount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DiscountPercentage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CustomerCategoryID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BuyingGroupID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "UnitPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "StockGroupID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "StartDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "EndDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "WAREHOUSE_COLDROOMTEMPERATURES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ColdRoomTemperatureID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3654737
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "Temperature",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.72
+            },
+            {
+                "col_name": "RecordedWhen",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1464739164000000
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1464739164000000
+            },
+            {
+                "col_name": "ColdRoomSensorNumber",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "WAREHOUSE_COLORS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ColorID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "ColorName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Black"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "WAREHOUSE_PACKAGETYPES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "PackageTypeID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "PackageTypeName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Box"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            }
+        ]
+    },
+    "WAREHOUSE_STOCKGROUPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "StockGroupID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "StockGroupName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Mugs"
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "WAREHOUSE_STOCKITEMHOLDINGS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "StockItemID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 175
+            },
+            {
+                "col_name": "BinLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "D-2"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "LastStocktakeQuantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14697
+            },
+            {
+                "col_name": "TargetStockLevel",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1464696000000000
+            },
+            {
+                "col_name": "ReorderLevel",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "QuantityOnHand",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15106
+            },
+            {
+                "col_name": "LastCostPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 110.0
+            }
+        ]
+    },
+    "WAREHOUSE_STOCKITEMS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Barcode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8792838293987"
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 224
+            },
+            {
+                "col_name": "CustomFields",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{ \"CountryOfManufacture\": \"USA\", \"ShelfLife\": \"7 days\", \"Tags\": [] }"
+            },
+            {
+                "col_name": "Brand",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "StockItemName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Chocolate frogs 250g"
+            },
+            {
+                "col_name": "Photo",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "OuterPackageID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "ValidFrom",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1464735600000000
+            },
+            {
+                "col_name": "UnitPackageID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RecommendedRetailPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 12.23
+            },
+            {
+                "col_name": "InternalComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "Tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "LeadTimeDays",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "MarketingComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Perfect for your child's party"
+            },
+            {
+                "col_name": "TaxRate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 10.0
+            },
+            {
+                "col_name": "QuantityPerOuter",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 24
+            },
+            {
+                "col_name": "UnitPrice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 8.55
+            },
+            {
+                "col_name": "Size",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "250g"
+            },
+            {
+                "col_name": "TypicalWeightPerUnit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.25
+            },
+            {
+                "col_name": "ValidTo",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 253402300799999999
+            },
+            {
+                "col_name": "ColorID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "IsChillerStock",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SearchDetails",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Chocolate frogs 250g Perfect for your child's party"
+            },
+            {
+                "col_name": "SupplierID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "WAREHOUSE_STOCKITEMSTOCKGROUPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "StockItemStockGroupID",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "StockGroupID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1356998400000000
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "WAREHOUSE_STOCKITEMTRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "StockItemTransactionID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 630
+            },
+            {
+                "col_name": "InvoiceID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": 129.0
+            },
+            {
+                "col_name": "CustomerID",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 122.0
+            },
+            {
+                "col_name": "TransactionTypeID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "StockItemID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 118
+            },
+            {
+                "col_name": "LastEditedBy",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "TransactionOccurredWhen",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-03 12:00:00.0000000"
+            },
+            {
+                "col_name": "PurchaseOrderID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SupplierID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastEditedWhen",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2013-01-03 12:00:00.0000000"
+            },
+            {
+                "col_name": "Quantity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": -10.0
+            }
+        ]
+    },
+    "WAREHOUSE_VEHICLETEMPERATURES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VehicleRegistration",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "WWI-321-A"
+            },
+            {
+                "col_name": "VehicleTemperatureID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 65731
+            },
+            {
+                "col_name": "CompressedSensorData",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "NULL"
+            },
+            {
+                "col_name": "RecordedWhen",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1464689767000000
+            },
+            {
+                "col_name": "IsCompressed",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "ChillerSensorNumber",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Temperature",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "FullSensorData",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"Recordings\": [{\"type\":\"Feature\", \"geometry\": {\"type\":\"Point\", \"coordinates\":[-85.3249088,46.583771"
+            }
+        ]
+    }
+}

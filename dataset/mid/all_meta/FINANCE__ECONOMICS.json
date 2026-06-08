@@ -1,0 +1,2693 @@
+{
+    "CYBERSYN_BANK_FOR_INTERNATIONAL_SETTLEMENTS_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BIS,WS_LBS_D_PUB,1.0,Q.F.L.D.TO1.A.5J.A.GB.A.5J.A"
+            },
+            {
+                "col_name": "SERIES_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BIS,WS_LBS_D_PUB,1.0"
+            },
+            {
+                "col_name": "COUNTERPARTY_GEO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "All countries (total)"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "United Kingdom - All Total liabilities of banks with headquarters in All countries (total) vis-a-vis"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Total liabilities"
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "End of period"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "GEO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "United Kingdom"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly"
+            },
+            {
+                "col_name": "SOURCE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CYBERSYN_BUREAU_OF_LABOR_STATISTICS_EMPLOYMENT_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JOLTS:_Quits,_Total_private,_1_to_9_employees,_Not_seasonally_adjusted,_Monthly,_Level"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Quits"
+            },
+            {
+                "col_name": "INDUSTRY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Total private"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "JOLTS: Quits, Total private, 1 to 9 employees, Not seasonally adjusted, Monthly, Level"
+            },
+            {
+                "col_name": "REPORT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "JOLTS"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Level"
+            },
+            {
+                "col_name": "ESTABLISHMENT_SIZE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "1 to 9 employees"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Monthly"
+            }
+        ]
+    },
+    "CYBERSYN_BUREAU_OF_LABOR_STATISTICS_EMPLOYMENT_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/31127"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Local_Area_Unemployment:_Unemployment,_Not_seasonally_adjusted,_Monthly"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2013-04-30"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Local Area Unemployment: Unemployment, Not seasonally adjusted, Monthly"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 169.0
+            }
+        ]
+    },
+    "CYBERSYN_BUREAU_OF_LABOR_STATISTICS_PRICE_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CPI:_Household_furnishings_and_operations,_Not_seasonally_adjusted,_Monthly,_2001-12_Index_Date"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "PRODUCT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Household furnishings and operations"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2001-12 Index Date"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Monthly"
+            },
+            {
+                "col_name": "BASE_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Standard Reference Base"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CPI: Household furnishings and operations, Not seasonally adjusted, Monthly, 2001-12 Index Date"
+            },
+            {
+                "col_name": "REPORT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Consumer Price Index"
+            }
+        ]
+    },
+    "CYBERSYN_BUREAU_OF_LABOR_STATISTICS_PRICE_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/31127"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Local_Area_Unemployment:_Unemployment,_Not_seasonally_adjusted,_Monthly"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2013-04-30"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Local Area Unemployment: Unemployment, Not seasonally adjusted, Monthly"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 169.0
+            }
+        ]
+    },
+    "CYBERSYN_COMPANY_INDEX": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "PERMID_COMPANY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5087020389"
+            },
+            {
+                "col_name": "LEI",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "ARRAY",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "9cee45c58a4fdb6bb265552a0db62a00"
+            },
+            {
+                "col_name": "EIN",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CIK",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0002011467"
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PRIMARY_TICKER",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ENTITY_LEVEL",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "Corporate"
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_CODE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GLOBAL_TICKERS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "ARRAY",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "VENDERA RESOURCES VI-A LP"
+            }
+        ]
+    },
+    "CYBERSYN_COMPANY_RELATIONSHIPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "COMPANY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ca52d8c892a8ffe6e8368f2bd7a5fca7"
+            },
+            {
+                "col_name": "RELATED_COMPANY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5a2aaa890644211a8e69ad206ee9d4de"
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "WYNN RESORTS LTD"
+            },
+            {
+                "col_name": "RELATIONSHIP_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Parent"
+            },
+            {
+                "col_name": "RELATIONSHIP_START_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "RELATIONSHIP_END_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "ENTITY_LEVEL",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "Corporate"
+            },
+            {
+                "col_name": "RELATED_ENTITY_LEVEL",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "Corporate"
+            },
+            {
+                "col_name": "RELATED_COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "WYNN LAS VEGAS LLC"
+            }
+        ]
+    },
+    "CYBERSYN_COMPANY_SECURITY_RELATIONSHIPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "SECURITY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BBG00Q6SF3X5"
+            },
+            {
+                "col_name": "COMPANY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "db61b5dc8b1d123383774189e8b57f47"
+            },
+            {
+                "col_name": "SECURITY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED NATURAL FOODS INC"
+            },
+            {
+                "col_name": "SECURITY_ID_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "openfigi_figi_id"
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "UNITED NATURAL FOODS INC"
+            }
+        ]
+    },
+    "CYBERSYN_CYBERSYN_DATA_CATALOG": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "DATA_SOURCE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"Bureau of Labor Statistics (BLS)\"\n]"
+            },
+            {
+                "col_name": "LICENSE_URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"https://www.bls.gov/bls/linksite.htm\"\n]"
+            },
+            {
+                "col_name": "LISTING_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"Financials & Economics: Enterprise \"\n]"
+            },
+            {
+                "col_name": "CREATED_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2023-10-31"
+            },
+            {
+                "col_name": "TABLE_NAME_PROPER",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BLS Employment Timeseries Point in Time History"
+            },
+            {
+                "col_name": "LAST_UPDATED_TIMESTAMP",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP_TZ",
+                "sample_value": "2024-08-28 15:28:48.680000+00:00"
+            },
+            {
+                "col_name": "TABLE_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "point-in-time history"
+            },
+            {
+                "col_name": "DESCRIPTION",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Tracks history of the bureau_of_labor_statistics_employment_timeseries table with start and end time"
+            },
+            {
+                "col_name": "SELECT_RELATED_TABLES",
+                "col_tag": "REL_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"bureau_of_labor_statistics_employment_timeseries\"\n]"
+            },
+            {
+                "col_name": "DOCUMENTATION_URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://docs.cybersyn.com/public-domain-sources/sec-filings-1"
+            },
+            {
+                "col_name": "SHORT_DESCRIPTION",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Map between companies and the securities (stocks, bonds, etc.) they issue, including security identi"
+            },
+            {
+                "col_name": "DATA_SOURCE_URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"https://www.bls.gov/\"\n]"
+            },
+            {
+                "col_name": "ENTITIES",
+                "col_tag": "REL_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"geo_id\"\n]"
+            },
+            {
+                "col_name": "LISTING_URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"https://app.snowflake.com/marketplace/listing/GZTSZ290BUX66\"\n]"
+            },
+            {
+                "col_name": "TABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "bureau_of_labor_statistics_employment_timeseries_history"
+            }
+        ]
+    },
+    "CYBERSYN_CYBERSYN_FINANCIAL_ECONOMIC_INDICATORS_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "FRED_SERIES_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LNU02574808.A_NSA"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            },
+            {
+                "col_name": "RELEASE_SOURCE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bureau of Labor Statistics"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Employment"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Annual"
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Percent of employed within group"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Labor Force: Employed full time - Lost-time Universe, Private wage and salary workers, exclu"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Not seasonally adjusted"
+            },
+            {
+                "col_name": "RELEASE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Population Survey (CPS)"
+            },
+            {
+                "col_name": "INDUSTRY",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Management, Administrative, And Waste Services"
+            }
+        ]
+    },
+    "CYBERSYN_CYBERSYN_FINANCIAL_ECONOMIC_INDICATORS_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CES2023600032.M_SA"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1982-1984 USD per hour"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1994-03-31"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Employment: Average hourly earnings of production and nonsupervisory employees, 1982-84 doll"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 9.32
+            }
+        ]
+    },
+    "CYBERSYN_EUROPEAN_CENTRAL_BANK_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "harmonized_index_of_consumer_prices_services_of_plumbers_monthly_index_eurostat_neither_seasonally_n"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Not seasonally adjusted"
+            },
+            {
+                "col_name": "ITEM_DESCRIPTION",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Services Of Plumbers"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Harmonized Index Of Consumer Prices"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Index, 2015=100"
+            },
+            {
+                "col_name": "GEO_COVERAGE",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Index (Average of observations through period)"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Harmonized Index Of Consumer Prices - Services Of Plumbers, Monthly Index, Eurostat, Neither Seasona"
+            },
+            {
+                "col_name": "SOURCE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Eurostat"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Monthly"
+            }
+        ]
+    },
+    "CYBERSYN_EUROPEAN_CENTRAL_BANK_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/LTU"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "harmonized_index_of_consumer_prices_seasonal_food_annual_rate_of_change_eurostat_neither_seasonally_"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Harmonized Index Of Consumer Prices - Seasonal Food, Annual Rate Of Change, Eurostat, Neither Season"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1997-03-31"
+            },
+            {
+                "col_name": "VALUE_COMMENT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.024
+            }
+        ]
+    },
+    "CYBERSYN_FDIC_BRANCH_LOCATIONS_INDEX": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "FDIC_INSTITUTION_CERTIFICATE_NUMBER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "59324"
+            },
+            {
+                "col_name": "GEO_ID_CBSA",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/C41980"
+            },
+            {
+                "col_name": "GEO_ID_STATE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/72"
+            },
+            {
+                "col_name": "RSSDHCR",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1069778"
+            },
+            {
+                "col_name": "GEO_ID_COUNTY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/72127"
+            },
+            {
+                "col_name": "GEO_ID_METRO_DIV",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/M37964"
+            },
+            {
+                "col_name": "RSSDID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "817824"
+            },
+            {
+                "col_name": "GEO_ID_ZIP",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zip/00909"
+            },
+            {
+                "col_name": "OTS_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BRANCH_NUMBER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "FDIC_INSTITUTION_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "649963"
+            },
+            {
+                "col_name": "FDIC_BRANCH_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "649963"
+            },
+            {
+                "col_name": "FDIC_REGIONAL_OFFICE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New York"
+            },
+            {
+                "col_name": "HOLDING_COMPANY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "One bank holding company"
+            },
+            {
+                "col_name": "LONGITUDE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": -66.066281025329
+            },
+            {
+                "col_name": "LATITUDE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 18.444306984751
+            },
+            {
+                "col_name": "INSTITUTION_PRIMARY_REGULATORY_AGENCY",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "OCC"
+            },
+            {
+                "col_name": "CHARTER_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Fed"
+            },
+            {
+                "col_name": "BRANCH_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Nave Bank"
+            },
+            {
+                "col_name": "CITY",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "San Juan"
+            },
+            {
+                "col_name": "BRANCH_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Full Service - Brick And Mortar"
+            },
+            {
+                "col_name": "ACQUIRED_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1996-06-09"
+            },
+            {
+                "col_name": "ADDRESS",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "1608 Ave Ponce De Leon, Suite 2"
+            },
+            {
+                "col_name": "ESTABLISHED_DATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATE",
+                "sample_value": "2023-09-18"
+            },
+            {
+                "col_name": "COMPTROLLER_DISTRICT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Large Bank"
+            },
+            {
+                "col_name": "FEDERAL_RESERVE_DISTRICT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Philadelphia"
+            },
+            {
+                "col_name": "INSTITUTION_PRIMARY_INSURER",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Deposit Insurance Fund"
+            },
+            {
+                "col_name": "HOLDING_COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Pnc Financial Services Group, Inc., The"
+            },
+            {
+                "col_name": "INSTITUTION_CHARTER_AGENCY",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Comptroller of the Currency"
+            },
+            {
+                "col_name": "MAIN_OFFICE_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "INSTITUTION_CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "National Member Bank"
+            },
+            {
+                "col_name": "INSTITUTION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Nave Bank"
+            },
+            {
+                "col_name": "INSTITUTION_PRIMARY_ASSET_SPECIALIZATION",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Commercial Lending"
+            },
+            {
+                "col_name": "INSTITUTION_MINORITY_DEPOSITORY_STATUS",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Minority Board And Serving Hispanic Community"
+            },
+            {
+                "col_name": "FDIC_CLASSIFICATION_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Commercial bank, state charter and Fed member, supervised by the Federal Reserve (FRB)"
+            }
+        ]
+    },
+    "CYBERSYN_FDIC_SUMMARY_OF_DEPOSITS_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ASSET"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Institutional Assets"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Assets Owned"
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Institution"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Annual"
+            }
+        ]
+    },
+    "CYBERSYN_FDIC_SUMMARY_OF_DEPOSITS_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "FDIC_INSTITUTION_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2239"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "DEPSUMBR"
+            },
+            {
+                "col_name": "FDIC_BRANCH_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "286466"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 119632
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2023-06-30"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Branch Deposits"
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_HOUSE_PRICE_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FHFA_HPI_traditional_purchase-only_monthly_SA"
+            },
+            {
+                "col_name": "PROPERTY_CLASSIFICATION",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "traditional"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "FHFA_HPI traditional purchase-only monthly Seasonally Adjusted"
+            },
+            {
+                "col_name": "INDEX_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "purchase-only"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MONTHLY"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Index"
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_HOUSE_PRICE_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FHFA_HPI_traditional_purchase-only_quarterly_NSA"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/53"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "236.84"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Index"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2009-09-30"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "FHFA_HPI traditional purchase-only quarterly Not Seasonally Adjusted"
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_MORTGAGE_PERFORMANCE_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Percent_90_to_180_Days_Past_Due_Date_Other Conventional Market"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            },
+            {
+                "col_name": "VARIABLE_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Percent 90 to 180 Days Past Due Date"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly"
+            },
+            {
+                "col_name": "MARKET",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Other Conventional Market"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Percent 90 to 180 Days Past Due Date - Other Conventional Market"
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_MORTGAGE_PERFORMANCE_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CES2023600032.M_SA"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1982-1984 USD per hour"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1994-03-31"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Employment: Average hourly earnings of production and nonsupervisory employees, 1982-84 doll"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 9.32
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_UNIFORM_APPRAISAL_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly_25%_Quartile_of_Appraised_Value_Property_Condition_(4_categories)_Purchase_&_Refinance_C1_"
+            },
+            {
+                "col_name": "VARIABLE_GROUP",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "25% Quartile of Appraised Value"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly 25% Quartile of Appraised Value Property Condition (4 categories) Purchase & Refinance C1 "
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C1 and C2"
+            },
+            {
+                "col_name": "CHARACTERISTIC",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Property Condition (4 categories)"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "APPRAISAL_PURPOSE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Purchase & Refinance"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly"
+            }
+        ]
+    },
+    "CYBERSYN_FHFA_UNIFORM_APPRAISAL_TIMESERIES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Annual_%_of_Appraisals_Above_Contract_Price_Ratio_of_Tract_Med._Inc._to_MSA_Med._Inc._Purchase_Missi"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/C41740"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Annual % of Appraisals Above Contract Price Ratio of Tract Med. Inc. to MSA Med. Inc. Purchase Missi"
+            },
+            {
+                "col_name": "SUPPRESSED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2015-12-31"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.51
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_BRANCH_ENTITIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ID_COUNTRY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "ID_COUNTY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/25001"
+            },
+            {
+                "col_name": "ID_ZIP",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zip/02653"
+            },
+            {
+                "col_name": "ID_RSSD",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5973668
+            },
+            {
+                "col_name": "ID_RSSD_PARENT",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 852218
+            },
+            {
+                "col_name": "ID_STATE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/25"
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Branch"
+            },
+            {
+                "col_name": "IS_ACTIVE",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "ZIP_CODE",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "02653"
+            },
+            {
+                "col_name": "END_DATE",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATE",
+                "sample_value": "2024-08-27"
+            },
+            {
+                "col_name": "STATE_ABBREVIATION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MA"
+            },
+            {
+                "col_name": "CITY",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "ORLEANS"
+            },
+            {
+                "col_name": "ADDRESS_LINE2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "NAME_PARENT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "JPMORGAN CHASE BANK, NATIONAL ASSOCIATION"
+            },
+            {
+                "col_name": "ADDRESS",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "9 WEST RD"
+            },
+            {
+                "col_name": "BRANCH_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "ORLEANS"
+            },
+            {
+                "col_name": "START_DATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATE",
+                "sample_value": "2024-08-13"
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_CFPB_COMPLAINT": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID_STATE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/06"
+            },
+            {
+                "col_name": "ID_ZIP",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zip/92805"
+            },
+            {
+                "col_name": "DATE_SENT_TO_COMPANY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2017-04-05"
+            },
+            {
+                "col_name": "TIMELY_RESPONSE",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "SUBMITTED_VIA",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Web"
+            },
+            {
+                "col_name": "ZIP_CODE",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "92805"
+            },
+            {
+                "col_name": "SUB_ISSUE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "No notice of investigation status/result"
+            },
+            {
+                "col_name": "DATE_RECEIVED",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2017-04-05"
+            },
+            {
+                "col_name": "COMPANY_PUBLIC_RESPONSE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Company has responded to the consumer and the CFPB and chooses not to provide a public response"
+            },
+            {
+                "col_name": "CONSUMER_COMPLAINT_NARRATIVE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "On or about XX/XX/2016, I received notification on my credit report through XXXX  XXXX  that Receiva"
+            },
+            {
+                "col_name": "STATE",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "CA"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "EQUIFAX, INC."
+            },
+            {
+                "col_name": "SUB_PRODUCT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Credit reporting"
+            },
+            {
+                "col_name": "ISSUE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Credit reporting company's investigation"
+            },
+            {
+                "col_name": "COMPANY_RESPONSE_TO_CONSUMER",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Closed with explanation"
+            },
+            {
+                "col_name": "CONSUMER_DISPUTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "CONSUMER_CONSENT_PROVIDED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Consent not provided"
+            },
+            {
+                "col_name": "PRODUCT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Credit reporting"
+            },
+            {
+                "col_name": "TAGS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_INSTITUTION_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "EQUP"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            },
+            {
+                "col_name": "DEFINITION",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Retained earnings from bank operations, net unrealized holding gains (losses) on available-for-sale "
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Undivided Profits"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Quarterly"
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_INSTITUTION_ENTITIES": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "ID_COUNTRY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "ID_STATE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/45"
+            },
+            {
+                "col_name": "ID_ZIP",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zip/29401"
+            },
+            {
+                "col_name": "LEGAL_ENTITY_IDENTIFIER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "254900LDLCTUL5TXVH85"
+            },
+            {
+                "col_name": "FDIC_CERT",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 34966
+            },
+            {
+                "col_name": "ZIP_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "29401"
+            },
+            {
+                "col_name": "ID_COUNTY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/45019"
+            },
+            {
+                "col_name": "EMPLOYER_IDENTIFICATION_NUMBER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "571084848"
+            },
+            {
+                "col_name": "THRIFT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "13156"
+            },
+            {
+                "col_name": "ID_RSSD",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2849463
+            },
+            {
+                "col_name": "OCC_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 17611.0
+            },
+            {
+                "col_name": "ADDRESS",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "304 Meeting St"
+            },
+            {
+                "col_name": "STATE_ABBREVIATION",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SC"
+            },
+            {
+                "col_name": "NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "First Capital Bank"
+            },
+            {
+                "col_name": "NAICS_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "52211"
+            },
+            {
+                "col_name": "FEDERAL_REGULATOR",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "FDIC"
+            },
+            {
+                "col_name": "SPECIALIZATION_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Commercial Lending Specialization"
+            },
+            {
+                "col_name": "REASON_FOR_ENTITY_TERMINATION",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "START_DATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TIMESTAMP_NTZ",
+                "sample_value": "1999-09-27 00:00:00"
+            },
+            {
+                "col_name": "INSURER",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DIF"
+            },
+            {
+                "col_name": "CHARTERING_AUTHORITY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "State"
+            },
+            {
+                "col_name": "MAJORITY_OWNED_BY_MINORITY_OR_WOMEN",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Hispanic"
+            },
+            {
+                "col_name": "END_DATE",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TIMESTAMP_NTZ",
+                "sample_value": null
+            },
+            {
+                "col_name": "ENTITY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "State Member Bank"
+            },
+            {
+                "col_name": "IS_ACTIVE",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "CITY",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Charleston"
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Bank"
+            },
+            {
+                "col_name": "CHARTER_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Commercial Bank"
+            },
+            {
+                "col_name": "INTERNATIONAL_BANKING_FACILITY",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "www.fcbcarolinas.com"
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_INSTITUTION_EVENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID_RSSD_PREDECESSOR",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3302312
+            },
+            {
+                "col_name": "ID_RSSD_SUCCESSOR",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3076453
+            },
+            {
+                "col_name": "NAME_SUCCESSOR",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "California Bank of Commerce, National Association"
+            },
+            {
+                "col_name": "TRANSFORMATION_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Charter Discontinued"
+            },
+            {
+                "col_name": "CATEGORY_SUCCESSOR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Bank"
+            },
+            {
+                "col_name": "CATEGORY_PREDECESSOR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Branch"
+            },
+            {
+                "col_name": "NAME_PREDECESSOR",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bank of Santa Clarita"
+            },
+            {
+                "col_name": "MERGER_ACCOUNTING_METHOD_UTILIZED",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Purchase/Acquisition"
+            },
+            {
+                "col_name": "ACTIVE_SUCCESSOR",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "TRANSACTION_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-10-02"
+            },
+            {
+                "col_name": "ACTIVE_PREDECESSOR",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_INSTITUTION_HIERARCHY": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "ID_RSSD_PARENT",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 407506
+            },
+            {
+                "col_name": "ID_RSSD_OFFSPRING",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5858822
+            },
+            {
+                "col_name": "CATEGORY_PARENT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Bank"
+            },
+            {
+                "col_name": "CATEGORY_OFFSPRING",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Other Financial Institution"
+            },
+            {
+                "col_name": "NAME_OFFSPRING",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BCI FINANCIAL"
+            },
+            {
+                "col_name": "RELATIONSHIP_TERMINATED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "PERCENT_CONTROL_OF_OFFSPRING",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": 100.0
+            },
+            {
+                "col_name": "ACTIVE_OFFSPRING",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "PARENT_CONTROLS_OFFSPRING",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "ACTIVE_PARENT",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "NAME_PARENT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Ion Bank"
+            },
+            {
+                "col_name": "RELATIONSHIP_LEVEL",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Direct relationship"
+            }
+        ]
+    },
+    "CYBERSYN_FINANCIAL_INSTITUTION_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "P3OTHLNR"
+            },
+            {
+                "col_name": "ID_RSSD",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "582971"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-11"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1991-09-30"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Other Loans, Past Due 30 - 89 Days"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "Percent"
+            }
+        ]
+    },
+    "CYBERSYN_FX_RATES_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "chf_sek"
+            },
+            {
+                "col_name": "BASE_CURRENCY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CHF"
+            },
+            {
+                "col_name": "QUOTE_CURRENCY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "SEK"
+            },
+            {
+                "col_name": "BASE_CURRENCY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Swiss Franc"
+            },
+            {
+                "col_name": "QUOTE_CURRENCY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Swedish Krona"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 6.8232
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "CHF/SEK Exchange Rate"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2011-03-10"
+            }
+        ]
+    },
+    "CYBERSYN_GEOGRAPHY_HIERARCHY": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/1990033"
+            },
+            {
+                "col_name": "PARENT_GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/19089"
+            }
+        ]
+    },
+    "CYBERSYN_GEOGRAPHY_INDEX": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ISO_ALPHA2",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "censusBlockGroup/450450043003"
+            },
+            {
+                "col_name": "ISO_3166_2_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ISO_NUMERIC_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ISO_ALPHA3",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LEVEL",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "CensusBlockGroup"
+            },
+            {
+                "col_name": "GEO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Block Group 3; Census Tract 43; Greenville County; South Carolina"
+            },
+            {
+                "col_name": "ISO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CYBERSYN_GEOGRAPHY_OVERLAPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/01001020900"
+            },
+            {
+                "col_name": "OVERLAPS_WITH",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zip/36022"
+            }
+        ]
+    },
+    "CYBERSYN_GEOGRAPHY_RELATIONSHIPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "RELATED_GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "censusBlockGroup/450850004003"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/45085"
+            },
+            {
+                "col_name": "RELATED_GEO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Block Group 3, Census Tract 4, Sumter County, South Carolina"
+            },
+            {
+                "col_name": "RELATED_LEVEL",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CensusBlockGroup"
+            },
+            {
+                "col_name": "RELATIONSHIP_TYPE",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Contains"
+            },
+            {
+                "col_name": "GEO_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Sumter County"
+            },
+            {
+                "col_name": "LEVEL",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "County"
+            }
+        ]
+    },
+    "CYBERSYN_INTERNATIONAL_MONETARY_FUND_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ASSET"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Institutional Assets"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Assets Owned"
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Institution"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Annual"
+            }
+        ]
+    },
+    "CYBERSYN_INTERNATIONAL_MONETARY_FUND_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CES2023600032.M_SA"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1982-1984 USD per hour"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1994-03-31"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Employment: Average hourly earnings of production and nonsupervisory employees, 1982-84 doll"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 9.32
+            }
+        ]
+    },
+    "CYBERSYN_OECD_ATTRIBUTES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BAL_OF_PAY_B_IN2_XDC_USD_A_N"
+            },
+            {
+                "col_name": "MEASUREMENT_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Balance (revenue minus expenditure) from secondary income"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Annual"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "SEASONALLY_ADJUSTED",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Neither seasonally adjusted nor calendar adjusted"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Balance of payments to rest of the world: balance (revenue minus expenditure) from secondary income "
+            }
+        ]
+    },
+    "CYBERSYN_OECD_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/USA"
+            },
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CES2023600032.M_SA"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1982-1984 USD per hour"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1994-03-31"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Current Employment: Average hourly earnings of production and nonsupervisory employees, 1982-84 doll"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 9.32
+            }
+        ]
+    },
+    "CYBERSYN_OPENFIGI_SECURITY_INDEX": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "OPENFIGI_FIGI_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"BBG01J992S31\",\n  \"BBG01J992S40\",\n  \"BBG01J992S59\",\n  \"BBG01J992S77\",\n  \"BBG01J992S86\",\n  \"BBG01J992SB2\",\n  \"BBG01J992SD0\",\n  \"BBG01J992SF8\",\n  \"BBG01J992SG7\",\n  \"BBG01J992SJ4\",\n  \"BBG01J992SL1\",\n  \"BBG01J992SP7\",\n  \"BBG01J992SQ6\",\n  \"BBG01J992SR5\",\n  \"BBG01J992SS4\",\n  \"BBG01J992ST3\",\n  \"BBG01J992SV0\",\n  \"BBG01J992SW9\",\n  \"BBG01J992SX8\"\n]"
+            },
+            {
+                "col_name": "OPENFIGI_COMPOSITE_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"BBG01J992S31\"\n]"
+            },
+            {
+                "col_name": "OPENFIGI_SHARE_CLASS_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"BBG01J992SY7\"\n]"
+            },
+            {
+                "col_name": "TOP_LEVEL_OPENFIGI_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BBG01J992SY7"
+            },
+            {
+                "col_name": "PRIMARY_TICKER",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "FEBO"
+            },
+            {
+                "col_name": "EXCHANGE_CODES",
+                "col_tag": "LOCATION",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"PQ\",\n  \"UA\",\n  \"UB\",\n  \"UC\",\n  \"UD\",\n  \"UF\",\n  \"UM\",\n  \"UN\",\n  \"UP\",\n  \"UR\",\n  \"US\",\n  \"UX\",\n  \"VF\",\n  \"VG\",\n  \"VJ\",\n  \"VK\",\n  \"VL\",\n  \"VP\",\n  \"VY\"\n]"
+            },
+            {
+                "col_name": "ASSET_CLASS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Equity"
+            },
+            {
+                "col_name": "SECURITY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"Common Stock\"\n]"
+            },
+            {
+                "col_name": "TOP_LEVEL_OPENFIGI_ID_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "openfigi_share_class_id"
+            },
+            {
+                "col_name": "SECURITY_SUBTYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"Common Stock\"\n]"
+            },
+            {
+                "col_name": "SECURITY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "FENBO HOLDINGS LTD"
+            },
+            {
+                "col_name": "GLOBAL_TICKERS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"FEBO\"\n]"
+            }
+        ]
+    },
+    "CYBERSYN_PERMID_SECURITY_INDEX": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "PERMID_SECURITY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8589975674"
+            },
+            {
+                "col_name": "ASSET_CLASS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Other"
+            },
+            {
+                "col_name": "EXCHANGE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"NAS\",\n  \"NYQ\"\n]"
+            },
+            {
+                "col_name": "PRIMARY_TICKER",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "EVN"
+            },
+            {
+                "col_name": "SECURITY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "EATON VANCE MUNICIPAL INCOME CLOSED FUND"
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NYQ"
+            },
+            {
+                "col_name": "SECURITY_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Active"
+            },
+            {
+                "col_name": "GLOBAL_TICKERS",
+                "col_tag": "REL_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"EVN\",\n  \"XEVNX\"\n]"
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "NYSE CONSOLIDATED"
+            },
+            {
+                "col_name": "PERMID_QUOTE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "ARRAY",
+                "sample_value": "[\n  \"55835369644\",\n  \"55839104515\"\n]"
+            }
+        ]
+    },
+    "CYBERSYN_PUBLIC_HOLIDAY_CALENDAR": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ISO_ALPHA2",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "MC"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "country/MCO"
+            },
+            {
+                "col_name": "SUBDIVISION",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "HOLIDAY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Immaculate Conception's Day"
+            },
+            {
+                "col_name": "IS_FINANCIAL",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1999-12-08"
+            }
+        ]
+    },
+    "CYBERSYN_STOCK_PRICE_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "all-day_high"
+            },
+            {
+                "col_name": "TICKER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FAMI"
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NASDAQ CAPITAL MARKET"
+            },
+            {
+                "col_name": "ASSET_CLASS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Common Shares"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.19
+            },
+            {
+                "col_name": "PRIMARY_EXCHANGE_CODE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NAS"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2022-08-08"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "All-Day High"
+            }
+        ]
+    },
+    "CYBERSYN_US_ECONOMIC_CENSUS_ATTRIBUTES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "EMPQ3PW_212210_2012"
+            },
+            {
+                "col_name": "NAICS_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "212210"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Production workers for pay period including sept 12 | Iron ore mining (NAICS 2012 code: 212210)"
+            },
+            {
+                "col_name": "CREDIT_CARD_SERVICES_INCOME",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MEASURE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Employment"
+            },
+            {
+                "col_name": "FREQUENCY",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Annual"
+            },
+            {
+                "col_name": "PRODUCT_SERVICES_LINE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "All establishments"
+            },
+            {
+                "col_name": "NAICS_DESCRIPTION",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Iron ore mining"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Count"
+            },
+            {
+                "col_name": "OPERATION_TYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "All establishments"
+            }
+        ]
+    },
+    "CYBERSYN_US_ECONOMIC_CENSUS_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BENLGL_5629_2017"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "geoId/34039"
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-12-31"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Employers cost for legally required fringe benefits | Remediation and other waste management service"
+            }
+        ]
+    },
+    "CYBERSYN_BANK_FOR_INTERNATIONAL_SETTLEMENTS_TIMESERIES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "VARIABLE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BIS,WS_LBS_D_PUB,1.0,Q.S.L.G.TO3.A.5J.A.5A.N.TR.N"
+            },
+            {
+                "col_name": "COUNTERPARTY_GEO_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "country/TUR"
+            },
+            {
+                "col_name": "GEO_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 7561000000.0
+            },
+            {
+                "col_name": "DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2010-06-30"
+            },
+            {
+                "col_name": "VARIABLE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "All reporting countries - Cross-border Total liabilities of banks with headquarters in All countries"
+            }
+        ]
+    }
+}

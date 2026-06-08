@@ -1,0 +1,3162 @@
+{
+    "CRYPTO_BAND_BLOCKS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "signatures",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772796056,\n    \"validator_address\": \"061D655D415EB90B36CA9E7311EF1116AC4CBEEF\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772667243,\n    \"validator_address\": \"0AB78F6B4A1DA37B633210B78CF8FB9346BB8614\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772659951,\n    \"validator_address\": \"0BD952BD49924499F07EFF3343491E31A55DA644\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772649577,\n    \"validator_address\": \"0F2CBF6E526737DD360B104CEB2D28E69847AFB0\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233886848139,\n    \"validator_address\": \"11A31B5C8F997DEF2CAD9A7687A2D4AFEC895129\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772657029,\n    \"validator_address\": \"13615FC5740BF4583EBAE5B8F3C7EAF894EBFC85\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772693399,\n    \"validator_address\": \"14C17FDD89475DB56DC8399D6F134BC936CCFC41\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233770577986,\n    \"validator_address\": \"1549FC99468E41E5E5736A06FFDB376721A64A0B\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772598118,\n    \"validator_address\": \"1C69616391B22E974E83C59CFB1EE88685E7B4B3\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623234244921739,\n    \"validator_address\": \"201B5E73629F0E3AF225B0D6220914E5F3E29DED\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772694924,\n    \"validator_address\": \"2091CEEE8BBBA1314FBF9A4D247E9C5B8A8F3D41\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772668331,\n    \"validator_address\": \"26C356D39F7E8C63D3CBC456DD11EF779E1859F0\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772722746,\n    \"validator_address\": \"29E3A67D8CC9CF298B4C7973A4B36EEBB2B15558\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772676685,\n    \"validator_address\": \"2EC52C841BAD26455531A11822C685E9CB874A5A\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772573617,\n    \"validator_address\": \"31365A6DD2BBA2C6F979DC584E89529F22A85560\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772679430,\n    \"validator_address\": \"31A2EEB19577474467C3E21773D4B6D944A0042A\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772639071,\n    \"validator_address\": \"3626ADA5339AEDA433DC76D449544CA09834DAE7\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772833990,\n    \"validator_address\": \"3ABE0F14E4004BDA7DF6AC2ABF856730208C6EAE\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772736612,\n    \"validator_address\": \"3E560D5D34EFAF939B807515F63B8D2569A416DE\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772651127,\n    \"validator_address\": \"41A083E1279BD61F5A58EE30AA35E592267A84BD\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772687093,\n    \"validator_address\": \"4A11CA13CA47DD39CA5E2EA0BA381C89423CC15D\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772629306,\n    \"validator_address\": \"4D8B0BFC33E3E10829BD5D6AE52DEFC0F4EFB8CB\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772625079,\n    \"validator_address\": \"62158B3741221783112A619D1F3296B422643432\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772754097,\n    \"validator_address\": \"69C86AD2D08D9184EF2D818CC7B7B79A78472F55\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772670264,\n    \"validator_address\": \"6BA50834CE60BC5ECE094B895ECCB111E40005CB\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772709902,\n    \"validator_address\": \"7D662ED837383BA382A9A98D09DE0E6CBB14D739\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772811950,\n    \"validator_address\": \"81A6502BCFBBCD772A64C8F6DB668E54E421C27B\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772655083,\n    \"validator_address\": \"85275C2735075E49746BBFD05E69811600196FB1\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772712348,\n    \"validator_address\": \"8C3F927EB0762F69CF33BAED80EEBA234BE47427\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772650410,\n    \"validator_address\": \"8E09674C77E43F44D00C7B7B49DCFD799093947E\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772678046,\n    \"validator_address\": \"912DB392126BCCD22838EDA09F5FC5746665EF81\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772632970,\n    \"validator_address\": \"93048C5B344C847F70C03DB001003F81B17DE484\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772566090,\n    \"validator_address\": \"98C8D1054A39249003E08E74288923980934CF93\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772686289,\n    \"validator_address\": \"9B03FAFC5D46D9F53BAC63F28372B9AB23690F2C\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772677629,\n    \"validator_address\": \"9CAFC2ADBF2B5D16B1B5068BEAE4B499A52BD97E\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772612841,\n    \"validator_address\": \"9CE1BB9EE70D6CD8348C8AF921791A5B2F96D5E8\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772721573,\n    \"validator_address\": \"9D539C8EAF03CA89109766D1823914F9C13554E0\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772735149,\n    \"validator_address\": \"9DBDD434E22AB250B2185DA40C0A99CB982997AD\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772643633,\n    \"validator_address\": \"A5D1C0B93A6078F9DDD2034A22A53C15F2BB0F19\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772651840,\n    \"validator_address\": \"ABC2A975BE4B0958B1494C83F306D78F624F794C\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772783542,\n    \"validator_address\": \"AE851CD862462A3B4BF80E35A1CAA097A415FAF5\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772656004,\n    \"validator_address\": \"B1725A8150AC1750BE2890EC1572D7ADF787D862\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772653152,\n    \"validator_address\": \"B5B2417CD2DE54A422D20C48390EC4D470B97680\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772691811,\n    \"validator_address\": \"BBCC8EE217928AFEE90A4F879B8E6A2E62CEFA70\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772695215,\n    \"validator_address\": \"BEBE0330F66CD27E6BE8BB44343B7B1AAF2E02B9\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772729004,\n    \"validator_address\": \"C0AEBCA1BE3985A5A78724F4CB148D735162F972\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772650763,\n    \"validator_address\": \"C60FEE921E855EFF72F88CCB0D80BC4BDB4764CE\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772654603,\n    \"validator_address\": \"C7A3621DCEB48928B73A7F312518587FF9D020AB\"\n  },\n  {\n    \"block_id_flag\": 1,\n    \"timestamp\": -62135596800000000,\n    \"validator_address\": \"\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772681107,\n    \"validator_address\": \"CF430D973CCC476ED246A82FBF9730BBF16A19CC\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772702302,\n    \"validator_address\": \"D4FDD2EDF926038124275277C1E37454A7215019\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233770577986,\n    \"validator_address\": \"E7016315610DDCE9685BB3106182F58BFE8D16B7\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772686331,\n    \"validator_address\": \"F0F85A9CD0F94853C5941555AC5F85B3D2A569E5\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772648631,\n    \"validator_address\": \"F2366080D68C57913FBF3D90BC9DBC255A26A9D8\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772641883,\n    \"validator_address\": \"F48E87593916DC86CF97A3A1FB57C4EFD6406235\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772638033,\n    \"validator_address\": \"F508E95758BC804DFE2FCA354B6EFCE64683A5B3\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772619046,\n    \"validator_address\": \"F5A0EECD29467B9D63F91C1CB553A39FD1882B27\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772672055,\n    \"validator_address\": \"F6E802A96C4DCA9984FD00E4EAB2E5F170789E3C\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772579694,\n    \"validator_address\": \"FA0165014745AE096EBB79D98DE639AF802B197E\"\n  },\n  {\n    \"block_id_flag\": 2,\n    \"timestamp\": 1623233772674632,\n    \"validator_address\": \"FF84392AACDD9C9C61A5F33F80B12A0DFA29F274\"\n  }\n]"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B4747CFF468927FBD4FA90B1DAD1D96FA5270388771893D565E8606CF7983EA1"
+            },
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6528067
+            },
+            {
+                "col_name": "consensus_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0EAA6F4F4B8BD1CC222D93BBD391D07F074DE6BE5A52C6964875BB355B7D0B45"
+            },
+            {
+                "col_name": "last_results_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "F5C71A1A44C3532FC4F36DFC2E43DD80AA90E93C669EA9641EBDEE8B23D8BA17"
+            },
+            {
+                "col_name": "data_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5AAA22C04F11865C22B8C9B8BE5383C2E252A243EACAE28734B69A9AE37656FA"
+            },
+            {
+                "col_name": "last_commit_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "6874AC72F19C793DA3AB8EB1755D91CC0FD80BD38FDC96CB66EED9043B09A854"
+            },
+            {
+                "col_name": "evidence_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "app_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "422BBCE1B1BB05E25FEE612EF3E969A8BEB20E77E3A1A1F27F951F592F4790A5"
+            },
+            {
+                "col_name": "validators_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00E1F37BAE108336B8E3129DF8CE85B6E0F77054372A945CBEACFD34635E7CD4"
+            },
+            {
+                "col_name": "next_validators_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00E1F37BAE108336B8E3129DF8CE85B6E0F77054372A945CBEACFD34635E7CD4"
+            },
+            {
+                "col_name": "proposer_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "E7016315610DDCE9685BB3106182F58BFE8D16B7"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-06-09T10:16:12.655083898Z"
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1623233772655083
+            }
+        ]
+    },
+    "CRYPTO_BAND_BLOCK_EVENTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4561369
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-03-29T23:27:14.111869Z"
+            },
+            {
+                "col_name": "event_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "proposer_reward"
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1617060434111869
+            },
+            {
+                "col_name": "attributes",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "block_event_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "begin"
+            }
+        ]
+    },
+    "CRYPTO_BAND_LOGS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "msg_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "txhash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AD1E4CC752B9860DD494AEEF63843D552E6170E1591DF56F71388C8B3B42BDFF"
+            },
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6050867
+            },
+            {
+                "col_name": "events",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"attributes\": [\n      {\n        \"key\": \"action\",\n        \"value\": \"request\"\n      }\n    ],\n    \"type\": \"message\"\n  },\n  {\n    \"attributes\": [\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"4\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"07be7bd61667327aae10b7a13a542c7dfba31b8f4c52b0b60bf9c7b11b1a72ef\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"6\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"DAI\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"5\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"107048da9dbf7960c79fb20e0585e080bb9be07d42a1ce09c5479bbada8d0289\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"NXM AMPL DAI TUSD BAND EGLD ANT\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"11\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"c2b071faa3688564bc9b57eb3a554b2c542fffe3b0ab92bcfe7c814260376728\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"0\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"BAND\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"4292e26d7c98c76b08c3c87d2d18f135f2cbb0c2e4081cab52a7ebeb0740a705\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"5\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"huobipro BAND ANT\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"2\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"7af5aeba165425e81788d77319bbf41f02b8aa4fbca43d5545baf65945a5e4ab\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"2\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"NXM AMPL DAI TUSD BAND EGLD ANT\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"4292e26d7c98c76b08c3c87d2d18f135f2cbb0c2e4081cab52a7ebeb0740a705\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"4\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"binance TUSD BAND EGLD ANT\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"4292e26d7c98c76b08c3c87d2d18f135f2cbb0c2e4081cab52a7ebeb0740a705\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"7\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"kraken DAI\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"4292e26d7c98c76b08c3c87d2d18f135f2cbb0c2e4081cab52a7ebeb0740a705\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"8\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"bitfinex DAI\"\n      },\n      {\n        \"key\": \"data_source_id\",\n        \"value\": \"1\"\n      },\n      {\n        \"key\": \"data_source_hash\",\n        \"value\": \"7e6759fade717a06fb643392bfde837bfc3437da2ded54feed706e6cd35de461\"\n      },\n      {\n        \"key\": \"external_id\",\n        \"value\": \"1\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"AMPL DAI TUSD BAND EGLD ANT\"\n      }\n    ],\n    \"type\": \"raw_request\"\n  },\n  {\n    \"attributes\": [\n      {\n        \"key\": \"id\",\n        \"value\": \"5441090\"\n      },\n      {\n        \"key\": \"client_id\",\n        \"value\": \"standard-price-reference\"\n      },\n      {\n        \"key\": \"oracle_script_id\",\n        \"value\": \"3\"\n      },\n      {\n        \"key\": \"calldata\",\n        \"value\": \"00000007000000034e584d00000004414d504c0000000344414900000004545553440000000442414e440000000445474c4400000003414e54000000003b9aca00\"\n      },\n      {\n        \"key\": \"ask_count\",\n        \"value\": \"16\"\n      },\n      {\n        \"key\": \"min_count\",\n        \"value\": \"10\"\n      },\n      {\n        \"key\": \"gas_used\",\n        \"value\": \"207374\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper128dkddh98pfwdxg07t36fxedczthg0p2mdcs42\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper153znf8a89gmunexzrg2ud2yz47gyer9c05t2l8\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1cuc594q8uam3rx90tztgplssnymlqnr5epmsjq\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper15urq2dtp9qce4fyc85m6upwm9xul3049fz627w\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1r00x80djyu6wkxpceegmvn5w9nx65prgqhxkzq\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1wja9nds8klxcjurvxerdsun4t52zfjvqpj6y54\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1c9ye54e3pzwm3e0zpdlel6pnavrj9qqvn4hl7n\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1ycs4g7xu8wmf7n4vwwtfsvhtfm7tekvwk34rxz\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper17d3uhcjlh4jyqcep82jfsrg8avsngklxxan5tg\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1f6htx23e4xfu0dkpa2ck2kk63la2ej947cq0w4\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1m88fha4982ev7smptzu8a7wvt8wkxdvfewh2md\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1595hec3hxlag3a2p97t2geruhv58zmyzr4euux\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper17dw8k6t26r4ueylctf792qssy6sscu93sucxvh\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1q894x7p4ugl3q5l47e8ksll5k5lmx74fxqez5y\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper147k9e3ssy8yh2xjqmgjc8pnvwgzrl4g2fj306s\"\n      },\n      {\n        \"key\": \"validator\",\n        \"value\": \"bandvaloper1zm5p8gg3ugjcdwz9yrxaf6fdptxa4gw04rplr9\"\n      }\n    ],\n    \"type\": \"request\"\n  }\n]"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1621725640055018
+            },
+            {
+                "col_name": "log",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1621725640055018
+            }
+        ]
+    },
+    "CRYPTO_BAND_MESSAGES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5589152
+            },
+            {
+                "col_name": "txhash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0E242F308B25CD43215920BDEBA2534E8A862B6553C5477A2DC50A71D5F74DF6"
+            },
+            {
+                "col_name": "oracle_CreateOracleScript",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgVerifyInvariant",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgMultiSend",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_Report",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"raw_reports\": [\n    {\n      \"data\": \"MTkuMTEyMgo=\"\n    },\n    {\n      \"data\": \"MTMyLjY5NDcsMS4zNjczMDEsMC45OTk4Njc5MywwLjk5ODg0MTYxLDE5LjA3NzIsMTkxLjE4MTYsOS40NDcyMzIK\",\n      \"external_id\": 3\n    },\n    {\n      \"data\": \"MS4zNjgsMS4wMDEsMC45OTk4LDE5LjEsMTkxLjM0LDkuNDcK\",\n      \"external_id\": 1\n    },\n    {\n      \"data\": \"U0xVR19BTkRfU1lNQk9MX0xFTl9OT1RfTUFUQ0gK\",\n      \"exit_code\": 1,\n      \"external_id\": 2\n    },\n    {\n      \"data\": \"MS4wMDAzCg==\",\n      \"external_id\": 8\n    },\n    {\n      \"data\": \"MS4wMDEK\",\n      \"external_id\": 6\n    },\n    {\n      \"data\": \"MS4wMDEyCg==\",\n      \"external_id\": 7\n    },\n    {\n      \"data\": \"MTkuMTIxNyw5LjQ1OTU1Cg==\",\n      \"external_id\": 5\n    },\n    {\n      \"data\": \"MC45OTk3OTg4LDE5LjEyNzEsMTkxLjI0MTEsOS40MzE1MjIK\",\n      \"external_id\": 4\n    }\n  ],\n  \"reporter\": \"band103vkesflkj833nay8j8kww87n72jjynqfun8wu\",\n  \"request_id\": 4686640,\n  \"validator\": \"bandvaloper1vvevlfz7r9xrj9kghhguw8ygwvv9x3duldlw3j\"\n}"
+            },
+            {
+                "col_name": "cosmos_sdk_MsgUndelegate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgSubmitProposal",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgVote",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgUnjail",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-05-06T03:58:01.899848143Z"
+            },
+            {
+                "col_name": "cosmos_sdk_MsgSend",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgModifyWithdrawAddress",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgDelegate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_Request",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgWithdrawValidatorCommission",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "message_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "oracle/Report"
+            },
+            {
+                "col_name": "cosmos_sdk_MsgEditValidator",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgCreateValidator",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgFundCommunityPool",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_RemoveReporter",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgDeposit",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgWithdrawDelegationReward",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgBeginRedelegate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_EditDataSource",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_CreateDataSource",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cosmos_sdk_MsgSubmitEvidence",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_Activate",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1620273481899848
+            },
+            {
+                "col_name": "oracle_EditOracleScript",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "oracle_AddReporter",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CRYPTO_BAND_ORACLE_REQUESTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "oracle_request_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6957743
+            },
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6925167
+            },
+            {
+                "col_name": "reports",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      }\n    ],\n    \"validator\": \"bandvaloper1q894x7p4ugl3q5l47e8ksll5k5lmx74fxqez5y\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      }\n    ],\n    \"validator\": \"bandvaloper1zm5p8gg3ugjcdwz9yrxaf6fdptxa4gw04rplr9\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      }\n    ],\n    \"validator\": \"bandvaloper1r00x80djyu6wkxpceegmvn5w9nx65prgqhxkzq\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      }\n    ],\n    \"validator\": \"bandvaloper1ycs4g7xu8wmf7n4vwwtfsvhtfm7tekvwk34rxz\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      }\n    ],\n    \"validator\": \"bandvaloper1f6htx23e4xfu0dkpa2ck2kk63la2ej947cq0w4\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      }\n    ],\n    \"validator\": \"bandvaloper128dkddh98pfwdxg07t36fxedczthg0p2mdcs42\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      }\n    ],\n    \"validator\": \"bandvaloper1wja9nds8klxcjurvxerdsun4t52zfjvqpj6y54\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      }\n    ],\n    \"validator\": \"bandvaloper153znf8a89gmunexzrg2ud2yz47gyer9c05t2l8\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      }\n    ],\n    \"validator\": \"bandvaloper15urq2dtp9qce4fyc85m6upwm9xul3049fz627w\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      }\n    ],\n    \"validator\": \"bandvaloper14wuzcsyttmyedc7e7z7e0exhg8k94x6eulj6pt\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      }\n    ],\n    \"validator\": \"bandvaloper14kn0kk33szpwus9nh8n87fjel8djx0y0wz502z\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      }\n    ],\n    \"validator\": \"bandvaloper147k9e3ssy8yh2xjqmgjc8pnvwgzrl4g2fj306s\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      }\n    ],\n    \"validator\": \"bandvaloper1hln9scsl9yqup8nxyum06rmggql5m5zqwxmt3p\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      }\n    ],\n    \"validator\": \"bandvaloper1m88fha4982ev7smptzu8a7wvt8wkxdvfewh2md\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      }\n    ],\n    \"validator\": \"bandvaloper17d3uhcjlh4jyqcep82jfsrg8avsngklxxan5tg\"\n  },\n  {\n    \"in_before_resolve\": true,\n    \"raw_reports\": [\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 2\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\"\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 3\n      },\n      {\n        \"data\": \"33343135332E3433373920323030332E333635350A\",\n        \"external_id\": 1\n      }\n    ],\n    \"validator\": \"bandvaloper1lksevk5362eterq75haf7wxx6jdpgdzyd9ms9h\"\n  }\n]"
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1624445303446070
+            },
+            {
+                "col_name": "request",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"calldata\": \"AAAAAgAAAARCVENCAAAABEJFVEgAAAAAO5rKAA==\",\n  \"min_count\": 10,\n  \"oracle_script_id\": 18,\n  \"raw_requests\": [\n    {\n      \"calldata\": \"aHR0cHM6Ly91cy1ycGMuYmFuZGNoYWluLm9yZy9vcmFjbGUvcmVxdWVzdF9wcmljZXMgQlRDIEVUSA==\",\n      \"data_source_id\": 24\n    },\n    {\n      \"calldata\": \"aHR0cHM6Ly9ldS1ycGMuYmFuZGNoYWluLm9yZy9vcmFjbGUvcmVxdWVzdF9wcmljZXMgQlRDIEVUSA==\",\n      \"data_source_id\": 24,\n      \"external_id\": 1\n    },\n    {\n      \"calldata\": \"aHR0cHM6Ly9hc2lhLXJwYy5iYW5kY2hhaW4ub3JnL29yYWNsZS9yZXF1ZXN0X3ByaWNlcyBCVEMgRVRI\",\n      \"data_source_id\": 24,\n      \"external_id\": 2\n    },\n    {\n      \"calldata\": \"aHR0cHM6Ly9hdXMtcnBjLmJhbmRjaGFpbi5vcmcvb3JhY2xlL3JlcXVlc3RfcHJpY2VzIEJUQyBFVEg=\",\n      \"data_source_id\": 24,\n      \"external_id\": 3\n    }\n  ],\n  \"request_height\": 6925165,\n  \"request_time\": 1624445297218358,\n  \"requested_validators\": [\n    \"bandvaloper14kn0kk33szpwus9nh8n87fjel8djx0y0wz502z\",\n    \"bandvaloper1hln9scsl9yqup8nxyum06rmggql5m5zqwxmt3p\",\n    \"bandvaloper1wja9nds8klxcjurvxerdsun4t52zfjvqpj6y54\",\n    \"bandvaloper17d3uhcjlh4jyqcep82jfsrg8avsngklxxan5tg\",\n    \"bandvaloper1r00x80djyu6wkxpceegmvn5w9nx65prgqhxkzq\",\n    \"bandvaloper1m88fha4982ev7smptzu8a7wvt8wkxdvfewh2md\",\n    \"bandvaloper153znf8a89gmunexzrg2ud2yz47gyer9c05t2l8\",\n    \"bandvaloper147k9e3ssy8yh2xjqmgjc8pnvwgzrl4g2fj306s\",\n    \"bandvaloper128dkddh98pfwdxg07t36fxedczthg0p2mdcs42\",\n    \"bandvaloper14wuzcsyttmyedc7e7z7e0exhg8k94x6eulj6pt\",\n    \"bandvaloper1q894x7p4ugl3q5l47e8ksll5k5lmx74fxqez5y\",\n    \"bandvaloper1zm5p8gg3ugjcdwz9yrxaf6fdptxa4gw04rplr9\",\n    \"bandvaloper1f6htx23e4xfu0dkpa2ck2kk63la2ej947cq0w4\",\n    \"bandvaloper1ycs4g7xu8wmf7n4vwwtfsvhtfm7tekvwk34rxz\",\n    \"bandvaloper15urq2dtp9qce4fyc85m6upwm9xul3049fz627w\",\n    \"bandvaloper1lksevk5362eterq75haf7wxx6jdpgdzyd9ms9h\"\n  ]\n}"
+            },
+            {
+                "col_name": "oracle_script",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"filename\": \"5ee1c2a95f867ae8725b1ba9816e57c8def1f507dba6f06ef47bd95bd6a3a0b8\",\n  \"name\": \"Symbol Token Map\",\n  \"owner\": \"band1nl23kd2w7vehmk6d6scrs9jagqrdrxrat32vxv\",\n  \"schema\": \"{symbols:[string],multiplier:u64}/{rates:[u64]}\"\n}"
+            },
+            {
+                "col_name": "decoded_result",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"calldata\": \"{\\\"symbols\\\":[\\\"BTCB\\\",\\\"BETH\\\"],\\\"multiplier\\\":1000000000}\",\n  \"result\": \"{\\\"rates\\\":[34153437899999,2003365500000]}\"\n}"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-06-23T10:48:23.446070108Z"
+            },
+            {
+                "col_name": "result",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"request_packet_data\": {\n    \"ask_count\": 16,\n    \"calldata\": \"AAAAAgAAAARCVENCAAAABEJFVEgAAAAAO5rKAA==\",\n    \"min_count\": 10,\n    \"oracle_script_id\": 18\n  },\n  \"response_packet_data\": {\n    \"ans_count\": 16,\n    \"request_id\": 6957743,\n    \"request_time\": 1624445297,\n    \"resolve_status\": 1,\n    \"resolve_time\": 1624445303,\n    \"result\": \"AAAAAgAAHw/3iKzfAAAB0nHjlGA=\"\n  }\n}"
+            }
+        ]
+    },
+    "CRYPTO_BAND_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "sender",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "band1yupjfyaxjvrmzm5ydmnjgczdj4wkan9mzk3v4p"
+            },
+            {
+                "col_name": "txhash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1BB3CF0904BA04BF74B692A998D3F20BDEB5D7B09AE5DA26F81C2DBB79DE83C2"
+            },
+            {
+                "col_name": "block_height",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5900625
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "71770.000000000"
+            },
+            {
+                "col_name": "block_timestamp_truncated",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1621252763539267
+            },
+            {
+                "col_name": "gas_wanted",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "79488.000000000"
+            },
+            {
+                "col_name": "memo",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "yoda:1.2.7/exec:google-cloud-function:1.1.2,"
+            },
+            {
+                "col_name": "fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"amount\": [],\n  \"gas\": 79488\n}"
+            },
+            {
+                "col_name": "transaction_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "cosmos-sdk/StdTx"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-05-17T11:59:23.53926789Z"
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_BLOCKS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 109930
+            },
+            {
+                "col_name": "merkle_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "53d6e703aad6e708c9a62d1f7bc3bef74c17a563e14f5e6e56449a86bbdb835e"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "c58c6a5d"
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "00000000000137ecfcf59721de0732c82482b22536214e1a5ed6ff3701088d66"
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2011-02-01"
+            },
+            {
+                "col_name": "coinbase_param",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0426cc011b028300"
+            },
+            {
+                "col_name": "stripped_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2545
+            },
+            {
+                "col_name": "bits",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1b01cc26"
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2545
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10180
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1298469082000000
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_INPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "bead2683cbb2e60d1a4c2498c80303869ea047e4759d4595a000297526094037"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "spent_output_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 471609
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00000000000000000045bb53b94f58b9329a5153834d66f1f51f108498e4be17"
+            },
+            {
+                "col_name": "sequence",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4294967295
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1497661993000000
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "304402202ca33e1b95a4e1bd1171cd9421996628497d7a253228356922680cf0ca061b3702207ec249abc3431c499c81e27b"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1186209.000000000"
+            },
+            {
+                "col_name": "spent_transaction_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "4808df3150e6e5752ffce704695295f0fbc9e31130efbada35003d8de4eba219"
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"17HMYBpEbCR4oMXNX5boGHBZfWjG9Q6e8g\"\n]"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "pubkeyhash"
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "47304402202ca33e1b95a4e1bd1171cd9421996628497d7a253228356922680cf0ca061b3702207ec249abc3431c499c81e2"
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1.0
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_OUTPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 619203
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "34d8931632a117f53c6db9c54f70b61b0fbf67b4a10bfbe24e8f0a372c8fbd0a"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0000000000000000000e16b2330badbc2b78a57b0443330fd812ef5347ba6add"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1582800007000000
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OP_HASH160 b6ccbfc13ec92e0f54a62f982ab22ae1ed425000 OP_EQUAL"
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"3JMaBfoL5iJHrytQcvnoMFosR3DYgpd5oQ\"\n]"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "24630092.000000000"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "scripthash"
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "a914b6ccbfc13ec92e0f54a62f982ab22ae1ed42500087"
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "035fd8df8740ebc03839d8fbef2030d376e6589956ac4ac6d9edf0be053fb450"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 462467
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00000000000000000126fd575309a6f67f2a2f530a84490e9f8f87334161aafb"
+            },
+            {
+                "col_name": "block_timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2017-04-01"
+            },
+            {
+                "col_name": "virtual_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 226
+            },
+            {
+                "col_name": "outputs",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"addresses\": [\n      \"1FqYmp7BUtzLLUPcwfis4CPsK3ig6qvuGL\"\n    ],\n    \"index\": 0,\n    \"required_signatures\": 1,\n    \"script_asm\": \"OP_DUP OP_HASH160 a2c03fe518ad5ff888d01514f7e82d9f3be7a946 OP_EQUALVERIFY OP_CHECKSIG\",\n    \"script_hex\": \"76a914a2c03fe518ad5ff888d01514f7e82d9f3be7a94688ac\",\n    \"type\": \"pubkeyhash\",\n    \"value\": 104518\n  },\n  {\n    \"addresses\": [\n      \"1BZwkp87PFgP2rQRc7WUgFCGwqW8EjHX9B\"\n    ],\n    \"index\": 1,\n    \"required_signatures\": 1,\n    \"script_asm\": \"OP_DUP OP_HASH160 73ec46af2cebc4261b03da2260452bb98d3d0be1 OP_EQUALVERIFY OP_CHECKSIG\",\n    \"script_hex\": \"76a91473ec46af2cebc4261b03da2260452bb98d3d0be188ac\",\n    \"type\": \"pubkeyhash\",\n    \"value\": 1120000\n  }\n]"
+            },
+            {
+                "col_name": "lock_time",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1492548513000000
+            },
+            {
+                "col_name": "is_coinbase",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "input_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1274238.000000000"
+            },
+            {
+                "col_name": "output_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 226
+            },
+            {
+                "col_name": "output_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1224518.000000000"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "input_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "inputs",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"addresses\": [\n      \"16tqW1QosmGn4APyXML5Wxg2oyNRZ3FpMD\"\n    ],\n    \"index\": 0,\n    \"required_signatures\": 1,\n    \"script_asm\": \"3045022100e4f95e31f0e72af20e4d70cbfc99ecd2e1f1d890c097707a47fe05d32c1e94280220401274e23681e0e020e1c285dd783145a46a6a2c2adef470252485000d70352f[ALL] 039eaf9391c98780be2317ee607354b20875b912d20c79e10045c90f8b7bbda525\",\n    \"script_hex\": \"483045022100e4f95e31f0e72af20e4d70cbfc99ecd2e1f1d890c097707a47fe05d32c1e94280220401274e23681e0e020e1c285dd783145a46a6a2c2adef470252485000d70352f0121039eaf9391c98780be2317ee607354b20875b912d20c79e10045c90f8b7bbda525\",\n    \"sequence\": 4294967295,\n    \"spent_output_index\": 1,\n    \"spent_transaction_hash\": \"67a2b918ed8538a38fe96988ffbf85c9dbd26e9b168a4b44a0a4a5bf12374108\",\n    \"type\": \"pubkeyhash\",\n    \"value\": 1274238\n  }\n]"
+            },
+            {
+                "col_name": "fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "49720.000000000"
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_CASH_BLOCKS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "merkle_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "dba81610e536ede695a2c299bb8a471d4b32315056ad7154d8297e53c10d220c"
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0000000000000004753bd3347b58e55805fb17fb28116ca91962bd32e0fefdb9"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "955c5059"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 266149
+            },
+            {
+                "col_name": "coinbase_param",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "03a50f040d00456c696769757300526b6d8efabe6d6db1b96fe338a37b475b3dbba779d15fa90d453e9ddc62a1ffde5f436a"
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1382772110000000
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "stripped_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 49207
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 100
+            },
+            {
+                "col_name": "timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2013-10-01"
+            },
+            {
+                "col_name": "bits",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "190afc85"
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_CASH_INPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 784607
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "7b4edf428b218b71143f0c3cf1479a2481785e80db76d18d166fd2b117cf6a8f"
+            },
+            {
+                "col_name": "spent_output_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0000000000000000049b9290b0f09222727fe44c9b7cbeb9f44fcbf2fa51eb4b"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1957308.000000000"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "scripthash"
+            },
+            {
+                "col_name": "sequence",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 4294967295
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"bitcoincash:pzh922lrxs2mzwe50dx6nt623hcnqqugdsx6v2esml\"\n]"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1679241843000000
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1 1 119"
+            },
+            {
+                "col_name": "spent_transaction_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "5939eab7fd0e0629dd4c6388a2d10cd2d697ee7a3bc82aa04c3d1d128e5861cd"
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "51510177"
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_CASH_OUTPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 623082
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00000000000000000155fe98a3bec94597fa885de958ec997b3747df39a8480b"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1582183140000000
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "pubkeyhash"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "2858.000000000"
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OP_DUP OP_HASH160 066ebee590278f32aedc8a4865700c49e717f1d7 OP_EQUALVERIFY OP_CHECKSIG"
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "76a914066ebee590278f32aedc8a4865700c49e717f1d788ac"
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"bitcoincash:qqrxa0h9jqnc7v4wmj9ysetsp3y7w9l36u8gnnjulq\"\n]"
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "746dc1f7266897ac047acda6cee2ab97bb7bea7c76f330e51bd557f9a97a5000"
+            }
+        ]
+    },
+    "CRYPTO_BITCOIN_CASH_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 292659
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00000000000000002327c8c22c332c290c4652c8e47c82251ea43fcd14d7047a"
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9550ead74f556be17c85fdb7e3cc145c823ed7f0b8e828de74dee0118c92aa91"
+            },
+            {
+                "col_name": "output_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "outputs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"addresses\": [\n      \"bitcoincash:qzuctm3n2sze8xck7wm7nqhg2gvmxd7vvs34f6rp7d\"\n    ],\n    \""
+            },
+            {
+                "col_name": "is_coinbase",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1395888795000000
+            },
+            {
+                "col_name": "fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "360000.000000000"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "virtual_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 34556
+            },
+            {
+                "col_name": "input_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 233
+            },
+            {
+                "col_name": "inputs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"addresses\": [\n      \"bitcoincash:qq9wzfkpfmdwrdvxc6492ylq08zjk6fzuystyprja7\"\n    ],\n    \""
+            },
+            {
+                "col_name": "block_timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2014-03-01"
+            },
+            {
+                "col_name": "output_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1082100011.000000000"
+            },
+            {
+                "col_name": "input_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1082460011.000000000"
+            },
+            {
+                "col_name": "lock_time",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "CRYPTO_DASH_BLOCKS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "merkle_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "899cb0460b5dfadec7b4fb65d50d04745b203474c0f77036ff1912f0463fd87d"
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00000000000000167e2beb41c3590e54e7caff23c528d6c8425c656940acadeb"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 886481
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8cc435a7"
+            },
+            {
+                "col_name": "timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2018-06-01"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 536870912
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1528924702000000
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11431
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 23
+            },
+            {
+                "col_name": "bits",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "19526b07"
+            },
+            {
+                "col_name": "stripped_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "coinbase_param",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "03d1860d1b2f5669614254432f4d696e6564206279206f736d6f6d696e65722f102c926500dec72df69b3cb8aa4e020000"
+            }
+        ]
+    },
+    "CRYPTO_DASH_INPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "spent_output_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "998519ff7269ea1036db8e2ffb7592b371fc8adfdb54e8c88b83af5f474e6160"
+            },
+            {
+                "col_name": "sequence",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 4294967295
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1637402788000000
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "473044022000e7bcc910e044286e5d40256e0e6983733c594f7da160375b2a08c7e21b111302205cb7e1d05f9e6709bbb44c"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1000010.000000000"
+            },
+            {
+                "col_name": "spent_transaction_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1356961f9f68ace94e0d66b7694c320733ea95a1534745f1a41d037540e0826c"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "000000000000001e59fc83ba8866bac6fcfeb8f14ec52fb8c13f95794d127f63"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1574825
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"XgDo8AXQu4uLDsLmC9QmDnaGUELoJLCVUc\"\n]"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "pubkeyhash"
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "3044022000e7bcc910e044286e5d40256e0e6983733c594f7da160375b2a08c7e21b111302205cb7e1d05f9e6709bbb44ccb"
+            }
+        ]
+    },
+    "CRYPTO_DASH_OUTPUTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "000000000000001b7e10f2c2c604d6670ab0ee160b54b4245b4d8a7db90b3299"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "d8e3ee4b126fcea18d82af9945370d8db4e4bf08d884bbb6b38f6fae97483790"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 829538
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "1564464353.000000000"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1519952693000000
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "pubkeyhash"
+            },
+            {
+                "col_name": "script_asm",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "OP_DUP OP_HASH160 bdac34c8369c3278c19ce857bf3cda38e6e74631 OP_EQUALVERIFY OP_CHECKSIG"
+            },
+            {
+                "col_name": "addresses",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Xsyjqc1zZ19T3FtJ97WrCLzXUmnE4P6ACP\"\n]"
+            },
+            {
+                "col_name": "required_signatures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "script_hex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "76a914bdac34c8369c3278c19ce857bf3cda38e6e7463188ac"
+            }
+        ]
+    },
+    "CRYPTO_DASH_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1861655
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2b02c8fc751a891e10509a36ae0662c835c8d5238af5381f76df5bc664822acd"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0000000000000004538f222078562070336d99b89bbbd477bc34fe4abb897437"
+            },
+            {
+                "col_name": "input_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "inputs",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "block_timestamp_month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2023-04-01"
+            },
+            {
+                "col_name": "output_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 241
+            },
+            {
+                "col_name": "input_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "is_coinbase",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "lock_time",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "outputs",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"addresses\": [\n      \"XxEcuVw1rbDkRePTHnqtRwMTWqL42Tg9kK\"\n    ],\n    \"index\": 0,\n    \"required_signatures\": 1,\n    \"script_asm\": \"OP_DUP OP_HASH160 ec5d2957c6407c8915003ad478ca459fac1b0d42 OP_EQUALVERIFY OP_CHECKSIG\",\n    \"script_hex\": \"76a914ec5d2957c6407c8915003ad478ca459fac1b0d4288ac\",\n    \"type\": \"pubkeyhash\",\n    \"value\": 142275814\n  },\n  {\n    \"addresses\": [\n      \"Xr5ZkoaLAeoFw7GGiNvuwTYZFeDcM9knMg\"\n    ],\n    \"index\": 1,\n    \"required_signatures\": 1,\n    \"script_asm\": \"OP_DUP OP_HASH160 a8d608a131a5fd9c0ac063b33629da422adab17f OP_EQUALVERIFY OP_CHECKSIG\",\n    \"script_hex\": \"76a914a8d608a131a5fd9c0ac063b33629da422adab17f88ac\",\n    \"type\": \"pubkeyhash\",\n    \"value\": 106458128\n  }\n]"
+            },
+            {
+                "col_name": "output_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "248733942.000000000"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1682640175000000
+            },
+            {
+                "col_name": "virtual_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_BLOCKS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3511373
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x9dbc18ef34d8101b13bec0053ab5bfab7f4f43841b8d1b0bb130d4f9aa061d92"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xcdce229015fddbb3"
+            },
+            {
+                "col_name": "difficulty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "257907559922530.000000000"
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1491836340000000
+            },
+            {
+                "col_name": "extra_data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x65746865726d696e65202d20555331"
+            },
+            {
+                "col_name": "parent_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x560043b1998a347e2db9b7cf2731d950a632730c70219fc3f43c48ee449f0523"
+            },
+            {
+                "col_name": "total_difficulty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "202201298136276829973.000000000"
+            },
+            {
+                "col_name": "excess_blob_gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "blob_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "transactions_root",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xbb44b12b00899e91656679f6386496d85952b6a1da44d288354ca072db41cde8"
+            },
+            {
+                "col_name": "base_fee_per_gas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "gas_limit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4137451
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "logs_bloom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+                "col_name": "state_root",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x898b14a1c5a2bf26eb96cdd9ba761084e4b8e944b1c109d9c78955a8d184bfee"
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 142294
+            },
+            {
+                "col_name": "miner",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "0xea674fdde714fd979de3edf0f56aa9716b898ec8"
+            },
+            {
+                "col_name": "withdrawals",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1282
+            },
+            {
+                "col_name": "withdrawals_root",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "receipts_root",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xcd3e7856ee214e2082f2feb4d49a26685f0d5db5075face027e82c1bceb47868"
+            },
+            {
+                "col_name": "sha3_uncles",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CONTRACTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xe67cf196c8c3733cc56899a49fa9ca8c90494df6093bd3fe07451e6512306731"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x1babaff436c67963582cd95c468bf7f1bfaf1cfd"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 19281125
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1708580231000000
+            },
+            {
+                "col_name": "is_erc20",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "bytecode",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x00483473494141414141414141412b3161793435647478483846574e574358417859504e4e4c59503851786143466b4930"
+            },
+            {
+                "col_name": "is_erc721",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "function_sighashes",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"0x30665876\",\n  \"0x36447674\",\n  \"0x396d4277\",\n  \"0x47725877\",\n  \"0x4f64576c\",\n  \"0x59376a33\",\n  \"0x7335416b\"\n]"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_LOGS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 97
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 20162083
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x8d2aeccb668f0c7cecce04784366c738e058741b3769a0a8b453f09ec4e17da5"
+            },
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 244
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x7b782c6f4bf52787f5c4790b3dbdfa9c4ea41d6dc0964d64bb599d1f173dec16"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x39053d51b77dc0d36036fc1fcc8cb819df8ef37a"
+            },
+            {
+                "col_name": "data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x000000000000000000000000754238f520b0d11e700e31190133a15f635dd3aa000000000000000000000000acb55c530a"
+            },
+            {
+                "col_name": "topics",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"0x1ec042c965e2edd7107b51188ee0f383e22e76179041ab3a9d18ff151405166c\",\n  \"0x0000000000000000000000005accc90436492f24e6af278569691e2c942a676d\"\n]"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1719238631000000
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_TOKEN_TRANSFERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xfe3f77e61c8bf9e13bd31ff08eac0b0ae13fa18fa514b6e57ed4bb654dcdee14"
+            },
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 205
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "3303"
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x83c8f28c26bf6aaca652df1dbbe0e1b56f8baba2"
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x5a7a6b69c6382000fd35711fd28440f415417318"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xe21f55ec59367a04575352bd9be36840f4b6cf0087592434ab90e53645aa9491"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15324735
+            },
+            {
+                "col_name": "token_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x67a6e7372b805b430240f6a545273efa89a3c18b"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1660275833000000
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_TRACES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 127
+            },
+            {
+                "col_name": "trace_address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "trace_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "call_0x48d0e5ceea7c75c4a5604c237c34be896ea56b656c76263151cbbd47b39c24e9_0"
+            },
+            {
+                "col_name": "error",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x5bacef170983a9481b1a64ac9fe34f9944ce68280a1f278b7984b761848e9663"
+            },
+            {
+                "col_name": "subtraces",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13157503
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x48d0e5ceea7c75c4a5604c237c34be896ea56b656c76263151cbbd47b39c24e9"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1630735736000000
+            },
+            {
+                "col_name": "reward_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xa2327a938febf5fec13bacfb16ae10ecbc4cbdcf"
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 67472
+            },
+            {
+                "col_name": "trace_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "call"
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 36728
+            },
+            {
+                "col_name": "output",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x0000000000000000000000000000000000000000000000000000000000000001"
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0xa9059cbb00000000000000000000000011fc728dc0867a66fa10d609ca6051cdaf15f26b00000000000000000000000000"
+            },
+            {
+                "col_name": "call_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "delegatecall"
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "receipt_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x3b508ea0b89d64c36bbba416084bdc31477f5e1ce3567cb3a22082e3b4c2f20f"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 85
+            },
+            {
+                "col_name": "blob_versioned_hashes",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0x0de6003c11d90bf7a9ddb269337db936f4d78bbd8b44c10b96f85c601854a05a"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 14338172
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1646634980000000
+            },
+            {
+                "col_name": "receipt_blob_gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "receipt_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21000
+            },
+            {
+                "col_name": "transaction_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21000
+            },
+            {
+                "col_name": "receipt_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "max_fee_per_gas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 56000000000
+            },
+            {
+                "col_name": "gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 29163806143
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "13097598670111700.000000000"
+            },
+            {
+                "col_name": "receipt_effective_gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 29163806143
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xa090e606e30bd747d4e6245a1517ebe430f0057e"
+            },
+            {
+                "col_name": "receipt_cumulative_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7053060
+            },
+            {
+                "col_name": "max_fee_per_blob_gas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x"
+            },
+            {
+                "col_name": "receipt_contract_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "receipt_blob_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_priority_fee_per_gas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2000000000
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x2f58378a25efba25e9465a192455357baa0cece3"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_BALANCES": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xe485aee166761631ee5f0d0ce27c6f69dd7a3c5d"
+            },
+            {
+                "col_name": "eth_balance",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_BLOCKS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "state_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x244d7c3f33cabee5a6834259d4cd1896f5cf0ddb99f25f4d7425df291779789f"
+            },
+            {
+                "col_name": "sha3_uncles",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+            },
+            {
+                "col_name": "receipts_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x77951055c1c5d95c"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1720715
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0xda7b01b00021b2d7626621887998eda9c971a4abeb61ae5e6176f779ba284641"
+            },
+            {
+                "col_name": "transactions_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x56e81f171bcc55a6ff8345e692c0f86e5b48e01b996cadc001622fb5e363b421"
+            },
+            {
+                "col_name": "extra_data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0xd783010406844765746887676f312e362e31856c696e7578"
+            },
+            {
+                "col_name": "difficulty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "47048349841888.000000000"
+            },
+            {
+                "col_name": "gas_limit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4712388
+            },
+            {
+                "col_name": "total_difficulty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "28350603078681157226.000000000"
+            },
+            {
+                "col_name": "parent_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x90ac6bccefcdfba5df159eb2a46cfc3889dc640148c6680b3664a11ffbf4ba94"
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "miner",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x2a65aca4d5fc5b5c859090a6c34d164135398226"
+            },
+            {
+                "col_name": "logs_bloom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1466168298000000
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 541
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_CONTRACTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x85d2a5e3cbc28c2cb7760227b602922b74836b82"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xe589258f4b20f510e1f385e04f8e491fa1887f1fd3d65aa72a804a7b2fe8a3d2"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5156038
+            },
+            {
+                "col_name": "is_erc20",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "function_sighashes",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"0x395ede4d\",\n  \"0x83197ef0\",\n  \"0x8da5cb5b\",\n  \"0xe5225381\",\n  \"0xffffffff\"\n]"
+            },
+            {
+                "col_name": "bytecode",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x606060405236156100465763ffffffff60e060020a600035041663395ede4d811461004a57806383197ef01461006b5780"
+            },
+            {
+                "col_name": "is_erc721",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1515253760000000
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_LOGS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x81a30ae78bb4fa6339d9ad0e848277ff7f20c2f30b3506e9421d0f43c6be38f2"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x54d046f68f4aef69d14c18b1d09f736a4bce29e7359e0f82b76284c71faf6357"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x085b0fdf115aa9e16ae1bddd396ce1f993c52220"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 8458134
+            },
+            {
+                "col_name": "data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x00000000000000000000000000000000000000000000000b61c6b5cb43a2497b"
+            },
+            {
+                "col_name": "topics",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"0x0f6798a560793a54c3bcfe86a93cde1e73087d944c0ea20544137d4121396885\",\n  \"0x000000000000000000000000a5de6d4184016708c1040c355f1c958192276db5\"\n]"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1563860384000000
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_TOKENS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x1141608659ed28bdc60c4915b86907b4e24bde5e"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x8b621fa3ed26005a446fed69395f16a3b982f556ec03e2b0608c2de7a91cba4f"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "symbol",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "decimals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 6245977
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1532523239000000
+            },
+            {
+                "col_name": "total_supply",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_TOKEN_TRANSFERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x9a1a9843f11899ae3f84058f0a3a4b9142610ea772d08ba2c5c3c100d58685f0"
+            },
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6262645
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x8aa13c540244a8056a4e876e8270dcd893636efe8fbdb2069f847719f9106cd9"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "40000000000000000000000000000"
+            },
+            {
+                "col_name": "token_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xd2c640b89645019fe9044345605ac43ad4219d0d"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1532759268000000
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x0000000000000000000000000000000000000000"
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xf5c7a331f1a5c3889cf3187e483efcab53dbc3bc"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_TRACES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 59
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x51606e9793bac4bb00e7d48a40bd0fd56481c04927670e612bab4434f48e1765"
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xbe4d37ffd3ebbd7a13858793c00402993e28a4d16408c8a2d6ba8810fdb72999"
+            },
+            {
+                "col_name": "trace_address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "127,0"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2456721
+            },
+            {
+                "col_name": "trace_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "call_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1476750975000000
+            },
+            {
+                "col_name": "reward_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "output",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xb95c2395ebb349d2058f0102e1ae483dcf3803fb"
+            },
+            {
+                "col_name": "subtraces",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "error",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x51a7c3e6e5514bea75f8d5f59e2e80a67728136b"
+            },
+            {
+                "col_name": "trace_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "suicide"
+            }
+        ]
+    },
+    "CRYPTO_ETHEREUM_CLASSIC_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xed8dffadb17c412e94d135ccbd2185dc5a482afab1bfae9d97ed6c0a59e082da"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 240
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 11340491
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xeb2ec5e716d79e7e93fd746fd2034c02c3ac45638b8c13d60059b576cfcfb37c"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 13917
+            },
+            {
+                "col_name": "receipt_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xacf2e3a8690836e40aa1ca5f46c4ceef6e2ba2c600bc48475cd01fdd80b16cdf"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "2689026035000000000.000000000"
+            },
+            {
+                "col_name": "receipt_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21000
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xaaf9b4d74782d75e5daf81d5acb562ea6409dcf6"
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1601883066000000
+            },
+            {
+                "col_name": "gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "receipt_cumulative_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5061000
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21000
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x13198af175291a4a33a9f3e982d7b603b39529db"
+            },
+            {
+                "col_name": "receipt_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "receipt_contract_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_DS_BLOCKS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "prev_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "7ee85216b0cf107ff5498793526af8ab116347e15db0ef25b314b514ec0dd488"
+            },
+            {
+                "col_name": "signature",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\xe4Q9\\xeb}\\xb5\\x07\\xad@\\x04>\\xb8\\xdb]\\x00\\xeb}\\xb6\\xdf\\x9d\\xf7\\x0cPB\\xeb\\x8fv\\xef\\xaey\\"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 134
+            },
+            {
+                "col_name": "ds_leader_pub_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x027454687AF99FF90BD13884FE7B2C126357BEF9502D6625E87EAE4F6147C45B6F"
+            },
+            {
+                "col_name": "ds_leader_address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "zil103suk4xz95jmg9tfhludqezca33t073r0n3pte"
+            },
+            {
+                "col_name": "difficulty_ds",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 41
+            },
+            {
+                "col_name": "gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 1000000000
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1550318189000000
+            },
+            {
+                "col_name": "difficulty",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 32
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_EVENT_LOGS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1292028
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "transaction_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "af8827f3abf77159c8b4a5836854310cd5abea08e057dd3d6deaa0bef18a735d"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1626601281000000
+            },
+            {
+                "col_name": "event_name",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "TransferSuccess"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil12drvflckms6874ffuujcdxj75raavl4yfn4ssc"
+            },
+            {
+                "col_name": "params",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"{\\\"type\\\":\\\"ByStr20\\\",\\\"value\\\":\\\"0xba11eb7bcc0a02e947acf03cc651bfaf19c9ec00\\\",\\\"vname\\\":\\\"sender\\\"}\",\n  \"{\\\"type\\\":\\\"ByStr20\\\",\\\"value\\\":\\\"0xa5d3b90d17ff0dbe4d8caf30cad1ad2108074289\\\",\\\"vname\\\":\\\"recipient\\\"}\",\n  \"{\\\"type\\\":\\\"Uint128\\\",\\\"value\\\":\\\"235568293162207\\\",\\\"vname\\\":\\\"amount\\\"}\"\n]"
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_EXCEPTIONS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "transaction_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "b950420f43241bdfa73f95bfd73e7cb90fa5239dad60aa85bd5aeb6f28bb9e32"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1640712045000000
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1697555
+            },
+            {
+                "col_name": "line",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 237
+            },
+            {
+                "col_name": "message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Exception thrown"
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0e1be9d0ef463a5a73a413daa2e52c494717f73437017d7f00d3e96d3e6bd25c"
+            },
+            {
+                "col_name": "signature",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\xd3\\x1d\\xb6\\x0fq\\x01\\xdb\\xb0\\x01\\x00\\x11;\\xf0O5\\xdc\\x0e\\xb6\\x0c\\x1d\\xb4\\xd8\\x01;\\xdbO;\\"
+            },
+            {
+                "col_name": "epoch_num",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1223518
+            },
+            {
+                "col_name": "sender_pub_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x02E718E9105D527FC5C61C6CA9AD7C25B24F96295D8F3E895073010612AAAD7B4D"
+            },
+            {
+                "col_name": "code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1223518
+            },
+            {
+                "col_name": "data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"_tag\":\"WithdrawStakeRewards\",\"params\":[{\"vname\":\"ssnaddr\",\"type\":\"ByStr20\",\"value\":\"0xB83fC2C72c44"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 65537
+            },
+            {
+                "col_name": "sender",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil1vqft8ddws0trfvnndm2rl4rc8ylhrd7x3pukf0"
+            },
+            {
+                "col_name": "gas_limit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15000
+            },
+            {
+                "col_name": "amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "accepted",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1623698578000000
+            },
+            {
+                "col_name": "success",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2000000000
+            },
+            {
+                "col_name": "cumulative_gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3828
+            },
+            {
+                "col_name": "to_addr",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil1v25at4s3eh9w34uqqhe3vdvfsvcwq6un3fupc2"
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_TRANSITIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "transaction_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "f00eb0dcb417601b330e6808f261eec52cdc2676880398b3d88af9626c3cdd9b"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "addr",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil19f04rrynternymalqx6wnneyp7s82cc942xyk7"
+            },
+            {
+                "col_name": "recipient",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil1g899nklz2amfcgl3grh68pvq6ryr6n8q4typuq"
+            },
+            {
+                "col_name": "accepted",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "tag",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2064100
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1653325996000000
+            },
+            {
+                "col_name": "depth",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "params",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "25000000000000.000000000"
+            }
+        ]
+    },
+    "CRYPTO_ZILLIQA_TX_BLOCKS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ds_block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 22016
+            },
+            {
+                "col_name": "prev_block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "d595f1fe92e67a091e5ebb1422ce64bcbc26ce021cb619e098a5d51a2f5a6d69"
+            },
+            {
+                "col_name": "header_signature",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\xe8\\x1d\\xb7\\x17\\xb0\\xbc\\x07~\\x81\\xe0^\\xc3\\xf7\\xce\\x03\\x08\\r5\\x0c@\\xbb\\xe4_v\\x140;\\xe7`\\"
+            },
+            {
+                "col_name": "state_delta_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "d41806d5aafc605f67a5468f590ac25e66985c02d315fc51c9107fc7ac11949d"
+            },
+            {
+                "col_name": "state_root_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "51600359d733fbc613d4de9cb453403e004f37fdee0ceb67c2ba6e37cef81664"
+            },
+            {
+                "col_name": "tx_leader_pub_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x02304ABF1E43F64B6AB36FF047FFCA3195575122D4239998FF84CEC2379A83AD74"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2201509
+            },
+            {
+                "col_name": "mb_info_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8b0f565529cc0cfde70ae19c2543ce4cc88cd58cfa0803dfacbca3d37452eaf7"
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1658115107000000
+            },
+            {
+                "col_name": "rewards",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "num_present_transactions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 57
+            },
+            {
+                "col_name": "version",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "num_micro_blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "tx_leader_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "zil1qgyhrkp420r6a6twnr8jwguzazjhmyc7z257nx"
+            },
+            {
+                "col_name": "gas_limit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 550000
+            },
+            {
+                "col_name": "num_transactions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 57
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4829
+            }
+        ]
+    }
+}

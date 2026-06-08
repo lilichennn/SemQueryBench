@@ -1,0 +1,701 @@
+{
+    "PEDIGREE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Individual_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "HG01960"
+            },
+            {
+                "col_name": "Family_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BB11"
+            },
+            {
+                "col_name": "Second_Order",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "Other_Comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "Third_Order",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "Maternal_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "HG01989"
+            },
+            {
+                "col_name": "Relationship",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "child"
+            },
+            {
+                "col_name": "Phenotype",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "Gender",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "Population",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ACB"
+            },
+            {
+                "col_name": "Paternal_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "HG01988"
+            },
+            {
+                "col_name": "Siblings",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "SAMPLE_INFO": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Family_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "NG23"
+            },
+            {
+                "col_name": "Sample",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "HG02974"
+            },
+            {
+                "col_name": "In_Low_Coverage_Pilot",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Has_Phase1_chrY_SNPS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "ET_Pilot_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Super_Population",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AFR"
+            },
+            {
+                "col_name": "Third_Order",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "LC_Indel_Ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.3
+            },
+            {
+                "col_name": "Unknown_Second_Order",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Has_Sequence_from_Blood_in_Index",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "LC_Non_Duplicated_Aligned_Coverage",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.17
+            },
+            {
+                "col_name": "X_Targets_Covered_to_20x_or_greater",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.917355
+            },
+            {
+                "col_name": "Unexpected_Parent_Child",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Has_Axiom_Genotypes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "VerifyBam_E_Omni_Chip",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Main_Project_E_Platform",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ILLUMINA"
+            },
+            {
+                "col_name": "Non_Paternity",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "VerifyBam_E_Omni_Free",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.00487
+            },
+            {
+                "col_name": "Main_project_LC_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BI"
+            },
+            {
+                "col_name": "LC_Passed_QC",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "Gender",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "female"
+            },
+            {
+                "col_name": "Has_Exome_LOF_Genotypes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Has_phase1_chrY_Deletions",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "In_High_Coverage_Pilot",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "LC_Pilot_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "HC_Pilot_Platforms",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Total_LC_Sequence",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 32595580924.0
+            },
+            {
+                "col_name": "Grandparents",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "In_Phase1_Integrated_Variant_Set",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Population_Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Esan in Nigeria"
+            },
+            {
+                "col_name": "Half_Siblings",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Population",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ESN"
+            },
+            {
+                "col_name": "Siblings",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "VerifyBam_E_Affy_Chip",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.00543
+            },
+            {
+                "col_name": "VerifyBam_LC_Omni_Free",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.00263
+            },
+            {
+                "col_name": "E_Passed_QC",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "Super_Population_Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "African"
+            },
+            {
+                "col_name": "Main_Project_E_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BI"
+            },
+            {
+                "col_name": "Has_Sequence_in_Phase1",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Total_Exome_Sequence",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 7576615180.0
+            },
+            {
+                "col_name": "Phase1_E_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "VerifyBam_LC_Affy_Chip",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.00391
+            },
+            {
+                "col_name": "EBV_Coverage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 92.29
+            },
+            {
+                "col_name": "Phase1_E_Platform",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "E_Indel_Ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.09
+            },
+            {
+                "col_name": "Has_phase1_chrMT_SNPs",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "VerifyBam_LC_Affy_Free",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.0038
+            },
+            {
+                "col_name": "Has_Affy_6_0_Genotypes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "HC_Pilot_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "LC_Pilot_Platforms",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Has_Omni_Genotypes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "ET_Pilot_Platforms",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "DNA_Source_from_Coriell",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "LCL"
+            },
+            {
+                "col_name": "Phase1_LC_Centers",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Relationship",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "mother"
+            },
+            {
+                "col_name": "Avuncular",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "In_Final_Phase_Variant_Calling",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "Main_project_LC_platform",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ILLUMINA"
+            },
+            {
+                "col_name": "Phase1_LC_Platform",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "In_Exon_Targetted_Pilot",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "VerifyBam_LC_Omni_Chip",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VerifyBam_E_Affy_Free",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.00541
+            }
+        ]
+    },
+    "VARIANTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CIEND",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "PV4",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "THETA",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0008
+            },
+            {
+                "col_name": "AFR_AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.002
+            },
+            {
+                "col_name": "EUR_AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0013
+            },
+            {
+                "col_name": "LDAF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0006
+            },
+            {
+                "col_name": "filter",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"PASS\"\n]"
+            },
+            {
+                "col_name": "call",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"DS\": 0.000000000000000e+00,\n    \"PL\": [],\n    \"call_set_id\": \"10473108253681171589-0\",\n  "
+            },
+            {
+                "col_name": "RSQ",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.7805
+            },
+            {
+                "col_name": "alternate_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"C\"\n]"
+            },
+            {
+                "col_name": "DP4",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "SOURCE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "ASN_AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0017
+            },
+            {
+                "col_name": "SVLEN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "ERATE",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0003
+            },
+            {
+                "col_name": "HOMLEN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CIPOS",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "AVGPOST",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.9997
+            },
+            {
+                "col_name": "quality",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 100.0
+            },
+            {
+                "col_name": "AA",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "reference_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "14"
+            },
+            {
+                "col_name": "AC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "HWE",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SNP"
+            },
+            {
+                "col_name": "AC1",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "names",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"rs149794549\",\n  \"rs149794549\"\n]"
+            },
+            {
+                "col_name": "reference_bases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "DP",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "AMR_AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0028
+            },
+            {
+                "col_name": "AN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2184
+            },
+            {
+                "col_name": "start",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 65343625
+            },
+            {
+                "col_name": "MQ",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "SNPSOURCE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"LOWCOV\"\n]"
+            },
+            {
+                "col_name": "SVTYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "FQ",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "HOMSEQ",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "AF",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0005
+            },
+            {
+                "col_name": "end",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 65343626
+            },
+            {
+                "col_name": "G3",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "AF1",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    }
+}

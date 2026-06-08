@@ -1,0 +1,384 @@
+{
+    "DIM_CENSUSGEOGRAPHY": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "BlockGroupCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3"
+            },
+            {
+                "col_name": "StateCountyTractID",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "36051030100"
+            },
+            {
+                "col_name": "TractCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "030100"
+            },
+            {
+                "col_name": "StateFIPS",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "36"
+            },
+            {
+                "col_name": "BlockGroupID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "360510301003"
+            },
+            {
+                "col_name": "CountyFIPS",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "051"
+            },
+            {
+                "col_name": "StateAbbrev",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NY"
+            },
+            {
+                "col_name": "BlockGroupPolygon",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"Polygon\", \"coordinates\":[[[-77.934847,42.920638], [-77.934765,42.92392], [-77.934739,42.925"
+            },
+            {
+                "col_name": "AmtLand",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 56597295
+            },
+            {
+                "col_name": "StateName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New York"
+            },
+            {
+                "col_name": "BlockGroupCentroidLon",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "-077.8654774"
+            },
+            {
+                "col_name": "BlockGroupName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Block Group 3"
+            },
+            {
+                "col_name": "MTFCC",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5030"
+            },
+            {
+                "col_name": "CountyName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Livingston"
+            },
+            {
+                "col_name": "GeographyYear",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2020"
+            },
+            {
+                "col_name": "AmtWater",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "BlockGroupCentroidLat",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "+42.9416557"
+            },
+            {
+                "col_name": "BlockGroupCentroidPoints",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"Point\", \"coordinates\":[-77.8654774,42.9416557]}"
+            },
+            {
+                "col_name": "FuncStat",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            }
+        ]
+    },
+    "DIM_CENSUSMETRICS": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "MetricTableID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B01002"
+            },
+            {
+                "col_name": "MetricID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B01002_002E"
+            },
+            {
+                "col_name": "MetricCategory",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Demographics"
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Estimate"
+            },
+            {
+                "col_name": "Descriptor2",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "MetricTableDesc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Median age of the population categorized by sex"
+            },
+            {
+                "col_name": "Descriptor1",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Male"
+            },
+            {
+                "col_name": "Descriptor3",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "MetricGroup",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Essential"
+            },
+            {
+                "col_name": "UnitMeasureType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Aggregate"
+            }
+        ]
+    },
+    "FACT_CENSUSVALUES_ACS2021": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "BlockGroupID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "361031471003"
+            },
+            {
+                "col_name": "MetricID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B11012_008E"
+            },
+            {
+                "col_name": "CensusValue",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 20.0
+            }
+        ]
+    },
+    "FACT_CENSUSVALUES_ACS2021_BYZIP": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "MetricID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B25063_019E"
+            },
+            {
+                "col_name": "ZipCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "12220"
+            },
+            {
+                "col_name": "CensusValueByZip",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "51.04"
+            }
+        ]
+    },
+    "FACT_STATEBENCHMARK_ACS2021": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "MetricID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B11012_011E"
+            },
+            {
+                "col_name": "StateFIPS",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "36"
+            },
+            {
+                "col_name": "TotalStatePopulation",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20114745
+            },
+            {
+                "col_name": "StateBenchmarkValue",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 546071.0
+            },
+            {
+                "col_name": "TotalUSPopulation",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 333036755
+            },
+            {
+                "col_name": "StateAbbrev",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NY"
+            }
+        ]
+    },
+    "LU_GEOGRAPHYEXPANDED": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ZipCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "13640"
+            },
+            {
+                "col_name": "ZipCodeCentroidPoint",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"Point\", \"coordinates\":[-75.9901534,44.3326611]}"
+            },
+            {
+                "col_name": "ZipCodePolygon",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"MultiPolygon\", \"coordinates\":[[[[-75.931209,44.343276], [-75.931192,44.343481], [-75.93115,"
+            },
+            {
+                "col_name": "PreferredStateAbbrev",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "NY"
+            },
+            {
+                "col_name": "ZipCodeCentroidLon",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "-75.9901534"
+            },
+            {
+                "col_name": "ZipCodeType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Standard"
+            },
+            {
+                "col_name": "PreferredCityStateAbbrev",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Wellesley Island, NY"
+            },
+            {
+                "col_name": "PreferredCity",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Wellesley Island"
+            },
+            {
+                "col_name": "ZipCodeCentroidLat",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "+44.3326611"
+            },
+            {
+                "col_name": "PreferredStateName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New York"
+            }
+        ]
+    },
+    "XREF_TRACTTOZIP_RESIDENTIAL": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "FromStateCountyTractID",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "36085009701"
+            },
+            {
+                "col_name": "ToZipCode",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "10310"
+            },
+            {
+                "col_name": "ResidentialMappingRatioTZ",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": "1.000000000000000"
+            }
+        ]
+    },
+    "XREF_ZIPTOTRACT_RESIDENTIAL": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "FromZipCode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "11721"
+            },
+            {
+                "col_name": "ToStateCountyTractID",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "36103111300"
+            },
+            {
+                "col_name": "ResidentialMappingRatioZT",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": "0.271000000000000"
+            }
+        ]
+    }
+}

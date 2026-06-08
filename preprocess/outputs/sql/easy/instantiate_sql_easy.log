@@ -1,0 +1,9 @@
+2026-06-08 13:18:39,550 - INFO - __main__ - Loaded 2 DB ids for tier=easy from preprocess/outputs/clustering/difficulty_tiers.csv
+2026-06-08 13:18:39,550 - INFO - __main__ - Instantiating SQL for tier=easy, db_count=2
+2026-06-08 13:18:39,550 - INFO - __main__ - [1/2] Processing db_id=WORD_VECTORS_US
+2026-06-08 13:18:39,550 - INFO - semquery_preprocess.sql_instantiator - Instantiating SQA for db_id=WORD_VECTORS_US, tier=easy
+2026-06-08 13:19:01,993 - INFO - semquery_preprocess.sql_instantiator - Written SQL instances for db_id=WORD_VECTORS_US to preprocess\outputs\sql\easy\WORD_VECTORS_US.json. Instantiated=5/5
+2026-06-08 13:19:01,993 - INFO - __main__ - [2/2] Processing db_id=USA_NAMES
+2026-06-08 13:19:01,993 - INFO - semquery_preprocess.sql_instantiator - Instantiating SQA for db_id=USA_NAMES, tier=easy
+2026-06-08 13:19:21,749 - INFO - semquery_preprocess.sql_instantiator - Written SQL instances for db_id=USA_NAMES to preprocess\outputs\sql\easy\USA_NAMES.json. Instantiated=3/5
+2026-06-08 13:19:21,749 - INFO - __main__ - SQL instantiation finished. Output directory: preprocess\outputs\sql\easy

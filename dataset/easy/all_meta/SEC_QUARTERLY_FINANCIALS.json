@@ -1,0 +1,880 @@
+{
+    "CALCULATION": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "group",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "arc",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001354488-10-001409"
+            },
+            {
+                "col_name": "parent_tag",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CashAndCashEquivalentsPeriodIncreaseDecrease"
+            },
+            {
+                "col_name": "negative",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "child_version",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "us-gaap/2009"
+            },
+            {
+                "col_name": "child_tag",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CashAndCashEquivalentsPeriodIncreaseDecrease"
+            },
+            {
+                "col_name": "parent_version",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "us-gaap/2009"
+            }
+        ]
+    },
+    "DIMENSION": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "segments_hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0x2bea873ec009ac34c4d14deb5c0cc4f0"
+            },
+            {
+                "col_name": "segments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "EquityComponents=AccumulatedOtherComprehensiveIncome;"
+            },
+            {
+                "col_name": "segment_truncation",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            }
+        ]
+    },
+    "MEASURE_TAG": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "MEASURE_TAG",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AdjustmentsToAdditionalPaidInCapitalAbstract"
+            },
+            {
+                "col_name": "CREDIT_OR_DEBIT",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATATYPE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAG_LABEL",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Adjustments to Additional Paid in Capital [Abstract]"
+            },
+            {
+                "col_name": "I_OR_D",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CUSTOM",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "ABSTRACT",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "DOC",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "A roll forward is a reconciliation of an account balance from the beginning of a period to the end o"
+            },
+            {
+                "col_name": "VERSION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "us-gaap/2009"
+            }
+        ]
+    },
+    "NUMBERS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "VERSION",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001104659-13-070191"
+            },
+            {
+                "col_name": "DIMENSION_HASH",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x69e6d93a6bf5ad43b526872a71f26b26"
+            },
+            {
+                "col_name": "SUBMISSION_NUMBER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001104659-13-070191"
+            },
+            {
+                "col_name": "MEASURE_TAG",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LongTermDebtAdditionalAnnualPaymentsPercentageOfExcessCashFlow"
+            },
+            {
+                "col_name": "NUM_DIMENSIONS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "DATE_FRACTION",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DECIMAL",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "IPRX",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "UNITS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "pure"
+            },
+            {
+                "col_name": "FOOTNOTE",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PERIOD_END_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 20130731
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "HERON LAKE BIOENERGY, LLC"
+            },
+            {
+                "col_name": "COREGISTRANT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.25
+            },
+            {
+                "col_name": "NUMBER_OF_QUARTERS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "FOOTNOTE_LENGTH",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DURATION_FRACTION",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.019179106
+            }
+        ]
+    },
+    "PRESENTATION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001019687-12-000977"
+            },
+            {
+                "col_name": "rfile",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "H"
+            },
+            {
+                "col_name": "presented_parenthetically",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "preferred_role",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "label"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "us-gaap/2011"
+            },
+            {
+                "col_name": "preferred_label",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Statement [Table]"
+            },
+            {
+                "col_name": "statement",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "IS"
+            },
+            {
+                "col_name": "negating",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "report",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "measure_tag",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "StatementTable"
+            },
+            {
+                "col_name": "line",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "QUICK_SUMMARY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001445305-13-001733"
+            },
+            {
+                "col_name": "ein",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "942708455"
+            },
+            {
+                "col_name": "central_index_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 776867
+            },
+            {
+                "col_name": "sic",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "6331"
+            },
+            {
+                "col_name": "form",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "10-Q"
+            },
+            {
+                "col_name": "fiscal_year_end",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "1231"
+            },
+            {
+                "col_name": "measure_tag",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "StockRepurchaseProgramNumberOfAdditionalSharesAuthorizedToBeRepurchased"
+            },
+            {
+                "col_name": "fiscal_period_focus",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Q2"
+            },
+            {
+                "col_name": "units",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "shares"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 545496.0
+            },
+            {
+                "col_name": "period_end_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "20130630"
+            },
+            {
+                "col_name": "date_filed",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 20130730
+            },
+            {
+                "col_name": "version",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "0001445305-13-001733"
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2013
+            },
+            {
+                "col_name": "company_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "WHITE MOUNTAINS INSURANCE GROUP LTD"
+            },
+            {
+                "col_name": "number_of_quarters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "date_accepted",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1375172040000000
+            }
+        ]
+    },
+    "RENDERING": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "report",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0000891618-09-000150"
+            },
+            {
+                "col_name": "file_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "X"
+            },
+            {
+                "col_name": "parentreport",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "menu_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ultimate_parent_report",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "longname",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "00 - Document and Entity Information"
+            },
+            {
+                "col_name": "roleuri",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "http://newmont.com/nem/2009-03-31/DocumentAndEntityInformation"
+            },
+            {
+                "col_name": "shortname",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "No Value Found"
+            },
+            {
+                "col_name": "parentroleuri",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "SIC_CODES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "sic_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "6321"
+            },
+            {
+                "col_name": "industry_title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "ACCIDENT & HEALTH INSURANCE"
+            },
+            {
+                "col_name": "ad_office",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            }
+        ]
+    },
+    "SUBMISSION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001166126-09-000048"
+            },
+            {
+                "col_name": "ein",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "260037077"
+            },
+            {
+                "col_name": "additional_ciks",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "central_index_key",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1166126
+            },
+            {
+                "col_name": "ba_street1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "6501 LEGACY DRIVE"
+            },
+            {
+                "col_name": "countryma",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "has_required_detail",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2009
+            },
+            {
+                "col_name": "fiscal_year_end",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "0131"
+            },
+            {
+                "col_name": "date_changed",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 20020128.0
+            },
+            {
+                "col_name": "public_float_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 6693199360.0
+            },
+            {
+                "col_name": "form",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "10-Q"
+            },
+            {
+                "col_name": "stprma",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "CA"
+            },
+            {
+                "col_name": "country_inc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "stprba",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "TX"
+            },
+            {
+                "col_name": "ma_street1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "THE LANDMARK"
+            },
+            {
+                "col_name": "fiscal_period_focus",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "Q2"
+            },
+            {
+                "col_name": "ba_phone",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "9722431100"
+            },
+            {
+                "col_name": "state_province_inc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "DE"
+            },
+            {
+                "col_name": "zipma",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "94105"
+            },
+            {
+                "col_name": "num_ciks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "cityma",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SAN FRANCISCO"
+            },
+            {
+                "col_name": "date_filed",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 20090909
+            },
+            {
+                "col_name": "instance",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "jcp-20090801.xml"
+            },
+            {
+                "col_name": "ma_street2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "ONE MARKET STREET STE. 300"
+            },
+            {
+                "col_name": "zipba",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "75024-3698"
+            },
+            {
+                "col_name": "date_accepted",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1252514400000000
+            },
+            {
+                "col_name": "float_date",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 20080802
+            },
+            {
+                "col_name": "ba_street2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "ONE MARKET STREET STE.300"
+            },
+            {
+                "col_name": "float_terms",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "cityba",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "PLANO"
+            },
+            {
+                "col_name": "well_known_seasoned_issuer",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "company_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "J C PENNEY CO INC"
+            },
+            {
+                "col_name": "former_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "J C PENNEY HOLDINGS INC"
+            },
+            {
+                "col_name": "has_previous_report",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "filer_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "1-LAF"
+            },
+            {
+                "col_name": "sic",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "5311"
+            },
+            {
+                "col_name": "period",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 20090731
+            },
+            {
+                "col_name": "countryba",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "float_axis",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "TXT": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "us-gaap/2012"
+            },
+            {
+                "col_name": "measure_tag",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "DebtInstrumentMaturityDate"
+            },
+            {
+                "col_name": "submission_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0001144204-13-028224"
+            },
+            {
+                "col_name": "dimension_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xbdb2da93460e32d978a79323416eab0c"
+            },
+            {
+                "col_name": "period_end_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 20130331
+            },
+            {
+                "col_name": "num_quarters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "coregistrant",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "date_fraction",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "context",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Context_9ME_31-Mar-2013_ShortTermDebtTypeAxis_CcbBankLoanMember"
+            },
+            {
+                "col_name": "language",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "en-US"
+            },
+            {
+                "col_name": "duration_fraction",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.008219957
+            },
+            {
+                "col_name": "escaped",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "value",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2012-12-11"
+            },
+            {
+                "col_name": "footnote_length",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "source_length",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "text_length",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "iprx",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "num_dimensions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "footnote",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "language_decimal",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 32767
+            }
+        ]
+    }
+}

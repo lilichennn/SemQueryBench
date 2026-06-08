@@ -1,0 +1,6 @@
+2026-06-08 13:17:57,388 - INFO - __main__ - Processing tier=easy
+2026-06-08 13:17:57,389 - INFO - semquery_preprocess.anchor_matrix - Building Anchor Matrix for tier=easy using 2 fingerprints.
+2026-06-08 13:18:12,775 - INFO - semquery_preprocess.anchor_matrix - Written Anchor Matrix for tier=easy to preprocess\outputs\anchor_matrices\easy_anchor_matrix.json
+2026-06-08 13:18:12,775 - INFO - semquery_preprocess.sqa_generator - Generating SQA templates for tier=easy from preprocess\outputs\anchor_matrices\easy_anchor_matrix.json
+2026-06-08 13:18:25,317 - INFO - semquery_preprocess.sqa_generator - Written 5 SQA templates for tier=easy to preprocess\outputs\sqa\easy_sqa.json
+2026-06-08 13:18:25,318 - INFO - __main__ - SQA construction pipeline finished.

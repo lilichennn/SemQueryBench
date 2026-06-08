@@ -1,0 +1,520 @@
+{
+    "ADVISORIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SourceID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GHSA-68jh-rf6x-836f"
+            },
+            {
+                "col_name": "ReferenceURLs",
+                "col_tag": "CONTACT_URL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"https://github.com/apollographql/apollo-server\",\n  \"https://github.com/apollographql/apollo-server/commit/0adaf80d1ee51d8c7e5fd863c04478536d15eb8c\",\n  \"https://github.com/apollographql/apollo-server/security/advisories/GHSA-68jh-rf6x-836f\",\n  \"https://github.com/github/advisory-database/blob/main/advisories/github-reviewed/2023/06/GHSA-68jh-rf6x-836f/GHSA-68jh-rf6x-836f.json\"\n]"
+            },
+            {
+                "col_name": "CVSS3Score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": "3.300000000"
+            },
+            {
+                "col_name": "Packages",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"AffectedVersions\": \"Introduced: 4.7.1, Fixed: 4.7.4\",\n    \"Name\": \"@apollo/server\",\n    \"System\": \"NPM\",\n    \"UnaffectedVersions\": \"\"\n  }\n]"
+            },
+            {
+                "col_name": "Aliases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1694466085316347
+            },
+            {
+                "col_name": "Severity",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "UNKNOWN"
+            },
+            {
+                "col_name": "GitHubSeverity",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "LOW"
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "### Context\nContent Security Policies (CSP) are a defense-in-depth strategy against XSS attacks. Imp"
+            },
+            {
+                "col_name": "SourceURL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://osv.dev/vulnerability/GHSA-68jh-rf6x-836f"
+            },
+            {
+                "col_name": "Disclosed",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1686944453000000
+            },
+            {
+                "col_name": "Source",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "OSV"
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "@apollo/server vulnerable to unsafe application of Content Security Policy via reused nonces"
+            }
+        ]
+    },
+    "DEPENDENCIES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.4.0"
+            },
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NPM"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "@tpp/um"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1653865202672717
+            },
+            {
+                "col_name": "Dependency",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"Name\": \"rimraf\",\n  \"System\": \"NPM\",\n  \"Version\": \"3.0.2\"\n}"
+            },
+            {
+                "col_name": "MinimumDepth",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "DEPENDENCYGRAPHEDGES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MAVEN"
+            },
+            {
+                "col_name": "Requirement",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": "1.0.b2"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1670878903046625
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "com.agilejava.docbkx:docbkx-maven-plugin"
+            },
+            {
+                "col_name": "Version",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": "2.0.7"
+            },
+            {
+                "col_name": "From",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"Name\": \"fop:fop\",\n  \"System\": \"MAVEN\",\n  \"Version\": \"0.20.5\"\n}"
+            },
+            {
+                "col_name": "To",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"Name\": \"xml-apis:xml-apis\",\n  \"System\": \"MAVEN\",\n  \"Version\": \"1.3.03\"\n}"
+            }
+        ]
+    },
+    "DEPENDENTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "Version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2.0.1"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "g"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1726520453364153
+            },
+            {
+                "col_name": "MinimumDepth",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NPM"
+            },
+            {
+                "col_name": "DependentIsHighestReleaseWithResolution",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "Dependent",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"Name\": \"poyka\",\n  \"System\": \"NPM\",\n  \"Version\": \"0.3.18\"\n}"
+            }
+        ]
+    },
+    "NUGETREQUIREMENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.0.2.4"
+            },
+            {
+                "col_name": "DependencyGroups",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "docs_sage"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1725915643146231
+            }
+        ]
+    },
+    "PACKAGEVERSIONHASHES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "Version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "Hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "OHVQhLoGM0h1kTqic82elg=="
+            },
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MAVEN"
+            },
+            {
+                "col_name": "HashType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MD5"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1656363603995533
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "com.github.sarxos:oss-parent"
+            }
+        ]
+    },
+    "PACKAGEVERSIONS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "Hashes",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"Hash\": \"+Rrk8ZgkjA9aQ1Vsp9vL9w==\",\n    \"Type\": \"MD5\"\n  },\n  {\n    \"Hash\": \"Dm1XJadxUxqBg8Zh/bd6+lm0H+c=\",\n    \"Type\": \"SHA1\"\n  },\n  {\n    \"Hash\": \"Zl71JyGD0CQEoTPH2LNDcRcqvp7xYR4GXIiStTxFyTH1D7MrMbTpD+qVqf0PSYtNtSIjR+dkxXRfCAtvjN0Acg==\",\n    \"Type\": \"SHA512\"\n  }\n]"
+            },
+            {
+                "col_name": "Purl",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Version",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.1.6"
+            },
+            {
+                "col_name": "UpstreamIdentifiers",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "DependenciesProcessed",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Links",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"Label\": \"HOMEPAGE\",\n    \"URL\": \"https://cocreate.app/docs/attributes\"\n  },\n  {\n    \"Label\": \"ISSUE_TRACKER\",\n    \"URL\": \"https://github.com/CoCreate-app/CoCreate-attributes/issues\"\n  },\n  {\n    \"Label\": \"ORIGIN\",\n    \"URL\": \"https://registry.npmjs.org/@cocreate%2Fattributes/1.1.6\"\n  },\n  {\n    \"Label\": \"SOURCE_REPO\",\n    \"URL\": \"git+https://github.com/CoCreate-app/CoCreate-attributes.git\"\n  }\n]"
+            },
+            {
+                "col_name": "SLSAProvenance",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Registries",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "@cocreate/attributes"
+            },
+            {
+                "col_name": "DependencyError",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "Advisories",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "Licenses",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"MIT\"\n]"
+            },
+            {
+                "col_name": "VersionInfo",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"IsRelease\": true,\n  \"Ordinal\": 38\n}"
+            },
+            {
+                "col_name": "UpstreamPublishedAt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NPM"
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1680555696257226
+            }
+        ]
+    },
+    "PACKAGEVERSIONTOPROJECT": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1721768440525402
+            },
+            {
+                "col_name": "System",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NPM"
+            },
+            {
+                "col_name": "RelationType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SOURCE_REPO_TYPE"
+            },
+            {
+                "col_name": "ProjectType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "GITHUB"
+            },
+            {
+                "col_name": "ProjectName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "steven-tey/dub"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "@dub/ui"
+            },
+            {
+                "col_name": "RelationProvenance",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "UNVERIFIED_METADATA"
+            },
+            {
+                "col_name": "Version",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "0.0.57"
+            }
+        ]
+    },
+    "PROJECTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "StarsCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "ForksCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "GITLAB"
+            },
+            {
+                "col_name": "Homepage",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "https://gitlab.com/tkil/woodchuck"
+            },
+            {
+                "col_name": "OpenIssuesCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SnapshotAt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1690837290722347
+            },
+            {
+                "col_name": "Licenses",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "My Utility for Everything!!!"
+            },
+            {
+                "col_name": "OSSFuzz",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "tkil/woodchuck"
+            }
+        ]
+    },
+    "SNAPSHOTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "Time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1713733246839235
+            }
+        ]
+    }
+}

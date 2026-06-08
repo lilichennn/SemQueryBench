@@ -1,0 +1,5028 @@
+{
+    "DW储气库注采日完成": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "primary_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR",
+                "sample_value": "007B5077-2587-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "data_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-04-30"
+            },
+            {
+                "col_name": "resource_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "华北储气库"
+            },
+            {
+                "col_name": "resource_remark",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR",
+                "sample_value": "现役"
+            },
+            {
+                "col_name": "resource_type_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "采气"
+            },
+            {
+                "col_name": "path_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR",
+                "sample_value": "管道"
+            },
+            {
+                "col_name": "data_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0
+            }
+        ]
+    },
+    "DW天然气销售日完成": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "primary_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR",
+                "sample_value": "0005B476-70E4-11F0-9A79-005056BA3867"
+            },
+            {
+                "col_name": "display_order",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 2
+            },
+            {
+                "col_name": "vendor_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "天津"
+            },
+            {
+                "col_name": "region_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "北方"
+            },
+            {
+                "col_name": "customer_industry_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "customer_order",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR",
+                "sample_value": 10021003
+            },
+            {
+                "col_name": "data_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-08-04"
+            },
+            {
+                "col_name": "data_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 88
+            },
+            {
+                "col_name": "business_type_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "油田周边"
+            },
+            {
+                "col_name": "customer_type_display",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR",
+                "sample_value": 11901010
+            },
+            {
+                "col_name": "customer_type_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "外部批发"
+            }
+        ]
+    },
+    "LNG-日指定": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "CUSTOMER_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "String",
+                "sample_value": "309D2DE3-389A-491F-AA78-E4080C18F5C1"
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR",
+                "sample_value": "0041F95B-4F83-4A30-AC90-F888FF94046C"
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "String",
+                "sample_value": "88AE6449-E470-4FCC-9B61-F833B076A0AE"
+            },
+            {
+                "col_name": "VENDOR_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "String",
+                "sample_value": "1B97B441-1FC8-4552-833E-8C663D358AB5"
+            },
+            {
+                "col_name": "CREATED_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-11-12 14:20:02"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "String",
+                "sample_value": "中燃宏大西北鹏辽科技唐山lng"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "Date",
+                "sample_value": "2024-11-14"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "String",
+                "sample_value": "LNG接收站"
+            },
+            {
+                "col_name": "DATA_TYPE_ID",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "INT",
+                "sample_value": 10401060
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 2
+            },
+            {
+                "col_name": "DATA_VALUE_M",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DISPLAY_ORDER",
+                "col_tag": "LEVEL",
+                "col_type": "INT",
+                "sample_value": 17
+            },
+            {
+                "col_name": "REQUIRE_NUM",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": 2
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "京唐LNG接收站"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "河北"
+            }
+        ]
+    },
+    "LNG日完成": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR",
+                "sample_value": "000BF856-F8CE-47A5-95D8-2FE5D76CB6F7"
+            },
+            {
+                "col_name": "CREATED_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-11-12 14:15:26"
+            },
+            {
+                "col_name": "CUSTOMER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "String",
+                "sample_value": "5012D49A-C3C0-E811-80CB-0050569D567E"
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "String",
+                "sample_value": 11901080
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "LNG装车"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "唐山德川lng"
+            },
+            {
+                "col_name": "CUSTOMER_TYPE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "String",
+                "sample_value": 10021003
+            },
+            {
+                "col_name": "CUSTOMER_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "外部批发"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "Date",
+                "sample_value": "2024-11-12"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "LNG接收站"
+            },
+            {
+                "col_name": "DATA_TYPE_ID",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "INT",
+                "sample_value": 10401060
+            },
+            {
+                "col_name": "DATA_VALUE_AM",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DATA_VALUE_C",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DATA_VALUE_M",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DATA_VALUE_P",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 4460
+            },
+            {
+                "col_name": "DATA_VALUE_T",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DISPLAY_ORDER",
+                "col_tag": "LEVEL",
+                "col_type": "INT",
+                "sample_value": 10480
+            },
+            {
+                "col_name": "PIPELINE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "String",
+                "sample_value": null
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "String",
+                "sample_value": "88AE6449-E470-4FCC-9B61-F833B076A0AE"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "京唐LNG接收站"
+            },
+            {
+                "col_name": "VENDOR_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "String",
+                "sample_value": "1B97B441-1FC8-4552-833E-8C663D358AB5"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "String",
+                "sample_value": "河北"
+            }
+        ]
+    },
+    "储气库日注气量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029089_CQ_1904795444073963522"
+            },
+            {
+                "col_name": "GAS_STORAGE_INJECT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3529BP4GRN9XD1"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 65052108
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 58000336
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "H00001002"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "深圳朗限源科技有限公司"
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "深圳朗限源科技有限公司锐聚分公司"
+            },
+            {
+                "col_name": "RECORD_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-03-26 00:00:00"
+            },
+            {
+                "col_name": "GAS_STORAGE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": 2401
+            },
+            {
+                "col_name": "IN_TYPE",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "IN_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "工作气"
+            },
+            {
+                "col_name": "FLOW",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 1324274
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "GAS_PATH",
+                "col_tag": "LEVEL",
+                "col_type": "VARCHAR2",
+                "sample_value": 12
+            },
+            {
+                "col_name": "GAS_PATH_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "油田注气(天分)"
+            },
+            {
+                "col_name": "CONFIRM_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "CONFIRM_STATUS_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "未审核"
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "未发送"
+            },
+            {
+                "col_name": "CONFIRM_MSG",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:24:30"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:24:30"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-03-26 00:00:00"
+            }
+        ]
+    },
+    "公司代码信息": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "3M4D"
+            },
+            {
+                "col_name": "ZZCO_ORG",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": 248808
+            },
+            {
+                "col_name": "ZZCCREDCO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "91331082758075479Q"
+            },
+            {
+                "col_name": "CURRCOMP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "CNY"
+            },
+            {
+                "col_name": "LANGCOMP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ZZCOAREA",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "3M00"
+            },
+            {
+                "col_name": "ZZCITY1",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "331082"
+            },
+            {
+                "col_name": "TXTMI",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": "北京合市盛伟创新科技有限公司"
+            },
+            {
+                "col_name": "TXTLG",
+                "col_tag": "DESC_LONG",
+                "col_type": "CHAR",
+                "sample_value": "北京合市盛伟创新科技有限公司"
+            },
+            {
+                "col_name": "COUNTRY",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "CN"
+            },
+            {
+                "col_name": "ZZFREEZE",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZTP_REMK",
+                "col_tag": "DESC_LONG",
+                "col_type": "CHAR",
+                "sample_value": "海外单位特殊处理。\n业务情况说明及批件请见附件，如未提交附件请退回!"
+            },
+            {
+                "col_name": "ZZTP_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": "X"
+            }
+        ]
+    },
+    "分地区分单位钻井动态统计表": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "REPORT_ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1112024-07-1501001001C100100"
+            },
+            {
+                "col_name": "OIL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BLOCK_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1001001
+            },
+            {
+                "col_name": "RPT_ORG_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 50126000
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ODS_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2024-07-15 00:00:00"
+            },
+            {
+                "col_name": "ODS_BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ODS_PASS_ID",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": 0
+            },
+            {
+                "col_name": "BLOCK_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ODS_CHECK_STATE",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "长城钻探"
+            },
+            {
+                "col_name": "DAILY_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 488
+            },
+            {
+                "col_name": "MONTH_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "YEAR_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WB_DAILY_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WB_MONTH_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WB_YEAR_JC",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZJ_TOTAL",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "ZJ_DY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "COUNTRY_FLAG",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": 0
+            },
+            {
+                "col_name": "IS_IN",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": 1
+            },
+            {
+                "col_name": "IS_RISK",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": 0
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CREATE_USER",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_USER",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2024-07-15 19:11:56"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2024-07-15 19:11:56"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARK",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            }
+        ]
+    },
+    "原油商品量月动态表": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029045_CQ_长庆2021_01_合计"
+            },
+            {
+                "col_name": "OIL_COMMODITY_VOL_MONTH_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3502TP8BHZRUP1"
+            },
+            {
+                "col_name": "ORG_MDM_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "ORGACQ100002664"
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "中原宏长恒信息技术"
+            },
+            {
+                "col_name": "YEAR",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR2",
+                "sample_value": 2021
+            },
+            {
+                "col_name": "MONTH",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR2",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ENERGY_SORT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "合计"
+            },
+            {
+                "col_name": "MONTH_MERCHANDISE_VOLUME",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2078372
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "A8"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2024-10-31 10:29:56"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 12:00:37"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            }
+        ]
+    },
+    "原油商品量月计划": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029066_CQ_长庆2021"
+            },
+            {
+                "col_name": "OIL_COMMODITY_MONTH_PLAN",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3519KR7EKRKVRU"
+            },
+            {
+                "col_name": "SOURCE_DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NVARCHAR2",
+                "sample_value": "长庆2021"
+            },
+            {
+                "col_name": "ORG_MDM_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "ORGACQ100002664"
+            },
+            {
+                "col_name": "YEAR",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR2",
+                "sample_value": 2021
+            },
+            {
+                "col_name": "JAN_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 207.2009
+            },
+            {
+                "col_name": "FEB_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 187.6392
+            },
+            {
+                "col_name": "MAR_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 207.7926
+            },
+            {
+                "col_name": "APR_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 202.5169
+            },
+            {
+                "col_name": "MAY_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 210.8
+            },
+            {
+                "col_name": "JUN_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 206.96
+            },
+            {
+                "col_name": "JUL_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 214.84
+            },
+            {
+                "col_name": "AUG_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 214.1601
+            },
+            {
+                "col_name": "SEP_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 207.5463
+            },
+            {
+                "col_name": "OCT_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 213.2986
+            },
+            {
+                "col_name": "NOV_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 206.4139
+            },
+            {
+                "col_name": "DEC_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 213.2
+            },
+            {
+                "col_name": "YEAR_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "NEXT_JAN_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "NEXT_FEB_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": null,
+                "col_type": "VARCHAR2",
+                "sample_value": "A8"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2024-12-03 15:19:08"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 12:00:53"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIFY_TASK_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_SOURCE",
+                "col_tag": null,
+                "col_type": "VARCHAR2",
+                "sample_value": "YYSPLJHBXF"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "中原宏长恒信息技术"
+            }
+        ]
+    },
+    "原油日产量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029093_CQ_006cef29b880ade48b5b11ff92dd55dc"
+            },
+            {
+                "col_name": "CRUDE_OIL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35339M0PXI7FP4"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 329
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11010101000024"
+            },
+            {
+                "col_name": "SERIAL_NO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "H00002001"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司诚新翎分公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-05-31 00:00:00"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 14700
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": 101
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 1000017096
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:24:40"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:24:40"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-06-01 00:00:00"
+            }
+        ]
+    },
+    "原油日商品量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029094_CQ_012cf2210b39985695e1055543af3069"
+            },
+            {
+                "col_name": "COMMODITY_VOL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3534VOFTPO7JBP"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11010101000024"
+            },
+            {
+                "col_name": "ORG_ORIGIN",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1579
+            },
+            {
+                "col_name": "ORG_TARGET",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 875
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-04-30 00:00:00"
+            },
+            {
+                "col_name": "ORG_ORIGIN_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "中原宏长恒信息技术油气营销事业部青岛远气越锐控股有限公司盛翎澜分公司"
+            },
+            {
+                "col_name": "ORG_TARGET_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司智澹锦分公司"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": 1000119794
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13000
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "LGORT_ORIGIN",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "LGORT_TARGET",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": 301
+            },
+            {
+                "col_name": "BLDAT",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 16:44:27"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 16:44:27"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-05-01 00:00:00"
+            },
+            {
+                "col_name": "MVGR1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y10"
+            },
+            {
+                "col_name": "MATERIAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "长庆原油 中质油Ⅰ 稀油 常规油"
+            },
+            {
+                "col_name": "MVGR1_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "原油"
+            },
+            {
+                "col_name": "BWTAR_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "自制生产"
+            },
+            {
+                "col_name": "BWART_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "转储"
+            }
+        ]
+    },
+    "原油日库存分析表": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "proudct_id_zb_mdg",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "A1101"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "DECIMAL",
+                "sample_value": 3
+            },
+            {
+                "col_name": "corp_id_mdg",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "DQSH"
+            },
+            {
+                "col_name": "mat_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "M_CRO"
+            },
+            {
+                "col_name": "co_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "DQSH"
+            },
+            {
+                "col_name": "proudct_name_mdg",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "原油"
+            },
+            {
+                "col_name": "corp_name_mdg",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "南京皓瑞锐昌贸易"
+            },
+            {
+                "col_name": "prod_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2024-12-02 00:00:00"
+            },
+            {
+                "col_name": "co_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "南京皓瑞锐昌贸易"
+            },
+            {
+                "col_name": "pull_out_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "BIGINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "updt_time",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-12-03 09:40:51"
+            },
+            {
+                "col_name": "mat_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "原油（统称）"
+            },
+            {
+                "col_name": "inv_vol",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "BIGINT",
+                "sample_value": 39591
+            },
+            {
+                "col_name": "rmk",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            }
+        ]
+    },
+    "原油月产量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029095_CQ_1885620259847614466"
+            },
+            {
+                "col_name": "CRUDE_OIL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35358SBS7U47GN"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 50047371
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11020201000004"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司邦锐分公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-31 00:00:00"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2726.94
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:25:36"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:25:36"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-02-01 00:00:00"
+            }
+        ]
+    },
+    "原油生产运行库存(POPS)": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "OIL_PO_STORAGE_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3433000BCY66QI"
+            },
+            {
+                "col_name": "SOURCE_DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NVARCHAR2",
+                "sample_value": "长庆2023-02-06_生产运行库_靖三联合站"
+            },
+            {
+                "col_name": "GOV_QC_BATCH_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "ORGACQ100002664"
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "靖三联合站"
+            },
+            {
+                "col_name": "OP_DESIGN_MAX_STORAGE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "OP_DESIGN_SAF_STORAGE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "OP_REAL_STORAGE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3380
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2024-11-01 10:03:18"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A8"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-18 22:40:58"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-WY"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIFY_TASK_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_SOURCE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "YYKCRDTB"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "REPORT_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2023-02-06 12:00:00"
+            },
+            {
+                "col_name": "INVENTORY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "GOV_QC_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "GOV_QC_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "GOV_PASS_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "GOV_PASS_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "GOV_PUSH_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "SHARE_PUSH_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": null,
+                "sample_value": null
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            }
+        ]
+    },
+    "原油销售日报": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029055_CQ_CQ350800O3LVKDMA"
+            },
+            {
+                "col_name": "REPORT_FORM_DAILY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "CQ350800O3LVKDMA"
+            },
+            {
+                "col_name": "SOURCE_DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NVARCHAR2",
+                "sample_value": "CQ_20250616_1、股份公司炼厂_武汉星恒成都森航控股嘉实业有限责任公司_中质Ⅰ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR",
+                "sample_value": "日报_苏州森麟盛控股公司_2025-06-16"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-16 00:00:00"
+            },
+            {
+                "col_name": "PROJ_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "PURE_OIL_QUAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2548.038
+            },
+            {
+                "col_name": "MIX_OIL_QUAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2548.038
+            },
+            {
+                "col_name": "APPLY_USER_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "APPLY_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "APPROVAL_STATUS",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A15"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "admin"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 09:30:57"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "admin"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 09:30:57"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIFY_TASK_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_SOURCE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "PO_OIL_SALE_DAILY_2025"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "1970-01-01 00:00:00"
+            },
+            {
+                "col_name": "MONTH_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DENSITY_DAY",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "WATER_CONTENT_DAY",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHAIN_RATIO_DAY",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "TOTAL_QUAN_MON",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "OVER_BALANCE_MON",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMP_RATE_MON",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "原油销量月报": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029056_CQ_CQ35150H0HIHOXYG"
+            },
+            {
+                "col_name": "REPORT_FORM_DAILY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR",
+                "sample_value": "CQ35150H0HIHOXYG"
+            },
+            {
+                "col_name": "SOURCE_DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NVARCHAR2",
+                "sample_value": "CQ_202501_4、交天津辰森嘉实业皓盛上海辰伟骏实业_惠安堡站_中质Ⅰ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR",
+                "sample_value": "月报_苏州森麟盛控股公司_2025-01-01"
+            },
+            {
+                "col_name": "YEAR_MON",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR",
+                "sample_value": "2025-01"
+            },
+            {
+                "col_name": "PROJ_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "PURE_OIL_QUAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 72.9048291
+            },
+            {
+                "col_name": "MIX_OIL_QUAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "APPLY_USER_NAME",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "APPLY_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "APPROVAL_STATUS",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A15"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "admin"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 09:31:22"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "admin"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 09:31:22"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIFY_TASK_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_SOURCE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "PO_OIL_SALE_MONTH_2025"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "1970-01-01 00:00:00"
+            },
+            {
+                "col_name": "MONTH_PLAN_MON",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CAUP_TAX_FREE_MON",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "AUP_TAX_FREE_MON",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DIFFERENCE_MON",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "OVER_BALANCE_MON",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "YEAR_PLAN_YEAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "ACTUAL_QUAN_YEAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CAUP_TAX_FREE_YEAR",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "YEAR_AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "AUP_TAX_FREE_YEAR",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "DIFFERENCE_YEAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "OVER_BALANCE_YEAR",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "国内内部市场-当日钻机动用完成量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029097CQ_CQ35370A0CYMJETT"
+            },
+            {
+                "col_name": "DRIL_DAILY_USED_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35370A0CYMJETT"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "RIGS_USED_DAILY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 112
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 12:45:40"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 12:45:40"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-22 00:00:00"
+            }
+        ]
+    },
+    "国内内部市场-月度钻井进尺计划和完成量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029098CQ_CQ35380CO2L04XYG"
+            },
+            {
+                "col_name": "DRILL_FOOT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35380CO2L04XYG"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FOOTAGE_DELIVERED_NUM",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 48.18
+            },
+            {
+                "col_name": "ACTUAL_FOOTAGE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 32.7093
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 14:21:44"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 14:21:44"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-04-22 00:00:00"
+            }
+        ]
+    },
+    "国内内部市场-月度钻机动用计划和完成量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029099CQ_CQ3539011PUJDXCY"
+            },
+            {
+                "col_name": "MONTH_PLAN_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3539011PUJDXCY"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "ASSIGNED_DRILLING_RIGS_NUM",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 588
+            },
+            {
+                "col_name": "ACTUAL_RIG_COUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 563
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:28:07"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:28:07"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-03-20 00:00:00"
+            }
+        ]
+    },
+    "国内内部市场-钻井日进尺完成量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029100CQ_CQ35400J2ST1YD5D"
+            },
+            {
+                "col_name": "DAILY_FOOT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35400J2ST1YD5D"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORG_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "DRI_FOOTAGE_DAY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": null,
+                "sample_value": 2.0517
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-21 09:46:25"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-21 09:46:25"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-18 00:00:00"
+            }
+        ]
+    },
+    "天然气日产量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029101_CQ_0119fc14d7d9829387c16e50cc61a423"
+            },
+            {
+                "col_name": "GAS_PROD_DAILY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3541FTAQ7JWLG9"
+            },
+            {
+                "col_name": "SERIAL_NO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 329
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司诚新翎分公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-05-31 00:00:00"
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11030202000001"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 677200
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": 101
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 1000817508
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "H00002001"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-09-15 09:46:30"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-09-15 09:46:30"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-06-01 00:00:00"
+            },
+            {
+                "col_name": "MVGR1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "MATERIAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "MVGR1_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWART_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            }
+        ]
+    },
+    "天然气日商品量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029102_CQ_06aacec3ff55b14c959703c46c1a1b96"
+            },
+            {
+                "col_name": "GAS_COMM_VOL_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ35421WZEKWJVHV"
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-12 00:00:00"
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11030101000003"
+            },
+            {
+                "col_name": "ORG_ORIGIN",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 1429
+            },
+            {
+                "col_name": "ORG_ORIGIN_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司锐瀚分公司"
+            },
+            {
+                "col_name": "ORG_TARGET",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 1579
+            },
+            {
+                "col_name": "ORG_TARGET_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "中原宏长恒信息技术油气营销事业部青岛远气越锐控股有限公司盛翎澜分公司"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": 1000817644
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 25898119
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "LGORT_ORIGIN",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "LGORT_TARGET",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": 301
+            },
+            {
+                "col_name": "BLDAT",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:27:36"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:27:36"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-02-12 00:00:00"
+            }
+        ]
+    },
+    "天然气销售日完成": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "primary_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR",
+                "sample_value": "0005B476-70E4-11F0-9A79-005056BA3867"
+            },
+            {
+                "col_name": "region_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "北方"
+            },
+            {
+                "col_name": "customer_type_display",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARCHAR",
+                "sample_value": 11901010
+            },
+            {
+                "col_name": "org_mdg_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": 65047224
+            },
+            {
+                "col_name": "customer_industry_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "customer_order",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARCHAR",
+                "sample_value": 10021003
+            },
+            {
+                "col_name": "customer_type_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "外部批发"
+            },
+            {
+                "col_name": "data_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-08-04"
+            },
+            {
+                "col_name": "data_value",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 88
+            },
+            {
+                "col_name": "display_order",
+                "col_tag": "VAL_RATING",
+                "col_type": "DECIMAL",
+                "sample_value": 2
+            },
+            {
+                "col_name": "vendor_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "天津"
+            },
+            {
+                "col_name": "business_type_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "油田周边"
+            }
+        ]
+    },
+    "天然气零散气销售量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029107CQ_1876920059383316482"
+            },
+            {
+                "col_name": "GAS_SCATT_GAS_SUPPLY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ3527CLCDHCCOFR"
+            },
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": 1876920059383316482
+            },
+            {
+                "col_name": "PARENT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1876920059379122177
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11030101000003"
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1579
+            },
+            {
+                "col_name": "SALE_ORG",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "18T1"
+            },
+            {
+                "col_name": "CUSTOMER",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1001280200
+            },
+            {
+                "col_name": "KUNWE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1001280200
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQYT-CQXSC-2024-MM-1079"
+            },
+            {
+                "col_name": "SUM_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1876920059379122432
+            },
+            {
+                "col_name": "SALE_OFFICE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1815
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "MATERIAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "黄原胶 TZT-2 ≥11mPa·s"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11390
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "VSTEL",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "VSTEL_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "LGORT_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KONDM",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KONDM_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CZ_1800_0012"
+            },
+            {
+                "col_name": "PIPELINE",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHILD_CONFIRM_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "CHILD_CONFIRM_STATUS_NAME",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": "未审核"
+            },
+            {
+                "col_name": "CONFIRM_MSG",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "AMOUNT_LNG",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "GAS_STORAGE",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "中原宏长恒信息技术油气营销事业部青岛远气越锐控股有限公司盛翎澜分公司"
+            },
+            {
+                "col_name": "SALE_ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-08 00:00:00"
+            },
+            {
+                "col_name": "VTWEG",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A5"
+            },
+            {
+                "col_name": "VTWEG_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "SPART",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": 40
+            },
+            {
+                "col_name": "SPART_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "天然气"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KUNWE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "TRANSPORT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A2"
+            },
+            {
+                "col_name": "TRANSPORT_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORDER_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ORDER_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "SALE_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": 280000
+            },
+            {
+                "col_name": "SALE_REGION_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLTYP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y2"
+            },
+            {
+                "col_name": "PLTYP_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KONDA",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KONDA_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "KDGRP",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y3"
+            },
+            {
+                "col_name": "KDGRP_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": "未发送"
+            },
+            {
+                "col_name": "SALE_OFFICE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "SUM_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SUM_STATUS_NAME",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "MVGR1_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MVGR1_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "天然气"
+            },
+            {
+                "col_name": "MVGR1",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y14"
+            },
+            {
+                "col_name": "MVGR1_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "天然气"
+            },
+            {
+                "col_name": "CONFIRM_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CONFIRM_STATUS_NAME",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR2",
+                "sample_value": "已审核"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-15 00:00:00"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-JXB"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-15 00:00:00"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "KL-JXB"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-01-08 00:00:00"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "峰二集气站"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            }
+        ]
+    },
+    "物料明细信息": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "A14070301000002"
+            },
+            {
+                "col_name": "GROES",
+                "col_tag": "DESC_LONG",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "MEINS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "ERDAT",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATS",
+                "sample_value": 20240919
+            },
+            {
+                "col_name": "LAEDA",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATS",
+                "sample_value": 20240919
+            },
+            {
+                "col_name": "LVORM",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "MSTAE",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZClASS2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "A1407"
+            },
+            {
+                "col_name": "ERNAM",
+                "col_tag": "NAME_PERSON",
+                "col_type": "CHAR",
+                "sample_value": "T0342921"
+            },
+            {
+                "col_name": "ZMEINS",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZClASS3",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "A140703"
+            },
+            {
+                "col_name": "MATKL",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": "A14070301"
+            },
+            {
+                "col_name": "ZTAXNAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZClASS1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "A14"
+            },
+            {
+                "col_name": "MTART",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": "ZYWL"
+            },
+            {
+                "col_name": "AENAM",
+                "col_tag": "NAME_PERSON",
+                "col_type": "CHAR",
+                "sample_value": "T0342921"
+            }
+        ]
+    },
+    "组织机构信息": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "ZZAORGC",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ZZORG",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": 109333
+            },
+            {
+                "col_name": "ZZCREDCO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "91130224755482714E"
+            },
+            {
+                "col_name": "ZZMICCD",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZORGSJNO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": 109280
+            },
+            {
+                "col_name": "ZZRDATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATS",
+                "sample_value": 20230605
+            },
+            {
+                "col_name": "ZZORGCJDM",
+                "col_tag": "LEVEL",
+                "col_type": "CHAR",
+                "sample_value": "61"
+            },
+            {
+                "col_name": "ZZCTRY",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "CN"
+            },
+            {
+                "col_name": "ZZRGNCD",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "130"
+            },
+            {
+                "col_name": "ZZJGSDATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATS",
+                "sample_value": 20090101
+            },
+            {
+                "col_name": "ZZJGEDATE",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATS",
+                "sample_value": 99991231
+            },
+            {
+                "col_name": "ZZPZDATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATS",
+                "sample_value": 20031118
+            },
+            {
+                "col_name": "ZZBIZNTRC",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ZZBIZNTR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "0141"
+            },
+            {
+                "col_name": "ZZPROFTTY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ZZENTERTY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZVENTUTY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZENTERN",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "CHAR",
+                "sample_value": "青岛远气越锐控股有限公司硕峪分公司"
+            },
+            {
+                "col_name": "ZZLEGALH",
+                "col_tag": "NAME_PERSON",
+                "col_type": "CHAR",
+                "sample_value": "刘保健"
+            },
+            {
+                "col_name": "ZZBDATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATS",
+                "sample_value": 20031118
+            },
+            {
+                "col_name": "ZZCCURRCY",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "CUKY",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZJGPX",
+                "col_tag": "LEVEL",
+                "col_type": "CHAR",
+                "sample_value": 64
+            },
+            {
+                "col_name": "ZZBBDATE",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATS",
+                "sample_value": 20031118
+            },
+            {
+                "col_name": "ZZBEDATE",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATS",
+                "sample_value": 20991231
+            },
+            {
+                "col_name": "ZZGMIND",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZOSTATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": "存续"
+            },
+            {
+                "col_name": "ZZPROFT",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": 128
+            },
+            {
+                "col_name": "ZZORGTYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "CHAR",
+                "sample_value": "O"
+            },
+            {
+                "col_name": "ZZCNPCC",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZREGISTC",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "CURR",
+                "sample_value": null
+            },
+            {
+                "col_name": "ZZREGADD",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "130224"
+            },
+            {
+                "col_name": "ZZORGMC",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "CHAR",
+                "sample_value": "青岛远气越锐控股有限公司硕峪分公司"
+            },
+            {
+                "col_name": "ZZORGJC",
+                "col_tag": "NAME_SHORT",
+                "col_type": "CHAR",
+                "sample_value": "滦南腾飞(42)"
+            },
+            {
+                "col_name": "ZZCITY1",
+                "col_tag": "LOCATION",
+                "col_type": "CHAR",
+                "sample_value": "130224"
+            },
+            {
+                "col_name": "ZZVORGF",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "CHAR",
+                "sample_value": 0
+            }
+        ]
+    },
+    "节日慰问用户填报反馈表": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 70791
+            },
+            {
+                "col_name": "PKID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 372
+            },
+            {
+                "col_name": "DESCRIPTION",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "ACCOUNT",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "maojixin"
+            },
+            {
+                "col_name": "USERNAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "maojixin"
+            },
+            {
+                "col_name": "CREATETIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6",
+                "sample_value": 1629419303847
+            },
+            {
+                "col_name": "SUBMITTIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6",
+                "sample_value": 1629766792540
+            },
+            {
+                "col_name": "WORKPLACE",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "海外"
+            },
+            {
+                "col_name": "POSTADDRESS",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "北京市朝阳区红军营路来北家园6号楼三单元1501"
+            },
+            {
+                "col_name": "CONTACTS",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "houjihong"
+            },
+            {
+                "col_name": "TEL",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "VARCHAR2",
+                "sample_value": 15810948523
+            },
+            {
+                "col_name": "EVALUATIONLEVEL",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "EVALUATIONTIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6",
+                "sample_value": null
+            },
+            {
+                "col_name": "EVALUATION",
+                "col_tag": "DESC_LONG",
+                "col_type": "CLOB",
+                "sample_value": null
+            },
+            {
+                "col_name": "PACKAGETYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "B"
+            },
+            {
+                "col_name": "WRITESTATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "18487157732备用电话"
+            },
+            {
+                "col_name": "EVASTATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "RELATIONS",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "配偶"
+            }
+        ]
+    },
+    "轻烃、乙烷、液化气日产量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029106_CQ_157c4f55201683d0bf3be9a52dc3fb05"
+            },
+            {
+                "col_name": "LH_PROD_DAILY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "157c4f55201683d0bf3be9a52dc3fb05"
+            },
+            {
+                "col_name": "SERIAL_NO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 329
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司诚新翎分公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-28 00:00:00"
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11020201000005"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 29.14
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": 101
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": 1000017096
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "H00002001"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:23:46"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-19 10:23:46"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-02-28 00:00:00"
+            },
+            {
+                "col_name": "MVGR1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y11"
+            },
+            {
+                "col_name": "MATERIAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "混合轻烃 C5~C6 伴生气回收"
+            },
+            {
+                "col_name": "MVGR1_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "轻烃"
+            },
+            {
+                "col_name": "BWART_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "采购入库、生产入库"
+            },
+            {
+                "col_name": "BWTAR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "自制生产"
+            }
+        ]
+    },
+    "轻烃、乙烷、液化气月产量(A8 2.0)": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "DSID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR2",
+                "sample_value": "1029105_CQ_1885620259847614466"
+            },
+            {
+                "col_name": "LH_ET_LPG_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 1885620259847614466
+            },
+            {
+                "col_name": "COMPANY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 200
+            },
+            {
+                "col_name": "FACTORY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": 50047371
+            },
+            {
+                "col_name": "MATERIAL",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": "A11020201000004"
+            },
+            {
+                "col_name": "SERIAL_NO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CONTRACT_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_REGION",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": "CQ"
+            },
+            {
+                "col_name": "DATA_GROUP",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "COMPANY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "苏州森麟盛控股公司"
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "青岛远气越锐控股有限公司邦锐分公司"
+            },
+            {
+                "col_name": "ORDER_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-31 00:00:00"
+            },
+            {
+                "col_name": "AMOUNT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2726.94
+            },
+            {
+                "col_name": "UNIT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "TO"
+            },
+            {
+                "col_name": "LGORT",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWART",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "ZZSC"
+            },
+            {
+                "col_name": "SGTXT",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "STATUS_NAME",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": "已归档"
+            },
+            {
+                "col_name": "REMARKS",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_APP_ID",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR2",
+                "sample_value": "A82.0"
+            },
+            {
+                "col_name": "CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 12:40:05"
+            },
+            {
+                "col_name": "CREATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "UPDATE_DATE",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2025-08-20 12:40:05"
+            },
+            {
+                "col_name": "UPDATE_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": "RF_SJZ"
+            },
+            {
+                "col_name": "CHECK_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CHECK_USER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BSFLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "SOURCE_CREATE_DATE",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-02-01 00:00:00"
+            },
+            {
+                "col_name": "MVGR1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR2",
+                "sample_value": "Y11"
+            },
+            {
+                "col_name": "MATERIAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "混合轻烃 C2~C4 常规气田回收"
+            },
+            {
+                "col_name": "MVGR1_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "轻烃"
+            },
+            {
+                "col_name": "BWART_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": null
+            },
+            {
+                "col_name": "BWTAR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR2",
+                "sample_value": "自制生产"
+            }
+        ]
+    },
+    "钻机日数据": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "org_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "g0BPxjkU2W"
+            },
+            {
+                "col_name": "dl_day_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "007t4lQK9J"
+            },
+            {
+                "col_name": "update_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-09-03 10:07:27"
+            },
+            {
+                "col_name": "verify_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-09-03 10:07:27"
+            },
+            {
+                "col_name": "create_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-09-03 10:07:27"
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "update_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "verify_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "create_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "date_report",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR",
+                "sample_value": 20240621
+            },
+            {
+                "col_name": "progress",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL",
+                "sample_value": 0
+            },
+            {
+                "col_name": "partner_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "其它招标"
+            },
+            {
+                "col_name": "org_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "苏州宁波科越智能科技嘉实业浩昌腾伟智能科技"
+            }
+        ]
+    },
+    "钻机进尺月实际": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "org_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "CH0OnK7BjB"
+            },
+            {
+                "col_name": "monthly_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "0EJXunH0QQ"
+            },
+            {
+                "col_name": "update_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-01-07 12:00:10"
+            },
+            {
+                "col_name": "verify_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-01-07 12:00:10"
+            },
+            {
+                "col_name": "create_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-01-07 12:00:10"
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "update_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "verify_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "create_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "TBSJ"
+            },
+            {
+                "col_name": "monthly_progressm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 4757
+            },
+            {
+                "col_name": "dl_monthly_employ",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 5
+            },
+            {
+                "col_name": "partner_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "其它招标"
+            },
+            {
+                "col_name": "date_report",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR",
+                "sample_value": 202404
+            },
+            {
+                "col_name": "org_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "俄罗斯亚马尔lng项目"
+            }
+        ]
+    },
+    "钻机进尺计划月": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "org_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "4rGg3bfREO"
+            },
+            {
+                "col_name": "plan_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR",
+                "sample_value": "03SXua6aGh"
+            },
+            {
+                "col_name": "update_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-12-07 10:54:08"
+            },
+            {
+                "col_name": "verify_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "create_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-04-12 10:53:44"
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "update_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "system"
+            },
+            {
+                "col_name": "verify_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": null
+            },
+            {
+                "col_name": "create_user",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR",
+                "sample_value": "system"
+            },
+            {
+                "col_name": "plan_drilling_endm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "plan_drilling_upm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "plan_progressm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 0
+            },
+            {
+                "col_name": "plan_arrange_rigm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 1
+            },
+            {
+                "col_name": "partner_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR",
+                "sample_value": "中油技服"
+            },
+            {
+                "col_name": "plan_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR",
+                "sample_value": 202404
+            },
+            {
+                "col_name": "org_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR",
+                "sample_value": "西南森邦"
+            }
+        ]
+    }
+}

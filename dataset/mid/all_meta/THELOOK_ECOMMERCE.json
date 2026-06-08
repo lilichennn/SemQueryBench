@@ -1,0 +1,475 @@
+{
+    "DISTRIBUTION_CENTERS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Chicago IL"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -87.6847
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 41.8369
+            }
+        ]
+    },
+    "EVENTS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2105244
+            },
+            {
+                "col_name": "session_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "6c0e961a-bfac-462c-bd39-a52426df7ce7"
+            },
+            {
+                "col_name": "sequence_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Iwate"
+            },
+            {
+                "col_name": "city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Morioka City"
+            },
+            {
+                "col_name": "uri",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "/cancel"
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "traffic_source",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Email"
+            },
+            {
+                "col_name": "browser",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Firefox"
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1576417200000000
+            },
+            {
+                "col_name": "ip_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "94.182.172.118"
+            },
+            {
+                "col_name": "event_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "cancel"
+            },
+            {
+                "col_name": "postal_code",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "020-0866"
+            }
+        ]
+    },
+    "INVENTORY_ITEMS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "product_sku",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2A3E953A5E3D81E67945BCE5519F84C8"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 30266
+            },
+            {
+                "col_name": "sold_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1702053341000000.0
+            },
+            {
+                "col_name": "product_department",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Women"
+            },
+            {
+                "col_name": "product_distribution_center_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.768039897618853
+            },
+            {
+                "col_name": "product_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "(ONE) 1 Satin Headband"
+            },
+            {
+                "col_name": "product_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Accessories"
+            },
+            {
+                "col_name": "product_retail_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 6.989999771118164
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13844
+            },
+            {
+                "col_name": "product_brand",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Funny Girl Designs"
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1697415641000000
+            }
+        ]
+    },
+    "ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "order_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 45
+            },
+            {
+                "col_name": "gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "F"
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1584925080000000
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 52
+            },
+            {
+                "col_name": "shipped_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "returned_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "num_of_item",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "delivered_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Cancelled"
+            }
+        ]
+    },
+    "ORDER_ITEMS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 21512
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Cancelled"
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14235
+            },
+            {
+                "col_name": "shipped_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1661118900000000.0
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14805
+            },
+            {
+                "col_name": "sale_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0199999995529651
+            },
+            {
+                "col_name": "inventory_item_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 58236
+            },
+            {
+                "col_name": "user_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 12024
+            },
+            {
+                "col_name": "delivered_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1661222940000000.0
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1720493802000000
+            },
+            {
+                "col_name": "returned_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "PRODUCTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "sku",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "EE364229B2791D1EF9355708EFF0BA34"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 14115
+            },
+            {
+                "col_name": "distribution_center_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Enzyme Regular Solid Army Caps-Black W35S45D"
+            },
+            {
+                "col_name": "category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Accessories"
+            },
+            {
+                "col_name": "cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4.879559879379869
+            },
+            {
+                "col_name": "brand",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MG"
+            },
+            {
+                "col_name": "retail_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.989999771118164
+            },
+            {
+                "col_name": "department",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Women"
+            }
+        ]
+    },
+    "USERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 11668
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -72.87094866
+            },
+            {
+                "col_name": "age",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 63
+            },
+            {
+                "col_name": "email",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "breannaritter@example.net"
+            },
+            {
+                "col_name": "country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Brasil"
+            },
+            {
+                "col_name": "city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "street_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "046 Tracy Loaf"
+            },
+            {
+                "col_name": "last_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Ritter"
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1680349680000000
+            },
+            {
+                "col_name": "first_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Breanna"
+            },
+            {
+                "col_name": "traffic_source",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Search"
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -8.065346116
+            },
+            {
+                "col_name": "postal_code",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "69980-000"
+            },
+            {
+                "col_name": "gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "F"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Acre"
+            }
+        ]
+    }
+}

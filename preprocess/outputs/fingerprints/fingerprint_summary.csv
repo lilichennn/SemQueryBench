@@ -1,0 +1,5 @@
+﻿db_id,tier,status,fingerprint_path,table_tag_count,column_tag_group_count,field_count
+ELECTRONIC_SALES,easy,ok,preprocess\outputs\fingerprints\easy\ELECTRONIC_SALES.json,4,28,61
+Refinery,easy,ok,preprocess\outputs\fingerprints\easy\Refinery.json,2,22,49
+WORD_VECTORS_US,mid,ok,preprocess\outputs\fingerprints\mid\WORD_VECTORS_US.json,2,15,19
+USA_NAMES,hard,ok,preprocess\outputs\fingerprints\hard\USA_NAMES.json,1,4,10

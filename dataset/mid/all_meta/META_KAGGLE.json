@@ -1,0 +1,1569 @@
+{
+    "COMPETITIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4758
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "ITMO year2012 ML RecSys (track 1)"
+            },
+            {
+                "col_name": "LeaderboardPercentage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": 30
+            },
+            {
+                "col_name": "TeamMergerDeadlineDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "NumScoredSubmissions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MaxTeamSize",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Slug",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "itmo-year2012-ml-recsys-track-1"
+            },
+            {
+                "col_name": "HasLeaderboard",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "ScoreTruncationNumDecimals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "EvaluationAlgorithmName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Root Mean Squared Error"
+            },
+            {
+                "col_name": "EnabledDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1447716414000000
+            },
+            {
+                "col_name": "MaxDailySubmissions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1440
+            },
+            {
+                "col_name": "ModelSubmissionDeadlineDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "FinalLeaderboardHasBeenVerified",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "DeadlineDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 1451606340000000
+            },
+            {
+                "col_name": "HasKernels",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "EvaluationAlgorithmDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Square root of the average of the squared errors."
+            },
+            {
+                "col_name": "HostName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "RewardQuantity",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ValidationSetValue",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "EvaluationAlgorithmIsMax",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "CompetitionTypeId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ValidationSetName",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "UserRankMultiplier",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ForumId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 923
+            },
+            {
+                "col_name": "OnlyAllowKernelSubmissions",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "Subtitle",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Задача для студентов 4-го курса КТ по рекомендательным системам в рамках курса по машинному обучению"
+            },
+            {
+                "col_name": "RewardType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Knowledge"
+            },
+            {
+                "col_name": "BanTeamMergers",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "EnableTeamModels",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "EnableSubmissionModelAttachments",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "EnableSubmissionModelHashes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "NumPrizes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OrganizationId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "EvaluationAlgorithmAbbreviation",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "RMSE"
+            },
+            {
+                "col_name": "TeamModelDeadlineDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "ProhibitNewEntrantsDeadlineDate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "HostSegmentTitle",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Community"
+            },
+            {
+                "col_name": "TotalTeams",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "TotalSubmissions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 117
+            },
+            {
+                "col_name": "CanQualifyTiers",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "TotalCompetitors",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            }
+        ]
+    },
+    "COMPETITIONTAGS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "TagId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 12038
+            },
+            {
+                "col_name": "CompetitionId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 13242
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 482
+            }
+        ]
+    },
+    "DATASETS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 58151
+            },
+            {
+                "col_name": "CurrentDatasourceVersionId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 123254
+            },
+            {
+                "col_name": "CurrentDatasetVersionId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 112840
+            },
+            {
+                "col_name": "LastActivityDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2018-10-02"
+            },
+            {
+                "col_name": "OwnerUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2311653
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Dataset"
+            },
+            {
+                "col_name": "TotalDownloads",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalVotes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalKernels",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalViews",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 132
+            },
+            {
+                "col_name": "ForumId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 66990
+            },
+            {
+                "col_name": "OwnerOrganizationId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CreatorUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2311653
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1538462902000000
+            }
+        ]
+    },
+    "DATASETTAGS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 445
+            },
+            {
+                "col_name": "DatasetId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 629
+            },
+            {
+                "col_name": "TagId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2304
+            }
+        ]
+    },
+    "DATASETTASKS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "DatasetId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 511638
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 462
+            },
+            {
+                "col_name": "Subtitle",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Prize Pool $6000; Submission deadline - July 25"
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1582109315000000
+            },
+            {
+                "col_name": "TotalVotes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 193
+            },
+            {
+                "col_name": "Deadline",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 1600646400000000.0
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "## Task Details\nCan we predict the possibility of a booking for a hotel based on the previous_cancel"
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Can we predict the possibility of a booking?"
+            },
+            {
+                "col_name": "OwnerUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2889731
+            },
+            {
+                "col_name": "ForumId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "DATASETTASKSUBMISSIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4719
+            },
+            {
+                "col_name": "DatasetTaskId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2304
+            },
+            {
+                "col_name": "DatasetId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "SubmittedUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 4348228
+            },
+            {
+                "col_name": "AcceptedDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "KernelId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 12336275
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1602941845000000
+            }
+        ]
+    },
+    "DATASETVOTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 400
+            },
+            {
+                "col_name": "VoteDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2016-01-28"
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 484081
+            },
+            {
+                "col_name": "DatasetVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            }
+        ]
+    },
+    "DATASOURCES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 498859
+            },
+            {
+                "col_name": "CreatorUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 3867392
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1579359348000000
+            },
+            {
+                "col_name": "CurrentDatasourceVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 925571
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Dataset"
+            }
+        ]
+    },
+    "EPISODEAGENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 81336101
+            },
+            {
+                "col_name": "EpisodeId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 33120822
+            },
+            {
+                "col_name": "Reward",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 90009.0
+            },
+            {
+                "col_name": "InitialConfidence",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 35.0
+            },
+            {
+                "col_name": "InitialScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 580.0042657891344
+            },
+            {
+                "col_name": "SubmissionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22809035
+            },
+            {
+                "col_name": "State",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "UpdatedConfidence",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 35.0
+            },
+            {
+                "col_name": "UpdatedScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 584.479734260055
+            }
+        ]
+    },
+    "EPISODES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 54280896
+            },
+            {
+                "col_name": "CompetitionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 60154
+            },
+            {
+                "col_name": "EndTime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1711149568000000
+            },
+            {
+                "col_name": "CreateTime",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1711149530000000
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "FORUMMESSAGES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2178559
+            },
+            {
+                "col_name": "PostUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 8860864
+            },
+            {
+                "col_name": "PostDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "03/12/2023 14:49:20"
+            },
+            {
+                "col_name": "MedalAwardDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "RawMarkdown",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "You can contact me via LinkedIn. https://www.linkedin.com/in/luuisotorres/"
+            },
+            {
+                "col_name": "ForumTopicId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 390539
+            },
+            {
+                "col_name": "ReplyToForumMessageId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": 2178321.0
+            },
+            {
+                "col_name": "Medal",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>You can contact me via LinkedIn. <a href=\"https://www.linkedin.com/in/luuisotorres/\" target=\"_bla"
+            }
+        ]
+    },
+    "FORUMMESSAGEVOTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 183321
+            },
+            {
+                "col_name": "ToUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 638
+            },
+            {
+                "col_name": "FromUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 307512
+            },
+            {
+                "col_name": "VoteDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2017-04-06"
+            },
+            {
+                "col_name": "ForumMessageId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            }
+        ]
+    },
+    "FORUMS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2578766
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Models"
+            },
+            {
+                "col_name": "ParentForumId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "FORUMTOPICS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "LastForumMessageId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "KernelId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": 18233971.0
+            },
+            {
+                "col_name": "FirstForumMessageId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 250718
+            },
+            {
+                "col_name": "ForumId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 16860
+            },
+            {
+                "col_name": "TotalViews",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "IsSticky",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "LastCommentDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1625377492000000
+            },
+            {
+                "col_name": "TotalReplies",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 28
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TotalMessages",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1625377492000000
+            }
+        ]
+    },
+    "KERNELLANGUAGES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DisplayName",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "R"
+            },
+            {
+                "col_name": "IsNotebook",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "R"
+            }
+        ]
+    },
+    "KERNELS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 46978346
+            },
+            {
+                "col_name": "ForumTopicId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 464880.0
+            },
+            {
+                "col_name": "MedalAwardDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "MadePublicDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2023-11-28"
+            },
+            {
+                "col_name": "FirstKernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 152701563
+            },
+            {
+                "col_name": "TotalComments",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "EvaluationDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2023-12-30"
+            },
+            {
+                "col_name": "ForkParentKernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 152550707.0
+            },
+            {
+                "col_name": "IsProjectLanguageTemplate",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "Medal",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1701170742000000
+            },
+            {
+                "col_name": "TotalVotes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "TotalViews",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 50
+            },
+            {
+                "col_name": "CurrentKernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 152712152.0
+            },
+            {
+                "col_name": "CurrentUrlSlug",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "notebook209f8fec22"
+            },
+            {
+                "col_name": "AuthorUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 17582017
+            }
+        ]
+    },
+    "KERNELTAGS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 5867
+            },
+            {
+                "col_name": "TagId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2304
+            },
+            {
+                "col_name": "KernelId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 90782
+            }
+        ]
+    },
+    "KERNELVERSIONCOMPETITIONSOURCES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6280
+            },
+            {
+                "col_name": "SourceCompetitionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3948
+            },
+            {
+                "col_name": "KernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4511
+            }
+        ]
+    },
+    "KERNELVERSIONDATASETSOURCES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 108078246
+            },
+            {
+                "col_name": "KernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 81536237
+            },
+            {
+                "col_name": "SourceDatasetVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2883584
+            }
+        ]
+    },
+    "KERNELVERSIONKERNELSOURCES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 1069706
+            },
+            {
+                "col_name": "KernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6490319
+            },
+            {
+                "col_name": "SourceKernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6488320
+            }
+        ]
+    },
+    "KERNELVERSIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ScriptId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 30636649
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 107355719
+            },
+            {
+                "col_name": "VersionNumber",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 86.0
+            },
+            {
+                "col_name": "ScriptLanguageId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Titanic Problem"
+            },
+            {
+                "col_name": "LinesChangedFromFork",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ParentScriptVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LinesChangedFromPrevious",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "LinesUnchangedFromPrevious",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 427.0
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1665069639000000
+            },
+            {
+                "col_name": "AuthorUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 11500118
+            },
+            {
+                "col_name": "TotalVotes",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalLines",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 431.0
+            },
+            {
+                "col_name": "EvaluationDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2022-10-06"
+            },
+            {
+                "col_name": "LinesInsertedFromFork",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 207.0
+            },
+            {
+                "col_name": "LinesUnchangedFromFork",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 224.0
+            },
+            {
+                "col_name": "LinesDeletedFromFork",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 76.0
+            },
+            {
+                "col_name": "IsChange",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "LinesInsertedFromPrevious",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 4.0
+            }
+        ]
+    },
+    "KERNELVOTES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3147639
+            },
+            {
+                "col_name": "KernelVersionId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 83046050
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 6437951
+            },
+            {
+                "col_name": "VoteDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-12-23"
+            }
+        ]
+    },
+    "SUBMISSIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "SourceKernelVersionId",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2575661
+            },
+            {
+                "col_name": "PublicScoreFullPrecision",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.4713052641725747
+            },
+            {
+                "col_name": "SubmissionDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2016-02-16"
+            },
+            {
+                "col_name": "PublicScoreLeaderboardDisplay",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.4713
+            },
+            {
+                "col_name": "IsAfterDeadline",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "PrivateScoreFullPrecision",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.47029765275103375
+            },
+            {
+                "col_name": "ScoreDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2016-02-16"
+            },
+            {
+                "col_name": "TeamId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 270557
+            },
+            {
+                "col_name": "SubmittedUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 441360
+            },
+            {
+                "col_name": "PrivateScoreLeaderboardDisplay",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.47029
+            }
+        ]
+    },
+    "TAGS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2606
+            },
+            {
+                "col_name": "CompetitionCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Basketball is one of the world's most popular and widely viewed sports. Analyze Kobe Bryant's shot s"
+            },
+            {
+                "col_name": "KernelCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 662
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "basketball"
+            },
+            {
+                "col_name": "DatasetCount",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1870
+            },
+            {
+                "col_name": "FullPath",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "subject > health and fitness > exercise > sports > basketball"
+            },
+            {
+                "col_name": "ParentTagId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4141
+            },
+            {
+                "col_name": "Slug",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "basketball"
+            }
+        ]
+    },
+    "TEAMMEMBERSHIPS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 18940
+            },
+            {
+                "col_name": "TeamId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4541
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 10466
+            },
+            {
+                "col_name": "RequestDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            }
+        ]
+    },
+    "USERACHIEVEMENTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6426519
+            },
+            {
+                "col_name": "TotalGold",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TierAchievementDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "HighestRanking",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "CurrentRanking",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 930969
+            },
+            {
+                "col_name": "TotalSilver",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "Tier",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "AchievementType",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Competitions"
+            },
+            {
+                "col_name": "Points",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "TotalBronze",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "USERFOLLOWERS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 412502
+            },
+            {
+                "col_name": "CreationDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2020-03-08"
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 368
+            },
+            {
+                "col_name": "FollowingUserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 1302389
+            }
+        ]
+    },
+    "USERORGANIZATIONS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 33
+            },
+            {
+                "col_name": "JoinDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2016-10-04"
+            },
+            {
+                "col_name": "OrganizationId",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "UserId",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 724814
+            }
+        ]
+    },
+    "USERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "Id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 154581
+            },
+            {
+                "col_name": "Country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "RegisterDate",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "01/01/2014"
+            },
+            {
+                "col_name": "PerformanceTier",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DisplayName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Aashu"
+            },
+            {
+                "col_name": "UserName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "aashu154581"
+            }
+        ]
+    }
+}

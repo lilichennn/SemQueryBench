@@ -1,0 +1,133 @@
+{
+    "main": {
+        "GLOVE_VECTORS": {
+            "table_tag": "REFERENCE",
+            "colname_list": [
+                {
+                    "col_name": "word",
+                    "col_tag": "ID_EXTERNAL",
+                    "col_type": "TEXT",
+                    "sample_value": "01:44"
+                },
+                {
+                    "col_name": "vector",
+                    "col_tag": "DESC_LONG",
+                    "col_type": "VARIANT",
+                    "sample_value": "[\n  -4.383600130677223e-02,\n  1.611000001430511e-01,\n  5.632200241088867e-01,\n  -4.001300036907196e-"
+                }
+            ]
+        },
+        "NATURE": {
+            "table_tag": "MASTER",
+            "colname_list": [
+                {
+                    "col_name": "doi",
+                    "col_tag": "ID_EXTERNAL",
+                    "col_type": "TEXT",
+                    "sample_value": "10.1038/s41598-018-28648-8"
+                },
+                {
+                    "col_name": "id",
+                    "col_tag": "ID_MAIN",
+                    "col_type": "TEXT",
+                    "sample_value": "95db4daa-a9f6-4eda-8ce3-c6045d75320f"
+                },
+                {
+                    "col_name": "abstract",
+                    "col_tag": "DESC_LONG",
+                    "col_type": "TEXT",
+                    "sample_value": "Serum is a common supplement for cell culture due to it containing the essential active components f"
+                },
+                {
+                    "col_name": "acquisition_date",
+                    "col_tag": "TIME_CREATE",
+                    "col_type": "DATE",
+                    "sample_value": "2020-06-06"
+                },
+                {
+                    "col_name": "authors",
+                    "col_tag": "NAME_PERSON",
+                    "col_type": "TEXT",
+                    "sample_value": "Linlin Wang; Ying Liu; Cui Qi; Luyao Shen; Junyan Wang; Xiangjun Liu; Nan Zhang; Tao Bing; Dihua Sha"
+                },
+                {
+                    "col_name": "body",
+                    "col_tag": "DESC_LONG",
+                    "col_type": "TEXT",
+                    "sample_value": "Introduction\nCell culture is a widely used tool to study physiological, biological and pharmacologic"
+                },
+                {
+                    "col_name": "category",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "Cell culture; Chemical biology"
+                },
+                {
+                    "col_name": "citations",
+                    "col_tag": "VAL_QUANTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "7"
+                },
+                {
+                    "col_name": "date",
+                    "col_tag": "TIME_EVENT",
+                    "col_type": "DATE",
+                    "sample_value": "2018-07-10"
+                },
+                {
+                    "col_name": "keywords",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "Cell culture; Chemical biology"
+                },
+                {
+                    "col_name": "link",
+                    "col_tag": "CONTACT_URL",
+                    "col_type": "TEXT",
+                    "sample_value": "https://www.nature.com/articles/s41598-018-28648-8"
+                },
+                {
+                    "col_name": "nature_source",
+                    "col_tag": "NAME_ENTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "Scientific Reports 2018 8:1"
+                },
+                {
+                    "col_name": "organization_affiliated",
+                    "col_tag": "LOCATION",
+                    "col_type": "TEXT",
+                    "sample_value": "Department Beijing National Laboratory for Molecular Sciences, Key Laboratory of Analytical Chemistr"
+                },
+                {
+                    "col_name": "pdf_link",
+                    "col_tag": "CONTACT_URL",
+                    "col_type": "TEXT",
+                    "sample_value": "https://www.nature.com/articles/s41598-018-28648-8.pdf"
+                },
+                {
+                    "col_name": "title",
+                    "col_tag": "NAME_ENTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "Oxidative degradation of polyamines by serum supplement causes cytotoxicity on cultured cells"
+                }
+            ]
+        },
+        "WORD_FREQUENCIES": {
+            "table_tag": "REFERENCE",
+            "colname_list": [
+                {
+                    "col_name": "frequency",
+                    "col_tag": "VAL_QUANTITY",
+                    "col_type": "NUMBER",
+                    "sample_value": 256
+                },
+                {
+                    "col_name": "word",
+                    "col_tag": "NAME_ENTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "separating"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,1087 @@
+{
+    "PROD_AUTHORREFERENCE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Refno",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "NameOrder",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Hayata I"
+            }
+        ]
+    },
+    "PROD_CYTOBANDS_HG38": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cytoband_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1p35"
+            },
+            {
+                "col_name": "hg38_stop",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 34300000
+            },
+            {
+                "col_name": "hg38_start",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 27600000
+            },
+            {
+                "col_name": "chromosome",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "chr1"
+            }
+        ]
+    },
+    "PROD_CYTOCONVERTED": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Clone",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2238
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Gain"
+            },
+            {
+                "col_name": "End",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 50400000
+            },
+            {
+                "col_name": "CellsPresent",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "unknown"
+            },
+            {
+                "col_name": "ChrOrd",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "Chr",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "chr14"
+            },
+            {
+                "col_name": "Start",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "PROD_CYTOCONVERTEDLOG": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5316
+            },
+            {
+                "col_name": "Clone",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Warning in some chromosomes unaccounted for"
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Warning"
+            }
+        ]
+    },
+    "PROD_CYTOGEN": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 223
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "PrevTreat",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SpecObs",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PrevTopo",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Immunology",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Race",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "W"
+            },
+            {
+                "col_name": "Morph",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1010"
+            },
+            {
+                "col_name": "Age",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 60
+            },
+            {
+                "col_name": "SpecMorph",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Topo",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Sex",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "Country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "3020"
+            },
+            {
+                "col_name": "Series",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "HerDis",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "110"
+            },
+            {
+                "col_name": "CaseOrder",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PrevMorph",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Origin",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "SpecHerDis",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "+21"
+            },
+            {
+                "col_name": "PrevTum",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            }
+        ]
+    },
+    "PROD_CYTOGENINV": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 48
+            },
+            {
+                "col_name": "CaseOrder",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "Tissue",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "BM"
+            },
+            {
+                "col_name": "KaryLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "KaryShort",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "52-54,XY,+3,+6,+7,+8,t(9;22)(q34;q11),+19,+21,+der(22)t(9;22)(q34;q11)x2,+1-3mar"
+            },
+            {
+                "col_name": "Clones",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "KaryLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 80
+            },
+            {
+                "col_name": "InvDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            }
+        ]
+    },
+    "PROD_CYTOGENINVVALID": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 14318
+            },
+            {
+                "col_name": "Reason",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "KaryLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "46,XY,der(8)t(8;9)(p22;p24)t(8;22)(q24;q11),der(9)t(8;9)(p21;p24)x2,der(21)t(1;21)(q21;p11),der(22)t"
+            },
+            {
+                "col_name": "KaryShort",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "46,XY,der(8)t(8;9)(p22;p24)t(8;22)(q24;q11),der(9)t(8;9)(p21;p24)x2,der(21)t(1;21)(q21;p11),der(22)t"
+            },
+            {
+                "col_name": "CytoConvInput",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "46,XY,der(8)t(8;9)(p22;p24)t(8;22)(q24;q11),der(9)t(8;9)(p21;p24)x2,der(21)t(1;21)(q21;p11),der(22)t"
+            },
+            {
+                "col_name": "Message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Has been altered"
+            },
+            {
+                "col_name": "KaryLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 256
+            }
+        ]
+    },
+    "PROD_KARYABNORM": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "109"
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 401
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CloneNo",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Abnormality",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "??"
+            }
+        ]
+    },
+    "PROD_KARYBIT": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CloneNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 524
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Bit",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "??"
+            }
+        ]
+    },
+    "PROD_KARYBREAK": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "CloneNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4169
+            },
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "384"
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Breakpoint",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "?"
+            }
+        ]
+    },
+    "PROD_KARYCLONE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "CaseNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "33"
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4018
+            },
+            {
+                "col_name": "CloneNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "CloneLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "ChromoMin",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 45
+            },
+            {
+                "col_name": "CloneLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CloneShort",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "45,X,-X"
+            },
+            {
+                "col_name": "ChromoMax",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 45
+            },
+            {
+                "col_name": "Sole",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            }
+        ]
+    },
+    "PROD_KODER": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Kod",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Flagga1",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Kortnamn",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Lat Am"
+            },
+            {
+                "col_name": "Benamning",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Flagga4",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Inregdatum",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GiltigTill",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "KodTyp",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "GEO"
+            },
+            {
+                "col_name": "Aktiv",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Intern",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Notering",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Flagga2",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Flagga3",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GiltigFran",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "PROD_MOLBIOLCLINASSOC": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2993
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "GeneShort",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "GeneLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Topo",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "KaryShort",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MolClin",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "KaryLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Immunology",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Morph",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "1501"
+            },
+            {
+                "col_name": "GeneLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "KaryLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "PROD_MOLCLINABNORM": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1696
+            },
+            {
+                "col_name": "Abnormality",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "r"
+            },
+            {
+                "col_name": "MolClin",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            }
+        ]
+    },
+    "PROD_MOLCLINBREAK": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2514
+            },
+            {
+                "col_name": "MolClin",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "Breakpoint",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "InvNo",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "PROD_MOLCLINGENE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "InvNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OrderNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4541
+            },
+            {
+                "col_name": "Prefix",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MolClin",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "Gene",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "PML::RARA"
+            },
+            {
+                "col_name": "Suffix",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "PROD_RECURRENTDATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "TotalCases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "Chromosome",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "Arm",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "q"
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "U"
+            },
+            {
+                "col_name": "Band",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "10"
+            },
+            {
+                "col_name": "Topo",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "0801"
+            },
+            {
+                "col_name": "Abnormality",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "der(1;2)(q10;p10)"
+            },
+            {
+                "col_name": "Morph",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "1702"
+            },
+            {
+                "col_name": "Gene",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ChrOrder",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "PROD_RECURRENTNUMDATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Chromosome",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "Topo",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Abnormality",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "+1"
+            },
+            {
+                "col_name": "ChrOrder",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Morph",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "1202"
+            },
+            {
+                "col_name": "TotalCases",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "36"
+            }
+        ]
+    },
+    "PROD_REFERENCE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "Pubmed",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "4111610"
+            },
+            {
+                "col_name": "RefNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 32
+            },
+            {
+                "col_name": "Journal",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Lancet"
+            },
+            {
+                "col_name": "AuthorsLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "29"
+            },
+            {
+                "col_name": "Flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "Abbreviation",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Lobb et al 1972"
+            },
+            {
+                "col_name": "Year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1972
+            },
+            {
+                "col_name": "TitleLength",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 56
+            },
+            {
+                "col_name": "AuthorsLong",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Text",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "AuthorsShort",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Lobb DS, Reeves BR, Lawler SD"
+            },
+            {
+                "col_name": "TitleLong",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Volume",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "(1):849-850"
+            },
+            {
+                "col_name": "TitleShort",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Identification of isochromosome 17 in myeloid leukaemia."
+            }
+        ]
+    }
+}

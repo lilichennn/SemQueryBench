@@ -1,0 +1,2166 @@
+{
+    "IDC_V17_ANALYSIS_RESULTS_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "DOI",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.7937/k9/tcia.2015.1buvfjr7"
+            },
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "QIN-LungCT-Seg"
+            },
+            {
+                "col_name": "CancerType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Lung"
+            },
+            {
+                "col_name": "Updated",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2018-12-18"
+            },
+            {
+                "col_name": "AnalysisArtifacts",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Tumor segmentations"
+            },
+            {
+                "col_name": "license_long_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Creative Commons Attribution 3.0 Unported License"
+            },
+            {
+                "col_name": "Subjects",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 31
+            },
+            {
+                "col_name": "license_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://creativecommons.org/licenses/by/3.0/"
+            },
+            {
+                "col_name": "Access",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Public"
+            },
+            {
+                "col_name": "Collections",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "lidc_idri,lung_phantom,qin_lung_ct,rider_lung_ct"
+            },
+            {
+                "col_name": "license_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "CC BY 3.0"
+            },
+            {
+                "col_name": "Title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "QIN multi-site collection of Lung CT data with Nodule Segmentations"
+            },
+            {
+                "col_name": "AnalysisArtifactsonTCIA",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Tumor segmentations"
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p> This collection contains lung nodule segmentations obtained using segmentation tools that partic"
+            },
+            {
+                "col_name": "Location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Chest"
+            }
+        ]
+    },
+    "IDC_V17_AUXILIARY_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.7695.4164.784850890634822414222832957135"
+            },
+            {
+                "col_name": "idc_case_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "597dd9e0-b18f-45ec-8f9f-fde45f927978"
+            },
+            {
+                "col_name": "StudyInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.7695.4164.205849350381621543824875482470"
+            },
+            {
+                "col_name": "instance_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "f4cce939-f17b-479a-927f-afe61415704b"
+            },
+            {
+                "col_name": "series_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5094daf6-7d83-435f-abf2-eb5f47675b66"
+            },
+            {
+                "col_name": "submitter_case_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ACRIN-6698-317641"
+            },
+            {
+                "col_name": "SeriesInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.7695.4164.100929779510512848238254512097"
+            },
+            {
+                "col_name": "study_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "79bed30c-99bb-466c-90b1-1b4347d02c9b"
+            },
+            {
+                "col_name": "series_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1ecfadceef1b36497a2c2e6bb1a4c173"
+            },
+            {
+                "col_name": "collection_revised_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "license_long_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Creative Commons Attribution 4.0 International License"
+            },
+            {
+                "col_name": "series_revised_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "source_doi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.7937/tcia.kk02-6d95"
+            },
+            {
+                "col_name": "instance_revised_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "collection_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1699840988801375
+            },
+            {
+                "col_name": "series_instances",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 53
+            },
+            {
+                "col_name": "collection_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ACRIN-6698"
+            },
+            {
+                "col_name": "tcia_api_collection_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ACRIN-6698"
+            },
+            {
+                "col_name": "instance_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "d67c414bbb51fa3292567a22231290b5"
+            },
+            {
+                "col_name": "patient_init_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "collection_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "75b0cee99d4b433f08ffec955ee4c70c"
+            },
+            {
+                "col_name": "collection_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "acrin_6698"
+            },
+            {
+                "col_name": "access",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Public"
+            },
+            {
+                "col_name": "series_gcs_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "gs://public-datasets-idc/5094daf6-7d83-435f-abf2-eb5f47675b66/"
+            },
+            {
+                "col_name": "gcs_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "gs://public-datasets-idc/5094daf6-7d83-435f-abf2-eb5f47675b66/f4cce939-f17b-479a-927f-afe61415704b.d"
+            },
+            {
+                "col_name": "study_revised_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "study_final_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "instance_final_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "source_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://doi.org/10.7937/tcia.kk02-6d95"
+            },
+            {
+                "col_name": "patient_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "c6398ab064dbef9673a382e9a00e54b3"
+            },
+            {
+                "col_name": "idc_webapp_collection_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "acrin_6698"
+            },
+            {
+                "col_name": "gcs_bucket",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "public-datasets-idc"
+            },
+            {
+                "col_name": "series_final_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "series_init_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "license_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://creativecommons.org/licenses/by/4.0/"
+            },
+            {
+                "col_name": "instance_size",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 530510
+            },
+            {
+                "col_name": "license_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "CC BY 4.0"
+            },
+            {
+                "col_name": "study_instances",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1906
+            },
+            {
+                "col_name": "instance_init_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "study_init_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "collection_init_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "study_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01c67bf32efb09f97610422c4f05e91f"
+            },
+            {
+                "col_name": "aws_bucket",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "idc-open-data"
+            },
+            {
+                "col_name": "series_aws_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "s3://idc-open-data/5094daf6-7d83-435f-abf2-eb5f47675b66/"
+            },
+            {
+                "col_name": "patient_revised_idc_version",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "aws_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "s3://idc-open-data/5094daf6-7d83-435f-abf2-eb5f47675b66/f4cce939-f17b-479a-927f-afe61415704b.dcm"
+            }
+        ]
+    },
+    "IDC_V17_DICOM_METADATA_CURATED": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.1620.1225.337801122878670074294531806897"
+            },
+            {
+                "col_name": "BodyPartExamined",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SliceThickness",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_DICOM_METADATA_CURATED_SERIES_LEVEL": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SeriesInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.2103.7010.269874.1.2"
+            },
+            {
+                "col_name": "ObjectiveLensPower",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_TotalPixelMatrixRows",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Modality",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "KO"
+            },
+            {
+                "col_name": "primaryAnatomicStructure_code_designator_value_str",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "illuminationType_code_designator_value_str",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "illuminationType_CodeMeaning",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_PixelSpacing_2sf",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "primaryAnatomicStructure_CodeMeaning",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_TotalPixelMatrixColumns",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_DICOM_PIVOT": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "crdc_instance_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "98d5d298-1116-4671-b17a-5cf46018606c"
+            },
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.201644798538859159720916103279874451632"
+            },
+            {
+                "col_name": "crdc_study_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "254422c4-1f0c-4840-b56f-6e5f75dde6aa"
+            },
+            {
+                "col_name": "FrameOfReferenceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SeriesInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.185195136958159502142654387221547856729"
+            },
+            {
+                "col_name": "StudyInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.92084504364921012205012538829705733768"
+            },
+            {
+                "col_name": "crdc_series_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "7a1027f4-b835-4a2f-962e-6993fda9dc87"
+            },
+            {
+                "col_name": "analysis_results_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "UPENN-GBM-00513"
+            },
+            {
+                "col_name": "SOPClassUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.840.10008.5.1.4.1.1.4"
+            },
+            {
+                "col_name": "StudyDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "MR HEAD W AND WO IV CONTRAST TUMOR NEW"
+            },
+            {
+                "col_name": "Program",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Community"
+            },
+            {
+                "col_name": "BodyPartExamined",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "HEADNECK"
+            },
+            {
+                "col_name": "Manufacturer",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SIEMENS"
+            },
+            {
+                "col_name": "Occupation",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Modality",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MR"
+            },
+            {
+                "col_name": "source_DOI",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.7937/TCIA.709X-DN49"
+            },
+            {
+                "col_name": "PatientWeight",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "94.8008173893"
+            },
+            {
+                "col_name": "max_TotalPixelMatrixRows",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 128
+            },
+            {
+                "col_name": "RequestedProcedureComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientAge",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "076Y"
+            },
+            {
+                "col_name": "min_PixelSpacing",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.7
+            },
+            {
+                "col_name": "SmokingStatus",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "UNKNOWN"
+            },
+            {
+                "col_name": "tcia_species",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Human"
+            },
+            {
+                "col_name": "gcs_bucket",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "public-datasets-idc"
+            },
+            {
+                "col_name": "Surface_area_of_mesh",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "instance_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 36948
+            },
+            {
+                "col_name": "license_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "CC BY 4.0"
+            },
+            {
+                "col_name": "Malignancy",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "illuminationType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "aws_url",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "s3://idc-open-data/7a1027f4-b835-4a2f-962e-6993fda9dc87/98d5d298-1116-4671-b17a-5cf46018606c.dcm"
+            },
+            {
+                "col_name": "Diameter",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "SeriesDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ep2d_perf BOLUS_TERA"
+            },
+            {
+                "col_name": "SegmentedPropertyTypeCodeSequence",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Margin",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "gcs_url",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "gs://public-datasets-idc/7a1027f4-b835-4a2f-962e-6993fda9dc87/98d5d298-1116-4671-b17a-5cf46018606c.d"
+            },
+            {
+                "col_name": "collection_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "upenn_gbm"
+            },
+            {
+                "col_name": "Internal_structure",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SeriesNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "14"
+            },
+            {
+                "col_name": "EthnicGroup",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Non-Hispanic Non"
+            },
+            {
+                "col_name": "AdditionalPatientHistory",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Sphericity",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MedicalAlerts",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "SliceThickness",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 5.0
+            },
+            {
+                "col_name": "SeriesDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2011-09-03"
+            },
+            {
+                "col_name": "PregnancyStatus",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "Apparent_Diffusion_Coefficient",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "SegmentedPropertyCategoryCodeSequence",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "access",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Public"
+            },
+            {
+                "col_name": "Calcification",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Sphericity_quant",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientSex",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "aws_bucket",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "idc-open-data"
+            },
+            {
+                "col_name": "PatientSize",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "1.7018034058333"
+            },
+            {
+                "col_name": "CancerType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Glioblastoma"
+            },
+            {
+                "col_name": "ManufacturerModelName",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TrioTim"
+            },
+            {
+                "col_name": "Subtlety_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tcia_tumorLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Brain"
+            },
+            {
+                "col_name": "SegmentAlgorithmType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ImageType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ORIGINAL, PRIMARY, PERFUSION, NONE, ND, NORM"
+            },
+            {
+                "col_name": "Volume",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Volume_of_Mesh",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Allergies",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "StudyDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2011-09-03"
+            },
+            {
+                "col_name": "SegmentNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "Lobular_Pattern",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientComments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LastMenstrualDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "Spiculation",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "SamplesPerPixel",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "primaryAnatomicStructure",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Texture",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "AnatomicRegionSequence",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_TotalPixelMatrixColumns",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 128
+            },
+            {
+                "col_name": "ObjectiveLensPower",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "ReasonForStudy",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_MEASUREMENT_GROUPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "segmentationInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.63809.1553350406.821822"
+            },
+            {
+                "col_name": "trackingUniqueIdentifier",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2.25.23486147279250282548479958366624720415557115703535527581314"
+            },
+            {
+                "col_name": "measurementGroup_number",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.63810.1553350410.105043"
+            },
+            {
+                "col_name": "sourceSegmentedSeriesUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.6279.6001.117040183261056772902616195387"
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LIDC-IDRI-0912"
+            },
+            {
+                "col_name": "segmentationSegmentNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "findingSite",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Lung\",\n  \"CodeValue\": \"T-28000\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            },
+            {
+                "col_name": "trackingIdentifier",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Nodule 1"
+            },
+            {
+                "col_name": "SeriesDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Nodule 1 - Annotation 15103 evaluations"
+            },
+            {
+                "col_name": "contentSequence",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"ConceptCodeSequence\": [],\n  \"ConceptNameCodeSequence\": [\n    {\n      \"CodeMeaning\": \"Measuremen"
+            },
+            {
+                "col_name": "finding",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Nodule\",\n  \"CodeValue\": \"M-03010\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            }
+        ]
+    },
+    "IDC_V17_MUTABLE_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "crdc_series_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "4199496f-831d-40d0-94f9-a55a0eea351a"
+            },
+            {
+                "col_name": "crdc_study_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "a61b88d9-aa41-4f49-ae44-80dc7bedd9c4"
+            },
+            {
+                "col_name": "crdc_instance_uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "a670c5c8-8d2f-4dc7-b6ee-dcdd03a1c671"
+            },
+            {
+                "col_name": "aws_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_doi",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "10.7937/K9/TCIA.2016.LXKQ47MS"
+            },
+            {
+                "col_name": "access",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Limited"
+            },
+            {
+                "col_name": "gcs_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "license_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "license_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://doi.org/10.7937/K9/TCIA.2016.LXKQ47MS"
+            },
+            {
+                "col_name": "license_long_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_ORIGINAL_COLLECTIONS_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "idc_webapp_collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "victre"
+            },
+            {
+                "col_name": "tcia_api_collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "VICTRE"
+            },
+            {
+                "col_name": "tcia_wiki_collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "VICTRE"
+            },
+            {
+                "col_name": "collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "victre"
+            },
+            {
+                "col_name": "CancerType",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Breast Cancer"
+            },
+            {
+                "col_name": "Access",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Public\"\n]"
+            },
+            {
+                "col_name": "ImageTypes",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MG"
+            },
+            {
+                "col_name": "DOI",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.7937/tcia.2019.ho23nxaw"
+            },
+            {
+                "col_name": "Subjects",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2994
+            },
+            {
+                "col_name": "Status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Complete"
+            },
+            {
+                "col_name": "Species",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Human"
+            },
+            {
+                "col_name": "Updated",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATE",
+                "sample_value": "2019-03-08"
+            },
+            {
+                "col_name": "Location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Breast"
+            },
+            {
+                "col_name": "Description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p >\tThe VICTRE Trial: Open-Source, In-Silico Clinical Trial For Evaluating Digital Breast Tomosynth"
+            },
+            {
+                "col_name": "collection_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "VICTRE"
+            },
+            {
+                "col_name": "URL",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://doi.org/10.7937/tcia.2019.ho23nxaw"
+            },
+            {
+                "col_name": "SupportingData",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "licenses",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"license_long_name\": \"Creative Commons Attribution 3.0 Unported License\",\n    \"license_sho"
+            },
+            {
+                "col_name": "Program",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "FDA"
+            }
+        ]
+    },
+    "IDC_V17_QUALITATIVE_MEASUREMENTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "trackingIdentifier",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Nodule 2"
+            },
+            {
+                "col_name": "measurementGroup_number",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LIDC-IDRI-0036"
+            },
+            {
+                "col_name": "trackingUniqueIdentifier",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2.25.38911037880904767219763718462833112874273705289856885576034"
+            },
+            {
+                "col_name": "segmentationInstanceUID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.1584.1553286271.3857"
+            },
+            {
+                "col_name": "findingSite",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Lung\",\n  \"CodeValue\": \"T-28000\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            },
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.1585.1553286274.439237"
+            },
+            {
+                "col_name": "sourceSegmentedSeriesUID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.6279.6001.177685820605315926524514718990"
+            },
+            {
+                "col_name": "Quantity",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Lobular Pattern\",\n  \"CodeValue\": \"C62175\",\n  \"CodingSchemeDesignator\": \"NCIt\"\n}"
+            },
+            {
+                "col_name": "finding",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Nodule\",\n  \"CodeValue\": \"M-03010\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            },
+            {
+                "col_name": "segmentationSegmentNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "Value",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"2 out of 5\",\n  \"CodeValue\": \"002\",\n  \"CodingSchemeDesignator\": \"99LIDCQIICR\"\n}"
+            }
+        ]
+    },
+    "IDC_V17_QUANTITATIVE_MEASUREMENTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "segmentationInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.24707.1553307837.545602"
+            },
+            {
+                "col_name": "measurementGroup_number",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.0.24708.1553307842.497923"
+            },
+            {
+                "col_name": "sourceSegmentedSeriesUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.6279.6001.306558074682524259000586270818"
+            },
+            {
+                "col_name": "trackingUniqueIdentifier",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2.25.10008514525368495574288867913463260630101268156245589914641"
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LIDC-IDRI-0397"
+            },
+            {
+                "col_name": "findingSite",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Lung\",\n  \"CodeValue\": \"T-28000\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            },
+            {
+                "col_name": "Units",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"cubic millimeter\",\n  \"CodeValue\": \"mm3\",\n  \"CodingSchemeDesignator\": \"UCUM\"\n}"
+            },
+            {
+                "col_name": "Value",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": "27.036710000"
+            },
+            {
+                "col_name": "SeriesDescription",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Nodule 1 - Annotation 3 evaluations"
+            },
+            {
+                "col_name": "trackingIdentifier",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Nodule 1"
+            },
+            {
+                "col_name": "finding",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Nodule\",\n  \"CodeValue\": \"M-03010\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            },
+            {
+                "col_name": "segmentationSegmentNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1\n]"
+            },
+            {
+                "col_name": "derivationModifier",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "Quantity",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Volume\",\n  \"CodeValue\": \"G-D705\",\n  \"CodingSchemeDesignator\": \"SRT\"\n}"
+            }
+        ]
+    },
+    "IDC_V17_SEGMENTATIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "SeriesInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.3.17436516.653383.1696970728.262449"
+            },
+            {
+                "col_name": "StudyInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.6655.2359.347530668916195093993314226855"
+            },
+            {
+                "col_name": "TrackingUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "PatientID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Lung_Dx-A0190"
+            },
+            {
+                "col_name": "SOPInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.2.276.0.7230010.3.1.4.17436516.653383.1696970728.262450"
+            },
+            {
+                "col_name": "segmented_SeriesInstanceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TrackingID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "FrameOfReferenceUID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1.3.6.1.4.1.14519.5.2.1.6655.2359.138271048259053653884696768856"
+            },
+            {
+                "col_name": "SegmentedPropertyCategory",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Radiologic Finding\",\n  \"CodeValue\": \"C35869\",\n  \"CodingSchemeDesignator\": \"NCIt\""
+            },
+            {
+                "col_name": "SegmentAlgorithmType",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SEMIAUTOMATIC"
+            },
+            {
+                "col_name": "SegmentNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "SegmentedPropertyType",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"AnatomicRegionModifierSequence\": [],\n  \"CodeMeaning\": \"FDG-Avid Tumor\",\n  \"CodeValue\": \"C168968"
+            },
+            {
+                "col_name": "SegmentAlgorithmName",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "BAMF-Lung-FDG-PET-CT"
+            },
+            {
+                "col_name": "AnatomicRegion",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Lung\",\n  \"CodeValue\": \"39607008\",\n  \"CodingSchemeDesignator\": \"SCT\"\n}"
+            },
+            {
+                "col_name": "viewer_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "AnatomicRegionModifier",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"CodeMeaning\": \"Right and left\",\n  \"CodeValue\": \"51440002\",\n  \"CodingSchemeDesignator\": \"SCT\"\n}"
+            }
+        ]
+    },
+    "IDC_V17_TCGA_BIOSPECIMEN_REL9": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "sample_gdc_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "a18a106c-712f-4161-9227-a0659d23d648"
+            },
+            {
+                "col_name": "batch_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 256
+            },
+            {
+                "col_name": "case_gdc_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "63dcfa32-c69e-45ad-bea3-ae672acb11c6"
+            },
+            {
+                "col_name": "case_barcode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "TCGA-FU-A40J"
+            },
+            {
+                "col_name": "sample_barcode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "TCGA-FU-A40J-10A"
+            },
+            {
+                "col_name": "min_percent_lymphocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "project_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TCGA-CESC"
+            },
+            {
+                "col_name": "avg_percent_tumor_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_percent_stromal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_collection",
+                "col_tag": "TIME_EVENT",
+                "col_type": "FLOAT",
+                "sample_value": 76.0
+            },
+            {
+                "col_name": "bcr",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Nationwide Children's Hospital"
+            },
+            {
+                "col_name": "avg_percent_stromal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "avg_percent_tumor_nuclei",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_percent_stromal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "num_portions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "min_percent_neutrophil_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_percent_tumor_nuclei",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_percent_tumor_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "sample_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "10"
+            },
+            {
+                "col_name": "avg_percent_monocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "avg_percent_neutrophil_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_percent_necrosis",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_percent_necrosis",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "num_slides",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "max_percent_tumor_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "avg_percent_necrosis",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_percent_monocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "avg_percent_normal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "program_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TCGA"
+            },
+            {
+                "col_name": "sample_type_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Blood Derived Normal"
+            },
+            {
+                "col_name": "min_percent_normal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_percent_tumor_nuclei",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "avg_percent_lymphocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_percent_lymphocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "is_ffpe",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "NO"
+            },
+            {
+                "col_name": "max_percent_normal_cells",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_sample_procurement",
+                "col_tag": "TIME_EVENT",
+                "col_type": "FLOAT",
+                "sample_value": 42.0
+            },
+            {
+                "col_name": "max_percent_neutrophil_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "min_percent_monocyte_infiltration",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_TCGA_CLINICAL_REL9": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "case_gdc_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "230edb1a-dd49-43be-9877-d2041c32fe77"
+            },
+            {
+                "col_name": "case_barcode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "TCGA-72-4237"
+            },
+            {
+                "col_name": "tss_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "primary_neoplasm_melanoma_dx",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "batch_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "clinical_M",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_death",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "menopause_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "other_dx",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "other_malignancy_anatomic_site",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_initial_pathologic_diagnosis",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "primary_therapy_outcome_success",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "other_malignancy_histological_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pathologic_T",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "new_tumor_event_after_initial_treatment",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "clinical_T",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_last_followup",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pathologic_N",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "icd_10",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Ovarian Serous Cystadenocarcinoma"
+            },
+            {
+                "col_name": "age_at_diagnosis",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "number_of_lymphnodes_examined",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "program_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "TCGA"
+            },
+            {
+                "col_name": "country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "anatomic_neoplasm_subdivision",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "history_of_colon_polyps",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "mononucleotide_and_dinucleotide_marker_panel_analysis_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "lymphnodes_examined",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "icd_o_3_histology",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "number_of_lymphnodes_positive_by_he",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_submitted_specimen_dx",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pathologic_stage",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_pylori_infection",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "other_malignancy_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "year_of_tobacco_smoking_onset",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "histological_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pregnancies",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ethnicity",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "race",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "year_of_diagnosis",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "residual_tumor",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "vital_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tumor_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_last_known_alive",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "project_short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TCGA-OV"
+            },
+            {
+                "col_name": "neoplasm_histologic_grade",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "history_of_neoadjuvant_treatment",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "clinical_N",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "gender",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "disease_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "OV"
+            },
+            {
+                "col_name": "tumor_tissue_site",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "icd_o_3_site",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "venous_invasion",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "gleason_score_combined",
+                "col_tag": "VAL_SCORE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "days_to_birth",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bmi",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "stopped_smoking_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "hpv_calls",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bcr",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "lymphatic_invasion",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "clinical_stage",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "psa_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "colorectal_cancer",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tobacco_smoking_history",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "lymphovascular_invasion_present",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pathologic_M",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "age_began_smoking_in_years",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "hpv_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "number_pack_years_smoked",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "person_neoplasm_cancer_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "IDC_V17_VERSION_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "version_hash",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "633f378a65709a6b2bc355ad318171b4"
+            },
+            {
+                "col_name": "version_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2021-10-23"
+            },
+            {
+                "col_name": "idc_version",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            }
+        ]
+    }
+}

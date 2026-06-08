@@ -1,0 +1,892 @@
+{
+    "CHANNELS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "channel_class_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "channel_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "channel_total_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "channel_desc",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Partners"
+            },
+            {
+                "col_name": "channel_total",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Channel total"
+            },
+            {
+                "col_name": "channel_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Others"
+            }
+        ]
+    },
+    "COSTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "prod_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 14
+            },
+            {
+                "col_name": "time_id",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-19"
+            },
+            {
+                "col_name": "channel_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "unit_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1108.99
+            },
+            {
+                "col_name": "promo_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 999
+            },
+            {
+                "col_name": "unit_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 886.45
+            }
+        ]
+    },
+    "COUNTRIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "country_total_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 52806
+            },
+            {
+                "col_name": "country_subregion_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 52793
+            },
+            {
+                "col_name": "country_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 52771
+            },
+            {
+                "col_name": "country_iso_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CN"
+            },
+            {
+                "col_name": "country_region_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 52802
+            },
+            {
+                "col_name": "country_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "China"
+            },
+            {
+                "col_name": "country_total",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "World total"
+            },
+            {
+                "col_name": "country_subregion",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Asia"
+            },
+            {
+                "col_name": "country_region",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Asia"
+            }
+        ]
+    },
+    "CURRENCY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2019
+            },
+            {
+                "col_name": "country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Singapore"
+            },
+            {
+                "col_name": "to_us",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            }
+        ]
+    },
+    "CUSTOMERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "cust_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "cust_src_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "cust_last_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Kessel"
+            },
+            {
+                "col_name": "cust_valid",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "I"
+            },
+            {
+                "col_name": "cust_gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "cust_credit_limit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 9000.0
+            },
+            {
+                "col_name": "cust_state_province_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 52591
+            },
+            {
+                "col_name": "cust_year_of_birth",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1957
+            },
+            {
+                "col_name": "cust_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Downham Market"
+            },
+            {
+                "col_name": "cust_postal_code",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "30828"
+            },
+            {
+                "col_name": "cust_street_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "7 South 3rd Circle"
+            },
+            {
+                "col_name": "cust_marital_status",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "cust_eff_to",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "cust_email",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "Kessel@company.example.com"
+            },
+            {
+                "col_name": "cust_eff_from",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-01"
+            },
+            {
+                "col_name": "country_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 52789
+            },
+            {
+                "col_name": "cust_main_phone_number",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "127-379-8954"
+            },
+            {
+                "col_name": "cust_total_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 52772
+            },
+            {
+                "col_name": "cust_city_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 51396
+            },
+            {
+                "col_name": "cust_income_level",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "G: 130,000 - 149,999"
+            },
+            {
+                "col_name": "cust_first_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Abigail"
+            },
+            {
+                "col_name": "cust_state_province",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "England - Norfolk"
+            },
+            {
+                "col_name": "cust_total",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Customer total"
+            }
+        ]
+    },
+    "PRODUCTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "prod_total_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "prod_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "prod_src_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "prod_subcategory_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 2051
+            },
+            {
+                "col_name": "prod_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cricket Bat Bag"
+            },
+            {
+                "col_name": "prod_category_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Cricket"
+            },
+            {
+                "col_name": "prod_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Cricket"
+            },
+            {
+                "col_name": "prod_valid",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "prod_eff_from",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-01 00:00:00"
+            },
+            {
+                "col_name": "supplier_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "prod_subcategory_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Cricket Bat"
+            },
+            {
+                "col_name": "prod_category_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 205
+            },
+            {
+                "col_name": "prod_weight_class",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "prod_total",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "TOTAL"
+            },
+            {
+                "col_name": "prod_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "STATUS"
+            },
+            {
+                "col_name": "prod_list_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 55.99
+            },
+            {
+                "col_name": "prod_pack_size",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "P"
+            },
+            {
+                "col_name": "prod_subcategory",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Cricket Bat"
+            },
+            {
+                "col_name": "prod_eff_to",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "prod_unit_of_measure",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "U"
+            },
+            {
+                "col_name": "prod_min_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 55.99
+            },
+            {
+                "col_name": "prod_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Cricket bat bag"
+            }
+        ]
+    },
+    "PROMOTIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "promo_total_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "promo_category_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "promo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 33
+            },
+            {
+                "col_name": "promo_subcategory_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 20
+            },
+            {
+                "col_name": "promo_subcategory",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "downtown billboard"
+            },
+            {
+                "col_name": "promo_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 77200.0
+            },
+            {
+                "col_name": "promo_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "post promotion #20-33"
+            },
+            {
+                "col_name": "promo_total",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Promotion total"
+            },
+            {
+                "col_name": "promo_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "post"
+            },
+            {
+                "col_name": "promo_begin_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-09-15"
+            },
+            {
+                "col_name": "promo_end_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-11-15"
+            }
+        ]
+    },
+    "SALES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "prod_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "channel_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "promo_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 999
+            },
+            {
+                "col_name": "amount_sold",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1232.16
+            },
+            {
+                "col_name": "time_id",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-10"
+            },
+            {
+                "col_name": "cust_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 987
+            },
+            {
+                "col_name": "quantity_sold",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "SUPPLEMENTARY_DEMOGRAPHICS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "cust_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 100001
+            },
+            {
+                "col_name": "unknown",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "golf",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "misc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "household_size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "soccer",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "occupation",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Exec."
+            },
+            {
+                "col_name": "education",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "< Bach."
+            },
+            {
+                "col_name": "tennis",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "affinity_card",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "yrs_residence",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "baseball",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Thanks a lot for my new affinity card. I love the discounts and have since started shopping at your "
+            },
+            {
+                "col_name": "cricket",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "TIMES": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "calendar_year_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1802
+            },
+            {
+                "col_name": "calendar_quarter_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1770
+            },
+            {
+                "col_name": "calendar_month_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1676
+            },
+            {
+                "col_name": "week_ending_day_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1670
+            },
+            {
+                "col_name": "fiscal_month_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1724
+            },
+            {
+                "col_name": "fiscal_quarter_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1786
+            },
+            {
+                "col_name": "time_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "2019-05-31"
+            },
+            {
+                "col_name": "fiscal_year_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1806
+            },
+            {
+                "col_name": "fiscal_month_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2019-05"
+            },
+            {
+                "col_name": "fiscal_month_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "calendar_month_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "May"
+            },
+            {
+                "col_name": "end_of_fis_month",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-05-31"
+            },
+            {
+                "col_name": "fiscal_quarter_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2019-02"
+            },
+            {
+                "col_name": "day_number_in_week",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "fiscal_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2019
+            },
+            {
+                "col_name": "end_of_cal_year",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-12-31"
+            },
+            {
+                "col_name": "end_of_cal_quarter",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-06-30"
+            },
+            {
+                "col_name": "end_of_cal_month",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-05-31"
+            },
+            {
+                "col_name": "calendar_quarter_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2019-02"
+            },
+            {
+                "col_name": "days_in_fis_quarter",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 91
+            },
+            {
+                "col_name": "day_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Friday"
+            },
+            {
+                "col_name": "end_of_fis_year",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-12-27"
+            },
+            {
+                "col_name": "calendar_month_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "2019-05"
+            },
+            {
+                "col_name": "days_in_fis_month",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 35
+            },
+            {
+                "col_name": "day_number_in_month",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 31
+            },
+            {
+                "col_name": "end_of_fis_quarter",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-06-28"
+            },
+            {
+                "col_name": "week_ending_day",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2019-06-02"
+            },
+            {
+                "col_name": "calendar_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2019
+            },
+            {
+                "col_name": "days_in_fis_year",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 361
+            },
+            {
+                "col_name": "days_in_cal_year",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 365
+            },
+            {
+                "col_name": "calendar_week_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            },
+            {
+                "col_name": "calendar_quarter_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "days_in_cal_month",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 31
+            },
+            {
+                "col_name": "days_in_cal_quarter",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 91
+            },
+            {
+                "col_name": "fiscal_month_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "May"
+            },
+            {
+                "col_name": "fiscal_quarter_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "calendar_month_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "fiscal_week_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            }
+        ]
+    }
+}

@@ -1,0 +1,5 @@
+﻿db_id,difficulty,target_distance
+ELECTRONIC_SALES,hard,0.1
+Refinery,mid,0.1
+WORD_VECTORS_US,easy,0.2
+USA_NAMES,easy,0.3

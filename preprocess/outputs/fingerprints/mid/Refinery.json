@@ -1,0 +1,295 @@
+{
+  "MASTER": {
+    "ID_MAIN": [
+      {
+        "path": "main.material_information.MTRL_ID",
+        "type": "INT",
+        "sample": 1
+      },
+      {
+        "path": "main.node_information.NODE_ID",
+        "type": "INT",
+        "sample": 279
+      },
+      {
+        "path": "main.pm_unit_t.UNIT_ID",
+        "type": "INT",
+        "sample": 138
+      },
+      {
+        "path": "main.tank_information.MES_TK_ID",
+        "type": "INT",
+        "sample": 204
+      },
+      {
+        "path": "main.unit_information.UNIT_ID",
+        "type": "INT",
+        "sample": 138
+      }
+    ],
+    "NAME_ENTITY": [
+      {
+        "path": "main.material_information.MTRL_ALIAS",
+        "type": "VARCHAR(100)",
+        "sample": "原料"
+      },
+      {
+        "path": "main.node_information.NODE_ALIAS",
+        "type": "VARCHAR(100)",
+        "sample": "常减压Ⅰ原油进料线"
+      },
+      {
+        "path": "main.pm_unit_t.UNIT_NAME",
+        "type": "VARCHAR(400)",
+        "sample": "1000万吨/年Ⅰ套常减压蒸馏装置"
+      },
+      {
+        "path": "main.unit_information.UNIT_ALIAS",
+        "type": "VARCHAR(100)",
+        "sample": "常减压装置Ⅰ"
+      }
+    ],
+    "REL_ENTITY": [
+      {
+        "path": "main.material_information.UPPER_ID",
+        "type": "INT",
+        "sample": -1
+      },
+      {
+        "path": "main.node_information.UNIT_ID",
+        "type": "INT",
+        "sample": 138
+      },
+      {
+        "path": "main.pm_unit_t.MES_FCTR_ID",
+        "type": "INT",
+        "sample": 208
+      },
+      {
+        "path": "main.pm_unit_t.MES_WSP_ID",
+        "type": "INT",
+        "sample": 604
+      },
+      {
+        "path": "main.pm_unit_t.NODE_AREA_ID",
+        "type": "INT",
+        "sample": 105
+      },
+      {
+        "path": "main.pm_unit_t.UNIT_TYPE_ID",
+        "type": "VARCHAR(256)",
+        "sample": 1
+      }
+    ],
+    "ID_EXTERNAL": [
+      {
+        "path": "main.pm_unit_t.UNIT_CODE",
+        "type": "VARCHAR(400)",
+        "sample": "CDU1"
+      },
+      {
+        "path": "main.pm_unit_t.UNIT_NUM",
+        "type": "INT",
+        "sample": 10001
+      },
+      {
+        "path": "main.tank_information.MES_TK_ALIAS",
+        "type": "VARCHAR(100)",
+        "sample": "TK1101"
+      }
+    ],
+    "VAL_AMOUNT": [
+      {
+        "path": "main.pm_unit_t.CAPACITY",
+        "type": "DECIMAL(8)",
+        "sample": 1000
+      },
+      {
+        "path": "main.unit_information.CAPACITY",
+        "type": "FLOAT",
+        "sample": 1000
+      }
+    ],
+    "TIME_CREATE": [
+      {
+        "path": "main.pm_unit_t.CREATE_TIME",
+        "type": "DATETIME",
+        "sample": null
+      }
+    ],
+    "REL_PERSON": [
+      {
+        "path": "main.pm_unit_t.CREATE_USER",
+        "type": "BIGINT",
+        "sample": null
+      },
+      {
+        "path": "main.pm_unit_t.MODIFY_USER",
+        "type": "BIGINT",
+        "sample": null
+      }
+    ],
+    "DESC_LONG": [
+      {
+        "path": "main.pm_unit_t.DES",
+        "type": "VARCHAR(200)",
+        "sample": null
+      },
+      {
+        "path": "main.pm_unit_t.UNIT_DES",
+        "type": "VARCHAR(4000)",
+        "sample": "装置由成都宏骏有限公司（CPECC）总承包、深圳嘉计瑞骏有限公司（CEI）设计、北京华天一建设有限公司施工建设。装置设计规模为1000万吨/年，操作弹性为60～110％，年操作时数为8400小时，采用"
+      }
+    ],
+    "LEVEL": [
+      {
+        "path": "main.pm_unit_t.DISPLAY_ORDER",
+        "type": "DECIMAL(8)",
+        "sample": 10
+      }
+    ],
+    "STATUS_LIFE": [
+      {
+        "path": "main.pm_unit_t.ISACCESS",
+        "type": "INT",
+        "sample": 1
+      },
+      {
+        "path": "main.pm_unit_t.ISSCRAPPED",
+        "type": "INT",
+        "sample": 0
+      },
+      {
+        "path": "main.pm_unit_t.IS_DELETE",
+        "type": "INT",
+        "sample": null
+      },
+      {
+        "path": "main.pm_unit_t.USE_FLAG",
+        "type": "INT",
+        "sample": 1
+      }
+    ],
+    "TIME_UPDATE": [
+      {
+        "path": "main.pm_unit_t.MODIFY_TIME",
+        "type": "DATETIME",
+        "sample": null
+      }
+    ],
+    "VAL_QUANTITY": [
+      {
+        "path": "main.pm_unit_t.OPERATING_HOURS",
+        "type": "DECIMAL(8)",
+        "sample": 8400
+      },
+      {
+        "path": "main.unit_information.OPERATING_HOURS",
+        "type": "FLOAT",
+        "sample": 8400
+      }
+    ],
+    "TIME_BIRTH": [
+      {
+        "path": "main.pm_unit_t.SCRAPPED_TIME",
+        "type": "DATETIME",
+        "sample": null
+      }
+    ],
+    "NAME_SHORT": [
+      {
+        "path": "main.pm_unit_t.UNIT_ALIAS",
+        "type": "VARCHAR(400)",
+        "sample": "常减压装置Ⅰ"
+      }
+    ]
+  },
+  "TRANSACTION": {
+    "ID_MAIN": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.id",
+        "type": "INT",
+        "sample": 1763
+      }
+    ],
+    "ID_EXTERNAL": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.node_code",
+        "type": "VARCHAR(100)",
+        "sample": "CDU1"
+      }
+    ],
+    "VAL_AMOUNT": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.bal_amount_daily",
+        "type": "DECIMAL(20)",
+        "sample": null
+      },
+      {
+        "path": "main.rpt_t_daily_refinery_unit.daily_amount",
+        "type": "DECIMAL(20)",
+        "sample": "930.0000"
+      },
+      {
+        "path": "main.rpt_t_daily_refinery_unit.plan_total_amount",
+        "type": "DOUBLE(21",
+        "sample": null
+      },
+      {
+        "path": "main.rpt_t_daily_refinery_unit.raw_amount_daily",
+        "type": "DECIMAL(20)",
+        "sample": null
+      },
+      {
+        "path": "main.rpt_t_daily_refinery_unit.total_amount",
+        "type": "DOUBLE(21)",
+        "sample": "930.0000"
+      }
+    ],
+    "CATEGORY_TOPIC": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.inout_type",
+        "type": "VARCHAR(2)",
+        "sample": 1
+      }
+    ],
+    "NAME_ENTITY": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.mtrl_alias_show",
+        "type": "VARCHAR(100)",
+        "sample": "原料B"
+      }
+    ],
+    "TIME_EVENT": [
+      {
+        "path": "main.rpt_t_daily_refinery_unit.r_date",
+        "type": "DATE",
+        "sample": "2015-05-05"
+      },
+      {
+        "path": "main.tank_inventory.chk_time",
+        "type": "DATETIME",
+        "sample": "2018-01-01 06:00:01"
+      }
+    ],
+    "REL_ENTITY": [
+      {
+        "path": "main.tank_inventory.MES_TK_ID",
+        "type": "INT",
+        "sample": 204
+      },
+      {
+        "path": "main.tank_inventory.MTRL_ID",
+        "type": "INT",
+        "sample": 558
+      }
+    ],
+    "VAL_QUANTITY": [
+      {
+        "path": "main.tank_inventory.tank_con_val",
+        "type": "FLOAT",
+        "sample": 50100.0
+      }
+    ]
+  }
+}

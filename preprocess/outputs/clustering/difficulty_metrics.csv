@@ -1,0 +1,4 @@
+﻿tier,size,target_distance,avg_intra_distance,std_distance,diameter,min_distance,max_distance,pruning_alpha
+easy,2,0.1,0.133839,0.0,0.133839,0.133839,0.133839,1.5
+mid,1,0.2,0.0,0.0,0.0,0.0,0.0,1.5
+hard,1,0.3,0.0,0.0,0.0,0.0,0.0,1.5

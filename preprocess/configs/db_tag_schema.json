@@ -1,0 +1,270 @@
+{
+
+
+  "tags": {
+    "table_types": {                
+      "items": [
+        {
+          "tag": "MASTER",
+          "description": "主实体表 - 存储核心业务实体，通常是查询的起点",
+          "examples": ["student", "customer", "product", "employee"],
+          "characteristics": ["有唯一业务标识符", "常作为查询的FROM主体", "与其他表有一对多关系"]
+        },
+        {
+          "tag": "TRANSACTION",
+          "description": "事务表 - 记录业务事件或操作结果",
+          "examples": ["grade", "order", "sale_record", "exam_result"],
+          "characteristics": ["有外键关联到MASTER表", "包含时间戳", "记录量随时间增长"]
+        },
+        {
+          "tag": "REFERENCE",
+          "description": "参考表 - 存储固定的分类或代码数据",
+          "examples": ["department", "category", "status_code", "country"],
+          "characteristics": ["数据相对稳定", "记录数较少", "常被其他表作为外键引用"]
+        },
+        {
+          "tag": "RELATION",
+          "description": "关系表 - 专门处理多对多关系或关联明细",
+          "examples": ["enrollment", "order_item", "user_role", "project_member"],
+          "characteristics": ["通常只有外键和少量属性", "连接两个或多个MASTER表", "记录关联关系"]
+        },
+        {
+          "tag": "LOG",
+          "description": "日志表 - 记录系统操作或状态变更历史",
+          "examples": ["audit_log", "price_history", "status_change_log"],
+          "characteristics": ["主要包含时间戳和描述", "通常只追加不修改", "用于追踪和审计"]
+        },
+        {
+          "tag": "DIMENSION",
+          "description": "维度表 - 数据仓库中的描述性属性表",
+          "examples": ["time_dimension", "customer_dim", "product_dim"],
+          "characteristics": ["包含层次结构和属性", "用于分析和报表", "星型/雪花模型的一部分"]
+        },
+        {
+          "tag": "EMPTY",
+          "description": "找不到对应的TAG"
+        }
+      ]
+    },
+    "column_semantic_tags": {      
+      "items": [
+        {
+          "category": "ID_MAIN",
+          "items": [
+            {
+              "tag": "ID_MAIN",
+              "description": "主标识 - 表内的技术主键（通常为自增ID）",
+              "examples": ["id", "uid", "row_id"],
+              "matching_priority": 1
+            }
+          ]
+        },
+        {
+          "category": "ID_EXTERNAL",
+          "items": [
+            {
+              "tag": "ID_EXTERNAL",
+              "description": "外部标识 - 有业务意义的唯一标识符",
+              "examples": ["student_id", "order_no", "product_code"],
+              "matching_priority": 2
+            }
+          ]
+        },
+        {
+          "category": "ID_COMPOSITE",
+          "items": [
+            {
+              "tag": "ID_COMPOSITE",
+              "description": "组合标识 - 需要多个字段才能唯一标识",
+              "examples": ["country_code + city_code", "year + semester"],
+              "matching_priority": 3
+            }
+          ]
+        },
+        {
+          "category": "ID_REL",
+          "items": [   
+            {
+              "tag": "REL_PERSON",
+              "description": "关联人员 - 指向人员实体的外键",
+              "examples": ["student_id", "employee_id", "customer_id"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "REL_ENTITY",
+              "description": "关联实体 - 指向其他实体的外键",
+              "examples": ["product_id", "order_id", "course_id"],
+              "matching_priority": 2
+            }
+          ]
+        },
+        {
+          "category": "NAME",
+          "items": [
+            {
+              "tag": "NAME_PERSON",
+              "description": "人名 - 自然人姓名",
+              "examples": ["student_name", "customer_name", "employee_name"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "NAME_ENTITY",
+              "description": "实体名 - 非人实体的名称",
+              "examples": ["product_name", "company_name", "course_name"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "NAME_SHORT",
+              "description": "简称 - 缩写或短名称",
+              "examples": ["dept_abbr", "product_short_name", "nickname"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "DESC_LONG",
+              "description": "详细描述 - 较长的文本描述",
+              "examples": ["description", "product_detail", "remarks"],
+              "matching_priority": 3
+            }
+          ]
+        },
+        {
+          "category": "TIME",
+          "items": [
+            {
+              "tag": "TIME_EVENT",
+              "description": "事件时间 - 业务事件发生的具体时间",
+              "examples": ["order_date", "exam_date", "sale_time"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "TIME_CREATE",
+              "description": "创建时间 - 记录插入系统的时间",
+              "examples": ["created_at", "create_time", "insert_timestamp"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "TIME_UPDATE",
+              "description": "更新时间 - 记录最后修改的时间",
+              "examples": ["updated_at", "modify_time", "last_update"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "TIME_BIRTH",
+              "description": "出生/起始时间 - 生命周期的开始时间",
+              "examples": ["birth_date", "founded_date", "start_date"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "TIME_DEADLINE",
+              "description": "截止时间 - 必须完成的时间限制",
+              "examples": ["due_date", "deadline", "expiry_date"],
+              "matching_priority": 2
+            }
+          ]
+        },
+        {
+          "category": "VALUE",
+          "items": [
+            {
+              "tag": "VAL_AMOUNT",
+              "description": "金额数量 - 货币金额或可累加的数量",
+              "examples": ["price", "amount", "total", "salary"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "VAL_SCORE",
+              "description": "分数评分 - 评估或测试的得分",
+              "examples": ["grade", "score", "exam_result", "rating_value"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "VAL_PERCENT",
+              "description": "百分比 - 比例或完成度",
+              "examples": ["percentage", "progress", "discount_rate"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "VAL_RATING",
+              "description": "评级 - 等级或星级的离散值",
+              "examples": ["star_rating", "grade_level", "priority_level"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "VAL_QUANTITY",
+              "description": "物品数量 - 可数的物品数量",
+              "examples": ["quantity", "stock", "inventory_count"],
+              "matching_priority": 2
+            }
+          ]
+        },
+        {
+          "category": "STATUS",
+          "items": [
+            {
+              "tag": "CATEGORY_TOPIC",
+              "description": "主题分类 - 按主题或内容分类",
+              "examples": ["subject", "product_category", "department"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "STATUS_LIFE",
+              "description": "生命周期状态 - 实体的存活状态",
+              "examples": ["is_active", "status", "is_deleted", "is_valid"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "STATUS_WORK",
+              "description": "工作状态 - 业务流程的状态",
+              "examples": ["order_status", "task_state", "progress_status"],
+              "matching_priority": 2
+            },
+            {
+              "tag": "LEVEL",
+              "description": "等级级别 - 层次或等级",
+              "examples": ["grade_level", "difficulty", "priority"],
+              "matching_priority": 3
+            }
+          ]
+        },
+        {
+          "category": "INFO",
+          "items": [
+            {
+              "tag": "CONTACT_EMAIL",
+              "description": "邮箱地址 - 电子邮箱",
+              "examples": ["email", "contact_email", "user_email"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "CONTACT_PHONE",
+              "description": "电话号码 - 联系电话",
+              "examples": ["phone", "mobile", "telephone"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "CONTACT_URL",
+              "description": "HTTP链接 - 联系网址",
+              "examples": ["url", "Link", "MEDIA_URLS"],
+              "matching_priority": 3
+            },
+            {
+              "tag": "LOCATION",
+              "description": "地址位置 - 物理位置信息",
+              "examples": ["address", "city", "location_name"],
+              "matching_priority": 3
+            }
+          ]
+        },
+        {
+          "category": "EMPTY",
+          "items": [
+            {
+              "tag": "",
+              "description": "无法对应至相应TAG"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

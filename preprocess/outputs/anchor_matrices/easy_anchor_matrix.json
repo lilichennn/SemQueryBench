@@ -1,0 +1,119 @@
+{
+  "USA_NAMES.json": {
+    "REFERENCE": {
+      "TIME_EVENT": [
+        "main.USA_1910_2013.year",
+        "main.USA_1910_CURRENT.year"
+      ],
+      "ID_MAIN": [],
+      "NAME_ENTITY": [
+        "main.USA_1910_2013.name",
+        "main.USA_1910_CURRENT.name"
+      ],
+      "VAL_PERCENT": [],
+      "STATUS_LIFE": [],
+      "REL_PERSON": [],
+      "NAME_SHORT": [],
+      "LOCATION": [],
+      "ID_EXTERNAL": [],
+      "REL_ENTITY": [],
+      "TIME_BIRTH": [],
+      "CATEGORY_TOPIC": [
+        "main.USA_1910_2013.gender",
+        "main.USA_1910_2013.state",
+        "main.USA_1910_CURRENT.gender",
+        "main.USA_1910_CURRENT.state"
+      ],
+      "VAL_QUANTITY": [
+        "main.USA_1910_2013.number",
+        "main.USA_1910_CURRENT.number"
+      ],
+      "DESC_LONG": [],
+      "VAL_AMOUNT": []
+    },
+    "MASTER": {
+      "REL_ENTITY": [],
+      "ID_MAIN": [],
+      "NAME_ENTITY": [],
+      "ID_EXTERNAL": []
+    },
+    "TRANSACTION": {
+      "ID_MAIN": [],
+      "NAME_ENTITY": [],
+      "REL_PERSON": [],
+      "ID_EXTERNAL": [],
+      "REL_ENTITY": []
+    },
+    "RELATION": {
+      "NAME_ENTITY": [],
+      "ID_EXTERNAL": []
+    },
+    "LOG": {
+      "ID_EXTERNAL": []
+    },
+    "DIMENSION": {
+      "ID_MAIN": [],
+      "NAME_ENTITY": [],
+      "ID_EXTERNAL": []
+    }
+  },
+  "WORD_VECTORS_US.json": {
+    "REFERENCE": {
+      "TIME_EVENT": [],
+      "ID_MAIN": [],
+      "NAME_ENTITY": [
+        "main.WORD_FREQUENCIES.word"
+      ],
+      "VAL_PERCENT": [],
+      "STATUS_LIFE": [],
+      "REL_PERSON": [],
+      "NAME_SHORT": [],
+      "LOCATION": [],
+      "ID_EXTERNAL": [
+        "main.GLOVE_VECTORS.word"
+      ],
+      "REL_ENTITY": [],
+      "TIME_BIRTH": [],
+      "CATEGORY_TOPIC": [],
+      "VAL_QUANTITY": [
+        "main.WORD_FREQUENCIES.frequency"
+      ],
+      "DESC_LONG": [
+        "main.GLOVE_VECTORS.vector"
+      ],
+      "VAL_AMOUNT": []
+    },
+    "MASTER": {
+      "REL_ENTITY": [],
+      "ID_MAIN": [
+        "main.NATURE.id"
+      ],
+      "NAME_ENTITY": [
+        "main.NATURE.title",
+        "main.NATURE.nature_source"
+      ],
+      "ID_EXTERNAL": [
+        "main.NATURE.doi"
+      ]
+    },
+    "TRANSACTION": {
+      "ID_MAIN": [],
+      "NAME_ENTITY": [],
+      "REL_PERSON": [],
+      "ID_EXTERNAL": [],
+      "REL_ENTITY": []
+    },
+    "RELATION": {
+      "NAME_ENTITY": [],
+      "ID_EXTERNAL": []
+    },
+    "LOG": {
+      "ID_EXTERNAL": []
+    },
+    "DIMENSION": {
+      "ID_MAIN": [],
+      "NAME_ENTITY": [],
+      "ID_EXTERNAL": []
+    }
+  }
+}

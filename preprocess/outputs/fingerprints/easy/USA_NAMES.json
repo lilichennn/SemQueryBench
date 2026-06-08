@@ -1,0 +1,62 @@
+{
+  "REFERENCE": {
+    "CATEGORY_TOPIC": [
+      {
+        "path": "main.USA_1910_2013.gender",
+        "type": "TEXT",
+        "sample": "F"
+      },
+      {
+        "path": "main.USA_1910_2013.state",
+        "type": "TEXT",
+        "sample": "AL"
+      },
+      {
+        "path": "main.USA_1910_CURRENT.gender",
+        "type": "TEXT",
+        "sample": "F"
+      },
+      {
+        "path": "main.USA_1910_CURRENT.state",
+        "type": "TEXT",
+        "sample": "AL"
+      }
+    ],
+    "NAME_ENTITY": [
+      {
+        "path": "main.USA_1910_2013.name",
+        "type": "TEXT",
+        "sample": "Mary"
+      },
+      {
+        "path": "main.USA_1910_CURRENT.name",
+        "type": "TEXT",
+        "sample": "Mary"
+      }
+    ],
+    "VAL_QUANTITY": [
+      {
+        "path": "main.USA_1910_2013.number",
+        "type": "NUMBER",
+        "sample": 875
+      },
+      {
+        "path": "main.USA_1910_CURRENT.number",
+        "type": "NUMBER",
+        "sample": 875
+      }
+    ],
+    "TIME_EVENT": [
+      {
+        "path": "main.USA_1910_2013.year",
+        "type": "NUMBER",
+        "sample": 1910
+      },
+      {
+        "path": "main.USA_1910_CURRENT.year",
+        "type": "NUMBER",
+        "sample": 1910
+      }
+    ]
+  }
+}

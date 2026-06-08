@@ -1,0 +1,66 @@
+2026-06-08 11:10:11,203 - INFO - semquery_preprocess.db_tagger - Loaded 3 tables from dataset\easy\all_meta\_1000_GENOMES.json
+2026-06-08 11:10:11,204 - INFO - semquery_preprocess.db_tagger - Loaded 7 tables from dataset\easy\all_meta\GENOMICS_CANNABIS.json
+2026-06-08 11:10:11,216 - INFO - semquery_preprocess.db_tagger - Loaded 199 tables from dataset\easy\all_meta\HTAN_1.json
+2026-06-08 11:10:11,239 - INFO - semquery_preprocess.db_tagger - Loaded 94 tables from dataset\easy\all_meta\HTAN_2.json
+2026-06-08 11:10:11,255 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\easy\all_meta\HUMAN_GENOME_VARIANTS.json
+2026-06-08 11:10:11,257 - INFO - semquery_preprocess.db_tagger - Loaded 14 tables from dataset\easy\all_meta\IDC.json
+2026-06-08 11:10:11,260 - INFO - semquery_preprocess.db_tagger - Loaded 19 tables from dataset\easy\all_meta\MITELMAN.json
+2026-06-08 11:10:11,265 - INFO - semquery_preprocess.db_tagger - Loaded 117 tables from dataset\easy\all_meta\NEW_YORK_CITIBIKE_1.json
+2026-06-08 11:10:11,274 - INFO - semquery_preprocess.db_tagger - Loaded 18 tables from dataset\easy\all_meta\NOAA_PORTS.json
+2026-06-08 11:10:11,276 - INFO - semquery_preprocess.db_tagger - Loaded 13 tables from dataset\easy\all_meta\OPEN_TARGETS_GENETICS_1.json
+2026-06-08 11:10:11,278 - INFO - semquery_preprocess.db_tagger - Loaded 13 tables from dataset\easy\all_meta\OPEN_TARGETS_GENETICS_2.json
+2026-06-08 11:10:11,280 - INFO - semquery_preprocess.db_tagger - Loaded 10 tables from dataset\easy\all_meta\SEC_QUARTERLY_FINANCIALS.json
+2026-06-08 11:10:11,289 - INFO - semquery_preprocess.db_tagger - Loaded 157 tables from dataset\easy\all_meta\TCGA.json
+2026-06-08 11:10:11,305 - INFO - semquery_preprocess.db_tagger - Loaded 50 tables from dataset\easy\all_meta\TCGA_HG38_DATA_V0.json
+2026-06-08 11:10:11,315 - INFO - semquery_preprocess.db_tagger - Loaded 176 tables from dataset\easy\all_meta\TCGA_MITELMAN.json
+2026-06-08 11:10:11,326 - INFO - semquery_preprocess.db_tagger - Loaded 2 tables from dataset\easy\all_meta\USA_NAMES.json
+2026-06-08 11:10:11,328 - INFO - semquery_preprocess.db_tagger - Loaded 11 tables from dataset\easy\all_meta\USDA_NASS_AGRICULTURE.json
+2026-06-08 11:10:11,333 - INFO - semquery_preprocess.db_tagger - Loaded 13 tables from dataset\easy\all_meta\USFS_FIA.json
+2026-06-08 11:10:11,336 - INFO - semquery_preprocess.db_tagger - Loaded 3 tables from dataset\easy\all_meta\WORD_VECTORS_US.json
+2026-06-08 11:10:11,337 - INFO - semquery_preprocess.db_tagger - Loaded 13 tables from dataset\hard\all_meta\ADVENTUREWORKS.json
+2026-06-08 11:10:11,338 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\hard\all_meta\AIRLINES.json
+2026-06-08 11:10:11,339 - INFO - semquery_preprocess.db_tagger - Loaded 12 tables from dataset\hard\all_meta\BOWLINGLEAGUE.json
+2026-06-08 11:10:11,343 - INFO - semquery_preprocess.db_tagger - Loaded 62 tables from dataset\hard\all_meta\BRAZE_USER_EVENT_DEMO_DATASET.json
+2026-06-08 11:10:11,350 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\hard\all_meta\CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.json
+2026-06-08 11:10:11,352 - INFO - semquery_preprocess.db_tagger - Loaded 38 tables from dataset\hard\all_meta\CRYPTO.json
+2026-06-08 11:10:11,355 - INFO - semquery_preprocess.db_tagger - Loaded 10 tables from dataset\hard\all_meta\DEPS_DEV_V1.json
+2026-06-08 11:10:11,360 - INFO - semquery_preprocess.db_tagger - Loaded 6 tables from dataset\hard\all_meta\DIMENSIONS_AI_COVID19.json
+2026-06-08 11:10:11,363 - INFO - semquery_preprocess.db_tagger - Loaded 7 tables from dataset\hard\all_meta\ECLIPSE_MEGAMOVIE.json
+2026-06-08 11:10:11,365 - INFO - semquery_preprocess.db_tagger - Loaded 18 tables from dataset\hard\all_meta\EDUCATION_BUSINESS.json
+2026-06-08 11:10:11,367 - INFO - semquery_preprocess.db_tagger - Loaded 9 tables from dataset\hard\all_meta\ELECTRONIC_SALES.json
+2026-06-08 11:10:11,368 - INFO - semquery_preprocess.db_tagger - Loaded 7 tables from dataset\hard\all_meta\ETHEREUM_BLOCKCHAIN.json
+2026-06-08 11:10:11,375 - INFO - semquery_preprocess.db_tagger - Loaded 92 tables from dataset\hard\all_meta\GA4.json
+2026-06-08 11:10:11,379 - INFO - semquery_preprocess.db_tagger - Loaded 11 tables from dataset\hard\all_meta\GEO_OPENSTREETMAP_WORLDPOP.json
+2026-06-08 11:10:11,383 - INFO - semquery_preprocess.db_tagger - Loaded 266 tables from dataset\hard\all_meta\GHCN_D.json
+2026-06-08 11:10:11,397 - INFO - semquery_preprocess.db_tagger - Loaded 119 tables from dataset\hard\all_meta\NHTSA_TRAFFIC_FATALITIES_PLUS.json
+2026-06-08 11:10:11,418 - INFO - semquery_preprocess.db_tagger - Loaded 146 tables from dataset\hard\all_meta\ods_crm.json
+2026-06-08 11:10:11,436 - INFO - semquery_preprocess.db_tagger - Loaded 151 tables from dataset\hard\all_meta\ods_szkjglxm.json
+2026-06-08 11:10:11,446 - INFO - semquery_preprocess.db_tagger - Loaded 2 tables from dataset\hard\all_meta\PYPI.json
+2026-06-08 11:10:11,448 - INFO - semquery_preprocess.db_tagger - Loaded 16 tables from dataset\hard\all_meta\STACKOVERFLOW.json
+2026-06-08 11:10:11,449 - INFO - semquery_preprocess.db_tagger - Loaded 10 tables from dataset\mid\all_meta\BRAZILIAN_E_COMMERCE.json
+2026-06-08 11:10:11,449 - INFO - semquery_preprocess.db_tagger - Loaded 7 tables from dataset\mid\all_meta\CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE.json
+2026-06-08 11:10:11,449 - INFO - semquery_preprocess.db_tagger - Loaded 10 tables from dataset\mid\all_meta\COMPLEX_ORACLE.json
+2026-06-08 11:10:11,453 - INFO - semquery_preprocess.db_tagger - Loaded 32 tables from dataset\mid\all_meta\DataManagementPlatform.json
+2026-06-08 11:10:11,456 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\mid\all_meta\EU_SOCCER.json
+2026-06-08 11:10:11,458 - INFO - semquery_preprocess.db_tagger - Loaded 17 tables from dataset\mid\all_meta\FHIR_SYNTHEA.json
+2026-06-08 11:10:11,460 - INFO - semquery_preprocess.db_tagger - Loaded 45 tables from dataset\mid\all_meta\FINANCE__ECONOMICS.json
+2026-06-08 11:10:11,462 - INFO - semquery_preprocess.db_tagger - Loaded 34 tables from dataset\mid\all_meta\IOC_NaturalGas.json
+2026-06-08 11:10:11,465 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\mid\all_meta\IPL.json
+2026-06-08 11:10:11,466 - INFO - semquery_preprocess.db_tagger - Loaded 29 tables from dataset\mid\all_meta\META_KAGGLE.json
+2026-06-08 11:10:11,469 - INFO - semquery_preprocess.db_tagger - Loaded 43 tables from dataset\mid\all_meta\NEW_YORK_PLUS.json
+2026-06-08 11:10:11,478 - INFO - semquery_preprocess.db_tagger - Loaded 108 tables from dataset\mid\all_meta\NHTSA_TRAFFIC_FATALITIES.json
+2026-06-08 11:10:11,517 - INFO - semquery_preprocess.db_tagger - Loaded 196 tables from dataset\mid\all_meta\ods_klerp.json
+2026-06-08 11:10:11,553 - INFO - semquery_preprocess.db_tagger - Loaded 463 tables from dataset\mid\all_meta\ods_pomp.json
+2026-06-08 11:10:11,578 - INFO - semquery_preprocess.db_tagger - Loaded 33 tables from dataset\mid\all_meta\OPENAQ.json
+2026-06-08 11:10:11,581 - INFO - semquery_preprocess.db_tagger - Loaded 36 tables from dataset\mid\all_meta\ORACLE_SQL.json
+2026-06-08 11:10:11,582 - INFO - semquery_preprocess.db_tagger - Loaded 8 tables from dataset\mid\all_meta\Refinery.json
+2026-06-08 11:10:11,584 - INFO - semquery_preprocess.db_tagger - Loaded 19 tables from dataset\mid\all_meta\SAN_FRANCISCO_PLUS.json
+2026-06-08 11:10:11,585 - INFO - semquery_preprocess.db_tagger - Loaded 7 tables from dataset\mid\all_meta\THELOOK_ECOMMERCE.json
+2026-06-08 11:10:11,586 - INFO - semquery_preprocess.db_tagger - Loaded 31 tables from dataset\mid\all_meta\WIDE_WORLD_IMPORTERS.json
+2026-06-08 11:10:11,602 - INFO - semquery_preprocess.db_tagger - Found 3 tables after filters. tier=None, db_id=WORD_VECTORS_US, table=None, limit=10
+2026-06-08 11:10:11,603 - INFO - semquery_preprocess.db_tagger - Resume mode: False. Already processed tables: 0.
+2026-06-08 11:10:11,603 - INFO - semquery_preprocess.db_tagger - [1/3] Processing WORD_VECTORS_US.GLOVE_VECTORS
+2026-06-08 11:10:19,105 - INFO - semquery_preprocess.db_tagger - [2/3] Processing WORD_VECTORS_US.NATURE
+2026-06-08 11:10:39,105 - INFO - semquery_preprocess.db_tagger - [3/3] Processing WORD_VECTORS_US.WORD_FREQUENCIES
+2026-06-08 11:10:45,106 - INFO - semquery_preprocess.db_tagger - Saved database tags to preprocess\outputs\db_tags_test\WORD_VECTORS_US.json
+2026-06-08 11:10:45,106 - INFO - semquery_preprocess.db_tagger - Tagging finished. Total tables: 3. Successful/new or reused: 3. Failed: 0.

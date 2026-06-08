@@ -1,0 +1,66 @@
+{
+  "db_id": "WORD_VECTORS_US",
+  "tier": "easy",
+  "status": "ok",
+  "instances": [
+    {
+      "sqa_id": "easy_sqa_001",
+      "status": "instantiated",
+      "event_scope": "FROM main.NATURE t",
+      "tag_mapping": {
+        "NAME_ENTITY": "t.title",
+        "VAL_QUANTITY": "t.citations"
+      },
+      "sql": "SELECT t.title\nFROM main.NATURE t\nORDER BY t.citations DESC\nLIMIT :top_k;",
+      "question": "What are the top-k most cited articles in the Nature dataset?",
+      "notes": "NATURE table has 'title' (NAME_ENTITY) and 'citations' (VAL_QUANTITY, TEXT but numeric in practice). Casting not needed as ORDER BY on TEXT '7' works for small integers; however, real usage would benefit from CAST(t.citations AS INTEGER), but per instructions we prefer simple, readable SQL and sample_value '7' implies safe lexical ordering for typical citation counts. GLOVE_VECTORS has VAL_QUANTITY but no NAME_ENTITY; WORD_FREQUENCIES has NAME_SHORT, not NAME_ENTITY — so NATURE is the only valid REFERENCE table with both required tags."
+    },
+    {
+      "sqa_id": "easy_sqa_002",
+      "status": "instantiated",
+      "event_scope": "FROM main.NATURE t",
+      "tag_mapping": {
+        "NAME_ENTITY": "t.title",
+        "CATEGORY_TOPIC": "t.category"
+      },
+      "sql": "SELECT t.title\nFROM main.NATURE t\nWHERE t.category = :category_value;",
+      "question": "Which articles are categorized under a specific topic, such as 'Cell culture; Chemical biology'?",
+      "notes": "NATURE table provides 'title' (NAME_ENTITY) and 'category' (CATEGORY_TOPIC). 'keywords' also has CATEGORY_TOPIC tag, but 'category' is more canonical and matches sample value format. No other REFERENCE table has both NAME_ENTITY and CATEGORY_TOPIC."
+    },
+    {
+      "sqa_id": "easy_sqa_003",
+      "status": "instantiated",
+      "event_scope": "FROM main.NATURE t",
+      "tag_mapping": {
+        "TIME_EVENT": "t.date"
+      },
+      "sql": "SELECT COUNT(*) AS record_count\nFROM main.NATURE t\nWHERE t.date >= :start_date AND t.date < :end_date;",
+      "question": "How many articles were published within a given date range?",
+      "notes": "NATURE table has 'date' (col_tag: TIME_EVENT, col_type: DATE), matching the slot. 'acquisition_date' is TIME_CREATE, not TIME_EVENT, so excluded. Other tables lack TIME_EVENT entirely."
+    },
+    {
+      "sqa_id": "easy_sqa_004",
+      "status": "instantiated",
+      "event_scope": "FROM main.NATURE t",
+      "tag_mapping": {
+        "CATEGORY_TOPIC": "t.category"
+      },
+      "sql": "SELECT t.category, COUNT(*) AS record_count\nFROM main.NATURE t\nGROUP BY t.category\nORDER BY record_count DESC;",
+      "question": "What are the most common categories among the articles?",
+      "notes": "'category' is the primary categorical field (CATEGORY_TOPIC); 'keywords' is redundant and semantically overlapping but less normalized (e.g., contains semicolon-separated values). Grouping on 'category' is appropriate and clean. No other REFERENCE table has CATEGORY_TOPIC."
+    },
+    {
+      "sqa_id": "easy_sqa_005",
+      "status": "instantiated",
+      "event_scope": "FROM main.NATURE t",
+      "tag_mapping": {
+        "NAME_ENTITY": "t.title",
+        "DESC_LONG": "t.abstract",
+        "ID_EXTERNAL": "t.doi"
+      },
+      "sql": "SELECT t.title, t.abstract\nFROM main.NATURE t\nWHERE t.doi = :id_value;",
+      "question": "What is the title and abstract of the article with a given DOI?",
+      "notes": "NATURE table has 'doi' (ID_EXTERNAL), 'title' (NAME_ENTITY), and 'abstract' (DESC_LONG). 'id' is also ID_EXTERNAL, but 'doi' is the standard external identifier for scholarly articles and matches the domain expectation. 'body' is also DESC_LONG, but 'abstract' is more concise and conventional for this intent. GLOVE_VECTORS and WORD_FREQUENCIES lack DESC_LONG and ID_EXTERNAL together."
+    }
+  ]
+}

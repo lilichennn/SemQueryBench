@@ -1,0 +1,79 @@
+{
+  "tier": "easy",
+  "sqa_templates": [
+    {
+      "sqa_id": "easy_sqa_001",
+      "sqa": "SELECT <NAME_ENTITY> FROM <REFERENCE> ORDER BY <VAL_QUANTITY> DESC LIMIT :top_k;",
+      "intent": "Find the top-ranked entities by quantity.",
+      "difficulty_hint": "simple",
+      "required_slots": {
+        "table_tags": [
+          "REFERENCE"
+        ],
+        "column_tags": [
+          "NAME_ENTITY",
+          "VAL_QUANTITY"
+        ]
+      }
+    },
+    {
+      "sqa_id": "easy_sqa_002",
+      "sqa": "SELECT <NAME_ENTITY> FROM <REFERENCE> WHERE <CATEGORY_TOPIC> = :category_value;",
+      "intent": "Retrieve entities belonging to a specific category or topic.",
+      "difficulty_hint": "simple",
+      "required_slots": {
+        "table_tags": [
+          "REFERENCE"
+        ],
+        "column_tags": [
+          "NAME_ENTITY",
+          "CATEGORY_TOPIC"
+        ]
+      }
+    },
+    {
+      "sqa_id": "easy_sqa_003",
+      "sqa": "SELECT COUNT(*) AS record_count FROM <REFERENCE> WHERE <TIME_EVENT> >= :start_date AND <TIME_EVENT> < :end_date;",
+      "intent": "Count records within a specified time window.",
+      "difficulty_hint": "simple",
+      "required_slots": {
+        "table_tags": [
+          "REFERENCE"
+        ],
+        "column_tags": [
+          "TIME_EVENT"
+        ]
+      }
+    },
+    {
+      "sqa_id": "easy_sqa_004",
+      "sqa": "SELECT <CATEGORY_TOPIC>, COUNT(*) AS record_count FROM <REFERENCE> GROUP BY <CATEGORY_TOPIC> ORDER BY record_count DESC;",
+      "intent": "Analyze distribution of records across categories.",
+      "difficulty_hint": "medium",
+      "required_slots": {
+        "table_tags": [
+          "REFERENCE"
+        ],
+        "column_tags": [
+          "CATEGORY_TOPIC"
+        ]
+      }
+    },
+    {
+      "sqa_id": "easy_sqa_005",
+      "sqa": "SELECT <NAME_ENTITY>, <DESC_LONG> FROM <REFERENCE> WHERE <ID_EXTERNAL> = :id_value;",
+      "intent": "Retrieve entity name and description by external identifier.",
+      "difficulty_hint": "medium",
+      "required_slots": {
+        "table_tags": [
+          "REFERENCE"
+        ],
+        "column_tags": [
+          "NAME_ENTITY",
+          "DESC_LONG",
+          "ID_EXTERNAL"
+        ]
+      }
+    }
+  ]
+}

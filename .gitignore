@@ -4,22 +4,22 @@ __pycache__/
 .venv/
 venv/
 
-# Full database files
-database/full/
-database/raw/
-dataset_raw/
-*.zip
-
-# Hidden evaluation files
-hidden/
-release_tmp/
-scripts/
-dataset_raw/
-hidden/
-internal/
-sqa_hidden/
-
 # Local configs
 *.env
 configs/*.yaml
 !configs/*.example.yaml
+
+# Full database files
+dataset_raw/
+preprocess_raw/
+*.zip
+*.xlsx
+*.xls
+
+# Hidden evaluation files
+hidden/
+release_tmp/
+scripts_tmp/
+hidden/
+internal/
+sqa_hidden/

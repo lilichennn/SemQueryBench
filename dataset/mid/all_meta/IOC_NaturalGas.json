@@ -1,0 +1,4264 @@
+{
+    "NG_CENTRAL_ASIA_GAS_PIPELINE_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_POINT_NO",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": 10021478
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-01 10:30:00.000"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 32.71278
+            },
+            {
+                "col_name": "DATA_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DATA_CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-01 10:30:09.937"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-18 18:02:10.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CHUQIKU_DAY_COMPLETE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 10180
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "27877670-4D27-11F0-A1B8-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "注气"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "东河塘储气库"
+            },
+            {
+                "col_name": "RESOURCE_REMARK",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "先导"
+            },
+            {
+                "col_name": "PATH_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "油田"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-20"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 59.314
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:40:59.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CHUQIKU_DAY_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 10180
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "298BFA0A-4870-11F0-A1B8-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "注气"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "牟家坪储气库"
+            },
+            {
+                "col_name": "RESOURCE_REMARK",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "先导"
+            },
+            {
+                "col_name": "PATH_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "油田"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-14"
+            },
+            {
+                "col_name": "DAY_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:41:15.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CHUQIKU_MONTH_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 11
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "46EE8677-308A-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "采气"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "塔中储气库"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-01"
+            },
+            {
+                "col_name": "AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "UP_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DOWN_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "SX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ZX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "XX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:41:24.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CHUQIKU_YEAR_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 33
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "1FB40B59-1E89-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "注气"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "温吉桑储气库"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-01"
+            },
+            {
+                "col_name": "JAN_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "FEB_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAR_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "APR_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 210.0
+            },
+            {
+                "col_name": "MAY_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 310.0
+            },
+            {
+                "col_name": "JUN_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 290.0
+            },
+            {
+                "col_name": "JUL_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 285.0
+            },
+            {
+                "col_name": "AUG_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 220.0
+            },
+            {
+                "col_name": "SEP_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 220.0
+            },
+            {
+                "col_name": "OCT_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 200.0
+            },
+            {
+                "col_name": "NOV_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEC_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:41:40.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CUSTOMER_DAY_COMPLETE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1813
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "5C4DDFE3-308A-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "REGION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "EA7C27F0-8367-4CF1-9078-22373DB1B592"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北方"
+            },
+            {
+                "col_name": "VENDOR_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "7D1334A2-2585-4B80-85DB-8FB023F03A63"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "DBF83EF2-8BEA-4075-9D81-733F9D556C9E"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京燃气"
+            },
+            {
+                "col_name": "CITY_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_NAME",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "管道天然气"
+            },
+            {
+                "col_name": "PIPELINE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "5EB862DA-765D-4C7B-BDE1-715F99F875C7"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "陕京四线干线"
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "CD16798D-85A8-45B4-927E-D120DB16EDDD"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "延庆分输站"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-14"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 98.972
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:41:53.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CUSTOMER_DAY_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 3626
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "7DD69F88-308A-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "REGION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "EA7C27F0-8367-4CF1-9078-22373DB1B592"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北方"
+            },
+            {
+                "col_name": "VENDOR_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "7D1334A2-2585-4B80-85DB-8FB023F03A63"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "DBF83EF2-8BEA-4075-9D81-733F9D556C9E"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京燃气"
+            },
+            {
+                "col_name": "CITY_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_NAME",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "管道天然气"
+            },
+            {
+                "col_name": "PIPELINE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "16D5EDC2-1534-4801-82B2-4B8AFB1A7D3B"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "陕京一线干线"
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "F940B670-F6B9-4C12-95FE-C3DD617CF371"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "石景山分输站"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-15"
+            },
+            {
+                "col_name": "DAY_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 250.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:42:12.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_CUSTOMER_MONTH_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 109
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "A479404A-308A-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "REGION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "EA7C27F0-8367-4CF1-9078-22373DB1B592"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北方"
+            },
+            {
+                "col_name": "VENDOR_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "7D1334A2-2585-4B80-85DB-8FB023F03A63"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_ID",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "DBF83EF2-8BEA-4075-9D81-733F9D556C9E"
+            },
+            {
+                "col_name": "CUSTOMER_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京燃气"
+            },
+            {
+                "col_name": "CITY_NAME",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北京"
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_NAME",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "管道天然气"
+            },
+            {
+                "col_name": "PIPELINE_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "10820C7B-7CA7-4A94-B1C7-4BD991F8972D"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "陕京三线"
+            },
+            {
+                "col_name": "STATION_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "1191BF69-0D2B-4BD7-B878-2563F110EE10"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "大灰厂分输站"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-01"
+            },
+            {
+                "col_name": "AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "UP_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DOWN_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "SX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ZX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "XX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:42:28.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_DAILY_ASSIGN_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDICATOR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAIN_KEY",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "CN_CODE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SORT_ORDER",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": null
+            },
+            {
+                "col_name": "LEVEL_CODE1",
+                "col_tag": "LEVEL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "LEVEL_CODE2",
+                "col_tag": "LEVEL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "LEVEL_CODE3",
+                "col_tag": "LEVEL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "LEVEL_CODE4",
+                "col_tag": "LEVEL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMAINING_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAX_DAILY_CAPACITY",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "YESTERDAY_ACTUAL",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_SUGGESTION",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_ASSIGN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DIFFERENCE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR(20)",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_TYPE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(20)",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_STATUS",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR(20)",
+                "sample_value": null
+            },
+            {
+                "col_name": "REPORT_SUBMIT_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "ASSIGN_UPDATER",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SUGGESTION_REPORTER",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RESERVE1",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RESERVE2",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RESERVE3",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RESERVE4",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RESERVE5",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_DAILY_ASSIGN_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 15856911
+            },
+            {
+                "col_name": "INDICATOR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1000000
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-01-02"
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "可供销售资源"
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 2418616.9
+            },
+            {
+                "col_name": "DAILY_PLAN_AVG",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 78019.9005
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:37.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_DAILY_ASSIGN_SOURCE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 12689449
+            },
+            {
+                "col_name": "INDICATOR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1000000
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-01-02"
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "可供销售资源"
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 2418616.9
+            },
+            {
+                "col_name": "DAILY_PLAN_AVG",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 78019.9
+            },
+            {
+                "col_name": "DAILY_ACTUAL",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "REMAINING_PLAN_AVG",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 42488.68
+            },
+            {
+                "col_name": "MAX_DAILY_CAPACITY",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "YESTERDAY_ACTUAL",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 22672.66
+            },
+            {
+                "col_name": "DAILY_SUGGESTION",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 22672.66
+            },
+            {
+                "col_name": "DAILY_ASSIGNMENT",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 6451.91
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 00:00:00.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:36.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_DAILY_MAX_WORKING_GAS_CAPACITY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 2143
+            },
+            {
+                "col_name": "RESERVOIR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "RECORD_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2024-02-06"
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "储气库采气"
+            },
+            {
+                "col_name": "RESERVOIR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "华北苏桥"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 1700.0
+            },
+            {
+                "col_name": "DATA_CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2024-02-06 12:26:35.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-30 09:35:20.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_DAILY_ORG_SPECIFIED": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1045
+            },
+            {
+                "col_name": "MAIN_KEY",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "1_01000000"
+            },
+            {
+                "col_name": "INDICATOR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1000000
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "可供销售资源"
+            },
+            {
+                "col_name": "HIERARCHY_CODE1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1
+            },
+            {
+                "col_name": "HIERARCHY_CODE2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 0
+            },
+            {
+                "col_name": "HIERARCHY_CODE3",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 0
+            },
+            {
+                "col_name": "HIERARCHY_CODE4",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 0
+            },
+            {
+                "col_name": "SEQ1",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "一"
+            },
+            {
+                "col_name": "SEQ2",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SEQ3",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SEQ4",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SEQ5",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SORT1",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "SORT2",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SORT3",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SORT4",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SORT5",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "TABLE_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1
+            },
+            {
+                "col_name": "VALID_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:36.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_FUTURE_LNG_SHIPPING_SCHEDULE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "DATA_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLANNED_ARRIVAL_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-04-21 00:00:00.000"
+            },
+            {
+                "col_name": "PLANNED_UNLOAD_VOLUME",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 90000000.0
+            },
+            {
+                "col_name": "TERMINAL_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "唐山"
+            },
+            {
+                "col_name": "TERMINAL_CODE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SHIP_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "Alicante Knutsen"
+            },
+            {
+                "col_name": "DATA_CREATE_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-04-30 10:08:41.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-18 18:04:46.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_BUSINESS_FORECAST_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DOMESTIC_GAS_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "AVAILABLE_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "LNG_RESOURCE_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "CENTRAL_ASIA_INFLOW_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_WITHDRAWAL_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_INJECTION_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_NOMINATION_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "BEIJING_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "XI_AN_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "URUMQI_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "ASHGABAT_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "ALMATY_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "TASHKENT_SALES_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "KUNLUN_REDSTAR_FORECAST",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_DAILY_FORECAST_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_MONTHLY_STEP_PLAN_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "FIRST_HALF_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "SECOND_HALF_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "FIRST_TEN_DAYS_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MIDDLE_TEN_DAYS_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "LAST_TEN_DAYS_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAINTENANCE_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_PRODUCTION_PLAN_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "MAIN_TABLE_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(7)",
+                "sample_value": "2021-01"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "冀东"
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "FACTORY_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "FACTORY_CODE",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "ANNUAL_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.186
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-06-25 17:43:35.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_REALTIME_SCREEN_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "INDICATOR_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": "2025-01-27"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "西气东输一线西段"
+            },
+            {
+                "col_name": "INDICATOR_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_ADJUST_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_ADJUST_VALUE1",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_ADJUST_VALUE2",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_ADJUST_VALUE3",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_ADJUST_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "DAILY_PLAN_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "WARNING_MAX",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "WARNING_MIN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "WARNING_THRESHOLD",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAX_WORKING_CAPACITY",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "AVAILABLE_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "INT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MAINTENANCE_TYPE",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "天然气管线输量"
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARK",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(500)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-02 16:10:31.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-01-27 17:10:21.000"
+            }
+        ]
+    },
+    "NG_GAS_REALTIME_USER_DATA": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 54
+            },
+            {
+                "col_name": "DATA_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "DGYT29"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(10)",
+                "sample_value": "2025-07-07"
+            },
+            {
+                "col_name": "DATA_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "16时"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "大港油田"
+            },
+            {
+                "col_name": "INDICATOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_FLOW",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DAILY_TOTAL_FLOW",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_PRESSURE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INSTANT_STORAGE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "INDUSTRY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "城市燃气"
+            },
+            {
+                "col_name": "GAS_SUPPLY_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "统销气"
+            },
+            {
+                "col_name": "USER_FULL_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "港北站锅炉停用"
+            },
+            {
+                "col_name": "USER_SHORT_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "第一矿区"
+            },
+            {
+                "col_name": "USER_PROVINCE",
+                "col_tag": "LOCATION",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "天津"
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "MAINTENANCE_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATE_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 08:49:42.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 10:28:54.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_STORAGE_INJECTION": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 181041
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 200
+            },
+            {
+                "col_name": "STORAGE_GROUP_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "ZYCQKQ0020"
+            },
+            {
+                "col_name": "STORAGE_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "ZYCQKQ002001"
+            },
+            {
+                "col_name": "RECORD_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-06-01"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "长庆"
+            },
+            {
+                "col_name": "STORAGE_GROUP_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "陕224"
+            },
+            {
+                "col_name": "STORAGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "陕224"
+            },
+            {
+                "col_name": "MONTHLY_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DAILY_INJECTION",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 184.73
+            },
+            {
+                "col_name": "GAS_SOURCE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(200)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2021-06-04 18:02:00.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:36.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_STORAGE_INJECTION_MONTHLY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 72
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 0
+            },
+            {
+                "col_name": "STORAGE_GROUP_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "??"
+            },
+            {
+                "col_name": "STORAGE_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "??"
+            },
+            {
+                "col_name": "MONTHLY_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-05-01"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "name01"
+            },
+            {
+                "col_name": "STORAGE_GROUP_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "储气库注气"
+            },
+            {
+                "col_name": "STORAGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "储气库注气"
+            },
+            {
+                "col_name": "INJECTION_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 34.3228
+            },
+            {
+                "col_name": "INJECTION_ACTUAL",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 343228.0
+            },
+            {
+                "col_name": "SOURCE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(200)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-01 00:00:00.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-15 09:57:51.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_STORAGE_MONTHLY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_GROUP_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": null
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_GROUP_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "STORAGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTHLY_ACTUAL",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "FLOW_DIRECTION",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(200)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_GAS_STORAGE_PRODUCTION": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 251697
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 200
+            },
+            {
+                "col_name": "STORAGE_GROUP_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "ZYCQKQ0024"
+            },
+            {
+                "col_name": "STORAGE_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "ZYCQKQ002401"
+            },
+            {
+                "col_name": "RECORD_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-10-02"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "长庆"
+            },
+            {
+                "col_name": "STORAGE_GROUP_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "苏东39-61"
+            },
+            {
+                "col_name": "STORAGE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "苏东39-61"
+            },
+            {
+                "col_name": "MONTHLY_AVG_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DAILY_PRODUCTION",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "FLOW_DIRECTION",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(200)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2021-10-12 20:30:00.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:36.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_LNG_SHIP": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "A05ECA2A-4764-11F0-A1B8-005056BA3867"
+            },
+            {
+                "col_name": "SHIP_NUM",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "JS-2021-76"
+            },
+            {
+                "col_name": "OU_ID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "1a827c2a-edd2-458d-bbb1-c5e674bef30f"
+            },
+            {
+                "col_name": "OU_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "江苏LNG"
+            },
+            {
+                "col_name": "SHIP_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "薄膜型"
+            },
+            {
+                "col_name": "SHIP_MC",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "FLex Volunteer"
+            },
+            {
+                "col_name": "LNG_PLACE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "澳大利亚"
+            },
+            {
+                "col_name": "PLAN_ARRIVE_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2021-11-13 14:00:00.000"
+            },
+            {
+                "col_name": "PLAN_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 160000.0
+            },
+            {
+                "col_name": "REAL_ARRIVE_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2021-11-13 14:00:00.000"
+            },
+            {
+                "col_name": "START_UNLOAD_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2021-11-13 14:00:00.000"
+            },
+            {
+                "col_name": "COMPLATE_UNLOAD_TIME",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2021-11-14 14:00:00.000"
+            },
+            {
+                "col_name": "REAL_UNLOAD_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 160428.0
+            },
+            {
+                "col_name": "REAL_UNLOAD_VALUE_T",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 70520.06
+            },
+            {
+                "col_name": "REAL_UNLOAD_VALUE_NM",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 98539794.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 17:19:52.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_NATURAL_GAS_COMMODITY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "00008007"
+            },
+            {
+                "col_name": "CATEGORY_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "SALES_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-16"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "大港"
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "合计"
+            },
+            {
+                "col_name": "DAILY_COMMODITY_VOLUME",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 159.815
+            },
+            {
+                "col_name": "CLASSIFICATION",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "合计"
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 15:01:01.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_NATURAL_GAS_PRODUCTION": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 298801
+            },
+            {
+                "col_name": "UNIT_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 200.0
+            },
+            {
+                "col_name": "CATEGORY_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "PRODUCTION_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2021-08-01"
+            },
+            {
+                "col_name": "UNIT_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "长庆"
+            },
+            {
+                "col_name": "CATEGORY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "合计"
+            },
+            {
+                "col_name": "SELF_WELL_COUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 11818
+            },
+            {
+                "col_name": "SELF_DAILY_GAS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 7645.29
+            },
+            {
+                "col_name": "JV_INTERNAL_WELL_COUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 4283
+            },
+            {
+                "col_name": "JV_INTERNAL_DAILY_GAS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 2006.38
+            },
+            {
+                "col_name": "JV_EXTERNAL_WELL_COUNT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 787
+            },
+            {
+                "col_name": "JV_EXTERNAL_DAILY_GAS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 1819.75
+            },
+            {
+                "col_name": "CLASSIFICATION",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "合计"
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2021-10-25 10:46:52.000"
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-05-29 16:12:35.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_RESOURCE_DAY_COMPLETE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 11514
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "04BA2980-3982-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "国产气"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "东北"
+            },
+            {
+                "col_name": "MEASURE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "大港"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "资源"
+            },
+            {
+                "col_name": "IS_COUNT",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR(50)",
+                "sample_value": 1
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "大港"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(150)",
+                "sample_value": "大唐煤制气"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "巴克什营站"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-05-26"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 166.245
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:39:23.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_RESOURCE_DAY_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 4380
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "01CD0991-308B-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "进口LNG"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海"
+            },
+            {
+                "col_name": "MEASURE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "气化"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "上载&资源"
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海LNG"
+            },
+            {
+                "col_name": "PIPELINE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海LNG外输管道"
+            },
+            {
+                "col_name": "STATION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海LNG接收站"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-01-05"
+            },
+            {
+                "col_name": "DAY_PLAN",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 800.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:40:33.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_RESOURCE_MONTH_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 281
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "7DDA6374-473A-11F0-A1B8-005056BA3867"
+            },
+            {
+                "col_name": "RESOURCE_TYPE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "进口LNG"
+            },
+            {
+                "col_name": "RESOURCE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海"
+            },
+            {
+                "col_name": "MEASURE_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "气化"
+            },
+            {
+                "col_name": "DATA_TYPE",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "上载&资源"
+            },
+            {
+                "col_name": "ORG_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "北海LNG"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-01"
+            },
+            {
+                "col_name": "AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "UP_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "DOWN_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "SX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "ZX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "XX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 303.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-04 10:40:47.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_SALE_DAY_COMPLETE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "0A443422-543B-11F0-A1B8-005056BA3867"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "川渝"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "四川"
+            },
+            {
+                "col_name": "BUSINESS_TYPE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "长输管道"
+            },
+            {
+                "col_name": "CUSTOMER_INDUSTRY_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "LNG液化厂"
+            },
+            {
+                "col_name": "CUSTOMER_TYPE_CODE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "直供终端"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-06-29"
+            },
+            {
+                "col_name": "DATA_VALUE",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 34.0
+            },
+            {
+                "col_name": "DISPLAY_ORDER",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL",
+                "sample_value": 27.5
+            },
+            {
+                "col_name": "CUSTOMER_TYPE_DISPLAY",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(20)",
+                "sample_value": 11901070
+            },
+            {
+                "col_name": "CUSTOMER_ORDER",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARCHAR(20)",
+                "sample_value": 10021002
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 17:14:38.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_SALE_DAY_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 9
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "04D6D1C6-34CB-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "西部"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "内蒙古"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-05-20"
+            },
+            {
+                "col_name": "PPL_DAY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 372.78
+            },
+            {
+                "col_name": "LNG_DAY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 285.6
+            },
+            {
+                "col_name": "FIELD_DAY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "OTHER_DAY_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 18:28:44.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_SALE_MONTH_PLAN": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": 1
+            },
+            {
+                "col_name": "PRIMARY_ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(36)",
+                "sample_value": "FFC1D5BF-308F-11F0-A614-005056BA3867"
+            },
+            {
+                "col_name": "REGION_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "其他"
+            },
+            {
+                "col_name": "VENDOR_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "西南合资气"
+            },
+            {
+                "col_name": "DATA_DATE",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-02-01"
+            },
+            {
+                "col_name": "AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "UP_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "DOWN_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "SX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "ZX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "XX_AVG_MONTH_PLAN",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": 346.0
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": 0
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": "2025-07-07 17:19:04.000"
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    },
+    "NG_SCYX_HUIZONG_MONTH_ORC": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TARGET_CODE",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "MONTH_ID",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(7)",
+                "sample_value": null
+            },
+            {
+                "col_name": "TARGET_NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLAN_FIRST_HALF",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLAN_SECOND_HALF",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLAN_FIRST_TENDAYS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLAN_MIDDLE_TENDAYS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "PLAN_LAST_TENDAYS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL",
+                "sample_value": null
+            },
+            {
+                "col_name": "REMARK",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(500)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DATA_UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "DEL_FLAG",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TINYINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "CREATE_TIME",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARCHAR(32)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_BY_NAME",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARCHAR(50)",
+                "sample_value": null
+            },
+            {
+                "col_name": "UPDATE_TIME",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TIMESTAMP(6)",
+                "sample_value": null
+            }
+        ]
+    }
+}

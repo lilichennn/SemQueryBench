@@ -1,0 +1,424 @@
+{
+    "OLIST_CUSTOMERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "customer_unique_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "861eff4711a542e4b93843c6dd7febb0"
+            },
+            {
+                "col_name": "customer_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "06b8999e2fba1a1fbc88172c00ba8bc7"
+            },
+            {
+                "col_name": "customer_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "franca"
+            },
+            {
+                "col_name": "customer_zip_code_prefix",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 14409
+            },
+            {
+                "col_name": "customer_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SP"
+            }
+        ]
+    },
+    "OLIST_GEOLOCATION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geolocation_zip_code_prefix",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 47990
+            },
+            {
+                "col_name": "geolocation_lng",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -45.18794771542618
+            },
+            {
+                "col_name": "geolocation_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "formosa do rio preto"
+            },
+            {
+                "col_name": "geolocation_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -11.0449613458862
+            },
+            {
+                "col_name": "geolocation_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "BA"
+            }
+        ]
+    },
+    "OLIST_ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "order_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "e481f51cbdc54678b7cc49136f2d6af7"
+            },
+            {
+                "col_name": "order_delivered_carrier_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-10-04 19:55:00"
+            },
+            {
+                "col_name": "order_purchase_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-10-02 10:56:33"
+            },
+            {
+                "col_name": "order_approved_at",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-10-02 11:07:15"
+            },
+            {
+                "col_name": "order_estimated_delivery_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2017-10-18 00:00:00"
+            },
+            {
+                "col_name": "order_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "delivered"
+            },
+            {
+                "col_name": "order_delivered_customer_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-10-10 21:25:13"
+            },
+            {
+                "col_name": "customer_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "9ef432eb6251297304e76186b10a928d"
+            }
+        ]
+    },
+    "OLIST_ORDER_ITEMS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "order_item_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "seller_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "dd7ddc04e1b6c2c614352b383efe2d36"
+            },
+            {
+                "col_name": "price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 239.9
+            },
+            {
+                "col_name": "shipping_limit_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2017-05-03 11:05:13"
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "00018f77f2f0320c557190d7a144bdd3"
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "e5f2d52b802189ee658865ca93d83a8f"
+            },
+            {
+                "col_name": "freight_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 19.93
+            }
+        ]
+    },
+    "OLIST_ORDER_PAYMENTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "payment_sequential",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_installments",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "a9810da82917af2d9aefd1278f1dcfa0"
+            },
+            {
+                "col_name": "payment_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 24.39
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "credit_card"
+            }
+        ]
+    },
+    "OLIST_ORDER_REVIEWS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "review_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "80e641a11e56f04c1ad469d5645fdfde"
+            },
+            {
+                "col_name": "review_answer_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-03-11 03:05:13"
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "a548910a1c6147796b98fdf73dbeba33"
+            },
+            {
+                "col_name": "review_comment_title",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "review_comment_message",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "review_creation_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-03-10 00:00:00"
+            },
+            {
+                "col_name": "review_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            }
+        ]
+    },
+    "OLIST_PRODUCTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "product_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1e9e8ef04dbcff4541ed26657ea517e5"
+            },
+            {
+                "col_name": "product_name_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 40.0
+            },
+            {
+                "col_name": "product_width_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 14.0
+            },
+            {
+                "col_name": "product_category_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "perfumaria"
+            },
+            {
+                "col_name": "product_weight_g",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 225.0
+            },
+            {
+                "col_name": "product_length_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "product_photos_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "product_description_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 287.0
+            },
+            {
+                "col_name": "product_height_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 10.0
+            }
+        ]
+    },
+    "OLIST_PRODUCTS_DATASET": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "product_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3aa071139cb16b67ca9e5dea641aaa2f"
+            },
+            {
+                "col_name": "index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "product_name_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 44.0
+            },
+            {
+                "col_name": "product_category_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "artes"
+            },
+            {
+                "col_name": "product_length_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 30.0
+            },
+            {
+                "col_name": "product_height_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 18.0
+            },
+            {
+                "col_name": "product_photos_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "product_description_lenght",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 276.0
+            },
+            {
+                "col_name": "product_width_cm",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 20.0
+            },
+            {
+                "col_name": "product_weight_g",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1000.0
+            }
+        ]
+    },
+    "OLIST_SELLERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "seller_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3442f8959a84dea7ee197c632cb2df15"
+            },
+            {
+                "col_name": "seller_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SP"
+            },
+            {
+                "col_name": "seller_zip_code_prefix",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 13023
+            },
+            {
+                "col_name": "seller_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "campinas"
+            }
+        ]
+    },
+    "PRODUCT_CATEGORY_NAME_TRANSLATION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "product_category_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "beleza_saude"
+            },
+            {
+                "col_name": "product_category_name_english",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "health_beauty"
+            }
+        ]
+    }
+}

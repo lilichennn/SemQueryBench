@@ -1,0 +1,252 @@
+{
+    "AIRCRAFTS_DATA": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "range",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11100
+            },
+            {
+                "col_name": "aircraft_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "773"
+            },
+            {
+                "col_name": "model",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "{\"en\": \"Boeing 777-300\", \"ru\": \"Боинг 777-300\"}"
+            }
+        ]
+    },
+    "AIRPORTS_DATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "airport_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "YKS"
+            },
+            {
+                "col_name": "coordinates",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(129.77099609375,62.0932998657226562)"
+            },
+            {
+                "col_name": "airport_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "{\"en\": \"Yakutsk Airport\", \"ru\": \"Якутск\"}"
+            },
+            {
+                "col_name": "timezone",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Asia/Yakutsk"
+            },
+            {
+                "col_name": "city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "{\"en\": \"Yakutsk\", \"ru\": \"Якутск\"}"
+            }
+        ]
+    },
+    "BOARDING_PASSES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "flight_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 30625
+            },
+            {
+                "col_name": "ticket_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0005435212386"
+            },
+            {
+                "col_name": "seat_no",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "3G"
+            },
+            {
+                "col_name": "boarding_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            }
+        ]
+    },
+    "BOOKINGS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "book_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-07-14 09:02:00+03"
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 37900
+            },
+            {
+                "col_name": "book_ref",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "000012"
+            }
+        ]
+    },
+    "FLIGHTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "aircraft_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "763"
+            },
+            {
+                "col_name": "actual_departure",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "\\N"
+            },
+            {
+                "col_name": "departure_airport",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "SVO"
+            },
+            {
+                "col_name": "scheduled_departure",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-09-12 09:50:00+03"
+            },
+            {
+                "col_name": "flight_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 5502
+            },
+            {
+                "col_name": "scheduled_arrival",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-09-12 11:20:00+03"
+            },
+            {
+                "col_name": "actual_arrival",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "\\N"
+            },
+            {
+                "col_name": "arrival_airport",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "UFA"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Scheduled"
+            },
+            {
+                "col_name": "flight_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "PG0529"
+            }
+        ]
+    },
+    "SEATS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "seat_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2A"
+            },
+            {
+                "col_name": "fare_conditions",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Business"
+            },
+            {
+                "col_name": "aircraft_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "319"
+            }
+        ]
+    },
+    "TICKETS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ticket_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0005432000988"
+            },
+            {
+                "col_name": "passenger_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "8499 420203"
+            },
+            {
+                "col_name": "book_ref",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06B046"
+            }
+        ]
+    },
+    "TICKET_FLIGHTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 42100
+            },
+            {
+                "col_name": "ticket_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0005435212351"
+            },
+            {
+                "col_name": "flight_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 30625
+            },
+            {
+                "col_name": "fare_conditions",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Business"
+            }
+        ]
+    }
+}

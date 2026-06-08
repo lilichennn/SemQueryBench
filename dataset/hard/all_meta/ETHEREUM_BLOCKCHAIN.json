@@ -1,0 +1,565 @@
+{
+    "BLOCKS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xcf5326c1ac7a9bc76f90ec9b7188903c49977e2dbcb749012592f1f9166aba62"
+            },
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x0ac4077c0b9326e4"
+            },
+            {
+                "col_name": "receipts_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x89e806edc9d9332e8efe2b537da16aa71ee28192162c540c576eec488001e793"
+            },
+            {
+                "col_name": "state_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x63e85963a40f0281405dd65d57e6f27bcf694f4b3260ec0f142a71b254528bb9"
+            },
+            {
+                "col_name": "parent_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x7d1daeed5bb2bc25bfa2adea08f12ac34ced255613b1f81e05901c365f4b1d32"
+            },
+            {
+                "col_name": "sha3_uncles",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347"
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5875076
+            },
+            {
+                "col_name": "transactions_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xafdfaf62b3b4aad38015a63dfa560803f554b75c2da01cdc853df210fac80395"
+            },
+            {
+                "col_name": "extra_data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x"
+            },
+            {
+                "col_name": "miner",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "0xf3b9d2c81f2b24b0fa0acaaa865b7d9ced5fc2fb"
+            },
+            {
+                "col_name": "transaction_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 103
+            },
+            {
+                "col_name": "total_difficulty",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "5053204936794953558848.000000000"
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 27519
+            },
+            {
+                "col_name": "gas_limit",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7980567
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7970437
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1530279523000000
+            },
+            {
+                "col_name": "logs_bloom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0xe1023fc1247c5120022420803014c60a40047141181001080308213a8603830ca58000048800412411bc0820a1080228e6"
+            },
+            {
+                "col_name": "difficulty",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "3270516286141262.000000000"
+            }
+        ]
+    },
+    "CONTRACTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xac9212b0e0023c275b6830c12e3ffe5f754b0d5a"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xd2a481bc6412e5a3f1fa1ce63c8f6ef77caad6e9c126eafa6cd0da4569f9fc75"
+            },
+            {
+                "col_name": "function_sighashes",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "is_erc20",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "bytecode",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x6060604052341561000f57600080fd5b6000610019610141565b6000805473ffffffffffffffffffffffffffffffffffff"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1573830635000000
+            },
+            {
+                "col_name": "is_erc721",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 8939101
+            }
+        ]
+    },
+    "LOGS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 44
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x7b4ce722f8bad6032797a603504850b8a145cc354ff1107753b1a6a226c873c0"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 24
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xc8c5d852bd35bbce871c47dbb0d155d3e4f122fd6d93f5e22cde63da06a7372f"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6687744
+            },
+            {
+                "col_name": "data",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x00000000000000000000000000000000000000000000011d92c28403f4cbf513"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1541983788000000
+            },
+            {
+                "col_name": "address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xf629cbd94d3791c9250152bd8dfbdf380e2a3b9c"
+            },
+            {
+                "col_name": "topics",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef\",\n  \"0x000000000000000000000000f20b9e713a33f61fa38792d2afaf1cd30339126a\",\n  \"0x00000000000000000000000085c5c26dc2af5546341fc1988b9d178148b4838b\"\n]"
+            }
+        ]
+    },
+    "TOKENS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xd6905b68f1f41821a501ef508f5af8ce5cfe2e10"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xa82213066e99a6ee94114b0019d1366464f56705a9a3991bb4cfec629d24e18c"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 5437409
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BGP15"
+            },
+            {
+                "col_name": "decimals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1523684894000000
+            },
+            {
+                "col_name": "symbol",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "BGP15"
+            },
+            {
+                "col_name": "total_supply",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "TOKEN_TRANSFERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "log_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 112
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xaeae15467bc1f2ebd0c319c5bb9aecccdda67255928daf368199d46786172784"
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 5728000
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0xa88d11e5c6278180cfd2846c8d8302a9f7150dbddfa8e52162a75e81f64328ea"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1528073142000000
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x267156058644ba2cb33ef074bba901bbfd66c833"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": "33903399999999995904"
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x4b378475fb135fe4c0c1ce47fc407d5dfffa4e67"
+            },
+            {
+                "col_name": "token_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xd204616e2ecf6d0b27ee79207c4ba54f91182a9d"
+            }
+        ]
+    },
+    "TRACES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "block_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x99fbd59028ed558a6cfb1061788165736dbca4e3c70babbef68acace880caa34"
+            },
+            {
+                "col_name": "transaction_hash",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x357e9067fc3a5a5dce38b968d01a4d8c67cc47ebb8001975c4998065748f4d83"
+            },
+            {
+                "col_name": "trace_address",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3718"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2363392
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x7f6e12cee775346d6ba776510e25d703279886f3"
+            },
+            {
+                "col_name": "trace_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "call"
+            },
+            {
+                "col_name": "subtraces",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "output",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "error",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Out of gas"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1475369605000000
+            },
+            {
+                "col_name": "call_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "delegatecall"
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "reward_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x"
+            },
+            {
+                "col_name": "gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xb09f8a62c6681b0c739dfde7221bfe8f2da3f128"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "TRANSACTIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "nonce",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 372
+            },
+            {
+                "col_name": "receipt_root",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0x3aa1c84da6b14a7c690e8e672ee961f35257d91d29816c629385129d288484da"
+            },
+            {
+                "col_name": "transaction_index",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 15
+            },
+            {
+                "col_name": "hash",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0xc499d6ba82f798ceaf165cec2e8af8a58871f2e728105afdf27c3babdaf803e2"
+            },
+            {
+                "col_name": "receipt_contract_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "block_number",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7138313
+            },
+            {
+                "col_name": "receipt_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "receipt_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7340032
+            },
+            {
+                "col_name": "gas",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7340032
+            },
+            {
+                "col_name": "from_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0x74a6c4823d81cbd6393e5957ccec128799a3f0c2"
+            },
+            {
+                "col_name": "to_address",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xbff68676836ee64f26845a21a9dcbdd89512bf29"
+            },
+            {
+                "col_name": "block_hash",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0xbe6a5fe4c3ec8f4e8eb9bf4b0791115f4a10d904c769e41d6ec2af241a478319"
+            },
+            {
+                "col_name": "block_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1548664911000000
+            },
+            {
+                "col_name": "gas_price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 3000000000
+            },
+            {
+                "col_name": "input",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "0x5ea84b33000000000000000000000000c7f7295d1bb957db59f4105eeb1320fca7ede75d00000000000000000000000000"
+            },
+            {
+                "col_name": "value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": "0E-9"
+            },
+            {
+                "col_name": "receipt_cumulative_gas_used",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7876681
+            }
+        ]
+    }
+}

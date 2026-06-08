@@ -1,0 +1,60 @@
+{
+  "db_id": "USA_NAMES",
+  "tier": "easy",
+  "status": "ok",
+  "instances": [
+    {
+      "sqa_id": "easy_sqa_001",
+      "status": "instantiated",
+      "event_scope": "FROM main.USA_1910_2013 t",
+      "tag_mapping": {
+        "NAME_ENTITY": "t.name",
+        "VAL_QUANTITY": "t.number"
+      },
+      "sql": "SELECT t.name\nFROM main.USA_1910_2013 t\nORDER BY t.number DESC\nLIMIT :top_k;",
+      "question": "What are the top :top_k most popular names by count in the USA 1910–2013 dataset?",
+      "notes": "NAME_ENTITY maps to 'name' (col_tag NAME_PERSON — acceptable as person name is a canonical NAME_ENTITY in naming datasets); VAL_QUANTITY maps to 'number', which is a numeric count of name occurrences. Table has REFERENCE tag and matches intent."
+    },
+    {
+      "sqa_id": "easy_sqa_002",
+      "status": "instantiated",
+      "event_scope": "FROM main.USA_1910_2013 t",
+      "tag_mapping": {
+        "NAME_ENTITY": "t.name",
+        "CATEGORY_TOPIC": "t.gender"
+      },
+      "sql": "SELECT t.name\nFROM main.USA_1910_2013 t\nWHERE t.gender = :category_value;",
+      "question": "Which names appear for the gender ':category_value' in the USA 1910–2013 dataset?",
+      "notes": "CATEGORY_TOPIC maps cleanly to 'gender' (col_tag matches). NAME_ENTITY maps to 'name'. Both columns exist in REFERENCE-tagged table. No ambiguity; case-insensitive matching assumed at application layer if needed."
+    },
+    {
+      "sqa_id": "easy_sqa_003",
+      "status": "skip",
+      "event_scope": null,
+      "tag_mapping": null,
+      "sql": null,
+      "question": null,
+      "notes": "No column with col_tag 'TIME_EVENT' exists. 'year' has col_tag 'TIME_BIRTH', which is semantically distinct (birth year, not event timestamp) and is of type NUMBER, not TIMESTAMP/DATE. Instantiating TIME_EVENT as 'year' would misrepresent temporal scope (e.g., range queries assume calendar time semantics, not generational cohort). Not reasonable per instantiation rules."
+    },
+    {
+      "sqa_id": "easy_sqa_004",
+      "status": "instantiated",
+      "event_scope": "FROM main.USA_1910_2013 t",
+      "tag_mapping": {
+        "CATEGORY_TOPIC": "t.gender"
+      },
+      "sql": "SELECT t.gender, COUNT(*) AS record_count\nFROM main.USA_1910_2013 t\nGROUP BY t.gender\nORDER BY record_count DESC;",
+      "question": "How are names distributed across genders in the USA 1910–2013 dataset, ranked by count?",
+      "notes": "CATEGORY_TOPIC maps to 'gender'. Table is REFERENCE-tagged and contains both categorical and aggregatable data. 'state' is also CATEGORY_TOPIC but gender is simpler and more globally relevant for distribution analysis."
+    },
+    {
+      "sqa_id": "easy_sqa_005",
+      "status": "skip",
+      "event_scope": null,
+      "tag_mapping": null,
+      "sql": null,
+      "question": null,
+      "notes": "No column with col_tag 'ID_EXTERNAL' or 'DESC_LONG' exists in either REFERENCE table. 'name' is NAME_PERSON, not ID_EXTERNAL; no long description column is present. Cannot instantiate without violating semantic slot requirements."
+    }
+  ]
+}

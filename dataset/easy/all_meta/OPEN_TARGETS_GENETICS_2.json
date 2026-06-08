@@ -1,0 +1,1825 @@
+{
+    "OPEN_TARGETS_GENETICS_DISEASE_VARIANT_GENE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GCST90002340"
+            },
+            {
+                "col_name": "pmid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "PMID:32888493"
+            },
+            {
+                "col_name": "source_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "eqtl"
+            },
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000111801"
+            },
+            {
+                "col_name": "has_sumstats",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "d",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "AFR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "direction",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "-"
+            },
+            {
+                "col_name": "distance_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "qtl_pval",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 7.90354e-22
+            },
+            {
+                "col_name": "qtl_se",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.0244489
+            },
+            {
+                "col_name": "trait_efos",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"EFO_0005091\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "pub_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2020-09-01"
+            },
+            {
+                "col_name": "qtl_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 21.10217834439148
+            },
+            {
+                "col_name": "posterior_prob",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.001628938604659
+            },
+            {
+                "col_name": "pub_author",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Chen MH"
+            },
+            {
+                "col_name": "n_initial",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 521594
+            },
+            {
+                "col_name": "odds_ratio",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pval",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.2900000000000001e-59
+            },
+            {
+                "col_name": "beta_ci_lower",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": -0.0567646
+            },
+            {
+                "col_name": "n_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "GCST"
+            },
+            {
+                "col_name": "type_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "eqtl"
+            },
+            {
+                "col_name": "interval_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "beta",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": -0.050669
+            },
+            {
+                "col_name": "EAS_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "beta_ci_upper",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": -0.0445734
+            },
+            {
+                "col_name": "fpred_labels",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "tag_chrom",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "qtl_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.9
+            },
+            {
+                "col_name": "EUR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "fpred_max_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "n_replication",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "trait_reported",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Monocyte count"
+            },
+            {
+                "col_name": "feature",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "CEDAR-T-CELL_CD8"
+            },
+            {
+                "col_name": "oddsr_ci_upper",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ancestry_replication",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "AMR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "num_assoc_loci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1036
+            },
+            {
+                "col_name": "pval_exponent",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": -59
+            },
+            {
+                "col_name": "trait_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "measurement"
+            },
+            {
+                "col_name": "qtl_beta",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": -0.257172
+            },
+            {
+                "col_name": "ancestry_initial",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"European=521594\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "tag_pos",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 26378060
+            },
+            {
+                "col_name": "lead_alt",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "lead_ref",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "tag_ref",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "fpred_scores",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "interval_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pub_journal",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Cell"
+            },
+            {
+                "col_name": "SAS_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "pub_title",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Trans-ethnic and Ancestry-Specific Blood-Cell Genetics in 746,667 Individuals from 5 Global Populati"
+            },
+            {
+                "col_name": "tag_alt",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "pval_mantissa",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.29
+            },
+            {
+                "col_name": "oddsr_ci_lower",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "overall_r2",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.522729
+            },
+            {
+                "col_name": "lead_pos",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 26328125
+            },
+            {
+                "col_name": "fpred_max_label",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "log10_ABF",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 19.918723504570625
+            },
+            {
+                "col_name": "lead_chrom",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "distance_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_GENES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000211890"
+            },
+            {
+                "col_name": "exons",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "[105583731,105583853,105584133,105584368,105586999,105587331,105587554,105587874,105588089,105588395"
+            },
+            {
+                "col_name": "biotype",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "IG_C_gene"
+            },
+            {
+                "col_name": "description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "immunoglobulin heavy constant alpha 2 (A2m marker) [Source:HGNC Symbol;Acc:HGNC:5479]"
+            },
+            {
+                "col_name": "chr",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "14"
+            },
+            {
+                "col_name": "start",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 105583731
+            },
+            {
+                "col_name": "end",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 105588395
+            },
+            {
+                "col_name": "fwdstrand",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "gene_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IGHA2"
+            },
+            {
+                "col_name": "tss",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 105588395
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_LOCUS2GENE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000239474"
+            },
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GCST011521"
+            },
+            {
+                "col_name": "y_proba_logi_pathogenicity",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.06419508904218674
+            },
+            {
+                "col_name": "alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "GT"
+            },
+            {
+                "col_name": "chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "y_proba_logi_molecularQTL",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.02663401886820793
+            },
+            {
+                "col_name": "pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 169155682
+            },
+            {
+                "col_name": "y_proba_dist_foot",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.02039780281484127
+            },
+            {
+                "col_name": "y_proba_logo_molecularQTL",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.010547985322773457
+            },
+            {
+                "col_name": "training_gs",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "high_medium"
+            },
+            {
+                "col_name": "training_clf",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "xgboost"
+            },
+            {
+                "col_name": "ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "y_proba_logo_interaction",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.011236511170864105
+            },
+            {
+                "col_name": "y_proba_logi_interaction",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.027016155421733856
+            },
+            {
+                "col_name": "y_proba_logo_pathogenicity",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.012834045104682446
+            },
+            {
+                "col_name": "training_fold",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "fold3=12|2|7|17"
+            },
+            {
+                "col_name": "y_proba_logi_distance",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.009156674146652222
+            },
+            {
+                "col_name": "y_proba_logo_distance",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.021092426031827927
+            },
+            {
+                "col_name": "y_proba_full_model",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.012625353410840034
+            },
+            {
+                "col_name": "y_proba_dist_tss",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.028209906071424484
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_OT_RELEASE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "release",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "22.09"
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_SA_GWAS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "NEALE2_6152_100"
+            },
+            {
+                "col_name": "alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "mac_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 4652.143919872852
+            },
+            {
+                "col_name": "info",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.999724
+            },
+            {
+                "col_name": "mac",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 14458.199999999999
+            },
+            {
+                "col_name": "pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 32849516
+            },
+            {
+                "col_name": "type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "gwas"
+            },
+            {
+                "col_name": "n_total",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 360527
+            },
+            {
+                "col_name": "ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "is_cc",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "beta",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.07621831832999174
+            },
+            {
+                "col_name": "eaf",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.02005148019427116
+            },
+            {
+                "col_name": "pval",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 2.1656700000000002e-05
+            },
+            {
+                "col_name": "se",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.017946159706930698
+            },
+            {
+                "col_name": "n_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 116005.0
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_SA_MOLECULAR_TRAIT": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "phenotype_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000213614"
+            },
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000213614"
+            },
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Nedelec_2016"
+            },
+            {
+                "col_name": "se",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.111384
+            },
+            {
+                "col_name": "pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 71812458
+            },
+            {
+                "col_name": "n_total",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 167
+            },
+            {
+                "col_name": "alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "mac_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "type_id",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "eqtl"
+            },
+            {
+                "col_name": "chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "15"
+            },
+            {
+                "col_name": "beta",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": -0.334174
+            },
+            {
+                "col_name": "n_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "is_cc",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mac",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "bio_feature",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "MACROPHAGE_SALMONELLA"
+            },
+            {
+                "col_name": "ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "info",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.9635
+            },
+            {
+                "col_name": "num_tests",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7131
+            },
+            {
+                "col_name": "pval",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.00315092
+            },
+            {
+                "col_name": "eaf",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0149701
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_STUDIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "pmid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FINNGEN_R6_M13_RECUDISLOCATIO"
+            },
+            {
+                "col_name": "trait_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "phenotype"
+            },
+            {
+                "col_name": "num_assoc_loci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "n_initial",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 174889
+            },
+            {
+                "col_name": "pub_title",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pub_journal",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pub_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2022-01-24"
+            },
+            {
+                "col_name": "source",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "FINNGEN"
+            },
+            {
+                "col_name": "trait_reported",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Recurrent dislocation and subluxation of joint"
+            },
+            {
+                "col_name": "n_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1475
+            },
+            {
+                "col_name": "ancestry_replication",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "n_replication",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "has_sumstats",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "ancestry_initial",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"European=174889\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "pub_author",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "FINNGEN_R6"
+            },
+            {
+                "col_name": "trait_efos",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"HP_0032153\"\n    },\n    {\n      \"element\": \"HP_0001373\"\n    }\n "
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_STUDIES_OVERLAP": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "A_study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "NEALE2_50_raw"
+            },
+            {
+                "col_name": "B_study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GCST90002381"
+            },
+            {
+                "col_name": "B_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "B_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "GTAGAGGATGGCTTGAACCTAGGAAC"
+            },
+            {
+                "col_name": "B_distinct",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "A_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "12"
+            },
+            {
+                "col_name": "AB_overlap",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "A_distinct",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "A_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "B_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "12"
+            },
+            {
+                "col_name": "B_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 92111827
+            },
+            {
+                "col_name": "A_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "A_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 93813756
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_VARIANTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "gene_id_any",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000124496"
+            },
+            {
+                "col_name": "gene_id_prot_coding",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000124496"
+            },
+            {
+                "col_name": "rs_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "rs531169951"
+            },
+            {
+                "col_name": "chr_id_b37",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "af",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"gnomad_afr\": 3.442735827404177e-04,\n  \"gnomad_amr\": 0.000000000000000e+00,\n  \"gnomad_asj\": 0.00"
+            },
+            {
+                "col_name": "position_b37",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 42438185
+            },
+            {
+                "col_name": "most_severe_consequence",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "intergenic_variant"
+            },
+            {
+                "col_name": "chr_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "6"
+            },
+            {
+                "col_name": "gene_id_prot_coding_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 18396
+            },
+            {
+                "col_name": "ref_allele",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "gene_id_any_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 18396
+            },
+            {
+                "col_name": "alt_allele",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "position",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 42470447
+            },
+            {
+                "col_name": "cadd",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"phred\": 8.746000000000000e+00,\n  \"raw\": 4.342410000000000e-01\n}"
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_VARIANT_DISEASE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GCST90002396"
+            },
+            {
+                "col_name": "pmid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "PMID:32888494"
+            },
+            {
+                "col_name": "oddsr_ci_lower",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tag_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 110274252
+            },
+            {
+                "col_name": "pub_journal",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cell"
+            },
+            {
+                "col_name": "beta",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0226952
+            },
+            {
+                "col_name": "posterior_prob",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.006984791309124
+            },
+            {
+                "col_name": "lead_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "overall_r2",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.692728283809
+            },
+            {
+                "col_name": "lead_chrom",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "SAS_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "pval_exponent",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": -13
+            },
+            {
+                "col_name": "AMR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "ancestry_replication",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "n_initial",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 408112
+            },
+            {
+                "col_name": "EUR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "trait_category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "measurement"
+            },
+            {
+                "col_name": "pub_title",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "The Polygenic and Monogenic Basis of Blood Traits and Diseases."
+            },
+            {
+                "col_name": "tag_chrom",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "n_replication",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "source",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "GCST"
+            },
+            {
+                "col_name": "tag_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "trait_reported",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Mean reticulocyte volume"
+            },
+            {
+                "col_name": "ancestry_initial",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"European=408112\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "pub_author",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Vuckovic D"
+            },
+            {
+                "col_name": "log10_ABF",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20.488303155989882
+            },
+            {
+                "col_name": "odds_ratio",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pval_mantissa",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.5
+            },
+            {
+                "col_name": "direction",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "+"
+            },
+            {
+                "col_name": "pics_95perc_credset",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "EAS_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "pval",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.5000000000000002e-13
+            },
+            {
+                "col_name": "lead_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 110256475
+            },
+            {
+                "col_name": "n_cases",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "trait_efos",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": [\n    {\n      \"element\": \"EFO_0010701\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "oddsr_ci_upper",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "pub_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2020-09-01"
+            },
+            {
+                "col_name": "beta_ci_lower",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0166737468
+            },
+            {
+                "col_name": "lead_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "num_assoc_loci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 835
+            },
+            {
+                "col_name": "AFR_1000G_prop",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "has_sumstats",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "tag_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "beta_ci_upper",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0287166531999999
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_VARIANT_DISEASE_COLOC": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "right_gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000163072"
+            },
+            {
+                "col_name": "left_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "gwas"
+            },
+            {
+                "col_name": "coloc_n_vars",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2541
+            },
+            {
+                "col_name": "right_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "right_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "left_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 168850918
+            },
+            {
+                "col_name": "right_bio_feature",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Vagina"
+            },
+            {
+                "col_name": "coloc_h2",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 4.001278912083727e-07
+            },
+            {
+                "col_name": "coloc_h0",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.785935132002765e-16
+            },
+            {
+                "col_name": "right_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "is_flipped",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "left_var_right_study_beta",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.6359093189239502
+            },
+            {
+                "col_name": "coloc_h3",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.26311707355198927
+            },
+            {
+                "col_name": "left_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "left_var_right_study_se",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.122081605153034
+            },
+            {
+                "col_name": "left_var_right_isCC",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "coloc_log2_h4_h3",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.4857297758441592
+            },
+            {
+                "col_name": "left_var_right_study_pval",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.0833125072276179e-06
+            },
+            {
+                "col_name": "right_phenotype",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "chr2^168862049^168864834^clu_37840^ENSG00000163072"
+            },
+            {
+                "col_name": "left_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "right_study",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "GTEx-sQTL"
+            },
+            {
+                "col_name": "right_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "sqtl"
+            },
+            {
+                "col_name": "right_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 168864871
+            },
+            {
+                "col_name": "coloc_h4_h3",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 2.8005880281909814
+            },
+            {
+                "col_name": "coloc_h4",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.7368825262023471
+            },
+            {
+                "col_name": "coloc_h1",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 1.177688584654438e-10
+            },
+            {
+                "col_name": "left_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "left_study",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NEALE2_20153_raw"
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_VARIANT_DISEASE_CREDSET": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "lead_variant_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "16:88859681:C:T"
+            },
+            {
+                "col_name": "study_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GTEx-sQTL"
+            },
+            {
+                "col_name": "tag_variant_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "16:88835979:A:G"
+            },
+            {
+                "col_name": "phenotype_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "chr16:88858789:88859893:clu_14174:ENSG00000167515"
+            },
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000167515"
+            },
+            {
+                "col_name": "multisignal_method",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "conditional"
+            },
+            {
+                "col_name": "tag_se",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.165198702143443
+            },
+            {
+                "col_name": "tag_pval_cond",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.002204009576863
+            },
+            {
+                "col_name": "bio_feature",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Brain_Hypothalamus"
+            },
+            {
+                "col_name": "is95_credset",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "lead_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "tag_pval",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.002204009576863
+            },
+            {
+                "col_name": "tag_se_cond",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.165198702143443
+            },
+            {
+                "col_name": "tag_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "16"
+            },
+            {
+                "col_name": "lead_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 88859681
+            },
+            {
+                "col_name": "lead_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "tag_beta",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.51591145992279
+            },
+            {
+                "col_name": "tag_beta_cond",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 0.51591145992279
+            },
+            {
+                "col_name": "postprob_cumsum",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.127989430022184
+            },
+            {
+                "col_name": "is99_credset",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "tag_pos",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 88835979
+            },
+            {
+                "col_name": "type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "sqtl"
+            },
+            {
+                "col_name": "tag_alt",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "tag_ref",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "lead_chrom",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "16"
+            },
+            {
+                "col_name": "logABF",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 1.676584172519616
+            },
+            {
+                "col_name": "postprob",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.001186556345535
+            }
+        ]
+    },
+    "OPEN_TARGETS_GENETICS_VARIANT_GENE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "gene_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ENSG00000275954"
+            },
+            {
+                "col_name": "alt_allele",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "T"
+            },
+            {
+                "col_name": "ref_allele",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "feature",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "unspecified"
+            },
+            {
+                "col_name": "source_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "canonical_tss"
+            },
+            {
+                "col_name": "position",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 36816582
+            },
+            {
+                "col_name": "qtl_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "chr_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "17"
+            },
+            {
+                "col_name": "distance_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 2.6524073248880684e-06
+            },
+            {
+                "col_name": "qtl_pval",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "qtl_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "qtl_se",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "fpred_max_label",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "fpred_labels",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "fpred_max_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "interval_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "d",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 377016
+            },
+            {
+                "col_name": "type_id",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "distance"
+            },
+            {
+                "col_name": "interval_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "fpred_scores",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"list\": []\n}"
+            },
+            {
+                "col_name": "qtl_beta",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "distance_score_q",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.2
+            }
+        ]
+    }
+}

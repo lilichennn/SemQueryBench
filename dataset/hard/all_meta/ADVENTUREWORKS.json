@@ -1,0 +1,787 @@
+{
+    "COUNTRYREGIONCURRENCY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2014-02-08 10:17:21.51"
+            },
+            {
+                "col_name": "countryregioncode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AE"
+            },
+            {
+                "col_name": "currencycode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AED"
+            }
+        ]
+    },
+    "CURRENCYRATE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "currencyrateid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "tocurrencycode",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "AUD"
+            },
+            {
+                "col_name": "endofdayrate",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.55
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-31 00:00:00"
+            },
+            {
+                "col_name": "currencyratedate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-31 00:00:00"
+            },
+            {
+                "col_name": "fromcurrencycode",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "USD"
+            },
+            {
+                "col_name": "averagerate",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.5491
+            }
+        ]
+    },
+    "PRODUCT": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "safetystocklevel",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 800
+            },
+            {
+                "col_name": "productid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "productline",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "sellstartdate",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2008-04-30 00:00:00"
+            },
+            {
+                "col_name": "productmodelid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "reorderpoint",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 600
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "ecfed6cb-51ff-49b5-b06c-7d8ac834db8b"
+            },
+            {
+                "col_name": "color",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "daystomanufacture",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "weightunitmeasurecode",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "discontinueddate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "standardcost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "makeflag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "f"
+            },
+            {
+                "col_name": "sizeunitmeasurecode",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "sellenddate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2014-02-08 10:01:36.827"
+            },
+            {
+                "col_name": "finishedgoodsflag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "f"
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "productsubcategoryid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Headset Ball Bearings"
+            },
+            {
+                "col_name": "listprice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "productnumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "BE-2908"
+            },
+            {
+                "col_name": "size",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "style",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "PRODUCTCATEGORY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "productcategoryid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bikes"
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "cfbda25c-df71-47a7-b81b-64ee161aa37c"
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2008-04-30 00:00:00"
+            }
+        ]
+    },
+    "PRODUCTDESCRIPTION": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2013-04-30 00:00:00"
+            },
+            {
+                "col_name": "productdescriptionid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "301eed3a-1a82-4855-99cb-2afe8290d641"
+            },
+            {
+                "col_name": "description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Chromoly steel."
+            }
+        ]
+    },
+    "PRODUCTMODELPRODUCTDESCRIPTIONCULTURE": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "cultureid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "th"
+            },
+            {
+                "col_name": "productmodelid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "productdescriptionid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1712
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2013-04-30 00:00:00"
+            }
+        ]
+    },
+    "PRODUCTREVIEW": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "productid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 937
+            },
+            {
+                "col_name": "rating",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "emailaddress",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "david@graphicdesigninstitute.com"
+            },
+            {
+                "col_name": "reviewdate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2013-11-13 00:00:00"
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2013-11-13 00:00:00"
+            },
+            {
+                "col_name": "reviewername",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "David"
+            },
+            {
+                "col_name": "productreviewid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "A little on the heavy side, but overall the entry/exit is easy in all conditions. I've used these pedals for \nmore than 3 years and I've never had a problem. Cleanup is easy. Mud and sand don't get trapped. I would like \nthem even better if there was a weight reduction. Maybe in the next design. Still, I would recommend them to a friend."
+            },
+            {
+                "col_name": "modifeddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "PRODUCTSUBCATEGORY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "productsubcategoryid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Mountain Bikes"
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2008-04-30 00:00:00"
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2d364ade-264a-433c-b092-4fcbf3804e01"
+            },
+            {
+                "col_name": "productcategoryid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "SALESORDERDETAIL": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "specialofferid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "orderqty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "salesorderid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 43659
+            },
+            {
+                "col_name": "unitpricediscount",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "salesorderdetailid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-31 00:00:00"
+            },
+            {
+                "col_name": "productid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 778
+            },
+            {
+                "col_name": "unitprice",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2024.994
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "475cf8c6-49f6-486e-b0ad-afc6a50cdd2f"
+            },
+            {
+                "col_name": "carriertrackingnumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "4911-403C-98"
+            }
+        ]
+    },
+    "SALESORDERHEADER": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "79b65321-39ca-4115-9cba-8fe0903e12e6"
+            },
+            {
+                "col_name": "STATUS",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "5"
+            },
+            {
+                "col_name": "comment",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "customerid",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 29825
+            },
+            {
+                "col_name": "currencyrateid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "territoryid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "totaldue",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 23153.2339
+            },
+            {
+                "col_name": "revisionnumber",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "salesorderid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 43659
+            },
+            {
+                "col_name": "purchaseordernumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "PO522145787"
+            },
+            {
+                "col_name": "onlineorderflag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "f"
+            },
+            {
+                "col_name": "freight",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 616.0984
+            },
+            {
+                "col_name": "accountnumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10-4020-000676"
+            },
+            {
+                "col_name": "duedate",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2011-06-12 00:00:00"
+            },
+            {
+                "col_name": "shipmethodid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "orderdate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-31 00:00:00"
+            },
+            {
+                "col_name": "creditcardid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "16281"
+            },
+            {
+                "col_name": "billtoaddressid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 985
+            },
+            {
+                "col_name": "creditcardapprovalcode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "105041Vi84182"
+            },
+            {
+                "col_name": "shiptoaddressid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 985
+            },
+            {
+                "col_name": "taxamt",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1971.5149
+            },
+            {
+                "col_name": "subtotal",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20565.6206
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2011-06-07 00:00:00"
+            },
+            {
+                "col_name": "shipdate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2011-06-07 00:00:00"
+            },
+            {
+                "col_name": "salespersonid",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "279"
+            }
+        ]
+    },
+    "SALESPERSON": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "salesytd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 559697.5639
+            },
+            {
+                "col_name": "salesquota",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "48754992-9ee0-4c0e-8c94-9451604e3e02"
+            },
+            {
+                "col_name": "saleslastyear",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "commissionpct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2010-12-28 00:00:00"
+            },
+            {
+                "col_name": "bonus",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "businessentityid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 274
+            },
+            {
+                "col_name": "territoryid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "SALESPERSONQUOTAHISTORY": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "ModifiedDate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2011-04-16 00:00:00"
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "{99109BBF-8693-4587-BC23-6036EC89E1BE}"
+            },
+            {
+                "col_name": "SalesQuota",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 28000.0
+            },
+            {
+                "col_name": "BusinessEntityID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 274
+            },
+            {
+                "col_name": "QuotaDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2011-05-31 00:00:00"
+            }
+        ]
+    },
+    "SALESTERRITORY": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "territoryid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "salesytd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 6771829.1376
+            },
+            {
+                "col_name": "modifieddate",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "TEXT",
+                "sample_value": "2008-04-30 00:00:00"
+            },
+            {
+                "col_name": "group",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "North America"
+            },
+            {
+                "col_name": "saleslastyear",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 5693988.86
+            },
+            {
+                "col_name": "countryregioncode",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "CA"
+            },
+            {
+                "col_name": "rowguid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06b4af8a-1639-476e-9266-110461d66b00"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Canada"
+            },
+            {
+                "col_name": "costytd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "costlastyear",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            }
+        ]
+    }
+}

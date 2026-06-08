@@ -1,0 +1,890 @@
+{
+    "BREWERIES": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 523
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Happy Hoppy Hippo"
+            }
+        ]
+    },
+    "CHANNELS_DIM": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 42
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Twitter"
+            },
+            {
+                "col_name": "shortcut",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "tw"
+            }
+        ]
+    },
+    "CONWAY_GEN_ZERO": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "x",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "alive",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "y",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "CUSTOMERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 523
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Happy Hoppy Hippo"
+            }
+        ]
+    },
+    "CUSTOMER_FAVORITES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "customer_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 50741
+            },
+            {
+                "col_name": "favorite_list",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "5430,7790,7870"
+            }
+        ]
+    },
+    "CUSTOMER_REVIEWS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "customer_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 50042
+            },
+            {
+                "col_name": "review_list",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "4040:A,6600:C,7950:B"
+            }
+        ]
+    },
+    "EMPLOYEES": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 142
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Managing Director"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Harold King"
+            },
+            {
+                "col_name": "supervisor_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "FLOAT",
+                "sample_value": 147.0
+            }
+        ]
+    },
+    "EMP_HIRE_PERIODS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "end_",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2012-04-01"
+            },
+            {
+                "col_name": "start_",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2010-07-01"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Product Director"
+            },
+            {
+                "col_name": "emp_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 142
+            }
+        ]
+    },
+    "FAVORITE_COLL_TYPE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "GENDER_DIM": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Female"
+            },
+            {
+                "col_name": "letter",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "F"
+            }
+        ]
+    },
+    "ID_NAME_COLL_ENTRIES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "ID_NAME_COLL_TYPE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "collection_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "ID_NAME_TYPE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "INVENTORY": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1148
+            },
+            {
+                "col_name": "location_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 244
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7870
+            },
+            {
+                "col_name": "purchase_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 719
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 11.0
+            }
+        ]
+    },
+    "LOCATIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "position",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "warehouse",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "aisle",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            }
+        ]
+    },
+    "MONTHLY_BUDGET": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mth",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2018-02-01"
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6520
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 30.0
+            }
+        ]
+    },
+    "MONTHLY_SALES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mth",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-01-01"
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4040
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 42
+            }
+        ]
+    },
+    "ORDERLINES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 9233
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 422
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 80.0
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4280
+            },
+            {
+                "col_name": "amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1750.0
+            }
+        ]
+    },
+    "ORDERS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 421
+            },
+            {
+                "col_name": "delivery",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "ordered",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-15"
+            },
+            {
+                "col_name": "customer_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 50042
+            }
+        ]
+    },
+    "PACKAGING": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 523
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Happy Hoppy Hippo"
+            }
+        ]
+    },
+    "PACKAGING_RELATIONS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "packaging_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 521
+            },
+            {
+                "col_name": "contains_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 502
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 72
+            }
+        ]
+    },
+    "PICKING_LINE": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "picklist_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 841
+            },
+            {
+                "col_name": "line_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 42.0
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6520
+            },
+            {
+                "col_name": "order_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 421
+            },
+            {
+                "col_name": "location_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            }
+        ]
+    },
+    "PICKING_LIST": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 842
+            },
+            {
+                "col_name": "created",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-19 15:57:42"
+            },
+            {
+                "col_name": "picker_emp_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 152
+            }
+        ]
+    },
+    "PICKING_LOG": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "pickline_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "FLOAT",
+                "sample_value": 2.0
+            },
+            {
+                "col_name": "picklist_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 841
+            },
+            {
+                "col_name": "log_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-01-16 14:05:44"
+            },
+            {
+                "col_name": "activity",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "location_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            }
+        ]
+    },
+    "PRODUCTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4040
+            },
+            {
+                "col_name": "group_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 142
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Coalminers Sweat"
+            }
+        ]
+    },
+    "PRODUCT_ALCOHOL": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "product_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4040
+            },
+            {
+                "col_name": "abv",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 8.5
+            },
+            {
+                "col_name": "sales_volume",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 330.0
+            }
+        ]
+    },
+    "PRODUCT_GROUPS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 523
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Happy Hoppy Hippo"
+            }
+        ]
+    },
+    "PRODUCT_MINIMUMS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "product_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 6520
+            },
+            {
+                "col_name": "qty_purchase",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 400.0
+            },
+            {
+                "col_name": "qty_minimum",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 100.0
+            }
+        ]
+    },
+    "PURCHASES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 602
+            },
+            {
+                "col_name": "product_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4280
+            },
+            {
+                "col_name": "purchased",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-01-03"
+            },
+            {
+                "col_name": "cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 122.0
+            },
+            {
+                "col_name": "qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 17
+            },
+            {
+                "col_name": "brewery_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 536
+            }
+        ]
+    },
+    "STOCK": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "symbol",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "company",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "TICKER": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "price",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 14.2
+            },
+            {
+                "col_name": "symbol",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "BEER"
+            },
+            {
+                "col_name": "day",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-04-02"
+            }
+        ]
+    },
+    "WEB_APPS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 523
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Happy Hoppy Hippo"
+            }
+        ]
+    },
+    "WEB_COUNTER_HIST": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "app_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 542
+            },
+            {
+                "col_name": "day",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-04-05"
+            },
+            {
+                "col_name": "page_no",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "counter",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 5311
+            }
+        ]
+    },
+    "WEB_DEMOGRAPHICS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "f_tw_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 76
+            },
+            {
+                "col_name": "f_fb_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 68
+            },
+            {
+                "col_name": "m_tw_cnt",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1232
+            },
+            {
+                "col_name": "m_tw_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 86
+            },
+            {
+                "col_name": "f_fb_cnt",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 564
+            },
+            {
+                "col_name": "f_tw_cnt",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 651
+            },
+            {
+                "col_name": "m_fb_qty",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 64
+            },
+            {
+                "col_name": "day",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-05-01"
+            },
+            {
+                "col_name": "m_fb_cnt",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1017
+            }
+        ]
+    },
+    "WEB_PAGES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "app_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 542
+            },
+            {
+                "col_name": "page_no",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "friendly_url",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "/Shop"
+            }
+        ]
+    },
+    "WEB_PAGE_VISITS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "client_ip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "104.130.89.12"
+            },
+            {
+                "col_name": "page_no",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "app_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 542
+            },
+            {
+                "col_name": "visit_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2019-04-20 08:16:31"
+            }
+        ]
+    }
+}

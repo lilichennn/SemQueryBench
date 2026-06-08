@@ -1,0 +1,811 @@
+{
+    "ASTROMETRY_CORR_V_0_4": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "9ebd03df4d25114ab5d35e35182e19d430759b94c48c581e2b9d4dc29e667cb3"
+            },
+            {
+                "col_name": "index_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 84
+            },
+            {
+                "col_name": "field_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 441
+            },
+            {
+                "col_name": "field_dec",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 12.73648611344751
+            },
+            {
+                "col_name": "field_x",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 6234.71875
+            },
+            {
+                "col_name": "BACKGROUND",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 76.39909362792969
+            },
+            {
+                "col_name": "index_y",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 393.0832421046689
+            },
+            {
+                "col_name": "index_ra",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 144.56690899364185
+            },
+            {
+                "col_name": "FLUX",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1.9159088134765625
+            },
+            {
+                "col_name": "field_y",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 393.1032409667969
+            },
+            {
+                "col_name": "index_x",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 6234.903557313227
+            },
+            {
+                "col_name": "match_weight",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.9978395466920116
+            },
+            {
+                "col_name": "field_ra",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 144.56711916886826
+            },
+            {
+                "col_name": "index_dec",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 12.736253991109848
+            }
+        ]
+    },
+    "ASTROMETRY_INDEX_V_0_4": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0017db281c6e70df06091532370a70bc83032438f6764a9a78aa6c437f812430"
+            },
+            {
+                "col_name": "X",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 705.9556861080437
+            },
+            {
+                "col_name": "Y",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 1884.7923325319289
+            }
+        ]
+    },
+    "ASTROMETRY_MATCH_V_0_4": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "NINDEX",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 19
+            },
+            {
+                "col_name": "HEALPIX",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": -1
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "3b356e60bf8dc5e89c41af6c5ea06b4c4c33abc83d6b0b30f68aef78685f3a9b"
+            },
+            {
+                "col_name": "CRPIX",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1.949486124674479e+03,\n  1.886181925455729e+03\n]"
+            },
+            {
+                "col_name": "FIELDNAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "NVERIFIED",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3511
+            },
+            {
+                "col_name": "STARS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  139413,\n  139476,\n  139421,\n  0,\n  0\n]"
+            },
+            {
+                "col_name": "CD",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  3.179277744197348e-04,\n  -2.893188036831281e-04,\n  -2.897802733736586e-04,\n  -3.169790604966651e-04\n]"
+            },
+            {
+                "col_name": "FIELDOBJS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  190,\n  85,\n  79,\n  0,\n  0\n]"
+            },
+            {
+                "col_name": "CODEERR",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 7.80648915679194e-05
+            },
+            {
+                "col_name": "LOGODDS",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 20.942501068115234
+            },
+            {
+                "col_name": "NDISTRACT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "NCONFLICT",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "QTRIED",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5104
+            },
+            {
+                "col_name": "WORSTLOGODDS",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "NAGREE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "QUADXYZ",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  -8.846957627415414e-01,\n  4.231182833721671e-01,\n  1.956638077263869e-01,\n  -8.695459686847278e-01,\n  4.493294608428444e-01,\n  2.049215550545886e-01,\n  -8.737517906990255e-01,\n  4.385063265074292e-01,\n  2.104043972702707e-01,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "WCS_VALID",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "NFIELD",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 365
+            },
+            {
+                "col_name": "NMATCH",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "TIMEUSED",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0839999914169312
+            },
+            {
+                "col_name": "CENTERXYZ",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  -8.788348749828896e-01,\n  4.331798811010470e-01,\n  2.000111324978974e-01\n]"
+            },
+            {
+                "col_name": "CRVAL",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1.534875944633596e+02,\n  1.175349489208645e+01\n]"
+            },
+            {
+                "col_name": "RADIUS",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.4167109118779977
+            },
+            {
+                "col_name": "QSCALEOK",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3512
+            },
+            {
+                "col_name": "QUAD",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 271856
+            },
+            {
+                "col_name": "QUADPIX",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  4.287302734375000e+03,\n  1.226925537109375e+03,\n  4.619802246093750e+02,\n  3.025487060546875e+03,\n  1.099175415039062e+03,\n  1.406133178710938e+03,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00,\n  0.000000000000000e+00\n]"
+            },
+            {
+                "col_name": "PARITY",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "HPNSIDE",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "DIMQUADS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "QMATCHED",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1139528
+            },
+            {
+                "col_name": "IDS",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  0,\n  0,\n  0,\n  0,\n  0\n]"
+            },
+            {
+                "col_name": "FIELDID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "QPEERS",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 107
+            },
+            {
+                "col_name": "INDEXID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4211
+            },
+            {
+                "col_name": "FIELDNUM",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "ASTROMETRY_RDLS_V_0_4": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "46322512242282fe832a3bd60aa3cf3b737f76b2fa6bc8125316b03611d942c0"
+            },
+            {
+                "col_name": "DEC",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 17.567931987208794
+            },
+            {
+                "col_name": "RA",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 150.17478600307095
+            }
+        ]
+    },
+    "PHOTOS_V_0_1": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "upload_session_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "dd9aa9154fcbbc5f4c5dd79123341397ea73da8aaf27e8257e7476774616a358"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "262718e921d5d188f3a0dbd50f115eeb9a3fff5ab6d4c467809152d6f78e7eab"
+            },
+            {
+                "col_name": "width",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4592
+            },
+            {
+                "col_name": "vision_labels",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "atmosphere,atmosphere of earth,daytime,corona,phenomenon,eclipse,sky,celestial event,night,computer "
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3056
+            },
+            {
+                "col_name": "detected_circle",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"center_x\": 3.458500000000000e+03,\n  \"center_y\": 1.275500000000000e+03,\n  \"radius\": 7.322912597656250e+02\n}"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 39.13574008333333
+            },
+            {
+                "col_name": "exposure_time",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "1/60"
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -94.14550858333334
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MO"
+            },
+            {
+                "col_name": "equatorial_mount",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "image_bucket",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "megamovie"
+            },
+            {
+                "col_name": "user",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "f341da27741e49d4aead0610dd6d0880"
+            },
+            {
+                "col_name": "image_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503339131000000
+            },
+            {
+                "col_name": "is_mobile",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "uploaded_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1503346160864372
+            },
+            {
+                "col_name": "storage_uri",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "https://storage.googleapis.com/gcs-public-data--eclipse-megamovie/v0.1/262718e921d5d188f3a0dbd50f115"
+            },
+            {
+                "col_name": "camera_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503321131000000
+            },
+            {
+                "col_name": "model",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NEX-5"
+            },
+            {
+                "col_name": "make",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "SONY"
+            },
+            {
+                "col_name": "totality",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "aperture_value",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "datetime_repaired",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "image_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ARW"
+            }
+        ]
+    },
+    "PHOTOS_V_0_2": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "upload_session_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "dd9aa9154fcbbc5f4c5dd79123341397ea73da8aaf27e8257e7476774616a358"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "262718e921d5d188f3a0dbd50f115eeb9a3fff5ab6d4c467809152d6f78e7eab"
+            },
+            {
+                "col_name": "width",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4592
+            },
+            {
+                "col_name": "vision_labels",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "atmosphere,atmosphere of earth,daytime,corona,phenomenon,eclipse,sky,celestial event,night,computer "
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3056
+            },
+            {
+                "col_name": "detected_circle",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"center_x\": 3.458500000000000e+03,\n  \"center_y\": 1.275500000000000e+03,\n  \"radius\": 7.322912597656250e+02\n}"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 39.13574008333333
+            },
+            {
+                "col_name": "exposure_time",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "1/60"
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -94.14550858333334
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MO"
+            },
+            {
+                "col_name": "equatorial_mount",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "image_bucket",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "megamovie"
+            },
+            {
+                "col_name": "user",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "f341da27741e49d4aead0610dd6d0880"
+            },
+            {
+                "col_name": "image_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503339131000000
+            },
+            {
+                "col_name": "is_mobile",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "uploaded_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1503346160864372
+            },
+            {
+                "col_name": "storage_uri",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "https://storage.googleapis.com/gcs-public-data--eclipse-megamovie/v0.1/262718e921d5d188f3a0dbd50f115"
+            },
+            {
+                "col_name": "camera_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1503321131000000
+            },
+            {
+                "col_name": "model",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NEX-5"
+            },
+            {
+                "col_name": "make",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "SONY"
+            },
+            {
+                "col_name": "totality",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "aperture_value",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "datetime_repaired",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "image_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ARW"
+            }
+        ]
+    },
+    "PHOTOS_V_0_3": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "upload_session_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "02ce207dee98e855ab2fb3964fd520eaa1b367baca5980063bf54432ef64bc49"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "454aad8e1cd2fc9b9dce8686b886b855901f85fb006d5a9721a15f0670abb8ae"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "TX"
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 333
+            },
+            {
+                "col_name": "camera_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "exposure_time",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "aperture_value",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "uploaded_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1503608659516161
+            },
+            {
+                "col_name": "image_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -98.38522222222223
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 29.45259722222222
+            },
+            {
+                "col_name": "vision_labels",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "public space,recreation,leisure,vehicle,tree,park,landscape,playground,plant,tourism"
+            },
+            {
+                "col_name": "datetime_repaired",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "image_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "JPEG"
+            },
+            {
+                "col_name": "equatorial_mount",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "totality",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "model",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "make",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "user",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "7e4d9b6f399446818e78cc39342ef1c6"
+            },
+            {
+                "col_name": "jpeg_storage_uri",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "https://storage.googleapis.com/gcs-public-data--eclipse-megamovie/v0.3/454aad8e1cd2fc9b9dce8686b886b"
+            },
+            {
+                "col_name": "width",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 500
+            },
+            {
+                "col_name": "storage_uri",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "https://storage.googleapis.com/gcs-public-data--eclipse-megamovie/v0.3/454aad8e1cd2fc9b9dce8686b886b"
+            },
+            {
+                "col_name": "is_mobile",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "image_bucket",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "megamovie"
+            },
+            {
+                "col_name": "detected_circle",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"center_x\": 9.250000000000000e+01,\n  \"center_y\": 1.915000000000000e+02,\n  \"radius\": 5.522680282592773e+00\n}"
+            }
+        ]
+    }
+}

@@ -1,0 +1,398 @@
+{
+    "BOWLERS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "BowlerID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "BowlerState",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "WA"
+            },
+            {
+                "col_name": "BowlerPhoneNumber",
+                "col_tag": "CONTACT_PHONE",
+                "col_type": "TEXT",
+                "sample_value": "(206) 555-9893"
+            },
+            {
+                "col_name": "BowlerGamesBowled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 39
+            },
+            {
+                "col_name": "BowlerCity",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Seattle"
+            },
+            {
+                "col_name": "BowlerFirstName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Sara"
+            },
+            {
+                "col_name": "BowlerCurrentHcp",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 52
+            },
+            {
+                "col_name": "BowlerAddress",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "17950 N 59th"
+            },
+            {
+                "col_name": "TeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "BowlerLastName",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Sheskey"
+            },
+            {
+                "col_name": "BowlerMiddleInit",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "J"
+            },
+            {
+                "col_name": "BowlerZip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "98011"
+            },
+            {
+                "col_name": "BowlerTotalPins",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 5534
+            },
+            {
+                "col_name": "BowlerCurrentAverage",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 142
+            }
+        ]
+    },
+    "BOWLER_SCORES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "HandiCapScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 205
+            },
+            {
+                "col_name": "BowlerID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MatchID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "RawScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "NUMBER",
+                "sample_value": 166
+            },
+            {
+                "col_name": "GameNumber",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "WonGame",
+                "col_tag": "STATUS_WORK",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "BOWLER_SCORES_ARCHIVE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "GameNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "BowlerID",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WonGame",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "HandiCapScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "RawScore",
+                "col_tag": "VAL_SCORE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MatchID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "MATCH_GAMES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "GameNumber",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "MatchID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "WinningTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            }
+        ]
+    },
+    "MATCH_GAMES_ARCHIVE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "GameNumber",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "WinningTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MatchID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "SQLITE_SEQUENCE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "seq",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 34
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bowlers"
+            }
+        ]
+    },
+    "TEAMS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "TeamID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "TeamName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Sharks"
+            },
+            {
+                "col_name": "CaptainID",
+                "col_tag": "REL_PERSON",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            }
+        ]
+    },
+    "TOURNAMENTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "TourneyID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "TourneyDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2017-09-11"
+            },
+            {
+                "col_name": "TourneyLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Thunderbird Lanes"
+            }
+        ]
+    },
+    "TOURNAMENTS_ARCHIVE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "TourneyID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TourneyLocation",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TourneyDate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "TOURNEY_MATCHES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "MatchID",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "OddLaneTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "Lanes",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "01-02"
+            },
+            {
+                "col_name": "TourneyID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "EvenLaneTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            }
+        ]
+    },
+    "TOURNEY_MATCHES_ARCHIVE": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "MatchID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "EvenLaneTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TourneyID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "OddLaneTeamID",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "Lanes",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "WAZIPS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "State",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "WA"
+            },
+            {
+                "col_name": "ZIP",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "98001"
+            },
+            {
+                "col_name": "City",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Auburn"
+            }
+        ]
+    }
+}

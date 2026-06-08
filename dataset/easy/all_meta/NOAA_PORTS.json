@@ -1,0 +1,2498 @@
+{
+    "GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "publication_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CP05"
+            },
+            {
+                "col_name": "region_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8650"
+            },
+            {
+                "col_name": "chart_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1510"
+            },
+            {
+                "col_name": "index_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8822"
+            },
+            {
+                "col_name": "degauss",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "crane_float",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "eng_supplies",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "max_vessel_size",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "dry_dock_types",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cargo_beach_moor",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "quarantine_sscc_cert_required",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "cargo_pier_depth",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "E"
+            },
+            {
+                "col_name": "deck_supplies",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "entry_ice",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "provisions",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "comms_rail",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "comms_phone",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "entry_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "crane_mobile",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "port_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -90.7
+            },
+            {
+                "col_name": "comms_vhf",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "channel_depth",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "K"
+            },
+            {
+                "col_name": "harbor_type",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "RN"
+            },
+            {
+                "col_name": "pilot_available",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "services_steam",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "tug_salvage",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "quarantine_procedures_required",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "entry_tide",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "port_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xcd\\xcc\\xcc\\xcc\\xcc\\xacV\\xc003333s<@')"
+            },
+            {
+                "col_name": "railway_types",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "services_nav_equip",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "cargo_oil_depth",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "J"
+            },
+            {
+                "col_name": "cargo_med_moor",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "eta_message_required",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "cargo_wharf",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "anchorage_depth",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "K"
+            },
+            {
+                "col_name": "country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "turning_area",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "med_facility",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "comms_fax",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "pilot_required",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "shelter_afforded",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "comms_radio",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "cargo_anchor",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "services_longshore",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "good_holding_ground",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "tug_assist",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "port_of_entry",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "pilot_advised",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "entry_swell",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "harbor_size",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "lift_25_49_tons",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "repair_types",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "lift_100_tons",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "quarantine_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "port_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "SOUTHWEST PASS"
+            },
+            {
+                "col_name": "services_electrical_repair",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "us_representative",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "dirty_ballast",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "water",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "pilot_local_assist",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "crane_fixed",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "services_electrical",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "tide_range",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "lift_50_100_tons",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "diesel",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "fuel_oil",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "cargo_ice_moor",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "port_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 28.45
+            },
+            {
+                "col_name": "overhead_limit",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "lift_0_24_tons",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "garbage_dispose",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "comms_air",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ADJACENT_COUNTIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19015"
+            },
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"19153\",\n  \"19049\",\n  \"19187\",\n  \"19073\",\n  \"19169\",\n  \"19079\"\n]"
+            },
+            {
+                "col_name": "neighbors",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Polk\",\n  \"Dallas\",\n  \"Webster\",\n  \"Greene\",\n  \"Story\",\n  \"Hamilton\"\n]"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\"\n]"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Iowa"
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Boone County"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ADJACENT_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "AL"
+            },
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"12\",\n  \"13\",\n  \"28\",\n  \"47\"\n]"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Alabama"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Florida\",\n  \"Georgia\",\n  \"Mississippi\",\n  \"Tennessee\"\n]"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CBSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "12140"
+            },
+            {
+                "col_name": "csa_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "258"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M2"
+            },
+            {
+                "col_name": "msa_indicator",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3110"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "12140"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Auburn, IN"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 2657419.0
+            },
+            {
+                "col_name": "cbsa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00]\\x05\\x00\\x00\\tu\\x91BYLU\\xc0\\x04\\x87\\x17D\\xa4\\xb0D@O"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 939731962.0
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xf3\\xbb\\x9f\\t\\x03@U\\xc0<@\\x9c,Z\\xb3D@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Auburn, IN Micro Area"
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -85.0001854
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 41.4011894
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CNECTA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "cnecta_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "lsad",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "M4"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3200"
+            },
+            {
+                "col_name": "cnecta_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xe9\\x1c\\x00\\x00\\xdca\\x13\\x99\\xb9\\x9eQ\\xc0\\xe5u\\xc4!"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.8562034
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -70.3192682
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1537827560
+            },
+            {
+                "col_name": "name_lsad",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME Combined NECTA"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6254813062
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COASTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "coastline_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x0e\\x00\\x00\\x00\\xea\\xe1\\xcbD\\x11\\xf9R\\xc0\\xc7\\x83-v\\xfb\\xeeB@\\xea\\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Atlantic"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1903"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "03"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x95\\x16\\x00\\x00gwH1@\\x01X\\xc0\\xd3|\\x95|\\xec\\xbeD@h\\"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 156085934
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xea\\x9e+\\x00\\xfc\\xa8W\\xc0\\xcb\\xce\\x91K\\xd2\\x9aD@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 3"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22761908990
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 41.2095427
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -94.6403809
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_116": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1903"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "03"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x95\\x16\\x00\\x00gwH1@\\x01X\\xc0\\xd3|\\x95|\\xec\\xbeD@h\\"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 156085934
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xea\\x9e+\\x00\\xfc\\xa8W\\xc0\\xcb\\xce\\x91K\\xd2\\x9aD@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 3"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22761908990
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 41.2095427
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -94.6403809
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COUNTIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "county_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01581110"
+            },
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06"
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "H1"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G4020"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55099"
+            },
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55099"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55"
+            },
+            {
+                "col_name": "csa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "met_div_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -90.3596497
+            },
+            {
+                "col_name": "county_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xaa\\x05\\x00\\x00\\x04q\\x1eN`\\xabV\\xc0\\r |(\\xd1\\xdcF@\\"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Price County"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\n\\xe1,\\x80\\x04\\x97V\\xc0v\\x8e\\x01\\xd9\\xeb\\xd6F@')"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 62098964
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3247987842
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Price"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 45.6790725
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -86.7482873
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xc7`j\\xf0\\xe3\\xafU\\xc05Lm\\xa9\\x83\\xc3@@')"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 33.5274555
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL CSA"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 347190038.0
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 17485172162.0
+            },
+            {
+                "col_name": "msa_lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "M0"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3100"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL"
+            },
+            {
+                "col_name": "csa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xc4\\x18\\x00\\x006\\xe34D\\x15\\xd1U\\xc0\\xc2\\x15P\\xa8\\xa"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_METROPOLITAN_DIVISIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "148"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3120"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1446014454"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "cbsa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "14460"
+            },
+            {
+                "col_name": "metdiv_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "14454"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 2882492193.0
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Boston, MA"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00&d1\\xfb\\x06\\xb8Q\\xc0\\x89\\xaf\\xc0\\xa1\\x01\\x08E@')"
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 42.0625498
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1411373083.0
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -70.8754261
+            },
+            {
+                "col_name": "metdiv_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x04\\x10\\x00\\x00}\\xe5Az\\x8a\\xcaQ\\xc0\\x96\\xc5\\xc4\\xe6"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Boston, MA Metro Division"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NWS_FORECAST_REGIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "fe_area",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "nw"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Perkins"
+            },
+            {
+                "col_name": "cwa",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "UNR"
+            },
+            {
+                "col_name": "shape_geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00X\\x00\\x00\\x00\\xa9\\x86\\xff\\x9f\\x03\\xafY\\xc0/.\\x00 \\xf"
+            },
+            {
+                "col_name": "shortname",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Perkins"
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -102.4759
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SD"
+            },
+            {
+                "col_name": "state_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SD002"
+            },
+            {
+                "col_name": "zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "002"
+            },
+            {
+                "col_name": "time_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 45.4904
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_RAILWAYS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 11094844118
+            },
+            {
+                "col_name": "railway_geom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"LineString\",\"coordinates\":[[-85.756163,30.789894],[-85.749904,30.79131299999999],[-85.74871"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "R1011"
+            },
+            {
+                "col_name": "full_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Louisville and Nashville RR"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "78"
+            },
+            {
+                "col_name": "division_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "78"
+            },
+            {
+                "col_name": "state_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01802710"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "VI"
+            },
+            {
+                "col_name": "region_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G4000"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "00"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1550236199
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -64.9712508
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xb0\\x8d\\x1d\\xf9(>P\\xc0\\x8d\\x08\\xc6\\xc1\\xa5S2@')"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 348021896
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "United States Virgin Islands"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 18.326748
+            },
+            {
+                "col_name": "state_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xd6\\x00\\x00\\x00"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_URBAN_AREAS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66673"
+            },
+            {
+                "col_name": "urban_area_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66673"
+            },
+            {
+                "col_name": "area_lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "75"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3500"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 34.2523074
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00gy\\xc3\"\\xab\\xcc]\\xc0\\xf7\\xc4\\xdf\\x9bK A@')"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -119.1979453
+            },
+            {
+                "col_name": "urban_area_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x000\\x00\\x00\\x00\\xe"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Oxnard, CA"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Oxnard, CA Urbanized Area"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "U"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 218825133.0
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 4464116.0
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ZIP_CODES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19933"
+            },
+            {
+                "col_name": "state_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "DE"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 163966032.0
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 38.7283373
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 472583.0
+            },
+            {
+                "col_name": "zip_code_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\xb6\\x08\\x00\\x00U\\r\\xc2\\xdc\\xee\\xedR\\xc0\\x05\\xf1\\x81"
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "B5"
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Sussex County"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Delaware"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\x96m\\xf1:\\xac\\xe7R\\xc0~\\xfa\\x19(:]C@')"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G6350"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -75.6198871
+            },
+            {
+                "col_name": "city",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Seaford city, Bridgeville town"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NATIONAL_OUTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "aff_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "us_outline_geom",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "NOAA_HURRICANES_HURRICANES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "sid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1903070S13057"
+            },
+            {
+                "col_name": "usa_atcf_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            },
+            {
+                "col_name": "bom_tnum",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ds824_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -12.7867
+            },
+            {
+                "col_name": "bom_r50_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "iflag",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "_________O____"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "1903"
+            },
+            {
+                "col_name": "bom_eye",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r50_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "nature",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "TS"
+            },
+            {
+                "col_name": "hko_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 56.2618
+            },
+            {
+                "col_name": "bom_r64_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r50_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "nadi_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_ci",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r50_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "mlc_class",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "bom_type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r34_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_dp",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9635_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r50_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r34_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_poci",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r34_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r34_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "mlc_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r64_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r50_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "neumann_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r64_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "ds824_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "hko_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "hko_cat",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "bom_pos_method",
+                "col_tag": "DESC_LONG",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "cma_cat",
+                "col_tag": "DESC_LONG",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "basin",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SI"
+            },
+            {
+                "col_name": "bom_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ds824_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 49.7
+            },
+            {
+                "col_name": "usa_r64_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_eye",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "newdelhi_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "iso_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": -2107512000000000
+            },
+            {
+                "col_name": "tokyo_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_tnum",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 9.9
+            },
+            {
+                "col_name": "bom_r34_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r64_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_r30_long",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wmo_agency",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "subbasin",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "MM"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 49.7
+            },
+            {
+                "col_name": "bom_r34_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "cma_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "cma_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r64_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r34_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r50_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r50_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wellington_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_roci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9635_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_agency",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "landfall",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 539.0
+            },
+            {
+                "col_name": "usa_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "wmo_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9635_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -29.3
+            },
+            {
+                "col_name": "usa_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "nadi_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r34_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wmo_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_r30_short",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r34_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "nadi_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_r50_short",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r34_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_pressure_method",
+                "col_tag": "DESC_LONG",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_rmw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "mlc_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "track_type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "main"
+            },
+            {
+                "col_name": "ds824_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -29.3
+            },
+            {
+                "col_name": "usa_record",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "reunion_r64_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_r64_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_grade",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cma_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_r50_longitude",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "hko_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "etl_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1729218710034723
+            },
+            {
+                "col_name": "cma_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r64_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wellington_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ds824_stage",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "TC"
+            },
+            {
+                "col_name": "reunion_r50_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r34_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_poci",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r64_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "nadi_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "neumann_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "source_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r"
+            },
+            {
+                "col_name": "newdelhi_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r50_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9636_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9636_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9636_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 55.9572
+            },
+            {
+                "col_name": "bom_roci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wellington_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r34_ne",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "mlc_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_ci",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "neumann_class",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "reunion_rmw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "hko_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_r64_se",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NOT_NAMED"
+            },
+            {
+                "col_name": "tokyo_r50_dir",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_grade",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": " "
+            },
+            {
+                "col_name": "td9635_roci",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_ci",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "reunion_type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 99.0
+            },
+            {
+                "col_name": "mlc_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_land",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_rmw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_sshs",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": -5
+            },
+            {
+                "col_name": "reunion_r50_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "wellington_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9635_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "tokyo_pressure",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "nadi_cat",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "td9636_stage",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": 7.0
+            },
+            {
+                "col_name": "tokyo_r30_dir",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "newdelhi_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r50_nw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "usa_poci",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "bom_r64_sw",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "dist2land",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 539
+            },
+            {
+                "col_name": "td9636_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -12.9791
+            },
+            {
+                "col_name": "neumann_wind",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "neumann_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": null
+            }
+        ]
+    }
+}

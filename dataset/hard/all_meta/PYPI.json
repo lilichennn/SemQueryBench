@@ -1,0 +1,282 @@
+{
+    "FILE_DOWNLOADS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "/packages/f5/3a/74a29b11cf2cdfcd6ba89c0cecd70b37cd1ba7b77978ce611eb7a146a832/dill-0.3.7-py3-none-any"
+            },
+            {
+                "col_name": "project",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "dill"
+            },
+            {
+                "col_name": "details",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"cpu\": \"x86_64\",\n  \"distro\": {\n    \"id\": \"Karoo\",\n    \"libc\": {\n      \"lib\": \"glibc\",\n      \"ver"
+            },
+            {
+                "col_name": "tls_cipher",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ECDHE-RSA-AES128-GCM-SHA256"
+            },
+            {
+                "col_name": "tls_protocol",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TLSv1.2"
+            },
+            {
+                "col_name": "country_code",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "file",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"filename\": \"dill-0.3.7-py3-none-any.whl\",\n  \"project\": \"dill\",\n  \"type\": \"bdist_wheel\",\n  \"vers"
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1705053937000000
+            }
+        ]
+    },
+    "DISTRIBUTION_METADATA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "sha256_digest",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "989ecce3803b23bea32b212bc00d93e7ec9ca052aaf66062bb7321ffdb90ea98"
+            },
+            {
+                "col_name": "md5_digest",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8703ae2cbeedb760a2e3100621ef5958"
+            },
+            {
+                "col_name": "blake2_256_digest",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "e844c7b6e88b860cdc7908b3be665c7f90eb818c715112ac3232017dc3bef31e"
+            },
+            {
+                "col_name": "filename",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "uttl.buildout-1.2.2-py3.9.egg"
+            },
+            {
+                "col_name": "platform",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "python_version",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": "1.2.2"
+            },
+            {
+                "col_name": "upload_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1632989731907552
+            },
+            {
+                "col_name": "path",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "e8/44/c7b6e88b860cdc7908b3be665c7f90eb818c715112ac3232017dc3bef31e/uttl.buildout-1.2.2-py3.9.egg"
+            },
+            {
+                "col_name": "summary",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Utilities for Buildout developed for Up There They Love."
+            },
+            {
+                "col_name": "author",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Mr. Hands"
+            },
+            {
+                "col_name": "obsoletes_dist",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "download_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "comment_text",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "description_content_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "text/markdown"
+            },
+            {
+                "col_name": "author_email",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": "mrhands31@gmail.com"
+            },
+            {
+                "col_name": "has_signature",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "requires_python",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": ">=3"
+            },
+            {
+                "col_name": "maintainer",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "maintainer_email",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "uttl.buildout"
+            },
+            {
+                "col_name": "keywords",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "buildout extension uttl cmake qmake qt copyfile version"
+            },
+            {
+                "col_name": "description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "uttl.buildout\n=============\n\nUtilities for [zc.buildout](buildout.org/) for different build systems "
+            },
+            {
+                "col_name": "requires_external",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "classifiers",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Framework :: Buildout\",\n  \"Intended Audience :: Developers\",\n  \"Topic :: Software Development :"
+            },
+            {
+                "col_name": "requires",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "project_urls",
+                "col_tag": "CONTACT_URL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "license",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MIT-0"
+            },
+            {
+                "col_name": "packagetype",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "bdist_egg"
+            },
+            {
+                "col_name": "provides_dist",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "requires_dist",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "uploaded_via",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "twine/3.4.2 importlib_metadata/4.8.1 pkginfo/1.7.1 requests/2.26.0 requests-toolbelt/0.9.1 tqdm/4.62"
+            },
+            {
+                "col_name": "provides",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "size",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 39065
+            },
+            {
+                "col_name": "version",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": "1.2.2"
+            },
+            {
+                "col_name": "home_page",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://github.com/MrHands/uttl-buildout"
+            },
+            {
+                "col_name": "obsoletes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "metadata_version",
+                "col_tag": null,
+                "col_type": "TEXT",
+                "sample_value": "2.1"
+            }
+        ]
+    }
+}

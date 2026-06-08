@@ -1,0 +1,74 @@
+{
+    "main": {
+        "USA_1910_2013": {
+            "table_tag": "REFERENCE",
+            "colname_list": [
+                {
+                    "col_name": "gender",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "F"
+                },
+                {
+                    "col_name": "name",
+                    "col_tag": "NAME_ENTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "Mary"
+                },
+                {
+                    "col_name": "number",
+                    "col_tag": "VAL_QUANTITY",
+                    "col_type": "NUMBER",
+                    "sample_value": 875
+                },
+                {
+                    "col_name": "state",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "AL"
+                },
+                {
+                    "col_name": "year",
+                    "col_tag": "TIME_EVENT",
+                    "col_type": "NUMBER",
+                    "sample_value": 1910
+                }
+            ]
+        },
+        "USA_1910_CURRENT": {
+            "table_tag": "REFERENCE",
+            "colname_list": [
+                {
+                    "col_name": "gender",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "F"
+                },
+                {
+                    "col_name": "name",
+                    "col_tag": "NAME_ENTITY",
+                    "col_type": "TEXT",
+                    "sample_value": "Mary"
+                },
+                {
+                    "col_name": "number",
+                    "col_tag": "VAL_QUANTITY",
+                    "col_type": "NUMBER",
+                    "sample_value": 875
+                },
+                {
+                    "col_name": "state",
+                    "col_tag": "CATEGORY_TOPIC",
+                    "col_type": "TEXT",
+                    "sample_value": "AL"
+                },
+                {
+                    "col_name": "year",
+                    "col_tag": "TIME_EVENT",
+                    "col_type": "NUMBER",
+                    "sample_value": 1910
+                }
+            ]
+        }
+    }
+}

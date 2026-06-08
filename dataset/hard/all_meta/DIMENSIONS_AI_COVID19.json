@@ -1,0 +1,1724 @@
+{
+    "CLINICAL_TRIALS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "CTRI/2022/01/039375"
+            },
+            {
+                "col_name": "study_outcome_measures",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_bra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"4002\",\n      \"value\": \"Health Services Research\"\n    }\n  ],\n  \"values\": [\n    \"Health Services Research\"\n  ]\n}"
+            },
+            {
+                "col_name": "category_hrcs_rac",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"8.1\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"8.1\",\n      \"id\": \"10801\",\n      \"name\": \"Organisation and delivery of services\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "publication_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "interventions",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"description\": \"Neurobics exercise protocol given for 12 sessions over 3 weeks for 20 mins\",\n    \"name\": \"Neurobics exercises\",\n    \"type\": \"Intervention\"\n  }\n]"
+            },
+            {
+                "col_name": "category_hra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"3902\",\n      \"value\": \"Health services & systems\"\n    }\n  ],\n  \"values\": [\n    \"Health services & systems\"\n  ]\n}"
+            },
+            {
+                "col_name": "study_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Observational"
+            },
+            {
+                "col_name": "category_hrcs_hc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"897\",\n      \"value\": \"Neurological\"\n    },\n    {\n      \"id\": \"890\",\n      \"value\": \"Generic health relevance\"\n    }\n  ],\n  \"values\": [\n    \"Neurological\",\n    \"Generic health relevance\"\n  ]\n}"
+            },
+            {
+                "col_name": "acronym",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "RECOUP-NY"
+            },
+            {
+                "col_name": "start_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2022
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Effect of Neurobics on stress & work-related quality of life in nurses"
+            },
+            {
+                "col_name": "study_maximum_age",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "N/A"
+            },
+            {
+                "col_name": "category_icrp_ct",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "study_eligibility_criteria",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Inclusion criterion: o Postoperative patients admitted to TMH Extended post anesthetic care in PACU "
+            },
+            {
+                "col_name": "mesh_terms",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "date_imported_gbq",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1661829850000000
+            },
+            {
+                "col_name": "active_years",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2022\n]"
+            },
+            {
+                "col_name": "category_sdg",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"3\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"3\",\n      \"id\": \"40003\",\n      \"name\": \"Good Health and Well Being\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "concepts",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"concept\": \"related quality\",\n    \"relevance\": 6.150655283446721e-01\n  },\n  {\n    \"concept\": \"brain mapping\",\n    \"relevance\": 6.142671981015843e-01\n  },\n  {\n    \"concept\": \"work-related quality\",\n    \"relevance\": 6.043822010552916e-01\n  },\n  {\n    \"concept\": \"staff nurses\",\n    \"relevance\": 5.972935266169345e-01\n  },\n  {\n    \"concept\": \"patient safety incidences\",\n    \"relevance\": 5.826758374599327e-01\n  },\n  {\n    \"concept\": \"non-COVID wards\",\n    \"relevance\": 5.826758374599327e-01\n  },\n  {\n    \"concept\": \"atleast one year\",\n    \"relevance\": 5.826758374599327e-01\n  },\n  {\n    \"concept\": \"tertiary care hospital\",\n    \"relevance\": 5.805453926747212e-01\n  },\n  {\n    \"concept\": \"hospital staff nurses\",\n    \"relevance\": 5.562876364089069e-01\n  },\n  {\n    \"concept\": \"Nursing Stress Scale\",\n    \"relevance\": 5.465170942769731e-01\n  },\n  {\n    \"concept\": \"occupational stress\",\n    \"relevance\": 5.409544847468188e-01\n  },\n  {\n    \"concept\": \"Serum Brain\",\n    \"relevance\": 5.403062487833563e-01\n  },\n  {\n    \"concept\": \"Secondary outcomes\",\n    \"relevance\": 5.382101994637861e-01\n  },\n  {\n    \"concept\": \"hippocampal neurogenesis\",\n    \"relevance\": 5.381579103181591e-01\n  },\n  {\n    \"concept\": \"primary outcome\",\n    \"relevance\": 5.374524685154707e-01\n  },\n  {\n    \"concept\": \"care hospital\",\n    \"relevance\": 5.368888210593565e-01\n  },\n  {\n    \"concept\": \"nurse ratio\",\n    \"relevance\": 5.349931554796511e-01\n  },\n  {\n    \"concept\": \"shortage of staff\",\n    \"relevance\": 5.301075236796526e-01\n  },\n  {\n    \"concept\": \"current COVID-19 pandemic\",\n    \"relevance\": 5.294038958403477e-01\n  },\n  {\n    \"concept\": \"inclusion criteria\",\n    \"relevance\": 5.285213465349865e-01\n  },\n  {\n    \"concept\": \"dedicated nurse\",\n    \"relevance\": 5.269478323849349e-01\n  },\n  {\n    \"concept\": \"brain plasticity\",\n    \"relevance\": 5.201598955216309e-01\n  },\n  {\n    \"concept\": \"number of cases\",\n    \"relevance\": 5.197419359596078e-01\n  },\n  {\n    \"concept\": \"psychosocial stress\",\n    \"relevance\": 5.197005015859539e-01\n  },\n  {\n    \"concept\": \"doctors' attitudes\",\n    \"relevance\": 5.159931896086909e-01\n  },\n  {\n    \"concept\": \"nurses\",\n    \"relevance\": 5.110528061469631e-01\n  },\n  {\n    \"concept\": \"one-year\",\n    \"relevance\": 5.098281615672918e-01\n  },\n  {\n    \"concept\": \"busy department\",\n    \"relevance\": 4.967992433861538e-01\n  },\n  {\n    \"concept\": \"body organs\",\n    \"relevance\": 4.946804621899252e-01\n  },\n  {\n    \"concept\": \"anxiety levels\",\n    \"relevance\": 4.895962427213803e-01\n  },\n  {\n    \"concept\": \"Life Scale\",\n    \"relevance\": 4.887918653777094e-01\n  },\n  {\n    \"concept\": \"important adaptive response\",\n    \"relevance\": 4.885497980846829e-01\n  },\n  {\n    \"concept\": \"COVID-19 pandemic\",\n    \"relevance\": 4.835922615044906e-01\n  },\n  {\n    \"concept\": \"Stress Questionnaire\",\n    \"relevance\": 4.814053097824671e-01\n  },\n  {\n    \"concept\": \"Stress Scale\",\n    \"relevance\": 4.813827213455165e-01\n  },\n  {\n    \"concept\": \"hospital\",\n    \"relevance\": 4.804602429474313e-01\n  },\n  {\n    \"concept\": \"biological mechanisms\",\n    \"relevance\": 4.711985722880083e-01\n  },\n  {\n    \"concept\": \"occupational stressors\",\n    \"relevance\": 4.699777979424014e-01\n  },\n  {\n    \"concept\": \"baseline\",\n    \"relevance\": 4.683239897355140e-01\n  },\n  {\n    \"concept\": \"weeks\",\n    \"relevance\": 4.665177604607052e-01\n  },\n  {\n    \"concept\": \"number of staff\",\n    \"relevance\": 4.599961678771688e-01\n  },\n  {\n    \"concept\": \"outcomes\",\n    \"relevance\": 4.557528916855939e-01\n  },\n  {\n    \"concept\": \"Scale-2\",\n    \"relevance\": 4.556832128047322e-01\n  },\n  {\n    \"concept\": \"organs\",\n    \"relevance\": 4.454220766488673e-01\n  },\n  {\n    \"concept\": \"adaptive response\",\n    \"relevance\": 4.440004328660838e-01\n  },\n  {\n    \"concept\": \"constellation of circumstances\",\n    \"relevance\": 4.410512263474830e-01\n  },\n  {\n    \"concept\": \"levels levels\",\n    \"relevance\": 4.404681070490262e-01\n  },\n  {\n    \"concept\": \"inadequate pay\",\n    \"relevance\": 4.354393095383229e-01\n  },\n  {\n    \"concept\": \"safety incidences\",\n    \"relevance\": 4.354393095383229e-01\n  },\n  {\n    \"concept\": \"judgment skills\",\n    \"relevance\": 4.305944859628164e-01\n  },\n  {\n    \"concept\": \"Objective 1\",\n    \"relevance\": 4.225927766958515e-01\n  },\n  {\n    \"concept\": \"patients\",\n    \"relevance\": 4.188811545385437e-01\n  },\n  {\n    \"concept\": \"insufficient time\",\n    \"relevance\": 4.170431601183632e-01\n  },\n  {\n    \"concept\": \"edition 3\",\n    \"relevance\": 4.140114079781923e-01\n  },\n  {\n    \"concept\": \"neurogenesis\",\n    \"relevance\": 4.102729603508866e-01\n  },\n  {\n    \"concept\": \"staff\",\n    \"relevance\": 4.100412215538035e-01\n  },\n  {\n    \"concept\": \"wards\",\n    \"relevance\": 4.093835229106905e-01\n  },\n  {\n    \"concept\": \"incidence\",\n    \"relevance\": 4.087578894545746e-01\n  },\n  {\n    \"concept\": \"life\",\n    \"relevance\": 4.057808953996024e-01\n  },\n  {\n    \"concept\": \"brain\",\n    \"relevance\": 4.035261798753889e-01\n  },\n  {\n    \"concept\": \"levels\",\n    \"relevance\": 3.897441495729992e-01\n  },\n  {\n    \"concept\": \"tiring job\",\n    \"relevance\": 3.855519775577489e-01\n  },\n  {\n    \"concept\": \"effect\",\n    \"relevance\": 3.828573523477405e-01\n  },\n  {\n    \"concept\": \"COVID\",\n    \"relevance\": 3.827285646615733e-01\n  },\n  {\n    \"concept\": \"nd edition\",\n    \"relevance\": 3.801084530044193e-01\n  },\n  {\n    \"concept\": \"meal\",\n    \"relevance\": 3.786705794107092e-01\n  },\n  {\n    \"concept\": \"questionnaire\",\n    \"relevance\": 3.783886075186247e-01\n  },\n  {\n    \"concept\": \"Department\",\n    \"relevance\": 3.714636917017234e-01\n  },\n  {\n    \"concept\": \"stress\",\n    \"relevance\": 3.674322680006866e-01\n  },\n  {\n    \"concept\": \"pandemic\",\n    \"relevance\": 3.633266742292713e-01\n  },\n  {\n    \"concept\": \"quality\",\n    \"relevance\": 3.608283327763599e-01\n  },\n  {\n    \"concept\": \"years\",\n    \"relevance\": 3.554298433667864e-01\n  },\n  {\n    \"concept\": \"work experience\",\n    \"relevance\": 3.501547353403103e-01\n  },\n  {\n    \"concept\": \"response\",\n    \"relevance\": 3.464361431128197e-01\n  },\n  {\n    \"concept\": \"stressors\",\n    \"relevance\": 3.454344869047046e-01\n  },\n  {\n    \"concept\": \"time pressure\",\n    \"relevance\": 3.420828187815046e-01\n  },\n  {\n    \"concept\": \"rest\",\n    \"relevance\": 3.418233846580567e-01\n  },\n  {\n    \"concept\": \"plasticity\",\n    \"relevance\": 3.355601961594963e-01\n  },\n  {\n    \"concept\": \"criteria\",\n    \"relevance\": 3.334744024852706e-01\n  },\n  {\n    \"concept\": \"cases\",\n    \"relevance\": 3.320430949857896e-01\n  },\n  {\n    \"concept\": \"activity\",\n    \"relevance\": 3.317383706150373e-01\n  },\n  {\n    \"concept\": \"study\",\n    \"relevance\": 3.291709438968287e-01\n  },\n  {\n    \"concept\": \"cellular environment\",\n    \"relevance\": 3.276128550876903e-01\n  },\n  {\n    \"concept\": \"number\",\n    \"relevance\": 3.272546144576372e-01\n  },\n  {\n    \"concept\": \"attitudes\",\n    \"relevance\": 3.252208426091648e-01\n  },\n  {\n    \"concept\": \"decision making\",\n    \"relevance\": 3.207145173665179e-01\n  },\n  {\n    \"concept\": \"scale\",\n    \"relevance\": 3.149868487134755e-01\n  },\n  {\n    \"concept\": \"overtime\",\n    \"relevance\": 3.123745894898449e-01\n  },\n  {\n    \"concept\": \"experience\",\n    \"relevance\": 3.105361147808439e-01\n  },\n  {\n    \"concept\": \"changes\",\n    \"relevance\": 3.085240966536243e-01\n  },\n  {\n    \"concept\": \"pressure\",\n    \"relevance\": 3.080317138754738e-01\n  },\n  {\n    \"concept\": \"concentration\",\n    \"relevance\": 3.074767328287313e-01\n  },\n  {\n    \"concept\": \"mechanism\",\n    \"relevance\": 3.046767596755336e-01\n  },\n  {\n    \"concept\": \"surge\",\n    \"relevance\": 2.945776792023966e-01\n  },\n  {\n    \"concept\": \"occupation\",\n    \"relevance\": 2.912549576908625e-01\n  },\n  {\n    \"concept\": \"strategies\",\n    \"relevance\": 2.865530918524554e-01\n  },\n  {\n    \"concept\": \"effectiveness\",\n    \"relevance\": 2.813444516365967e-01\n  },\n  {\n    \"concept\": \"ratio\",\n    \"relevance\": 2.789131961300704e-01\n  },\n  {\n    \"concept\": \"time\",\n    \"relevance\": 2.774526399957270e-01\n  },\n  {\n    \"concept\": \"impact\",\n    \"relevance\": 2.770446825057473e-01\n  },\n  {\n    \"concept\": \"workload\",\n    \"relevance\": 2.752798974089989e-01\n  },\n  {\n    \"concept\": \"constellation\",\n    \"relevance\": 2.719883095738871e-01\n  },\n  {\n    \"concept\": \"shortage\",\n    \"relevance\": 2.701282507036755e-01\n  },\n  {\n    \"concept\": \"edition\",\n    \"relevance\": 2.700384590223529e-01\n  },\n  {\n    \"concept\": \"skills\",\n    \"relevance\": 2.692864625924732e-01\n  },\n  {\n    \"concept\": \"circumstances\",\n    \"relevance\": 2.650327261674027e-01\n  },\n  {\n    \"concept\": \"counterparts\",\n    \"relevance\": 2.590453492645348e-01\n  },\n  {\n    \"concept\": \"title\",\n    \"relevance\": 2.548158446226861e-01\n  },\n  {\n    \"concept\": \"mapping\",\n    \"relevance\": 2.390290899028677e-01\n  },\n  {\n    \"concept\": \"attention\",\n    \"relevance\": 2.379165786515866e-01\n  },\n  {\n    \"concept\": \"making\",\n    \"relevance\": 2.142387503019255e-01\n  },\n  {\n    \"concept\": \"stress/\",\n    \"relevance\": 2.115573422604312e-01\n  },\n  {\n    \"concept\": \"order\",\n    \"relevance\": 1.946612498357858e-01\n  },\n  {\n    \"concept\": \"jobs\",\n    \"relevance\": 1.809466825163173e-01\n  },\n  {\n    \"concept\": \"pay\",\n    \"relevance\": 1.748957939968577e-01\n  },\n  {\n    \"concept\": \"environment\",\n    \"relevance\": 1.671440996436392e-01\n  },\n  {\n    \"concept\": \"work\",\n    \"relevance\": 1.650754450061594e-01\n  }\n]"
+            },
+            {
+                "col_name": "gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "All"
+            },
+            {
+                "col_name": "research_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"grid.444588.1\"\n]"
+            },
+            {
+                "col_name": "category_for",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"first_level\": {\n    \"codes\": [\n      \"11\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"11\",\n        \"id\": \"2211\",\n        \"name\": \"Medical and Health Sciences\"\n      }\n    ]\n  },\n  \"second_level\": {\n    \"codes\": [\n      \"1110\",\n      \"1117\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"1110\",\n        \"id\": \"3128\",\n        \"name\": \"Nursing\"\n      },\n      {\n        \"code\": \"1117\",\n        \"id\": \"3177\",\n        \"name\": \"Public Health and Health Services\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "associated_grant_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "brief_title",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Effect of Neurobics on stress in nurses"
+            },
+            {
+                "col_name": "investigators",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"affiliations\": [\n      {\n        \"affiliation\": \"Sunandan Divatia school of science , NMIMS university\",\n        \"cities\": [\n          1275339\n        ],\n        \"countries_territories\": [\n          \"IN\"\n        ],\n        \"grid_ids\": [\n          \"grid.444588.1\"\n        ],\n        \"states\": []\n      }\n    ],\n    \"first_name\": \"Divya\",\n    \"last_name\": \"Jonnala\",\n    \"role\": \"Principal Investigator\"\n  },\n  {\n    \"affiliations\": [\n      {\n        \"affiliation\": \"Sunandan Divatia school of science , NMIMS university\",\n        \"cities\": [\n          1275339\n        ],\n        \"countries_territories\": [\n          \"IN\"\n        ],\n        \"grid_ids\": [\n          \"grid.444588.1\"\n        ],\n        \"states\": []\n      }\n    ],\n    \"first_name\": \"Sabah\",\n    \"last_name\": \"Thaver\",\n    \"role\": \"Scientific Query\"\n  }\n]"
+            },
+            {
+                "col_name": "category_icrp_cso",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "abstract",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Title of the study - Effect of neurobics on stress & work-related quality of life in nurses. Introdu"
+            },
+            {
+                "col_name": "date_inserted",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1647734400000000
+            },
+            {
+                "col_name": "phase",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "Phase 2"
+            },
+            {
+                "col_name": "linkout",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "http://ctri.nic.in/Clinicaltrials/pmaindet2.php?trialid=62099"
+            },
+            {
+                "col_name": "funder_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "altmetrics",
+                "col_tag": "VAL_RATING",
+                "col_type": "VARIANT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "category_uoa",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"A03\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"A03\",\n      \"id\": \"30003\",\n      \"name\": \"Allied Health Professions, Dentistry, Nursing and Pharmacy\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "registry",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CTRI"
+            },
+            {
+                "col_name": "end_year",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 2022
+            },
+            {
+                "col_name": "researcher_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "study_designs",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "overall_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Completed"
+            },
+            {
+                "col_name": "study_participants",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 299.0
+            },
+            {
+                "col_name": "categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"bra_v1\": {\n    \"full\": [\n      {\n        \"id\": \"4002\",\n        \"value\": \"Health Services Research\"\n      }\n    ],\n    \"values\": [\n      \"Health Services Research\"\n    ]\n  },\n  \"bra_v2020\": {\n    \"full\": [\n      {\n        \"id\": \"4002\",\n        \"value\": \"Health Services Research\"\n      }\n    ],\n    \"values\": [\n      \"Health Services Research\"\n    ]\n  },\n  \"for_2020_v2022\": {\n    \"first_level\": {\n      \"codes\": [\n        \"42\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"42\",\n          \"id\": \"80013\",\n          \"name\": \"Health Sciences\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"4203\",\n        \"4205\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"4203\",\n          \"id\": \"80138\",\n          \"name\": \"Health Services And Systems\"\n        },\n        {\n          \"code\": \"4205\",\n          \"id\": \"80140\",\n          \"name\": \"Nursing\"\n        }\n      ]\n    }\n  },\n  \"for_v1\": {\n    \"first_level\": {\n      \"codes\": [\n        \"11\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"11\",\n          \"id\": \"2211\",\n          \"name\": \"Medical and Health Sciences\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1110\",\n        \"1117\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1110\",\n          \"id\": \"3128\",\n          \"name\": \"Nursing\"\n        },\n        {\n          \"code\": \"1117\",\n          \"id\": \"3177\",\n          \"name\": \"Public Health and Health Services\"\n        }\n      ]\n    }\n  },\n  \"for_v2020\": {\n    \"first_level\": {\n      \"codes\": [\n        \"11\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"11\",\n          \"id\": \"2211\",\n          \"name\": \"Medical and Health Sciences\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1110\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1110\",\n          \"id\": \"3128\",\n          \"name\": \"Nursing\"\n        }\n      ]\n    }\n  },\n  \"hra_v1\": {\n    \"full\": [\n      {\n        \"id\": \"3902\",\n        \"value\": \"Health services & systems\"\n      }\n    ],\n    \"values\": [\n      \"Health services & systems\"\n    ]\n  },\n  \"hrcs_hc_v1\": {\n    \"full\": [\n      {\n        \"id\": \"897\",\n        \"value\": \"Neurological\"\n      },\n      {\n        \"id\": \"890\",\n        \"value\": \"Generic health relevance\"\n      }\n    ],\n    \"values\": [\n      \"Neurological\",\n      \"Generic health relevance\"\n    ]\n  },\n  \"hrcs_hc_v2020\": {\n    \"full\": [\n      {\n        \"id\": \"897\",\n        \"value\": \"Neurological\"\n      },\n      {\n        \"id\": \"890\",\n        \"value\": \"Generic health relevance\"\n      }\n    ],\n    \"values\": [\n      \"Neurological\",\n      \"Generic health relevance\"\n    ]\n  },\n  \"hrcs_rac_v1\": {\n    \"codes\": [\n      \"8.1\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"8.1\",\n        \"id\": \"10801\",\n        \"name\": \"Organisation and delivery of services\"\n      }\n    ]\n  },\n  \"hrcs_rac_v2020\": {\n    \"codes\": [\n      \"8.1\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"8.1\",\n        \"id\": \"10801\",\n        \"name\": \"Organisation and delivery of services\"\n      }\n    ]\n  },\n  \"rcdc_v1\": {\n    \"full\": [\n      {\n        \"id\": \"387\",\n        \"value\": \"Neurosciences\"\n      },\n      {\n        \"id\": \"507\",\n        \"value\": \"Clinical Research\"\n      },\n      {\n        \"id\": \"331\",\n        \"value\": \"Cardiovascular\"\n      },\n      {\n        \"id\": \"498\",\n        \"value\": \"Behavioral and Social Science\"\n      },\n      {\n        \"id\": \"445\",\n        \"value\": \"Heart Disease\"\n      },\n      {\n        \"id\": \"497\",\n        \"value\": \"Basic Behavioral and Social Science\"\n      }\n    ],\n    \"values\": [\n      \"Neurosciences\",\n      \"Clinical Research\",\n      \"Cardiovascular\",\n      \"Behavioral and Social Science\",\n      \"Heart Disease\",\n      \"Basic Behavioral and Social Science\"\n    ]\n  },\n  \"rcdc_v2020\": {\n    \"full\": [\n      {\n        \"id\": \"498\",\n        \"value\": \"Behavioral and Social Science\"\n      }\n    ],\n    \"values\": [\n      \"Behavioral and Social Science\"\n    ]\n  },\n  \"uoa_v1\": {\n    \"codes\": [\n      \"A03\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"A03\",\n        \"id\": \"30003\",\n        \"name\": \"Allied Health Professions, Dentistry, Nursing and Pharmacy\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "start_date",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2022-01"
+            },
+            {
+                "col_name": "category_rcdc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"387\",\n      \"value\": \"Neurosciences\"\n    },\n    {\n      \"id\": \"507\",\n      \"value\": \"Clinical Research\"\n    },\n    {\n      \"id\": \"331\",\n      \"value\": \"Cardiovascular\"\n    },\n    {\n      \"id\": \"498\",\n      \"value\": \"Behavioral and Social Science\"\n    },\n    {\n      \"id\": \"445\",\n      \"value\": \"Heart Disease\"\n    },\n    {\n      \"id\": \"497\",\n      \"value\": \"Basic Behavioral and Social Science\"\n    }\n  ],\n  \"values\": [\n    \"Neurosciences\",\n    \"Clinical Research\",\n    \"Cardiovascular\",\n    \"Behavioral and Social Science\",\n    \"Heart Disease\",\n    \"Basic Behavioral and Social Science\"\n  ]\n}"
+            },
+            {
+                "col_name": "organisation_details",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"cities\": [],\n    \"countries_territories\": [],\n    \"provided_type\": \"Source of monetary or material support\",\n    \"raw_name\": \"Department of Physiotherapy, Ground Floor, Nanavati Super Specialty Hospital, SV Road, Vile Parle West, Mumbai 400056\",\n    \"states\": []\n  },\n  {\n    \"cities\": [\n      1275339\n    ],\n    \"countries_territories\": [\n      \"IN\"\n    ],\n    \"grid_id\": \"grid.444588.1\",\n    \"provided_type\": \"Affiliated\",\n    \"raw_name\": \"Sunandan Divatia school of science , NMIMS university\",\n    \"states\": []\n  },\n  {\n    \"cities\": [\n      1275339\n    ],\n    \"countries_territories\": [\n      \"IN\"\n    ],\n    \"grid_id\": \"grid.444588.1\",\n    \"provided_type\": \"Affiliated\",\n    \"raw_name\": \"Sunandan Divatia school of science , NMIMS university\",\n    \"states\": []\n  }\n]"
+            },
+            {
+                "col_name": "study_minimum_age",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "18 Years"
+            },
+            {
+                "col_name": "study_arms",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "conditions",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Hospital nursing staff\"\n]"
+            },
+            {
+                "col_name": "funding_details",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "end_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2022-07"
+            }
+        ]
+    },
+    "DATASETS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "dataset.24895646"
+            },
+            {
+                "col_name": "doi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.6084/m9.figshare.14303676.v1"
+            },
+            {
+                "col_name": "category_hra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "associated_publication_pmid",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "category_hrcs_hc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"898\",\n      \"value\": \"Infection\"\n    }\n  ],\n  \"values\": [\n    \"Infection\"\n  ]\n}"
+            },
+            {
+                "col_name": "research_org_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"BR\"\n]"
+            },
+            {
+                "col_name": "associated_publication_doi",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "10.1590/s0103-4014.2020.3499.009"
+            },
+            {
+                "col_name": "category_for",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"first_level\": {\n    \"codes\": [\n      \"16\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"16\",\n        \"id\": \"2216\",\n        \"name\": \"Studies in Human Society\"\n      }\n    ]\n  },\n  \"second_level\": {\n    \"codes\": [\n      \"1608\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"1608\",\n        \"id\": \"3448\",\n        \"name\": \"Sociology\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "researcher_ids",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ur.010121724437.10\",\n  \"ur.012261553437.12\"\n]"
+            },
+            {
+                "col_name": "category_rcdc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"547\",\n      \"value\": \"Pediatric\"\n    }\n  ],\n  \"values\": [\n    \"Pediatric\"\n  ]\n}"
+            },
+            {
+                "col_name": "associated_publication_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "pub.1129311090"
+            },
+            {
+                "col_name": "category_uoa",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"D28\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"D28\",\n      \"id\": \"30028\",\n      \"name\": \"History\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "category_hrcs_rac",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "license",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"name\": \"CC BY-NC 4.0\",\n  \"url\": \"https://creativecommons.org/licenses/by-nc/4.0/\"\n}"
+            },
+            {
+                "col_name": "category_icrp_ct",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "research_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"grid.11899.38\"\n]"
+            },
+            {
+                "col_name": "category_icrp_cso",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"for_v1\": {\n    \"first_level\": {\n      \"codes\": [\n        \"16\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"16\",\n          \"id\": \"2216\",\n          \"name\": \"Studies in Human Society\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1608\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1608\",\n          \"id\": \"3448\",\n          \"name\": \"Sociology\"\n        }\n      ]\n    }\n  },\n  \"for_v2020\": {\n    \"first_level\": {\n      \"codes\": [\n        \"16\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"16\",\n          \"id\": \"2216\",\n          \"name\": \"Studies in Human Society\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1606\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1606\",\n          \"id\": \"3432\",\n          \"name\": \"Political Science\"\n        }\n      ]\n    }\n  },\n  \"sdg_v1\": {\n    \"codes\": [\n      \"10\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"10\",\n        \"id\": \"40010\",\n        \"name\": \"Reduced Inequalities\"\n      }\n    ]\n  },\n  \"uoa_v1\": {\n    \"codes\": [\n      \"D28\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"D28\",\n        \"id\": \"30028\",\n        \"name\": \"History\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "embargo_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "created_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "TEXT",
+                "sample_value": "2021-03-25"
+            },
+            {
+                "col_name": "category_bra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"4003\",\n      \"value\": \"Public Health\"\n    }\n  ],\n  \"values\": [\n    \"Public Health\"\n  ]\n}"
+            },
+            {
+                "col_name": "research_org_state_codes",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "repository_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "portal_325"
+            },
+            {
+                "col_name": "date_imported_gbq",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1658891758000000
+            },
+            {
+                "col_name": "authors",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"name\": \"MARCOS SILVEIRA BUCKERIDGE\"\n  },\n  {\n    \"name\": \"ARLINDO PHILIPPI JUNIOR\"\n  }\n]"
+            },
+            {
+                "col_name": "associated_grant_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "associated_publication_arxiv_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "research_org_cities",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  3448439\n]"
+            },
+            {
+                "col_name": "date_modified",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1616630400000000.0
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            },
+            {
+                "col_name": "description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "ABSTRACT The covid-19 pandemic revealed the virtues and deficiencies of the city of São Paulo in fac"
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1596240000000000
+            },
+            {
+                "col_name": "category_sdg",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"10\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"10\",\n      \"id\": \"40010\",\n      \"name\": \"Reduced Inequalities\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "repository_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "SciELO journals"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Ciência e políticas públicas nas cidades: revelações da pandemia da Covid-19"
+            },
+            {
+                "col_name": "repository_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://scielo.figshare.com/articles/dataset/Ci_ncia_e_pol_ticas_p_blicas_nas_cidades_revela_es_da_p"
+            },
+            {
+                "col_name": "citation_string",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "BUCKERIDGE, MARCOS SILVEIRA; PHILIPPI JUNIOR, ARLINDO (2020): Ciência e políticas públicas nas cidad"
+            }
+        ]
+    },
+    "GRANTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "grant.9204573"
+            },
+            {
+                "col_name": "grant_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "20K13586"
+            },
+            {
+                "col_name": "end_year",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 2024
+            },
+            {
+                "col_name": "language",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ja"
+            },
+            {
+                "col_name": "funding_cad",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 48057.0
+            },
+            {
+                "col_name": "category_uoa",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"C17\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"C17\",\n      \"id\": \"30017\",\n      \"name\": \"Business and Management Studies\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "category_sdg",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"8\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"8\",\n      \"id\": \"40008\",\n      \"name\": \"Decent Work and Economic Growth\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "category_icrp_cso",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "funder_org_acronyms",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"JSPS\"\n]"
+            },
+            {
+                "col_name": "categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"for_2020_v2022\": {\n    \"first_level\": {\n      \"codes\": [\n        \"35\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"35\",\n          \"id\": \"80006\",\n          \"name\": \"Commerce, Management, Tourism And Services\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"3507\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"3507\",\n          \"id\": \"80079\",\n          \"name\": \"Strategy, Management And Organisational Behaviour\"\n        }\n      ]\n    }\n  },\n  \"for_v1\": {\n    \"first_level\": {\n      \"codes\": [\n        \"15\",\n        \"17\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"15\",\n          \"id\": \"2215\",\n          \"name\": \"Commerce, Management, Tourism and Services\"\n        },\n        {\n          \"code\": \"17\",\n          \"id\": \"2217\",\n          \"name\": \"Psychology and Cognitive Sciences\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1503\",\n        \"1701\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1503\",\n          \"id\": \"3342\",\n          \"name\": \"Business and Management\"\n        },\n        {\n          \"code\": \"1701\",\n          \"id\": \"3468\",\n          \"name\": \"Psychology\"\n        }\n      ]\n    }\n  },\n  \"for_v2020\": {\n    \"first_level\": {\n      \"codes\": [\n        \"15\",\n        \"17\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"15\",\n          \"id\": \"2215\",\n          \"name\": \"Commerce, Management, Tourism and Services\"\n        },\n        {\n          \"code\": \"17\",\n          \"id\": \"2217\",\n          \"name\": \"Psychology and Cognitive Sciences\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1503\",\n        \"1701\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1503\",\n          \"id\": \"3342\",\n          \"name\": \"Business and Management\"\n        },\n        {\n          \"code\": \"1701\",\n          \"id\": \"3468\",\n          \"name\": \"Psychology\"\n        }\n      ]\n    }\n  },\n  \"uoa_v1\": {\n    \"codes\": [\n      \"C17\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"C17\",\n        \"id\": \"30017\",\n        \"name\": \"Business and Management Studies\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "research_org_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"JP\"\n]"
+            },
+            {
+                "col_name": "research_org_cities",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1863967\n]"
+            },
+            {
+                "col_name": "active_years",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  2020,\n  2021,\n  2022,\n  2023,\n  2024\n]"
+            },
+            {
+                "col_name": "category_rcdc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"558\",\n      \"value\": \"Prevention\"\n    }\n  ],\n  \"values\": [\n    \"Prevention\"\n  ]\n}"
+            },
+            {
+                "col_name": "start_date",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2020-04-01"
+            },
+            {
+                "col_name": "linkout",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-20K13586"
+            },
+            {
+                "col_name": "research_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"grid.177174.3\"\n]"
+            },
+            {
+                "col_name": "funding_nzd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 55475.0
+            },
+            {
+                "col_name": "research_org_state_codes",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "funding_cny",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 244391.0
+            },
+            {
+                "col_name": "start_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            },
+            {
+                "col_name": "funder_org_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"JP\"\n]"
+            },
+            {
+                "col_name": "end_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": "2024-03-31"
+            },
+            {
+                "col_name": "abstract",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "The purpose of this study is to clarify the effect of employee gratitude feelings by gratitude manag"
+            },
+            {
+                "col_name": "category_for",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"first_level\": {\n    \"codes\": [\n      \"15\",\n      \"17\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"15\",\n        \"id\": \"2215\",\n        \"name\": \"Commerce, Management, Tourism and Services\"\n      },\n      {\n        \"code\": \"17\",\n        \"id\": \"2217\",\n        \"name\": \"Psychology and Cognitive Sciences\"\n      }\n    ]\n  },\n  \"second_level\": {\n    \"codes\": [\n      \"1503\",\n      \"1701\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"1503\",\n        \"id\": \"3342\",\n        \"name\": \"Business and Management\"\n      },\n      {\n        \"code\": \"1701\",\n        \"id\": \"3468\",\n        \"name\": \"Psychology\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "funding_aud",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 51906.0
+            },
+            {
+                "col_name": "category_hrcs_rac",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "funding_jpy",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4290000.0
+            },
+            {
+                "col_name": "funding_usd",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 37601.0
+            },
+            {
+                "col_name": "category_hra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"3902\",\n      \"value\": \"Health services & systems\"\n    }\n  ],\n  \"values\": [\n    \"Health services & systems\"\n  ]\n}"
+            },
+            {
+                "col_name": "funding_gbp",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 28256.0
+            },
+            {
+                "col_name": "researcher_ids",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ur.013517545456.43\"\n]"
+            },
+            {
+                "col_name": "funding_eur",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 33136.0
+            },
+            {
+                "col_name": "category_hrcs_hc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Elucidation of the effects of \"gratitude\" in organizational management on individuals and organizati"
+            },
+            {
+                "col_name": "funding_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 4290000.0
+            },
+            {
+                "col_name": "original_abstract",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"language\": \"ja\",\n  \"value\": \"本研究では、感謝マネジメントによる従業員の感謝感情の効果を、個人レベル・組織レベルで実証研究を行うことで明らかにすることを目的とする。具体的には、①感謝を感じることによる組織従業員の身体的変化の検証、②感謝マネジメントによる波及効果の検証を行っていく。初年度では、組織場面において「感謝すること」は、組織従業員にとってポジティブ感情を引き出すことになるのかについて、組織で働く人を対象に、脳波・心拍測定による実験を行う予定であった。しかし、COVID-19の影響により、当初、実験を予定していた部屋を使用することができなくなった。また、もし予定していた実験室を確保できたとしても、部屋が狭いために、実験者と実験協力者との距離を十分にとることが困難であったこと、換気機能が十分でなかったことなどの、リスク対策面も考慮したうえでの実験の実施が難しいと判断し、やむを得ず実験を行うことを断念するに至った。実証研究を行うことはできなかったが、本研究では「組織従業員の感謝感情」の文献の整理も行っているため、そちらに注力した。「感謝」についての先行研究は国内外で行われているものの、組織マネジメントとして感謝感情を引き起こす取り組みについては、学術研究としての文献は僅少である。今後の研究に向けて、先行研究における「感謝」の定義と組織場面で取り扱われている「感謝」の定義を整理・明確化、理論的枠組みの精緻化を進める予定をしている。\"\n}"
+            },
+            {
+                "col_name": "funder_org_cities",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  1850147\n]"
+            },
+            {
+                "col_name": "funder_org_state_codes",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "investigators",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"affiliations\": [\n      {\n        \"affiliation\": \"九州大学\",\n        \"cities\": [\n          1863967\n        ],\n        \"countries_territories\": [\n          \"JP\"\n        ],\n        \"grid_ids\": [\n          \"grid.177174.3\"\n        ],\n        \"states\": []\n      }\n    ],\n    \"first_name\": \"Satomi\",\n    \"last_name\": \"Mikami\",\n    \"researcher_id\": \"ur.013517545456.43\",\n    \"role\": \"PI\"\n  }\n]"
+            },
+            {
+                "col_name": "original_title",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"language\": \"ja\",\n  \"value\": \"組織マネジメントにおける「感謝感情」が個人・組織にもたらす効果の解明\"\n}"
+            },
+            {
+                "col_name": "foa_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "Not available"
+            },
+            {
+                "col_name": "concepts",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"concept\": \"organizational employees\",\n    \"relevance\": 8.455671619000000e-01\n  },\n  {\n    \"concept\": \"organizational management\",\n    \"relevance\": 7.975146023000000e-01\n  },\n  {\n    \"concept\": \"empirical study\",\n    \"relevance\": 7.587604599000000e-01\n  },\n  {\n    \"concept\": \"organizational scene\",\n    \"relevance\": 6.932011820000000e-01\n  },\n  {\n    \"concept\": \"organizational level\",\n    \"relevance\": 6.843954452000000e-01\n  },\n  {\n    \"concept\": \"organizational situations\",\n    \"relevance\": 6.828582566000000e-01\n  },\n  {\n    \"concept\": \"previous research\",\n    \"relevance\": 6.741126485000000e-01\n  },\n  {\n    \"concept\": \"academic research\",\n    \"relevance\": 6.598410424000000e-01\n  },\n  {\n    \"concept\": \"employees\",\n    \"relevance\": 6.589735753000000e-01\n  },\n  {\n    \"concept\": \"risk countermeasures\",\n    \"relevance\": 6.304414670000000e-01\n  },\n  {\n    \"concept\": \"theoretical framework\",\n    \"relevance\": 6.211673126000000e-01\n  },\n  {\n    \"concept\": \"ripple effect\",\n    \"relevance\": 6.145849082000000e-01\n  },\n  {\n    \"concept\": \"positive emotions\",\n    \"relevance\": 5.957342949000000e-01\n  },\n  {\n    \"concept\": \"future research\",\n    \"relevance\": 5.948425401000000e-01\n  },\n  {\n    \"concept\": \"organization\",\n    \"relevance\": 5.880494372000000e-01\n  },\n  {\n    \"concept\": \"management\",\n    \"relevance\": 5.731211498000000e-01\n  },\n  {\n    \"concept\": \"little literature\",\n    \"relevance\": 5.692747208000000e-01\n  },\n  {\n    \"concept\": \"gratitude\",\n    \"relevance\": 5.435924982000000e-01\n  },\n  {\n    \"concept\": \"research\",\n    \"relevance\": 5.400246707000000e-01\n  },\n  {\n    \"concept\": \"brain waves\",\n    \"relevance\": 5.400073877000000e-01\n  },\n  {\n    \"concept\": \"literature\",\n    \"relevance\": 5.039991440000000e-01\n  },\n  {\n    \"concept\": \"emotions\",\n    \"relevance\": 4.621918892000000e-01\n  },\n  {\n    \"concept\": \"COVID-19\",\n    \"relevance\": 4.603139421000000e-01\n  },\n  {\n    \"concept\": \"physical changes\",\n    \"relevance\": 4.389087854000000e-01\n  },\n  {\n    \"concept\": \"experimenter\",\n    \"relevance\": 4.362522993000000e-01\n  },\n  {\n    \"concept\": \"feelings\",\n    \"relevance\": 4.346629534000000e-01\n  },\n  {\n    \"concept\": \"purpose\",\n    \"relevance\": 4.307066176000000e-01\n  },\n  {\n    \"concept\": \"framework\",\n    \"relevance\": 4.284740135000000e-01\n  },\n  {\n    \"concept\": \"first year\",\n    \"relevance\": 4.097824333000000e-01\n  },\n  {\n    \"concept\": \"definition\",\n    \"relevance\": 4.022097444000000e-01\n  },\n  {\n    \"concept\": \"individuals\",\n    \"relevance\": 3.938145062000000e-01\n  },\n  {\n    \"concept\": \"study\",\n    \"relevance\": 3.901586093000000e-01\n  },\n  {\n    \"concept\": \"efforts\",\n    \"relevance\": 3.869835830000000e-01\n  },\n  {\n    \"concept\": \"people\",\n    \"relevance\": 3.846583609000000e-01\n  },\n  {\n    \"concept\": \"scene\",\n    \"relevance\": 3.806836291000000e-01\n  },\n  {\n    \"concept\": \"collaborators\",\n    \"relevance\": 3.736593262000000e-01\n  },\n  {\n    \"concept\": \"situation\",\n    \"relevance\": 3.671010218000000e-01\n  },\n  {\n    \"concept\": \"countermeasures\",\n    \"relevance\": 3.659896996000000e-01\n  },\n  {\n    \"concept\": \"Japan\",\n    \"relevance\": 3.640581688000000e-01\n  },\n  {\n    \"concept\": \"influence\",\n    \"relevance\": 3.627392112000000e-01\n  },\n  {\n    \"concept\": \"effect\",\n    \"relevance\": 3.560310444000000e-01\n  },\n  {\n    \"concept\": \"consideration\",\n    \"relevance\": 3.452872562000000e-01\n  },\n  {\n    \"concept\": \"experiments\",\n    \"relevance\": 3.425263120000000e-01\n  },\n  {\n    \"concept\": \"levels\",\n    \"relevance\": 3.140030920000000e-01\n  },\n  {\n    \"concept\": \"room\",\n    \"relevance\": 2.990936304000000e-01\n  },\n  {\n    \"concept\": \"heart rate\",\n    \"relevance\": 2.917841419000000e-01\n  },\n  {\n    \"concept\": \"changes\",\n    \"relevance\": 2.917516092000000e-01\n  },\n  {\n    \"concept\": \"small room\",\n    \"relevance\": 2.763014870000000e-01\n  },\n  {\n    \"concept\": \"years\",\n    \"relevance\": 2.578284457000000e-01\n  },\n  {\n    \"concept\": \"function\",\n    \"relevance\": 2.445315133000000e-01\n  },\n  {\n    \"concept\": \"sufficient distance\",\n    \"relevance\": 2.277548630000000e-01\n  },\n  {\n    \"concept\": \"rate\",\n    \"relevance\": 2.114908513000000e-01\n  },\n  {\n    \"concept\": \"distance\",\n    \"relevance\": 1.885760098000000e-01\n  },\n  {\n    \"concept\": \"laboratory\",\n    \"relevance\": 1.817383308000000e-01\n  },\n  {\n    \"concept\": \"waves\",\n    \"relevance\": 1.521538939000000e-01\n  },\n  {\n    \"concept\": \"elucidation\",\n    \"relevance\": 1.181670163000000e-01\n  },\n  {\n    \"concept\": \"ventilation function\",\n    \"relevance\": 3.981106540000000e-02\n  }\n]"
+            },
+            {
+                "col_name": "category_bra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "resulting_publication_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_icrp_ct",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "organisation_details",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"city\": \"Fukuoka\",\n    \"country\": \"Japan\",\n    \"grid_id\": \"grid.177174.3\",\n    \"name\": \"Kyushu University\"\n  }\n]"
+            },
+            {
+                "col_name": "funder_org",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "grid.54432.34"
+            },
+            {
+                "col_name": "date_inserted",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1591867583000000
+            },
+            {
+                "col_name": "funding_currency",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "JPY"
+            },
+            {
+                "col_name": "funding_chf",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 34865.0
+            },
+            {
+                "col_name": "date_imported_gbq",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1661914996000000
+            }
+        ]
+    },
+    "GRID": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "external_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "redirect",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "grid.511673.7"
+            },
+            {
+                "col_name": "email_address",
+                "col_tag": "CONTACT_EMAIL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Nestlé (Singapore)"
+            },
+            {
+                "col_name": "closed",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "links",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"https://www.nestle.com.sg/\"\n]"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"city\": \"Singapore\",\n  \"country\": \"Singapore\",\n  \"country_code\": \"SG\",\n  \"country_geonames_id\": 1880251,\n  \"geonames_city\": {\n    \"city\": \"Singapore\",\n    \"id\": 1880252,\n    \"license\": {\n      \"attribution\": \"Data from geonames.org under a CC-BY 3.0 license\",\n      \"license\": \"http://creativecommons.org/licenses/by/3.0/\"\n    }\n  },\n  \"latitude\": 1.338009953498840e+00,\n  \"longitude\": 1.039643020629883e+02\n}"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "active"
+            },
+            {
+                "col_name": "labels",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "types",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Company\"\n]"
+            },
+            {
+                "col_name": "wikipedia_url",
+                "col_tag": "CONTACT_URL",
+                "col_type": "TEXT",
+                "sample_value": "https://en.wikipedia.org/wiki/Nestl%C3%A9"
+            },
+            {
+                "col_name": "relationships",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": \"grid.419905.0\",\n    \"label\": \"Nestlé (Switzerland)\",\n    \"type\": \"Parent\"\n  }\n]"
+            },
+            {
+                "col_name": "aliases",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "established",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1912.0
+            },
+            {
+                "col_name": "acronyms",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            }
+        ]
+    },
+    "PATENTS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "application_number",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "MC2698"
+            },
+            {
+                "col_name": "family_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "75639655"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "MC-200239-B1"
+            },
+            {
+                "col_name": "original_assignee",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"country\": \"MC\",\n    \"name\": \"MOFFA RICCARDO\"\n  },\n  {\n    \"country\": \"IT\",\n    \"name\": \"DE ROSA ALFREDO\"\n  },\n  {\n    \"country\": \"IT\",\n    \"name\": \"DI DOMENICO MARINA\"\n  },\n  {\n    \"country\": \"IT\",\n    \"name\": \"BOCCELLINO MARIAROSARIA\"\n  }\n]"
+            },
+            {
+                "col_name": "category_sdg",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "filing_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "N/A"
+            },
+            {
+                "col_name": "current_assignee",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "funding_details",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "legal_events",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_for",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "cited_by_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_icrp_ct",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "METHODE DE DEPISTAGE IN VITRO COTE PATIENT POUR LE DIAGNOSTIC RAPIDE DU SARS-COV-2"
+            },
+            {
+                "col_name": "category_hrcs_hc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "priority_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            },
+            {
+                "col_name": "abstract",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "<p>Le syst&#232;me invent&#233; ci pr&#233;sent, est form&#233;e d&#8217;un aspirateur (1) et d&#821"
+            },
+            {
+                "col_name": "inventor_names",
+                "col_tag": "NAME_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"MOFFA RICCARDO\",\n  \"DE ROSA ALFREDO\",\n  \"DI DOMENICO MARINA\",\n  \"BOCCELLINO MARIAROSARIA\"\n]"
+            },
+            {
+                "col_name": "ipcr",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "jurisdiction",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MC"
+            },
+            {
+                "col_name": "current_assignee_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "reference_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "filing_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2020-04-02"
+            },
+            {
+                "col_name": "researcher_ids",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "assignee_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "cpc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"G01N2333/165\",\n  \"G01N33/558\",\n  \"G01N2469/10\",\n  \"G01N33/56983\"\n]"
+            },
+            {
+                "col_name": "federal_support",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "associated_grant_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "orange_book",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "family_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "assignee_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"MC\",\n  \"IT\"\n]"
+            },
+            {
+                "col_name": "original_assignee_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"IT\",\n  \"MC\"\n]"
+            },
+            {
+                "col_name": "date_imported_gbq",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1661829623000000
+            },
+            {
+                "col_name": "granted_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "category_hra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "category_bra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "category_hrcs_rac",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "funder_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "kind",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "B1"
+            },
+            {
+                "col_name": "category_rcdc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "priority_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2020-04-02"
+            },
+            {
+                "col_name": "expiration_year",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "current_assignee_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "granted_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "publication_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2021
+            },
+            {
+                "col_name": "publication_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "original_assignee_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_uoa",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "legal_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "N/A"
+            },
+            {
+                "col_name": "concepts",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "filing_year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2020
+            },
+            {
+                "col_name": "publication_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2021-04-15"
+            },
+            {
+                "col_name": "expiration_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "family_members_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"EP-3889607-A1\"\n]"
+            },
+            {
+                "col_name": "category_icrp_cso",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            }
+        ]
+    },
+    "PUBLICATIONS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "pmid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "35855479"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "pub.1149495345"
+            },
+            {
+                "col_name": "pmcid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "PMC9283383"
+            },
+            {
+                "col_name": "doi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10.1016/j.tranpol.2022.06.012"
+            },
+            {
+                "col_name": "research_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"grid.5801.c\",\n  \"grid.484571.b\",\n  \"grid.443909.3\"\n]"
+            },
+            {
+                "col_name": "funder_orgs",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"grid.424112.0\"\n]"
+            },
+            {
+                "col_name": "pages",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "136-150"
+            },
+            {
+                "col_name": "eisbn",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "research_org_cities",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  3871336,\n  2657896\n]"
+            },
+            {
+                "col_name": "publisher",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"id\": \"pblshr.1000078\",\n  \"name\": \"Elsevier\"\n}"
+            },
+            {
+                "col_name": "date_online",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2022-07-15"
+            },
+            {
+                "col_name": "clinical_trial_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "authors",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"affiliations_address\": [\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.484571.b\",\n        \"raw_affiliation\": \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n      },\n      {\n        \"city_id\": 2657896,\n        \"country_code\": \"CH\",\n        \"grid_id\": \"grid.5801.c\",\n        \"raw_affiliation\": \"Institute for Transport Planning and Systems, ETH Zürich, Stefano-Franscini-Platz 5, Zürich, Switzerland.\"\n      }\n    ],\n    \"corresponding\": true,\n    \"first_name\": \"Benjamin\",\n    \"grid_ids\": [\n      \"grid.5801.c\",\n      \"grid.484571.b\"\n    ],\n    \"last_name\": \"Gramsch\",\n    \"orcid\": [],\n    \"raw_affiliations\": [\n      \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\",\n      \"Institute for Transport Planning and Systems, ETH Zürich, Stefano-Franscini-Platz 5, Zürich, Switzerland.\"\n    ],\n    \"researcher_id\": \"ur.011355406403.78\"\n  },\n  {\n    \"affiliations_address\": [\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.443909.3\",\n        \"raw_affiliation\": \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\"\n      },\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.484571.b\",\n        \"raw_affiliation\": \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n      }\n    ],\n    \"corresponding\": false,\n    \"first_name\": \"C Angelo\",\n    \"grid_ids\": [\n      \"grid.443909.3\",\n      \"grid.484571.b\"\n    ],\n    \"last_name\": \"Guevara\",\n    \"orcid\": [\n      \"0000-0001-9307-804X\"\n    ],\n    \"raw_affiliations\": [\n      \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\",\n      \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n    ],\n    \"researcher_id\": \"ur.015013354063.50\"\n  },\n  {\n    \"affiliations_address\": [\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.443909.3\",\n        \"raw_affiliation\": \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\"\n      },\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.484571.b\",\n        \"raw_affiliation\": \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n      }\n    ],\n    \"corresponding\": false,\n    \"first_name\": \"Marcela\",\n    \"grid_ids\": [\n      \"grid.443909.3\",\n      \"grid.484571.b\"\n    ],\n    \"last_name\": \"Munizaga\",\n    \"orcid\": [\n      \"0000-0002-0485-5124\"\n    ],\n    \"raw_affiliations\": [\n      \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\",\n      \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n    ],\n    \"researcher_id\": \"ur.014234626061.14\"\n  },\n  {\n    \"affiliations_address\": [\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.443909.3\",\n        \"raw_affiliation\": \"Industrial Engineering Department, Universidad de Chile, Av. República 701, Santiago, Chile.\"\n      },\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.484571.b\",\n        \"raw_affiliation\": \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n      }\n    ],\n    \"corresponding\": false,\n    \"first_name\": \"Daniel\",\n    \"grid_ids\": [\n      \"grid.443909.3\",\n      \"grid.484571.b\"\n    ],\n    \"last_name\": \"Schwartz\",\n    \"orcid\": [\n      \"0000-0003-2768-9349\"\n    ],\n    \"raw_affiliations\": [\n      \"Industrial Engineering Department, Universidad de Chile, Av. República 701, Santiago, Chile.\",\n      \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n    ],\n    \"researcher_id\": \"ur.01255726165.72\"\n  },\n  {\n    \"affiliations_address\": [\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.443909.3\",\n        \"raw_affiliation\": \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\"\n      },\n      {\n        \"city_id\": 3871336,\n        \"country_code\": \"CL\",\n        \"grid_id\": \"grid.484571.b\",\n        \"raw_affiliation\": \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n      }\n    ],\n    \"corresponding\": false,\n    \"first_name\": \"Alejandro\",\n    \"grid_ids\": [\n      \"grid.443909.3\",\n      \"grid.484571.b\"\n    ],\n    \"last_name\": \"Tirachini\",\n    \"orcid\": [\n      \"0000-0001-9911-1242\"\n    ],\n    \"raw_affiliations\": [\n      \"Civil Engineering Department, Universidad de Chile, Blanco Encalada 2002, Santiago, Chile.\",\n      \"Instituto Sistemas Complejos de Ingeniería, Av. República 701, Santiago, Chile.\"\n    ],\n    \"researcher_id\": \"ur.015564131657.64\"\n  }\n]"
+            },
+            {
+                "col_name": "research_org_country_names",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Chile\",\n  \"Switzerland\"\n]"
+            },
+            {
+                "col_name": "book_title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "copyright_statement",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "date_normal",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2022-07-15"
+            },
+            {
+                "col_name": "patent_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "issue",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "7/8"
+            },
+            {
+                "col_name": "altmetrics",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "null"
+            },
+            {
+                "col_name": "mesh_terms",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "date_inserted",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1658000078000000
+            },
+            {
+                "col_name": "journal_lists",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ERA 2023\",\n  \"Norwegian register level 1\",\n  \"ERIH PLUS\",\n  \"VABB-SHW\",\n  \"UGC Journal List Group II\",\n  \"ERA 2018\",\n  \"ERA 2015\"\n]"
+            },
+            {
+                "col_name": "category_for",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"first_level\": {\n    \"codes\": [\n      \"12\",\n      \"15\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"12\",\n        \"id\": \"2212\",\n        \"name\": \"Built Environment and Design\"\n      },\n      {\n        \"code\": \"15\",\n        \"id\": \"2215\",\n        \"name\": \"Commerce, Management, Tourism and Services\"\n      }\n    ]\n  },\n  \"second_level\": {\n    \"codes\": [\n      \"1205\",\n      \"1507\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"1205\",\n        \"id\": \"3230\",\n        \"name\": \"Urban and Regional Planning\"\n      },\n      {\n        \"code\": \"1507\",\n        \"id\": \"3381\",\n        \"name\": \"Transportation and Freight Services\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "funding_details",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"grid_id\": \"grid.424112.0\"\n  }\n]"
+            },
+            {
+                "col_name": "date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2022-07-15"
+            },
+            {
+                "col_name": "category_hrcs_hc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "funder_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"CL\"\n]"
+            },
+            {
+                "col_name": "category_hrcs_rac",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "category_icrp_ct",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "parent_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "isbn",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2022
+            },
+            {
+                "col_name": "editors",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "conference",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "abstract",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"preferred\": \"Governments around the globe have taken different measures to tackle the COVID-19 pandemic, including the lockdown of people to decrease infections. The effect of such a strategy on transport demand is important not only for the current pandemic but also to understand changes in transport use and for future emergencies. We analyse a 2019-2020 database of smartcard data of trips from the city of Santiago, Chile, which followed a dynamic lockdown strategy in which its municipalities were temporarily restricted. We use this variation over time across municipalities to study the effect of lockdowns on public transportation using trips on buses and metro, accounting for the variation of municipalities that were under lockdown in a given day. We found a decrease of 72.3% at the beginning of the pandemic when schools suspended in-person classes, while the dynamic lockdowns reduced public transport demand by 12.1%. We also found that the effect of lockdowns decreased after the fifth week of their application, suggesting a short-term effectiveness of such policy to reduce mobility. Regarding sociodemographic effects, we found that lockdowns have a stronger impact on reducing public transport demand in municipalities with a larger proportion of the elderly population (2% additional reduction per 1% increase in the share of the elderly population) and high-income households (16% additional reduction for 1000 USD increase in GDP per capita).\"\n}"
+            },
+            {
+                "col_name": "supporting_grant_ids",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "article"
+            },
+            {
+                "col_name": "category_bra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "citations_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "volume",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "126"
+            },
+            {
+                "col_name": "category_uoa",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"A02\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"A02\",\n      \"id\": \"30002\",\n      \"name\": \"Public Health, Health Services and Primary Care\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "journal",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"eissn\": \"1879-310X\",\n  \"id\": \"jour.1052607\",\n  \"issn\": \"0967-070X\",\n  \"title\": \"Transport Policy\"\n}"
+            },
+            {
+                "col_name": "category_hra",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"3903\",\n      \"value\": \"Population & Society\"\n    }\n  ],\n  \"values\": [\n    \"Population & Society\"\n  ]\n}"
+            },
+            {
+                "col_name": "date_print",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2022-09"
+            },
+            {
+                "col_name": "acknowledgements",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"preferred\": \"Financial support from 10.13039/501100020884ANID Chile (Grant PIA/BASAL AFB180003) is gratefully acknowledged by all authors. The second and third authors acknowledge the support of 10.13039/501100020884ANID, 10.13039/501100002850FONDECYT 1191104, and the fourth author of FONDECYT 1191745 and MIPP (ICS13_002 ANID).\"\n}"
+            },
+            {
+                "col_name": "research_org_state_codes",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"preferred\": \"The effect of dynamic lockdowns on public transport demand in times of COVID-19: Evidence from smartcard data\"\n}"
+            },
+            {
+                "col_name": "citations",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "research_org_state_names",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_icrp_cso",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "date_imported_gbq",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1662174010000000
+            },
+            {
+                "col_name": "book_series_title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "open_access_categories_v2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"oa_all\",\n  \"green\"\n]"
+            },
+            {
+                "col_name": "categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"bra_v1\": {\n    \"full\": [\n      {\n        \"id\": \"4003\",\n        \"value\": \"Public Health\"\n      }\n    ],\n    \"values\": [\n      \"Public Health\"\n    ]\n  },\n  \"for_2020_v2022\": {\n    \"first_level\": {\n      \"codes\": [\n        \"33\",\n        \"35\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"33\",\n          \"id\": \"80004\",\n          \"name\": \"Built Environment And Design\"\n        },\n        {\n          \"code\": \"35\",\n          \"id\": \"80006\",\n          \"name\": \"Commerce, Management, Tourism And Services\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"3304\",\n        \"3509\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"3304\",\n          \"id\": \"80063\",\n          \"name\": \"Urban And Regional Planning\"\n        },\n        {\n          \"code\": \"3509\",\n          \"id\": \"80081\",\n          \"name\": \"Transportation, Logistics And Supply Chains\"\n        }\n      ]\n    }\n  },\n  \"for_v1\": {\n    \"first_level\": {\n      \"codes\": [\n        \"12\",\n        \"15\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"12\",\n          \"id\": \"2212\",\n          \"name\": \"Built Environment and Design\"\n        },\n        {\n          \"code\": \"15\",\n          \"id\": \"2215\",\n          \"name\": \"Commerce, Management, Tourism and Services\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1205\",\n        \"1507\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1205\",\n          \"id\": \"3230\",\n          \"name\": \"Urban and Regional Planning\"\n        },\n        {\n          \"code\": \"1507\",\n          \"id\": \"3381\",\n          \"name\": \"Transportation and Freight Services\"\n        }\n      ]\n    }\n  },\n  \"for_v2020\": {\n    \"first_level\": {\n      \"codes\": [\n        \"12\",\n        \"15\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"12\",\n          \"id\": \"2212\",\n          \"name\": \"Built Environment and Design\"\n        },\n        {\n          \"code\": \"15\",\n          \"id\": \"2215\",\n          \"name\": \"Commerce, Management, Tourism and Services\"\n        }\n      ]\n    },\n    \"second_level\": {\n      \"codes\": [\n        \"1205\",\n        \"1507\"\n      ],\n      \"full\": [\n        {\n          \"code\": \"1205\",\n          \"id\": \"3230\",\n          \"name\": \"Urban and Regional Planning\"\n        },\n        {\n          \"code\": \"1507\",\n          \"id\": \"3381\",\n          \"name\": \"Transportation and Freight Services\"\n        }\n      ]\n    }\n  },\n  \"hra_v1\": {\n    \"full\": [\n      {\n        \"id\": \"3903\",\n        \"value\": \"Population & Society\"\n      }\n    ],\n    \"values\": [\n      \"Population & Society\"\n    ]\n  },\n  \"sdg_v1\": {\n    \"codes\": [\n      \"11\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"11\",\n        \"id\": \"40011\",\n        \"name\": \"Sustainable Cities and Communities\"\n      }\n    ]\n  },\n  \"uoa_v1\": {\n    \"codes\": [\n      \"A02\"\n    ],\n    \"full\": [\n      {\n        \"code\": \"A02\",\n        \"id\": \"30002\",\n        \"name\": \"Public Health, Health Services and Primary Care\"\n      }\n    ]\n  }\n}"
+            },
+            {
+                "col_name": "proceedings_title",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "researcher_ids",
+                "col_tag": "REL_PERSON",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"ur.011355406403.78\",\n  \"ur.014234626061.14\",\n  \"ur.015013354063.50\",\n  \"ur.01255726165.72\",\n  \"ur.015564131657.64\"\n]"
+            },
+            {
+                "col_name": "metrics",
+                "col_tag": "VAL_SCORE",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"recent_citations\": 0,\n  \"times_cited\": 0\n}"
+            },
+            {
+                "col_name": "subtitles",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "document_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"classification\": \"RESEARCH_ARTICLE\",\n  \"is_citable\": true,\n  \"versions\": {\n    \"v0\": {\n      \"classification\": \"RESEARCH_ARTICLE\",\n      \"is_citable\": true\n    }\n  }\n}"
+            },
+            {
+                "col_name": "arxiv_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "open_access_categories",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"oa_all\",\n  \"green_pub\"\n]"
+            },
+            {
+                "col_name": "funding_section",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": null
+            },
+            {
+                "col_name": "research_org_city_names",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Zurich\",\n  \"Santiago\"\n]"
+            },
+            {
+                "col_name": "mesh_headings",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_sdg",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"codes\": [\n    \"11\"\n  ],\n  \"full\": [\n    {\n      \"code\": \"11\",\n      \"id\": \"40011\",\n      \"name\": \"Sustainable Cities and Communities\"\n    }\n  ]\n}"
+            },
+            {
+                "col_name": "concepts",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"concept\": \"effect of lockdown\",\n    \"relevance\": 1.970000000000000e-01\n  },\n  {\n    \"concept\": \"short-term effectiveness\",\n    \"relevance\": 1.890000000000000e-01\n  },\n  {\n    \"concept\": \"elderly population\",\n    \"relevance\": 1.760000000000000e-01\n  },\n  {\n    \"concept\": \"fifth week\",\n    \"relevance\": 1.670000000000000e-01\n  },\n  {\n    \"concept\": \"COVID-19\",\n    \"relevance\": 1.630000000000000e-01\n  },\n  {\n    \"concept\": \"COVID-19 pandemic\",\n    \"relevance\": 1.620000000000000e-01\n  },\n  {\n    \"concept\": \"current pandemic\",\n    \"relevance\": 1.620000000000000e-01\n  },\n  {\n    \"concept\": \"sociodemographic effects\",\n    \"relevance\": 1.550000000000000e-01\n  },\n  {\n    \"concept\": \"pandemic\",\n    \"relevance\": 1.480000000000000e-01\n  },\n  {\n    \"concept\": \"large proportion\",\n    \"relevance\": 1.470000000000000e-01\n  },\n  {\n    \"concept\": \"lockdown strategies\",\n    \"relevance\": 1.450000000000000e-01\n  },\n  {\n    \"concept\": \"lockdown\",\n    \"relevance\": 1.420000000000000e-01\n  },\n  {\n    \"concept\": \"infection\",\n    \"relevance\": 1.380000000000000e-01\n  },\n  {\n    \"concept\": \"weeks\",\n    \"relevance\": 1.350000000000000e-01\n  },\n  {\n    \"concept\": \"future emergencies\",\n    \"relevance\": 1.330000000000000e-01\n  },\n  {\n    \"concept\": \"effect\",\n    \"relevance\": 1.320000000000000e-01\n  },\n  {\n    \"concept\": \"days\",\n    \"relevance\": 1.260000000000000e-01\n  },\n  {\n    \"concept\": \"emergency\",\n    \"relevance\": 1.250000000000000e-01\n  },\n  {\n    \"concept\": \"population\",\n    \"relevance\": 1.200000000000000e-01\n  },\n  {\n    \"concept\": \"proportion\",\n    \"relevance\": 1.190000000000000e-01\n  },\n  {\n    \"concept\": \"evidence\",\n    \"relevance\": 1.160000000000000e-01\n  },\n  {\n    \"concept\": \"high-income households\",\n    \"relevance\": 1.150000000000000e-01\n  },\n  {\n    \"concept\": \"data\",\n    \"relevance\": 1.130000000000000e-01\n  },\n  {\n    \"concept\": \"decrease\",\n    \"relevance\": 1.130000000000000e-01\n  },\n  {\n    \"concept\": \"strategies\",\n    \"relevance\": 1.120000000000000e-01\n  },\n  {\n    \"concept\": \"database\",\n    \"relevance\": 1.120000000000000e-01\n  },\n  {\n    \"concept\": \"measures\",\n    \"relevance\": 1.080000000000000e-01\n  },\n  {\n    \"concept\": \"time\",\n    \"relevance\": 1.080000000000000e-01\n  },\n  {\n    \"concept\": \"different measures\",\n    \"relevance\": 1.060000000000000e-01\n  },\n  {\n    \"concept\": \"people\",\n    \"relevance\": 1.050000000000000e-01\n  },\n  {\n    \"concept\": \"changes\",\n    \"relevance\": 1.040000000000000e-01\n  },\n  {\n    \"concept\": \"person classes\",\n    \"relevance\": 1.030000000000000e-01\n  },\n  {\n    \"concept\": \"use\",\n    \"relevance\": 1.020000000000000e-01\n  },\n  {\n    \"concept\": \"municipalities\",\n    \"relevance\": 1.010000000000000e-01\n  },\n  {\n    \"concept\": \"city of Santiago\",\n    \"relevance\": 9.700000000000000e-02\n  },\n  {\n    \"concept\": \"effectiveness\",\n    \"relevance\": 9.500000000000000e-02\n  },\n  {\n    \"concept\": \"impact\",\n    \"relevance\": 9.300000000000000e-02\n  },\n  {\n    \"concept\": \"Santiago\",\n    \"relevance\": 9.000000000000000e-02\n  },\n  {\n    \"concept\": \"transport use\",\n    \"relevance\": 8.900000000000000e-02\n  },\n  {\n    \"concept\": \"households\",\n    \"relevance\": 8.900000000000000e-02\n  },\n  {\n    \"concept\": \"beginning\",\n    \"relevance\": 8.699999999999999e-02\n  },\n  {\n    \"concept\": \"public transport demand\",\n    \"relevance\": 8.699999999999999e-02\n  },\n  {\n    \"concept\": \"globe\",\n    \"relevance\": 8.599999999999999e-02\n  },\n  {\n    \"concept\": \"variation\",\n    \"relevance\": 8.400000000000001e-02\n  },\n  {\n    \"concept\": \"strong impact\",\n    \"relevance\": 8.300000000000000e-02\n  },\n  {\n    \"concept\": \"schools\",\n    \"relevance\": 8.200000000000000e-02\n  },\n  {\n    \"concept\": \"transport demand\",\n    \"relevance\": 8.100000000000000e-02\n  },\n  {\n    \"concept\": \"such policies\",\n    \"relevance\": 7.600000000000000e-02\n  },\n  {\n    \"concept\": \"city\",\n    \"relevance\": 7.500000000000000e-02\n  },\n  {\n    \"concept\": \"class\",\n    \"relevance\": 7.099999999999999e-02\n  },\n  {\n    \"concept\": \"demand\",\n    \"relevance\": 7.000000000000001e-02\n  },\n  {\n    \"concept\": \"mobility\",\n    \"relevance\": 7.000000000000001e-02\n  },\n  {\n    \"concept\": \"policy\",\n    \"relevance\": 6.500000000000000e-02\n  },\n  {\n    \"concept\": \"public transportation\",\n    \"relevance\": 6.300000000000000e-02\n  },\n  {\n    \"concept\": \"Chile\",\n    \"relevance\": 6.200000000000000e-02\n  },\n  {\n    \"concept\": \"trips\",\n    \"relevance\": 6.100000000000000e-02\n  },\n  {\n    \"concept\": \"smartcard data\",\n    \"relevance\": 5.800000000000000e-02\n  },\n  {\n    \"concept\": \"transportation\",\n    \"relevance\": 5.400000000000000e-02\n  },\n  {\n    \"concept\": \"applications\",\n    \"relevance\": 5.400000000000000e-02\n  },\n  {\n    \"concept\": \"government\",\n    \"relevance\": 5.000000000000000e-02\n  },\n  {\n    \"concept\": \"metro\",\n    \"relevance\": 4.100000000000000e-02\n  },\n  {\n    \"concept\": \"bus\",\n    \"relevance\": 2.700000000000000e-02\n  }\n]"
+            },
+            {
+                "col_name": "resulting_publication_doi",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "research_org_countries",
+                "col_tag": "LOCATION",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"CL\",\n  \"CH\"\n]"
+            },
+            {
+                "col_name": "reference_ids",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"pub.1021835664\",\n  \"pub.1053041590\",\n  \"pub.1063349000\",\n  \"pub.1126921143\",\n  \"pub.1127173503\",\n  \"pub.1131920080\",\n  \"pub.1133346716\",\n  \"pub.1144868882\",\n  \"pub.1146211152\",\n  \"pub.1137859569\",\n  \"pub.1128908338\",\n  \"pub.1047936422\",\n  \"pub.1148582757\",\n  \"pub.1129551978\",\n  \"pub.1131215984\",\n  \"pub.1002053010\",\n  \"pub.1127670740\",\n  \"pub.1130924813\",\n  \"pub.1131501897\",\n  \"pub.1092557915\",\n  \"pub.1130610683\",\n  \"pub.1128425482\",\n  \"pub.1128910111\",\n  \"pub.1130097575\",\n  \"pub.1128331725\",\n  \"pub.1127533723\",\n  \"pub.1105370545\",\n  \"pub.1127779098\"\n]"
+            },
+            {
+                "col_name": "source_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "jour.1052607"
+            },
+            {
+                "col_name": "repository_dois",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "category_rcdc",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARIANT",
+                "sample_value": "{\n  \"full\": [\n    {\n      \"id\": \"558\",\n      \"value\": \"Prevention\"\n    }\n  ],\n  \"values\": [\n    \"Prevention\"\n  ]\n}"
+            }
+        ]
+    }
+}

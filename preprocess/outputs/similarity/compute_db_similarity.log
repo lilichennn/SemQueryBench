@@ -1,0 +1,16 @@
+2026-06-08 11:11:04,932 - INFO - __main__ - Loading tag vocabularies from preprocess/configs/db_tag_schema.json
+2026-06-08 11:11:04,932 - INFO - __main__ - Loaded 7 table tags and 28 column tags.
+2026-06-08 11:11:04,933 - INFO - __main__ - Loading tagged database metadata from preprocess/outputs/db_tags
+2026-06-08 11:11:04,934 - INFO - __main__ - Loaded 4 databases.
+2026-06-08 11:11:04,934 - INFO - __main__ - Computing schema-property similarity with weights: table=0.35, signature=0.40, cooccurrence=0.25
+2026-06-08 11:11:04,955 - INFO - __main__ - Written pairwise similarity output: preprocess\outputs\similarity\db_similarity_pairs.csv
+2026-06-08 11:11:04,955 - INFO - __main__ - Written matrix similarity output: preprocess\outputs\similarity\db_similarity_matrix.csv
+2026-06-08 11:11:04,956 - INFO - __main__ - Top 10 most similar database pairs:
+2026-06-08 11:11:04,958 - INFO - __main__ - 
+             db1             db2  schema_property_similarity  sim_table_types  sim_property_signature  sim_cooccurrence  lexical_similarity
+ELECTRONIC_SALES        Refinery                    0.866161         0.813123                0.867983          0.937500            0.054545
+       USA_NAMES WORD_VECTORS_US                    0.746377         0.894427                0.542053          0.866025            0.000000
+ELECTRONIC_SALES WORD_VECTORS_US                    0.743591         0.652753                0.790633          0.795495            0.048780
+        Refinery WORD_VECTORS_US                    0.616055         0.415227                0.679629          0.795495            0.027027
+ELECTRONIC_SALES       USA_NAMES                    0.565899         0.417029                0.603326          0.714435            0.028571
+        Refinery       USA_NAMES                    0.324597         0.000000                0.364971          0.714435            0.016393

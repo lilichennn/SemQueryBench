@@ -1,0 +1,5 @@
+2026-06-08 11:47:50,163 - INFO - semquery_preprocess.fingerprint - Written fingerprint for ELECTRONIC_SALES to preprocess\outputs\fingerprints\easy\ELECTRONIC_SALES.json
+2026-06-08 11:47:50,166 - INFO - semquery_preprocess.fingerprint - Written fingerprint for Refinery to preprocess\outputs\fingerprints\easy\Refinery.json
+2026-06-08 11:47:50,168 - INFO - semquery_preprocess.fingerprint - Written fingerprint for WORD_VECTORS_US to preprocess\outputs\fingerprints\mid\WORD_VECTORS_US.json
+2026-06-08 11:47:50,170 - INFO - semquery_preprocess.fingerprint - Written fingerprint for USA_NAMES to preprocess\outputs\fingerprints\hard\USA_NAMES.json
+2026-06-08 11:47:50,175 - INFO - semquery_preprocess.fingerprint - Written fingerprint summary to preprocess\outputs\fingerprints\fingerprint_summary.csv
