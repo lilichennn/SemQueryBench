@@ -1,0 +1,14 @@
+[
+  {
+    "Level": "easy",
+    "id": "easy_test_001",
+    "db_id": "example_db",
+    "question": "List all employees in the sales department.",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT name FROM employees WHERE department = 'Sales'",
+    "Execute Acc": 1,
+    "Efficient Acc": 1,
+    "diff desc": "The predicted SQL is equivalent to the hidden gold SQL."
+  }
+]
