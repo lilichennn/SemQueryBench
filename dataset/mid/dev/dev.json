@@ -183,184 +183,184 @@
   },
   {
     "question_id": 228,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I would like to first see how many receiving terminals/operating entities are involved in this batch of LNG shipping operations.",
     "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT t.OU_ID) AS distinct_entity_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL;"
+    "SQL": "SELECT COUNT(DISTINCT t.OU_ID) AS distinct_entity_cnt FROM `IOC_NaturalGas`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL;"
   },
   {
     "question_id": 229,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see which receiving terminals/operating entities have handled the most LNG voyages; first give me the top 1000 entities.",
     "evidence": "",
-    "SQL": "SELECT t.OU_ID, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL AND t.SHIP_NUM IS NOT NULL GROUP BY t.OU_ID ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.OU_ID, COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_LNG_SHIP t WHERE t.OU_ID IS NOT NULL AND t.SHIP_NUM IS NOT NULL GROUP BY t.OU_ID ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 230,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to count the number of LNG carrier voyages scheduled to arrive between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the planned arrival time.",
     "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t WHERE t.PLAN_ARRIVE_TIME >= '2024-01-01 00:00:00' AND t.PLAN_ARRIVE_TIME < '2024-01-31 23:59:59';"
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_LNG_SHIP t WHERE t.PLAN_ARRIVE_TIME >= '2024-01-01 00:00:00' AND t.PLAN_ARRIVE_TIME < '2024-01-31 23:59:59';"
   },
   {
     "question_id": 231,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see which industry types the real-time user-side data is mainly concentrated in. First, give me the top 1,000 industry categories.",
     "evidence": "",
-    "SQL": "SELECT t.INDUSTRY_TYPE, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_GAS_REALTIME_USER_DATA t WHERE t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.INDUSTRY_TYPE ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.INDUSTRY_TYPE, COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_GAS_REALTIME_USER_DATA t WHERE t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.INDUSTRY_TYPE ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 232,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see the cumulative working gas volume under different gas storage capacity categories. First, give me the top 1000 categories.",
     "evidence": "",
-    "SQL": "SELECT t.CATEGORY, SUM(t.DATA_VALUE) AS total_amount FROM `智能运营中心-天然气`.NG_DAILY_MAX_WORKING_GAS_CAPACITY t WHERE t.CATEGORY IS NOT NULL AND t.DATA_VALUE IS NOT NULL GROUP BY t.CATEGORY ORDER BY total_amount DESC LIMIT 1000;"
+    "SQL": "SELECT t.CATEGORY, SUM(t.DATA_VALUE) AS total_amount FROM `IOC_NaturalGas`.NG_DAILY_MAX_WORKING_GAS_CAPACITY t WHERE t.CATEGORY IS NOT NULL AND t.DATA_VALUE IS NOT NULL GROUP BY t.CATEGORY ORDER BY total_amount DESC LIMIT 1000;"
   },
   {
     "question_id": 233,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to check whether a voyage number has been associated with multiple receiving stations/operating entities, and see if there are any voyage ownership mapping anomalies. First, give me the top 3.",
     "evidence": "",
-    "SQL": "SELECT t.SHIP_NUM, COUNT(DISTINCT t.OU_ID) AS entity_cnt FROM `智能运营中心-天然气`.`NG_LNG_SHIP` t WHERE t.SHIP_NUM IS NOT NULL GROUP BY t.SHIP_NUM HAVING COUNT(DISTINCT t.OU_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+    "SQL": "SELECT t.SHIP_NUM, COUNT(DISTINCT t.OU_ID) AS entity_cnt FROM `IOC_NaturalGas`.`NG_LNG_SHIP` t WHERE t.SHIP_NUM IS NOT NULL GROUP BY t.SHIP_NUM HAVING COUNT(DISTINCT t.OU_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
   },
   {
     "question_id": 234,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "During the specified period from July 6 to July 7, 2025, how much daily cumulative traffic did each industry type contribute, and what is their proportion of the total traffic?",
     "evidence": "",
-    "SQL": "WITH agg AS ( SELECT t.INDUSTRY_TYPE AS topic, SUM(t.DAILY_TOTAL_FLOW) AS amt FROM `智能运营中心-天然气`.`NG_GAS_REALTIME_USER_DATA` t WHERE STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') >= '2025-07-06 00:00:00' AND STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') < '2025-07-08 00:00:00' AND t.INDUSTRY_TYPE IS NOT NULL AND t.DAILY_TOTAL_FLOW IS NOT NULL GROUP BY t.INDUSTRY_TYPE ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+    "SQL": "WITH agg AS ( SELECT t.INDUSTRY_TYPE AS topic, SUM(t.DAILY_TOTAL_FLOW) AS amt FROM `IOC_NaturalGas`.`NG_GAS_REALTIME_USER_DATA` t WHERE STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') >= '2025-07-06 00:00:00' AND STR_TO_DATE(t.DATA_DATE, '%Y-%m-%d') < '2025-07-08 00:00:00' AND t.INDUSTRY_TYPE IS NOT NULL AND t.DAILY_TOTAL_FLOW IS NOT NULL GROUP BY t.INDUSTRY_TYPE ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
   },
   {
     "question_id": 235,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to identify the peak day of abnormally large planned LNG vessel arrivals within the window of January 1 to 7, 2020, and see which dates are significantly higher than the normal level of the previous week.",
     "evidence": "",
-    "SQL": "WITH daily AS ( SELECT DATE( t.PLAN_ARRIVE_TIME) AS d, COUNT(*) AS cnt FROM `智能运营中心-天然气`.`NG_LNG_SHIP` t WHERE CAST(t.PLAN_ARRIVE_TIME AS DATETIME) >= '2020-01-01 00:00:00' AND CAST(t.PLAN_ARRIVE_TIME AS DATETIME) < '2020-01-08 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+    "SQL": "WITH daily AS ( SELECT DATE( t.PLAN_ARRIVE_TIME) AS d, COUNT(*) AS cnt FROM `IOC_NaturalGas`.`NG_LNG_SHIP` t WHERE CAST(t.PLAN_ARRIVE_TIME AS DATETIME) >= '2020-01-01 00:00:00' AND CAST(t.PLAN_ARRIVE_TIME AS DATETIME) < '2020-01-08 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
   },
   {
     "question_id": 236,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to check the mapping quality of LNG shipping master data: whether there are cases where the same primary key record corresponds to multiple different voyage numbers. First, give me the top 10.",
     "evidence": "",
-    "SQL": "SELECT t.ID, COUNT(DISTINCT t.SHIP_NUM) AS external_cnt FROM `智能运营中心-天然气`.NG_LNG_SHIP t GROUP BY t.ID HAVING COUNT(DISTINCT t.SHIP_NUM) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+    "SQL": "SELECT t.ID, COUNT(DISTINCT t.SHIP_NUM) AS external_cnt FROM `IOC_NaturalGas`.NG_LNG_SHIP t GROUP BY t.ID HAVING COUNT(DISTINCT t.SHIP_NUM) > 1 ORDER BY external_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 237,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to search for indicator records contained in the real-time operation remarks, such as operation clues like maintenance, alarm, and limit input. Show me the first 5 records.",
     "evidence": "",
-    "SQL": "SELECT t.INDICATOR_CODE AS id_external FROM `智能运营中心-天然气`.NG_GAS_REALTIME_SCREEN_DATA t WHERE COALESCE(t.REMARK, '') LIKE '%检修%' or '%报警%' or '%限输%' LIMIT 5;"
+    "SQL": "SELECT t.INDICATOR_CODE AS id_external FROM `IOC_NaturalGas`.NG_GAS_REALTIME_SCREEN_DATA t WHERE COALESCE(t.REMARK, '') LIKE '%检修%' or '%报警%' or '%限输%' LIMIT 5;"
   },
   {
     "question_id": 238,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see, for each production category, which units have the highest number of self-owned wells.",
     "evidence": "",
-    "SQL": "WITH agg AS ( SELECT t.CATEGORY AS topic, t.UNIT_NAME AS entity_name, SUM(t.SELF_WELL_COUNT) AS qty FROM `智能运营中心-天然气`.NG_NATURAL_GAS_PRODUCTION t WHERE t.CATEGORY IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.SELF_WELL_COUNT IS NOT NULL GROUP BY t.CATEGORY, t.UNIT_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+    "SQL": "WITH agg AS ( SELECT t.CATEGORY AS topic, t.UNIT_NAME AS entity_name, SUM(t.SELF_WELL_COUNT) AS qty FROM `IOC_NaturalGas`.NG_NATURAL_GAS_PRODUCTION t WHERE t.CATEGORY IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.SELF_WELL_COUNT IS NOT NULL GROUP BY t.CATEGORY, t.UNIT_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
   },
   {
     "question_id": 239,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see the records from 2022 to 2023 where \"有问题\" is mentioned in the daily instruction/daily allocation remarks, focusing on which report types they are mainly concentrated in, and give me the top 10 first.",
     "evidence": "",
-    "SQL": "SELECT t.REPORT_TYPE_CODE AS category_topic, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_DAILY_ASSIGN_DATA t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2022-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2024-01-01' AND COALESCE(t.RESERVE1, '') LIKE '%有问题%' GROUP BY t.REPORT_TYPE_CODE ORDER BY event_cnt DESC LIMIT 10;"
+    "SQL": "SELECT t.REPORT_TYPE_CODE AS category_topic, COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_DAILY_ASSIGN_DATA t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2022-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2024-01-01' AND COALESCE(t.RESERVE1, '') LIKE '%有问题%' GROUP BY t.REPORT_TYPE_CODE ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 240,
-    "db_id": "智能运营中心-天然气",
+    "db_id": "IOC_NaturalGas",
     "question": "I want to see which industry types the downstream users in different provinces are mainly concentrated in, to check whether there are significant differences in regional gas consumption structures. Only show province-industry type combinations with no fewer than 10 records, and first give me the top 20.",
     "evidence": "",
-    "SQL": "SELECT t.USER_PROVINCE AS location, t.INDUSTRY_TYPE AS category_topic, COUNT(*) AS event_cnt FROM `智能运营中心-天然气`.NG_GAS_REALTIME_USER_DATA t WHERE t.USER_PROVINCE IS NOT NULL AND t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.USER_PROVINCE, t.INDUSTRY_TYPE HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+    "SQL": "SELECT t.USER_PROVINCE AS location, t.INDUSTRY_TYPE AS category_topic, COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_GAS_REALTIME_USER_DATA t WHERE t.USER_PROVINCE IS NOT NULL AND t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.USER_PROVINCE, t.INDUSTRY_TYPE HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
   },
   {
     "question_id": 241,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to first see how many device units this batch of refining nodes covers in total.",
     "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT t.UNIT_ID) AS distinct_entity_cnt FROM 炼化.node_information t WHERE t.UNIT_ID IS NOT NULL;"
+    "SQL": "SELECT COUNT(DISTINCT t.UNIT_ID) AS distinct_entity_cnt FROM Refinery.node_information t WHERE t.UNIT_ID IS NOT NULL;"
   },
   {
     "question_id": 242,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to see which equipment units have the most process nodes attached, first give me the top 1000 units.",
     "evidence": "",
-    "SQL": "SELECT t.UNIT_ID, COUNT(*) AS event_cnt FROM 炼化.node_information t WHERE t.UNIT_ID IS NOT NULL AND t.NODE_ID IS NOT NULL GROUP BY t.UNIT_ID ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.UNIT_ID, COUNT(*) AS event_cnt FROM Refinery.node_information t WHERE t.UNIT_ID IS NOT NULL AND t.NODE_ID IS NOT NULL GROUP BY t.UNIT_ID ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 243,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to count the total number of node balance records generated between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', calculated based on the shift start time.",
     "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2024-01-01 00:00:00' AND t.begin_shift_time < '2024-01-31 23:59:59';"
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM Refinery.balance_information t WHERE t.begin_shift_time >= '2024-01-01 00:00:00' AND t.begin_shift_time < '2024-01-31 23:59:59';"
   },
   {
     "question_id": 244,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to see which business page types the balance data is mainly distributed across. First, give me the top 1,000 page types.",
     "evidence": "",
-    "SQL": "SELECT t.page_type, COUNT(*) AS event_cnt FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.page_type, COUNT(*) AS event_cnt FROM Refinery.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 245,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to see how large the cumulative balance is under different business page types. First, give me the top 1000 types.",
     "evidence": "",
-    "SQL": "SELECT t.page_type, SUM(t.amount) AS total_amount FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL AND t.amount IS NOT NULL GROUP BY t.page_type ORDER BY total_amount DESC LIMIT 1000;"
+    "SQL": "SELECT t.page_type, SUM(t.amount) AS total_amount FROM Refinery.balance_information t WHERE t.page_type IS NOT NULL AND t.amount IS NOT NULL GROUP BY t.page_type ORDER BY total_amount DESC LIMIT 1000;"
   },
   {
     "question_id": 246,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I need to identify which nodes appear under multiple page type calibers to check for caliber switching or configuration overlap. Please give me the three most typical ones first.",
     "evidence": "",
-    "SQL": "SELECT t.NODE_ID, COUNT(DISTINCT t.page_type) AS entity_cnt FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL GROUP BY t.NODE_ID HAVING COUNT(DISTINCT t.page_type) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+    "SQL": "SELECT t.NODE_ID, COUNT(DISTINCT t.page_type) AS entity_cnt FROM Refinery.balance_information t WHERE t.NODE_ID IS NOT NULL GROUP BY t.NODE_ID HAVING COUNT(DISTINCT t.page_type) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
   },
   {
     "question_id": 247,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to see the active retention of workflow nodes: how many nodes continuously generated balance records during both April 1–3 and April 6–7, 2023?",
     "evidence": "",
-    "SQL": "WITH a AS ( SELECT DISTINCT t.NODE_ID FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' ), b AS ( SELECT DISTINCT t.NODE_ID FROM 炼化.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (NODE_ID);"
+    "SQL": "WITH a AS ( SELECT DISTINCT t.NODE_ID FROM Refinery.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' ), b AS ( SELECT DISTINCT t.NODE_ID FROM Refinery.balance_information t WHERE t.NODE_ID IS NOT NULL AND t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (NODE_ID);"
   },
   {
     "question_id": 248,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to compare the changes in balance record activity across different page types for the two periods of April 1 to April 3, 2023, and April 6 to April 7, 2023, focusing first on the top 3 page types with the most significant changes.",
     "evidence": "",
-    "SQL": "SELECT t.page_type, SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM 炼化.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY delta_cnt DESC LIMIT 3;"
+    "SQL": "SELECT t.page_type, SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.begin_shift_time >= '2023-04-06 00:00:00' AND t.begin_shift_time < '2023-04-08 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM Refinery.balance_information t WHERE t.page_type IS NOT NULL GROUP BY t.page_type ORDER BY delta_cnt DESC LIMIT 3;"
   },
   {
     "question_id": 249,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "During the specified period from April 1 to 3, 2023, how much balanced quantity was carried by different page types, and what was their proportion of the total balanced quantity?",
     "evidence": "",
-    "SQL": "WITH agg AS ( SELECT t.page_type AS topic, SUM(t.amount) AS amt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' AND t.page_type IS NOT NULL GROUP BY t.page_type ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+    "SQL": "WITH agg AS ( SELECT t.page_type AS topic, SUM(t.amount) AS amt FROM Refinery.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' AND t.page_type IS NOT NULL GROUP BY t.page_type ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
   },
   {
     "question_id": 250,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to identify the peak days within the window of April 1–3, 2023, when the node balance record volume experienced an abnormal spike, and determine which dates are significantly higher than the normal level of the preceding week. First, provide me with the three most prominent dates.",
     "evidence": "",
-    "SQL": "WITH daily AS ( SELECT DATE( t.begin_shift_time) AS d, COUNT(*) AS cnt FROM 炼化.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
+    "SQL": "WITH daily AS ( SELECT DATE( t.begin_shift_time) AS d, COUNT(*) AS cnt FROM Refinery.balance_information t WHERE t.begin_shift_time >= '2023-04-01 00:00:00' AND t.begin_shift_time < '2023-04-04 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC LIMIT 3;"
   },
   {
     "question_id": 251,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to view the input/output type structure by device node. Which three nodes are more concentrated on a specific feed/discharge status and have a sufficiently large data volume (greater than 50 records)?",
     "evidence": "",
-    "SQL": "SELECT t.node_code, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM 炼化.rpt_t_daily_refinery_unit t WHERE t.node_code IS NOT NULL GROUP BY t.node_code HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
+    "SQL": "SELECT t.node_code, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.inout_type = '1' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM Refinery.rpt_t_daily_refinery_unit t WHERE t.node_code IS NOT NULL GROUP BY t.node_code HAVING COUNT(*) >= 50 ORDER BY hit_ratio DESC LIMIT 3;"
   },
   {
     "question_id": 252,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "I want to check the quality of the device master data mapping: are there any cases where the same UNIT_ID corresponds to multiple different device codes? Please provide the first 10 results.",
     "evidence": "",
-    "SQL": "SELECT t.UNIT_ID, COUNT(DISTINCT t.UNIT_CODE) AS external_cnt FROM 炼化.pm_unit_t t GROUP BY t.UNIT_ID HAVING COUNT(DISTINCT t.UNIT_CODE) > 1 ORDER BY external_cnt DESC LIMIT 10;"
+    "SQL": "SELECT t.UNIT_ID, COUNT(DISTINCT t.UNIT_CODE) AS external_cnt FROM Refinery.pm_unit_t t GROUP BY t.UNIT_ID HAVING COUNT(DISTINCT t.UNIT_CODE) > 1 ORDER BY external_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 253,
-    "db_id": "炼化",
+    "db_id": "Refinery",
     "question": "Show the device name with the highest design capacity for each device type.",
     "evidence": "",
-    "SQL": "WITH ranked AS ( SELECT t.UNIT_TYPE_ID AS topic, t.UNIT_NAME AS entity_name, t.CAPACITY AS qty, ROW_NUMBER() OVER (PARTITION BY t.UNIT_TYPE_ID ORDER BY t.CAPACITY DESC, t.UNIT_NAME) AS rn FROM 炼化.pm_unit_t t WHERE t.UNIT_TYPE_ID IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.CAPACITY IS NOT NULL ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
+    "SQL": "WITH ranked AS ( SELECT t.UNIT_TYPE_ID AS topic, t.UNIT_NAME AS entity_name, t.CAPACITY AS qty, ROW_NUMBER() OVER (PARTITION BY t.UNIT_TYPE_ID ORDER BY t.CAPACITY DESC, t.UNIT_NAME) AS rn FROM Refinery.pm_unit_t t WHERE t.UNIT_TYPE_ID IS NOT NULL AND t.UNIT_NAME IS NOT NULL AND t.CAPACITY IS NOT NULL ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC;"
   }
 ]

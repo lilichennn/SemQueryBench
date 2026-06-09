@@ -1,0 +1,216 @@
+HELP.md
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyde
+*.spec
+
+# C extensions
+*.so
+*.dylib
+*.dll
+
+# Distribution / packaging
+*.egg
+*.egg-info
+*.dist-info
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+
+# PyInstaller
+*.pyz
+# Usually these files are written by a python script from a template
+# before PyInstaller runs. They are not needed when creating a distribution.
+**/*.template
+
+# celery beat schedule file
+celerybeat-schedule*
+
+# Django stuff:
+*.log
+*.pot
+*.po
+*.mo
+locale/
+*.db
+*.sqlite3
+*.sqlite3-journal
+
+# Flask stuff:
+instance/
+.webassets-cache
+
+# Pytest
+.cache
+*.pyc
+*.pyo
+*.pyd
+*.pyde
+*.spec
+
+# Pybuilder
+target/
+
+# Robot Framework
+*.robot.pyc
+*.robot.pyo
+*.robot.pyc
+*.robot.pyo
+
+# SCons
+build/
+sconsign.dblite
+
+# Setuptools build folder
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+*.egg-info
+
+# pipenv
+.pipenv/
+
+# pipreqs
+.pipreqs/
+
+# virtualenv
+.venv/
+venv/
+env/
+ENV/
+env-bak/
+env3/
+env32/
+env64/
+
+# Py2app .app
+*.app/
+
+#散发文件和文件夹
+*.tar.gz
+*.tgz
+*.zip
+*.bz2
+*.xz
+*.iso
+*.dmg
+*.rar
+*.deb
+*.rpm
+*.exe
+*.msi
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Operating System generated files
+.DS_Store
+Thumbs.db
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variable files
+.env
+.env.*
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+out
+
+# nuxt.js build output
+.nuxt
+dist
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Temporary folders
+tmp/
+temp/
+
+### VS Code ###
+.vscode/
+.mvn
+
+### other files
+*.xlsx
+*.zip
+*.doc
+*.docx

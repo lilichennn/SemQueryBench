@@ -925,107 +925,107 @@
   },
   {
     "question_id": 213,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I would like to first check how many business organization entities this batch of crude oil commodity volume monthly dynamic data covers.",
     "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT t.ORG_ID) AS distinct_entity_cnt FROM 数管平台.原油商品量月动态表 t WHERE t.ORG_ID IS NOT NULL;"
+    "SQL": "SELECT COUNT(DISTINCT t.ORG_ID) AS distinct_entity_cnt FROM DataManagementPlatform.原油商品量月动态表 t WHERE t.ORG_ID IS NOT NULL;"
   },
   {
     "question_id": 214,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I would like to see which business organizations have accumulated the most daily crude oil sales records; first, show the top 1,000 organizations.",
     "evidence": "",
-    "SQL": "SELECT t.ORG_ID, COUNT(*) AS event_cnt FROM 数管平台.原油销售日报 t WHERE t.ORG_ID IS NOT NULL AND t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.ORG_ID ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.ORG_ID, COUNT(*) AS event_cnt FROM DataManagementPlatform.原油销售日报 t WHERE t.ORG_ID IS NOT NULL AND t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.ORG_ID ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 215,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to count how many crude oil daily production records were created between '2024-01-01 00:00:00' and '2024-01-31 23:59:59', based on the business date.",
     "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.ORDER_DATE >= '2024-01-01 00:00:00' AND t.ORDER_DATE < '2024-01-31 23:59:59';"
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM `DataManagementPlatform`.`原油日产量(A8 2.0)` t WHERE t.ORDER_DATE >= '2024-01-01 00:00:00' AND t.ORDER_DATE < '2024-01-31 23:59:59';"
   },
   {
     "question_id": 216,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "Show the movement types on which the daily crude oil commodity volume is primarily concentrated. First, provide the top 1,000 business action categories.",
     "evidence": "",
-    "SQL": "SELECT t.BWART, COUNT(*) AS event_cnt FROM `数管平台`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY event_cnt DESC LIMIT 1000;"
+    "SQL": "SELECT t.BWART, COUNT(*) AS event_cnt FROM `DataManagementPlatform`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY event_cnt DESC LIMIT 1000;"
   },
   {
     "question_id": 217,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to see how large the cumulative monthly commodity volume is under different energy category dimensions. First, give me the top 1000 categories.",
     "evidence": "",
-    "SQL": "SELECT t.ENERGY_SORT, SUM(t.MONTH_MERCHANDISE_VOLUME) AS total_amount FROM 数管平台.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT ORDER BY total_amount DESC LIMIT 1000;"
+    "SQL": "SELECT t.ENERGY_SORT, SUM(t.MONTH_MERCHANDISE_VOLUME) AS total_amount FROM DataManagementPlatform.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT ORDER BY total_amount DESC LIMIT 1000;"
   },
   {
     "question_id": 218,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to investigate whether sales daily report numbers are mapped to multiple organizations, to see if there are any report ownership mapping anomalies. First, give me the first 3.",
     "evidence": "",
-    "SQL": "SELECT t.REPORT_FORM_DAILY_ID, COUNT(DISTINCT t.ORG_ID) AS entity_cnt FROM `数管平台`.`原油销售日报` t WHERE t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.REPORT_FORM_DAILY_ID HAVING COUNT(DISTINCT t.ORG_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
+    "SQL": "SELECT t.REPORT_FORM_DAILY_ID, COUNT(DISTINCT t.ORG_ID) AS entity_cnt FROM `DataManagementPlatform`.`原油销售日报` t WHERE t.REPORT_FORM_DAILY_ID IS NOT NULL GROUP BY t.REPORT_FORM_DAILY_ID HAVING COUNT(DISTINCT t.ORG_ID) > 1 ORDER BY entity_cnt DESC LIMIT 3;"
   },
   {
     "question_id": 219,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to see active retention from the business document perspective: how many document reference numbers had daily production records consistently in January 1-2 and January 5-6, 2025?",
     "evidence": "",
-    "SQL": "WITH a AS ( SELECT DISTINCT t.SGTXT FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' ), b AS ( SELECT DISTINCT t.SGTXT FROM `数管平台`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (SGTXT);"
+    "SQL": "WITH a AS ( SELECT DISTINCT t.SGTXT FROM `DataManagementPlatform`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' ), b AS ( SELECT DISTINCT t.SGTXT FROM `DataManagementPlatform`.`原油日产量(A8 2.0)` t WHERE t.SGTXT IS NOT NULL AND t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' ) SELECT COUNT(*) AS retained_entity_cnt FROM a JOIN b USING (SGTXT);"
   },
   {
     "question_id": 220,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to compare the changes in product volume records across different movement types between the periods from January 1 to 2, 2025, and from January 5 to 6, 2025. First, examine the top 3 business actions with the most significant changes.",
     "evidence": "",
-    "SQL": "SELECT t.BWART, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM `数管平台`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY delta_cnt DESC LIMIT 3;"
+    "SQL": "SELECT t.BWART, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN t.ORDER_DATE >= '2025-01-01 00:00:00' AND t.ORDER_DATE < '2025-01-03 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN t.ORDER_DATE >= '2025-01-05 00:00:00' AND t.ORDER_DATE < '2025-01-07 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM `DataManagementPlatform`.`原油日商品量(A8 2.0)` t WHERE t.BWART IS NOT NULL GROUP BY t.BWART ORDER BY delta_cnt DESC LIMIT 3;"
   },
   {
     "question_id": 221,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "During the specified period from January 1, 2025 to January 31, 2025, how much monthly production did each inventory/source category carry, and what was each category's share of total production?",
     "evidence": "",
-    "SQL": "WITH agg AS ( SELECT t.BWTAR AS topic, SUM(t.AMOUNT) AS amt FROM `数管平台`.`原油月产量(A8 2.0)` t WHERE CAST(t.ORDER_DATE AS DATETIME) >= '2025-01-01 00:00:00' AND CAST(t.ORDER_DATE AS DATETIME) < '2025-02-01 00:00:00' AND t.BWTAR IS NOT NULL GROUP BY t.BWTAR ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
+    "SQL": "WITH agg AS ( SELECT t.BWTAR AS topic, SUM(t.AMOUNT) AS amt FROM `DataManagementPlatform`.`原油月产量(A8 2.0)` t WHERE CAST(t.ORDER_DATE AS DATETIME) >= '2025-01-01 00:00:00' AND CAST(t.ORDER_DATE AS DATETIME) < '2025-02-01 00:00:00' AND t.BWTAR IS NOT NULL GROUP BY t.BWTAR ), tot AS ( SELECT SUM(amt) AS total_amt FROM agg ) SELECT topic, amt, amt / NULLIF((SELECT total_amt FROM tot), 0) AS amt_share FROM agg ORDER BY amt_share DESC;"
   },
   {
     "question_id": 222,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to identify the peak day within the window from January 21 to 27, 2025, where the daily crude oil sales recorded volume shows an abnormal surge, and determine which dates are significantly higher than the normal level of the preceding week.",
     "evidence": "",
-    "SQL": "WITH daily AS ( SELECT DATE( t.DATA_DATE) AS d, COUNT(*) AS cnt FROM `数管平台`.`原油销售日报` t WHERE CAST(t.DATA_DATE AS DATETIME) >= '2025-01-21 00:00:00' AND CAST(t.DATA_DATE AS DATETIME) < '2025-01-28 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
+    "SQL": "WITH daily AS ( SELECT DATE( t.DATA_DATE) AS d, COUNT(*) AS cnt FROM `DataManagementPlatform`.`原油销售日报` t WHERE CAST(t.DATA_DATE AS DATETIME) >= '2025-01-21 00:00:00' AND CAST(t.DATA_DATE AS DATETIME) < '2025-01-28 00:00:00' GROUP BY d ), ma AS ( SELECT d, cnt, AVG(cnt) OVER (ORDER BY d ROWS BETWEEN 7 PRECEDING AND 1 PRECEDING) AS prev_7d_avg FROM daily ) SELECT d, cnt, prev_7d_avg FROM ma WHERE prev_7d_avg IS NOT NULL AND cnt > prev_7d_avg ORDER BY (cnt - prev_7d_avg) DESC;"
   },
   {
     "question_id": 223,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to view the approval status structure by unified task and see which tasks have the highest proportion of approved status (APPROVAL_STATUS not equal to 0). Show me the top 3 first.",
     "evidence": "",
-    "SQL": "SELECT t.UNIFY_TASK_ID, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) / COUNT(*) AS hit_ratio FROM 数管平台.原油销售日报 t WHERE t.UNIFY_TASK_ID IS NOT NULL GROUP BY t.UNIFY_TASK_ID ORDER BY hit_ratio DESC LIMIT 3;"
+    "SQL": "SELECT t.UNIFY_TASK_ID, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN t.APPROVAL_STATUS = 0 THEN 0 ELSE 1 END) / COUNT(*) AS hit_ratio FROM DataManagementPlatform.原油销售日报 t WHERE t.UNIFY_TASK_ID IS NOT NULL GROUP BY t.UNIFY_TASK_ID ORDER BY hit_ratio DESC LIMIT 3;"
   },
   {
     "question_id": 224,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to search for records containing “海外单位” in the company code special handling instructions, and first give me the top 5 company code clues.",
     "evidence": "",
-    "SQL": "SELECT t.COMPANY AS id_external FROM 数管平台.公司代码信息 t WHERE COALESCE(t.ZZTP_REMK, '') LIKE '%海外单位%' LIMIT 5;"
+    "SQL": "SELECT t.COMPANY AS id_external FROM DataManagementPlatform.公司代码信息 t WHERE COALESCE(t.ZZTP_REMK, '') LIKE '%海外单位%' LIMIT 5;"
   },
   {
     "question_id": 225,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I want to see, for each energy type, the organization name with the highest commodity volume contribution.",
     "evidence": "",
-    "SQL": "WITH agg AS ( SELECT t.ENERGY_SORT AS topic, t.ORG_NAME AS entity_name, SUM(t.MONTH_MERCHANDISE_VOLUME) AS amt FROM 数管平台.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.ORG_NAME IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT, t.ORG_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
+    "SQL": "WITH agg AS ( SELECT t.ENERGY_SORT AS topic, t.ORG_NAME AS entity_name, SUM(t.MONTH_MERCHANDISE_VOLUME) AS amt FROM DataManagementPlatform.原油商品量月动态表 t WHERE t.ENERGY_SORT IS NOT NULL AND t.ORG_NAME IS NOT NULL AND t.MONTH_MERCHANDISE_VOLUME IS NOT NULL GROUP BY t.ENERGY_SORT, t.ORG_NAME ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY amt DESC, entity_name) AS rn FROM agg ) SELECT topic, entity_name, amt FROM ranked WHERE rn = 1 ORDER BY amt DESC;"
   },
   {
     "question_id": 226,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I’d like to see the top 10 project types where sales daily reports with REMARKS = 1 are mainly concentrated from January to February 2025.",
     "evidence": "",
-    "SQL": "SELECT t.PROJ_TYPE AS category_topic, COUNT(*) AS event_cnt FROM 数管平台.原油销售日报 t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2025-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2025-03-01' AND t.REMARKS = 1 GROUP BY t.PROJ_TYPE ORDER BY event_cnt DESC LIMIT 10;"
+    "SQL": "SELECT t.PROJ_TYPE AS category_topic, COUNT(*) AS event_cnt FROM DataManagementPlatform.原油销售日报 t WHERE str_to_date(t.DATA_DATE, '%Y-%m-%d') >= '2025-01-01' AND str_to_date(t.DATA_DATE, '%Y-%m-%d') < '2025-03-01' AND t.REMARKS = 1 GROUP BY t.PROJ_TYPE ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 227,
-    "db_id": "数管平台",
+    "db_id": "DataManagementPlatform",
     "question": "I would like to see which energy categories mainly accumulate monthly commodity volume records across different regions, to check if there are obvious regional distribution differences. Only consider region–energy category combinations with at least 10 records, and first provide the top 20.",
     "evidence": "",
-    "SQL": "SELECT t.DATA_REGION AS location, t.ENERGY_SORT AS category_topic, COUNT(*) AS event_cnt FROM 数管平台.原油商品量月动态表 t WHERE t.DATA_REGION IS NOT NULL AND t.ENERGY_SORT IS NOT NULL GROUP BY t.DATA_REGION, t.ENERGY_SORT HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+    "SQL": "SELECT t.DATA_REGION AS location, t.ENERGY_SORT AS category_topic, COUNT(*) AS event_cnt FROM DataManagementPlatform.原油商品量月动态表 t WHERE t.DATA_REGION IS NOT NULL AND t.ENERGY_SORT IS NOT NULL GROUP BY t.DATA_REGION, t.ENERGY_SORT HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
   }
 ]

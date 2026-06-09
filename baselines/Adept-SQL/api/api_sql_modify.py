@@ -1,0 +1,49 @@
+
+import os,sys
+pythonon_path = os.path.dirname('../')
+sys.path.append(pythonon_path)
+
+from op_DB import vecdb_op
+
+def sql_modify(params):
+
+    
+    db = vecdb_op(params['assistant_id'])
+    del params['assistant_id']
+    res = db.modify_sqlQA(params)
+    
+    if "success" in res:
+        return({"info": res, "status": 1})
+    else:
+        return({"info": res,  "status": 0})
+
+from flask import Flask,request,jsonify
+from flask_cors import CORS
+app = Flask(__name__)
+CORS(app)
+
+@app.route("/sqlmodify",methods=["POST"])
+def sql_modify_handler():
+
+    paramJson = request.get_json()
+    params = {
+        "qtype": paramJson["qtype"],
+        "question1": paramJson["question1"],
+        "sql1": paramJson["sql1"],
+        "question2": paramJson["question2"],
+        "sql2": paramJson["sql2"],
+        "assistant_id": paramJson["assistant_id"]
+    }
+
+    result = sql_modify(params)
+
+    return jsonify(result)
+
+
+if __name__ == "__main__":
+    # app.run(host="0.0.0.0", debug=True)
+
+    params = {"qtype": "Final Test",
+            "question": "This is a more virtual question", 
+            "sql": "SELECT 111"}
+    print(sql_modify(params))
