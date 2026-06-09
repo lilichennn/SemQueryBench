@@ -10,7 +10,6 @@ The released repository contains the benchmark data, database loading utilities,
 
 <p align="center">
   <b>Figure 1. Overview of SemQueryBench construction and evaluation.</b><br>
-  Replace <code>assets/bm_construction.png</code> with the main figure used in the paper.
 </p>
 
 ## Overview
