@@ -4,6 +4,6 @@ Use the user question, gold SQL, gold execution result, predicted SQL, and predi
 
 Return only JSON:
 {
-  "Execute Acc": 0 or 1,
+  "Execute Match": 0 or 1,
   "Execute diff desc": "brief reason"
 }

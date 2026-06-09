@@ -1,0 +1,3107 @@
+[
+  {
+    "Level": "easy",
+    "id": "72",
+    "db_id": "IDC",
+    "question": "In image data sharing platforms (IDC), which raw datasets have the largest number of samples? The top five listed companies.",
+    "Gold-sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ORDER BY Subjects DESC LIMIT 5;",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT collection_name, Subjects FROM idc_v17_original_collections_metadata ORDER BY Subjects DESC LIMIT 5",
+    "gold_exec_status": 1,
+    "gold_result": [
+      {
+        "collection_name": "NLST"
+      },
+      {
+        "collection_name": "Breast-Cancer-Screening-DBT"
+      },
+      {
+        "collection_name": "VICTRE"
+      },
+      {
+        "collection_name": "CMMD"
+      },
+      {
+        "collection_name": "COVID-19-NY-SBU"
+      }
+    ],
+    "gold_result_len": 5,
+    "gold_exec_error": "",
+    "pred_exec_status": 1,
+    "pred_result": [
+      {
+        "collection_name": "NLST",
+        "Subjects": 26408
+      },
+      {
+        "collection_name": "Breast-Cancer-Screening-DBT",
+        "Subjects": 5060
+      },
+      {
+        "collection_name": "VICTRE",
+        "Subjects": 2994
+      },
+      {
+        "collection_name": "CMMD",
+        "Subjects": 1775
+      },
+      {
+        "collection_name": "COVID-19-NY-SBU",
+        "Subjects": 1384
+      }
+    ],
+    "pred_result_len": 5,
+    "pred_exec_error": ""
+  },
+  {
+    "Level": "easy",
+    "id": "76",
+    "db_id": "IDC",
+    "question": "In the image data sharing platform, which original dataset names also appear in the TCGA biological sample information (project_short_name), suggesting a possible connection between the two?",
+    "Gold-sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE collection_name IN (SELECT project_short_name FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9);",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT m.collection_name FROM idc_v17_original_collections_metadata m INNER JOIN idc_v17_tcga_biospecimen_rel9 b ON m.collection_name = b.project_short_name",
+    "gold_exec_status": 1,
+    "gold_result": [
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      }
+    ],
+    "gold_result_len": 10,
+    "gold_exec_error": "",
+    "pred_exec_status": 1,
+    "pred_result": [
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-CESC"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-STAD"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-LUSC"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-SKCM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-SARC"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-LUAD"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-HNSC"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-GBM"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-KIRP"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      },
+      {
+        "collection_name": "TCGA-OV"
+      }
+    ],
+    "pred_result_len": 1000,
+    "pred_exec_error": ""
+  }
+]

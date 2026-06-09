@@ -17,15 +17,13 @@
       "description": "Benchmark difficulty tier.",
       "enum": [
         "easy",
-        "medium",
         "mid",
         "hard"
       ]
     },
     "id": {
       "type": [
-        "string",
-        "integer"
+        "string"
       ],
       "description": "Question/sample identifier."
     },

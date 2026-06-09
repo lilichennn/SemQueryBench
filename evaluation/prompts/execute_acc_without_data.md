@@ -4,6 +4,6 @@ The gold execution result is empty or unavailable. Judge based on SQL semantics 
 
 Return only JSON:
 {
-  "Execute Acc": 0 or 1,
+  "Execute Match": 0 or 1,
   "Execute diff desc": "brief reason"
 }

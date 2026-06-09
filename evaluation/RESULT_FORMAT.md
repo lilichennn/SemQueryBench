@@ -47,28 +47,6 @@ Example:
 Level | id | db_id | question | model | method | pred-sql | Execute Acc | Efficient Acc | diff desc
 ```
 
-## Optional Wide Format
-
-Wide-format Excel files are allowed for human inspection. Use this naming convention for prediction/evaluation columns:
-
-```text
-{model}__{method}__pred-sql
-{model}__{method}__Execute Acc
-{model}__{method}__Efficient Acc
-{model}__{method}__diff desc
-```
-
-Example:
-
-```text
-qwen-72b__MCS__pred-sql
-qwen-72b__MCS__Execute Acc
-qwen-72b__MCS__Efficient Acc
-qwen-72b__MCS__diff desc
-qwen-72b__Opensearch__pred-sql
-...
-```
-
 ## Do Not Release
 
 Do not include the following in public result files:

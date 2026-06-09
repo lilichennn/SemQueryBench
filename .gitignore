@@ -6,6 +6,7 @@ venv/
 
 # Local configs
 *.env
+evaluation/configs/.env
 configs/*.yaml
 !configs/*.example.yaml
 

@@ -1,0 +1,20 @@
+[
+  {
+    "Level": "easy",
+    "id": "easy_test_001",
+    "db_id": "USDA_NASS_AGRICULTURE",
+    "question": "Which states have the top five livestock product values?",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY value DESC LIMIT 5;"
+  },
+  {
+    "Level": "easy",
+    "id": "easy_test_001",
+    "db_id": "example_db",
+    "question": "List all employees in the sales department.",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT name FROM employees WHERE department = 'Sales'"
+  }
+]

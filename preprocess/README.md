@@ -780,3 +780,11 @@ The paper may refer to `mid` as `medium`.
 The construction pipeline uses **SQA** as the main abstraction.
 
 SQA is not a SQL skeleton in the traditional sense. It is a SQL-like semantic query abstraction that preserves query intent and structure while replacing concrete database elements with semantic table and column slots.
+
+
+## Sample Outputs
+
+We provide a small sanitized example under `outputs_sample/` to illustrate the expected intermediate files produced by the construction pipeline.
+
+The full construction artifacts from SQA generation and downstream SQL/question instantiation are not released, because they contain hidden SQA templates, anchor mappings, and slot-level construction information. Releasing these artifacts would expose the latent query abstractions used to control the benchmark and may compromise the evaluation protocol.
+The released scripts and sanitized examples are sufficient to inspect the construction procedure, while the hidden full artifacts are withheld to prevent leakage of test-time structural abstractions.

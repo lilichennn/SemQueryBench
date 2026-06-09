@@ -1,0 +1,22 @@
+[
+  {
+    "Level": "easy",
+    "id": "72",
+    "db_id": "IDC",
+    "question": "In image data sharing platforms (IDC), which raw datasets have the largest number of samples? The top five listed companies.",
+    "Gold-sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ORDER BY Subjects DESC LIMIT 5;",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT collection_name, Subjects FROM idc_v17_original_collections_metadata ORDER BY Subjects DESC LIMIT 5"
+  },
+    {
+    "Level": "easy",
+    "id": "76",
+    "db_id": "IDC",
+    "question": "In the image data sharing platform, which original dataset names also appear in the TCGA biological sample information (project_short_name), suggesting a possible connection between the two?",
+    "Gold-sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE collection_name IN (SELECT project_short_name FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9);",
+    "model": "qwen-72b",
+    "method": "MCS",
+    "pred-sql": "SELECT m.collection_name FROM idc_v17_original_collections_metadata m INNER JOIN idc_v17_tcga_biospecimen_rel9 b ON m.collection_name = b.project_short_name"
+  }
+]
