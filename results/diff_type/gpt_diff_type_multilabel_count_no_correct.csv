@@ -1,0 +1,4 @@
+Level,Schema grounding error,Query-structure error,Condition error,General generation error,Execution invalidity
+easy,80,102,95,3,9
+mid,115,35,56,6,9
+hard,138,40,149,7,9
