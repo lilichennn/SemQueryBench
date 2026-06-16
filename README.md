@@ -320,46 +320,6 @@ results/
 
 This directory is intended for cleaned public result tables and aggregate summaries. Internal execution dumps, API logs, and hidden gold SQL should not be committed.
 
-## Security and Leakage Control
-
-Do not commit:
-
-```text
-API keys
-passwords
-private endpoints
-local absolute paths
-hidden SQA templates
-sqa_id / template_id / skeleton_id fields
-anchor mappings
-slot mappings
-test gold SQL
-full construction artifacts after SQA generation
-large local caches or model files
-```
-
-Recommended local-only files include:
-
-```text
-evaluation/configs/.env
-evaluation/submission/outputs/
-preprocess/outputs_hidden/
-```
-
-The public repository should contain only sanitized examples and release-safe data.
-
-## Citation
-
-Citation information will be added after paper release.
-
-```bibtex
-@misc{semquerybench2026,
-  title  = {SemQueryBench: A Benchmark for Cross-Database Text-to-SQL Generalization under Controlled Schema-Property Similarity},
-  author = {Anonymous},
-  year   = {2026}
-}
-```
-
 ## License
 
 License information will be added before the final public release.
