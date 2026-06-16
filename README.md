@@ -5,7 +5,7 @@ SemQueryBench is a Text-to-SQL benchmark for evaluating cross-database generaliz
 The released repository contains the benchmark data, database loading utilities, construction pipeline code, reproduced baseline code, and evaluation tools.
 
 <p align="center">
-  <img src="assets/bm_construction.png" width="900">
+  <img src="assets/sql_gen.png" width="900">
 </p>
 
 <p align="center">
