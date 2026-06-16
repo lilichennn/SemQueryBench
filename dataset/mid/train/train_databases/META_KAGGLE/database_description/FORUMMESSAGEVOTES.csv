@@ -1,6 +1,6 @@
 original_column_name,column_name,column_description,data_format,value_description
-Id,Id,,DOUBLE,
-ToUserId,ToUserId,,DOUBLE,
-FromUserId,FromUserId,,DOUBLE,
-VoteDate,VoteDate,,DATE,
-ForumMessageId,ForumMessageId,,DOUBLE,
+Id,Id,,integer,
+ToUserId,ToUserId,,integer,
+FromUserId,FromUserId,,integer,
+VoteDate,VoteDate,,date,
+ForumMessageId,ForumMessageId,,integer,

@@ -1,0 +1,3 @@
+original_column_name,column_name,column_description,data_format,value_description
+MES_TK_ID,MES_TK_ID,,integer,
+MES_TK_ALIAS,MES_TK_ALIAS,,text,

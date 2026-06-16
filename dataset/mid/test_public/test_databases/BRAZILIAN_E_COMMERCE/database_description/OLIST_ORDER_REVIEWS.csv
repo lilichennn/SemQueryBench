@@ -1,8 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-review_id,review_id,,TEXT,
-review_answer_timestamp,review_answer_timestamp,,TEXT,
-order_id,order_id,,TEXT,
-review_comment_title,review_comment_title,,TEXT,
-review_comment_message,review_comment_message,,TEXT,
-review_creation_date,review_creation_date,,TEXT,
-review_score,review_score,,DOUBLE,

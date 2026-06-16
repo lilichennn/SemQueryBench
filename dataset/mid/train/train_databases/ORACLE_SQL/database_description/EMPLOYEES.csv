@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,integer,
+title,title,,text,
+name,name,,text,
+supervisor_id,supervisor_id,,real,

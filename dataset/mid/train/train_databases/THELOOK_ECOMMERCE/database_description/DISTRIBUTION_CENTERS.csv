@@ -1,5 +1,5 @@
 original_column_name,column_name,column_description,data_format,value_description
-id,id,,DOUBLE,
-name,name,,TEXT,
-longitude,longitude,,DOUBLE,
-latitude,latitude,,DOUBLE,
+id,id,,integer,
+name,name,,text,
+longitude,longitude,,real,
+latitude,latitude,,real,

@@ -1,5 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-id,id,,DOUBLE,
-delivery,delivery,,TEXT,
-ordered,ordered,,TEXT,
-customer_id,customer_id,,DOUBLE,

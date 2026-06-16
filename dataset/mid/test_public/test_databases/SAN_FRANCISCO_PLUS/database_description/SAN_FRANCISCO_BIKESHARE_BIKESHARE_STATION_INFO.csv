@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+region_id,region_id,,integer,
+external_id,external_id,,text,
+station_id,station_id,,text,
+has_kiosk,has_kiosk,,text,
+name,name,,text,
+short_name,short_name,,text,
+rental_methods,rental_methods,,text,
+lon,lon,,real,
+eightd_has_key_dispenser,eightd_has_key_dispenser,,text,
+station_geom,station_geom,,text,
+capacity,capacity,,integer,
+lat,lat,,real,

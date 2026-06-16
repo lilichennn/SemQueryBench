@@ -1,8 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-prod_id,prod_id,,DOUBLE,
-channel_id,channel_id,,DOUBLE,
-promo_id,promo_id,,DOUBLE,
-amount_sold,amount_sold,,DOUBLE,
-time_id,time_id,,TEXT,
-cust_id,cust_id,,DOUBLE,
-quantity_sold,quantity_sold,,DOUBLE,

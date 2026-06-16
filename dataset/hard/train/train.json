@@ -1,369 +1,5 @@
 [
   {
-    "question_id": 1,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me find the transactions whose transaction input data contains \"0x\", and give me the latest 10 transaction hashes in reverse chronological order.",
-    "evidence": "",
-    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.input LIKE '%0x%' ORDER BY tx.block_timestamp DESC LIMIT 10;"
-  },
-  {
-    "question_id": 2,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Please find transactions that occurred between January 1, 2015 and January 31, 2020, sort them in descending order by time, and provide the transaction hashes of the latest 10 transactions.",
-    "evidence": "",
-    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' ORDER BY tx.block_timestamp DESC LIMIT 10;"
-  },
-  {
-    "question_id": 3,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Retrieve successfully executed transactions and list the latest 10 transaction hashes in descending order by time.",
-    "evidence": "",
-    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.receipt_status = 1 ORDER BY tx.block_timestamp DESC LIMIT 10;"
-  },
-  {
-    "question_id": 4,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me find transactions executed successfully between \"2015-01-01\" and \"2020-01-31\" that contain \"0x\" in the transaction input data, sorted by time in descending order, and return the most recent 10 transaction hashes.",
-    "evidence": "",
-    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' AND tx.receipt_status = 1 AND tx.input LIKE CONCAT('%', '0x', '%') ORDER BY tx.block_timestamp DESC LIMIT 10;"
-  },
-  {
-    "question_id": 5,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me count the total number of transactions between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 6,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Count the number of distinct called addresses that have participated in transactions between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT tr.to_address) AS distinct_entity_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 7,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Calculate the total amount of currency transferred out in transactions between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 8,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Calculate the average amount of currency transferred per transaction and the average Gas consumed between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT AVG(tx.value) AS avg_amount, AVG(tx.receipt_gas_used) AS avg_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 9,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Please help me count how many times each transaction invocation type occurred between January 1, 2001 and January 31, 2026, and give me the top 10 sorted by frequency from highest to lowest.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 10,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Show me the top 10 transaction call types, ranked by the number of distinct called addresses involved, for the period from January 1, 2001 to January 31, 2026, in descending order by count.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, COUNT(DISTINCT tr.to_address) AS distinct_entity_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY distinct_entity_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 11,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me check which tokens had the most active transfers between January 1, 2015 and January 31, 2020, and give me the top 10 token names ranked by transfer count from high to low.",
-    "evidence": "",
-    "SQL": "SELECT tk.name AS name_entity, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 12,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Check for me, between January 1, 2015, and January 31, 2020, which tokens had the highest total transfer amount, and give me the top 10 token names in descending order by transfer amount.",
-    "evidence": "",
-    "SQL": "SELECT tk.name AS name_entity, SUM(CAST(tt.value AS DECIMAL(65, 0))) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name ORDER BY total_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 13,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "I would like to see the daily change in transaction volume between January 1, 2016 and January 31, 2020, showing the number of transactions per day.",
-    "evidence": "",
-    "SQL": "SELECT DATE(FROM_UNIXTIME(tx.block_timestamp / 1000000.0)) AS day, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.block_timestamp >= UNIX_TIMESTAMP('2016-01-01 00:00:00') * 1000000.0 AND tx.block_timestamp < UNIX_TIMESTAMP('2020-01-31 23:59:59') * 1000000.0 GROUP BY day ORDER BY day;"
-  },
-  {
-    "question_id": 14,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "I would like to see how many times each different transaction invocation type occurred per day between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT DATE(FROM_UNIXTIME(tr.block_timestamp / 1000000.0)) AS day, tr.trace_type AS category_topic, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY day, tr.trace_type ORDER BY day, event_cnt DESC;"
-  },
-  {
-    "question_id": 15,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me find the tokens that had at least 5 transfers between January 1, 2015 and January 31, 2020, and list them in descending order by transfer count.",
-    "evidence": "",
-    "SQL": "SELECT tk.name AS name_entity, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC;"
-  },
-  {
-    "question_id": 16,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Check for me between January 1, 2015 and January 31, 2020, which tokens have the highest average transfer amount per transaction, and give me the top 10 token names sorted by average transfer amount from high to low.",
-    "evidence": "",
-    "SQL": "SELECT tk.name AS name_entity, AVG(CAST(tt.value AS DECIMAL)) AS avg_amount FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' AND tt.value IS NOT NULL GROUP BY tk.name ORDER BY avg_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 17,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Find the types between 2001-01-01 and 2026-01-31 whose call count is higher than the average call count of all transaction call types, and give me the top 10 sorted by call count in descending order.",
-    "evidence": "",
-    "SQL": "WITH topic_cnt AS ( SELECT tr.trace_type AS topic, COUNT(*) AS cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 18,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Please show me the total amount of native token transfers for different transaction call types between January 1, 2015 and January 31, 2020, and give me the top 10 sorted by total amount in descending order.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY total_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 19,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Help me find which transaction call types had a total currency transfer amount exceeding 1000 between January 1, 1970 and January 31, 1978.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '1970-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '1978-01-31 23:59:59' GROUP BY tr.trace_type HAVING SUM(tx.value) >= 1000 ORDER BY total_amount DESC;"
-  },
-  {
-    "question_id": 20,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Please check the transaction success rates for different transaction call types between January 1, 2015 and January 31, 2020.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, SUM( tx.receipt_status ) / COUNT(*) AS ratio_in_status FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp/ 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp/ 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY ratio_in_status DESC;"
-  },
-  {
-    "question_id": 21,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Calculate the total gas consumed by on-chain transactions between January 1, 2001 and January 31, 2026.",
-    "evidence": "",
-    "SQL": "SELECT SUM(tx.receipt_gas_used) AS total_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 22,
-    "db_id": "ETHEREUM_BLOCKCHAIN",
-    "question": "Show me the top 10 transaction call types by total gas consumed between January 1, 2015 and January 31, 2020, ordered from highest to lowest.",
-    "evidence": "",
-    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.receipt_gas_used) AS total_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY total_quantity DESC LIMIT 10;"
-  },
-  {
-    "question_id": 23,
-    "db_id": "GA4",
-    "question": "I would like to find records from January 31, 2021, between 9 AM and 5 PM, where the event parameters contain “cart”, and give me the identifiers of the last 10 users who triggered such events, sorted by event time in descending order.",
-    "evidence": "",
-    "SQL": "SELECT e.USER_PSEUDO_ID AS id_external FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%cart%' ORDER BY e.EVENT_TIMESTAMP DESC LIMIT 10;"
-  },
-  {
-    "question_id": 24,
-    "db_id": "GA4",
-    "question": "Please show me the users who had events between 9:00 AM and 5:00 PM on January 31, 2021, and give me the most recent 10 user identifiers in descending order of event time.",
-    "evidence": "",
-    "SQL": "SELECT e.USER_PSEUDO_ID AS id_external FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' ORDER BY e.EVENT_TIMESTAMP DESC LIMIT 10;"
-  },
-  {
-    "question_id": 25,
-    "db_id": "GA4",
-    "question": "Please help count the total number of event records generated between 9:00 AM and 5:00 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
-  },
-  {
-    "question_id": 26,
-    "db_id": "GA4",
-    "question": "Count the total number of distinct data streams between 9:00 AM and 5:00 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT e.STREAM_ID) AS distinct_entity_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
-  },
-  {
-    "question_id": 27,
-    "db_id": "GA4",
-    "question": "Help me calculate the total event value in US dollars between 9 AM and 5 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
-  },
-  {
-    "question_id": 28,
-    "db_id": "GA4",
-    "question": "Help me calculate the average value of a single event between 9:00 AM and 5:00 PM on January 31, 2021, in US dollars.",
-    "evidence": "",
-    "SQL": "SELECT AVG(e.EVENT_VALUE_IN_USD) AS avg_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
-  },
-  {
-    "question_id": 29,
-    "db_id": "GA4",
-    "question": "Please check how many events were generated by different platforms between 9:00 AM and 5:00 PM on January 31, 2021, and show me the top 10 in descending order of count.",
-    "evidence": "",
-    "SQL": "SELECT e.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 30,
-    "db_id": "GA4",
-    "question": "Please show me, between 9 AM and 5 PM on January 31, 2021, how many distinct data streams were covered by each platform, and list the top 10 platforms in descending order by count.",
-    "evidence": "",
-    "SQL": "SELECT e.PLATFORM AS category_topic, COUNT(DISTINCT e.STREAM_ID) AS distinct_entity_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY distinct_entity_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 31,
-    "db_id": "GA4",
-    "question": "Show me, between 9 a.m. and 5 p.m. on January 31, 2021, which traffic sources brought the most active events, ranked by event count from highest to lowest, the top 10.",
-    "evidence": "",
-    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 32,
-    "db_id": "GA4",
-    "question": "Show me the top 10 traffic sources with the highest total event value between 9:00 AM and 5:00 PM on January 31, 2021, sorted by total value from highest to lowest.",
-    "evidence": "",
-    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY total_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 33,
-    "db_id": "GA4",
-    "question": "I would like to view the hourly change in event volume between 9:00 AM and 5:00 PM on January 31, 2021, showing the number of events per hour.",
-    "evidence": "",
-    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE e.EVENT_TIMESTAMP >= UNIX_TIMESTAMP('2021-01-31 09:00:00') * 1000000.0 AND e.EVENT_TIMESTAMP < UNIX_TIMESTAMP('2021-01-31 17:00:00') * 1000000.0 GROUP BY hour ORDER BY hour;"
-  },
-  {
-    "question_id": 34,
-    "db_id": "GA4",
-    "question": "I would like to see the hourly change in event value between 9:00 AM and 5:00 PM on January 31, 2021 using the cumulative value per hour.",
-    "evidence": "",
-    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE e.EVENT_TIMESTAMP >= UNIX_TIMESTAMP('2021-01-31 09:00:00') * 1000000.0 AND e.EVENT_TIMESTAMP < UNIX_TIMESTAMP('2021-01-31 17:00:00') * 1000000.0 GROUP BY hour ORDER BY hour;"
-  },
-  {
-    "question_id": 35,
-    "db_id": "GA4",
-    "question": "I would like to see how many events were generated per hour by different platforms between 9 AM and 5 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, e.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY hour, e.PLATFORM ORDER BY hour, event_cnt DESC;"
-  },
-  {
-    "question_id": 36,
-    "db_id": "GA4",
-    "question": "Find the traffic sources that had at least 10 events between 9:00 AM and 5:00 PM on January 31, 2021, and list them in descending order of event count.",
-    "evidence": "",
-    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;"
-  },
-  {
-    "question_id": 37,
-    "db_id": "GA4",
-    "question": "Help me check between 9 a.m. and 5 p.m. on January 31, 2021, which traffic sources brought the highest average value per single event, and give me the top 10 by average value from high to low.",
-    "evidence": "",
-    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, AVG(e.EVENT_VALUE_IN_USD) AS avg_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND e.EVENT_VALUE_IN_USD IS NOT NULL GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY avg_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 38,
-    "db_id": "GA4",
-    "question": "Please find the top 10 distinct device information for records with event parameters containing \"item\" between 9:00 AM and 5:00 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
-  },
-  {
-    "question_id": 39,
-    "db_id": "GA4",
-    "question": "Help me find out which device information is primarily involved in the records where the event parameters contain \"item\" between 9:00 AM and 5:00 PM on January 31, 2021, deduplicate them, and give me the top 10.",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
-  },
-  {
-    "question_id": 40,
-    "db_id": "GA4",
-    "question": "Find platforms where the number of events between 9:00 AM and 5:00 PM on January 31, 2021, is greater than or equal to the average event count across all platforms, and return the top 10 platforms sorted by event count in descending order.",
-    "evidence": "",
-    "SQL": "WITH topic_cnt AS ( SELECT e.PLATFORM AS topic, COUNT(*) AS cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt >= (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 41,
-    "db_id": "GA4",
-    "question": "Please show me the total event value generated by each platform between 9:00 AM and 5:00 PM on January 31, 2021, and give me the top 10 platforms sorted by total value from high to low.",
-    "evidence": "",
-    "SQL": "SELECT e.PLATFORM AS category_topic, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY total_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 42,
-    "db_id": "GA4",
-    "question": "Find which platforms had a total event value exceeding 1000 between 9:00 AM and 5:00 PM on January 31, 2021.",
-    "evidence": "",
-    "SQL": "SELECT e.PLATFORM AS category_topic, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM HAVING SUM(e.EVENT_VALUE_IN_USD) >= 1000 ORDER BY total_amount DESC;"
-  },
-  {
-    "question_id": 43,
-    "db_id": "GA4",
-    "question": "Please check, between 9 AM and 5 PM on January 31, 2021, which traffic source has the highest cumulative event value on each platform.",
-    "evidence": "",
-    "SQL": "WITH agg AS ( SELECT e.PLATFORM AS topic, CAST(e.TRAFFIC_SOURCE AS CHAR) AS entity, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM, CAST(e.TRAFFIC_SOURCE AS CHAR) ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY total_amount DESC) AS rn FROM agg ) SELECT topic, entity, total_amount FROM ranked WHERE rn = 1 ORDER BY total_amount DESC LIMIT 10;"
-  },
-  {
-    "question_id": 72,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Help me count how many trial records are in the COVID-related clinical trial data.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS row_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
-  },
-  {
-    "question_id": 73,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Please help me count how many distinct trial registration numbers are in the COVID-related clinical trial data.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT ct.id) AS distinct_external_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
-  },
-  {
-    "question_id": 74,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Count the total number of distinct external detail page links in the COVID-related clinical trial data.",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT ct.linkout) AS distinct_entity_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
-  },
-  {
-    "question_id": 75,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Show me the number of clinical trial records for each registration platform, and list the top 10 in descending order by count.",
-    "evidence": "",
-    "SQL": "SELECT ct.registry AS rel_entity, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.registry ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 76,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Show me the top 10 most frequent clinical trial titles, sorted by count from highest to lowest.",
-    "evidence": "",
-    "SQL": "SELECT ct.title AS name_entity, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.title ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 77,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Please help me find clinical trials with \"good\" in the title, sorted by trial registration number, and give me the top 10.",
-    "evidence": "",
-    "SQL": "SELECT distinct ct.id AS id_external FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct WHERE ct.title LIKE '%good%' ORDER BY ct.id LIMIT 10;"
-  },
-  {
-    "question_id": 78,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Show me the cumulative enrollment numbers for different study types, sorted in descending order by count, and return the top 10.",
-    "evidence": "",
-    "SQL": "SELECT ct.study_type AS rel_entity, SUM(ct.study_participants) AS total_quantity FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.study_type ORDER BY total_quantity DESC LIMIT 10;"
-  },
-  {
-    "question_id": 79,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Show me the number of clinical trial records for each study type, and give me the top 10 study types sorted by count in descending order.",
-    "evidence": "",
-    "SQL": "SELECT ct.study_type AS category_topic, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.study_type ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 80,
-    "db_id": "DIMENSIONS_AI_COVID19",
-    "question": "Please show me which clinical trial titles have the highest average enrollment numbers, and give me the top 10 sorted from high to low average enrollment.",
-    "evidence": "",
-    "SQL": "SELECT ct.title AS name_entity, AVG(ct.study_participants) AS avg_quantity FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct WHERE ct.study_participants IS NOT NULL GROUP BY ct.title ORDER BY avg_quantity DESC LIMIT 10;"
-  },
-  {
     "question_id": 87,
     "db_id": "ADVENTUREWORKS",
     "question": "Retrieve the most recent orders where the remarks mention “Cleanup”, sorted by order time from newest to oldest. Show me the first 10 order numbers.",
@@ -516,195 +152,6 @@
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to see the sales structure: which salespeople are most active on which product lines? List the top 10 combinations ranked by the number of deals per \"person × product line\".",
     "evidence": "",
     "SQL": "SELECT soh.salespersonid AS rel_person, p.productline AS category_topic, COUNT(*) AS event_cnt FROM ADVENTUREWORKS.SALESORDERHEADER soh JOIN ADVENTUREWORKS.SALESORDERDETAIL sod ON sod.salesorderid = soh.salesorderid JOIN ADVENTUREWORKS.PRODUCT p ON p.productid = sod.productid WHERE soh.orderdate >= '2001-01-01 00:00:00' AND soh.orderdate < '2026-01-31 23:59:59' GROUP BY soh.salespersonid, p.productline ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 134,
-    "db_id": "ods_szkjglxm",
-    "question": "I want to search for content containing \"nbsp\" (project keyword) in the external communication minutes, and give me the first 10 UUIDs of the most recent communication records.",
-    "evidence": "",
-    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.content LIKE '%nbsp%' ORDER BY ei.date DESC LIMIT 10;"
-  },
-  {
-    "question_id": 135,
-    "db_id": "ods_szkjglxm",
-    "question": "What external exchange activities have we had during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? Please provide the UUIDs of the first 10 exchange records in reverse chronological order.",
-    "evidence": "",
-    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' ORDER BY ei.date DESC LIMIT 10;"
-  },
-  {
-    "question_id": 136,
-    "db_id": "ods_szkjglxm",
-    "question": "I want to see which meeting minutes are marked as status 1. Give me the top 10 results sorted by communication time in descending order.",
-    "evidence": "",
-    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.status = 1 ORDER BY ei.date DESC LIMIT 10;"
-  },
-  {
-    "question_id": 137,
-    "db_id": "ods_szkjglxm",
-    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', I only care about communication records with status 1, and where the content mentions \"Native Tech\" (a partner). Give me the top 10 UUIDs of the matching communication records ordered by time in descending order.",
-    "evidence": "",
-    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' AND ei.status = 1 AND ei.content LIKE CONCAT('%', 'Native Tech', '%') ORDER BY ei.date DESC LIMIT 10;"
-  },
-  {
-    "question_id": 138,
-    "db_id": "ods_szkjglxm",
-    "question": "How many external communication records were generated in total during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 139,
-    "db_id": "ods_szkjglxm",
-    "question": "How many distinct partners (deduplicated by partner_uuid) were covered by external exchanges during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT ei.partner_uuid) AS distinct_entity_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 140,
-    "db_id": "ods_szkjglxm",
-    "question": "Between 2001-01-01 00:00:00 and 2026-01-31 23:59:59, what is the approximate average paper_scale?",
-    "evidence": "",
-    "SQL": "SELECT AVG(p.paper_scale) AS avg_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 141,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, what is the distribution of paper outputs by delivery/submission type (delivery_type)? Which types are the most common (Top 10)?",
-    "evidence": "",
-    "SQL": "SELECT p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 142,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct projects (deduplicated by project_info_uuid) are covered by each delivery/submission type? Give me the Top 10.",
-    "evidence": "",
-    "SQL": "SELECT p.delivery_type AS category_topic, COUNT(DISTINCT p.project_info_uuid) AS distinct_entity_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY distinct_entity_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 143,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which thesis titles appear most frequently (possibly due to repeated submissions/multiple instances)? Give me the Top 10.",
-    "evidence": "",
-    "SQL": "SELECT p.paper_name AS name_entity, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.paper_name ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 144,
-    "db_id": "ods_szkjglxm",
-    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', from the contact/point-of-contact perspective, who participated in (coordinated) the most external exchanges? Give me the Top 10 (by contact_id).",
-    "evidence": "",
-    "SQL": "SELECT ei.contact_id AS rel_person, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.contact_id ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 145,
-    "db_id": "ods_szkjglxm",
-    "question": "I would like to view the daily rhythm of external communications from '2001-01-01 00:00:00' to '2026-01-31 23:59:59': how many communication records were generated each day?",
-    "evidence": "",
-    "SQL": "SELECT DATE( ei.date) AS day, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY day ORDER BY day;"
-  },
-  {
-    "question_id": 146,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to break down the output by day for different delivery/submission types (delivery_type): how many records were submitted for each type per day?",
-    "evidence": "",
-    "SQL": "SELECT DATE( p.submit_time) AS day, p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY day, p.delivery_type ORDER BY day, event_cnt DESC;"
-  },
-  {
-    "question_id": 147,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which partners qualify as \"frequently communicate partner\" (with at least 10 communication records)? List them in descending order of frequency.",
-    "evidence": "",
-    "SQL": "SELECT ei.partner_name AS name_entity, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.partner_name HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;"
-  },
-  {
-    "question_id": 148,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to find the thesis titles whose abstracts mention \"good\". Please give me the first 10 deduplicated titles.",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT p.paper_name AS name_entity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' AND p.paper_abstract LIKE '%good%' ORDER BY p.paper_name LIMIT 10;"
-  },
-  {
-    "question_id": 149,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which delivery/submission types (delivery_type) had submission counts above the average? List these active types (top 10).",
-    "evidence": "",
-    "SQL": "WITH topic_cnt AS ( SELECT p.delivery_type AS topic, COUNT(*) AS cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 150,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to see the output intensity of \"author × submission type\": Which authors submit most intensively on a certain type? Give me the Top 10 combinations.",
-    "evidence": "",
-    "SQL": "SELECT p.paper_writer AS rel_person, p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.paper_writer, p.delivery_type ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 151,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to view the proportion of failed statuses by technical line (tech_uuid) and identify the top 10 technical lines with the highest status achievement rate.",
-    "evidence": "",
-    "SQL": "SELECT ei.tech_uuid AS category_topic, CAST(SUM(CASE WHEN ei.status = 0 THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS ratio_in_status FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.tech_uuid ORDER BY ratio_in_status DESC LIMIT 10;"
-  },
-  {
-    "question_id": 152,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (based on the paper submission time), what is the cumulative paper scale (paper_scale) number? I would like to get a rough view of the output volume during this period.",
-    "evidence": "",
-    "SQL": "SELECT SUM(p.paper_scale) AS total_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59';"
-  },
-  {
-    "question_id": 153,
-    "db_id": "ods_szkjglxm",
-    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what are the aggregated totals of paper_scale by delivery_type? And which are the Top 10 types with the largest paper_scale?",
-    "evidence": "",
-    "SQL": "SELECT p.delivery_type AS category_topic, SUM(p.paper_scale) AS total_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY total_quantity DESC LIMIT 10;"
-  },
-  {
-    "question_id": 154,
-    "db_id": "PYPI",
-    "question": "I want to first understand the scale of the PyPI distribution metadata table: how many distribution records are there?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS row_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
-  },
-  {
-    "question_id": 155,
-    "db_id": "PYPI",
-    "question": "In the PyPI distribution package metadata, how many distinct SHA256 artifact fingerprints (deduplicated by sha256_digest) are there?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT dm.sha256_digest) AS distinct_external_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
-  },
-  {
-    "question_id": 156,
-    "db_id": "PYPI",
-    "question": "I want to roughly see the deduplication scale of distribution package dependency declarations (requires_dist): how many distinct dependency declaration sets are there (deduplicated by requires_dist)?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT dm.requires_dist) AS distinct_entity_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
-  },
-  {
-    "question_id": 157,
-    "db_id": "PYPI",
-    "question": "I want to find the most common “dependency template”: which sets of requires_dist dependency declarations appear most frequently in distributions? Give me the top 10.",
-    "evidence": "",
-    "SQL": "SELECT dm.requires_dist AS rel_entity, COUNT(*) AS event_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.requires_dist ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 158,
-    "db_id": "PYPI",
-    "question": "In the PyPI distribution metadata, I want to see which package names have the most published artifacts: count the distribution by name, what are the Top 10?",
-    "evidence": "",
-    "SQL": "SELECT dm.name AS name_entity, COUNT(*) AS event_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.name ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 159,
-    "db_id": "PYPI",
-    "question": "In PyPI distribution package metadata, I want to search by package name keyword (e.g., \"safa\") and see which distribution artifacts (sha256_digest) correspond to the matched packages. First give me the top 10 artifact fingerprints.",
-    "evidence": "",
-    "SQL": "SELECT distinct dm.sha256_digest AS id_external FROM PYPI.DISTRIBUTION_METADATA dm WHERE dm.name LIKE '%safa%' ORDER BY dm.sha256_digest LIMIT 10;"
-  },
-  {
-    "question_id": 160,
-    "db_id": "PYPI",
-    "question": "I would like to see the distribution of distribution artifacts across the repository path (path) dimension: which paths have the highest number of distinct artifact fingerprints (deduplicated by sha256_digest)? Show me the Top 10.",
-    "evidence": "",
-    "SQL": "SELECT dm.path AS location, COUNT(DISTINCT dm.sha256_digest) AS distinct_external_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.path ORDER BY distinct_external_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 161,
@@ -915,6 +362,223 @@
     "question": "In a bowling league, I want to see the main distribution of tournament matchups across lane combinations: count matchups by Lanes, top 10.",
     "evidence": "",
     "SQL": "SELECT tma.Lanes AS category_topic, COUNT(*) AS event_cnt FROM BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE tma GROUP BY tma.Lanes ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 72,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Help me count how many trial records are in the COVID-related clinical trial data.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
+  },
+  {
+    "question_id": 73,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Please help me count how many distinct trial registration numbers are in the COVID-related clinical trial data.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT ct.id) AS distinct_external_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
+  },
+  {
+    "question_id": 74,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Count the total number of distinct external detail page links in the COVID-related clinical trial data.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT ct.linkout) AS distinct_entity_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct;"
+  },
+  {
+    "question_id": 75,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Show me the number of clinical trial records for each registration platform, and list the top 10 in descending order by count.",
+    "evidence": "",
+    "SQL": "SELECT ct.registry AS rel_entity, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.registry ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 76,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Show me the top 10 most frequent clinical trial titles, sorted by count from highest to lowest.",
+    "evidence": "",
+    "SQL": "SELECT ct.title AS name_entity, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.title ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 77,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Please help me find clinical trials with \"good\" in the title, sorted by trial registration number, and give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT distinct ct.id AS id_external FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct WHERE ct.title LIKE '%good%' ORDER BY ct.id LIMIT 10;"
+  },
+  {
+    "question_id": 78,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Show me the cumulative enrollment numbers for different study types, sorted in descending order by count, and return the top 10.",
+    "evidence": "",
+    "SQL": "SELECT ct.study_type AS rel_entity, SUM(ct.study_participants) AS total_quantity FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.study_type ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 79,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Show me the number of clinical trial records for each study type, and give me the top 10 study types sorted by count in descending order.",
+    "evidence": "",
+    "SQL": "SELECT ct.study_type AS category_topic, COUNT(*) AS event_cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct GROUP BY ct.study_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 80,
+    "db_id": "DIMENSIONS_AI_COVID19",
+    "question": "Please show me which clinical trial titles have the highest average enrollment numbers, and give me the top 10 sorted from high to low average enrollment.",
+    "evidence": "",
+    "SQL": "SELECT ct.title AS name_entity, AVG(ct.study_participants) AS avg_quantity FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS ct WHERE ct.study_participants IS NOT NULL GROUP BY ct.title ORDER BY avg_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 1,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me find the transactions whose transaction input data contains \"0x\", and give me the latest 10 transaction hashes in reverse chronological order.",
+    "evidence": "",
+    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.input LIKE '%0x%' ORDER BY tx.block_timestamp DESC LIMIT 10;"
+  },
+  {
+    "question_id": 2,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Please find transactions that occurred between January 1, 2015 and January 31, 2020, sort them in descending order by time, and provide the transaction hashes of the latest 10 transactions.",
+    "evidence": "",
+    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' ORDER BY tx.block_timestamp DESC LIMIT 10;"
+  },
+  {
+    "question_id": 3,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Retrieve successfully executed transactions and list the latest 10 transaction hashes in descending order by time.",
+    "evidence": "",
+    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.receipt_status = 1 ORDER BY tx.block_timestamp DESC LIMIT 10;"
+  },
+  {
+    "question_id": 4,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me find transactions executed successfully between \"2015-01-01\" and \"2020-01-31\" that contain \"0x\" in the transaction input data, sorted by time in descending order, and return the most recent 10 transaction hashes.",
+    "evidence": "",
+    "SQL": "SELECT tr.transaction_hash AS id_external FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' AND tx.receipt_status = 1 AND tx.input LIKE CONCAT('%', '0x', '%') ORDER BY tx.block_timestamp DESC LIMIT 10;"
+  },
+  {
+    "question_id": 5,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me count the total number of transactions between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 6,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Count the number of distinct called addresses that have participated in transactions between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT tr.to_address) AS distinct_entity_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 7,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Calculate the total amount of currency transferred out in transactions between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 8,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Calculate the average amount of currency transferred per transaction and the average Gas consumed between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT AVG(tx.value) AS avg_amount, AVG(tx.receipt_gas_used) AS avg_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 9,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Please help me count how many times each transaction invocation type occurred between January 1, 2001 and January 31, 2026, and give me the top 10 sorted by frequency from highest to lowest.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 10,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Show me the top 10 transaction call types, ranked by the number of distinct called addresses involved, for the period from January 1, 2001 to January 31, 2026, in descending order by count.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, COUNT(DISTINCT tr.to_address) AS distinct_entity_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY distinct_entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 11,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me check which tokens had the most active transfers between January 1, 2015 and January 31, 2020, and give me the top 10 token names ranked by transfer count from high to low.",
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 12,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Check for me, between January 1, 2015, and January 31, 2020, which tokens had the highest total transfer amount, and give me the top 10 token names in descending order by transfer amount.",
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, SUM(CAST(tt.value AS DECIMAL(65, 0))) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 13,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "I would like to see the daily change in transaction volume between January 1, 2016 and January 31, 2020, showing the number of transactions per day.",
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(tx.block_timestamp / 1000000.0)) AS day, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE tx.block_timestamp >= UNIX_TIMESTAMP('2016-01-01 00:00:00') * 1000000.0 AND tx.block_timestamp < UNIX_TIMESTAMP('2020-01-31 23:59:59') * 1000000.0 GROUP BY day ORDER BY day;"
+  },
+  {
+    "question_id": 14,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "I would like to see how many times each different transaction invocation type occurred per day between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(tr.block_timestamp / 1000000.0)) AS day, tr.trace_type AS category_topic, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY day, tr.trace_type ORDER BY day, event_cnt DESC;"
+  },
+  {
+    "question_id": 15,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me find the tokens that had at least 5 transfers between January 1, 2015 and January 31, 2020, and list them in descending order by transfer count.",
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, COUNT(*) AS event_cnt FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tk.name HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC;"
+  },
+  {
+    "question_id": 16,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Check for me between January 1, 2015 and January 31, 2020, which tokens have the highest average transfer amount per transaction, and give me the top 10 token names sorted by average transfer amount from high to low.",
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, AVG(CAST(tt.value AS DECIMAL)) AS avg_amount FROM ETHEREUM_BLOCKCHAIN.TOKEN_TRANSFERS tt JOIN ETHEREUM_BLOCKCHAIN.TOKENS tk ON tt.token_address = tk.address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2020-01-31 23:59:59' AND tt.value IS NOT NULL GROUP BY tk.name ORDER BY avg_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 17,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Find the types between 2001-01-01 and 2026-01-31 whose call count is higher than the average call count of all transaction call types, and give me the top 10 sorted by call count in descending order.",
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT tr.trace_type AS topic, COUNT(*) AS cnt FROM ETHEREUM_BLOCKCHAIN.TRACES tr WHERE FROM_UNIXTIME(tr.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tr.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tr.trace_type ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 18,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Please show me the total amount of native token transfers for different transaction call types between January 1, 2015 and January 31, 2020, and give me the top 10 sorted by total amount in descending order.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 19,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Help me find which transaction call types had a total currency transfer amount exceeding 1000 between January 1, 1970 and January 31, 1978.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.value) AS total_amount FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '1970-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '1978-01-31 23:59:59' GROUP BY tr.trace_type HAVING SUM(tx.value) >= 1000 ORDER BY total_amount DESC;"
+  },
+  {
+    "question_id": 20,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Please check the transaction success rates for different transaction call types between January 1, 2015 and January 31, 2020.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, SUM( tx.receipt_status ) / COUNT(*) AS ratio_in_status FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp/ 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp/ 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY ratio_in_status DESC;"
+  },
+  {
+    "question_id": 21,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Calculate the total gas consumed by on-chain transactions between January 1, 2001 and January 31, 2026.",
+    "evidence": "",
+    "SQL": "SELECT SUM(tx.receipt_gas_used) AS total_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 22,
+    "db_id": "ETHEREUM_BLOCKCHAIN",
+    "question": "Show me the top 10 transaction call types by total gas consumed between January 1, 2015 and January 31, 2020, ordered from highest to lowest.",
+    "evidence": "",
+    "SQL": "SELECT tr.trace_type AS category_topic, SUM(tx.receipt_gas_used) AS total_quantity FROM ETHEREUM_BLOCKCHAIN.TRANSACTIONS tx JOIN ETHEREUM_BLOCKCHAIN.TRACES tr ON tr.transaction_hash = tx.hash WHERE FROM_UNIXTIME(tx.block_timestamp / 1000000) >= '2015-01-01 00:00:00' AND FROM_UNIXTIME(tx.block_timestamp / 1000000) < '2020-01-31 23:59:59' GROUP BY tr.trace_type ORDER BY total_quantity DESC LIMIT 10;"
   },
   {
     "question_id": 239,
@@ -1139,5 +803,54 @@
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the overdue days pressure (total overdue days) for different customer types? Show me the top 10.",
     "evidence": "",
     "SQL": "SELECT ar.customer_type AS category_topic, SUM(ar.overdue_days) AS total_quantity FROM ods_crm.crm_account_receivable ar WHERE ar.make_account_date >= '2001-01-01 00:00:00' AND ar.make_account_date < '2026-01-31 23:59:59' GROUP BY ar.customer_type ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 154,
+    "db_id": "PYPI",
+    "question": "I want to first understand the scale of the PyPI distribution metadata table: how many distribution records are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
+  },
+  {
+    "question_id": 155,
+    "db_id": "PYPI",
+    "question": "In the PyPI distribution package metadata, how many distinct SHA256 artifact fingerprints (deduplicated by sha256_digest) are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT dm.sha256_digest) AS distinct_external_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
+  },
+  {
+    "question_id": 156,
+    "db_id": "PYPI",
+    "question": "I want to roughly see the deduplication scale of distribution package dependency declarations (requires_dist): how many distinct dependency declaration sets are there (deduplicated by requires_dist)?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT dm.requires_dist) AS distinct_entity_cnt FROM PYPI.DISTRIBUTION_METADATA dm;"
+  },
+  {
+    "question_id": 157,
+    "db_id": "PYPI",
+    "question": "I want to find the most common “dependency template”: which sets of requires_dist dependency declarations appear most frequently in distributions? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT dm.requires_dist AS rel_entity, COUNT(*) AS event_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.requires_dist ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 158,
+    "db_id": "PYPI",
+    "question": "In the PyPI distribution metadata, I want to see which package names have the most published artifacts: count the distribution by name, what are the Top 10?",
+    "evidence": "",
+    "SQL": "SELECT dm.name AS name_entity, COUNT(*) AS event_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 159,
+    "db_id": "PYPI",
+    "question": "In PyPI distribution package metadata, I want to search by package name keyword (e.g., \"safa\") and see which distribution artifacts (sha256_digest) correspond to the matched packages. First give me the top 10 artifact fingerprints.",
+    "evidence": "",
+    "SQL": "SELECT distinct dm.sha256_digest AS id_external FROM PYPI.DISTRIBUTION_METADATA dm WHERE dm.name LIKE '%safa%' ORDER BY dm.sha256_digest LIMIT 10;"
+  },
+  {
+    "question_id": 160,
+    "db_id": "PYPI",
+    "question": "I would like to see the distribution of distribution artifacts across the repository path (path) dimension: which paths have the highest number of distinct artifact fingerprints (deduplicated by sha256_digest)? Show me the Top 10.",
+    "evidence": "",
+    "SQL": "SELECT dm.path AS location, COUNT(DISTINCT dm.sha256_digest) AS distinct_external_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.path ORDER BY distinct_external_cnt DESC LIMIT 10;"
   }
 ]

@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+PaymentMethodID,PaymentMethodID,,integer,
+PaymentMethodName,PaymentMethodName,,text,
+ValidFrom,ValidFrom,,integer,
+ValidTo,ValidTo,,integer,
+LastEditedBy,LastEditedBy,,integer,

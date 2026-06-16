@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+MetricTableID,MetricTableID,,text,
+MetricID,MetricID,,text,
+Type,Type,,text,
+Descriptor2,Descriptor2,,text,
+MetricCategory,MetricCategory,,text,
+MetricTableDesc,MetricTableDesc,,text,
+Descriptor1,Descriptor1,,text,
+UnitMeasureType,UnitMeasureType,,text,
+MetricGroup,MetricGroup,,text,
+Descriptor3,Descriptor3,,text,

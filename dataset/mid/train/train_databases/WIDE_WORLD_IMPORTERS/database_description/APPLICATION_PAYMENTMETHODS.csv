@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-PaymentMethodID,PaymentMethodID,,DOUBLE,
-PaymentMethodName,PaymentMethodName,,TEXT,
-ValidFrom,ValidFrom,,DOUBLE,
-ValidTo,ValidTo,,DOUBLE,
-LastEditedBy,LastEditedBy,,DOUBLE,

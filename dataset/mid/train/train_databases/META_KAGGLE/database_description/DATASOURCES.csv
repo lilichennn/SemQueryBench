@@ -1,6 +1,6 @@
 original_column_name,column_name,column_description,data_format,value_description
-Id,Id,,DOUBLE,
-CreatorUserId,CreatorUserId,,DOUBLE,
-CreationDate,CreationDate,,DOUBLE,
-CurrentDatasourceVersionId,CurrentDatasourceVersionId,,DOUBLE,
-Type,Type,,TEXT,
+Id,Id,,integer,
+CreatorUserId,CreatorUserId,,integer,
+CreationDate,CreationDate,,integer,
+CurrentDatasourceVersionId,CurrentDatasourceVersionId,,integer,
+Type,Type,,text,

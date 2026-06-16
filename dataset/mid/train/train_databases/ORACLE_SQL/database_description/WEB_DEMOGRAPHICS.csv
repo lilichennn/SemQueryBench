@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+f_tw_qty,f_tw_qty,,integer,
+f_fb_qty,f_fb_qty,,integer,
+m_tw_cnt,m_tw_cnt,,integer,
+m_tw_qty,m_tw_qty,,integer,
+f_fb_cnt,f_fb_cnt,,integer,
+f_tw_cnt,f_tw_cnt,,integer,
+m_fb_qty,m_fb_qty,,integer,
+day,day,,text,
+m_fb_cnt,m_fb_cnt,,integer,

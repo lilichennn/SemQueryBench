@@ -1,9 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-order_id,order_id,,TEXT,
-order_delivered_carrier_date,order_delivered_carrier_date,,TEXT,
-order_purchase_timestamp,order_purchase_timestamp,,TEXT,
-order_approved_at,order_approved_at,,TEXT,
-order_estimated_delivery_date,order_estimated_delivery_date,,TEXT,
-order_status,order_status,,TEXT,
-order_delivered_customer_date,order_delivered_customer_date,,TEXT,
-customer_id,customer_id,,TEXT,

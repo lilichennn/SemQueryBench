@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+client_ip,client_ip,,text,
+page_no,page_no,,integer,
+app_id,app_id,,integer,
+visit_time,visit_time,,text,

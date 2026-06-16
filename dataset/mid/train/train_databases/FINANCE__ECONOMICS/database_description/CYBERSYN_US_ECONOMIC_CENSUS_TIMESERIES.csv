@@ -1,7 +1,7 @@
 original_column_name,column_name,column_description,data_format,value_description
-VARIABLE,VARIABLE,,TEXT,
-GEO_ID,GEO_ID,,TEXT,
-UNIT,UNIT,,TEXT,
-DATE,DATE,,TEXT,
-VALUE,VALUE,,DOUBLE,
-VARIABLE_NAME,VARIABLE_NAME,,TEXT,
+VARIABLE,VARIABLE,,text,
+GEO_ID,GEO_ID,,text,
+UNIT,UNIT,,text,
+DATE,DATE,,text,
+VALUE,VALUE,,real,
+VARIABLE_NAME,VARIABLE_NAME,,text,

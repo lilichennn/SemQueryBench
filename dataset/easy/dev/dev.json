@@ -1,89 +1,5 @@
 [
   {
-    "question_id": 18,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York City bike share station data, which stations have the largest capacity? Please list the top 5 stations.",
-    "evidence": "",
-    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY capacity DESC LIMIT 5;"
-  },
-  {
-    "question_id": 19,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York bike share station data, for each rental method, which station has the largest capacity?",
-    "evidence": "",
-    "SQL": "SELECT rental_methods, name FROM ( SELECT rental_methods, name, capacity, ROW_NUMBER() OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ) t WHERE rn = 1;"
-  },
-  {
-    "question_id": 20,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "Among the New York bike-sharing station data, which stations have capacities above the overall average?",
-    "evidence": "",
-    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS);"
-  },
-  {
-    "question_id": 21,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York bike sharing system, which stations have never been used as a trip origin?",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS s WHERE NOT EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS t WHERE t.start_station_id = s.station_id );"
-  },
-  {
-    "question_id": 22,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "Which stations have been used as trip start points in the New York bike-sharing system?",
-    "evidence": "",
-    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE station_id IN (SELECT start_station_id FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS);"
-  },
-  {
-    "question_id": 23,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York bike share station data, for each rental method, which stations have a capacity higher than the average capacity for that rental method?",
-    "evidence": "",
-    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t1 WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t2 WHERE t2.rental_methods = t1.rental_methods);"
-  },
-  {
-    "question_id": 24,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "For each rental method in the New York bike share station data, which stations have capacities falling within the typical range for that method?",
-    "evidence": "",
-    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), method_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), method_percentiles AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM method_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_percentiles mp ON t.rental_methods = mp.rental_methods WHERE t.capacity BETWEEN mp.p30 AND mp.p70;"
-  },
-  {
-    "question_id": 25,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York bike-sharing ride records, for each user type, which starting stations have ride records in consecutive years?",
-    "evidence": "",
-    "SQL": "WITH yearly_records AS ( SELECT DISTINCT usertype AS Category, start_station_id AS Entity, EXTRACT(YEAR FROM CAST(starttime AS DATETIME)) AS Time FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE starttime IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
-  },
-  {
-    "question_id": 26,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York shared bicycle station data, for each rental method, which stations have the capacity in the highest tier?",
-    "evidence": "",
-    "SQL": "WITH ranked AS ( SELECT rental_methods AS Category, name AS Entity, capacity AS Measure, NTILE(5) OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS quintile FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
-  },
-  {
-    "question_id": 27,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the New York shared bicycle station data, for each rental method, which stations have capacity above the average for that type and also account for the largest proportion of the total capacity of that type? Please list the top 5 stations.",
-    "evidence": "",
-    "SQL": "WITH category_stats AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_measure, SUM(capacity) AS total_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, cs.avg_measure, cs.total_measure, t.capacity / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity / cs.total_measure DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_stats cs ON t.rental_methods = cs.Category WHERE t.capacity > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
-  },
-  {
-    "question_id": 28,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "Which stations in the New York bike-sharing station data have a capacity higher than the median for the same rental method and have actually been used as a trip start point?",
-    "evidence": "",
-    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), category_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), category_median AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_capacity FROM category_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_median m ON t.rental_methods = m.rental_methods WHERE t.capacity > m.median_capacity AND EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS tr WHERE tr.start_station_id = t.station_id );"
-  },
-  {
-    "question_id": 29,
-    "db_id": "NEW_YORK_CITIBIKE_1",
-    "question": "In the NYC bike share station data, for each rental method, what are the top 3 stations with the largest capacity? How much higher is their capacity than the average level of that rental method?",
-    "evidence": "",
-    "SQL": "WITH method_avg AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, ma.avg_capacity, (t.capacity - ma.avg_capacity) / ma.avg_capacity * 100 AS pct_above_avg, t.station_id, t.latitude, t.longitude, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_avg ma ON t.rental_methods = ma.Category WHERE t.capacity IS NOT NULL ) SELECT Category, Entity, Measure, avg_capacity, pct_above_avg, station_id, latitude, longitude FROM ranked WHERE rn <= 3;"
-  },
-  {
     "question_id": 72,
     "db_id": "IDC",
     "question": "In the Imaging Data Commons (IDC), which original datasets have the highest number of samples? List the top five.",
@@ -196,6 +112,174 @@
     "SQL": "SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;"
   },
   {
+    "question_id": 18,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York City bike share station data, which stations have the largest capacity? Please list the top 5 stations.",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY capacity DESC LIMIT 5;"
+  },
+  {
+    "question_id": 19,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike share station data, for each rental method, which station has the largest capacity?",
+    "evidence": "",
+    "SQL": "SELECT rental_methods, name FROM ( SELECT rental_methods, name, capacity, ROW_NUMBER() OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 20,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Among the New York bike-sharing station data, which stations have capacities above the overall average?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS);"
+  },
+  {
+    "question_id": 21,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike sharing system, which stations have never been used as a trip origin?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS s WHERE NOT EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS t WHERE t.start_station_id = s.station_id );"
+  },
+  {
+    "question_id": 22,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Which stations have been used as trip start points in the New York bike-sharing system?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE station_id IN (SELECT start_station_id FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS);"
+  },
+  {
+    "question_id": 23,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike share station data, for each rental method, which stations have a capacity higher than the average capacity for that rental method?",
+    "evidence": "",
+    "SQL": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t1 WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t2 WHERE t2.rental_methods = t1.rental_methods);"
+  },
+  {
+    "question_id": 24,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "For each rental method in the New York bike share station data, which stations have capacities falling within the typical range for that method?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), method_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), method_percentiles AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM method_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_percentiles mp ON t.rental_methods = mp.rental_methods WHERE t.capacity BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 25,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike-sharing ride records, for each user type, which starting stations have ride records in consecutive years?",
+    "evidence": "",
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT usertype AS Category, start_station_id AS Entity, EXTRACT(YEAR FROM CAST(starttime AS DATETIME)) AS Time FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE starttime IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 26,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have the capacity in the highest tier?",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT rental_methods AS Category, name AS Entity, capacity AS Measure, NTILE(5) OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS quintile FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 27,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have capacity above the average for that type and also account for the largest proportion of the total capacity of that type? Please list the top 5 stations.",
+    "evidence": "",
+    "SQL": "WITH category_stats AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_measure, SUM(capacity) AS total_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, cs.avg_measure, cs.total_measure, t.capacity / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity / cs.total_measure DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_stats cs ON t.rental_methods = cs.Category WHERE t.capacity > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 28,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "Which stations in the New York bike-sharing station data have a capacity higher than the median for the same rental method and have actually been used as a trip start point?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), category_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), category_median AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_capacity FROM category_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_median m ON t.rental_methods = m.rental_methods WHERE t.capacity > m.median_capacity AND EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS tr WHERE tr.start_station_id = t.station_id );"
+  },
+  {
+    "question_id": 29,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the NYC bike share station data, for each rental method, what are the top 3 stations with the largest capacity? How much higher is their capacity than the average level of that rental method?",
+    "evidence": "",
+    "SQL": "WITH method_avg AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, ma.avg_capacity, (t.capacity - ma.avg_capacity) / ma.avg_capacity * 100 AS pct_above_avg, t.station_id, t.latitude, t.longitude, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_avg ma ON t.rental_methods = ma.Category WHERE t.capacity IS NOT NULL ) SELECT Category, Entity, Measure, avg_capacity, pct_above_avg, station_id, latitude, longitude FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 141,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations exhibit the highest autosomal heterozygosity? Please list the top five.",
+    "evidence": "",
+    "SQL": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ORDER BY HetRateAuto DESC LIMIT 5;"
+  },
+  {
+    "question_id": 142,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations have samples that include both male and female individuals?",
+    "evidence": "",
+    "SQL": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Population_ID HAVING COUNT(DISTINCT Gender) > 1;"
+  },
+  {
+    "question_id": 143,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which populations have the highest autosomal heterozygosity rates among male and female groups respectively?",
+    "evidence": "",
+    "SQL": "SELECT Gender, Population_ID FROM ( SELECT Gender, Population_ID, HetRateAuto, ROW_NUMBER() OVER (PARTITION BY Gender ORDER BY HetRateAuto DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 144,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations in the Simons Genome Diversity Project exhibit particularly high genetic diversity (above the average level) and may represent groups with long-term admixture in history?",
+    "evidence": "",
+    "SQL": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA WHERE HetRateAuto > (SELECT AVG(HetRateAuto) FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA);"
+  },
+  {
+    "question_id": 145,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations within the Simons Genome Diversity Project have autosomal heterozygosity rates that exceed the sex-specific averages in males and females, respectively, suggesting more complex population histories?",
+    "evidence": "",
+    "SQL": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t1 WHERE HetRateAuto > (SELECT AVG(HetRateAuto) FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t2 WHERE t2.Gender = t1.Gender);"
+  },
+  {
+    "question_id": 146,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "Which populations among males and females in the Simons Genome Diversity Project exhibit autosomal heterozygosity within the typical range for each sex (between 30% and 70%), representing the average level of population genetic diversity?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT Gender, HetRateAuto FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ORDER BY Gender, HetRateAuto ), gender_arrays AS ( SELECT Gender, JSON_ARRAYAGG(HetRateAuto) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Gender ), gender_percentiles AS ( SELECT Gender, CAST(IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS FLOAT) AS p30, CAST(IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS FLOAT) AS p70 FROM gender_arrays ) SELECT t.Gender, t.Population_ID, t.HetRateAuto, t.Region, t.Country FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN gender_percentiles gp ON t.Gender = gp.Gender WHERE t.HetRateAuto BETWEEN LEAST(gp.p30, gp.p70) AND GREATEST(gp.p30, gp.p70);"
+  },
+  {
+    "question_id": 147,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female populations, which populations exhibit the most prominent genetic diversity (in the top 20%) that belongs to the group with the highest heterozygosity rates?",
+    "evidence": "",
+    "SQL": "WITH ranked AS ( SELECT Gender AS Category, Population_ID AS Entity, HetRateAuto AS Measure, NTILE(5) OVER (PARTITION BY Gender ORDER BY HetRateAuto DESC) AS quintile FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA WHERE HetRateAuto IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 148,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female groups, which populations have autosomal heterozygosity rates that are not only higher than the average level for that sex, but also account for a significant share of the total genetic diversity of that sex? Please list the top five populations with the most prominent contributions for males and females, respectively.",
+    "evidence": "",
+    "SQL": "WITH category_stats AS ( SELECT Gender AS Category, AVG(HetRateAuto) AS avg_measure, SUM(HetRateAuto) AS total_measure FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Gender ), ranked AS ( SELECT t.Gender AS Category, t.Population_ID AS Entity, t.HetRateAuto AS Measure, cs.avg_measure, cs.total_measure, t.HetRateAuto / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.Gender ORDER BY t.HetRateAuto / cs.total_measure DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN category_stats cs ON t.Gender = cs.Category WHERE t.HetRateAuto > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 149,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which regions have populations with the highest autosomal heterozygosity rates among males and females? By how much do their heterozygosity rates exceed the average level for each sex group, and do they reflect special population history? The results should display sex, population, autosomal heterozygosity rate, average autosomal heterozygosity rate, proportion by which autosomal heterozygosity exceeds the average, region, and country.",
+    "evidence": "",
+    "SQL": "WITH gender_avg AS ( SELECT Gender AS Category, AVG(HetRateAuto) AS avg_het FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Gender ), ranked AS ( SELECT t.Gender AS Category, t.Population_ID AS Entity, t.HetRateAuto AS Measure, ga.avg_het, (t.HetRateAuto - ga.avg_het) / ga.avg_het * 100 AS pct_above_avg, t.Region, t.Country, ROW_NUMBER() OVER (PARTITION BY t.Gender ORDER BY t.HetRateAuto DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN gender_avg ga ON t.Gender = ga.Category WHERE t.HetRateAuto IS NOT NULL ) SELECT Category, Entity, Measure, avg_het, pct_above_avg, Region, Country FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 150,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "What are the three geographical regions with the highest total autosomal heterozygosity in the Simons Genome Diversity Project?",
+    "evidence": "",
+    "SQL": "SELECT Region AS Category, SUM(HetRateAuto) AS total_het FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Region ORDER BY total_het DESC LIMIT 3;"
+  },
+  {
+    "question_id": 151,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, which are the top three geographical regions with the largest number of samples?",
+    "evidence": "",
+    "SQL": "SELECT Region AS Category, COUNT(*) AS record_count FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Region ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 152,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project, within each geographic region, which populations have autosomal heterozygosity in the top quartile of that region and may have unique population histories?",
+    "evidence": "",
+    "SQL": "WITH region_q3 AS ( SELECT Region AS Category, MIN(HetRateAuto) AS q3 FROM ( SELECT Region, HetRateAuto, PERCENT_RANK() OVER (PARTITION BY Region ORDER BY HetRateAuto) AS pr FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ) t WHERE pr >= 0.75 GROUP BY Region ) SELECT t.Region, t.Population_ID, t.HetRateAuto, t.Country FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN region_q3 q ON t.Region = q.Category WHERE t.HetRateAuto > q.q3;"
+  },
+  {
     "question_id": 153,
     "db_id": "TCGA_HG38_DATA_V0",
     "question": "Which genes have the highest expression levels in random samples of pancreatic cancer and kidney cancer from TCGA_HG38_DATA_V0? Please list the top five genes.",
@@ -266,24 +350,59 @@
     "SQL": "WITH proj_q3 AS ( SELECT project_short_name AS Category, MIN(Expr) AS q3 FROM ( SELECT project_short_name, Expr, PERCENT_RANK() OVER (PARTITION BY project_short_name ORDER BY Expr) AS pr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ) t WHERE pr >= 0.75 GROUP BY project_short_name ) SELECT t.project_short_name, t.Gene, t.Expr, t.ID FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 t JOIN proj_q3 q ON t.project_short_name = q.Category WHERE t.Expr > q.q3;"
   },
   {
-    "question_id": 163,
-    "db_id": "NOAA_PORTS",
-    "question": "According to the NOAA International Port Index, which ports worldwidely have the largest tidal ranges? Please list the top five.",
+    "question_id": 30,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data from 2018, which patients experienced examinations with multiple different imaging modalities?",
     "evidence": "",
-    "SQL": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX ORDER BY tide_range DESC LIMIT 5;"
+    "SQL": "SELECT PatientID FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY PatientID HAVING COUNT(DISTINCT Modality) > 1;"
   },
   {
-    "question_id": 164,
-    "db_id": "NOAA_PORTS",
-    "question": "According to the NOAA International Port Index, which ports worldwidely are renowned for enormous tidal ranges (exceeding the average) that are suitable for tidal power development?",
+    "question_id": 31,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient's slice thickness is the highest?",
     "evidence": "",
-    "SQL": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX WHERE tide_range > (SELECT AVG(tide_range) FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX);"
+    "SQL": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, SliceThickness, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY SliceThickness DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
   },
   {
-    "question_id": 165,
-    "db_id": "NOAA_PORTS",
-    "question": "In the U.S. railway geographic data, classified by MTFCC level, what are the top three railway feature types with the largest number of records?",
+    "question_id": 32,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data of 2018, for each imaging modality, which patients had slice thickness higher than the average of that modality?",
     "evidence": "",
-    "SQL": "SELECT mtfcc_feature_class_code AS Category, COUNT(*) AS record_count FROM NOAA_PORTS.GEO_US_BOUNDARIES_RAILWAYS GROUP BY mtfcc_feature_class_code ORDER BY record_count DESC LIMIT 3;"
+    "SQL": "SELECT PatientID FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t1 WHERE SliceThickness > (SELECT AVG(SliceThickness) FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t2 WHERE t2.Modality = t1.Modality);"
+  },
+  {
+    "question_id": 33,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient does the most recent imaging record belong to?",
+    "evidence": "",
+    "SQL": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, AcquisitionDate, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY AcquisitionDate DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 34,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have slice thicknesses within the typical range for that modality?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT Modality, SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ORDER BY Modality, SliceThickness ), modality_arrays AS ( SELECT Modality, JSON_ARRAYAGG(SliceThickness) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Modality ), modality_percentiles AS ( SELECT Modality, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM modality_arrays ) SELECT t.Modality, t.PatientID, t.SliceThickness, t.StudyDate, t.SeriesDescription FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_percentiles mp ON t.Modality = mp.Modality WHERE t.SliceThickness BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 35,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have imaging records in consecutive years?",
+    "evidence": "",
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT Modality AS Category, PatientID AS Entity, EXTRACT(YEAR FROM AcquisitionDate) AS Time FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 36,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the imaging data of 2018, for each imaging modality, who are the top 3 patients with the highest slice thickness? How much higher is their slice thickness compared to the average level of that modality?",
+    "evidence": "",
+    "SQL": "WITH modality_avg AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg_thickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality ), ranked AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, t.SliceThickness AS Measure, ma.avg_thickness, (t.SliceThickness - ma.avg_thickness) / ma.avg_thickness * 100 AS pct_above_avg, t.StudyDate, t.SeriesDescription, ROW_NUMBER() OVER (PARTITION BY t.Modality ORDER BY t.SliceThickness DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_avg ma ON t.Modality = ma.Category WHERE t.SliceThickness IS NOT NULL ) SELECT Category, Entity, Measure, avg_thickness, pct_above_avg, StudyDate, SeriesDescription FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 37,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients had a slice thickness for two consecutive years exceeding that year's average level of that modality?",
+    "evidence": "",
+    "SQL": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM AcquisitionDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality, EXTRACT(YEAR FROM AcquisitionDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.AcquisitionDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.AcquisitionDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
   }
 ]

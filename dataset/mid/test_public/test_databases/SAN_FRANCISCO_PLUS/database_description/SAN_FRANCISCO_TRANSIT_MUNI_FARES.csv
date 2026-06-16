@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+rider_id,rider_id,,text,
+fare_id,fare_id,,text,
+transfer_duration,transfer_duration,,integer,
+transfers_permitted,transfers_permitted,,text,
+payment_method,payment_method,,text,
+rider_desc,rider_desc,,text,
+price,price,,integer,

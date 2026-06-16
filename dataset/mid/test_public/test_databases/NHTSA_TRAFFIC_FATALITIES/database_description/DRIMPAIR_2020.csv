@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+consecutive_number,consecutive_number,,integer,
+vehicle_number,vehicle_number,,integer,
+state_number,state_number,,integer,
+condition_impairment_at_time_of_crash_driver_name,condition_impairment_at_time_of_crash_driver_name,,text,
+state_name,state_name,,text,
+condition_impairment_at_time_of_crash_driver,condition_impairment_at_time_of_crash_driver,,integer,

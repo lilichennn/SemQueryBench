@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+pdid,pdid,,integer,
+unique_key,unique_key,,integer,
+address,address,,text,
+resolution,resolution,,text,
+location,location,,text,
+pddistrict,pddistrict,,text,
+category,category,,text,
+dayofweek,dayofweek,,text,
+latitude,latitude,,real,
+longitude,longitude,,real,
+timestamp,timestamp,,integer,
+descript,descript,,text,

@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+end_,end_,,text,
+start_,start_,,text,
+title,title,,text,
+emp_id,emp_id,,integer,

@@ -1,9 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-VehicleRegistration,VehicleRegistration,,TEXT,
-VehicleTemperatureID,VehicleTemperatureID,,DOUBLE,
-CompressedSensorData,CompressedSensorData,,TEXT,
-RecordedWhen,RecordedWhen,,DOUBLE,
-IsCompressed,IsCompressed,,DOUBLE,
-ChillerSensorNumber,ChillerSensorNumber,,DOUBLE,
-Temperature,Temperature,,DOUBLE,
-FullSensorData,FullSensorData,,TEXT,

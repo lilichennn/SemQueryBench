@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+channel_class_id,channel_class_id,,integer,
+channel_id,channel_id,,integer,
+channel_total_id,channel_total_id,,integer,
+channel_desc,channel_desc,,text,
+channel_total,channel_total,,text,
+channel_class,channel_class,,text,

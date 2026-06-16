@@ -1,5 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-id,id,,DOUBLE,
-title,title,,TEXT,
-name,name,,TEXT,
-supervisor_id,supervisor_id,,DOUBLE,

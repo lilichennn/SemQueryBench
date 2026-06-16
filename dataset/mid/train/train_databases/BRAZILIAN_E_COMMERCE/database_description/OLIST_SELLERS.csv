@@ -1,0 +1,5 @@
+original_column_name,column_name,column_description,data_format,value_description
+seller_id,seller_id,,text,
+seller_state,seller_state,,text,
+seller_zip_code_prefix,seller_zip_code_prefix,,integer,
+seller_city,seller_city,,text,

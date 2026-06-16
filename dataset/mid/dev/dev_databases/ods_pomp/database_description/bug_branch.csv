@@ -1,6 +1,6 @@
 original_column_name,column_name,column_description,data_format,value_description
-IID,IID,,BIGINT,
-PRODUCT,PRODUCT,,BIGINT,
-INAME,INAME,,TEXT,
-IORDER,IORDER,,BIGINT,
-DELETED,DELETED,,TEXT,
+IID,IID,,integer,
+PRODUCT,PRODUCT,,integer,
+INAME,INAME,,text,
+IORDER,IORDER,,integer,
+DELETED,DELETED,,text,

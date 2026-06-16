@@ -1,7 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-consecutive_number,consecutive_number,,DOUBLE,
-vehicle_number,vehicle_number,,DOUBLE,
-state_number,state_number,,DOUBLE,
-condition_impairment_at_time_of_crash_driver_name,condition_impairment_at_time_of_crash_driver_name,,TEXT,
-state_name,state_name,,TEXT,
-condition_impairment_at_time_of_crash_driver,condition_impairment_at_time_of_crash_driver,,DOUBLE,

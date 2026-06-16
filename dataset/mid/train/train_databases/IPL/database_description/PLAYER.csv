@@ -1,7 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-player_id,player_id,,DOUBLE,
-dob,dob,,TEXT,
-batting_hand,batting_hand,,TEXT,
-bowling_skill,bowling_skill,,TEXT,
-player_name,player_name,,TEXT,
-country_name,country_name,,TEXT,

@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+prod_id,prod_id,,integer,
+channel_id,channel_id,,integer,
+promo_id,promo_id,,integer,
+amount_sold,amount_sold,,real,
+time_id,time_id,,text,
+cust_id,cust_id,,integer,
+quantity_sold,quantity_sold,,integer,

@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+customer_unique_id,customer_unique_id,,text,
+customer_id,customer_id,,text,
+customer_city,customer_city,,text,
+customer_zip_code_prefix,customer_zip_code_prefix,,integer,
+customer_state,customer_state,,text,

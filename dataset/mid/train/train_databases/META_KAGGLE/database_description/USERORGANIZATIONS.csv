@@ -1,5 +1,5 @@
 original_column_name,column_name,column_description,data_format,value_description
-Id,Id,,DOUBLE,
-JoinDate,JoinDate,,DATE,
-OrganizationId,OrganizationId,,DOUBLE,
-UserId,UserId,,DOUBLE,
+Id,Id,,integer,
+JoinDate,JoinDate,,date,
+OrganizationId,OrganizationId,,integer,
+UserId,UserId,,integer,

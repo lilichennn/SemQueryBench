@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+primary_id,primary_id,,text,
+data_date,data_date,,date,
+resource_name,resource_name,,text,
+resource_remark,resource_remark,,text,
+resource_type_name,resource_type_name,,text,
+path_name,path_name,,text,
+data_value,data_value,,real,

@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-ball_id,ball_id,,DOUBLE,
-over_id,over_id,,DOUBLE,
-runs_scored,runs_scored,,DOUBLE,
-match_id,match_id,,DOUBLE,
-innings_no,innings_no,,DOUBLE,

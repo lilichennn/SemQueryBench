@@ -1,5 +1,5 @@
 original_column_name,column_name,column_description,data_format,value_description
-Id,Id,,DOUBLE,
-DisplayName,DisplayName,,TEXT,
-IsNotebook,IsNotebook,,BOOLEAN,
-Name,Name,,TEXT,
+Id,Id,,integer,
+DisplayName,DisplayName,,text,
+IsNotebook,IsNotebook,,text,
+Name,Name,,text,

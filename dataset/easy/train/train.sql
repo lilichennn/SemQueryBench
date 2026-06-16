@@ -1,73 +1,263 @@
-SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY subplot_acres DESC LIMIT 5;
-SELECT location_name FROM USFS_FIA.POPULATION_EVALUATION GROUP BY location_name HAVING COUNT(DISTINCT evaluation_identifier) > 1;
-SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, subplot_acres, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;
-SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES);
-SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t1 WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t2 WHERE t2.evaluation_type = t1.evaluation_type);
-SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, inventory_year, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY inventory_year DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;
-WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), eval_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), eval_percentiles AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM eval_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_percentiles ep ON t.evaluation_type = ep.evaluation_type WHERE t.subplot_acres BETWEEN ep.p30 AND ep.p70;
-WITH yearly_records AS ( SELECT DISTINCT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
-WITH base AS ( SELECT state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres, 1) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev1, LAG(subplot_acres, 2) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev2 FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL AND subplot_acres IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;
-WITH ranked AS ( SELECT evaluation_type AS Category, state_name AS Entity, subplot_acres AS Measure, NTILE(5) OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS quintile FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_measure, SUM(subplot_acres) AS total_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, cs.avg_measure, cs.total_measure, t.subplot_acres / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres / cs.total_measure DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_stats cs ON t.evaluation_type = cs.Category WHERE t.subplot_acres > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), category_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), category_median AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_acres FROM category_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_median m ON t.evaluation_type = m.evaluation_type WHERE t.subplot_acres > m.median_acres;
-WITH eval_avg AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, ea.avg_acres, (t.subplot_acres - ea.avg_acres) / ea.avg_acres * 100 AS pct_above_avg, t.inventory_year, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_avg ea ON t.evaluation_type = ea.Category WHERE t.subplot_acres IS NOT NULL ) SELECT Category, Entity, Measure, avg_acres, pct_above_avg, inventory_year FROM ranked WHERE rn <= 3;
-WITH lagged AS ( SELECT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres) OVER (PARTITION BY evaluation_type, state_name ORDER BY inventory_year) AS prev_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL AND inventory_year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
-SELECT evaluation_type AS Category, SUM(subplot_acres) AS total_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ORDER BY total_acres DESC LIMIT 3;
-WITH eval_q3 AS ( SELECT evaluation_type AS Category, MIN(subplot_acres) AS q3 FROM ( SELECT evaluation_type, subplot_acres, PERCENT_RANK() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres) AS pr FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE pr >= 0.75 GROUP BY evaluation_type ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_q3 q ON t.evaluation_type = q.Category WHERE t.subplot_acres > q.q3;
-WITH yearly_avg AS ( SELECT evaluation_type AS Category, inventory_year AS Year, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type, inventory_year ), above_avg AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.inventory_year AS Year, t.subplot_acres AS Measure, CASE WHEN t.subplot_acres > ya.avg_acres THEN 1 ELSE 0 END AS above FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN yearly_avg ya ON t.evaluation_type = ya.Category AND t.inventory_year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
-SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY value DESC LIMIT 5;
-SELECT commodity_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY commodity_desc HAVING COUNT(DISTINCT statisticcat_desc) > 1;
-SELECT sector_desc, commodity_desc FROM ( SELECT sector_desc, commodity_desc, value, ROW_NUMBER() OVER (PARTITION BY sector_desc ORDER BY value DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE rn = 1;
-SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value > (SELECT AVG(value) FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS);
-SELECT DISTINCT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ap WHERE NOT EXISTS ( SELECT 1 FROM USDA_NASS_AGRICULTURE.CENSUS_2002 c WHERE c.state_alpha = ap.state_alpha );
-SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE state_alpha IN (SELECT state_alpha FROM USDA_NASS_AGRICULTURE.CENSUS_2002);
-SELECT commodity_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t1 WHERE value > (SELECT AVG(value) FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t2 WHERE t2.sector_desc = t1.sector_desc);
-SELECT sector_desc, commodity_desc FROM ( SELECT sector_desc, commodity_desc, year, ROW_NUMBER() OVER (PARTITION BY sector_desc ORDER BY year DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE rn = 1;
-WITH sorted_values AS ( SELECT sector_desc, value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY sector_desc, value ), sector_arrays AS ( SELECT sector_desc, JSON_ARRAYAGG(value) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sector_desc ), sector_percentiles AS ( SELECT sector_desc, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM sector_arrays ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_percentiles sp ON t.sector_desc = sp.sector_desc WHERE t.value BETWEEN sp.p30 AND sp.p70;
-WITH yearly_records AS ( SELECT DISTINCT sector_desc AS Category, commodity_desc AS Entity, year AS Time FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
-WITH base AS ( SELECT commodity_desc AS Entity, year AS Time, value AS Measure, LAG(value, 1) OVER (PARTITION BY commodity_desc ORDER BY year) AS prev1, LAG(value, 2) OVER (PARTITION BY commodity_desc ORDER BY year) AS prev2 FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE year IS NOT NULL AND value IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;
-WITH ranked AS ( SELECT sector_desc AS Category, commodity_desc AS Entity, value AS Measure, NTILE(5) OVER (PARTITION BY sector_desc ORDER BY value DESC) AS quintile FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT sector_desc AS Category, AVG(value) AS avg_measure, SUM(value) AS total_measure FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ), ranked AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.value AS Measure, cs.avg_measure, cs.total_measure, t.value / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.sector_desc ORDER BY t.value / cs.total_measure DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN category_stats cs ON t.sector_desc = cs.Category WHERE t.value > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT sector_desc, value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY sector_desc, value ), sector_arrays AS ( SELECT sector_desc, JSON_ARRAYAGG(value) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sector_desc ), category_median AS ( SELECT sector_desc, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_value FROM sector_arrays ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN category_median m ON t.sector_desc = m.sector_desc WHERE t.value > m.median_value AND EXISTS ( SELECT 1 FROM USDA_NASS_AGRICULTURE.CENSUS_2002 c WHERE c.state_alpha = t.state_alpha );
-WITH sector_avg AS ( SELECT sector_desc AS Category, AVG(value) AS avg_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ), ranked AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.value AS Measure, sa.avg_value, (t.value - sa.avg_value) / sa.avg_value * 100 AS pct_above_avg, t.state_name, t.year, ROW_NUMBER() OVER (PARTITION BY t.sector_desc ORDER BY t.value DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_avg sa ON t.sector_desc = sa.Category WHERE t.value IS NOT NULL ) SELECT Category, Entity, Measure, avg_value, pct_above_avg, state_name, year FROM ranked WHERE rn <= 3;
-WITH lagged AS ( SELECT sector_desc AS Category, commodity_desc AS Entity, year AS Time, value AS Measure, LAG(value) OVER (PARTITION BY sector_desc, commodity_desc ORDER BY year) AS prev_measure FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value IS NOT NULL AND year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
-SELECT sector_desc AS Category, SUM(value) AS total_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ORDER BY total_value DESC LIMIT 3;
-SELECT agg_level_desc AS Category, COUNT(*) AS record_count FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY agg_level_desc ORDER BY record_count DESC LIMIT 3;
-WITH sector_q3 AS ( SELECT sector_desc AS Category, MIN(value) AS q3 FROM ( SELECT sector_desc, value, PERCENT_RANK() OVER (PARTITION BY sector_desc ORDER BY value) AS pr FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE pr >= 0.75 GROUP BY sector_desc ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_q3 q ON t.sector_desc = q.Category WHERE t.value > q.q3;
-WITH yearly_avg AS ( SELECT sector_desc AS Category, year AS Year, AVG(value) AS avg_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc, year ), above_avg AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.year AS Year, t.value AS Measure, CASE WHEN t.value > ya.avg_value THEN 1 ELSE 0 END AS above FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN yearly_avg ya ON t.sector_desc = ya.Category AND t.year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
-SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO ORDER BY LC_Indel_Ratio DESC LIMIT 5;
-SELECT Super_Population, Sample FROM ( SELECT Super_Population, Sample, LC_Indel_Ratio, ROW_NUMBER() OVER (PARTITION BY Super_Population ORDER BY LC_Indel_Ratio DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO ) t WHERE rn = 1;
-SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO WHERE LC_Indel_Ratio > (SELECT AVG(LC_Indel_Ratio) FROM _1000_GENOMES.SAMPLE_INFO);
-SELECT DISTINCT Sample FROM _1000_GENOMES.SAMPLE_INFO s WHERE NOT EXISTS ( SELECT 1 FROM _1000_GENOMES.PEDIGREE p WHERE p.Individual_ID = s.Sample );
-SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO WHERE Sample IN (SELECT Individual_ID FROM _1000_GENOMES.PEDIGREE);
-SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO t1 WHERE LC_Indel_Ratio > (SELECT AVG(LC_Indel_Ratio) FROM _1000_GENOMES.SAMPLE_INFO t2 WHERE t2.Super_Population = t1.Super_Population);
-WITH ranked AS ( SELECT Super_Population AS Category, Sample AS Entity, Total_LC_Sequence AS Measure, NTILE(5) OVER (PARTITION BY Super_Population ORDER BY Total_LC_Sequence DESC) AS quintile FROM _1000_GENOMES.SAMPLE_INFO WHERE Total_LC_Sequence IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT Super_Population AS Category, AVG(Total_LC_Sequence) AS avg_measure, SUM(Total_LC_Sequence) AS total_measure FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ), ranked AS ( SELECT t.Super_Population AS Category, t.Sample AS Entity, t.Total_LC_Sequence AS Measure, cs.avg_measure, cs.total_measure, t.Total_LC_Sequence / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.Super_Population ORDER BY t.Total_LC_Sequence / cs.total_measure DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO t JOIN category_stats cs ON t.Super_Population = cs.Category WHERE t.Total_LC_Sequence > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT Super_Population, Total_LC_Sequence FROM _1000_GENOMES.SAMPLE_INFO ORDER BY Super_Population, Total_LC_Sequence ), category_arrays AS ( SELECT Super_Population, JSON_ARRAYAGG(Total_LC_Sequence) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Super_Population ), category_median AS ( SELECT Super_Population, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_seq FROM category_arrays ) SELECT t.Super_Population, t.Sample, t.Total_LC_Sequence, t.Population, t.LC_Passed_QC FROM _1000_GENOMES.SAMPLE_INFO t JOIN category_median m ON t.Super_Population = m.Super_Population WHERE t.Total_LC_Sequence > m.median_seq AND EXISTS ( SELECT 1 FROM _1000_GENOMES.PEDIGREE p WHERE p.Individual_ID = t.Sample );
-WITH super_avg AS ( SELECT Super_Population AS Category, AVG(Total_LC_Sequence) AS avg_seq FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ), ranked AS ( SELECT t.Super_Population AS Category, t.Sample AS Entity, t.Total_LC_Sequence AS Measure, sa.avg_seq, (t.Total_LC_Sequence - sa.avg_seq) / sa.avg_seq * 100 AS pct_above_avg, t.Population, t.LC_Passed_QC, ROW_NUMBER() OVER (PARTITION BY t.Super_Population ORDER BY t.Total_LC_Sequence DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO t JOIN super_avg sa ON t.Super_Population = sa.Category WHERE t.Total_LC_Sequence IS NOT NULL ) SELECT Category, Entity, Measure, avg_seq, pct_above_avg, Population, LC_Passed_QC FROM ranked WHERE rn <= 3;
-SELECT Super_Population AS Category, SUM(Total_LC_Sequence) AS total_seq FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ORDER BY total_seq DESC LIMIT 3;
-SELECT Population AS Category, COUNT(*) AS record_count FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Population ORDER BY record_count DESC LIMIT 3;
-WITH super_q3 AS ( SELECT Super_Population AS Category, MIN(Total_LC_Sequence) AS q3 FROM ( SELECT Super_Population, Total_LC_Sequence, PERCENT_RANK() OVER (PARTITION BY Super_Population ORDER BY Total_LC_Sequence) AS pr FROM _1000_GENOMES.SAMPLE_INFO ) t WHERE pr >= 0.75 GROUP BY Super_Population ) SELECT t.Super_Population, t.Sample, t.Total_LC_Sequence, t.Population FROM _1000_GENOMES.SAMPLE_INFO t JOIN super_q3 q ON t.Super_Population = q.Category WHERE t.Total_LC_Sequence > q.q3;
-SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY n_cases DESC LIMIT 5;
-SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY source HAVING COUNT(DISTINCT trait_category) > 1;
-SELECT trait_category, source FROM ( SELECT trait_category, source, n_cases, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY n_cases DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE rn = 1;
-SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases > (SELECT AVG(n_cases) FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES);
-SELECT DISTINCT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES s WHERE NOT EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS g WHERE g.study_id = s.study_id );
-SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE study_id IN (SELECT study_id FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS);
-SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t1 WHERE n_cases > (SELECT AVG(n_cases) FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t2 WHERE t2.trait_category = t1.trait_category);
-SELECT trait_category, source FROM ( SELECT trait_category, source, pub_date, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY pub_date DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE rn = 1;
-WITH sorted_values AS ( SELECT trait_category, n_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY trait_category, n_cases ), cat_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_cases) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), cat_percentiles AS ( SELECT trait_category, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM cat_arrays ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN cat_percentiles cp ON t.trait_category = cp.trait_category WHERE t.n_cases BETWEEN cp.p30 AND cp.p70;
-WITH yearly_records AS ( SELECT DISTINCT trait_category AS Category, source AS Entity, EXTRACT(YEAR FROM pub_date) AS Time FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE pub_date IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
-WITH base AS ( SELECT source AS Entity, pub_date AS Time, n_cases AS Measure, LAG(n_cases, 1) OVER (PARTITION BY source ORDER BY pub_date) AS prev1, LAG(n_cases, 2) OVER (PARTITION BY source ORDER BY pub_date) AS prev2 FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE pub_date IS NOT NULL AND n_cases IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;
-WITH ranked AS ( SELECT trait_category AS Category, source AS Entity, n_cases AS Measure, NTILE(5) OVER (PARTITION BY trait_category ORDER BY n_cases DESC) AS quintile FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT trait_category AS Category, AVG(n_cases) AS avg_measure, SUM(n_cases) AS total_measure FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.source AS Entity, t.n_cases AS Measure, cs.avg_measure, cs.total_measure, t.n_cases / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_cases / cs.total_measure DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_stats cs ON t.trait_category = cs.Category WHERE t.n_cases > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT trait_category, n_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY trait_category, n_cases ), category_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_cases) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), category_median AS ( SELECT trait_category, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_cases FROM category_arrays ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_median m ON t.trait_category = m.trait_category WHERE t.n_cases > m.median_cases AND EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS s WHERE s.study_id = t.study_id );
-WITH category_avg AS ( SELECT trait_category AS Category, AVG(n_cases) AS avg_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.source AS Entity, t.n_cases AS Measure, ca.avg_cases, (t.n_cases - ca.avg_cases) / ca.avg_cases * 100 AS pct_above_avg, t.study_id, t.pub_date, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_cases DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_avg ca ON t.trait_category = ca.Category WHERE t.n_cases IS NOT NULL ) SELECT Category, Entity, Measure, avg_cases, pct_above_avg, study_id, pub_date FROM ranked WHERE rn <= 3;
-WITH lagged AS ( SELECT trait_category AS Category, source AS Entity, pub_date AS Time, n_cases AS Measure, LAG(n_cases) OVER (PARTITION BY trait_category, source ORDER BY pub_date) AS prev_measure FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases IS NOT NULL AND pub_date IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
-SELECT trait_category AS Category, SUM(n_cases) AS total_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ORDER BY total_cases DESC LIMIT 3;
-SELECT ancestry_initial AS Category, COUNT(*) AS record_count FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY ancestry_initial ORDER BY record_count DESC LIMIT 3;
-WITH cat_q3 AS ( SELECT trait_category AS Category, MIN(n_cases) AS q3 FROM ( SELECT trait_category, n_cases, PERCENT_RANK() OVER (PARTITION BY trait_category ORDER BY n_cases) AS pr FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE pr >= 0.75 GROUP BY trait_category ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN cat_q3 q ON t.trait_category = q.Category WHERE t.n_cases > q.q3;
-WITH yearly_avg AS ( SELECT trait_category AS Category, EXTRACT(YEAR FROM pub_date) AS Year, AVG(n_cases) AS avg_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category, EXTRACT(YEAR FROM pub_date) ), above_avg AS ( SELECT t.trait_category AS Category, t.source AS Entity, EXTRACT(YEAR FROM t.pub_date) AS Year, t.n_cases AS Measure, CASE WHEN t.n_cases > ya.avg_cases THEN 1 ELSE 0 END AS above FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN yearly_avg ya ON t.trait_category = ya.Category AND EXTRACT(YEAR FROM t.pub_date) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
+SELECT cell_type FROM HTAN_1.HTAN_VERSIONED_SCRNASEQ_MSK_SCLC_COMBINED_SAMPLES_R3 ORDER BY ngenes DESC LIMIT 5;
+SELECT Cell_Type FROM HTAN_2.SCRNASEQ_CHOP_SEURAT_POOL_LOGNORM_GINI_FIVEHD_DOWNSAMPLE_CURRENT GROUP BY Cell_Type HAVING COUNT(DISTINCT Phase) > 1;
+SELECT Component, HTAN_Participant_ID FROM ( SELECT Component, HTAN_Participant_ID, Start_Days_from_Index, ROW_NUMBER() OVER (PARTITION BY Component ORDER BY Start_Days_from_Index DESC) AS rn FROM HTAN_2.HTAN_CLINICAL_TIER1_EXPOSURE_CURRENT ) t WHERE rn = 1;
+SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX ORDER BY tide_range DESC LIMIT 5;
+SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX WHERE tide_range > (SELECT AVG(tide_range) FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX);
+SELECT mtfcc_feature_class_code AS Category, COUNT(*) AS record_count FROM NOAA_PORTS.GEO_US_BOUNDARIES_RAILWAYS GROUP BY mtfcc_feature_class_code ORDER BY record_count DESC LIMIT 3;
+SELECT t.name
+FROM main.NOAA_HURRICANES_HURRICANES t
+ORDER BY t.usa_wind DESC
+LIMIT 5;
+SELECT t.name
+FROM main.NOAA_HURRICANES_HURRICANES t
+ORDER BY t.dist2land DESC
+LIMIT 5;
+SELECT t.name
+FROM main.NOAA_HURRICANES_HURRICANES t
+ORDER BY t.landfall DESC
+LIMIT 5;
+SELECT t.name
+FROM main.NOAA_HURRICANES_HURRICANES t
+WHERE t.usa_wind > (SELECT AVG(usa_wind) FROM main.NOAA_HURRICANES_HURRICANES);
+SELECT h.name
+FROM main.NOAA_HURRICANES_HURRICANES h
+WHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES);
+SELECT h.name
+FROM main.NOAA_HURRICANES_HURRICANES h
+WHERE h.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES);
+SELECT h1.name
+FROM main.NOAA_HURRICANES_HURRICANES h1
+WHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin);
+SELECT h1.name
+FROM main.NOAA_HURRICANES_HURRICANES h1
+WHERE h1.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin);
+SELECT t1.basin, t1.name
+FROM (
+ SELECT t1.basin, t1.name, t1.iso_time,
+ ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn
+ FROM main.NOAA_HURRICANES_HURRICANES t1
+) t
+WHERE rn = 1;
+SELECT t1.subbasin, t1.name
+FROM (
+ SELECT t1.subbasin, t1.name, t1.iso_time,
+ ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn
+ FROM main.NOAA_HURRICANES_HURRICANES t1
+) t
+WHERE rn = 1;
+SELECT t1.season, t1.name
+FROM (
+ SELECT t1.season, t1.name, t1.iso_time,
+ ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn
+ FROM main.NOAA_HURRICANES_HURRICANES t1
+) t
+WHERE rn = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT t1.basin, t1.name, t1.iso_time
+    FROM main.NOAA_HURRICANES_HURRICANES t1
+    WHERE t1.iso_time IS NOT NULL
+),
+with_prev AS (
+    SELECT t1.basin, t1.name, t1.iso_time,
+           LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT t1.basin, t1.name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time
+    FROM main.NOAA_HURRICANES_HURRICANES t1
+    WHERE t1.iso_time IS NOT NULL
+),
+with_prev AS (
+    SELECT t1.subbasin, t1.name, t1.iso_time,
+           LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT t1.subbasin, t1.name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT t1.season, t1.name, t1.iso_time
+    FROM main.NOAA_HURRICANES_HURRICANES t1
+    WHERE t1.iso_time IS NOT NULL
+),
+with_prev AS (
+    SELECT t1.season, t1.name, t1.iso_time,
+           LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT t1.season, t1.name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
+WITH base AS (
+    SELECT 
+        h.sid AS Entity,
+        h.iso_time AS Time,
+        h.bom_pressure AS Measure,
+        LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
+        LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL
+)
+SELECT DISTINCT Entity
+FROM base
+WHERE prev2 IS NOT NULL
+  AND Measure > prev1 AND prev1 > prev2;
+WITH base AS (
+    SELECT 
+        h.sid AS Entity,
+        h.iso_time AS Time,
+        h.usa_wind AS Measure,
+        LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
+        LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL
+)
+SELECT DISTINCT Entity
+FROM base
+WHERE prev2 IS NOT NULL
+  AND Measure > prev1 AND prev1 > prev2;
+WITH base AS (
+    SELECT 
+        h.sid AS Entity,
+        h.iso_time AS Time,
+        h.dist2land AS Measure,
+        LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
+        LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL
+)
+SELECT DISTINCT Entity
+FROM base
+WHERE prev2 IS NOT NULL
+  AND Measure > prev1 AND prev1 > prev2;
+WITH ranked AS (
+    SELECT 
+        h.basin AS Category,
+        h.sid AS Entity,
+        h.bom_pressure AS Measure,
+        NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.bom_pressure IS NOT NULL
+)
+SELECT Category, Entity
+FROM ranked
+WHERE quintile = 1;
+WITH ranked AS (
+    SELECT 
+        h.subbasin AS Category,
+        h.sid AS Entity,
+        h.usa_wind AS Measure,
+        NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.usa_wind IS NOT NULL
+)
+SELECT Category, Entity
+FROM ranked
+WHERE quintile = 1;
+WITH ranked AS (
+    SELECT 
+        h.season AS Category,
+        h.sid AS Entity,
+        h.dist2land AS Measure,
+        NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    WHERE h.dist2land IS NOT NULL
+)
+SELECT Category, Entity
+FROM ranked
+WHERE quintile = 1;
+WITH category_stats AS (
+    SELECT 
+        h.basin AS Category,
+        AVG(h.bom_pressure) AS avg_measure,
+        SUM(h.bom_pressure) AS total_measure
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    GROUP BY h.basin
+),
+ranked AS (
+    SELECT 
+        t.basin AS Category,
+        t.sid AS Entity,
+        t.bom_pressure AS Measure,
+        cs.avg_measure,
+        cs.total_measure,
+        t.bom_pressure / cs.total_measure * 100 AS pct_of_total,
+        ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn
+    FROM main.NOAA_HURRICANES_HURRICANES t
+    JOIN category_stats cs ON t.basin = cs.Category
+    WHERE t.bom_pressure > cs.avg_measure
+)
+SELECT Category, Entity, pct_of_total
+FROM ranked
+WHERE rn <= 5;
+WITH category_stats AS (
+    SELECT 
+        h.subbasin AS Category,
+        AVG(h.usa_wind) AS avg_measure,
+        SUM(h.usa_wind) AS total_measure
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    GROUP BY h.subbasin
+),
+ranked AS (
+    SELECT 
+        t.subbasin AS Category,
+        t.sid AS Entity,
+        t.usa_wind AS Measure,
+        cs.avg_measure,
+        cs.total_measure,
+        t.usa_wind / cs.total_measure * 100 AS pct_of_total,
+        ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn
+    FROM main.NOAA_HURRICANES_HURRICANES t
+    JOIN category_stats cs ON t.subbasin = cs.Category
+    WHERE t.usa_wind > cs.avg_measure
+)
+SELECT Category, Entity, pct_of_total
+FROM ranked
+WHERE rn <= 5;
+WITH category_stats AS (
+    SELECT 
+        h.season AS Category,
+        AVG(h.dist2land) AS avg_measure,
+        SUM(h.dist2land) AS total_measure
+    FROM main.NOAA_HURRICANES_HURRICANES h
+    GROUP BY h.season
+),
+ranked AS (
+    SELECT 
+        t.season AS Category,
+        t.sid AS Entity,
+        t.dist2land AS Measure,
+        cs.avg_measure,
+        cs.total_measure,
+        t.dist2land / cs.total_measure * 100 AS pct_of_total,
+        ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn
+    FROM main.NOAA_HURRICANES_HURRICANES t
+    JOIN category_stats cs ON t.season = cs.Category
+    WHERE t.dist2land > cs.avg_measure
+)
+SELECT Category, Entity, pct_of_total
+FROM ranked
+WHERE rn <= 5;
+SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY study_id HAVING COUNT(DISTINCT trait_category) > 1;
+SELECT trait_category, study_id FROM ( SELECT trait_category, study_id, posterior_prob, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY posterior_prob DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE rn = 1;
+SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE);
+SELECT DISTINCT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE vd WHERE NOT EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS g WHERE g.study_id = vd.study_id );
+SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE study_id IN (SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS);
+SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t1 WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t2 WHERE t2.trait_category = t1.trait_category);
+WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), cat_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), cat_percentiles AS ( SELECT trait_category, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM cat_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_percentiles cp ON t.trait_category = cp.trait_category WHERE t.n_initial BETWEEN cp.p30 AND cp.p70;
+WITH ranked AS ( SELECT trait_category AS Category, study_id AS Entity, n_initial AS Measure, NTILE(5) OVER (PARTITION BY trait_category ORDER BY n_initial DESC) AS quintile FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE n_initial IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
+WITH category_stats AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_measure, SUM(n_initial) AS total_measure FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, cs.avg_measure, cs.total_measure, t.n_initial / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial / cs.total_measure DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_stats cs ON t.trait_category = cs.Category WHERE t.n_initial > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
+WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), category_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), category_median AS ( SELECT trait_category, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_initial FROM category_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_median m ON t.trait_category = m.trait_category WHERE t.n_initial > m.median_initial;
+WITH category_avg AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, ca.avg_initial, (t.n_initial - ca.avg_initial) / ca.avg_initial * 100 AS pct_above_avg, t.trait_reported, t.pval, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_avg ca ON t.trait_category = ca.Category WHERE t.n_initial IS NOT NULL ) SELECT Category, Entity, Measure, avg_initial, pct_above_avg, trait_reported, pval FROM ranked WHERE rn <= 3;
+SELECT trait_category AS Category, SUM(n_initial) AS total_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ORDER BY total_initial DESC LIMIT 3;
+SELECT biotype AS Category, COUNT(*) AS record_count FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES GROUP BY biotype ORDER BY record_count DESC LIMIT 3;
+WITH cat_q3 AS ( SELECT trait_category AS Category, MIN(n_initial) AS q3 FROM ( SELECT trait_category, n_initial, PERCENT_RANK() OVER (PARTITION BY trait_category ORDER BY n_initial) AS pr FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE pr >= 0.75 GROUP BY trait_category ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_q3 q ON t.trait_category = q.Category WHERE t.n_initial > q.q3;
 SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ORDER BY public_float_usd DESC LIMIT 5;
 SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY company_name HAVING COUNT(DISTINCT sic) > 1;
 SELECT sic, company_name FROM ( SELECT sic, company_name, public_float_usd, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE rn = 1;
@@ -87,38 +277,111 @@ SELECT sic AS Category, SUM(public_float_usd) AS total_float FROM SEC_QUARTERLY_
 SELECT form AS Category, COUNT(*) AS record_count FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY form ORDER BY record_count DESC LIMIT 3;
 WITH sic_q3 AS ( SELECT sic AS Category, MIN(public_float_usd) AS q3 FROM ( SELECT sic, public_float_usd, PERCENT_RANK() OVER (PARTITION BY sic ORDER BY public_float_usd) AS pr FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE pr >= 0.75 GROUP BY sic ) SELECT t.sic, t.company_name, t.public_float_usd, t.submission_number FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN sic_q3 q ON t.sic = q.Category WHERE t.public_float_usd > q.q3;
 WITH yearly_avg AS ( SELECT sic AS Category, EXTRACT(YEAR FROM date_filed) AS Year, AVG(public_float_usd) AS avg_float FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic, EXTRACT(YEAR FROM date_filed) ), above_avg AS ( SELECT t.sic AS Category, t.company_name AS Entity, EXTRACT(YEAR FROM t.date_filed) AS Year, t.public_float_usd AS Measure, CASE WHEN t.public_float_usd > ya.avg_float THEN 1 ELSE 0 END AS above FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN yearly_avg ya ON t.sic = ya.Category AND EXTRACT(YEAR FROM t.date_filed) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
-SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY study_id HAVING COUNT(DISTINCT trait_category) > 1;
-SELECT trait_category, study_id FROM ( SELECT trait_category, study_id, posterior_prob, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY posterior_prob DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE rn = 1;
-SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE);
-SELECT DISTINCT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE vd WHERE NOT EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS g WHERE g.study_id = vd.study_id );
-SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE study_id IN (SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS);
-SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t1 WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t2 WHERE t2.trait_category = t1.trait_category);
-WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), cat_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), cat_percentiles AS ( SELECT trait_category, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM cat_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_percentiles cp ON t.trait_category = cp.trait_category WHERE t.n_initial BETWEEN cp.p30 AND cp.p70;
-WITH ranked AS ( SELECT trait_category AS Category, study_id AS Entity, n_initial AS Measure, NTILE(5) OVER (PARTITION BY trait_category ORDER BY n_initial DESC) AS quintile FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE n_initial IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_measure, SUM(n_initial) AS total_measure FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, cs.avg_measure, cs.total_measure, t.n_initial / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial / cs.total_measure DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_stats cs ON t.trait_category = cs.Category WHERE t.n_initial > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), category_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), category_median AS ( SELECT trait_category, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_initial FROM category_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_median m ON t.trait_category = m.trait_category WHERE t.n_initial > m.median_initial;
-WITH category_avg AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, ca.avg_initial, (t.n_initial - ca.avg_initial) / ca.avg_initial * 100 AS pct_above_avg, t.trait_reported, t.pval, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_avg ca ON t.trait_category = ca.Category WHERE t.n_initial IS NOT NULL ) SELECT Category, Entity, Measure, avg_initial, pct_above_avg, trait_reported, pval FROM ranked WHERE rn <= 3;
-SELECT trait_category AS Category, SUM(n_initial) AS total_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ORDER BY total_initial DESC LIMIT 3;
-SELECT biotype AS Category, COUNT(*) AS record_count FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES GROUP BY biotype ORDER BY record_count DESC LIMIT 3;
-WITH cat_q3 AS ( SELECT trait_category AS Category, MIN(n_initial) AS q3 FROM ( SELECT trait_category, n_initial, PERCENT_RANK() OVER (PARTITION BY trait_category ORDER BY n_initial) AS pr FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE pr >= 0.75 GROUP BY trait_category ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_q3 q ON t.trait_category = q.Category WHERE t.n_initial > q.q3;
-SELECT state FROM USA_NAMES.USA_1910_2013 ORDER BY number DESC LIMIT 5;
-SELECT state FROM USA_NAMES.USA_1910_2013 GROUP BY state HAVING COUNT(DISTINCT gender) > 1;
-SELECT gender, state FROM ( SELECT gender, state, number, ROW_NUMBER() OVER (PARTITION BY gender ORDER BY number DESC) AS rn FROM USA_NAMES.USA_1910_2013 ) t WHERE rn = 1;
-SELECT state FROM USA_NAMES.USA_1910_2013 WHERE number > (SELECT AVG(number) FROM USA_NAMES.USA_1910_2013);
-SELECT state FROM USA_NAMES.USA_1910_2013 t1 WHERE number > (SELECT AVG(number) FROM USA_NAMES.USA_1910_2013 t2 WHERE t2.gender = t1.gender);
-SELECT gender, state FROM ( SELECT gender, state, year, ROW_NUMBER() OVER (PARTITION BY gender ORDER BY year DESC) AS rn FROM USA_NAMES.USA_1910_2013 ) t WHERE rn = 1;
-WITH sorted_values AS ( SELECT gender, number FROM USA_NAMES.USA_1910_2013 ORDER BY gender, number ), gender_arrays AS ( SELECT gender, JSON_ARRAYAGG(number) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY gender ), gender_percentiles AS ( SELECT gender, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM gender_arrays ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN gender_percentiles gp ON t.gender = gp.gender WHERE t.number BETWEEN gp.p30 AND gp.p70;
-WITH yearly_records AS ( SELECT DISTINCT gender AS Category, state AS Entity, year AS Time FROM USA_NAMES.USA_1910_2013 WHERE year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
-WITH base AS ( SELECT state AS Entity, year AS Time, number AS Measure, LAG(number, 1) OVER (PARTITION BY state ORDER BY year) AS prev1, LAG(number, 2) OVER (PARTITION BY state ORDER BY year) AS prev2 FROM USA_NAMES.USA_1910_2013 WHERE year IS NOT NULL AND number IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;
-WITH ranked AS ( SELECT gender AS Category, state AS Entity, number AS Measure, NTILE(5) OVER (PARTITION BY gender ORDER BY number DESC) AS quintile FROM USA_NAMES.USA_1910_2013 WHERE number IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
-WITH category_stats AS ( SELECT gender AS Category, AVG(number) AS avg_measure, SUM(number) AS total_measure FROM USA_NAMES.USA_1910_2013 GROUP BY gender ), ranked AS ( SELECT t.gender AS Category, t.state AS Entity, t.number AS Measure, cs.avg_measure, cs.total_measure, t.number / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.gender ORDER BY t.number / cs.total_measure DESC) AS rn FROM USA_NAMES.USA_1910_2013 t JOIN category_stats cs ON t.gender = cs.Category WHERE t.number > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
-WITH sorted_values AS ( SELECT gender, number FROM USA_NAMES.USA_1910_2013 ORDER BY gender, number ), gender_arrays AS ( SELECT gender, JSON_ARRAYAGG(number) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY gender ), category_median AS ( SELECT gender, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_number FROM gender_arrays ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN category_median m ON t.gender = m.gender WHERE t.number > m.median_number;
-WITH gender_avg AS ( SELECT gender AS Category, AVG(number) AS avg_number FROM USA_NAMES.USA_1910_2013 GROUP BY gender ), ranked AS ( SELECT t.gender AS Category, t.state AS Entity, t.number AS Measure, ga.avg_number, (t.number - ga.avg_number) / ga.avg_number * 100 AS pct_above_avg, t.year, ROW_NUMBER() OVER (PARTITION BY t.gender ORDER BY t.number DESC) AS rn FROM USA_NAMES.USA_1910_2013 t JOIN gender_avg ga ON t.gender = ga.Category WHERE t.number IS NOT NULL ) SELECT Category, Entity, Measure, avg_number, pct_above_avg, year FROM ranked WHERE rn <= 3;
-WITH lagged AS ( SELECT gender AS Category, state AS Entity, year AS Time, number AS Measure, LAG(number) OVER (PARTITION BY gender, state ORDER BY year) AS prev_measure FROM USA_NAMES.USA_1910_2013 WHERE number IS NOT NULL AND year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
-SELECT state AS Category, SUM(number) AS total_births FROM USA_NAMES.USA_1910_2013 GROUP BY state ORDER BY total_births DESC LIMIT 3;
-SELECT state AS Category, COUNT(*) AS record_count FROM USA_NAMES.USA_1910_2013 GROUP BY state ORDER BY record_count DESC LIMIT 3;
-WITH gender_q3 AS ( SELECT gender AS Category, MIN(number) AS q3 FROM ( SELECT gender, number, PERCENT_RANK() OVER (PARTITION BY gender ORDER BY number) AS pr FROM USA_NAMES.USA_1910_2013 ) t WHERE pr >= 0.75 GROUP BY gender ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN gender_q3 q ON t.gender = q.Category WHERE t.number > q.q3;
-WITH yearly_avg AS ( SELECT gender AS Category, year AS Year, AVG(number) AS avg_number FROM USA_NAMES.USA_1910_2013 GROUP BY gender, year ), above_avg AS ( SELECT t.gender AS Category, t.state AS Entity, t.year AS Year, t.number AS Measure, CASE WHEN t.number > ya.avg_number THEN 1 ELSE 0 END AS above FROM USA_NAMES.USA_1910_2013 t JOIN yearly_avg ya ON t.gender = ya.Category AND t.year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
+SELECT n.COMPANY_NAME
+FROM main.NUMBERS n
+ORDER BY n.VALUE DESC
+LIMIT 5;
+SELECT qs.company_name
+FROM main.QUICK_SUMMARY qs
+ORDER BY qs.value DESC
+LIMIT 5;
+SELECT s.company_name
+FROM main.SUBMISSION s
+ORDER BY s.public_float_usd DESC
+LIMIT 5;
+SELECT p.measure_tag
+FROM main.PRESENTATION p
+GROUP BY p.measure_tag
+HAVING COUNT(DISTINCT p.statement) > 1;
+SELECT qs.company_name
+FROM main.QUICK_SUMMARY qs
+GROUP BY qs.company_name
+HAVING COUNT(DISTINCT qs.sic) > 1;
+SELECT s.company_name
+FROM main.SUBMISSION s
+GROUP BY s.company_name
+HAVING COUNT(DISTINCT s.form) > 1;
+SELECT t.MEASURE_TAG, t.COMPANY_NAME
+FROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM main.NUMBERS n) t
+WHERE t.rn = 1;
+SELECT t.measure_tag, t.company_name
+FROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM main.QUICK_SUMMARY qs) t
+WHERE t.rn = 1;
+SELECT t.sic, t.company_name
+FROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM main.SUBMISSION s) t
+WHERE t.rn = 1;
+SELECT n.COMPANY_NAME
+FROM main.NUMBERS n
+WHERE n.VALUE > (SELECT AVG(n.VALUE) FROM main.NUMBERS);
+SELECT n.COMPANY_NAME
+FROM main.NUMBERS n
+WHERE n.VALUE > (SELECT AVG(VALUE) FROM main.NUMBERS);
+SELECT n1.COMPANY_NAME
+FROM main.NUMBERS n1
+WHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM main.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG);
+SELECT sic, company_name
+FROM (
+ SELECT sic, company_name, period_end_date,
+ ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn
+ FROM main.QUICK_SUMMARY
+) t
+WHERE rn = 1;
+SELECT form, company_name
+FROM (
+ SELECT form, company_name, period_end_date,
+ ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn
+ FROM main.QUICK_SUMMARY
+) t
+WHERE rn = 1;
+SELECT measure_tag, company_name
+FROM (
+ SELECT measure_tag, company_name, period_end_date,
+ ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn
+ FROM main.QUICK_SUMMARY
+) t
+WHERE rn = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT sic, company_name, period_end_date
+    FROM main.QUICK_SUMMARY
+    WHERE period_end_date IS NOT NULL
+),
+with_prev AS (
+    SELECT sic, company_name, period_end_date,
+           LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT sic, company_name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT form, company_name, period_end_date
+    FROM main.QUICK_SUMMARY
+    WHERE period_end_date IS NOT NULL
+),
+with_prev AS (
+    SELECT form, company_name, period_end_date,
+           LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT form, company_name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT measure_tag, company_name, period_end_date
+    FROM main.QUICK_SUMMARY
+    WHERE period_end_date IS NOT NULL
+),
+with_prev AS (
+    SELECT measure_tag, company_name, period_end_date,
+           LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time
+    FROM yearly_records
+)
+SELECT DISTINCT measure_tag, company_name
+FROM with_prev
+WHERE prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
 SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY PatientID HAVING COUNT(DISTINCT Modality) > 1;
 SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, SliceThickness, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY SliceThickness DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;
 SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t1 WHERE SliceThickness > (SELECT AVG(SliceThickness) FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t2 WHERE t2.Modality = t1.Modality);
@@ -130,3 +393,154 @@ WITH category_stats AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg
 WITH modality_avg AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg_thickness FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality ), ranked AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, t.SliceThickness AS Measure, ma.avg_thickness, (t.SliceThickness - ma.avg_thickness) / ma.avg_thickness * 100 AS pct_above_avg, t.StudyDate, t.SeriesDescription, ROW_NUMBER() OVER (PARTITION BY t.Modality ORDER BY t.SliceThickness DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_avg ma ON t.Modality = ma.Category WHERE t.SliceThickness IS NOT NULL ) SELECT Category, Entity, Measure, avg_thickness, pct_above_avg, StudyDate, SeriesDescription FROM ranked WHERE rn <= 3;
 WITH lagged AS ( SELECT Modality AS Category, PatientID AS Entity, AcquisitionDate AS Time, SliceThickness AS Measure, LAG(SliceThickness) OVER (PARTITION BY Modality, PatientID ORDER BY AcquisitionDate) AS prev_measure FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE SliceThickness IS NOT NULL AND AcquisitionDate IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
 WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM AcquisitionDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality, EXTRACT(YEAR FROM AcquisitionDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.AcquisitionDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.AcquisitionDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
+SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY subplot_acres DESC LIMIT 5;
+SELECT location_name FROM USFS_FIA.POPULATION_EVALUATION GROUP BY location_name HAVING COUNT(DISTINCT evaluation_identifier) > 1;
+SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, subplot_acres, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;
+SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES);
+SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t1 WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t2 WHERE t2.evaluation_type = t1.evaluation_type);
+SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, inventory_year, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY inventory_year DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;
+WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), eval_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), eval_percentiles AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM eval_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_percentiles ep ON t.evaluation_type = ep.evaluation_type WHERE t.subplot_acres BETWEEN ep.p30 AND ep.p70;
+WITH yearly_records AS ( SELECT DISTINCT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
+WITH base AS ( SELECT state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres, 1) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev1, LAG(subplot_acres, 2) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev2 FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL AND subplot_acres IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;
+WITH ranked AS ( SELECT evaluation_type AS Category, state_name AS Entity, subplot_acres AS Measure, NTILE(5) OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS quintile FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;
+WITH category_stats AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_measure, SUM(subplot_acres) AS total_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, cs.avg_measure, cs.total_measure, t.subplot_acres / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres / cs.total_measure DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_stats cs ON t.evaluation_type = cs.Category WHERE t.subplot_acres > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;
+WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), category_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), category_median AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_acres FROM category_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_median m ON t.evaluation_type = m.evaluation_type WHERE t.subplot_acres > m.median_acres;
+WITH eval_avg AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, ea.avg_acres, (t.subplot_acres - ea.avg_acres) / ea.avg_acres * 100 AS pct_above_avg, t.inventory_year, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_avg ea ON t.evaluation_type = ea.Category WHERE t.subplot_acres IS NOT NULL ) SELECT Category, Entity, Measure, avg_acres, pct_above_avg, inventory_year FROM ranked WHERE rn <= 3;
+WITH lagged AS ( SELECT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres) OVER (PARTITION BY evaluation_type, state_name ORDER BY inventory_year) AS prev_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL AND inventory_year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;
+SELECT evaluation_type AS Category, SUM(subplot_acres) AS total_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ORDER BY total_acres DESC LIMIT 3;
+WITH eval_q3 AS ( SELECT evaluation_type AS Category, MIN(subplot_acres) AS q3 FROM ( SELECT evaluation_type, subplot_acres, PERCENT_RANK() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres) AS pr FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE pr >= 0.75 GROUP BY evaluation_type ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_q3 q ON t.evaluation_type = q.Category WHERE t.subplot_acres > q.q3;
+WITH yearly_avg AS ( SELECT evaluation_type AS Category, inventory_year AS Year, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type, inventory_year ), above_avg AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.inventory_year AS Year, t.subplot_acres AS Measure, CASE WHEN t.subplot_acres > ya.avg_acres THEN 1 ELSE 0 END AS above FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN yearly_avg ya ON t.evaluation_type = ya.Category AND t.inventory_year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
+SELECT p.plot_state_code_name
+FROM main.PLOT p
+ORDER BY p.measurement_year DESC
+LIMIT 5;
+SELECT p.plot_county_code
+FROM main.PLOT p
+ORDER BY p.elevation DESC
+LIMIT 5;
+SELECT p.plot_sequence_number
+FROM main.PLOT p
+ORDER BY p.remeasurement_period DESC
+LIMIT 5;
+SELECT p.plot_sequence_number
+FROM main.PLOT p
+GROUP BY p.plot_sequence_number
+HAVING COUNT(DISTINCT p.ecological_subsection_code) > 1;
+SELECT p.plot_sequence_number
+FROM main.PLOT p
+GROUP BY p.plot_sequence_number
+HAVING COUNT(DISTINCT p.sample_method_code_name) > 1;
+SELECT p.plot_sequence_number
+FROM main.PLOT p
+GROUP BY p.plot_sequence_number
+HAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1;
+SELECT p.plot_sequence_number
+FROM main.PLOT p
+WHERE p.elevation > (SELECT AVG(elevation) FROM main.PLOT);
+SELECT t1.species_common_name
+FROM main.PLOT_TREE t1
+WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2);
+SELECT t1.species_common_name
+FROM main.PLOT_TREE t1
+WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type);
+SELECT t1.plot_sequence_number
+FROM main.PLOT t1, main.PLOT t2
+WHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM main.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code);
+SELECT t.plot_state_code, t.plot_sequence_number
+FROM (
+ SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,
+ ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn
+ FROM main.PLOT t
+) t
+WHERE rn = 1;
+WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM main.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM main.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70;
+WITH yearly_records AS (
+    SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year
+    FROM main.PLOT t
+    WHERE t.measurement_year IS NOT NULL
+),
+with_prev AS (
+    SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,
+           LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time
+    FROM yearly_records t
+)
+SELECT DISTINCT t.plot_state_code, t.plot_sequence_number
+FROM with_prev t
+WHERE t.prev_time IS NOT NULL 
+  AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1;
+SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure
+FROM main.PLOT p
+GROUP BY p.evaluation_type
+ORDER BY total_measure DESC
+LIMIT 3;
+SELECT p.evaluation_type, COUNT(*) AS record_count
+FROM main.PLOT p
+GROUP BY p.evaluation_type
+ORDER BY record_count DESC
+LIMIT 3;
+SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES ORDER BY frequency DESC LIMIT 5;
+SELECT title FROM WORD_VECTORS_US.NATURE GROUP BY title HAVING COUNT(DISTINCT category) > 1;
+SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES WHERE frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES);
+SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1;
+WITH yearly_records AS ( SELECT DISTINCT category AS Category, title AS Entity, EXTRACT(YEAR FROM CAST(date AS DATETIME)) AS Time FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
+SELECT category AS Category, COUNT(*) AS record_count FROM WORD_VECTORS_US.NATURE GROUP BY category ORDER BY record_count DESC LIMIT 3;
+SELECT n.title
+FROM main.NATURE n
+ORDER BY n.citations DESC
+LIMIT 5;
+SELECT wf.word
+FROM main.WORD_FREQUENCIES wf
+ORDER BY wf.frequency DESC
+LIMIT 5;
+SELECT n.title
+FROM main.NATURE n
+GROUP BY n.title
+HAVING COUNT(DISTINCT n.category) > 1;
+SELECT n.organization_affiliated
+FROM main.NATURE n
+GROUP BY n.organization_affiliated
+HAVING COUNT(DISTINCT n.category) > 1;
+SELECT t.category, t.title
+FROM (
+SELECT n.category, n.title, n.citations,
+ ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn
+ FROM main.NATURE n
+) t
+WHERE t.rn = 1;
+SELECT t.category, t.organization_affiliated
+FROM (
+SELECT n.category, n.organization_affiliated, n.citations,
+ ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn
+ FROM main.NATURE n
+) t
+WHERE t.rn = 1;
+SELECT n.title
+FROM main.NATURE n
+WHERE n.citations > (SELECT AVG(n.citations) FROM main.NATURE n);
+SELECT w.word
+FROM main.WORD_FREQUENCIES w
+WHERE w.frequency > (SELECT AVG(frequency) FROM main.WORD_FREQUENCIES);
+SELECT n1.title
+FROM main.NATURE n1
+WHERE n1.citations > (SELECT AVG(n2.citations) FROM main.NATURE n2 WHERE n2.category = n1.category);
+SELECT category, title
+FROM (
+ SELECT category, title, date,
+ ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn
+ FROM main.NATURE
+) t
+WHERE rn = 1;
+WITH yearly_records AS (
+    SELECT DISTINCT category, title, date
+    FROM main.NATURE
+    WHERE date IS NOT NULL
+),
+with_prev AS (
+    SELECT category, title, date,
+           LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date
+    FROM yearly_records
+)
+SELECT DISTINCT category, title
+FROM with_prev
+WHERE prev_date IS NOT NULL 
+  AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1;

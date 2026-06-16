@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+payment_sequential,payment_sequential,,integer,
+payment_installments,payment_installments,,integer,
+order_id,order_id,,text,
+payment_value,payment_value,,real,
+payment_type,payment_type,,text,

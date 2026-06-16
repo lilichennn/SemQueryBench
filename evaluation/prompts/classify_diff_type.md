@@ -4,20 +4,28 @@ Given a user question, gold SQL, predicted SQL, Execute Match, Effective Match, 
 
 Choose all applicable labels from the following five categories:
 
+# grounding related errors
+
 1. Schema grounding error
 The prediction fails to ground the learned query intent to the correct schema elements in the target database, including wrong tables, columns, or join keys.
 
-2. Slot-function mismatch
-The selected field looks related on the surface, but its functional role does not match the required query intent. For example, using a birth time field when an event time field is needed, or using a display name field when an entity identifier is needed.
 
-3. General generation error
-The prediction is wrong for reasons not directly attributable to schema transfer or SQA-pattern transfer, such as producing an overly generic query, omitting the main task intent, returning an irrelevant answer, or making a broad reasoning mistake not tied to schema grounding, SQL structure, or condition instantiation.
-
-4. Condition error
+2. Condition error
 The prediction fails to instantiate required constraints from the learned query pattern, including comparison operators, time windows, literals, thresholds, NULL filters, value lists, or other database-specific filtering rules.
+
+# structure related errors
+
+3. Query-structure error
+The prediction fails to reproduce the required SQL structure learned from the gold SQL pattern. This includes errors in SELECT composition, DISTINCT usage, aggregation, GROUP BY, HAVING... structure, or the overall SQL clause organization. Use this label when the predicted SQL uses broadly relevant tables/columns but the structural form of the query is wrong, missing, or over-simplified.
+
+
+4. General generation error
+The prediction is wrong for reasons not directly attributable to schema transfer or SQA-pattern transfer, such as producing an overly generic query, omitting the main task intent, returning an irrelevant answer, or making a broad reasoning mistake not tied to schema grounding, SQL structure, or condition instantiation.
 
 5. Execution invalidity
 The predicted SQL cannot be executed due to syntax errors, schema errors, type errors, dialect errors, or invalid SQL generation.
+
+# No error
 
 6. If the prediction is correct, use:
 Correct

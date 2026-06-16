@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+stop_sequence,stop_sequence,,text,
+trip_id,trip_id,,text,
+arrival_time,arrival_time,,text,
+departure_time,departure_time,,text,
+stop_id,stop_id,,text,
+pickup_type,pickup_type,,text,
+shape_dist_traveled,shape_dist_traveled,,text,
+stop_headsign,stop_headsign,,text,
+dropoff_type,dropoff_type,,text,

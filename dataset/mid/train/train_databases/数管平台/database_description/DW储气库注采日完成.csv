@@ -1,8 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-primary_id,primary_id,,TEXT,
-data_date,data_date,,DATE,
-resource_name,resource_name,,TEXT,
-resource_remark,resource_remark,,TEXT,
-resource_type_name,resource_type_name,,TEXT,
-path_name,path_name,,TEXT,
-data_value,data_value,,DOUBLE,

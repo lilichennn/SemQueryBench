@@ -1,4 +1,4 @@
 original_column_name,column_name,column_description,data_format,value_description
-TagId,TagId,,DOUBLE,
-CompetitionId,CompetitionId,,DOUBLE,
-Id,Id,,DOUBLE,
+TagId,TagId,,integer,
+CompetitionId,CompetitionId,,integer,
+Id,Id,,integer,

@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+StockItemTransactionID,StockItemTransactionID,,integer,
+InvoiceID,InvoiceID,,real,
+CustomerID,CustomerID,,real,
+TransactionTypeID,TransactionTypeID,,integer,
+StockItemID,StockItemID,,integer,
+LastEditedBy,LastEditedBy,,integer,
+TransactionOccurredWhen,TransactionOccurredWhen,,text,
+PurchaseOrderID,PurchaseOrderID,,real,
+SupplierID,SupplierID,,real,
+LastEditedWhen,LastEditedWhen,,text,
+Quantity,Quantity,,real,

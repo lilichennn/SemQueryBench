@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-PackageTypeID,PackageTypeID,,DOUBLE,
-ValidTo,ValidTo,,DOUBLE,
-PackageTypeName,PackageTypeName,,TEXT,
-LastEditedBy,LastEditedBy,,DOUBLE,
-ValidFrom,ValidFrom,,DOUBLE,

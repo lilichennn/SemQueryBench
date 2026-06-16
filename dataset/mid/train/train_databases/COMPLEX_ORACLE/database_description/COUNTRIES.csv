@@ -1,0 +1,10 @@
+original_column_name,column_name,column_description,data_format,value_description
+country_total_id,country_total_id,,integer,
+country_subregion_id,country_subregion_id,,integer,
+country_id,country_id,,integer,
+country_iso_code,country_iso_code,,text,
+country_region_id,country_region_id,,integer,
+country_name,country_name,,text,
+country_total,country_total,,text,
+country_subregion,country_subregion,,text,
+country_region,country_region,,text,

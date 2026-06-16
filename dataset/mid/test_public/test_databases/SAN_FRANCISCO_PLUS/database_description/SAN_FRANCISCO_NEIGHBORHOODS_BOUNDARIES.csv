@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+internal_point_geom,internal_point_geom,,text,
+internal_point_longitude,internal_point_longitude,,real,
+internal_point_latitude,internal_point_latitude,,real,
+neighborhood_geom,neighborhood_geom,,text,
+neighborhood,neighborhood,,text,

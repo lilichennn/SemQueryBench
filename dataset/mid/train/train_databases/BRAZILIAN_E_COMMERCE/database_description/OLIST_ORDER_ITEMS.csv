@@ -1,0 +1,8 @@
+original_column_name,column_name,column_description,data_format,value_description
+order_item_id,order_item_id,,integer,
+seller_id,seller_id,,text,
+price,price,,real,
+shipping_limit_date,shipping_limit_date,,text,
+order_id,order_id,,text,
+product_id,product_id,,text,
+freight_value,freight_value,,real,

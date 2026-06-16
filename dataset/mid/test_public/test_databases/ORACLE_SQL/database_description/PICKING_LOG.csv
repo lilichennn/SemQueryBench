@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-pickline_no,pickline_no,,DOUBLE,
-picklist_id,picklist_id,,DOUBLE,
-log_time,log_time,,TEXT,
-activity,activity,,TEXT,
-location_id,location_id,,DOUBLE,

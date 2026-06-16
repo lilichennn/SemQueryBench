@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+writer,writer,,text,
+locations,locations,,text,
+actor_3,actor_3,,text,
+production_company,production_company,,text,
+actor_1,actor_1,,text,
+fun_facts,fun_facts,,text,
+title,title,,text,
+release_year,release_year,,integer,
+director,director,,text,
+distributor,distributor,,text,
+actor_2,actor_2,,text,

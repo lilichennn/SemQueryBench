@@ -1,7 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-consecutive_number,consecutive_number,,DOUBLE,
-state_number,state_number,,DOUBLE,
-state_name,state_name,,TEXT,
-vehicle_number,vehicle_number,,DOUBLE,
-contributing_circumstances_motor_vehicle,contributing_circumstances_motor_vehicle,,DOUBLE,
-contributing_circumstances_motor_vehicle_name,contributing_circumstances_motor_vehicle_name,,TEXT,

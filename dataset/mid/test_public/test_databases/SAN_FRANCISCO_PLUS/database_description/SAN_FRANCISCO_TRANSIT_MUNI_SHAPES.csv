@@ -1,0 +1,7 @@
+original_column_name,column_name,column_description,data_format,value_description
+shape_point_sequence,shape_point_sequence,,integer,
+shape_id,shape_id,,text,
+shape_point_geom,shape_point_geom,,text,
+shape_point_lat,shape_point_lat,,real,
+shape_point_lon,shape_point_lon,,real,
+shape_distance_traveled,shape_distance_traveled,,real,

@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+location_tolerances,location_tolerances,,text,
+comments,comments,,text,
+environmental_tolerances,environmental_tolerances,,text,
+tree_size,tree_size,,text,
+notes_suggested_cultivars,notes_suggested_cultivars,,text,
+species_common_name,species_common_name,,text,
+growth_rate,growth_rate,,text,
+fall_color,fall_color,,text,
+form,form,,text,
+species_scientific_name,species_scientific_name,,text,

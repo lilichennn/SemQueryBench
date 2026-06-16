@@ -1,0 +1,11 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,integer,
+node_code,node_code,,text,
+r_date,r_date,,date,
+inout_type,inout_type,,text,
+mtrl_alias_show,mtrl_alias_show,,text,
+plan_total_amount,plan_total_amount,,text,
+daily_amount,daily_amount,,text,
+total_amount,total_amount,,text,
+bal_amount_daily,bal_amount_daily,,text,
+raw_amount_daily,raw_amount_daily,,text,

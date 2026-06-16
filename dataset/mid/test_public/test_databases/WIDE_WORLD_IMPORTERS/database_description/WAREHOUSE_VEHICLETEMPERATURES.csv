@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+VehicleRegistration,VehicleRegistration,,text,
+VehicleTemperatureID,VehicleTemperatureID,,integer,
+CompressedSensorData,CompressedSensorData,,text,
+RecordedWhen,RecordedWhen,,integer,
+IsCompressed,IsCompressed,,integer,
+ChillerSensorNumber,ChillerSensorNumber,,integer,
+Temperature,Temperature,,real,
+FullSensorData,FullSensorData,,text,

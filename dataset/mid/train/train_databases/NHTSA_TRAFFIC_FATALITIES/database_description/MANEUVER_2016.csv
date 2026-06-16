@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-driver_maneuvered_to_avoid,driver_maneuvered_to_avoid,,DOUBLE,
-consecutive_number,consecutive_number,,DOUBLE,
-driver_maneuvered_to_avoid_name,driver_maneuvered_to_avoid_name,,TEXT,
-state_number,state_number,,DOUBLE,
-vehicle_number,vehicle_number,,DOUBLE,

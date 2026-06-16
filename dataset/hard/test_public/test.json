@@ -1,326 +1,667 @@
 [
   {
-    "question_id": 81,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Please count the total number of records in the ACS 2021 block group indicator value data.",
-    "evidence": ""
-  },
-  {
-    "question_id": 82,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Help me count the number of distinct Block Group IDs in the ACS 2021 block group-level data.",
-    "evidence": ""
-  },
-  {
-    "question_id": 83,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Help me count how many distinct target ZIP Codes there are in the tract-to-ZIP mapping data for residential areas.",
-    "evidence": ""
-  },
-  {
-    "question_id": 84,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Find the top 10 states with the highest number of Block Groups in the geographic dimension data, sorted in descending order.",
-    "evidence": ""
-  },
-  {
-    "question_id": 85,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Find the County FIPS codes for counties whose names contain \"Kings\", and return the first 10 sorted by code.",
-    "evidence": ""
-  },
-  {
-    "question_id": 86,
-    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
-    "question": "Check in the geographic extension data which cities cover the most ZIP Codes, and give me the top 10 cities sorted by count from high to low.",
-    "evidence": ""
-  },
-  {
     "question_id": 183,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In BRAZE_USER_EVENT_DEMO_DATASET, pull the App Session start records from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (in reverse chronological order), and show the first 10 sessions.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT s.SESSION_ID AS id_external FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' ORDER BY s.TIME DESC LIMIT 10;"
   },
   {
     "question_id": 184,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In the BRAZE_USER_EVENT_DEMO_DATASET, how many session start events occurred in the app between '2001-01-01 00:00:00' and '2026-01-31 23:59:59'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 185,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In the user behavior custom table in BRAZE_USER_EVENT_DEMO_DATASET, during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct apps (by APP_ID) are covered by custom events?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT e.APP_ID) AS distinct_entity_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW e WHERE FROM_UNIXTIME(e.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(e.TIME) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 186,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In the BRAZE_USER_EVENT_DEMO_DATASET, during the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, what are the number of session starts for iOS and Android respectively? And list the top 10 by platform.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT s.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' GROUP BY s.PLATFORM ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 187,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in the user behavior custom table of BRAZE_USER_EVENT_DEMO_DATASET, how many distinct Apps (deduplicated by APP_ID) are associated with each platform (PLATFORM)? I want to see the platform-side coverage, and list the top 10 results with the highest counts.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT e.PLATFORM AS category_topic, COUNT(DISTINCT e.APP_ID) AS distinct_entity_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW e WHERE FROM_UNIXTIME(e.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(e.TIME) < '2026-01-31 23:59:59' GROUP BY e.PLATFORM ORDER BY distinct_entity_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 188,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "Which device models had the most session starts during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET? Top 10 by session start count for Device Model.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT s.DEVICE_MODEL AS name_entity, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' GROUP BY s.DEVICE_MODEL ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 189,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In BRAZE_USER_EVENT_DEMO_DATASET, during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which users opened emails the most? Retrieve the top 10 by USER_ID.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT m.USER_ID AS rel_person, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_MESSAGES_EMAIL_OPEN_VIEW m WHERE FROM_UNIXTIME(m.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(m.TIME) < '2026-01-31 23:59:59' GROUP BY m.USER_ID ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 190,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "Pull the daily active trend from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in the BRAZE_USER_EVENT_DEMO_DATASET by day: how many session starts occurred each day?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(s.TIME)) AS day, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE s.TIME >= UNIX_TIMESTAMP('2001-01-01 00:00:00') AND s.TIME < UNIX_TIMESTAMP('2026-01-31 23:59:59') GROUP BY day ORDER BY day;"
   },
   {
     "question_id": 191,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "In BRAZE_USER_EVENT_DEMO_DATASET, we want to see changes in platform structure: during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what are the daily counts of session start for iOS and Android respectively? Sort by day and count.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(s.TIME)) AS day, s.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' GROUP BY day, s.PLATFORM ORDER BY day, event_cnt DESC;"
   },
   {
     "question_id": 192,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, which device models have a launch count reaching or exceeding 10?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT s.DEVICE_MODEL AS name_entity, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' GROUP BY s.DEVICE_MODEL HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;"
   },
   {
     "question_id": 193,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, which platforms have a session start volume higher than overall average? List the top 10 platforms by volume from high to low.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT s.PLATFORM AS topic, COUNT(*) AS cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_APP_SESSIONSTART_VIEW s WHERE FROM_UNIXTIME(s.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(s.TIME) < '2026-01-31 23:59:59' GROUP BY s.PLATFORM ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
   },
   {
     "question_id": 194,
     "db_id": "BRAZE_USER_EVENT_DEMO_DATASET",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' in BRAZE_USER_EVENT_DEMO_DATASET, view email sending volume by user and IP pool: which users have the most concentrated sends on a certain IP_POOL? Retrieve the top 10 combinations.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT m.USER_ID AS rel_person, m.IP_POOL AS category_topic, COUNT(*) AS event_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_MESSAGES_EMAIL_SEND_VIEW m WHERE FROM_UNIXTIME(m.TIME) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(m.TIME) < '2026-01-31 23:59:59' GROUP BY m.USER_ID, m.IP_POOL ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 81,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Please count the total number of records in the ACS 2021 block group indicator value data.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.FACT_CENSUSVALUES_ACS2021 f;"
+  },
+  {
+    "question_id": 82,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Help me count the number of distinct Block Group IDs in the ACS 2021 block group-level data.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT f.BlockGroupID) AS distinct_external_cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.FACT_CENSUSVALUES_ACS2021 f;"
+  },
+  {
+    "question_id": 83,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Help me count how many distinct target ZIP Codes there are in the tract-to-ZIP mapping data for residential areas.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT x.ToZipCode) AS distinct_entity_cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.XREF_TRACTTOZIP_RESIDENTIAL x;"
+  },
+  {
+    "question_id": 84,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Find the top 10 states with the highest number of Block Groups in the geographic dimension data, sorted in descending order.",
+    "evidence": "",
+    "SQL": "SELECT g.StateName AS name_entity, COUNT(*) AS event_cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY g GROUP BY g.StateName ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 85,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Find the County FIPS codes for counties whose names contain \"Kings\", and return the first 10 sorted by code.",
+    "evidence": "",
+    "SQL": "SELECT distinct g.CountyFIPS AS id_external FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY g WHERE g.CountyName LIKE '%Kings%' ORDER BY g.CountyFIPS LIMIT 10;"
+  },
+  {
+    "question_id": 86,
+    "db_id": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "question": "Check in the geographic extension data which cities cover the most ZIP Codes, and give me the top 10 cities sorted by count from high to low.",
+    "evidence": "",
+    "SQL": "SELECT lu.PreferredCityStateAbbrev AS location, COUNT(DISTINCT lu.ZipCode) AS distinct_external_cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.LU_GEOGRAPHYEXPANDED lu GROUP BY lu.PreferredCityStateAbbrev ORDER BY distinct_external_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 203,
     "db_id": "CRYPTO",
     "question": "Filter the on-chain transaction data for me: which recent transactions contain call parameters or data content like “Mint”? Give me the top 10 transaction IDs in reverse chronological order by block time.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT t.id AS id_external FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE t.data LIKE '%Mint%' ORDER BY t.block_timestamp DESC LIMIT 10;"
   },
   {
     "question_id": 204,
     "db_id": "CRYPTO",
     "question": "What are the transaction IDs that occurred on-chain within the block time window from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? Show the top 10 in reverse chronological order.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT t.id AS id_external FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59' ORDER BY t.block_timestamp DESC LIMIT 10;"
   },
   {
     "question_id": 205,
     "db_id": "CRYPTO",
     "question": "Pick out the transactions with execution result 'Business' (e.g., success=true/false), I want to quickly check the most recent 10 transaction IDs.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT t.id AS id_external FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE t.success = 'Business' ORDER BY t.block_timestamp DESC LIMIT 10;"
   },
   {
     "question_id": 206,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', filter out transactions where the execution result is True and the transaction data contains “Mint”, and give me the top 10, sorted by latest first.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT t.id AS id_external FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59' AND t.success = True AND t.data LIKE CONCAT('%', '%Mint%', '%') ORDER BY t.block_timestamp DESC LIMIT 10;"
   },
   {
     "question_id": 207,
     "db_id": "CRYPTO",
     "question": "How many transactions were packaged on-chain during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 208,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct wallet addresses have initiated transactions (deduplicated by sender)?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT t.sender) AS distinct_entity_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 209,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the approximate cumulative total of the transfer/amount field (amount) for the on-chain contract transition?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT SUM(x.amount) AS total_amount FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 210,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the approximate average gas_price for transactions? And what is the average gas_limit?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT AVG(t.gas_price) AS avg_amount, AVG(t.gas_limit) AS avg_quantity FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 211,
     "db_id": "CRYPTO",
     "question": "During the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, how many times did each transition type (tag) occur? List the top 10 by occurrence count.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT x.tag AS category_topic, COUNT(*) AS event_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY x.tag ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 212,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct contracts/addresses (deduplicated by addr) are involved in each type of transition (tag)? Show the top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT x.tag AS category_topic, COUNT(DISTINCT x.addr) AS distinct_entity_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY x.tag ORDER BY distinct_entity_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 213,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which tokens have the largest transfer scale? Summarize the transfer value by token name and take the Top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, SUM(tt.value) AS total_amount FROM CRYPTO.CRYPTO_ETHEREUM_CLASSIC_TOKEN_TRANSFERS tt JOIN CRYPTO.CRYPTO_ETHEREUM_CLASSIC_TOKENS tk ON tk.address = tt.token_address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY tk.name ORDER BY total_amount DESC LIMIT 10;"
   },
   {
     "question_id": 214,
     "db_id": "CRYPTO",
     "question": "Check transaction activity for the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' on a daily basis: how many transactions were packed each day?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(t.block_timestamp / 1000000.0)) AS day, COUNT(*) AS event_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE t.block_timestamp >= UNIX_TIMESTAMP('2001-01-01 00:00:00') * 1000000.0 AND t.block_timestamp < UNIX_TIMESTAMP('2026-01-31 23:59:59') * 1000000.0 GROUP BY day ORDER BY day;"
   },
   {
     "question_id": 215,
     "db_id": "CRYPTO",
     "question": "View the monthly trend of the amount scale for on-chain transition from '2001-01-01 00:00:00' to '2026-01-31 23:59:59': what is the total for each month?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(x.block_timestamp / 1000000.0), '%Y-%m-01') AS month, SUM(x.amount) AS total_amount FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE x.block_timestamp >= UNIX_TIMESTAMP('2001-01-01 00:00:00') * 1000000.0 AND x.block_timestamp < UNIX_TIMESTAMP('2026-01-31 23:59:59') * 1000000.0 GROUP BY month ORDER BY month;"
   },
   {
     "question_id": 216,
     "db_id": "CRYPTO",
     "question": "I want to see the structural change of call types: during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many times does each type of transition (tag) occur per day respectively?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE(FROM_UNIXTIME(x.block_timestamp / 1000000.0)) AS day, x.tag AS category_topic, COUNT(*) AS event_cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY day, x.tag ORDER BY day, event_cnt DESC;"
   },
   {
     "question_id": 217,
     "db_id": "CRYPTO",
     "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', which tokens have larger per-transaction transfer sizes? Calculate the average transfer value by token name and retrieve the Top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT tk.name AS name_entity, AVG(tt.value) AS avg_amount FROM CRYPTO.CRYPTO_ETHEREUM_CLASSIC_TOKEN_TRANSFERS tt JOIN CRYPTO.CRYPTO_ETHEREUM_CLASSIC_TOKENS tk ON tk.address = tt.token_address WHERE FROM_UNIXTIME(tt.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(tt.block_timestamp / 1000000) < '2026-01-31 23:59:59' AND tt.value IS NOT NULL GROUP BY tk.name ORDER BY avg_amount DESC LIMIT 10;"
   },
   {
     "question_id": 218,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which transition types (tags) have a call count higher than the overall average? List the top 10 in descending order by count.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT x.tag AS topic, COUNT(*) AS cnt FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY x.tag ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
   },
   {
     "question_id": 219,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', aggregate amount by transition type (tag). Which types have the largest fund/amount scale? What are the top 10?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT x.tag AS category_topic, SUM(x.amount) AS total_amount FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY x.tag ORDER BY total_amount DESC LIMIT 10;"
   },
   {
     "question_id": 220,
     "db_id": "CRYPTO",
     "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', which transition types (tag) have a cumulative amount that reaches or exceeds 1000? List the amount from high to low.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT x.tag AS category_topic, SUM(x.amount) AS total_amount FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE FROM_UNIXTIME(x.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(x.block_timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY x.tag HAVING SUM(x.amount) >= 1000 ORDER BY total_amount DESC;"
   },
   {
     "question_id": 221,
     "db_id": "CRYPTO",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what is the proportion of records with accepted=False for each transition type (tag)? I need to find the top 10 types with the highest accept rate.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT x.tag AS category_topic, CAST(SUM(CASE WHEN x.accepted = False THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS ratio_in_status FROM CRYPTO.CRYPTO_ZILLIQA_TRANSITIONS x WHERE x.block_timestamp >= UNIX_TIMESTAMP('2001-01-01 00:00:00') * 1000000.0 AND x.block_timestamp < UNIX_TIMESTAMP('2026-01-31 23:59:59') * 1000000.0 GROUP BY x.tag ORDER BY ratio_in_status DESC LIMIT 10;"
   },
   {
     "question_id": 222,
     "db_id": "CRYPTO",
     "question": "What is the total amount of gas_limit set for transactions during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? I want to see the overall scale of resource demand.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT SUM(t.gas_limit) AS total_quantity FROM CRYPTO.CRYPTO_ZILLIQA_TRANSACTIONS t WHERE FROM_UNIXTIME(t.block_timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(t.block_timestamp / 1000000) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 223,
     "db_id": "EDUCATION_BUSINESS",
     "question": "I want to quickly view the course offering records during the academic year range from '2009' to '2010'. Sort by academic year in descending order and give me the top 10 offering IDs.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uo.OfferNo AS id_external FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' ORDER BY uo.OffYear DESC LIMIT 10;"
   },
   {
     "question_id": 224,
     "db_id": "EDUCATION_BUSINESS",
     "question": "How many course offerings did the school offer in total during the academic years from '2009' to '2010'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010';"
   },
   {
     "question_id": 225,
     "db_id": "EDUCATION_BUSINESS",
     "question": "How many distinct courses (deduplicated by CourseNo) were covered during the academic years from '2009' to '2010'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT uo.CourseNo) AS distinct_entity_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010';"
   },
   {
     "question_id": 226,
     "db_id": "EDUCATION_BUSINESS",
     "question": "What is the total sales amount (USD) of online orders between '2001-01-01 00:00:00' and '2026-01-31 23:59:59'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT SUM(wo.total_amt_usd) AS total_amount FROM EDUCATION_BUSINESS.WEB_ORDERS wo WHERE CAST(wo.occurred_at AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(wo.occurred_at AS DATETIME) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 227,
     "db_id": "EDUCATION_BUSINESS",
     "question": "What are the approximate average order sales amount (USD) and average number of items during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT AVG(wo.total_amt_usd) AS avg_amount, AVG(wo.total) AS avg_quantity FROM EDUCATION_BUSINESS.WEB_ORDERS wo WHERE CAST(wo.occurred_at AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(wo.occurred_at AS DATETIME) < '2026-01-31 23:59:59';"
   },
   {
     "question_id": 228,
     "db_id": "EDUCATION_BUSINESS",
     "question": "Among the academic years from 2001 to 2025, which terms (e.g., SUMMER) have the highest course offering density? Return the top 10 by the number of course offerings.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uo.OffTerm AS category_topic, COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2001' AND uo.OffYear <= '2025' GROUP BY uo.OffTerm ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 229,
     "db_id": "EDUCATION_BUSINESS",
     "question": "In the academic year range from '2009' to '2010', how many distinct courses (deduplicated by CourseNo) were covered in each semester? Select the top 10 semesters with the broadest course coverage.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uo.OffTerm AS category_topic, COUNT(DISTINCT uo.CourseNo) AS distinct_entity_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uo.OffTerm ORDER BY distinct_entity_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 230,
     "db_id": "EDUCATION_BUSINESS",
     "question": "In the academic years from '2009' to '2010', which course names have the highest number of offerings? Return the top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uc.CrsDesc AS name_entity, COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo JOIN EDUCATION_BUSINESS.UNIVERSITY_COURSE uc ON uo.CourseNo = uc.CourseNo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uc.CrsDesc ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 231,
     "db_id": "EDUCATION_BUSINESS",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which customer accounts contributed the highest online sales revenue? Summarize the top 10 customers by sales revenue.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT wa.name AS name_entity, SUM(wo.total_amt_usd) AS total_amount FROM EDUCATION_BUSINESS.WEB_ORDERS wo JOIN EDUCATION_BUSINESS.WEB_ACCOUNTS wa ON wo.account_id = wa.id WHERE wo.occurred_at >= '2001-01-01 00:00:00' AND wo.occurred_at < '2026-01-31 23:59:59' GROUP BY wa.name ORDER BY total_amount DESC LIMIT 10;"
   },
   {
     "question_id": 232,
     "db_id": "EDUCATION_BUSINESS",
     "question": "In the academic years from '2009' to '2010', which instructors (by FacNo) taught the most courses? Give me the top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uo.FacNo AS rel_person, COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uo.FacNo ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 233,
     "db_id": "EDUCATION_BUSINESS",
     "question": "I want to see the monthly trend of online sales from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (total monthly sales).",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(CAST(wo.occurred_at AS DATETIME), '%Y-%m-01') AS month, SUM(wo.total_amt_usd) AS total_amount FROM EDUCATION_BUSINESS.WEB_ORDERS wo WHERE CAST(wo.occurred_at AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(wo.occurred_at AS DATETIME) < '2026-01-31 23:59:59' GROUP BY month ORDER BY month;"
   },
   {
     "question_id": 234,
     "db_id": "EDUCATION_BUSINESS",
     "question": "During the academic years from '2009' to '2010', which courses are classified as \"popular course\" (offered at least 5 times)? List them in descending order of the number of times offered.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uc.CrsDesc AS name_entity, COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo JOIN EDUCATION_BUSINESS.UNIVERSITY_COURSE uc ON uo.CourseNo = uc.CourseNo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uc.CrsDesc HAVING COUNT(*) >= 5 ORDER BY event_cnt DESC;"
   },
   {
     "question_id": 235,
     "db_id": "EDUCATION_BUSINESS",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which customer accounts have the highest average amount per order? (Filter out orders with null amounts) Top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT wa.name AS name_entity, AVG(wo.total_amt_usd) AS avg_amount FROM EDUCATION_BUSINESS.WEB_ORDERS wo JOIN EDUCATION_BUSINESS.WEB_ACCOUNTS wa ON wo.account_id = wa.id WHERE CAST(wo.occurred_at AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(wo.occurred_at AS DATETIME) < '2026-01-31 23:59:59' AND wo.total_amt_usd IS NOT NULL GROUP BY wa.name ORDER BY avg_amount DESC LIMIT 10;"
   },
   {
     "question_id": 236,
     "db_id": "EDUCATION_BUSINESS",
     "question": "Within the academic year range from '2009' to '2010', which semesters have a significantly higher number of course offerings than overall average ? Pick out these busier semesters and give me the top 10.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT uo.OffTerm AS topic, COUNT(*) AS cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uo.OffTerm ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
   },
   {
     "question_id": 237,
     "db_id": "EDUCATION_BUSINESS",
     "question": "During the academic years from '2009' to '2010', which teachers had the most intensive course offerings in a given semester? Give me the Top 10 combinations by \"teacher × semester\" based on the number of courses offered.",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT uo.FacNo AS rel_person, uo.OffTerm AS category_topic, COUNT(*) AS event_cnt FROM EDUCATION_BUSINESS.UNIVERSITY_OFFERING uo WHERE uo.OffYear >= '2009' AND uo.OffYear <= '2010' GROUP BY uo.FacNo, uo.OffTerm ORDER BY event_cnt DESC LIMIT 10;"
   },
   {
     "question_id": 238,
     "db_id": "EDUCATION_BUSINESS",
     "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many items were sold in total for online orders (summarized by the order total quantity, total)?",
-    "evidence": ""
+    "evidence": "",
+    "SQL": "SELECT SUM(wo.total) AS total_quantity FROM EDUCATION_BUSINESS.WEB_ORDERS wo WHERE CAST(wo.occurred_at AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(wo.occurred_at AS DATETIME) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 23,
+    "db_id": "GA4",
+    "question": "I would like to find records from January 31, 2021, between 9 AM and 5 PM, where the event parameters contain “cart”, and give me the identifiers of the last 10 users who triggered such events, sorted by event time in descending order.",
+    "evidence": "",
+    "SQL": "SELECT e.USER_PSEUDO_ID AS id_external FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%cart%' ORDER BY e.EVENT_TIMESTAMP DESC LIMIT 10;"
+  },
+  {
+    "question_id": 24,
+    "db_id": "GA4",
+    "question": "Please show me the users who had events between 9:00 AM and 5:00 PM on January 31, 2021, and give me the most recent 10 user identifiers in descending order of event time.",
+    "evidence": "",
+    "SQL": "SELECT e.USER_PSEUDO_ID AS id_external FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' ORDER BY e.EVENT_TIMESTAMP DESC LIMIT 10;"
+  },
+  {
+    "question_id": 25,
+    "db_id": "GA4",
+    "question": "Please help count the total number of event records generated between 9:00 AM and 5:00 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
+  },
+  {
+    "question_id": 26,
+    "db_id": "GA4",
+    "question": "Count the total number of distinct data streams between 9:00 AM and 5:00 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT e.STREAM_ID) AS distinct_entity_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
+  },
+  {
+    "question_id": 27,
+    "db_id": "GA4",
+    "question": "Help me calculate the total event value in US dollars between 9 AM and 5 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
+  },
+  {
+    "question_id": 28,
+    "db_id": "GA4",
+    "question": "Help me calculate the average value of a single event between 9:00 AM and 5:00 PM on January 31, 2021, in US dollars.",
+    "evidence": "",
+    "SQL": "SELECT AVG(e.EVENT_VALUE_IN_USD) AS avg_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00';"
+  },
+  {
+    "question_id": 29,
+    "db_id": "GA4",
+    "question": "Please check how many events were generated by different platforms between 9:00 AM and 5:00 PM on January 31, 2021, and show me the top 10 in descending order of count.",
+    "evidence": "",
+    "SQL": "SELECT e.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 30,
+    "db_id": "GA4",
+    "question": "Please show me, between 9 AM and 5 PM on January 31, 2021, how many distinct data streams were covered by each platform, and list the top 10 platforms in descending order by count.",
+    "evidence": "",
+    "SQL": "SELECT e.PLATFORM AS category_topic, COUNT(DISTINCT e.STREAM_ID) AS distinct_entity_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY distinct_entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 31,
+    "db_id": "GA4",
+    "question": "Show me, between 9 a.m. and 5 p.m. on January 31, 2021, which traffic sources brought the most active events, ranked by event count from highest to lowest, the top 10.",
+    "evidence": "",
+    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 32,
+    "db_id": "GA4",
+    "question": "Show me the top 10 traffic sources with the highest total event value between 9:00 AM and 5:00 PM on January 31, 2021, sorted by total value from highest to lowest.",
+    "evidence": "",
+    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 33,
+    "db_id": "GA4",
+    "question": "I would like to view the hourly change in event volume between 9:00 AM and 5:00 PM on January 31, 2021, showing the number of events per hour.",
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE e.EVENT_TIMESTAMP >= UNIX_TIMESTAMP('2021-01-31 09:00:00') * 1000000.0 AND e.EVENT_TIMESTAMP < UNIX_TIMESTAMP('2021-01-31 17:00:00') * 1000000.0 GROUP BY hour ORDER BY hour;"
+  },
+  {
+    "question_id": 34,
+    "db_id": "GA4",
+    "question": "I would like to see the hourly change in event value between 9:00 AM and 5:00 PM on January 31, 2021 using the cumulative value per hour.",
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE e.EVENT_TIMESTAMP >= UNIX_TIMESTAMP('2021-01-31 09:00:00') * 1000000.0 AND e.EVENT_TIMESTAMP < UNIX_TIMESTAMP('2021-01-31 17:00:00') * 1000000.0 GROUP BY hour ORDER BY hour;"
+  },
+  {
+    "question_id": 35,
+    "db_id": "GA4",
+    "question": "I would like to see how many events were generated per hour by different platforms between 9 AM and 5 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000.0), '%Y-%m-%d %H:00:00') AS hour, e.PLATFORM AS category_topic, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY hour, e.PLATFORM ORDER BY hour, event_cnt DESC;"
+  },
+  {
+    "question_id": 36,
+    "db_id": "GA4",
+    "question": "Find the traffic sources that had at least 10 events between 9:00 AM and 5:00 PM on January 31, 2021, and list them in descending order of event count.",
+    "evidence": "",
+    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, COUNT(*) AS event_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;"
+  },
+  {
+    "question_id": 37,
+    "db_id": "GA4",
+    "question": "Help me check between 9 a.m. and 5 p.m. on January 31, 2021, which traffic sources brought the highest average value per single event, and give me the top 10 by average value from high to low.",
+    "evidence": "",
+    "SQL": "SELECT CAST(e.TRAFFIC_SOURCE AS CHAR) AS name_entity, AVG(e.EVENT_VALUE_IN_USD) AS avg_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND e.EVENT_VALUE_IN_USD IS NOT NULL GROUP BY CAST(e.TRAFFIC_SOURCE AS CHAR) ORDER BY avg_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 38,
+    "db_id": "GA4",
+    "question": "Please find the top 10 distinct device information for records with event parameters containing \"item\" between 9:00 AM and 5:00 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
+  },
+  {
+    "question_id": 39,
+    "db_id": "GA4",
+    "question": "Help me find out which device information is primarily involved in the records where the event parameters contain \"item\" between 9:00 AM and 5:00 PM on January 31, 2021, deduplicate them, and give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
+  },
+  {
+    "question_id": 40,
+    "db_id": "GA4",
+    "question": "Find platforms where the number of events between 9:00 AM and 5:00 PM on January 31, 2021, is greater than or equal to the average event count across all platforms, and return the top 10 platforms sorted by event count in descending order.",
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT e.PLATFORM AS topic, COUNT(*) AS cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt >= (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 41,
+    "db_id": "GA4",
+    "question": "Please show me the total event value generated by each platform between 9:00 AM and 5:00 PM on January 31, 2021, and give me the top 10 platforms sorted by total value from high to low.",
+    "evidence": "",
+    "SQL": "SELECT e.PLATFORM AS category_topic, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 42,
+    "db_id": "GA4",
+    "question": "Find which platforms had a total event value exceeding 1000 between 9:00 AM and 5:00 PM on January 31, 2021.",
+    "evidence": "",
+    "SQL": "SELECT e.PLATFORM AS category_topic, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM HAVING SUM(e.EVENT_VALUE_IN_USD) >= 1000 ORDER BY total_amount DESC;"
+  },
+  {
+    "question_id": 43,
+    "db_id": "GA4",
+    "question": "Please check, between 9 AM and 5 PM on January 31, 2021, which traffic source has the highest cumulative event value on each platform.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT e.PLATFORM AS topic, CAST(e.TRAFFIC_SOURCE AS CHAR) AS entity, SUM(e.EVENT_VALUE_IN_USD) AS total_amount FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' GROUP BY e.PLATFORM, CAST(e.TRAFFIC_SOURCE AS CHAR) ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY total_amount DESC) AS rn FROM agg ) SELECT topic, entity, total_amount FROM ranked WHERE rn = 1 ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 134,
+    "db_id": "ods_szkjglxm",
+    "question": "I want to search for content containing \"nbsp\" (project keyword) in the external communication minutes, and give me the first 10 UUIDs of the most recent communication records.",
+    "evidence": "",
+    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.content LIKE '%nbsp%' ORDER BY ei.date DESC LIMIT 10;"
+  },
+  {
+    "question_id": 135,
+    "db_id": "ods_szkjglxm",
+    "question": "What external exchange activities have we had during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'? Please provide the UUIDs of the first 10 exchange records in reverse chronological order.",
+    "evidence": "",
+    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' ORDER BY ei.date DESC LIMIT 10;"
+  },
+  {
+    "question_id": 136,
+    "db_id": "ods_szkjglxm",
+    "question": "I want to see which meeting minutes are marked as status 1. Give me the top 10 results sorted by communication time in descending order.",
+    "evidence": "",
+    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.status = 1 ORDER BY ei.date DESC LIMIT 10;"
+  },
+  {
+    "question_id": 137,
+    "db_id": "ods_szkjglxm",
+    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', I only care about communication records with status 1, and where the content mentions \"Native Tech\" (a partner). Give me the top 10 UUIDs of the matching communication records ordered by time in descending order.",
+    "evidence": "",
+    "SQL": "SELECT ei.uuid AS id_external FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' AND ei.status = 1 AND ei.content LIKE CONCAT('%', 'Native Tech', '%') ORDER BY ei.date DESC LIMIT 10;"
+  },
+  {
+    "question_id": 138,
+    "db_id": "ods_szkjglxm",
+    "question": "How many external communication records were generated in total during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 139,
+    "db_id": "ods_szkjglxm",
+    "question": "How many distinct partners (deduplicated by partner_uuid) were covered by external exchanges during the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59'?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT ei.partner_uuid) AS distinct_entity_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 140,
+    "db_id": "ods_szkjglxm",
+    "question": "Between 2001-01-01 00:00:00 and 2026-01-31 23:59:59, what is the approximate average paper_scale?",
+    "evidence": "",
+    "SQL": "SELECT AVG(p.paper_scale) AS avg_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 141,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from 2001-01-01 00:00:00 to 2026-01-31 23:59:59, what is the distribution of paper outputs by delivery/submission type (delivery_type)? Which types are the most common (Top 10)?",
+    "evidence": "",
+    "SQL": "SELECT p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 142,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', how many distinct projects (deduplicated by project_info_uuid) are covered by each delivery/submission type? Give me the Top 10.",
+    "evidence": "",
+    "SQL": "SELECT p.delivery_type AS category_topic, COUNT(DISTINCT p.project_info_uuid) AS distinct_entity_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY distinct_entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 143,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which thesis titles appear most frequently (possibly due to repeated submissions/multiple instances)? Give me the Top 10.",
+    "evidence": "",
+    "SQL": "SELECT p.paper_name AS name_entity, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.paper_name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 144,
+    "db_id": "ods_szkjglxm",
+    "question": "Between '2001-01-01 00:00:00' and '2026-01-31 23:59:59', from the contact/point-of-contact perspective, who participated in (coordinated) the most external exchanges? Give me the Top 10 (by contact_id).",
+    "evidence": "",
+    "SQL": "SELECT ei.contact_id AS rel_person, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.contact_id ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 145,
+    "db_id": "ods_szkjglxm",
+    "question": "I would like to view the daily rhythm of external communications from '2001-01-01 00:00:00' to '2026-01-31 23:59:59': how many communication records were generated each day?",
+    "evidence": "",
+    "SQL": "SELECT DATE( ei.date) AS day, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY day ORDER BY day;"
+  },
+  {
+    "question_id": 146,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to break down the output by day for different delivery/submission types (delivery_type): how many records were submitted for each type per day?",
+    "evidence": "",
+    "SQL": "SELECT DATE( p.submit_time) AS day, p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY day, p.delivery_type ORDER BY day, event_cnt DESC;"
+  },
+  {
+    "question_id": 147,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which partners qualify as \"frequently communicate partner\" (with at least 10 communication records)? List them in descending order of frequency.",
+    "evidence": "",
+    "SQL": "SELECT ei.partner_name AS name_entity, COUNT(*) AS event_cnt FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.partner_name HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;"
+  },
+  {
+    "question_id": 148,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to find the thesis titles whose abstracts mention \"good\". Please give me the first 10 deduplicated titles.",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT p.paper_name AS name_entity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' AND p.paper_abstract LIKE '%good%' ORDER BY p.paper_name LIMIT 10;"
+  },
+  {
+    "question_id": 149,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', which delivery/submission types (delivery_type) had submission counts above the average? List these active types (top 10).",
+    "evidence": "",
+    "SQL": "WITH topic_cnt AS ( SELECT p.delivery_type AS topic, COUNT(*) AS cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 150,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to see the output intensity of \"author × submission type\": Which authors submit most intensively on a certain type? Give me the Top 10 combinations.",
+    "evidence": "",
+    "SQL": "SELECT p.paper_writer AS rel_person, p.delivery_type AS category_topic, COUNT(*) AS event_cnt FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.paper_writer, p.delivery_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 151,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', I want to view the proportion of failed statuses by technical line (tech_uuid) and identify the top 10 technical lines with the highest status achievement rate.",
+    "evidence": "",
+    "SQL": "SELECT ei.tech_uuid AS category_topic, CAST(SUM(CASE WHEN ei.status = 0 THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS ratio_in_status FROM ods_szkjglxm.co_exchange_info ei WHERE ei.date >= '2001-01-01 00:00:00' AND ei.date < '2026-01-31 23:59:59' GROUP BY ei.tech_uuid ORDER BY ratio_in_status DESC LIMIT 10;"
+  },
+  {
+    "question_id": 152,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59' (based on the paper submission time), what is the cumulative paper scale (paper_scale) number? I would like to get a rough view of the output volume during this period.",
+    "evidence": "",
+    "SQL": "SELECT SUM(p.paper_scale) AS total_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 153,
+    "db_id": "ods_szkjglxm",
+    "question": "During the period from '2001-01-01 00:00:00' to '2026-01-31 23:59:59', what are the aggregated totals of paper_scale by delivery_type? And which are the Top 10 types with the largest paper_scale?",
+    "evidence": "",
+    "SQL": "SELECT p.delivery_type AS category_topic, SUM(p.paper_scale) AS total_quantity FROM ods_szkjglxm.intellectual_property_paper p WHERE p.submit_time >= '2001-01-01 00:00:00' AND p.submit_time < '2026-01-31 23:59:59' GROUP BY p.delivery_type ORDER BY total_quantity DESC LIMIT 10;"
   }
 ]

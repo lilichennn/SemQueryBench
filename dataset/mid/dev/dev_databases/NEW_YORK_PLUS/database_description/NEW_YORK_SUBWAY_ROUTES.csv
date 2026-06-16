@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+route_id,route_id,,text,
+route_long_name,route_long_name,,text,
+route_describe,route_describe,,text,
+route_type,route_type,,text,
+route_short_name,route_short_name,,text,

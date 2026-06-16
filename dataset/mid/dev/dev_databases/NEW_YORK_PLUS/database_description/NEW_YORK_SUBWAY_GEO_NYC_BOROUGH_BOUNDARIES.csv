@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+borough_code,borough_code,,text,
+borough_geom,borough_geom,,text,
+borough_len,borough_len,,real,
+borough_area,borough_area,,real,
+borough_name,borough_name,,text,

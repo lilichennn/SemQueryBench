@@ -1,5 +1,5 @@
 original_column_name,column_name,column_description,data_format,value_description
-Id,Id,,DOUBLE,
-VoteDate,VoteDate,,DATE,
-UserId,UserId,,DOUBLE,
-DatasetVersionId,DatasetVersionId,,DOUBLE,
+Id,Id,,integer,
+VoteDate,VoteDate,,date,
+UserId,UserId,,integer,
+DatasetVersionId,DatasetVersionId,,integer,

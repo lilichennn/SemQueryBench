@@ -1,0 +1,13 @@
+original_column_name,column_name,column_description,data_format,value_description
+primary_id,primary_id,,text,
+region_name,region_name,,text,
+customer_type_display,customer_type_display,,text,
+org_mdg_code,org_mdg_code,,text,
+customer_industry_code,customer_industry_code,,text,
+customer_order,customer_order,,text,
+customer_type_code,customer_type_code,,text,
+data_date,data_date,,date,
+data_value,data_value,,real,
+display_order,display_order,,real,
+vendor_name,vendor_name,,text,
+business_type_code,business_type_code,,text,

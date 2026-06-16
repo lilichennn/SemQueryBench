@@ -1,0 +1,9 @@
+original_column_name,column_name,column_description,data_format,value_description
+trip_id,trip_id,,text,
+trip_headsign,trip_headsign,,text,
+block_id,block_id,,text,
+route_id,route_id,,text,
+shape_id,shape_id,,text,
+trip_shape,trip_shape,,text,
+service_category,service_category,,text,
+direction,direction,,text,

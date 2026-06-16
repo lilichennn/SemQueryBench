@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+CustomerCategoryID,CustomerCategoryID,,integer,
+ValidFrom,ValidFrom,,integer,
+CustomerCategoryName,CustomerCategoryName,,text,
+LastEditedBy,LastEditedBy,,integer,
+ValidTo,ValidTo,,integer,

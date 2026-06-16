@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+promo_total_id,promo_total_id,,integer,
+promo_category_id,promo_category_id,,integer,
+promo_id,promo_id,,integer,
+promo_subcategory_id,promo_subcategory_id,,integer,
+promo_subcategory,promo_subcategory,,text,
+promo_cost,promo_cost,,real,
+promo_name,promo_name,,text,
+promo_total,promo_total,,text,
+promo_category,promo_category,,text,
+promo_begin_date,promo_begin_date,,text,
+promo_end_date,promo_end_date,,text,

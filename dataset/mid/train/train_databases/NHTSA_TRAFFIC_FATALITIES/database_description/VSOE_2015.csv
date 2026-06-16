@@ -1,9 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-vehicle_event_number,vehicle_event_number,,DOUBLE,
-consecutive_number,consecutive_number,,DOUBLE,
-sequence_of_events,sequence_of_events,,DOUBLE,
-vehicle_number,vehicle_number,,DOUBLE,
-sequence_of_events_name,sequence_of_events_name,,TEXT,
-area_of_Impact_associated_with_the_event_name,area_of_Impact_associated_with_the_event_name,,TEXT,
-area_of_Impact_associated_with_the_event,area_of_Impact_associated_with_the_event,,DOUBLE,
-state_number,state_number,,DOUBLE,

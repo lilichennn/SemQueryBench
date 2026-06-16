@@ -1,7 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-consecutive_number,consecutive_number,,DOUBLE,
-vehicle_number,vehicle_number,,DOUBLE,
-damaged_areas_name,damaged_areas_name,,TEXT,
-damaged_areas,damaged_areas,,DOUBLE,
-state_number,state_number,,DOUBLE,
-state_name,state_name,,TEXT,

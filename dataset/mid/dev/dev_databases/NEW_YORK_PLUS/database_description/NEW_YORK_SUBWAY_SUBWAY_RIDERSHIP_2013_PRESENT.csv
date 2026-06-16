@@ -1,0 +1,12 @@
+original_column_name,column_name,column_description,data_format,value_description
+station_name,station_name,,text,
+ridership_2016,ridership_2016,,integer,
+change_2018_percent,change_2018_percent,,real,
+ridership_2017,ridership_2017,,integer,
+ridership_2013,ridership_2013,,integer,
+ridership_2018,ridership_2018,,integer,
+ridership_2015,ridership_2015,,integer,
+ridership_2014,ridership_2014,,integer,
+change_2018_raw,change_2018_raw,,integer,
+routes,routes,,text,
+rank_ridership_2018,rank_ridership_2018,,integer,

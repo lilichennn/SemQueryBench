@@ -1,0 +1,6 @@
+original_column_name,column_name,column_description,data_format,value_description
+id,id,,integer,
+location_id,location_id,,integer,
+product_id,product_id,,integer,
+purchase_id,purchase_id,,integer,
+qty,qty,,real,

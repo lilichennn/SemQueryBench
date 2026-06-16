@@ -1,6 +1,0 @@
-original_column_name,column_name,column_description,data_format,value_description
-StockGroupID,StockGroupID,,DOUBLE,
-StockGroupName,StockGroupName,,TEXT,
-ValidFrom,ValidFrom,,DOUBLE,
-ValidTo,ValidTo,,DOUBLE,
-LastEditedBy,LastEditedBy,,DOUBLE,
