@@ -1,0 +1,946 @@
+[
+  {
+    "question_id": 1,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In ADVENTUREWORKS, which pairs of productmodelid share the most class values in common? Give me the top 10 pairs.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT a.productmodelid AS entity_a, b.productmodelid AS entity_b, COUNT(*) AS shared_cnt FROM ADVENTUREWORKS.PRODUCT a JOIN ADVENTUREWORKS.PRODUCT b ON a.class = b.class AND a.productmodelid < b.productmodelid GROUP BY a.productmodelid, b.productmodelid ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 2,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In AIRLINES, which pairs of flight_id share the most fare_conditions values in common? Give me the top 10 pairs.",
+    "db": "AIRLINES",
+    "sql": "SELECT a.flight_id AS entity_a, b.flight_id AS entity_b, COUNT(*) AS shared_cnt FROM AIRLINES.TICKET_FLIGHTS a JOIN AIRLINES.TICKET_FLIGHTS b ON a.fare_conditions = b.fare_conditions AND a.flight_id < b.flight_id GROUP BY a.flight_id, b.flight_id ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 3,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In BOWLINGLEAGUE, which pairs of TourneyID share the most Lanes values in common? Give me the top 10 pairs.",
+    "db": "BOWLINGLEAGUE",
+    "sql": "SELECT a.TourneyID AS entity_a, b.TourneyID AS entity_b, COUNT(*) AS shared_cnt FROM BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE a JOIN BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE b ON a.Lanes = b.Lanes AND a.TourneyID < b.TourneyID GROUP BY a.TourneyID, b.TourneyID ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 4,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In DIMENSIONS_AI_COVID19, which pairs of repository_id share the most category_for values in common? Give me the top 10 pairs.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT a.repository_id AS entity_a, b.repository_id AS entity_b, COUNT(*) AS shared_cnt FROM DIMENSIONS_AI_COVID19.DATASETS a JOIN DIMENSIONS_AI_COVID19.DATASETS b ON a.category_for = b.category_for AND a.repository_id < b.repository_id GROUP BY a.repository_id, b.repository_id ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 5,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In ELECTRONIC_SALES, which pairs of order_id share the most payment_type values in common? Give me the top 10 pairs.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "SELECT a.order_id AS entity_a, b.order_id AS entity_b, COUNT(*) AS shared_cnt FROM ELECTRONIC_SALES.ORDER_PAYMENTS a JOIN ELECTRONIC_SALES.ORDER_PAYMENTS b ON a.payment_type = b.payment_type AND a.order_id < b.order_id GROUP BY a.order_id, b.order_id ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 6,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In ETHEREUM_BLOCKCHAIN, which pairs of to_address share the most call_type values in common? Give me the top 10 pairs.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "SELECT a.to_address AS entity_a, b.to_address AS entity_b, COUNT(*) AS shared_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES a JOIN ETHEREUM_BLOCKCHAIN.TRACES b ON a.call_type = b.call_type AND a.to_address < b.to_address GROUP BY a.to_address, b.to_address ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 7,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In NEW_YORK_GEO, which pairs of end_station_id share the most usertype values in common? Give me the top 10 pairs.",
+    "db": "NEW_YORK_GEO",
+    "sql": "SELECT a.end_station_id AS entity_a, b.end_station_id AS entity_b, COUNT(*) AS shared_cnt FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_TRIPS a JOIN NEW_YORK_GEO.NEW_YORK_CITIBIKE_TRIPS b ON a.usertype = b.usertype AND a.end_station_id < b.end_station_id GROUP BY a.end_station_id, b.end_station_id ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 8,
+    "split": "train",
+    "sqa": "XH1",
+    "question": "In PYPI, which pairs of provides share the most classifiers values in common? Give me the top 10 pairs.",
+    "db": "PYPI",
+    "sql": "SELECT a.provides AS entity_a, b.provides AS entity_b, COUNT(*) AS shared_cnt FROM PYPI.DISTRIBUTION_METADATA a JOIN PYPI.DISTRIBUTION_METADATA b ON a.classifiers = b.classifiers AND a.provides < b.provides GROUP BY a.provides, b.provides ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 9,
+    "split": "test",
+    "sqa": "XH1",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, which pairs of APP_ID share the most AD_ID_TYPE values in common? Give me the top 10 pairs.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT a.APP_ID AS entity_a, b.APP_ID AS entity_b, COUNT(*) AS shared_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW a JOIN BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW b ON a.AD_ID_TYPE = b.AD_ID_TYPE AND a.APP_ID < b.APP_ID GROUP BY a.APP_ID, b.APP_ID ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 10,
+    "split": "test",
+    "sqa": "XH1",
+    "question": "In CRYPTO, which pairs of spent_transaction_hash share the most type values in common? Give me the top 10 pairs.",
+    "db": "CRYPTO",
+    "sql": "SELECT a.spent_transaction_hash AS entity_a, b.spent_transaction_hash AS entity_b, COUNT(*) AS shared_cnt FROM CRYPTO.CRYPTO_BITCOIN_INPUTS a JOIN CRYPTO.CRYPTO_BITCOIN_INPUTS b ON a.type = b.type AND a.spent_transaction_hash < b.spent_transaction_hash GROUP BY a.spent_transaction_hash, b.spent_transaction_hash ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 11,
+    "split": "test",
+    "sqa": "XH1",
+    "question": "In EDUCATION_BUSINESS, which pairs of account_id share the most channel values in common? Give me the top 10 pairs.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "SELECT a.account_id AS entity_a, b.account_id AS entity_b, COUNT(*) AS shared_cnt FROM EDUCATION_BUSINESS.WEB_EVENTS a JOIN EDUCATION_BUSINESS.WEB_EVENTS b ON a.channel = b.channel AND a.account_id < b.account_id GROUP BY a.account_id, b.account_id ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 12,
+    "split": "test",
+    "sqa": "XH1",
+    "question": "In GA4, which pairs of STREAM_ID share the most PLATFORM values in common? Give me the top 10 pairs.",
+    "db": "GA4",
+    "sql": "SELECT a.STREAM_ID AS entity_a, b.STREAM_ID AS entity_b, COUNT(*) AS shared_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 a JOIN GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 b ON a.PLATFORM = b.PLATFORM AND a.STREAM_ID < b.STREAM_ID GROUP BY a.STREAM_ID, b.STREAM_ID ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 13,
+    "split": "test",
+    "sqa": "XH1",
+    "question": "In ods_szkjglxm, which pairs of tech_uuid share the most type values in common? Give me the top 10 pairs.",
+    "db": "ods_szkjglxm",
+    "sql": "SELECT a.tech_uuid AS entity_a, b.tech_uuid AS entity_b, COUNT(*) AS shared_cnt FROM ods_szkjglxm.co_partner_capability a JOIN ods_szkjglxm.co_partner_capability b ON a.type = b.type AND a.tech_uuid < b.tech_uuid GROUP BY a.tech_uuid, b.tech_uuid ORDER BY shared_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 14,
+    "split": "train",
+    "sqa": "XH2",
+    "question": "In ADVENTUREWORKS, within each tocurrencycode, how many times did averagerate fall compared with the previous record in time order? Give me the top 10.",
+    "db": "ADVENTUREWORKS",
+    "sql": "WITH s AS ( SELECT tocurrencycode AS c, CAST(currencyratedate AS DATETIME) AS ts, averagerate AS v, LAG(averagerate) OVER (PARTITION BY tocurrencycode ORDER BY CAST(currencyratedate AS DATETIME)) AS prev_v FROM ADVENTUREWORKS.CURRENCYRATE ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 15,
+    "split": "train",
+    "sqa": "XH2",
+    "question": "In DIMENSIONS_AI_COVID19, within each category_uoa, how many times did funding_amount fall compared with the previous record in time order? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "WITH s AS ( SELECT category_uoa AS c, CAST(active_years AS DATETIME) AS ts, funding_amount AS v, LAG(funding_amount) OVER (PARTITION BY category_uoa ORDER BY CAST(active_years AS DATETIME)) AS prev_v FROM DIMENSIONS_AI_COVID19.GRANTS ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 16,
+    "split": "train",
+    "sqa": "XH2",
+    "question": "In ETHEREUM_BLOCKCHAIN, within each call_type, how many times did value fall compared with the previous record in time order? Give me the top 10.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "WITH s AS ( SELECT call_type AS c, FROM_UNIXTIME(block_timestamp / 1000000) AS ts, value AS v, LAG(value) OVER (PARTITION BY call_type ORDER BY FROM_UNIXTIME(block_timestamp / 1000000)) AS prev_v FROM ETHEREUM_BLOCKCHAIN.TRACES ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 17,
+    "split": "train",
+    "sqa": "XH2",
+    "question": "In NEW_YORK_GEO, within each payment_type, how many times did total_amount fall compared with the previous record in time order? Give me the top 10.",
+    "db": "NEW_YORK_GEO",
+    "sql": "WITH s AS ( SELECT payment_type AS c, FROM_UNIXTIME(pickup_datetime / 1000000) AS ts, total_amount AS v, LAG(total_amount) OVER (PARTITION BY payment_type ORDER BY FROM_UNIXTIME(pickup_datetime / 1000000)) AS prev_v FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 18,
+    "split": "train",
+    "sqa": "XH2",
+    "question": "In ods_crm, within each customer_type, how many times did contract_total_amount fall compared with the previous record in time order? Give me the top 10.",
+    "db": "ods_crm",
+    "sql": "WITH s AS ( SELECT customer_type AS c, CAST(recycle_date AS DATETIME) AS ts, contract_total_amount AS v, LAG(contract_total_amount) OVER (PARTITION BY customer_type ORDER BY CAST(recycle_date AS DATETIME)) AS prev_v FROM ods_crm.crm_account_receivable ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 19,
+    "split": "test",
+    "sqa": "XH2",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, within each GENDER, how many times did REVENUE fall compared with the previous record in time order? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "WITH s AS ( SELECT GENDER AS c, CAST(TIME_CUSTOM_ATTRIBUTES AS DATETIME) AS ts, REVENUE AS v, LAG(REVENUE) OVER (PARTITION BY GENDER ORDER BY CAST(TIME_CUSTOM_ATTRIBUTES AS DATETIME)) AS prev_v FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_CAMPAIGNS_REVENUE_VIEW ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 20,
+    "split": "test",
+    "sqa": "XH2",
+    "question": "In CRYPTO, within each type, how many times did value fall compared with the previous record in time order? Give me the top 10.",
+    "db": "CRYPTO",
+    "sql": "WITH s AS ( SELECT type AS c, FROM_UNIXTIME(block_timestamp / 1000000) AS ts, value AS v, LAG(value) OVER (PARTITION BY type ORDER BY FROM_UNIXTIME(block_timestamp / 1000000)) AS prev_v FROM CRYPTO.CRYPTO_BITCOIN_INPUTS ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 21,
+    "split": "test",
+    "sqa": "XH2",
+    "question": "In GA4, within each PLATFORM, how many times did EVENT_VALUE_IN_USD fall compared with the previous record in time order? Give me the top 10.",
+    "db": "GA4",
+    "sql": "WITH s AS ( SELECT PLATFORM AS c, FROM_UNIXTIME(EVENT_TIMESTAMP / 1000000) AS ts, EVENT_VALUE_IN_USD AS v, LAG(EVENT_VALUE_IN_USD) OVER (PARTITION BY PLATFORM ORDER BY FROM_UNIXTIME(EVENT_TIMESTAMP / 1000000)) AS prev_v FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 22,
+    "split": "test",
+    "sqa": "XH2",
+    "question": "In ods_szkjglxm, within each tech_achieve_category, how many times did total_price_untaxed fall compared with the previous record in time order? Give me the top 10.",
+    "db": "ods_szkjglxm",
+    "sql": "WITH s AS ( SELECT tech_achieve_category AS c, CAST(income_voucher_date AS DATETIME) AS ts, total_price_untaxed AS v, LAG(total_price_untaxed) OVER (PARTITION BY tech_achieve_category ORDER BY CAST(income_voucher_date AS DATETIME)) AS prev_v FROM ods_szkjglxm.zt_ifs_scit_otcm_sup_incm ) SELECT c, COUNT(*) AS drop_cnt FROM s WHERE prev_v IS NOT NULL AND v < prev_v GROUP BY c ORDER BY drop_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 23,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In ADVENTUREWORKS, which records have a reorderpoint above the average of their own class? Give me the top 10 rowguid.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT rowguid FROM ADVENTUREWORKS.PRODUCT t WHERE reorderpoint > ( SELECT AVG(u.reorderpoint) FROM ADVENTUREWORKS.PRODUCT u WHERE u.class = t.class ) ORDER BY reorderpoint DESC LIMIT 10;"
+  },
+  {
+    "question_id": 24,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In DIMENSIONS_AI_COVID19, which records have a volume above the average of their own type? Give me the top 10 pmid.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT pmid FROM DIMENSIONS_AI_COVID19.PUBLICATIONS t WHERE volume > ( SELECT AVG(u.volume) FROM DIMENSIONS_AI_COVID19.PUBLICATIONS u WHERE u.type = t.type ) ORDER BY volume DESC LIMIT 10;"
+  },
+  {
+    "question_id": 25,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In ECLIPSE_MEGAMOVIE, which records have a width above the average of their own image_type? Give me the top 10 upload_session_id.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "SELECT upload_session_id FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 t WHERE width > ( SELECT AVG(u.width) FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 u WHERE u.image_type = t.image_type ) ORDER BY width DESC LIMIT 10;"
+  },
+  {
+    "question_id": 26,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In ELECTRONIC_SALES, which records have a product_length_cm above the average of their own product_category_name? Give me the top 10 product_id.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "SELECT product_id FROM ELECTRONIC_SALES.PRODUCTS t WHERE product_length_cm > ( SELECT AVG(u.product_length_cm) FROM ELECTRONIC_SALES.PRODUCTS u WHERE u.product_category_name = t.product_category_name ) ORDER BY product_length_cm DESC LIMIT 10;"
+  },
+  {
+    "question_id": 27,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In ETHEREUM_BLOCKCHAIN, which records have a gas above the average of their own call_type? Give me the top 10 block_number.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "SELECT block_number FROM ETHEREUM_BLOCKCHAIN.TRACES t WHERE gas > ( SELECT AVG(u.gas) FROM ETHEREUM_BLOCKCHAIN.TRACES u WHERE u.call_type = t.call_type ) ORDER BY gas DESC LIMIT 10;"
+  },
+  {
+    "question_id": 28,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In NEW_YORK_GEO, which records have a area_land_meters above the average of their own mtfcc_feature_class_code? Give me the top 10 geo_id.",
+    "db": "NEW_YORK_GEO",
+    "sql": "SELECT geo_id FROM NEW_YORK_GEO.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 t WHERE area_land_meters > ( SELECT AVG(u.area_land_meters) FROM NEW_YORK_GEO.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 u WHERE u.mtfcc_feature_class_code = t.mtfcc_feature_class_code ) ORDER BY area_land_meters DESC LIMIT 10;"
+  },
+  {
+    "question_id": 29,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In PYPI, which records have a size above the average of their own classifiers? Give me the top 10 md5_digest.",
+    "db": "PYPI",
+    "sql": "SELECT md5_digest FROM PYPI.DISTRIBUTION_METADATA t WHERE size > ( SELECT AVG(u.size) FROM PYPI.DISTRIBUTION_METADATA u WHERE u.classifiers = t.classifiers ) ORDER BY size DESC LIMIT 10;"
+  },
+  {
+    "question_id": 30,
+    "split": "train",
+    "sqa": "XH3",
+    "question": "In ods_crm, which records have a account_age_months above the average of their own customer_type? Give me the top 10 org_code.",
+    "db": "ods_crm",
+    "sql": "SELECT org_code FROM ods_crm.crm_account_receivable t WHERE account_age_months > ( SELECT AVG(u.account_age_months) FROM ods_crm.crm_account_receivable u WHERE u.customer_type = t.customer_type ) ORDER BY account_age_months DESC LIMIT 10;"
+  },
+  {
+    "question_id": 31,
+    "split": "test",
+    "sqa": "XH3",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, which records have a NUMBER_CUSTOM_ATTRIBUTES above the average of their own AD_ID_TYPE? Give me the top 10 AD_ID.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT AD_ID FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_MESSAGES_PUSHNOTIFICATION_IOSFOREGROUND_VIEW t WHERE NUMBER_CUSTOM_ATTRIBUTES > ( SELECT AVG(u.NUMBER_CUSTOM_ATTRIBUTES) FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_MESSAGES_PUSHNOTIFICATION_IOSFOREGROUND_VIEW u WHERE u.AD_ID_TYPE = t.AD_ID_TYPE ) ORDER BY NUMBER_CUSTOM_ATTRIBUTES DESC LIMIT 10;"
+  },
+  {
+    "question_id": 32,
+    "split": "test",
+    "sqa": "XH3",
+    "question": "In CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE, which records have a AmtLand above the average of their own MTFCC? Give me the top 10 TractCode.",
+    "db": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "sql": "SELECT TractCode FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY t WHERE AmtLand > ( SELECT AVG(u.AmtLand) FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY u WHERE u.MTFCC = t.MTFCC ) ORDER BY AmtLand DESC LIMIT 10;"
+  },
+  {
+    "question_id": 33,
+    "split": "test",
+    "sqa": "XH3",
+    "question": "In CRYPTO, which records have a required_signatures above the average of their own type? Give me the top 10 block_number.",
+    "db": "CRYPTO",
+    "sql": "SELECT block_number FROM CRYPTO.CRYPTO_BITCOIN_INPUTS t WHERE required_signatures > ( SELECT AVG(u.required_signatures) FROM CRYPTO.CRYPTO_BITCOIN_INPUTS u WHERE u.type = t.type ) ORDER BY required_signatures DESC LIMIT 10;"
+  },
+  {
+    "question_id": 34,
+    "split": "test",
+    "sqa": "XH3",
+    "question": "In ods_szkjglxm, which records have a attach_count above the average of their own release_type? Give me the top 10 uuid.",
+    "db": "ods_szkjglxm",
+    "sql": "SELECT uuid FROM ods_szkjglxm.notice_announcement t WHERE attach_count > ( SELECT AVG(u.attach_count) FROM ods_szkjglxm.notice_announcement u WHERE u.release_type = t.release_type ) ORDER BY attach_count DESC LIMIT 10;"
+  },
+  {
+    "question_id": 35,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In ADVENTUREWORKS, how concentrated is listprice within each class? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "ADVENTUREWORKS",
+    "sql": "WITH q AS ( SELECT class AS c, listprice AS v, NTILE(10) OVER (PARTITION BY class ORDER BY listprice DESC) AS decile FROM ADVENTUREWORKS.PRODUCT WHERE listprice IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 36,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In AIRLINES, how concentrated is amount within each fare_conditions? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "AIRLINES",
+    "sql": "WITH q AS ( SELECT fare_conditions AS c, amount AS v, NTILE(10) OVER (PARTITION BY fare_conditions ORDER BY amount DESC) AS decile FROM AIRLINES.TICKET_FLIGHTS WHERE amount IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 37,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In DIMENSIONS_AI_COVID19, how concentrated is funding_amount within each category_uoa? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "WITH q AS ( SELECT category_uoa AS c, funding_amount AS v, NTILE(10) OVER (PARTITION BY category_uoa ORDER BY funding_amount DESC) AS decile FROM DIMENSIONS_AI_COVID19.GRANTS WHERE funding_amount IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 38,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In ELECTRONIC_SALES, how concentrated is payment_value within each payment_type? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "WITH q AS ( SELECT payment_type AS c, payment_value AS v, NTILE(10) OVER (PARTITION BY payment_type ORDER BY payment_value DESC) AS decile FROM ELECTRONIC_SALES.ORDER_PAYMENTS WHERE payment_value IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 39,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In ETHEREUM_BLOCKCHAIN, how concentrated is value within each call_type? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "WITH q AS ( SELECT call_type AS c, value AS v, NTILE(10) OVER (PARTITION BY call_type ORDER BY value DESC) AS decile FROM ETHEREUM_BLOCKCHAIN.TRACES WHERE value IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 40,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In NEW_YORK_GEO, how concentrated is total_amount within each payment_type? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "NEW_YORK_GEO",
+    "sql": "WITH q AS ( SELECT payment_type AS c, total_amount AS v, NTILE(10) OVER (PARTITION BY payment_type ORDER BY total_amount DESC) AS decile FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 WHERE total_amount IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 41,
+    "split": "train",
+    "sqa": "XH4",
+    "question": "In ods_crm, how concentrated is contract_total_amount within each customer_type? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "ods_crm",
+    "sql": "WITH q AS ( SELECT customer_type AS c, contract_total_amount AS v, NTILE(10) OVER (PARTITION BY customer_type ORDER BY contract_total_amount DESC) AS decile FROM ods_crm.crm_account_receivable WHERE contract_total_amount IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 42,
+    "split": "test",
+    "sqa": "XH4",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, how concentrated is PRICE within each AD_ID_TYPE? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "WITH q AS ( SELECT AD_ID_TYPE AS c, PRICE AS v, NTILE(10) OVER (PARTITION BY AD_ID_TYPE ORDER BY PRICE DESC) AS decile FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_PURCHASE_VIEW WHERE PRICE IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 43,
+    "split": "test",
+    "sqa": "XH4",
+    "question": "In CRYPTO, how concentrated is value within each type? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "CRYPTO",
+    "sql": "WITH q AS ( SELECT type AS c, value AS v, NTILE(10) OVER (PARTITION BY type ORDER BY value DESC) AS decile FROM CRYPTO.CRYPTO_BITCOIN_INPUTS WHERE value IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 44,
+    "split": "test",
+    "sqa": "XH4",
+    "question": "In EDUCATION_BUSINESS, how concentrated is FacSalary within each FacDept? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "WITH q AS ( SELECT FacDept AS c, FacSalary AS v, NTILE(10) OVER (PARTITION BY FacDept ORDER BY FacSalary DESC) AS decile FROM EDUCATION_BUSINESS.UNIVERSITY_FACULTY WHERE FacSalary IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 45,
+    "split": "test",
+    "sqa": "XH4",
+    "question": "In GA4, how concentrated is EVENT_VALUE_IN_USD within each PLATFORM? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "GA4",
+    "sql": "WITH q AS ( SELECT PLATFORM AS c, EVENT_VALUE_IN_USD AS v, NTILE(10) OVER (PARTITION BY PLATFORM ORDER BY EVENT_VALUE_IN_USD DESC) AS decile FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 WHERE EVENT_VALUE_IN_USD IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 46,
+    "split": "test",
+    "sqa": "XH4",
+    "question": "In ods_szkjglxm, how concentrated is total_price_untaxed within each tech_achieve_category? Report the top-decile share and give me the 10 most concentrated.",
+    "db": "ods_szkjglxm",
+    "sql": "WITH q AS ( SELECT tech_achieve_category AS c, total_price_untaxed AS v, NTILE(10) OVER (PARTITION BY tech_achieve_category ORDER BY total_price_untaxed DESC) AS decile FROM ods_szkjglxm.zt_ifs_scit_otcm_sup_incm WHERE total_price_untaxed IS NOT NULL ) SELECT c, SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS top_decile_amt, SUM(v) AS total_amt, CAST(SUM(CASE WHEN decile = 1 THEN v ELSE 0 END) AS DOUBLE) / NULLIF(SUM(v), 0) AS concentration FROM q GROUP BY c ORDER BY concentration DESC LIMIT 10;"
+  },
+  {
+    "question_id": 47,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In ADVENTUREWORKS, how are the records distributed across class once entries with a missing category are excluded? Give me the top 10.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT class, COUNT(*) AS cnt FROM ADVENTUREWORKS.PRODUCT WHERE rowguid NOT IN ( SELECT rowguid FROM ADVENTUREWORKS.PRODUCT WHERE class IS NULL ) GROUP BY class ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 48,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In AIRLINES, how are the records distributed across timezone once entries with a missing category are excluded? Give me the top 10.",
+    "db": "AIRLINES",
+    "sql": "SELECT timezone, COUNT(*) AS cnt FROM AIRLINES.AIRPORTS_DATA WHERE airport_code NOT IN ( SELECT airport_code FROM AIRLINES.AIRPORTS_DATA WHERE timezone IS NULL ) GROUP BY timezone ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 49,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In BOWLINGLEAGUE, how are the records distributed across Lanes once entries with a missing category are excluded? Give me the top 10.",
+    "db": "BOWLINGLEAGUE",
+    "sql": "SELECT Lanes, COUNT(*) AS cnt FROM BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE WHERE MatchID NOT IN ( SELECT MatchID FROM BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE WHERE Lanes IS NULL ) GROUP BY Lanes ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 50,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In DIMENSIONS_AI_COVID19, how are the records distributed across study_type once entries with a missing category are excluded? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT study_type, COUNT(*) AS cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS WHERE id NOT IN ( SELECT id FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS WHERE study_type IS NULL ) GROUP BY study_type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 51,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In ECLIPSE_MEGAMOVIE, how are the records distributed across image_type once entries with a missing category are excluded? Give me the top 10.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "SELECT image_type, COUNT(*) AS cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 WHERE upload_session_id NOT IN ( SELECT upload_session_id FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 WHERE image_type IS NULL ) GROUP BY image_type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 52,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In ELECTRONIC_SALES, how are the records distributed across product_category_name once entries with a missing category are excluded? Give me the top 10.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "SELECT product_category_name, COUNT(*) AS cnt FROM ELECTRONIC_SALES.PRODUCTS WHERE product_id NOT IN ( SELECT product_id FROM ELECTRONIC_SALES.PRODUCTS WHERE product_category_name IS NULL ) GROUP BY product_category_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 53,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In ETHEREUM_BLOCKCHAIN, how are the records distributed across call_type once entries with a missing category are excluded? Give me the top 10.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "SELECT call_type, COUNT(*) AS cnt FROM ETHEREUM_BLOCKCHAIN.TRACES WHERE block_number NOT IN ( SELECT block_number FROM ETHEREUM_BLOCKCHAIN.TRACES WHERE call_type IS NULL ) GROUP BY call_type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 54,
+    "split": "train",
+    "sqa": "XH5",
+    "question": "In GEO_OPENSTREETMAP_WORLDPOP, how are the records distributed across layer_class once entries with a missing category are excluded? Give me the top 10.",
+    "db": "GEO_OPENSTREETMAP_WORLDPOP",
+    "sql": "SELECT layer_class, COUNT(*) AS cnt FROM GEO_OPENSTREETMAP_WORLDPOP.GEO_OPENSTREETMAP_HISTORY_LAYERS WHERE osm_id NOT IN ( SELECT osm_id FROM GEO_OPENSTREETMAP_WORLDPOP.GEO_OPENSTREETMAP_HISTORY_LAYERS WHERE layer_class IS NULL ) GROUP BY layer_class ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 55,
+    "split": "test",
+    "sqa": "XH5",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, how are the records distributed across AD_ID_TYPE once entries with a missing category are excluded? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT AD_ID_TYPE, COUNT(*) AS cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW WHERE AD_ID NOT IN ( SELECT AD_ID FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW WHERE AD_ID_TYPE IS NULL ) GROUP BY AD_ID_TYPE ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 56,
+    "split": "test",
+    "sqa": "XH5",
+    "question": "In CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE, how are the records distributed across ZipCodeType once entries with a missing category are excluded? Give me the top 10.",
+    "db": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "sql": "SELECT ZipCodeType, COUNT(*) AS cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.LU_GEOGRAPHYEXPANDED WHERE ZipCode NOT IN ( SELECT ZipCode FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.LU_GEOGRAPHYEXPANDED WHERE ZipCodeType IS NULL ) GROUP BY ZipCodeType ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 57,
+    "split": "test",
+    "sqa": "XH5",
+    "question": "In CRYPTO, how are the records distributed across type once entries with a missing category are excluded? Give me the top 10.",
+    "db": "CRYPTO",
+    "sql": "SELECT type, COUNT(*) AS cnt FROM CRYPTO.CRYPTO_BITCOIN_INPUTS WHERE block_number NOT IN ( SELECT block_number FROM CRYPTO.CRYPTO_BITCOIN_INPUTS WHERE type IS NULL ) GROUP BY type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 58,
+    "split": "test",
+    "sqa": "XH5",
+    "question": "In EDUCATION_BUSINESS, how are the records distributed across division once entries with a missing category are excluded? Give me the top 10.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "SELECT division, COUNT(*) AS cnt FROM EDUCATION_BUSINESS.HARDWARE_DIM_PRODUCT WHERE product_code NOT IN ( SELECT product_code FROM EDUCATION_BUSINESS.HARDWARE_DIM_PRODUCT WHERE division IS NULL ) GROUP BY division ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 59,
+    "split": "test",
+    "sqa": "XH5",
+    "question": "In GA4, how are the records distributed across PLATFORM once entries with a missing category are excluded? Give me the top 10.",
+    "db": "GA4",
+    "sql": "SELECT PLATFORM, COUNT(*) AS cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 WHERE USER_PSEUDO_ID NOT IN ( SELECT USER_PSEUDO_ID FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 WHERE PLATFORM IS NULL ) GROUP BY PLATFORM ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 60,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In ADVENTUREWORKS, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "ADVENTUREWORKS",
+    "sql": "WITH d AS ( SELECT DATE(CAST(shipdate AS DATETIME)) AS day, COUNT(*) AS cnt FROM ADVENTUREWORKS.SALESORDERHEADER GROUP BY DATE(CAST(shipdate AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 61,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In AIRLINES, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "AIRLINES",
+    "sql": "WITH d AS ( SELECT DATE(CAST(book_date AS DATETIME)) AS day, COUNT(*) AS cnt FROM AIRLINES.BOOKINGS GROUP BY DATE(CAST(book_date AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 62,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In BOWLINGLEAGUE, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "BOWLINGLEAGUE",
+    "sql": "WITH d AS ( SELECT DATE(CAST(TourneyDate AS DATETIME)) AS day, COUNT(*) AS cnt FROM BOWLINGLEAGUE.TOURNAMENTS_ARCHIVE GROUP BY DATE(CAST(TourneyDate AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 63,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In DIMENSIONS_AI_COVID19, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "WITH d AS ( SELECT DATE(CAST(active_years AS DATETIME)) AS day, COUNT(*) AS cnt FROM DIMENSIONS_AI_COVID19.CLINICAL_TRIALS GROUP BY DATE(CAST(active_years AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 64,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In ECLIPSE_MEGAMOVIE, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(image_datetime / 1000000)) AS day, COUNT(*) AS cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 GROUP BY DATE(FROM_UNIXTIME(image_datetime / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 65,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In ELECTRONIC_SALES, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "WITH d AS ( SELECT DATE(CAST(order_purchase_timestamp AS DATETIME)) AS day, COUNT(*) AS cnt FROM ELECTRONIC_SALES.ORDERS GROUP BY DATE(CAST(order_purchase_timestamp AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 66,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In ETHEREUM_BLOCKCHAIN, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(block_timestamp / 1000000)) AS day, COUNT(*) AS cnt FROM ETHEREUM_BLOCKCHAIN.LOGS GROUP BY DATE(FROM_UNIXTIME(block_timestamp / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 67,
+    "split": "train",
+    "sqa": "XH6",
+    "question": "In GEO_OPENSTREETMAP_WORLDPOP, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "GEO_OPENSTREETMAP_WORLDPOP",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(osm_timestamp / 1000000)) AS day, COUNT(*) AS cnt FROM GEO_OPENSTREETMAP_WORLDPOP.GEO_OPENSTREETMAP_HISTORY_LAYERS GROUP BY DATE(FROM_UNIXTIME(osm_timestamp / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 68,
+    "split": "test",
+    "sqa": "XH6",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "WITH d AS ( SELECT DATE(CAST(TIME_CUSTOM_ATTRIBUTES AS DATETIME)) AS day, COUNT(*) AS cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_CAMPAIGNS_REVENUE_VIEW GROUP BY DATE(CAST(TIME_CUSTOM_ATTRIBUTES AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 69,
+    "split": "test",
+    "sqa": "XH6",
+    "question": "In CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "sql": "WITH d AS ( SELECT DATE(CAST(GeographyYear AS DATETIME)) AS day, COUNT(*) AS cnt FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY GROUP BY DATE(CAST(GeographyYear AS DATETIME)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 70,
+    "split": "test",
+    "sqa": "XH6",
+    "question": "In CRYPTO, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "CRYPTO",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(timestamp / 1000000)) AS day, COUNT(*) AS cnt FROM CRYPTO.CRYPTO_BITCOIN_BLOCKS GROUP BY DATE(FROM_UNIXTIME(timestamp / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 71,
+    "split": "test",
+    "sqa": "XH6",
+    "question": "In EDUCATION_BUSINESS, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(fiscal_year / 1000000)) AS day, COUNT(*) AS cnt FROM EDUCATION_BUSINESS.HARDWARE_FACT_GROSS_PRICE GROUP BY DATE(FROM_UNIXTIME(fiscal_year / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 72,
+    "split": "test",
+    "sqa": "XH6",
+    "question": "In GA4, show the daily record count together with the cumulative running total, ordered by date.",
+    "db": "GA4",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(EVENT_TIMESTAMP / 1000000)) AS day, COUNT(*) AS cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 GROUP BY DATE(FROM_UNIXTIME(EVENT_TIMESTAMP / 1000000)) ) SELECT day, cnt, SUM(cnt) OVER (ORDER BY day ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS cumulative_cnt FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 73,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In BOWLINGLEAGUE, which BowlerZip contain the most records in the top decile of BowlerGamesBowled? Give me the top 10.",
+    "db": "BOWLINGLEAGUE",
+    "sql": "WITH r AS ( SELECT BowlerZip AS loc, BowlerGamesBowled AS v, PERCENT_RANK() OVER (ORDER BY BowlerGamesBowled) AS pr FROM BOWLINGLEAGUE.BOWLERS ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 74,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In DIMENSIONS_AI_COVID19, which research_org_city_names contain the most records in the top decile of volume? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "WITH r AS ( SELECT research_org_city_names AS loc, volume AS v, PERCENT_RANK() OVER (ORDER BY volume) AS pr FROM DIMENSIONS_AI_COVID19.PUBLICATIONS ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 75,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In ECLIPSE_MEGAMOVIE, which state contain the most records in the top decile of width? Give me the top 10.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "WITH r AS ( SELECT state AS loc, width AS v, PERCENT_RANK() OVER (ORDER BY width) AS pr FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 76,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In GEO_OPENSTREETMAP_WORLDPOP, which geometry contain the most records in the top decile of osm_version? Give me the top 10.",
+    "db": "GEO_OPENSTREETMAP_WORLDPOP",
+    "sql": "WITH r AS ( SELECT geometry AS loc, osm_version AS v, PERCENT_RANK() OVER (ORDER BY osm_version) AS pr FROM GEO_OPENSTREETMAP_WORLDPOP.GEO_OPENSTREETMAP_PLANET_FEATURES_POINTS ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 77,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In NEW_YORK_GEO, which borough contain the most records in the top decile of number_of_cyclist_killed? Give me the top 10.",
+    "db": "NEW_YORK_GEO",
+    "sql": "WITH r AS ( SELECT borough AS loc, number_of_cyclist_killed AS v, PERCENT_RANK() OVER (ORDER BY number_of_cyclist_killed) AS pr FROM NEW_YORK_GEO.NEW_YORK_NYPD_MV_COLLISIONS ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 78,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In PYPI, which path contain the most records in the top decile of size? Give me the top 10.",
+    "db": "PYPI",
+    "sql": "WITH r AS ( SELECT path AS loc, size AS v, PERCENT_RANK() OVER (ORDER BY size) AS pr FROM PYPI.DISTRIBUTION_METADATA ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 79,
+    "split": "train",
+    "sqa": "XH7",
+    "question": "In ods_crm, which city contain the most records in the top decile of people_number? Give me the top 10.",
+    "db": "ods_crm",
+    "sql": "WITH r AS ( SELECT city AS loc, people_number AS v, PERCENT_RANK() OVER (ORDER BY people_number) AS pr FROM ods_crm.crm_customer ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 80,
+    "split": "test",
+    "sqa": "XH7",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, which COUNTRY contain the most records in the top decile of NUMBER_CUSTOM_ATTRIBUTES? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "WITH r AS ( SELECT COUNTRY AS loc, NUMBER_CUSTOM_ATTRIBUTES AS v, PERCENT_RANK() OVER (ORDER BY NUMBER_CUSTOM_ATTRIBUTES) AS pr FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_CAMPAIGNS_REVENUE_VIEW ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 81,
+    "split": "test",
+    "sqa": "XH7",
+    "question": "In CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE, which BlockGroupPolygon contain the most records in the top decile of AmtLand? Give me the top 10.",
+    "db": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "sql": "WITH r AS ( SELECT BlockGroupPolygon AS loc, AmtLand AS v, PERCENT_RANK() OVER (ORDER BY AmtLand) AS pr FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.DIM_CENSUSGEOGRAPHY ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 82,
+    "split": "test",
+    "sqa": "XH7",
+    "question": "In CRYPTO, which addresses contain the most records in the top decile of required_signatures? Give me the top 10.",
+    "db": "CRYPTO",
+    "sql": "WITH r AS ( SELECT addresses AS loc, required_signatures AS v, PERCENT_RANK() OVER (ORDER BY required_signatures) AS pr FROM CRYPTO.CRYPTO_BITCOIN_INPUTS ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 83,
+    "split": "test",
+    "sqa": "XH7",
+    "question": "In EDUCATION_BUSINESS, which Location contain the most records in the top decile of SalariesReported? Give me the top 10.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "WITH r AS ( SELECT Location AS loc, SalariesReported AS v, PERCENT_RANK() OVER (ORDER BY SalariesReported) AS pr FROM EDUCATION_BUSINESS.SALARYDATASET ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 84,
+    "split": "test",
+    "sqa": "XH7",
+    "question": "In ods_szkjglxm, which storage_location contain the most records in the top decile of attachment_size? Give me the top 10.",
+    "db": "ods_szkjglxm",
+    "sql": "WITH r AS ( SELECT storage_location AS loc, attachment_size AS v, PERCENT_RANK() OVER (ORDER BY attachment_size) AS pr FROM ods_szkjglxm.sys_attachment ) SELECT loc, COUNT(*) AS top_decile_cnt FROM r WHERE pr >= 0.9 GROUP BY loc ORDER BY top_decile_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 85,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In ADVENTUREWORKS, which productmodelid span at least 3 distinct class? Give me the top 10.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT productmodelid, COUNT(DISTINCT class) AS topic_cnt FROM ADVENTUREWORKS.PRODUCT GROUP BY productmodelid HAVING COUNT(DISTINCT class) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 86,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In AIRLINES, which flight_id span at least 3 distinct fare_conditions? Give me the top 10.",
+    "db": "AIRLINES",
+    "sql": "SELECT flight_id, COUNT(DISTINCT fare_conditions) AS topic_cnt FROM AIRLINES.TICKET_FLIGHTS GROUP BY flight_id HAVING COUNT(DISTINCT fare_conditions) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 87,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In BOWLINGLEAGUE, which TourneyID span at least 3 distinct Lanes? Give me the top 10.",
+    "db": "BOWLINGLEAGUE",
+    "sql": "SELECT TourneyID, COUNT(DISTINCT Lanes) AS topic_cnt FROM BOWLINGLEAGUE.TOURNEY_MATCHES_ARCHIVE GROUP BY TourneyID HAVING COUNT(DISTINCT Lanes) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 88,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In DIMENSIONS_AI_COVID19, which repository_id span at least 3 distinct category_for? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT repository_id, COUNT(DISTINCT category_for) AS topic_cnt FROM DIMENSIONS_AI_COVID19.DATASETS GROUP BY repository_id HAVING COUNT(DISTINCT category_for) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 89,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In ELECTRONIC_SALES, which order_id span at least 3 distinct payment_type? Give me the top 10.",
+    "db": "ELECTRONIC_SALES",
+    "sql": "SELECT order_id, COUNT(DISTINCT payment_type) AS topic_cnt FROM ELECTRONIC_SALES.ORDER_PAYMENTS GROUP BY order_id HAVING COUNT(DISTINCT payment_type) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 90,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In ETHEREUM_BLOCKCHAIN, which to_address span at least 3 distinct call_type? Give me the top 10.",
+    "db": "ETHEREUM_BLOCKCHAIN",
+    "sql": "SELECT to_address, COUNT(DISTINCT call_type) AS topic_cnt FROM ETHEREUM_BLOCKCHAIN.TRACES GROUP BY to_address HAVING COUNT(DISTINCT call_type) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 91,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In NEW_YORK_GEO, which end_station_id span at least 3 distinct usertype? Give me the top 10.",
+    "db": "NEW_YORK_GEO",
+    "sql": "SELECT end_station_id, COUNT(DISTINCT usertype) AS topic_cnt FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_TRIPS GROUP BY end_station_id HAVING COUNT(DISTINCT usertype) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 92,
+    "split": "train",
+    "sqa": "XH8",
+    "question": "In PYPI, which provides span at least 3 distinct classifiers? Give me the top 10.",
+    "db": "PYPI",
+    "sql": "SELECT provides, COUNT(DISTINCT classifiers) AS topic_cnt FROM PYPI.DISTRIBUTION_METADATA GROUP BY provides HAVING COUNT(DISTINCT classifiers) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 93,
+    "split": "test",
+    "sqa": "XH8",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, which APP_ID span at least 3 distinct AD_ID_TYPE? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT APP_ID, COUNT(DISTINCT AD_ID_TYPE) AS topic_cnt FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW GROUP BY APP_ID HAVING COUNT(DISTINCT AD_ID_TYPE) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 94,
+    "split": "test",
+    "sqa": "XH8",
+    "question": "In CRYPTO, which spent_transaction_hash span at least 3 distinct type? Give me the top 10.",
+    "db": "CRYPTO",
+    "sql": "SELECT spent_transaction_hash, COUNT(DISTINCT type) AS topic_cnt FROM CRYPTO.CRYPTO_BITCOIN_INPUTS GROUP BY spent_transaction_hash HAVING COUNT(DISTINCT type) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 95,
+    "split": "test",
+    "sqa": "XH8",
+    "question": "In EDUCATION_BUSINESS, which account_id span at least 3 distinct channel? Give me the top 10.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "SELECT account_id, COUNT(DISTINCT channel) AS topic_cnt FROM EDUCATION_BUSINESS.WEB_EVENTS GROUP BY account_id HAVING COUNT(DISTINCT channel) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 96,
+    "split": "test",
+    "sqa": "XH8",
+    "question": "In GA4, which STREAM_ID span at least 3 distinct PLATFORM? Give me the top 10.",
+    "db": "GA4",
+    "sql": "SELECT STREAM_ID, COUNT(DISTINCT PLATFORM) AS topic_cnt FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 GROUP BY STREAM_ID HAVING COUNT(DISTINCT PLATFORM) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 97,
+    "split": "test",
+    "sqa": "XH8",
+    "question": "In ods_szkjglxm, which tech_uuid span at least 3 distinct type? Give me the top 10.",
+    "db": "ods_szkjglxm",
+    "sql": "SELECT tech_uuid, COUNT(DISTINCT type) AS topic_cnt FROM ods_szkjglxm.co_partner_capability GROUP BY tech_uuid HAVING COUNT(DISTINCT type) >= 3 ORDER BY topic_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 98,
+    "split": "train",
+    "sqa": "XH9",
+    "question": "In ADVENTUREWORKS, which NAME accumulate a total listprice more than a hundred times the overall average? Give me the top 10.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT NAME, SUM(listprice) AS total FROM ADVENTUREWORKS.PRODUCT GROUP BY NAME HAVING SUM(listprice) > ( SELECT AVG(listprice) * 100 FROM ADVENTUREWORKS.PRODUCT ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 99,
+    "split": "train",
+    "sqa": "XH9",
+    "question": "In DIMENSIONS_AI_COVID19, which title accumulate a total funding_amount more than a hundred times the overall average? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT title, SUM(funding_amount) AS total FROM DIMENSIONS_AI_COVID19.GRANTS GROUP BY title HAVING SUM(funding_amount) > ( SELECT AVG(funding_amount) * 100 FROM DIMENSIONS_AI_COVID19.GRANTS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 100,
+    "split": "train",
+    "sqa": "XH9",
+    "question": "In ECLIPSE_MEGAMOVIE, which FIELDNAME accumulate a total RADIUS more than a hundred times the overall average? Give me the top 10.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "SELECT FIELDNAME, SUM(RADIUS) AS total FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 GROUP BY FIELDNAME HAVING SUM(RADIUS) > ( SELECT AVG(RADIUS) * 100 FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 101,
+    "split": "train",
+    "sqa": "XH9",
+    "question": "In ods_crm, which company_name accumulate a total contract_total_amount more than a hundred times the overall average? Give me the top 10.",
+    "db": "ods_crm",
+    "sql": "SELECT company_name, SUM(contract_total_amount) AS total FROM ods_crm.crm_account_receivable GROUP BY company_name HAVING SUM(contract_total_amount) > ( SELECT AVG(contract_total_amount) * 100 FROM ods_crm.crm_account_receivable ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 102,
+    "split": "test",
+    "sqa": "XH9",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, which DEVICE_MODEL accumulate a total PRICE more than a hundred times the overall average? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT DEVICE_MODEL, SUM(PRICE) AS total FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_PURCHASE_VIEW GROUP BY DEVICE_MODEL HAVING SUM(PRICE) > ( SELECT AVG(PRICE) * 100 FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_PURCHASE_VIEW ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 103,
+    "split": "test",
+    "sqa": "XH9",
+    "question": "In EDUCATION_BUSINESS, which JobTitle accumulate a total Salary more than a hundred times the overall average? Give me the top 10.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "SELECT JobTitle, SUM(Salary) AS total FROM EDUCATION_BUSINESS.SALARYDATASET GROUP BY JobTitle HAVING SUM(Salary) > ( SELECT AVG(Salary) * 100 FROM EDUCATION_BUSINESS.SALARYDATASET ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 104,
+    "split": "test",
+    "sqa": "XH9",
+    "question": "In GA4, which DEVICE accumulate a total EVENT_VALUE_IN_USD more than a hundred times the overall average? Give me the top 10.",
+    "db": "GA4",
+    "sql": "SELECT DEVICE, SUM(EVENT_VALUE_IN_USD) AS total FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 GROUP BY DEVICE HAVING SUM(EVENT_VALUE_IN_USD) > ( SELECT AVG(EVENT_VALUE_IN_USD) * 100 FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 105,
+    "split": "test",
+    "sqa": "XH9",
+    "question": "In ods_szkjglxm, which project_name accumulate a total cost_amount more than a hundred times the overall average? Give me the top 10.",
+    "db": "ods_szkjglxm",
+    "sql": "SELECT project_name, SUM(cost_amount) AS total FROM ods_szkjglxm.dw_cockpit_project GROUP BY project_name HAVING SUM(cost_amount) > ( SELECT AVG(cost_amount) * 100 FROM ods_szkjglxm.dw_cockpit_project ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 106,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In ADVENTUREWORKS, for each countryregioncode, how do the records split across group, and what share does each combination take within its location? Give me the top 10.",
+    "db": "ADVENTUREWORKS",
+    "sql": "SELECT countryregioncode, group, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY countryregioncode) AS share_in_location FROM ADVENTUREWORKS.SALESTERRITORY GROUP BY countryregioncode, group ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 107,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In AIRLINES, for each city, how do the records split across timezone, and what share does each combination take within its location? Give me the top 10.",
+    "db": "AIRLINES",
+    "sql": "SELECT city, timezone, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY city) AS share_in_location FROM AIRLINES.AIRPORTS_DATA GROUP BY city, timezone ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 108,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In DIMENSIONS_AI_COVID19, for each research_org_state_codes, how do the records split across category_for, and what share does each combination take within its location? Give me the top 10.",
+    "db": "DIMENSIONS_AI_COVID19",
+    "sql": "SELECT research_org_state_codes, category_for, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY research_org_state_codes) AS share_in_location FROM DIMENSIONS_AI_COVID19.DATASETS GROUP BY research_org_state_codes, category_for ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 109,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In ECLIPSE_MEGAMOVIE, for each state, how do the records split across image_type, and what share does each combination take within its location? Give me the top 10.",
+    "db": "ECLIPSE_MEGAMOVIE",
+    "sql": "SELECT state, image_type, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY state) AS share_in_location FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_1 GROUP BY state, image_type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 110,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In GEO_OPENSTREETMAP_WORLDPOP, for each geometry, how do the records split across layer_class, and what share does each combination take within its location? Give me the top 10.",
+    "db": "GEO_OPENSTREETMAP_WORLDPOP",
+    "sql": "SELECT geometry, layer_class, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY geometry) AS share_in_location FROM GEO_OPENSTREETMAP_WORLDPOP.GEO_OPENSTREETMAP_HISTORY_LAYERS GROUP BY geometry, layer_class ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 111,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In NEW_YORK_GEO, for each zip_city, how do the records split across user_type, and what share does each combination take within its location? Give me the top 10.",
+    "db": "NEW_YORK_GEO",
+    "sql": "SELECT zip_city, user_type, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY zip_city) AS share_in_location FROM NEW_YORK_GEO.NEW_YORK_TREE_CENSUS_2015 GROUP BY zip_city, user_type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 112,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In PYPI, for each path, how do the records split across classifiers, and what share does each combination take within its location? Give me the top 10.",
+    "db": "PYPI",
+    "sql": "SELECT path, classifiers, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY path) AS share_in_location FROM PYPI.DISTRIBUTION_METADATA GROUP BY path, classifiers ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 113,
+    "split": "train",
+    "sqa": "XH10",
+    "question": "In ods_crm, for each region, how do the records split across biz_sector, and what share does each combination take within its location? Give me the top 10.",
+    "db": "ods_crm",
+    "sql": "SELECT region, biz_sector, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY region) AS share_in_location FROM ods_crm.crm_biz_chance GROUP BY region, biz_sector ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 114,
+    "split": "test",
+    "sqa": "XH10",
+    "question": "In BRAZE_USER_EVENT_DEMO_DATASET, for each COUNTRY, how do the records split across AD_ID_TYPE, and what share does each combination take within its location? Give me the top 10.",
+    "db": "BRAZE_USER_EVENT_DEMO_DATASET",
+    "sql": "SELECT COUNTRY, AD_ID_TYPE, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY COUNTRY) AS share_in_location FROM BRAZE_USER_EVENT_DEMO_DATASET.USERS_BEHAVIORS_CUSTOMEVENT_VIEW GROUP BY COUNTRY, AD_ID_TYPE ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 115,
+    "split": "test",
+    "sqa": "XH10",
+    "question": "In CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE, for each PreferredCityStateAbbrev, how do the records split across ZipCodeType, and what share does each combination take within its location? Give me the top 10.",
+    "db": "CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE",
+    "sql": "SELECT PreferredCityStateAbbrev, ZipCodeType, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY PreferredCityStateAbbrev) AS share_in_location FROM CENSUS_GALAXY__AIML_MODEL_DATA_ENRICHMENT_SAMPLE.LU_GEOGRAPHYEXPANDED GROUP BY PreferredCityStateAbbrev, ZipCodeType ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 116,
+    "split": "test",
+    "sqa": "XH10",
+    "question": "In CRYPTO, for each addresses, how do the records split across type, and what share does each combination take within its location? Give me the top 10.",
+    "db": "CRYPTO",
+    "sql": "SELECT addresses, type, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY addresses) AS share_in_location FROM CRYPTO.CRYPTO_BITCOIN_INPUTS GROUP BY addresses, type ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 117,
+    "split": "test",
+    "sqa": "XH10",
+    "question": "In EDUCATION_BUSINESS, for each FacCity, how do the records split across FacDept, and what share does each combination take within its location? Give me the top 10.",
+    "db": "EDUCATION_BUSINESS",
+    "sql": "SELECT FacCity, FacDept, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY FacCity) AS share_in_location FROM EDUCATION_BUSINESS.UNIVERSITY_FACULTY GROUP BY FacCity, FacDept ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 118,
+    "split": "test",
+    "sqa": "XH10",
+    "question": "In GA4, for each GEO, how do the records split across PLATFORM, and what share does each combination take within its location? Give me the top 10.",
+    "db": "GA4",
+    "sql": "SELECT GEO, PLATFORM, COUNT(*) AS cnt, CAST(COUNT(*) AS DOUBLE) / SUM(COUNT(*)) OVER (PARTITION BY GEO) AS share_in_location FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20201101 GROUP BY GEO, PLATFORM ORDER BY cnt DESC LIMIT 10;"
+  }
+]

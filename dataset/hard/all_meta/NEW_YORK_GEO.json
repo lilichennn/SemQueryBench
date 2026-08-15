@@ -1,0 +1,4140 @@
+{
+    "GEO_US_BOUNDARIES_ADJACENT_COUNTIES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"19165\",\n  \"19001\",\n  \"19077\",\n  \"19047\",\n  \"19029\",\n  \"19027\"\n]"
+            },
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19009"
+            },
+            {
+                "col_name": "neighbors",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Shelby\",\n  \"Adair\",\n  \"Guthrie\",\n  \"Crawford\",\n  \"Cass\",\n  \"Carroll\"\n]"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\"\n]"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Iowa"
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Audubon County"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ADJACENT_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AL"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01"
+            },
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"12\",\n  \"13\",\n  \"28\",\n  \"47\"\n]"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Alabama"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Florida\",\n  \"Georgia\",\n  \"Mississippi\",\n  \"Tennessee\"\n]"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CBSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "31420"
+            },
+            {
+                "col_name": "csa_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "356"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M1"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3110"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "31420"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Macon-Bibb County, GA"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 36457662.0
+            },
+            {
+                "col_name": "cbsa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xb1\\x15\\x00\\x00v-!\\x1f\\xf4\\x07U\\xc0P\\xf6\\x96r\\xbel@"
+            },
+            {
+                "col_name": "msa_indicator",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 4464115654.0
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xa2\\x97Q,\\xb7\\xedT\\xc0\\xacf\\xe7~\\x98m@@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Macon-Bibb County, GA Metro Area"
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -83.714305
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 32.8562163
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COASTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "coastline_geom",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x0e\\x00\\x00\\x00\\xea\\xe1\\xcbD\\x11\\xf9R\\xc0\\xc7\\x83-v\\xfb\\xeeB@\\xea\\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Atlantic"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3624"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "36"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x008\\x10\\x00\\x00\\xbb\\x00\\xfb\\xe8\\xd4XS\\xc0E\\x82\\xa9f\\xd"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3271976203
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xcd/\\x94]z)S\\xc0q[\\x00\\xbf\\xeb\\x9aE@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 24"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6186354160
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -76.6480936
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.2103194
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_116": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3624"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "36"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x008\\x10\\x00\\x00\\xbb\\x00\\xfb\\xe8\\xd4XS\\xc0E\\x82\\xa9f\\xd"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3271976203
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xcd/\\x94]z)S\\xc0q[\\x00\\xbf\\xeb\\x9aE@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 24"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6186354160
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -76.6480936
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.2103194
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COUNTIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "11540"
+            },
+            {
+                "col_name": "county_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01581062"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06"
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "H1"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G4020"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55005"
+            },
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55005"
+            },
+            {
+                "col_name": "csa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "118"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55"
+            },
+            {
+                "col_name": "met_div_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -91.8528921
+            },
+            {
+                "col_name": "county_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xa6\\x04\\x00\\x000\\xd2\\x8b\\xda\\xfd\\tW\\xc0\\xd3($\\x99\\x"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Barron County"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\x13!\\xbf\\xc8\\x95\\xf6V\\xc0\\x94\\xca\\xca\\xe5\\xf5\\xb7F@')"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 69209178
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2235266753
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Barron"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 45.4371917
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "msa_lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M0"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3100"
+            },
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -86.7482873
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xc7`j\\xf0\\xe3\\xafU\\xc05Lm\\xa9\\x83\\xc3@@')"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 33.5274555
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL CSA"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 347190038.0
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 17485172162.0
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL"
+            },
+            {
+                "col_name": "csa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xc4\\x18\\x00\\x006\\xe34D\\x15\\xd1U\\xc0\\xc2\\x15P\\xa8\\xa"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_METROPOLITAN_DIVISIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "148"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3120"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1446015764"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "cbsa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "14460"
+            },
+            {
+                "col_name": "metdiv_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "15764"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3393834889.0
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cambridge-Newton-Framingham, MA"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xc4\\xa6\\xdf\\xcf:\\xc8Q\\xc0\\x92\\x04\\xe1\\n(HE@')"
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 42.563722
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 945500871.0
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -71.1285896
+            },
+            {
+                "col_name": "metdiv_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x97\\x14\\x00\\x00\\n+\\x15TT\\xd0Q\\xc0u\\xde\\xc6fG^E@\\xb1"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Cambridge-Newton-Framingham, MA Metro Division"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NATIONAL_OUTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "aff_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "us_outline_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NWS_FORECAST_REGIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "fe_area",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "nw"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Floyd"
+            },
+            {
+                "col_name": "cwa",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "LUB"
+            },
+            {
+                "col_name": "shape_geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00%\\x00\\x00\\x00\\xb8\\'\\x00\\xe0\\xa7FY\\xc0(\\xa2\\x00\\xa0\\x"
+            },
+            {
+                "col_name": "shortname",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Floyd"
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -101.3032
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TX"
+            },
+            {
+                "col_name": "state_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TX030"
+            },
+            {
+                "col_name": "zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "030"
+            },
+            {
+                "col_name": "time_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 34.0724
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_RAILWAYS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 110168314233
+            },
+            {
+                "col_name": "railway_geom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"LineString\",\"coordinates\":[[-86.88663299999998,41.08432899999999],[-86.886527,41.0825389999"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "R1011"
+            },
+            {
+                "col_name": "full_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Louisville and Nashville RR"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66"
+            },
+            {
+                "col_name": "state_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01802705"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GU"
+            },
+            {
+                "col_name": "division_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 934337453
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 144.7719021
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xd7f\\x08l\\xb3\\x18b@%V\\xebi,\\xe2*@')"
+            },
+            {
+                "col_name": "region_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 543555844
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Guam"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 13.4417451
+            },
+            {
+                "col_name": "state_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00`\\x02\\x00\\x00\\xe7v\\xf6\\x95\\x07\\x12b@\\xe8\\xf6\\x92\\xc6"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G4000"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "00"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_URBAN_AREAS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "34543"
+            },
+            {
+                "col_name": "urban_area_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "34543"
+            },
+            {
+                "col_name": "area_lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "76"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3500"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x000OBDE\\x1d\\\\\\xc0\\xe5\\xe5\\xfa\\x88\\xa9KD@')"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.5911113
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -112.4573527
+            },
+            {
+                "col_name": "urban_area_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\\x02\\x00\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x007\\x00\\x00\\x00 \\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Grantsville, UT"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Grantsville, UT Urban Cluster"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 9771351.0
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ZIP_CODES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24918"
+            },
+            {
+                "col_name": "state_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "WV"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "54"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 113057951.0
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.5223096
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "B5"
+            },
+            {
+                "col_name": "zip_code_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xf6\\x0c\\x00\\x00\\xcff\\xd5\\xe7j4T\\xc0\\xbb\\xac\\x89\\x05"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 363598.0
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Monroe"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "West Virginia"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xd8\\xf5f/\\xb6/T\\xc0\\x841}\\n\\xdb\\xc2B@')"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G6350"
+            },
+            {
+                "col_name": "city",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Ballard"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -80.7454947
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CNECTA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "cnecta_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "lsad",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "M4"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3200"
+            },
+            {
+                "col_name": "cnecta_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xe9\\x1c\\x00\\x00\\xdca\\x13\\x99\\xb9\\x9eQ\\xc0\\xe5u\\xc4!"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.8562034
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -70.3192682
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1537827560
+            },
+            {
+                "col_name": "name_lsad",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME Combined NECTA"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6254813062
+            }
+        ]
+    },
+    "NEW_YORK_CITIBIKE_STATIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "region_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 71
+            },
+            {
+                "col_name": "station_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "495"
+            },
+            {
+                "col_name": "eightd_has_available_keys",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "num_docks_available",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.76269882
+            },
+            {
+                "col_name": "is_installed",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "W 47 St & 10 Ave"
+            },
+            {
+                "col_name": "num_bikes_available",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "is_renting",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "num_bikes_disabled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "num_docks_disabled",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "short_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "6824.07"
+            },
+            {
+                "col_name": "last_reported",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 86400000000
+            },
+            {
+                "col_name": "rental_methods",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "KEY, CREDITCARD"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.99301222
+            },
+            {
+                "col_name": "capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "eightd_has_key_dispenser",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "is_returning",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            }
+        ]
+    },
+    "NEW_YORK_CITIBIKE_TRIPS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "bikeid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 18662
+            },
+            {
+                "col_name": "start_station_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Washington Pl & Broadway"
+            },
+            {
+                "col_name": "start_station_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 335
+            },
+            {
+                "col_name": "gender",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "male"
+            },
+            {
+                "col_name": "tripduration",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 595
+            },
+            {
+                "col_name": "end_station_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "E 24 St & Park Ave S"
+            },
+            {
+                "col_name": "stoptime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1394748367000000
+            },
+            {
+                "col_name": "start_station_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.72903917
+            },
+            {
+                "col_name": "usertype",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Subscriber"
+            },
+            {
+                "col_name": "end_station_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 491
+            },
+            {
+                "col_name": "birth_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1986
+            },
+            {
+                "col_name": "starttime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1394747772000000
+            },
+            {
+                "col_name": "end_station_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.98602213
+            },
+            {
+                "col_name": "start_station_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.99404649
+            },
+            {
+                "col_name": "end_station_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.74096374
+            }
+        ]
+    },
+    "NEW_YORK_NYPD_MV_COLLISIONS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "unique_key",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 3324059
+            },
+            {
+                "col_name": "borough",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "BROOKLYN"
+            },
+            {
+                "col_name": "number_of_pedestrians_killed",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "number_of_motorist_injured",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "number_of_pedestrians_injured",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "cross_street_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MYRTLE AVENUE"
+            },
+            {
+                "col_name": "contributing_factor_vehicle_5",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "number_of_cyclist_injured",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "contributing_factor_vehicle_4",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "vehicle_type_code2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "SPORT UTILITY / STATION WAGON"
+            },
+            {
+                "col_name": "contributing_factor_vehicle_2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Unspecified"
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(40.6950048, -73.9524886)"
+            },
+            {
+                "col_name": "number_of_cyclist_killed",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "vehicle_type_code_4",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "number_of_persons_killed",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.6950048
+            },
+            {
+                "col_name": "vehicle_type_code_3",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "TAXI"
+            },
+            {
+                "col_name": "vehicle_type_code1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "PASSENGER VEHICLE"
+            },
+            {
+                "col_name": "zip_code",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 11205
+            },
+            {
+                "col_name": "vehicle_type_code_5",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "contributing_factor_vehicle_1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Unspecified"
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1445731500000000
+            },
+            {
+                "col_name": "on_street_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "NOSTRAND AVENUE"
+            },
+            {
+                "col_name": "number_of_persons_injured",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.9524886
+            },
+            {
+                "col_name": "number_of_motorist_killed",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "off_street_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "contributing_factor_vehicle_3",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Unspecified"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_FHV_TRIPS_2015": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "location_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "dispatching_base_num",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B00001"
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1447670700000000
+            },
+            {
+                "col_name": "zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "borough",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "service_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "NEW_YORK_TLC_FHV_TRIPS_2016": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "location_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "dispatching_base_num",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "B00001"
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1447670700000000
+            },
+            {
+                "col_name": "zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "borough",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "service_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "NEW_YORK_TLC_GREEN_TRIPS_2013": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ehail_fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.5
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385660264000000
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.76266860961914
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385659112000000
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20.5
+            },
+            {
+                "col_name": "time_between_service",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95039367675781
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "distance_between_service",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95986938476562
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.5
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "trip_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.785709381103516
+            }
+        ]
+    },
+    "NEW_YORK_TLC_GREEN_TRIPS_2014": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ehail_fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.5
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385660264000000
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.76266860961914
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385659112000000
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20.5
+            },
+            {
+                "col_name": "time_between_service",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95039367675781
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "distance_between_service",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95986938476562
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.5
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "trip_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.785709381103516
+            }
+        ]
+    },
+    "NEW_YORK_TLC_GREEN_TRIPS_2015": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ehail_fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.5
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385660264000000
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.76266860961914
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385659112000000
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20.5
+            },
+            {
+                "col_name": "time_between_service",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95039367675781
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "distance_between_service",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95986938476562
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.5
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "trip_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.785709381103516
+            }
+        ]
+    },
+    "NEW_YORK_TLC_GREEN_TRIPS_2016": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "ehail_fee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.5
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385660264000000
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.76266860961914
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1385659112000000
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 20.5
+            },
+            {
+                "col_name": "time_between_service",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95039367675781
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 16.0
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "distance_between_service",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.95986938476562
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.5
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "trip_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.785709381103516
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2009": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2010": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2011": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2012": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2013": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2014": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2015": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TLC_YELLOW_TRIPS_2016": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "mta_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "dropoff_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249557611000000
+            },
+            {
+                "col_name": "fare_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 10.9
+            },
+            {
+                "col_name": "tolls_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 13.05
+            },
+            {
+                "col_name": "pickup_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.751204
+            },
+            {
+                "col_name": "imp_surcharge",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "passenger_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "payment_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "CREDIT"
+            },
+            {
+                "col_name": "trip_distance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3.0
+            },
+            {
+                "col_name": "tip_amount",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 2.15
+            },
+            {
+                "col_name": "extra",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "rate_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "pickup_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.994047
+            },
+            {
+                "col_name": "dropoff_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.776694
+            },
+            {
+                "col_name": "pickup_datetime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1249556575000000
+            },
+            {
+                "col_name": "store_and_fwd_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "dropoff_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.962944
+            },
+            {
+                "col_name": "vendor_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "DDS"
+            }
+        ]
+    },
+    "NEW_YORK_TREE_CENSUS_1995": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "recordid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 32660
+            },
+            {
+                "col_name": "segmentid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "zip_new",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "censustract_2010",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "borough",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Manhattan"
+            },
+            {
+                "col_name": "diameter",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11
+            },
+            {
+                "col_name": "spc_latin",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "QUERCUS PHELLOS"
+            },
+            {
+                "col_name": "house_number",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "767.0"
+            },
+            {
+                "col_name": "sidewalk_condition",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Good"
+            },
+            {
+                "col_name": "street",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "1 AV"
+            },
+            {
+                "col_name": "nta_2010",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Unknown"
+            },
+            {
+                "col_name": "censusblock_2010",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "species",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "QUPH"
+            },
+            {
+                "col_name": "cb_original",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "zip_original",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "y",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(1.0, 1.0)"
+            },
+            {
+                "col_name": "x",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Good"
+            },
+            {
+                "col_name": "spc_common",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "OAK, WILLOW"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "870/860 1 AV"
+            },
+            {
+                "col_name": "site",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Across"
+            },
+            {
+                "col_name": "support_structure",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "None"
+            },
+            {
+                "col_name": "cb_new",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "wires",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "None"
+            }
+        ]
+    },
+    "NEW_YORK_TREE_CENSUS_2005": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "objectid",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 1090639
+            },
+            {
+                "col_name": "objectid_1",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 498266
+            },
+            {
+                "col_name": "sidw_raise",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "location_1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(0, 0)"
+            },
+            {
+                "col_name": "wire_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "pit_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Lawn"
+            },
+            {
+                "col_name": "spc_common",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "OAK, PIN"
+            },
+            {
+                "col_name": "vert_wall",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "wire_2nd",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "borocode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "spc_latin",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "QUERCUS PALUSTRIS"
+            },
+            {
+                "col_name": "cb_num",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "zip_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "inf_wires",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "nta_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "inf_paving",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "inf_lights",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "inf_guard",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "vert_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Good"
+            },
+            {
+                "col_name": "sidw_crack",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "nta",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "soil_lvl",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Level"
+            },
+            {
+                "col_name": "st_assem",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "st_senate",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "boro_ct",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "horz_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "vert_tgrd",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "inf_canopy",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "horz_plant",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "inf_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "tree_loc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Assigned"
+            },
+            {
+                "col_name": "cncldist",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "trunk_dmg",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "None"
+            },
+            {
+                "col_name": "wire_prime",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "x_sp",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "inf_shoes",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "tree_dbh",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "vert_pgrd",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "wire_htap",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "y_sp",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "horz_grate",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "zipcode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "boroname",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "5"
+            },
+            {
+                "col_name": "inf_outlet",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "horz_blck",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "cen_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            }
+        ]
+    },
+    "NEW_YORK_TREE_CENSUS_2015": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "boro_ct",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4016900
+            },
+            {
+                "col_name": "st_assem",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 37
+            },
+            {
+                "col_name": "st_senate",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 12
+            },
+            {
+                "col_name": "borocode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "tree_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 216053
+            },
+            {
+                "col_name": "cncldist",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 26
+            },
+            {
+                "col_name": "cb_num",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 402
+            },
+            {
+                "col_name": "nta",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "QN31"
+            },
+            {
+                "col_name": "health",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "boroname",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Queens"
+            },
+            {
+                "col_name": "root_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "problems",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "y_sp",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 212243.983
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.91678727
+            },
+            {
+                "col_name": "trunk_wire",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "nta_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Hunters Point-Sunnyside-West Maspeth"
+            },
+            {
+                "col_name": "stump_diam",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "x_sp",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 1007306.261
+            },
+            {
+                "col_name": "block_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "NUMBER",
+                "sample_value": 304155
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New York"
+            },
+            {
+                "col_name": "zip_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Sunnyside"
+            },
+            {
+                "col_name": "brch_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "user_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Volunteer"
+            },
+            {
+                "col_name": "address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "46-020 39 AVENUE"
+            },
+            {
+                "col_name": "trnk_light",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "zipcode",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 11104
+            },
+            {
+                "col_name": "root_grate",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "spc_common",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "brch_shoe",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "spc_latin",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Dead"
+            },
+            {
+                "col_name": "steward",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "guards",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "root_stone",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "sidewalk",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "created_at",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2015-09-11"
+            },
+            {
+                "col_name": "curb_loc",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "OnCurb"
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.74920717
+            },
+            {
+                "col_name": "brch_light",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "trnk_other",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "No"
+            },
+            {
+                "col_name": "tree_dbh",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            }
+        ]
+    },
+    "NEW_YORK_TREE_SPECIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "species_common_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Japanese Flowering Cherry"
+            },
+            {
+                "col_name": "form",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Rounded"
+            },
+            {
+                "col_name": "tree_size",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Small (Mature Height < 25 ft)"
+            },
+            {
+                "col_name": "growth_rate",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Slow"
+            },
+            {
+                "col_name": "location_tolerances",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Small Tree Pit (<3 ft)"
+            },
+            {
+                "col_name": "fall_color",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Red/Orange"
+            },
+            {
+                "col_name": "environmental_tolerances",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "none"
+            },
+            {
+                "col_name": "species_scientific_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Prunus serrulata 'Kwanzan'"
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "notes_suggested_cultivars",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Double–flowering"
+            }
+        ]
+    },
+    "NEW_YORK__311_SERVICE_REQUESTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "bbl",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 4014810038.0
+            },
+            {
+                "col_name": "unique_key",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 40254825
+            },
+            {
+                "col_name": "agency",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NYPD"
+            },
+            {
+                "col_name": "park_facility_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Unspecified"
+            },
+            {
+                "col_name": "location_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Street/Sidewalk"
+            },
+            {
+                "col_name": "facility_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Precinct"
+            },
+            {
+                "col_name": "cross_street_1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "ELMHURST AVENUE"
+            },
+            {
+                "col_name": "bridge_highway_segment",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "due_date",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "NUMBER",
+                "sample_value": 1536784123000000
+            },
+            {
+                "col_name": "taxi_pickup_location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.75041349262669
+            },
+            {
+                "col_name": "city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "JACKSON HEIGHTS"
+            },
+            {
+                "col_name": "x_coordinate",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 1019418
+            },
+            {
+                "col_name": "incident_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "37-50 94 STREET"
+            },
+            {
+                "col_name": "bridge_highway_direction",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "created_date",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1536755323000000
+            },
+            {
+                "col_name": "closed_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1536773616000000
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -73.87307226941788
+            },
+            {
+                "col_name": "location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "(40.750413492626684, -73.87307226941788)"
+            },
+            {
+                "col_name": "resolution_action_updated_date",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1536773616000000
+            },
+            {
+                "col_name": "bridge_highway_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "taxi_company_borough",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "road_ramp",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "open_data_channel_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "PHONE"
+            },
+            {
+                "col_name": "borough",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "QUEENS"
+            },
+            {
+                "col_name": "resolution_description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "The Police Department responded to the complaint and with the information available observed no evid"
+            },
+            {
+                "col_name": "vehicle_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "agency_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "New York City Police Department"
+            },
+            {
+                "col_name": "complaint_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Blocked Driveway"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "Closed"
+            },
+            {
+                "col_name": "y_coordinate",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": 212698
+            },
+            {
+                "col_name": "cross_street_2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "ROOSEVELT AVENUE"
+            },
+            {
+                "col_name": "incident_zip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "11372"
+            },
+            {
+                "col_name": "community_board",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "03 QUEENS"
+            },
+            {
+                "col_name": "descriptor",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "No Access"
+            },
+            {
+                "col_name": "landmark",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "intersection_street_2",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "34 AVENUE"
+            },
+            {
+                "col_name": "intersection_street_1",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "79 STREET"
+            },
+            {
+                "col_name": "park_borough",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "QUEENS"
+            },
+            {
+                "col_name": "street_name",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "94 STREET"
+            },
+            {
+                "col_name": "address_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "ADDRESS"
+            }
+        ]
+    }
+}

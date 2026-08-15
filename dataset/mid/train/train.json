@@ -782,5 +782,306 @@
     "question": "I would like to see which energy categories mainly accumulate monthly commodity volume records across different regions, to check if there are obvious regional distribution differences. Only consider region–energy category combinations with at least 10 records, and first provide the top 20.",
     "evidence": "",
     "SQL": "SELECT t.DATA_REGION AS location, t.ENERGY_SORT AS category_topic, COUNT(*) AS event_cnt FROM DataManagementPlatform.原油商品量月动态表 t WHERE t.DATA_REGION IS NOT NULL AND t.ENERGY_SORT IS NOT NULL GROUP BY t.DATA_REGION, t.ENERGY_SORT HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 254,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In COMPLEX_ORACLE, how many distinct prod_id records fall under each prod_weight_class tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT prod_weight_class, COUNT(DISTINCT prod_id) AS entity_cnt FROM COMPLEX_ORACLE.PRODUCTS GROUP BY prod_weight_class ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 255,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, how many distinct PRIMARY_ID records fall under each DISPLAY_ORDER tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT DISPLAY_ORDER, COUNT(DISTINCT PRIMARY_ID) AS entity_cnt FROM `DataManagementPlatform`.`LNG-日指定` GROUP BY DISPLAY_ORDER ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 256,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, how many distinct id records fall under each stage tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT stage, COUNT(DISTINCT id) AS entity_cnt FROM EU_SOCCER.MATCH GROUP BY stage ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 257,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In FINANCE__ECONOMICS, how many distinct COMPANY_ID records fall under each ENTITY_LEVEL tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT ENTITY_LEVEL, COUNT(DISTINCT COMPANY_ID) AS entity_cnt FROM FINANCE__ECONOMICS.CYBERSYN_COMPANY_INDEX GROUP BY ENTITY_LEVEL ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 258,
+    "db_id": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "question": "In CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE, which records have a ResidentialMappingRatioTZ of at least 50? List the top 10 ToZipCode by ResidentialMappingRatioTZ in descending order.",
+    "evidence": "",
+    "SQL": "SELECT ToZipCode, ResidentialMappingRatioTZ FROM CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE.Xref_TractToZip_Residential WHERE ResidentialMappingRatioTZ >= 50 ORDER BY ResidentialMappingRatioTZ DESC LIMIT 10;"
+  },
+  {
+    "question_id": 259,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, which records have a COMP_RATE_MON of at least 50? List the top 10 DSID by COMP_RATE_MON in descending order.",
+    "evidence": "",
+    "SQL": "SELECT DSID, COMP_RATE_MON FROM `DataManagementPlatform`.`原油销售日报` WHERE COMP_RATE_MON >= 50 ORDER BY COMP_RATE_MON DESC LIMIT 10;"
+  },
+  {
+    "question_id": 260,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, which records have a possession of at least 50? List the top 10 match_api_id by possession in descending order.",
+    "evidence": "",
+    "SQL": "SELECT match_api_id, possession FROM EU_SOCCER.MATCH WHERE possession >= 50 ORDER BY possession DESC LIMIT 10;"
+  },
+  {
+    "question_id": 261,
+    "db_id": "ORACLE_SQL",
+    "question": "In ORACLE_SQL, which records have a abv of at least 50? List the top 10 product_id by abv in descending order.",
+    "evidence": "",
+    "SQL": "SELECT product_id, abv FROM ORACLE_SQL.PRODUCT_ALCOHOL WHERE abv >= 50 ORDER BY abv DESC LIMIT 10;"
+  },
+  {
+    "question_id": 262,
+    "db_id": "BRAZILIAN_E_COMMERCE",
+    "question": "In BRAZILIAN_E_COMMERCE, which records were already past their order_estimated_delivery_date as of the start of 2025? Give me the 10 earliest by order_estimated_delivery_date.",
+    "evidence": "",
+    "SQL": "SELECT order_id, order_estimated_delivery_date FROM BRAZILIAN_E_COMMERCE.OLIST_ORDERS WHERE CAST(order_estimated_delivery_date AS DATETIME) < '2025-01-01 00:00:00' ORDER BY order_estimated_delivery_date ASC LIMIT 10;"
+  },
+  {
+    "question_id": 263,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In COMPLEX_ORACLE, which records were already past their end_of_cal_year as of the start of 2025? Give me the 10 earliest by end_of_cal_year.",
+    "evidence": "",
+    "SQL": "SELECT fiscal_year_id, end_of_cal_year FROM COMPLEX_ORACLE.TIMES WHERE CAST(end_of_cal_year AS DATETIME) < '2025-01-01 00:00:00' ORDER BY end_of_cal_year ASC LIMIT 10;"
+  },
+  {
+    "question_id": 264,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In FINANCE__ECONOMICS, which records were already past their END_DATE as of the start of 2025? Give me the 10 earliest by END_DATE.",
+    "evidence": "",
+    "SQL": "SELECT ID_ZIP, END_DATE FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_BRANCH_ENTITIES WHERE CAST(END_DATE AS DATETIME) < '2025-01-01 00:00:00' ORDER BY END_DATE ASC LIMIT 10;"
+  },
+  {
+    "question_id": 265,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, which records were already past their Deadline as of the start of 2025? Give me the 10 earliest by Deadline.",
+    "evidence": "",
+    "SQL": "SELECT DatasetId, Deadline FROM META_KAGGLE.DATASETTASKS WHERE CAST(Deadline AS DATETIME) < '2025-01-01 00:00:00' ORDER BY Deadline ASC LIMIT 10;"
+  },
+  {
+    "question_id": 266,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, which player_name are linked to the most distinct id records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT player_name, COUNT(DISTINCT id) AS owned_cnt FROM EU_SOCCER.PLAYER WHERE player_name IS NOT NULL GROUP BY player_name ORDER BY owned_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 267,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, which UserName are linked to the most distinct Id records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT UserName, COUNT(DISTINCT Id) AS owned_cnt FROM META_KAGGLE.USERS WHERE UserName IS NOT NULL GROUP BY UserName ORDER BY owned_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 268,
+    "db_id": "ORACLE_SQL",
+    "question": "In ORACLE_SQL, which name are linked to the most distinct id records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT name, COUNT(DISTINCT id) AS owned_cnt FROM ORACLE_SQL.EMPLOYEES WHERE name IS NOT NULL GROUP BY name ORDER BY owned_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 269,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "In THELOOK_ECOMMERCE, which last_name are linked to the most distinct id records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT last_name, COUNT(DISTINCT id) AS owned_cnt FROM THELOOK_ECOMMERCE.USERS WHERE last_name IS NOT NULL GROUP BY last_name ORDER BY owned_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 270,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, what is the COMP_RATE_MON-weighted total of DENSITY_DAY, and how does it compare with the raw total?",
+    "evidence": "",
+    "SQL": "SELECT SUM(DENSITY_DAY * COMP_RATE_MON / 100.0) AS weighted_amount, SUM(DENSITY_DAY) AS total_amount FROM `DataManagementPlatform`.`原油销售日报` WHERE DENSITY_DAY IS NOT NULL AND COMP_RATE_MON IS NOT NULL;"
+  },
+  {
+    "question_id": 271,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In FINANCE__ECONOMICS, what is the UNIT-weighted total of VALUE, and how does it compare with the raw total?",
+    "evidence": "",
+    "SQL": "SELECT SUM(VALUE * UNIT / 100.0) AS weighted_amount, SUM(VALUE) AS total_amount FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_TIMESERIES WHERE VALUE IS NOT NULL AND UNIT IS NOT NULL;"
+  },
+  {
+    "question_id": 272,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, what is the LeaderboardPercentage-weighted total of RewardQuantity, and how does it compare with the raw total?",
+    "evidence": "",
+    "SQL": "SELECT SUM(RewardQuantity * LeaderboardPercentage / 100.0) AS weighted_amount, SUM(RewardQuantity) AS total_amount FROM META_KAGGLE.COMPETITIONS WHERE RewardQuantity IS NOT NULL AND LeaderboardPercentage IS NOT NULL;"
+  },
+  {
+    "question_id": 273,
+    "db_id": "ORACLE_SQL",
+    "question": "In ORACLE_SQL, what is the abv-weighted total of sales_volume, and how does it compare with the raw total?",
+    "evidence": "",
+    "SQL": "SELECT SUM(sales_volume * abv / 100.0) AS weighted_amount, SUM(sales_volume) AS total_amount FROM ORACLE_SQL.PRODUCT_ALCOHOL WHERE sales_volume IS NOT NULL AND abv IS NOT NULL;"
+  },
+  {
+    "question_id": 274,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In COMPLEX_ORACLE, show the daily record count and the running cumulative count for each prod_weight_class tier over 2024, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT prod_weight_class AS lvl, DATE(prod_eff_from) AS d, COUNT(*) AS cnt FROM COMPLEX_ORACLE.PRODUCTS WHERE CAST(prod_eff_from AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(prod_eff_from AS DATETIME) < '2025-01-01 00:00:00' GROUP BY prod_weight_class, DATE(prod_eff_from) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 275,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, show the daily record count and the running cumulative count for each DISPLAY_ORDER tier over 2024, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT DISPLAY_ORDER AS lvl, DATE(DATA_DATE) AS d, COUNT(*) AS cnt FROM `DataManagementPlatform`.`LNG-日指定` WHERE CAST(DATA_DATE AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(DATA_DATE AS DATETIME) < '2025-01-01 00:00:00' GROUP BY DISPLAY_ORDER, DATE(DATA_DATE) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 276,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, show the daily record count and the running cumulative count for each stage tier over 2024, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT stage AS lvl, DATE(date) AS d, COUNT(*) AS cnt FROM EU_SOCCER.MATCH WHERE CAST(date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(date AS DATETIME) < '2025-01-01 00:00:00' GROUP BY stage, DATE(date) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 277,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In FINANCE__ECONOMICS, show the daily record count and the running cumulative count for each ENTITY_LEVEL tier over 2024, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT ENTITY_LEVEL AS lvl, DATE(RELATIONSHIP_END_DATE) AS d, COUNT(*) AS cnt FROM FINANCE__ECONOMICS.CYBERSYN_COMPANY_RELATIONSHIPS WHERE CAST(RELATIONSHIP_END_DATE AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(RELATIONSHIP_END_DATE AS DATETIME) < '2025-01-01 00:00:00' GROUP BY ENTITY_LEVEL, DATE(RELATIONSHIP_END_DATE) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 278,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, show the daily record count and the running cumulative count for each Tier tier over 2024, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT Tier AS lvl, DATE(TierAchievementDate) AS d, COUNT(*) AS cnt FROM META_KAGGLE.USERACHIEVEMENTS WHERE CAST(TierAchievementDate AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(TierAchievementDate AS DATETIME) < '2025-01-01 00:00:00' GROUP BY Tier, DATE(TierAchievementDate) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 279,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In COMPLEX_ORACLE, for each prod_category, which prod_weight_class accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT prod_category AS topic, prod_weight_class AS lvl, COUNT(*) AS cnt FROM COMPLEX_ORACLE.PRODUCTS GROUP BY prod_category, prod_weight_class ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 280,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, for each DATA_TYPE, which DISPLAY_ORDER accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT DATA_TYPE AS topic, DISPLAY_ORDER AS lvl, COUNT(*) AS cnt FROM `DataManagementPlatform`.`LNG-日指定` GROUP BY DATA_TYPE, DISPLAY_ORDER ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 281,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, for each season, which stage accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT season AS topic, stage AS lvl, COUNT(*) AS cnt FROM EU_SOCCER.MATCH GROUP BY season, stage ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 282,
+    "db_id": "FINANCE__ECONOMICS",
+    "question": "In FINANCE__ECONOMICS, for each RELATIONSHIP_TYPE, which ENTITY_LEVEL accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT RELATIONSHIP_TYPE AS topic, ENTITY_LEVEL AS lvl, COUNT(*) AS cnt FROM FINANCE__ECONOMICS.CYBERSYN_COMPANY_RELATIONSHIPS GROUP BY RELATIONSHIP_TYPE, ENTITY_LEVEL ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 283,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, for each AchievementType, which Tier accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT AchievementType AS topic, Tier AS lvl, COUNT(*) AS cnt FROM META_KAGGLE.USERACHIEVEMENTS GROUP BY AchievementType, Tier ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 284,
+    "db_id": "DataManagementPlatform",
+    "question": "In DataManagementPlatform, which VENDOR_ID were active in the first half of 2024 but no longer appear in the second half? Give me the first 10.",
+    "evidence": "",
+    "SQL": "WITH win_a AS ( SELECT DISTINCT VENDOR_ID AS person FROM `DataManagementPlatform`.`LNG日完成` WHERE CAST(DATA_DATE AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(DATA_DATE AS DATETIME) < '2024-07-01 00:00:00' ), win_b AS ( SELECT DISTINCT VENDOR_ID AS person FROM `DataManagementPlatform`.`LNG日完成` WHERE CAST(DATA_DATE AS DATETIME) >= '2024-07-01 00:00:00' AND CAST(DATA_DATE AS DATETIME) < '2025-01-01 00:00:00' ) SELECT a.person FROM win_a a WHERE NOT EXISTS ( SELECT 1 FROM win_b b WHERE b.person = a.person ) ORDER BY a.person LIMIT 10;"
+  },
+  {
+    "question_id": 285,
+    "db_id": "EU_SOCCER",
+    "question": "In EU_SOCCER, which home_player_1 were active in the first half of 2024 but no longer appear in the second half? Give me the first 10.",
+    "evidence": "",
+    "SQL": "WITH win_a AS ( SELECT DISTINCT home_player_1 AS person FROM EU_SOCCER.MATCH WHERE CAST(date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(date AS DATETIME) < '2024-07-01 00:00:00' ), win_b AS ( SELECT DISTINCT home_player_1 AS person FROM EU_SOCCER.MATCH WHERE CAST(date AS DATETIME) >= '2024-07-01 00:00:00' AND CAST(date AS DATETIME) < '2025-01-01 00:00:00' ) SELECT a.person FROM win_a a WHERE NOT EXISTS ( SELECT 1 FROM win_b b WHERE b.person = a.person ) ORDER BY a.person LIMIT 10;"
+  },
+  {
+    "question_id": 286,
+    "db_id": "ORACLE_SQL",
+    "question": "In ORACLE_SQL, which customer_id were active in the first half of 2024 but no longer appear in the second half? Give me the first 10.",
+    "evidence": "",
+    "SQL": "WITH win_a AS ( SELECT DISTINCT customer_id AS person FROM ORACLE_SQL.ORDERS WHERE CAST(ordered AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(ordered AS DATETIME) < '2024-07-01 00:00:00' ), win_b AS ( SELECT DISTINCT customer_id AS person FROM ORACLE_SQL.ORDERS WHERE CAST(ordered AS DATETIME) >= '2024-07-01 00:00:00' AND CAST(ordered AS DATETIME) < '2025-01-01 00:00:00' ) SELECT a.person FROM win_a a WHERE NOT EXISTS ( SELECT 1 FROM win_b b WHERE b.person = a.person ) ORDER BY a.person LIMIT 10;"
+  },
+  {
+    "question_id": 287,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "In THELOOK_ECOMMERCE, which user_id were active in the first half of 2024 but no longer appear in the second half? Give me the first 10.",
+    "evidence": "",
+    "SQL": "WITH win_a AS ( SELECT DISTINCT user_id AS person FROM THELOOK_ECOMMERCE.ORDERS WHERE CAST(shipped_at AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(shipped_at AS DATETIME) < '2024-07-01 00:00:00' ), win_b AS ( SELECT DISTINCT user_id AS person FROM THELOOK_ECOMMERCE.ORDERS WHERE CAST(shipped_at AS DATETIME) >= '2024-07-01 00:00:00' AND CAST(shipped_at AS DATETIME) < '2025-01-01 00:00:00' ) SELECT a.person FROM win_a a WHERE NOT EXISTS ( SELECT 1 FROM win_b b WHERE b.person = a.person ) ORDER BY a.person LIMIT 10;"
+  },
+  {
+    "question_id": 288,
+    "db_id": "COMPLEX_ORACLE",
+    "question": "In COMPLEX_ORACLE, which promo_total_id records switch promo_category at least twice during 2024? Rank them by the number of switches and give me the top 10.",
+    "evidence": "",
+    "SQL": "WITH ev AS ( SELECT promo_total_id AS eid, promo_category AS topic, CAST(promo_end_date AS DATETIME) AS ts FROM COMPLEX_ORACLE.PROMOTIONS WHERE CAST(promo_end_date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(promo_end_date AS DATETIME) < '2025-01-01 00:00:00' ) SELECT e1.topic, e1.eid, COUNT(*) AS transition_cnt FROM ev e1 JOIN ev e2 ON e1.eid = e2.eid AND e1.topic <> e2.topic AND e2.ts > e1.ts GROUP BY e1.topic, e1.eid HAVING COUNT(*) >= 2 ORDER BY transition_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 289,
+    "db_id": "META_KAGGLE",
+    "question": "In META_KAGGLE, which Id records switch AchievementType at least twice during 2024? Rank them by the number of switches and give me the top 10.",
+    "evidence": "",
+    "SQL": "WITH ev AS ( SELECT Id AS eid, AchievementType AS topic, CAST(TierAchievementDate AS DATETIME) AS ts FROM META_KAGGLE.USERACHIEVEMENTS WHERE CAST(TierAchievementDate AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(TierAchievementDate AS DATETIME) < '2025-01-01 00:00:00' ) SELECT e1.topic, e1.eid, COUNT(*) AS transition_cnt FROM ev e1 JOIN ev e2 ON e1.eid = e2.eid AND e1.topic <> e2.topic AND e2.ts > e1.ts GROUP BY e1.topic, e1.eid HAVING COUNT(*) >= 2 ORDER BY transition_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 290,
+    "db_id": "THELOOK_ECOMMERCE",
+    "question": "In THELOOK_ECOMMERCE, which id records switch product_category at least twice during 2024? Rank them by the number of switches and give me the top 10.",
+    "evidence": "",
+    "SQL": "WITH ev AS ( SELECT id AS eid, product_category AS topic, CAST(sold_at AS DATETIME) AS ts FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS WHERE CAST(sold_at AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(sold_at AS DATETIME) < '2025-01-01 00:00:00' ) SELECT e1.topic, e1.eid, COUNT(*) AS transition_cnt FROM ev e1 JOIN ev e2 ON e1.eid = e2.eid AND e1.topic <> e2.topic AND e2.ts > e1.ts GROUP BY e1.topic, e1.eid HAVING COUNT(*) >= 2 ORDER BY transition_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 291,
+    "db_id": "dge",
+    "question": "In dge, which id records switch sector at least twice during 2024? Rank them by the number of switches and give me the top 10.",
+    "evidence": "",
+    "SQL": "WITH ev AS ( SELECT id AS eid, sector AS topic, CAST(rev_cfm_date AS DATETIME) AS ts FROM dge.pomp_view_pomp_income WHERE CAST(rev_cfm_date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(rev_cfm_date AS DATETIME) < '2025-01-01 00:00:00' ) SELECT e1.topic, e1.eid, COUNT(*) AS transition_cnt FROM ev e1 JOIN ev e2 ON e1.eid = e2.eid AND e1.topic <> e2.topic AND e2.ts > e1.ts GROUP BY e1.topic, e1.eid HAVING COUNT(*) >= 2 ORDER BY transition_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 292,
+    "db_id": "dge",
+    "question": "In dge, retrieve project records whose proj_lvl_desc mentions research, and give me the first 5 erp_code.",
+    "evidence": "",
+    "SQL": "SELECT erp_code FROM dge.dge_project_expense_test WHERE proj_lvl_desc LIKE '%研究%' LIMIT 5;"
+  },
+  {
+    "question_id": 293,
+    "db_id": "dge",
+    "question": "In dge, over 2024-2025, which sector do the records whose phase mentions platform work mainly concentrate in? Give me the top 5.",
+    "evidence": "",
+    "SQL": "SELECT sector, COUNT(*) AS event_cnt FROM dge.pomp_view_pomp_income WHERE CAST(rev_cfm_date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(rev_cfm_date AS DATETIME) < '2026-01-01 00:00:00' AND phase LIKE '%平台%' GROUP BY sector ORDER BY event_cnt DESC LIMIT 5;"
+  },
+  {
+    "question_id": 294,
+    "db_id": "dge",
+    "question": "In dge, compare the number of records under each person_type between 2025 and 2024, and give me the top 3 with the largest year-over-year increase.",
+    "evidence": "",
+    "SQL": "SELECT person_type, SUM(CASE WHEN CAST(stat_date AS DATETIME) >= '2025-01-01 00:00:00' AND CAST(stat_date AS DATETIME) < '2026-01-01 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN CAST(stat_date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(stat_date AS DATETIME) < '2025-01-01 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN CAST(stat_date AS DATETIME) >= '2025-01-01 00:00:00' AND CAST(stat_date AS DATETIME) < '2026-01-01 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN CAST(stat_date AS DATETIME) >= '2024-01-01 00:00:00' AND CAST(stat_date AS DATETIME) < '2025-01-01 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM dge.dge_outsource_staff_flow GROUP BY person_type ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 295,
+    "db_id": "dge",
+    "question": "In dge, within each sector, which proj_name accumulates the most std_hrs? Give me the top 5.",
+    "evidence": "",
+    "SQL": "WITH agg AS ( SELECT sector AS topic, proj_name AS entity_name, SUM(std_hrs) AS qty FROM dge.pomp_view_pomp_timesheet GROUP BY sector, proj_name ), ranked AS ( SELECT *, ROW_NUMBER() OVER (PARTITION BY topic ORDER BY qty DESC) AS rn FROM agg ) SELECT topic, entity_name, qty FROM ranked WHERE rn = 1 ORDER BY qty DESC LIMIT 5;"
+  },
+  {
+    "question_id": 296,
+    "db_id": "dge",
+    "question": "In dge, which belong_dept_id have the highest proportion of records still in the CRTD wbs_status? Only consider groups with at least 10 records, and give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT belong_dept_id, SUM(CASE WHEN wbs_status = 'CRTD' THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN wbs_status = 'CRTD' THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM dge.dge_project_detail GROUP BY belong_dept_id HAVING COUNT(*) >= 10 ORDER BY hit_ratio DESC LIMIT 10;"
   }
 ]

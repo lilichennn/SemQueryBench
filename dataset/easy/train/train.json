@@ -46,161 +46,161 @@
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have the highest recorded wind speeds?",
     "evidence": "",
-    "SQL": "SELECT t.name\nFROM main.NOAA_HURRICANES_HURRICANES t\nORDER BY t.usa_wind DESC\nLIMIT 5"
+    "SQL": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.usa_wind DESC LIMIT 5"
   },
   {
     "question_id": 499,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes were the farthest from land?",
     "evidence": "",
-    "SQL": "SELECT t.name\nFROM main.NOAA_HURRICANES_HURRICANES t\nORDER BY t.dist2land DESC\nLIMIT 5"
+    "SQL": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.dist2land DESC LIMIT 5"
   },
   {
     "question_id": 498,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes had the highest landfall distances?",
     "evidence": "",
-    "SQL": "SELECT t.name\nFROM main.NOAA_HURRICANES_HURRICANES t\nORDER BY t.landfall DESC\nLIMIT 5"
+    "SQL": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.landfall DESC LIMIT 5"
   },
   {
     "question_id": 497,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes had wind speeds above the average?",
     "evidence": "",
-    "SQL": "SELECT t.name\nFROM main.NOAA_HURRICANES_HURRICANES t\nWHERE t.usa_wind > (SELECT AVG(usa_wind) FROM main.NOAA_HURRICANES_HURRICANES)"
+    "SQL": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t WHERE t.usa_wind > (SELECT AVG(usa_wind) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
   },
   {
     "question_id": 472,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have a pressure higher than the average pressure?",
     "evidence": "",
-    "SQL": "SELECT h.name\nFROM main.NOAA_HURRICANES_HURRICANES h\nWHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES)"
+    "SQL": "SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
   },
   {
     "question_id": 471,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes are farther from land than the average distance?",
     "evidence": "",
-    "SQL": "SELECT h.name\nFROM main.NOAA_HURRICANES_HURRICANES h\nWHERE h.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES)"
+    "SQL": "SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
   },
   {
     "question_id": 470,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes in each basin have a pressure higher than the average pressure for that basin?",
     "evidence": "",
-    "SQL": "SELECT h1.name\nFROM main.NOAA_HURRICANES_HURRICANES h1\nWHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
+    "SQL": "SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
   },
   {
     "question_id": 469,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes in each basin are farther from land than the average distance for that basin?",
     "evidence": "",
-    "SQL": "SELECT h1.name\nFROM main.NOAA_HURRICANES_HURRICANES h1\nWHERE h1.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
+    "SQL": "SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
   },
   {
     "question_id": 462,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes are the most recent in each basin?",
     "evidence": "",
-    "SQL": "SELECT t1.basin, t1.name\nFROM (\n SELECT t1.basin, t1.name, t1.iso_time,\n ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn\n FROM main.NOAA_HURRICANES_HURRICANES t1\n) t\nWHERE rn = 1"
+    "SQL": "SELECT t1.basin, t1.name FROM ( SELECT t1.basin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
   },
   {
     "question_id": 461,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes are the most recent in each subbasin?",
     "evidence": "",
-    "SQL": "SELECT t1.subbasin, t1.name\nFROM (\n SELECT t1.subbasin, t1.name, t1.iso_time,\n ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn\n FROM main.NOAA_HURRICANES_HURRICANES t1\n) t\nWHERE rn = 1"
+    "SQL": "SELECT t1.subbasin, t1.name FROM ( SELECT t1.subbasin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
   },
   {
     "question_id": 460,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes are the most recent in each season?",
     "evidence": "",
-    "SQL": "SELECT t1.season, t1.name\nFROM (\n SELECT t1.season, t1.name, t1.iso_time,\n ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn\n FROM main.NOAA_HURRICANES_HURRICANES t1\n) t\nWHERE rn = 1"
+    "SQL": "SELECT t1.season, t1.name FROM ( SELECT t1.season, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
   },
   {
     "question_id": 459,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes occurred in consecutive years within the same basin?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT t1.basin, t1.name, t1.iso_time\n    FROM main.NOAA_HURRICANES_HURRICANES t1\n    WHERE t1.iso_time IS NOT NULL\n),\nwith_prev AS (\n    SELECT t1.basin, t1.name, t1.iso_time,\n           LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT t1.basin, t1.name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT t1.basin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.basin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.basin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 458,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes occurred in consecutive years within the same subbasin?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time\n    FROM main.NOAA_HURRICANES_HURRICANES t1\n    WHERE t1.iso_time IS NOT NULL\n),\nwith_prev AS (\n    SELECT t1.subbasin, t1.name, t1.iso_time,\n           LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT t1.subbasin, t1.name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.subbasin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.subbasin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 457,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes occurred in consecutive years within the same season?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT t1.season, t1.name, t1.iso_time\n    FROM main.NOAA_HURRICANES_HURRICANES t1\n    WHERE t1.iso_time IS NOT NULL\n),\nwith_prev AS (\n    SELECT t1.season, t1.name, t1.iso_time,\n           LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT t1.season, t1.name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT t1.season, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.season, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.season, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 444,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes show a consistent increase in pressure over three consecutive time points?",
     "evidence": "",
-    "SQL": "WITH base AS (\n    SELECT \n        h.sid AS Entity,\n        h.iso_time AS Time,\n        h.bom_pressure AS Measure,\n        LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,\n        LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL\n)\nSELECT DISTINCT Entity\nFROM base\nWHERE prev2 IS NOT NULL\n  AND Measure > prev1 AND prev1 > prev2"
+    "SQL": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.bom_pressure AS Measure, LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
   },
   {
     "question_id": 443,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes show a consistent increase in wind speed over three consecutive time points?",
     "evidence": "",
-    "SQL": "WITH base AS (\n    SELECT \n        h.sid AS Entity,\n        h.iso_time AS Time,\n        h.usa_wind AS Measure,\n        LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,\n        LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL\n)\nSELECT DISTINCT Entity\nFROM base\nWHERE prev2 IS NOT NULL\n  AND Measure > prev1 AND prev1 > prev2"
+    "SQL": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.usa_wind AS Measure, LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
   },
   {
     "question_id": 442,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes show a consistent increase in distance to land over three consecutive time points?",
     "evidence": "",
-    "SQL": "WITH base AS (\n    SELECT \n        h.sid AS Entity,\n        h.iso_time AS Time,\n        h.dist2land AS Measure,\n        LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,\n        LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL\n)\nSELECT DISTINCT Entity\nFROM base\nWHERE prev2 IS NOT NULL\n  AND Measure > prev1 AND prev1 > prev2"
+    "SQL": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.dist2land AS Measure, LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
   },
   {
     "question_id": 441,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have the highest pressure in each basin, falling into the top quintile?",
     "evidence": "",
-    "SQL": "WITH ranked AS (\n    SELECT \n        h.basin AS Category,\n        h.sid AS Entity,\n        h.bom_pressure AS Measure,\n        NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.bom_pressure IS NOT NULL\n)\nSELECT Category, Entity\nFROM ranked\nWHERE quintile = 1"
+    "SQL": "WITH ranked AS ( SELECT h.basin AS Category, h.sid AS Entity, h.bom_pressure AS Measure, NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.bom_pressure IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
   },
   {
     "question_id": 440,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have the highest wind speed in each subbasin, falling into the top quintile?",
     "evidence": "",
-    "SQL": "WITH ranked AS (\n    SELECT \n        h.subbasin AS Category,\n        h.sid AS Entity,\n        h.usa_wind AS Measure,\n        NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.usa_wind IS NOT NULL\n)\nSELECT Category, Entity\nFROM ranked\nWHERE quintile = 1"
+    "SQL": "WITH ranked AS ( SELECT h.subbasin AS Category, h.sid AS Entity, h.usa_wind AS Measure, NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_wind IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
   },
   {
     "question_id": 439,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have the greatest distance to land in each season, falling into the top quintile?",
     "evidence": "",
-    "SQL": "WITH ranked AS (\n    SELECT \n        h.season AS Category,\n        h.sid AS Entity,\n        h.dist2land AS Measure,\n        NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    WHERE h.dist2land IS NOT NULL\n)\nSELECT Category, Entity\nFROM ranked\nWHERE quintile = 1"
+    "SQL": "WITH ranked AS ( SELECT h.season AS Category, h.sid AS Entity, h.dist2land AS Measure, NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
   },
   {
     "question_id": 438,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have a pressure above the average for their basin, and what percentage of the total pressure do they represent, showing the top 5 in each basin?",
     "evidence": "",
-    "SQL": "WITH category_stats AS (\n    SELECT \n        h.basin AS Category,\n        AVG(h.bom_pressure) AS avg_measure,\n        SUM(h.bom_pressure) AS total_measure\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    GROUP BY h.basin\n),\nranked AS (\n    SELECT \n        t.basin AS Category,\n        t.sid AS Entity,\n        t.bom_pressure AS Measure,\n        cs.avg_measure,\n        cs.total_measure,\n        t.bom_pressure / cs.total_measure * 100 AS pct_of_total,\n        ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn\n    FROM main.NOAA_HURRICANES_HURRICANES t\n    JOIN category_stats cs ON t.basin = cs.Category\n    WHERE t.bom_pressure > cs.avg_measure\n)\nSELECT Category, Entity, pct_of_total\nFROM ranked\nWHERE rn <= 5"
+    "SQL": "WITH category_stats AS ( SELECT h.basin AS Category, AVG(h.bom_pressure) AS avg_measure, SUM(h.bom_pressure) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.basin ), ranked AS ( SELECT t.basin AS Category, t.sid AS Entity, t.bom_pressure AS Measure, cs.avg_measure, cs.total_measure, t.bom_pressure / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.basin = cs.Category WHERE t.bom_pressure > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
   },
   {
     "question_id": 437,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have a wind speed above the average for their subbasin, and what percentage of the total wind speed do they represent, showing the top 5 in each subbasin?",
     "evidence": "",
-    "SQL": "WITH category_stats AS (\n    SELECT \n        h.subbasin AS Category,\n        AVG(h.usa_wind) AS avg_measure,\n        SUM(h.usa_wind) AS total_measure\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    GROUP BY h.subbasin\n),\nranked AS (\n    SELECT \n        t.subbasin AS Category,\n        t.sid AS Entity,\n        t.usa_wind AS Measure,\n        cs.avg_measure,\n        cs.total_measure,\n        t.usa_wind / cs.total_measure * 100 AS pct_of_total,\n        ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn\n    FROM main.NOAA_HURRICANES_HURRICANES t\n    JOIN category_stats cs ON t.subbasin = cs.Category\n    WHERE t.usa_wind > cs.avg_measure\n)\nSELECT Category, Entity, pct_of_total\nFROM ranked\nWHERE rn <= 5"
+    "SQL": "WITH category_stats AS ( SELECT h.subbasin AS Category, AVG(h.usa_wind) AS avg_measure, SUM(h.usa_wind) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.subbasin ), ranked AS ( SELECT t.subbasin AS Category, t.sid AS Entity, t.usa_wind AS Measure, cs.avg_measure, cs.total_measure, t.usa_wind / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.subbasin = cs.Category WHERE t.usa_wind > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
   },
   {
     "question_id": 436,
     "db_id": "NOAA_PORTS",
     "question": "Which hurricanes have a distance to land above the average for their season, and what percentage of the total distance do they represent, showing the top 5 in each season?",
     "evidence": "",
-    "SQL": "WITH category_stats AS (\n    SELECT \n        h.season AS Category,\n        AVG(h.dist2land) AS avg_measure,\n        SUM(h.dist2land) AS total_measure\n    FROM main.NOAA_HURRICANES_HURRICANES h\n    GROUP BY h.season\n),\nranked AS (\n    SELECT \n        t.season AS Category,\n        t.sid AS Entity,\n        t.dist2land AS Measure,\n        cs.avg_measure,\n        cs.total_measure,\n        t.dist2land / cs.total_measure * 100 AS pct_of_total,\n        ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn\n    FROM main.NOAA_HURRICANES_HURRICANES t\n    JOIN category_stats cs ON t.season = cs.Category\n    WHERE t.dist2land > cs.avg_measure\n)\nSELECT Category, Entity, pct_of_total\nFROM ranked\nWHERE rn <= 5"
+    "SQL": "WITH category_stats AS ( SELECT h.season AS Category, AVG(h.dist2land) AS avg_measure, SUM(h.dist2land) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.season ), ranked AS ( SELECT t.season AS Category, t.sid AS Entity, t.dist2land AS Measure, cs.avg_measure, cs.total_measure, t.dist2land / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.season = cs.Category WHERE t.dist2land > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
   },
   {
     "question_id": 127,
@@ -438,126 +438,126 @@
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the highest recorded values in this dataset?",
     "evidence": "",
-    "SQL": "SELECT n.COMPANY_NAME\nFROM main.NUMBERS n\nORDER BY n.VALUE DESC\nLIMIT 5"
+    "SQL": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n ORDER BY n.VALUE DESC LIMIT 5"
   },
   {
     "question_id": 495,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the highest recorded values in the quick summary data?",
     "evidence": "",
-    "SQL": "SELECT qs.company_name\nFROM main.QUICK_SUMMARY qs\nORDER BY qs.value DESC\nLIMIT 5"
+    "SQL": "SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs ORDER BY qs.value DESC LIMIT 5"
   },
   {
     "question_id": 494,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the highest public float in USD?",
     "evidence": "",
-    "SQL": "SELECT s.company_name\nFROM main.SUBMISSION s\nORDER BY s.public_float_usd DESC\nLIMIT 5"
+    "SQL": "SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s ORDER BY s.public_float_usd DESC LIMIT 5"
   },
   {
     "question_id": 493,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which measure tags are associated with more than one type of financial statement?",
     "evidence": "",
-    "SQL": "SELECT p.measure_tag\nFROM main.PRESENTATION p\nGROUP BY p.measure_tag\nHAVING COUNT(DISTINCT p.statement) > 1"
+    "SQL": "SELECT p.measure_tag FROM SEC_QUARTERLY_FINANCIALS.PRESENTATION p GROUP BY p.measure_tag HAVING COUNT(DISTINCT p.statement) > 1"
   },
   {
     "question_id": 492,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have more than one SIC code in the quick summary data?",
     "evidence": "",
-    "SQL": "SELECT qs.company_name\nFROM main.QUICK_SUMMARY qs\nGROUP BY qs.company_name\nHAVING COUNT(DISTINCT qs.sic) > 1"
+    "SQL": "SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs GROUP BY qs.company_name HAVING COUNT(DISTINCT qs.sic) > 1"
   },
   {
     "question_id": 491,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have submitted more than one type of form?",
     "evidence": "",
-    "SQL": "SELECT s.company_name\nFROM main.SUBMISSION s\nGROUP BY s.company_name\nHAVING COUNT(DISTINCT s.form) > 1"
+    "SQL": "SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s GROUP BY s.company_name HAVING COUNT(DISTINCT s.form) > 1"
   },
   {
     "question_id": 490,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "For each measure tag, which company has the highest recorded value?",
     "evidence": "",
-    "SQL": "SELECT t.MEASURE_TAG, t.COMPANY_NAME\nFROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM main.NUMBERS n) t\nWHERE t.rn = 1"
+    "SQL": "SELECT t.MEASURE_TAG, t.COMPANY_NAME FROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n) t WHERE t.rn = 1"
   },
   {
     "question_id": 489,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "For each measure tag, which company has the highest recorded value in the quick summary data?",
     "evidence": "",
-    "SQL": "SELECT t.measure_tag, t.company_name\nFROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM main.QUICK_SUMMARY qs) t\nWHERE t.rn = 1"
+    "SQL": "SELECT t.measure_tag, t.company_name FROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs) t WHERE t.rn = 1"
   },
   {
     "question_id": 488,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "For each SIC code, which company has the highest public float in USD?",
     "evidence": "",
-    "SQL": "SELECT t.sic, t.company_name\nFROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM main.SUBMISSION s) t\nWHERE t.rn = 1"
+    "SQL": "SELECT t.sic, t.company_name FROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s) t WHERE t.rn = 1"
   },
   {
     "question_id": 487,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have a recorded value higher than the average value in this dataset?",
     "evidence": "",
-    "SQL": "SELECT n.COMPANY_NAME\nFROM main.NUMBERS n\nWHERE n.VALUE > (SELECT AVG(n.VALUE) FROM main.NUMBERS)"
+    "SQL": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(n.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)"
   },
   {
     "question_id": 468,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have a value higher than the average value in the dataset?",
     "evidence": "",
-    "SQL": "SELECT n.COMPANY_NAME\nFROM main.NUMBERS n\nWHERE n.VALUE > (SELECT AVG(VALUE) FROM main.NUMBERS)"
+    "SQL": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)"
   },
   {
     "question_id": 467,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have a value higher than the average value for their respective measure tags?",
     "evidence": "",
-    "SQL": "SELECT n1.COMPANY_NAME\nFROM main.NUMBERS n1\nWHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM main.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG)"
+    "SQL": "SELECT n1.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n1 WHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG)"
   },
   {
     "question_id": 456,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the most recent period end date for each SIC code?",
     "evidence": "",
-    "SQL": "SELECT sic, company_name\nFROM (\n SELECT sic, company_name, period_end_date,\n ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn\n FROM main.QUICK_SUMMARY\n) t\nWHERE rn = 1"
+    "SQL": "SELECT sic, company_name FROM ( SELECT sic, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
   },
   {
     "question_id": 455,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the most recent period end date for each form type?",
     "evidence": "",
-    "SQL": "SELECT form, company_name\nFROM (\n SELECT form, company_name, period_end_date,\n ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn\n FROM main.QUICK_SUMMARY\n) t\nWHERE rn = 1"
+    "SQL": "SELECT form, company_name FROM ( SELECT form, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
   },
   {
     "question_id": 454,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have the most recent period end date for each measure tag?",
     "evidence": "",
-    "SQL": "SELECT measure_tag, company_name\nFROM (\n SELECT measure_tag, company_name, period_end_date,\n ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn\n FROM main.QUICK_SUMMARY\n) t\nWHERE rn = 1"
+    "SQL": "SELECT measure_tag, company_name FROM ( SELECT measure_tag, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
   },
   {
     "question_id": 453,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have consecutive yearly records for each SIC code?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT sic, company_name, period_end_date\n    FROM main.QUICK_SUMMARY\n    WHERE period_end_date IS NOT NULL\n),\nwith_prev AS (\n    SELECT sic, company_name, period_end_date,\n           LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT sic, company_name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT sic, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT sic, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT sic, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 452,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have consecutive yearly records for each form type?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT form, company_name, period_end_date\n    FROM main.QUICK_SUMMARY\n    WHERE period_end_date IS NOT NULL\n),\nwith_prev AS (\n    SELECT form, company_name, period_end_date,\n           LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT form, company_name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT form, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT form, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT form, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 451,
     "db_id": "SEC_QUARTERLY_FINANCIALS",
     "question": "Which companies have consecutive yearly records for each measure tag?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT measure_tag, company_name, period_end_date\n    FROM main.QUICK_SUMMARY\n    WHERE period_end_date IS NOT NULL\n),\nwith_prev AS (\n    SELECT measure_tag, company_name, period_end_date,\n           LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time\n    FROM yearly_records\n)\nSELECT DISTINCT measure_tag, company_name\nFROM with_prev\nWHERE prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT measure_tag, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT measure_tag, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT measure_tag, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
   },
   {
     "question_id": 204,
@@ -760,105 +760,105 @@
     "db_id": "USFS_FIA",
     "question": "Which states have the most recent measurement years in the dataset?",
     "evidence": "",
-    "SQL": "SELECT p.plot_state_code_name\nFROM main.PLOT p\nORDER BY p.measurement_year DESC\nLIMIT 5"
+    "SQL": "SELECT p.plot_state_code_name FROM USFS_FIA.PLOT p ORDER BY p.measurement_year DESC LIMIT 5"
   },
   {
     "question_id": 485,
     "db_id": "USFS_FIA",
     "question": "Which counties have the highest elevations in the dataset?",
     "evidence": "",
-    "SQL": "SELECT p.plot_county_code\nFROM main.PLOT p\nORDER BY p.elevation DESC\nLIMIT 5"
+    "SQL": "SELECT p.plot_county_code FROM USFS_FIA.PLOT p ORDER BY p.elevation DESC LIMIT 5"
   },
   {
     "question_id": 484,
     "db_id": "USFS_FIA",
     "question": "Which plots have the longest remeasurement periods in the dataset?",
     "evidence": "",
-    "SQL": "SELECT p.plot_sequence_number\nFROM main.PLOT p\nORDER BY p.remeasurement_period DESC\nLIMIT 5"
+    "SQL": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p ORDER BY p.remeasurement_period DESC LIMIT 5"
   },
   {
     "question_id": 483,
     "db_id": "USFS_FIA",
     "question": "Which plots are associated with more than one ecological subsection?",
     "evidence": "",
-    "SQL": "SELECT p.plot_sequence_number\nFROM main.PLOT p\nGROUP BY p.plot_sequence_number\nHAVING COUNT(DISTINCT p.ecological_subsection_code) > 1"
+    "SQL": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.ecological_subsection_code) > 1"
   },
   {
     "question_id": 482,
     "db_id": "USFS_FIA",
     "question": "Which plots have been sampled using more than one method?",
     "evidence": "",
-    "SQL": "SELECT p.plot_sequence_number\nFROM main.PLOT p\nGROUP BY p.plot_sequence_number\nHAVING COUNT(DISTINCT p.sample_method_code_name) > 1"
+    "SQL": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.sample_method_code_name) > 1"
   },
   {
     "question_id": 481,
     "db_id": "USFS_FIA",
     "question": "Which plots have more than one distinct value for the pac_island_pnwrs field?",
     "evidence": "",
-    "SQL": "SELECT p.plot_sequence_number\nFROM main.PLOT p\nGROUP BY p.plot_sequence_number\nHAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1"
+    "SQL": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1"
   },
   {
     "question_id": 480,
     "db_id": "USFS_FIA",
     "question": "Which plots have an elevation higher than the average elevation in the dataset?",
     "evidence": "",
-    "SQL": "SELECT p.plot_sequence_number\nFROM main.PLOT p\nWHERE p.elevation > (SELECT AVG(elevation) FROM main.PLOT)"
+    "SQL": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p WHERE p.elevation > (SELECT AVG(elevation) FROM USFS_FIA.PLOT)"
   },
   {
     "question_id": 466,
     "db_id": "USFS_FIA",
     "question": "Which tree species have a gross cubic foot volume greater than the average?",
     "evidence": "",
-    "SQL": "SELECT t1.species_common_name\nFROM main.PLOT_TREE t1\nWHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2)"
+    "SQL": "SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2)"
   },
   {
     "question_id": 465,
     "db_id": "USFS_FIA",
     "question": "Which tree species have a gross cubic foot volume greater than the average for their evaluation type?",
     "evidence": "",
-    "SQL": "SELECT t1.species_common_name\nFROM main.PLOT_TREE t1\nWHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type)"
+    "SQL": "SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type)"
   },
   {
     "question_id": 450,
     "db_id": "USFS_FIA",
     "question": "Which plots have a measurement year greater than the average measurement year for their state?",
     "evidence": "",
-    "SQL": "SELECT t1.plot_sequence_number\nFROM main.PLOT t1, main.PLOT t2\nWHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM main.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code)"
+    "SQL": "SELECT t1.plot_sequence_number FROM USFS_FIA.PLOT t1, USFS_FIA.PLOT t2 WHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM USFS_FIA.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code)"
   },
   {
     "question_id": 449,
     "db_id": "USFS_FIA",
     "question": "What are the most recent plots by state?",
     "evidence": "",
-    "SQL": "SELECT t.plot_state_code, t.plot_sequence_number\nFROM (\n SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,\n ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn\n FROM main.PLOT t\n) t\nWHERE rn = 1"
+    "SQL": "SELECT t.plot_state_code, t.plot_sequence_number FROM ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn FROM USFS_FIA.PLOT t ) t WHERE rn = 1"
   },
   {
     "question_id": 448,
     "db_id": "USFS_FIA",
     "question": "Which plots have a measurement year between the 30th and 70th percentiles for their state?",
     "evidence": "",
-    "SQL": "WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM main.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM main.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70"
+    "SQL": "WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM USFS_FIA.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM USFS_FIA.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70"
   },
   {
     "question_id": 447,
     "db_id": "USFS_FIA",
     "question": "Which plots have consecutive annual measurements in the same state?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year\n    FROM main.PLOT t\n    WHERE t.measurement_year IS NOT NULL\n),\nwith_prev AS (\n    SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,\n           LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time\n    FROM yearly_records t\n)\nSELECT DISTINCT t.plot_state_code, t.plot_sequence_number\nFROM with_prev t\nWHERE t.prev_time IS NOT NULL \n  AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year FROM USFS_FIA.PLOT t WHERE t.measurement_year IS NOT NULL ), with_prev AS ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time FROM yearly_records t ) SELECT DISTINCT t.plot_state_code, t.plot_sequence_number FROM with_prev t WHERE t.prev_time IS NOT NULL AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1"
   },
   {
     "question_id": 435,
     "db_id": "USFS_FIA",
     "question": "What are the top 3 evaluation types with the highest total macroplot acres?",
     "evidence": "",
-    "SQL": "SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure\nFROM main.PLOT p\nGROUP BY p.evaluation_type\nORDER BY total_measure DESC\nLIMIT 3"
+    "SQL": "SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY total_measure DESC LIMIT 3"
   },
   {
     "question_id": 434,
     "db_id": "USFS_FIA",
     "question": "What are the top 3 evaluation types with the most records in the PLOT table?",
     "evidence": "",
-    "SQL": "SELECT p.evaluation_type, COUNT(*) AS record_count\nFROM main.PLOT p\nGROUP BY p.evaluation_type\nORDER BY record_count DESC\nLIMIT 3"
+    "SQL": "SELECT p.evaluation_type, COUNT(*) AS record_count FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY record_count DESC LIMIT 3"
   },
   {
     "question_id": 186,
@@ -907,76 +907,118 @@
     "db_id": "WORD_VECTORS_US",
     "question": "What are the top 5 most cited papers in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT n.title\nFROM main.NATURE n\nORDER BY n.citations DESC\nLIMIT 5"
+    "SQL": "SELECT n.title FROM WORD_VECTORS_US.NATURE n ORDER BY n.citations DESC LIMIT 5"
   },
   {
     "question_id": 478,
     "db_id": "WORD_VECTORS_US",
     "question": "What are the top 5 most frequent words in the WORD_FREQUENCIES dataset?",
     "evidence": "",
-    "SQL": "SELECT wf.word\nFROM main.WORD_FREQUENCIES wf\nORDER BY wf.frequency DESC\nLIMIT 5"
+    "SQL": "SELECT wf.word FROM WORD_VECTORS_US.WORD_FREQUENCIES wf ORDER BY wf.frequency DESC LIMIT 5"
   },
   {
     "question_id": 477,
     "db_id": "WORD_VECTORS_US",
     "question": "Which papers belong to more than one category in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT n.title\nFROM main.NATURE n\nGROUP BY n.title\nHAVING COUNT(DISTINCT n.category) > 1"
+    "SQL": "SELECT n.title FROM WORD_VECTORS_US.NATURE n GROUP BY n.title HAVING COUNT(DISTINCT n.category) > 1"
   },
   {
     "question_id": 476,
     "db_id": "WORD_VECTORS_US",
     "question": "Which organizations have papers in more than one category in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT n.organization_affiliated\nFROM main.NATURE n\nGROUP BY n.organization_affiliated\nHAVING COUNT(DISTINCT n.category) > 1"
+    "SQL": "SELECT n.organization_affiliated FROM WORD_VECTORS_US.NATURE n GROUP BY n.organization_affiliated HAVING COUNT(DISTINCT n.category) > 1"
   },
   {
     "question_id": 475,
     "db_id": "WORD_VECTORS_US",
     "question": "What is the most cited paper in each category in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT t.category, t.title\nFROM (\nSELECT n.category, n.title, n.citations,\n ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn\n FROM main.NATURE n\n) t\nWHERE t.rn = 1"
+    "SQL": "SELECT t.category, t.title FROM ( SELECT n.category, n.title, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1"
   },
   {
     "question_id": 474,
     "db_id": "WORD_VECTORS_US",
     "question": "Which organization has the most cited paper in each category in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT t.category, t.organization_affiliated\nFROM (\nSELECT n.category, n.organization_affiliated, n.citations,\n ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn\n FROM main.NATURE n\n) t\nWHERE t.rn = 1"
+    "SQL": "SELECT t.category, t.organization_affiliated FROM ( SELECT n.category, n.organization_affiliated, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1"
   },
   {
     "question_id": 473,
     "db_id": "WORD_VECTORS_US",
     "question": "Which papers have more citations than the average in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT n.title\nFROM main.NATURE n\nWHERE n.citations > (SELECT AVG(n.citations) FROM main.NATURE n)"
+    "SQL": "SELECT n.title FROM WORD_VECTORS_US.NATURE n WHERE n.citations > (SELECT AVG(n.citations) FROM WORD_VECTORS_US.NATURE n)"
   },
   {
     "question_id": 464,
     "db_id": "WORD_VECTORS_US",
     "question": "Which words have a frequency higher than the average frequency in the dataset?",
     "evidence": "",
-    "SQL": "SELECT w.word\nFROM main.WORD_FREQUENCIES w\nWHERE w.frequency > (SELECT AVG(frequency) FROM main.WORD_FREQUENCIES)"
+    "SQL": "SELECT w.word FROM WORD_VECTORS_US.WORD_FREQUENCIES w WHERE w.frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES)"
   },
   {
     "question_id": 463,
     "db_id": "WORD_VECTORS_US",
     "question": "Which titles have more citations than the average number of citations in their category?",
     "evidence": "",
-    "SQL": "SELECT n1.title\nFROM main.NATURE n1\nWHERE n1.citations > (SELECT AVG(n2.citations) FROM main.NATURE n2 WHERE n2.category = n1.category)"
+    "SQL": "SELECT n1.title FROM WORD_VECTORS_US.NATURE n1 WHERE n1.citations > (SELECT AVG(n2.citations) FROM WORD_VECTORS_US.NATURE n2 WHERE n2.category = n1.category)"
   },
   {
     "question_id": 446,
     "db_id": "WORD_VECTORS_US",
     "question": "What are the most recent titles for each category in the NATURE dataset?",
     "evidence": "",
-    "SQL": "SELECT category, title\nFROM (\n SELECT category, title, date,\n ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn\n FROM main.NATURE\n) t\nWHERE rn = 1"
+    "SQL": "SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1"
   },
   {
     "question_id": 445,
     "db_id": "WORD_VECTORS_US",
     "question": "Which categories and titles in the NATURE dataset have consecutive years of entries?",
     "evidence": "",
-    "SQL": "WITH yearly_records AS (\n    SELECT DISTINCT category, title, date\n    FROM main.NATURE\n    WHERE date IS NOT NULL\n),\nwith_prev AS (\n    SELECT category, title, date,\n           LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date\n    FROM yearly_records\n)\nSELECT DISTINCT category, title\nFROM with_prev\nWHERE prev_date IS NOT NULL \n  AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1"
+    "SQL": "WITH yearly_records AS ( SELECT DISTINCT category, title, date FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT category, title, date, LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date FROM yearly_records ) SELECT DISTINCT category, title FROM with_prev WHERE prev_date IS NOT NULL AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1"
+  },
+  {
+    "question_id": 83,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, which genes are associated with multiple different molecular clinical classifications?",
+    "evidence": "",
+    "SQL": "SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE GROUP BY Gene HAVING COUNT(DISTINCT MolClin) > 1;"
+  },
+  {
+    "question_id": 84,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, for which journals do distinct literature entries have no log records generated during the cytogenetic data conversion process, suggesting that they may not have been converted or that the conversion failed?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE r WHERE NOT EXISTS ( SELECT 1 FROM MITELMAN.PROD_CYTOCONVERTEDLOG l WHERE l.RefNo = r.RefNo );"
+  },
+  {
+    "question_id": 85,
+    "db_id": "MITELMAN",
+    "question": "In Mitelman, which journals' literature entries (deduplicated) generated log records during the cytogenetic data conversion process?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE WHERE RefNo IN (SELECT RefNo FROM MITELMAN.PROD_CYTOCONVERTEDLOG);"
+  },
+  {
+    "question_id": 86,
+    "db_id": "MITELMAN",
+    "question": "What are the three cytogenetic abnormalities with the highest total case counts in Mitelman?",
+    "evidence": "",
+    "SQL": "SELECT Abnormality AS Category, SUM(TotalCases) AS total_cases FROM MITELMAN.PROD_RECURRENTNUMDATA GROUP BY Abnormality ORDER BY total_cases DESC LIMIT 3;"
+  },
+  {
+    "question_id": 87,
+    "db_id": "MITELMAN",
+    "question": "In the Mitelman database, what are the top three journals that have the highest number of literature collected?",
+    "evidence": "",
+    "SQL": "SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 220,
+    "db_id": "HTAN_1",
+    "question": "In the HTAN_1 tumor atlas, which participants have a clinical diagnosis record but no Level 2 imaging data, possibly indicating that imaging for these cases has not yet been submitted?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT HTAN_Participant_ID FROM HTAN_1.HTAN_VERSIONED_CLINICAL_TIER1_DIAGNOSIS_R5 d WHERE NOT EXISTS ( SELECT 1 FROM HTAN_1.HTAN_VERSIONED_IMAGING_LEVEL2_METADATA_R2 i WHERE i.HTAN_Participant_ID = d.HTAN_Participant_ID );"
   }
 ]

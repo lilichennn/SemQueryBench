@@ -852,5 +852,250 @@
     "question": "I would like to see the distribution of distribution artifacts across the repository path (path) dimension: which paths have the highest number of distinct artifact fingerprints (deduplicated by sha256_digest)? Show me the Top 10.",
     "evidence": "",
     "SQL": "SELECT dm.path AS location, COUNT(DISTINCT dm.sha256_digest) AS distinct_external_cnt FROM PYPI.DISTRIBUTION_METADATA dm GROUP BY dm.path ORDER BY distinct_external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 271,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "I want to first confirm how many image records (row count) are in the MegaMovie image library (PHOTOS_V_0_2).",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;"
+  },
+  {
+    "question_id": 272,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "How many distinct upload sessions (deduplicated by upload_session_id) are in PHOTOS_V_0_2?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT p.upload_session_id) AS distinct_external_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;"
+  },
+  {
+    "question_id": 273,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "How many distinct index catalog entries (INDEXID deduplication) are involved in the astrometric matching log?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT m.INDEXID) AS distinct_entity_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m;"
+  },
+  {
+    "question_id": 274,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "In the astrometric matching log, which index entries (INDEXID) are matched/triggered most frequently? Give me the top 10 by the number of match events.",
+    "evidence": "",
+    "SQL": "SELECT m.INDEXID AS rel_entity, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 275,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "I want to roughly overview the distribution of the cumulative amount (sum of FIELDID) by different INDEXID in the match log. What are the top 10 INDEXID?",
+    "evidence": "",
+    "SQL": "SELECT m.INDEXID AS rel_entity, SUM(m.FIELDID) AS total_quantity FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 276,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "In this image library, how many images are there for each image format (image_type, e.g., JPEG/ARW)? Top 10 by count.",
+    "evidence": "",
+    "SQL": "SELECT p.image_type AS category_topic, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p GROUP BY p.image_type ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 277,
+    "db_id": "ECLIPSE_MEGAMOVIE",
+    "question": "What is the approximate average width of images captured by different camera makes? I want to see the differences in resolution specifications across makes. Show the top 10.",
+    "evidence": "",
+    "SQL": "SELECT p.make AS name_entity, AVG(p.width) AS avg_quantity FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p WHERE p.width IS NOT NULL GROUP BY p.make ORDER BY avg_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 278,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which customer_city cover the most distinct customer_unique_id? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT customer_city, COUNT(DISTINCT customer_unique_id) AS distinct_external_cnt FROM ELECTRONIC_SALES.CUSTOMERS GROUP BY customer_city ORDER BY distinct_external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 279,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which records mention 'the' in review_comment_message? Give me the 10 most recent by review_answer_timestamp.",
+    "evidence": "",
+    "SQL": "SELECT review_id FROM ELECTRONIC_SALES.ORDER_REVIEWS WHERE review_comment_message LIKE '%the%' ORDER BY CAST(review_answer_timestamp AS DATETIME) DESC LIMIT 10;"
+  },
+  {
+    "question_id": 280,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which order_id records are in the 'delivered' order_status? Give me the 10 most recent by order_purchase_timestamp.",
+    "evidence": "",
+    "SQL": "SELECT order_id FROM ELECTRONIC_SALES.ORDERS WHERE order_status = 'delivered' ORDER BY CAST(order_purchase_timestamp AS DATETIME) DESC LIMIT 10;"
+  },
+  {
+    "question_id": 281,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which customer_id are associated with the most records inside the observation window? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT customer_id, COUNT(*) AS event_cnt FROM ELECTRONIC_SALES.ORDERS WHERE CAST(order_purchase_timestamp AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(order_purchase_timestamp AS DATETIME) < '2026-01-31 23:59:59' GROUP BY customer_id ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 282,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which order_id accumulate the largest total payment_installments? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT order_id, SUM(payment_installments) AS total_quantity FROM ELECTRONIC_SALES.ORDER_PAYMENTS GROUP BY order_id ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 283,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how are the records distributed across product_category_name? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT product_category_name, COUNT(*) AS event_cnt FROM ELECTRONIC_SALES.PRODUCTS GROUP BY product_category_name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 284,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how many records are there in total?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM ELECTRONIC_SALES.CUSTOMERS;"
+  },
+  {
+    "question_id": 285,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how many distinct customer_unique_id are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT customer_unique_id) AS distinct_external_cnt FROM ELECTRONIC_SALES.CUSTOMERS;"
+  },
+  {
+    "question_id": 286,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how many distinct order_id are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT order_id) AS distinct_entity_cnt FROM ELECTRONIC_SALES.ORDER_PAYMENTS;"
+  },
+  {
+    "question_id": 287,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, which order_id carry the most records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT order_id, COUNT(*) AS event_cnt FROM ELECTRONIC_SALES.ORDER_REVIEWS GROUP BY order_id ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 288,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, list the 10 most recent order_id records whose order_purchase_timestamp falls inside the observation window.",
+    "evidence": "",
+    "SQL": "SELECT order_id FROM ELECTRONIC_SALES.ORDERS WHERE CAST(order_purchase_timestamp AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(order_purchase_timestamp AS DATETIME) < '2026-01-31 23:59:59' ORDER BY CAST(order_purchase_timestamp AS DATETIME) DESC LIMIT 10;"
+  },
+  {
+    "question_id": 289,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how many records fall inside the observation window?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS event_cnt FROM ELECTRONIC_SALES.ORDERS WHERE CAST(order_purchase_timestamp AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(order_purchase_timestamp AS DATETIME) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 290,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, how many distinct order_id appear inside the observation window?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT order_id) AS distinct_entity_cnt FROM ELECTRONIC_SALES.ORDER_REVIEWS WHERE CAST(review_answer_timestamp AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(review_answer_timestamp AS DATETIME) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 291,
+    "db_id": "ELECTRONIC_SALES",
+    "question": "In ELECTRONIC_SALES, show the daily record count over the observation window, ordered by date.",
+    "evidence": "",
+    "SQL": "SELECT DATE( CAST(order_purchase_timestamp AS DATETIME)) AS day, COUNT(*) AS event_cnt FROM ELECTRONIC_SALES.ORDERS WHERE CAST(order_purchase_timestamp AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(order_purchase_timestamp AS DATETIME) < '2026-01-31 23:59:59' GROUP BY day ORDER BY day;"
+  },
+  {
+    "question_id": 292,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which zip_city cover the most distinct objectid_1? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT zip_city, COUNT(DISTINCT objectid_1) AS distinct_external_cnt FROM NEW_YORK_GEO.NEW_YORK_TREE_CENSUS_2005 GROUP BY zip_city ORDER BY distinct_external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 293,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, what is the total number_of_cyclist_killed accumulated inside the observation window?",
+    "evidence": "",
+    "SQL": "SELECT SUM(number_of_cyclist_killed) AS total_quantity FROM NEW_YORK_GEO.NEW_YORK_NYPD_MV_COLLISIONS WHERE FROM_UNIXTIME(timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(timestamp / 1000000) < '2026-01-31 23:59:59';"
+  },
+  {
+    "question_id": 294,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, how does the total number_of_cyclist_killed break down across vehicle_type_code2 inside the observation window? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT vehicle_type_code2, SUM(number_of_cyclist_killed) AS total_quantity FROM NEW_YORK_GEO.NEW_YORK_NYPD_MV_COLLISIONS WHERE FROM_UNIXTIME(timestamp / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(timestamp / 1000000) < '2026-01-31 23:59:59' GROUP BY vehicle_type_code2 ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 295,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which end_station_latitude carry the most records inside the observation window? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT end_station_latitude, COUNT(*) AS event_cnt FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_TRIPS WHERE FROM_UNIXTIME(stoptime / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(stoptime / 1000000) < '2026-01-31 23:59:59' GROUP BY end_station_latitude ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 296,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, for each rental_methods, what share of records is in the 'True' is_renting inside the observation window? Give me the top 10 by share.",
+    "evidence": "",
+    "SQL": "SELECT rental_methods, CAST(SUM(CASE WHEN is_renting = 'True' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS ratio_in_status FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_STATIONS WHERE FROM_UNIXTIME(last_reported / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(last_reported / 1000000) < '2026-01-31 23:59:59' GROUP BY rental_methods ORDER BY ratio_in_status DESC LIMIT 10;"
+  },
+  {
+    "question_id": 297,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which name have the highest average num_bikes_disabled? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT name, AVG(num_bikes_disabled) AS avg_quantity FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_STATIONS WHERE num_bikes_disabled IS NOT NULL GROUP BY name ORDER BY avg_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 298,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which region_id records are in the 'True' is_renting? Give me the 10 most recent by last_reported.",
+    "evidence": "",
+    "SQL": "SELECT region_id FROM NEW_YORK_GEO.NEW_YORK_CITIBIKE_STATIONS WHERE is_renting = 'True' ORDER BY FROM_UNIXTIME(last_reported / 1000000) DESC LIMIT 10;"
+  },
+  {
+    "question_id": 299,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, how does the total fare_amount break down across payment_type inside the observation window? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT payment_type, SUM(fare_amount) AS total_amount FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 WHERE FROM_UNIXTIME(pickup_datetime / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(pickup_datetime / 1000000) < '2026-01-31 23:59:59' GROUP BY payment_type ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 300,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, show the monthly total of fare_amount over the observation window, ordered by month.",
+    "evidence": "",
+    "SQL": "SELECT DATE_FORMAT(FROM_UNIXTIME(pickup_datetime / 1000000), '%Y-%m-01') AS month, SUM(fare_amount) AS total_amount FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 WHERE FROM_UNIXTIME(pickup_datetime / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(pickup_datetime / 1000000) < '2026-01-31 23:59:59' GROUP BY month ORDER BY month;"
+  },
+  {
+    "question_id": 301,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which payment_type accumulate a total fare_amount above the threshold inside the observation window? Rank them from high to low.",
+    "evidence": "",
+    "SQL": "SELECT payment_type, SUM(fare_amount) AS total_amount FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 WHERE FROM_UNIXTIME(pickup_datetime / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(pickup_datetime / 1000000) < '2026-01-31 23:59:59' GROUP BY payment_type HAVING SUM(fare_amount) >= 1000 ORDER BY total_amount DESC;"
+  },
+  {
+    "question_id": 302,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which name appear most often? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT name, COUNT(*) AS event_cnt FROM NEW_YORK_GEO.GEO_US_BOUNDARIES_CBSA GROUP BY name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 303,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which records have a name containing 'County'? Give me the first 10 geo_id.",
+    "evidence": "",
+    "SQL": "SELECT geo_id FROM NEW_YORK_GEO.GEO_US_BOUNDARIES_CBSA WHERE name LIKE '%County%' ORDER BY geo_id LIMIT 10;"
+  },
+  {
+    "question_id": 304,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, which vendor_id accumulate the largest total passenger_count? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT vendor_id, SUM(passenger_count) AS total_quantity FROM NEW_YORK_GEO.NEW_YORK_TLC_GREEN_TRIPS_2013 GROUP BY vendor_id ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 305,
+    "db_id": "NEW_YORK_GEO",
+    "question": "In NEW_YORK_GEO, how are the records distributed across mtfcc_feature_class_code? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT mtfcc_feature_class_code, COUNT(*) AS event_cnt FROM NEW_YORK_GEO.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 GROUP BY mtfcc_feature_class_code ORDER BY event_cnt DESC LIMIT 10;"
   }
 ]

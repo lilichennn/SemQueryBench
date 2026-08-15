@@ -579,5 +579,33 @@
     "question": "In the USDA animal and animal product survey data, within each industry category, which products have an output value above the average level of that category for two consecutive years, demonstrating stable market performance?",
     "evidence": "",
     "SQL": "WITH yearly_avg AS ( SELECT sector_desc AS Category, year AS Year, AVG(value) AS avg_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc, year ), above_avg AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.year AS Year, t.value AS Measure, CASE WHEN t.value > ya.avg_value THEN 1 ELSE 0 END AS above FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN yearly_avg ya ON t.sector_desc = ya.Category AND t.year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 221,
+    "db_id": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "question": "In the US administrative boundary data, which counties have at least one recorded adjacent-county relationship?",
+    "evidence": "",
+    "SQL": "SELECT county_name FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_COUNTIES WHERE county_fips_code IN ( SELECT county_fips_code FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ADJACENT_COUNTIES );"
+  },
+  {
+    "question_id": 222,
+    "db_id": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "question": "For each OpenStreetMap contributor, which map node did they edit most recently?",
+    "evidence": "",
+    "SQL": "SELECT username, id FROM ( SELECT username, id, osm_timestamp, ROW_NUMBER() OVER (PARTITION BY username ORDER BY osm_timestamp DESC) AS rn FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_NODES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 223,
+    "db_id": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "question": "In the US ZIP code boundary data, which ZIP code areas have a land area larger than the median land area of all ZIP codes in the same state?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT state_name, area_land_meters FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ZIP_CODES ORDER BY state_name, area_land_meters ), category_arrays AS ( SELECT state_name, JSON_ARRAYAGG(area_land_meters) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY state_name ), category_median AS ( SELECT state_name, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_area FROM category_arrays ) SELECT t.state_name, t.zip_code, t.area_land_meters FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ZIP_CODES t JOIN category_median m ON t.state_name = m.state_name WHERE t.area_land_meters > m.median_area;"
+  },
+  {
+    "question_id": 224,
+    "db_id": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "question": "In the OpenStreetMap edit history, for each contributor, which nodes had a version number above that contributor's average for the year in two consecutive years?",
+    "evidence": "",
+    "SQL": "WITH yearly_avg AS ( SELECT username AS Category, EXTRACT(YEAR FROM CAST(osm_timestamp AS DATETIME)) AS Year, AVG(version) AS avg_version FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_HISTORY_NODES GROUP BY username, EXTRACT(YEAR FROM CAST(osm_timestamp AS DATETIME)) ), above_avg AS ( SELECT t.username AS Category, t.id AS Entity, EXTRACT(YEAR FROM CAST(t.osm_timestamp AS DATETIME)) AS Year, t.version AS Measure, CASE WHEN t.version > ya.avg_version THEN 1 ELSE 0 END AS above FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_HISTORY_NODES t JOIN yearly_avg ya ON t.username = ya.Category AND EXTRACT(YEAR FROM CAST(t.osm_timestamp AS DATETIME)) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
   }
 ]

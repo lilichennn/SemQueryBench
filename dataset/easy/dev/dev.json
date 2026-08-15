@@ -77,41 +77,6 @@
     "SQL": "WITH lagged AS ( SELECT sample_type AS Category, project_short_name AS Entity, days_to_collection AS Time, num_portions AS Measure, LAG(num_portions) OVER (PARTITION BY sample_type, project_short_name ORDER BY days_to_collection) AS prev_measure FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 WHERE num_portions IS NOT NULL AND days_to_collection IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
   },
   {
-    "question_id": 83,
-    "db_id": "MITELMAN",
-    "question": "In the Mitelman database, which genes are associated with multiple different molecular clinical classifications?",
-    "evidence": "",
-    "SQL": "SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE GROUP BY Gene HAVING COUNT(DISTINCT MolClin) > 1;"
-  },
-  {
-    "question_id": 84,
-    "db_id": "MITELMAN",
-    "question": "In the Mitelman database, for which journals do distinct literature entries have no log records generated during the cytogenetic data conversion process, suggesting that they may not have been converted or that the conversion failed?",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE r WHERE NOT EXISTS ( SELECT 1 FROM MITELMAN.PROD_CYTOCONVERTEDLOG l WHERE l.RefNo = r.RefNo );"
-  },
-  {
-    "question_id": 85,
-    "db_id": "MITELMAN",
-    "question": "In Mitelman, which journals' literature entries (deduplicated) generated log records during the cytogenetic data conversion process?",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE WHERE RefNo IN (SELECT RefNo FROM MITELMAN.PROD_CYTOCONVERTEDLOG);"
-  },
-  {
-    "question_id": 86,
-    "db_id": "MITELMAN",
-    "question": "What are the three cytogenetic abnormalities with the highest total case counts in Mitelman?",
-    "evidence": "",
-    "SQL": "SELECT Abnormality AS Category, SUM(TotalCases) AS total_cases FROM MITELMAN.PROD_RECURRENTNUMDATA GROUP BY Abnormality ORDER BY total_cases DESC LIMIT 3;"
-  },
-  {
-    "question_id": 87,
-    "db_id": "MITELMAN",
-    "question": "In the Mitelman database, what are the top three journals that have the highest number of literature collected?",
-    "evidence": "",
-    "SQL": "SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;"
-  },
-  {
     "question_id": 18,
     "db_id": "NEW_YORK_CITIBIKE_1",
     "question": "In the New York City bike share station data, which stations have the largest capacity? Please list the top 5 stations.",
@@ -404,5 +369,40 @@
     "question": "In the 2018 imaging data, for each imaging modality, which patients had a slice thickness for two consecutive years exceeding that year's average level of that modality?",
     "evidence": "",
     "SQL": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM AcquisitionDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality, EXTRACT(YEAR FROM AcquisitionDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.AcquisitionDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.AcquisitionDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 215,
+    "db_id": "HUMAN_GENOME_VARIANTS",
+    "question": "In the Simons Genome Diversity Project data, which populations appear in the sample metadata but have no corresponding record in the sample attributes table?",
+    "evidence": "",
+    "SQL": "SELECT DISTINCT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA m WHERE NOT EXISTS ( SELECT 1 FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_ATTRIBUTES a WHERE a.population = m.Population_ID );"
+  },
+  {
+    "question_id": 216,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 radiology imaging data, which patients had the slice thickness of their scans increase across three consecutive acquisition dates?",
+    "evidence": "",
+    "SQL": "WITH base AS ( SELECT PatientID AS Entity, AcquisitionDate AS Time, SliceThickness AS Measure, LAG(SliceThickness, 1) OVER (PARTITION BY PatientID ORDER BY AcquisitionDate) AS prev1, LAG(SliceThickness, 2) OVER (PARTITION BY PatientID ORDER BY AcquisitionDate) AS prev2 FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL AND SliceThickness IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 217,
+    "db_id": "TCGA_MITELMAN",
+    "question": "In the 2018 radiology imaging data, which patients' scans have a slice thickness above the median level for the same imaging modality?",
+    "evidence": "",
+    "SQL": "WITH sorted_values AS ( SELECT Modality, SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ORDER BY Modality, SliceThickness ), category_arrays AS ( SELECT Modality, JSON_ARRAYAGG(SliceThickness) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Modality ), category_median AS ( SELECT Modality, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_thickness FROM category_arrays ) SELECT t.Modality, t.PatientID, t.SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN category_median m ON t.Modality = m.Modality WHERE t.SliceThickness > m.median_thickness;"
+  },
+  {
+    "question_id": 218,
+    "db_id": "NEW_YORK_CITIBIKE_1",
+    "question": "In the New York bike-sharing trip data, for each user type, which starting stations experienced the sharpest surge in trip duration relative to the immediately preceding trip? List the top five stations for each user type.",
+    "evidence": "",
+    "SQL": "WITH lagged AS ( SELECT usertype AS Category, start_station_name AS Entity, starttime AS Time, tripduration AS Measure, LAG(tripduration) OVER (PARTITION BY usertype, start_station_name ORDER BY starttime) AS prev_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE tripduration IS NOT NULL AND starttime IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 219,
+    "db_id": "IDC",
+    "question": "In the imaging data sharing platform, for each imaging modality, which patients had a slice thickness exceeding that modality's average for the year in two consecutive years?",
+    "evidence": "",
+    "SQL": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM StudyDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM IDC.IDC_V17_DICOM_PIVOT GROUP BY Modality, EXTRACT(YEAR FROM StudyDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.StudyDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM IDC.IDC_V17_DICOM_PIVOT t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.StudyDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
   }
 ]

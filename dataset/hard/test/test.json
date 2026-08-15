@@ -490,13 +490,6 @@
     "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
   },
   {
-    "question_id": 39,
-    "db_id": "GA4",
-    "question": "Help me find out which device information is primarily involved in the records where the event parameters contain \"item\" between 9:00 AM and 5:00 PM on January 31, 2021, deduplicate them, and give me the top 10.",
-    "evidence": "",
-    "SQL": "SELECT DISTINCT CAST(e.DEVICE AS CHAR) AS name_entity FROM GA4.GA4_OBFUSCATED_SAMPLE_ECOMMERCE_EVENTS_20210131 e WHERE FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) >= '2021-01-31 09:00:00' AND FROM_UNIXTIME(e.EVENT_TIMESTAMP / 1000000) < '2021-01-31 17:00:00' AND CAST(e.EVENT_PARAMS AS CHAR) LIKE '%item%' ORDER BY name_entity LIMIT 10;"
-  },
-  {
     "question_id": 40,
     "db_id": "GA4",
     "question": "Find platforms where the number of events between 9:00 AM and 5:00 PM on January 31, 2021, is greater than or equal to the average event count across all platforms, and return the top 10 platforms sorted by event count in descending order.",

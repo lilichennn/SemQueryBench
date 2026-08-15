@@ -9,13 +9,6 @@ SELECT DATE(FROM_UNIXTIME(d.SnapshotAt / 1000000.0)) AS day, COUNT(*) AS event_c
 SELECT DATE(FROM_UNIXTIME(d.SnapshotAt / 1000000.0)) AS day, d.System AS category_topic, COUNT(*) AS event_cnt FROM DEPS_DEV_V1.DEPENDENTS d WHERE FROM_UNIXTIME(d.SnapshotAt / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(d.SnapshotAt / 1000000) < '2026-01-31 23:59:59' GROUP BY day, d.System ORDER BY day, event_cnt DESC;
 SELECT d.Name AS name_entity, COUNT(*) AS event_cnt FROM DEPS_DEV_V1.DEPENDENTS d WHERE FROM_UNIXTIME(d.SnapshotAt / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(d.SnapshotAt / 1000000) < '2026-01-31 23:59:59' GROUP BY d.Name HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC;
 WITH topic_cnt AS ( SELECT d.System AS topic, COUNT(*) AS cnt FROM DEPS_DEV_V1.DEPENDENTS d WHERE FROM_UNIXTIME(d.SnapshotAt / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(d.SnapshotAt / 1000000) < '2026-01-31 23:59:59' GROUP BY d.System ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;
-SELECT COUNT(*) AS row_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;
-SELECT COUNT(DISTINCT p.upload_session_id) AS distinct_external_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;
-SELECT COUNT(DISTINCT m.INDEXID) AS distinct_entity_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m;
-SELECT m.INDEXID AS rel_entity, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY event_cnt DESC LIMIT 10;
-SELECT m.INDEXID AS rel_entity, SUM(m.FIELDID) AS total_quantity FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY total_quantity DESC LIMIT 10;
-SELECT p.image_type AS category_topic, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p GROUP BY p.image_type ORDER BY event_cnt DESC LIMIT 10;
-SELECT p.make AS name_entity, AVG(p.width) AS avg_quantity FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p WHERE p.width IS NOT NULL GROUP BY p.make ORDER BY avg_quantity DESC LIMIT 10;
 SELECT o.id AS id_external FROM GHCN_D.GHCND_2018 o WHERE o.date >= '2018-01-01 00:00:00' AND o.date < '2019-01-01 00:00:00' ORDER BY o.date DESC LIMIT 10;
 SELECT o.id AS id_external FROM GHCN_D.GHCND_2018 o WHERE o.sflag = '7' ORDER BY o.date DESC LIMIT 10;
 SELECT COUNT(*) AS event_cnt FROM GHCN_D.GHCND_2018 o WHERE o.date >= '2018-01-01 00:00:00' AND o.date < '2019-01-01 00:00:00';
@@ -58,3 +51,13 @@ SELECT pmn.owner_user_id AS rel_person, pmn.tags AS category_topic, COUNT(*) AS 
 SELECT CAST(b.tag_based AS CHAR) AS category_topic, CAST(SUM(CASE WHEN b.tag_based = 'Business' THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS ratio_in_status FROM STACKOVERFLOW.BADGES b WHERE FROM_UNIXTIME(b.date / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(b.date / 1000000) < '2026-01-31 23:59:59' GROUP BY CAST(b.tag_based AS CHAR) ORDER BY ratio_in_status DESC LIMIT 10;
 SELECT SUM(p.comment_count) AS total_quantity FROM STACKOVERFLOW.STACKOVERFLOW_POSTS p WHERE FROM_UNIXTIME(p.last_activity_date / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(p.last_activity_date / 1000000) < '2026-01-31 23:59:59';
 SELECT p.tags AS category_topic, SUM(p.view_count) AS total_quantity FROM STACKOVERFLOW.STACKOVERFLOW_POSTS p WHERE FROM_UNIXTIME(p.last_activity_date / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(p.last_activity_date / 1000000) < '2026-01-31 23:59:59' GROUP BY p.tags ORDER BY total_quantity DESC LIMIT 10;
+SELECT COUNT(*) AS row_cnt FROM DEPS_DEV_V1.ADVISORIES;
+SELECT element, SUM(value) AS total_amount FROM GHCN_D.GHCND_1763 WHERE CAST(date AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(date AS DATETIME) < '2026-01-31 23:59:59' GROUP BY element ORDER BY total_amount DESC LIMIT 10;
+SELECT COUNT(DISTINCT SourceID) AS distinct_external_cnt FROM DEPS_DEV_V1.ADVISORIES;
+SELECT element, SUM(value) AS total_amount FROM GHCN_D.GHCND_1763 WHERE CAST(date AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(date AS DATETIME) < '2026-01-31 23:59:59' GROUP BY element HAVING SUM(value) >= 1000 ORDER BY total_amount DESC;
+SELECT COUNT(DISTINCT Packages) AS distinct_entity_cnt FROM DEPS_DEV_V1.ADVISORIES;
+SELECT latitude, COUNT(DISTINCT id) AS distinct_external_cnt FROM GHCN_D.GHCND_INVENTORY GROUP BY latitude ORDER BY distinct_external_cnt DESC LIMIT 10;
+SELECT Packages, COUNT(*) AS event_cnt FROM DEPS_DEV_V1.ADVISORIES GROUP BY Packages ORDER BY event_cnt DESC LIMIT 10;
+SELECT body_type_name, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES_PLUS.NHTSA_TRAFFIC_FATALITIES_PARKWORK_2015 GROUP BY body_type_name ORDER BY event_cnt DESC LIMIT 10;
+SELECT SourceID FROM DEPS_DEV_V1.ADVISORIES WHERE Title LIKE '%application%' ORDER BY SourceID LIMIT 10;
+SELECT relation_to_trafficway, SUM(number_of_persons_in_motor_vehicles_in_transport_mvit) AS total_quantity FROM NHTSA_TRAFFIC_FATALITIES_PLUS.NHTSA_TRAFFIC_FATALITIES_ACCIDENT_2020 GROUP BY relation_to_trafficway ORDER BY total_quantity DESC LIMIT 10;

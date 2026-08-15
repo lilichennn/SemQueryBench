@@ -621,5 +621,33 @@
     "question": "I want to see which industry types the downstream users in different provinces are mainly concentrated in, to check whether there are significant differences in regional gas consumption structures. Only show province-industry type combinations with no fewer than 10 records, and first give me the top 20.",
     "evidence": "",
     "SQL": "SELECT t.USER_PROVINCE AS location, t.INDUSTRY_TYPE AS category_topic, COUNT(*) AS event_cnt FROM `IOC_NaturalGas`.NG_GAS_REALTIME_USER_DATA t WHERE t.USER_PROVINCE IS NOT NULL AND t.INDUSTRY_TYPE IS NOT NULL GROUP BY t.USER_PROVINCE, t.INDUSTRY_TYPE HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 307,
+    "db_id": "IPL",
+    "question": "In IPL, how many distinct ball_id records fall under each striker_batting_position tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT striker_batting_position, COUNT(DISTINCT ball_id) AS entity_cnt FROM IPL.BALL_BY_BALL GROUP BY striker_batting_position ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 308,
+    "db_id": "OPENAQ",
+    "question": "In OPENAQ, which records have a ten_percentile of at least 50? List the top 10 state_code by ten_percentile in descending order.",
+    "evidence": "",
+    "SQL": "SELECT state_code, ten_percentile FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_AIR_QUALITY_ANNUAL_SUMMARY WHERE ten_percentile >= 50 ORDER BY ten_percentile DESC LIMIT 10;"
+  },
+  {
+    "question_id": 309,
+    "db_id": "WIDE_WORLD_IMPORTERS",
+    "question": "In WIDE_WORLD_IMPORTERS, which records were already past their ExpectedDeliveryDate as of the start of 2016? Give me the 10 earliest by ExpectedDeliveryDate.",
+    "evidence": "",
+    "SQL": "SELECT BackorderOrderID, ExpectedDeliveryDate FROM WIDE_WORLD_IMPORTERS.SALES_ORDERS WHERE CAST(ExpectedDeliveryDate AS DATETIME) < '2016-01-01 00:00:00' ORDER BY ExpectedDeliveryDate ASC LIMIT 10;"
+  },
+  {
+    "question_id": 310,
+    "db_id": "SAN_FRANCISCO_PLUS",
+    "question": "In SAN_FRANCISCO_PLUS, show the daily record count and the running cumulative count for each priority tier over 2016, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT priority AS lvl, DATE(call_date) AS d, COUNT(*) AS cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS WHERE CAST(call_date AS DATETIME) >= '2016-01-01 00:00:00' AND CAST(call_date AS DATETIME) < '2017-01-01 00:00:00' GROUP BY priority, DATE(call_date) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
   }
 ]

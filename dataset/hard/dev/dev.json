@@ -77,55 +77,6 @@
     "SQL": "WITH topic_cnt AS ( SELECT d.System AS topic, COUNT(*) AS cnt FROM DEPS_DEV_V1.DEPENDENTS d WHERE FROM_UNIXTIME(d.SnapshotAt / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(d.SnapshotAt / 1000000) < '2026-01-31 23:59:59' GROUP BY d.System ), avg_cnt AS ( SELECT AVG(cnt) AS avg_cnt FROM topic_cnt ) SELECT topic, cnt FROM topic_cnt WHERE cnt > (SELECT avg_cnt FROM avg_cnt) ORDER BY cnt DESC LIMIT 10;"
   },
   {
-    "question_id": 271,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "I want to first confirm how many image records (row count) are in the MegaMovie image library (PHOTOS_V_0_2).",
-    "evidence": "",
-    "SQL": "SELECT COUNT(*) AS row_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;"
-  },
-  {
-    "question_id": 272,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "How many distinct upload sessions (deduplicated by upload_session_id) are in PHOTOS_V_0_2?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT p.upload_session_id) AS distinct_external_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p;"
-  },
-  {
-    "question_id": 273,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "How many distinct index catalog entries (INDEXID deduplication) are involved in the astrometric matching log?",
-    "evidence": "",
-    "SQL": "SELECT COUNT(DISTINCT m.INDEXID) AS distinct_entity_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m;"
-  },
-  {
-    "question_id": 274,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "In the astrometric matching log, which index entries (INDEXID) are matched/triggered most frequently? Give me the top 10 by the number of match events.",
-    "evidence": "",
-    "SQL": "SELECT m.INDEXID AS rel_entity, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 275,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "I want to roughly overview the distribution of the cumulative amount (sum of FIELDID) by different INDEXID in the match log. What are the top 10 INDEXID?",
-    "evidence": "",
-    "SQL": "SELECT m.INDEXID AS rel_entity, SUM(m.FIELDID) AS total_quantity FROM ECLIPSE_MEGAMOVIE.ASTROMETRY_MATCH_V_0_4 m GROUP BY m.INDEXID ORDER BY total_quantity DESC LIMIT 10;"
-  },
-  {
-    "question_id": 276,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "In this image library, how many images are there for each image format (image_type, e.g., JPEG/ARW)? Top 10 by count.",
-    "evidence": "",
-    "SQL": "SELECT p.image_type AS category_topic, COUNT(*) AS event_cnt FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p GROUP BY p.image_type ORDER BY event_cnt DESC LIMIT 10;"
-  },
-  {
-    "question_id": 277,
-    "db_id": "ECLIPSE_MEGAMOVIE",
-    "question": "What is the approximate average width of images captured by different camera makes? I want to see the differences in resolution specifications across makes. Show the top 10.",
-    "evidence": "",
-    "SQL": "SELECT p.make AS name_entity, AVG(p.width) AS avg_quantity FROM ECLIPSE_MEGAMOVIE.PHOTOS_V_0_2 p WHERE p.width IS NOT NULL GROUP BY p.make ORDER BY avg_quantity DESC LIMIT 10;"
-  },
-  {
     "question_id": 60,
     "db_id": "GHCN_D",
     "question": "Find the stations with daily observation records in 2018 and retrieve the top 10 station IDs ordered by the latest observation date descending.",
@@ -418,5 +369,75 @@
     "question": "Show me the top 10 tag combinations whose posts received the highest total views between January 1, 2001 and January 31, 2026, sorted by views in descending order.",
     "evidence": "",
     "SQL": "SELECT p.tags AS category_topic, SUM(p.view_count) AS total_quantity FROM STACKOVERFLOW.STACKOVERFLOW_POSTS p WHERE FROM_UNIXTIME(p.last_activity_date / 1000000) >= '2001-01-01 00:00:00' AND FROM_UNIXTIME(p.last_activity_date / 1000000) < '2026-01-31 23:59:59' GROUP BY p.tags ORDER BY total_quantity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 306,
+    "db_id": "DEPS_DEV_V1",
+    "question": "In DEPS_DEV_V1, how many records are there in total?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(*) AS row_cnt FROM DEPS_DEV_V1.ADVISORIES;"
+  },
+  {
+    "question_id": 307,
+    "db_id": "GHCN_D",
+    "question": "In GHCN_D, how does the total value break down across element inside the observation window? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT element, SUM(value) AS total_amount FROM GHCN_D.GHCND_1763 WHERE CAST(date AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(date AS DATETIME) < '2026-01-31 23:59:59' GROUP BY element ORDER BY total_amount DESC LIMIT 10;"
+  },
+  {
+    "question_id": 308,
+    "db_id": "DEPS_DEV_V1",
+    "question": "In DEPS_DEV_V1, how many distinct SourceID are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT SourceID) AS distinct_external_cnt FROM DEPS_DEV_V1.ADVISORIES;"
+  },
+  {
+    "question_id": 309,
+    "db_id": "GHCN_D",
+    "question": "In GHCN_D, which element accumulate a total value above the threshold inside the observation window? Rank them from high to low.",
+    "evidence": "",
+    "SQL": "SELECT element, SUM(value) AS total_amount FROM GHCN_D.GHCND_1763 WHERE CAST(date AS DATETIME) >= '2001-01-01 00:00:00' AND CAST(date AS DATETIME) < '2026-01-31 23:59:59' GROUP BY element HAVING SUM(value) >= 1000 ORDER BY total_amount DESC;"
+  },
+  {
+    "question_id": 310,
+    "db_id": "DEPS_DEV_V1",
+    "question": "In DEPS_DEV_V1, how many distinct Packages are there?",
+    "evidence": "",
+    "SQL": "SELECT COUNT(DISTINCT Packages) AS distinct_entity_cnt FROM DEPS_DEV_V1.ADVISORIES;"
+  },
+  {
+    "question_id": 311,
+    "db_id": "GHCN_D",
+    "question": "In GHCN_D, which latitude cover the most distinct id? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT latitude, COUNT(DISTINCT id) AS distinct_external_cnt FROM GHCN_D.GHCND_INVENTORY GROUP BY latitude ORDER BY distinct_external_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 312,
+    "db_id": "DEPS_DEV_V1",
+    "question": "In DEPS_DEV_V1, which Packages carry the most records? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT Packages, COUNT(*) AS event_cnt FROM DEPS_DEV_V1.ADVISORIES GROUP BY Packages ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 313,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES_PLUS",
+    "question": "In NHTSA_TRAFFIC_FATALITIES_PLUS, which body_type_name appear most often? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT body_type_name, COUNT(*) AS event_cnt FROM NHTSA_TRAFFIC_FATALITIES_PLUS.NHTSA_TRAFFIC_FATALITIES_PARKWORK_2015 GROUP BY body_type_name ORDER BY event_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 314,
+    "db_id": "DEPS_DEV_V1",
+    "question": "In DEPS_DEV_V1, which records have a Title containing 'application'? Give me the first 10 SourceID.",
+    "evidence": "",
+    "SQL": "SELECT SourceID FROM DEPS_DEV_V1.ADVISORIES WHERE Title LIKE '%application%' ORDER BY SourceID LIMIT 10;"
+  },
+  {
+    "question_id": 315,
+    "db_id": "NHTSA_TRAFFIC_FATALITIES_PLUS",
+    "question": "In NHTSA_TRAFFIC_FATALITIES_PLUS, which relation_to_trafficway accumulate the largest total number_of_persons_in_motor_vehicles_in_transport_mvit? Give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT relation_to_trafficway, SUM(number_of_persons_in_motor_vehicles_in_transport_mvit) AS total_quantity FROM NHTSA_TRAFFIC_FATALITIES_PLUS.NHTSA_TRAFFIC_FATALITIES_ACCIDENT_2020 GROUP BY relation_to_trafficway ORDER BY total_quantity DESC LIMIT 10;"
   }
 ]

@@ -1,0 +1,3550 @@
+{
+    "crm_market_contract_detail": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0943c1-0f99-63fe-9cdc-fd18b4f5ad9d"
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1.1 统建建设"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "INT",
+                "sample_value": 2025
+            },
+            {
+                "col_name": "annual_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "LARGEINT",
+                "sample_value": 107000
+            },
+            {
+                "col_name": "biweekly_completion",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "LARGEINT",
+                "sample_value": 2611
+            },
+            {
+                "col_name": "cumulative_completion",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "LARGEINT",
+                "sample_value": 155927
+            },
+            {
+                "col_name": "progress",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "145.73%"
+            },
+            {
+                "col_name": "sync_value",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "TEXT",
+                "sample_value": "62.04%"
+            }
+        ]
+    },
+    "dge_annual_doctor_recruitment": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2024"
+            },
+            {
+                "col_name": "campus_recruitment",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "78"
+            },
+            {
+                "col_name": "social_recruitment",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "78"
+            }
+        ]
+    },
+    "dge_business_rnd_outsource_staff_change": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "stat_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2025-10"
+            },
+            {
+                "col_name": "first_level_org",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "东北大区"
+            },
+            {
+                "col_name": "yearly_total_add",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "yearly_total_remove",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "yearly_net_change",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "dge_company_revenue_target": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2025"
+            },
+            {
+                "col_name": "Market_Classification",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "国内政企"
+            },
+            {
+                "col_name": "current_year_budget",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "73000.0"
+            }
+        ]
+    },
+    "dge_current_year_granted_patents": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "complete_plate_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "大庆分公司"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "SMALLINT",
+                "sample_value": "2025"
+            },
+            {
+                "col_name": "apply_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "BIGINT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "authorize_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "data_type",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "current"
+            }
+        ]
+    },
+    "dge_delivery_project_financial": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "IID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(144)",
+                "sample_value": "1f0dfcda-a59f-6e3f-864a-47a709270fa5"
+            },
+            {
+                "col_name": "mainid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "9245"
+            },
+            {
+                "col_name": "scode",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2020QT003"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": "11"
+            },
+            {
+                "col_name": "sequencekey",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10030016"
+            },
+            {
+                "col_name": "costname",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "国内所得税"
+            },
+            {
+                "col_name": "plansumfee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "percentage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(10, 4)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "basesumfee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "actfee",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "basic_budget",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "parentid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": "9.0"
+            }
+        ]
+    },
+    "dge_first_level_org_amount": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(225)",
+                "sample_value": "新疆大区"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "INT",
+                "sample_value": "13"
+            },
+            {
+                "col_name": "prev_period_rd_inv_amt_completion_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.48"
+            },
+            {
+                "col_name": "rank_change_compared_to_prev_report",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(225)",
+                "sample_value": "上升+5"
+            },
+            {
+                "col_name": "rd_investment_amount_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "2138.0"
+            },
+            {
+                "col_name": "rd_investment_amount_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "1908.0"
+            },
+            {
+                "col_name": "rd_inv_amt_completion_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.89"
+            }
+        ]
+    },
+    "dge_free_cash_flow_data": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "销售商品、提供劳务收到的现金"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "销售商品、提供劳务收到的现金"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "2024"
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "INT",
+                "sample_value": 6
+            },
+            {
+                "col_name": "kpi_month",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(15, 2)",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_year",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(15, 2)",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "total_L_year",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(15, 2)",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "date_record",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2024-06-01"
+            }
+        ]
+    },
+    "dge_intellectual_deail": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(144)",
+                "sample_value": "1f0a042d-a3c5-64b3-97f9-4174c9d34489"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "INT",
+                "sample_value": "2024"
+            },
+            {
+                "col_name": "apply_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "52"
+            },
+            {
+                "col_name": "authorize_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "4"
+            }
+        ]
+    },
+    "dge_intellectual_deail_1": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(144)",
+                "sample_value": "1f0ecc57-d78a-6b32-a8a0-c18375a44fae"
+            },
+            {
+                "col_name": "group_apply_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "180"
+            },
+            {
+                "col_name": "company_apply_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "400"
+            },
+            {
+                "col_name": "current_year_apply_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "last_year_apply_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "group_authorize_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "20"
+            },
+            {
+                "col_name": "company_authorize_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "40"
+            },
+            {
+                "col_name": "current_year_authorize_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "last_year_authorize_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "1"
+            }
+        ]
+    },
+    "dge_org_patent_application": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "大庆分公司"
+            },
+            {
+                "col_name": "company_apply_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "17.0"
+            }
+        ]
+    },
+    "dge_org_patent_application_month": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "智慧财金事业部"
+            },
+            {
+                "col_name": "ccurrent_month_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "28.0"
+            },
+            {
+                "col_name": "ccurrent_month_count",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "10.0"
+            }
+        ]
+    },
+    "dge_outsourcedpersonneldist": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "stat_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2025-10"
+            },
+            {
+                "col_name": "person_dist",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "国内外包"
+            },
+            {
+                "col_name": "person_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 2588
+            }
+        ]
+    },
+    "dge_outsource_staff_flow": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "stat_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2025-10"
+            },
+            {
+                "col_name": "person_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "咨询服务"
+            },
+            {
+                "col_name": "cumulative_admissions",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "319"
+            },
+            {
+                "col_name": "cumulative_departures",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "383"
+            },
+            {
+                "col_name": "current_onsite_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "885"
+            }
+        ]
+    },
+    "dge_patent_application_authorization": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "group_apply_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": "180"
+            },
+            {
+                "col_name": "company_apply_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": "400.0"
+            },
+            {
+                "col_name": "group_authorize_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": "20.0"
+            },
+            {
+                "col_name": "company_authorize_target",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DOUBLE",
+                "sample_value": "40.0"
+            }
+        ]
+    },
+    "dge_profit_centers_organizations": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "profit_center",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "北京市凌怡科技有限公司"
+            },
+            {
+                "col_name": "level_one_org",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "智慧销售事业部"
+            }
+        ]
+    },
+    "dge_project_department_organizational": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "belong_department",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "云产品研发部"
+            },
+            {
+                "col_name": "belong_segment",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "云计算事业部"
+            },
+            {
+                "col_name": "level_one_org",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "云计算事业部"
+            }
+        ]
+    },
+    "dge_project_detail": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "iid",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(16000)",
+                "sample_value": "1f09c6c3-478a-62e7-a331-e3156aa6ecfe"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BIGINT",
+                "sample_value": "404"
+            },
+            {
+                "col_name": "uuid",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "CHAR(36)",
+                "sample_value": "88de1a91-d85d-4989-922f-e2576c06be1b"
+            },
+            {
+                "col_name": "wbs_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "开源AI模型的创新应用前期研究-物探生产经营智能助手-东部大区运营支持团队"
+            },
+            {
+                "col_name": "project_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FSZ025S001"
+            },
+            {
+                "col_name": "project_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "research_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "belong_plate",
+                "col_tag": "REL_ENTITY",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "belong_plate_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "belong_dept_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "belong_dept_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "time_approval_people",
+                "col_tag": "REL_PERSON",
+                "col_type": "BIGINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "time_approval_people_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "process_ing",
+                "col_tag": "STATUS_WORK",
+                "col_type": "LARGEINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "matching",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "matching_main_project_type",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "matching_main_project_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "matching_main_project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "opening_argument",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "is_opening_argument_project",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "opening_argument_project_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "opening_argument_project_kj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "erp_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FSZ025S001"
+            },
+            {
+                "col_name": "wbs_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FSZ025S00101023002"
+            },
+            {
+                "col_name": "wbs_rank",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "4"
+            },
+            {
+                "col_name": "wbs_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "CRTD"
+            },
+            {
+                "col_name": "wbs_status_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "DLFL"
+            },
+            {
+                "col_name": "lead_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "LARGEINT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "is_research",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "LARGEINT",
+                "sample_value": "-1"
+            },
+            {
+                "col_name": "remark",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "work_item_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BIGINT",
+                "sample_value": "239"
+            },
+            {
+                "col_name": "creator",
+                "col_tag": "REL_PERSON",
+                "col_type": "BIGINT",
+                "sample_value": "239"
+            },
+            {
+                "col_name": "create_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-03-18 19:03:33"
+            },
+            {
+                "col_name": "updator",
+                "col_tag": "REL_PERSON",
+                "col_type": "BIGINT",
+                "sample_value": "-1"
+            },
+            {
+                "col_name": "update_time",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-09-28 18:00:42"
+            },
+            {
+                "col_name": "del",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "LARGEINT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "mod_time",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-03-18 19:03:33"
+            },
+            {
+                "col_name": "b_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BIGINT",
+                "sample_value": "239"
+            },
+            {
+                "col_name": "b_project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "基于开源AI模型的领航级创新应用场景前期研究_自筹"
+            },
+            {
+                "col_name": "b_proj_mgr",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "86452260"
+            },
+            {
+                "col_name": "b_proj_lvl_cd",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "b_proj_lvl_desc",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "其他"
+            },
+            {
+                "col_name": "b_plan_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-03-01"
+            },
+            {
+                "col_name": "b_plan_finish_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-05-31"
+            },
+            {
+                "col_name": "b_erp_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "FSZ025S001"
+            },
+            {
+                "col_name": "b_erp_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "CRTD"
+            },
+            {
+                "col_name": "b_erp_status_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "DLFL"
+            },
+            {
+                "col_name": "b_is_research",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "N"
+            },
+            {
+                "col_name": "b_create_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-03-17 19:08:12"
+            },
+            {
+                "col_name": "b_mod_time",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2025-03-17 19:08:15"
+            },
+            {
+                "col_name": "b_mgr_edit_flag",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "LARGEINT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "dge_project_expense_test": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "qtfy",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "1096.46"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "BIGINT",
+                "sample_value": "100"
+            },
+            {
+                "col_name": "project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "网络化部署的近红外智能化技术开发_拨款"
+            },
+            {
+                "col_name": "proj_mgr",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "50615774"
+            },
+            {
+                "col_name": "proj_lvl_cd",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "proj_lvl_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "专业公司级"
+            },
+            {
+                "col_name": "plan_start_time",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "DATETIME",
+                "sample_value": "2024-06-01"
+            },
+            {
+                "col_name": "plan_finish_time",
+                "col_tag": "TIME_DEADLINE",
+                "col_type": "DATETIME",
+                "sample_value": "2026-12-31"
+            },
+            {
+                "col_name": "erp_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "SSZ024Z013"
+            },
+            {
+                "col_name": "erp_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "REL"
+            },
+            {
+                "col_name": "erp_status_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "实施"
+            },
+            {
+                "col_name": "is_research",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "Y"
+            },
+            {
+                "col_name": "create_time",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-12-20 19:09:44"
+            },
+            {
+                "col_name": "mod_time",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "DATETIME",
+                "sample_value": "2024-12-20 19:09:45"
+            },
+            {
+                "col_name": "mgr_edit_flag",
+                "col_tag": "STATUS_WORK",
+                "col_type": "INT",
+                "sample_value": "0"
+            }
+        ]
+    },
+    "dge_rd_investment_intensity": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "rd_investment_amount_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "12000.0"
+            },
+            {
+                "col_name": "rd_investment_amount_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "86092.0"
+            },
+            {
+                "col_name": "rd_investment_amount_period",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "46863.22"
+            }
+        ]
+    },
+    "dge_revenue_target": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2025"
+            },
+            {
+                "col_name": "primary_org",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(100)",
+                "sample_value": "大庆分公司"
+            },
+            {
+                "col_name": "revenue_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "29300.0"
+            },
+            {
+                "col_name": "external_revenue_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": "3400.0"
+            }
+        ]
+    },
+    "dge_two_years_outsource_data": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "stat_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "VARCHAR(20)",
+                "sample_value": "2024-12"
+            },
+            {
+                "col_name": "person_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "VARCHAR(50)",
+                "sample_value": "入场"
+            },
+            {
+                "col_name": "person_count",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": 1672
+            },
+            {
+                "col_name": "person_count_end_previous_year",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "INT",
+                "sample_value": null
+            }
+        ]
+    },
+    "dge_view_nd_incm_ys_sj": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "org_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "新疆大区"
+            },
+            {
+                "col_name": "nd",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "INT",
+                "sample_value": 2025
+            },
+            {
+                "col_name": "stats_incm",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(13, 2)",
+                "sample_value": 218000000.0
+            },
+            {
+                "col_name": "actualIncome",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(40, 2)",
+                "sample_value": 126208837.04
+            }
+        ]
+    },
+    "historical_operating_metrics": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "13"
+            },
+            {
+                "col_name": "statistical_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2024-09"
+            },
+            {
+                "col_name": "organization_display",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "数据智能事业部"
+            },
+            {
+                "col_name": "ytd_revenue",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "2701.0"
+            },
+            {
+                "col_name": "ytd_gross_profit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "-8.0"
+            }
+        ]
+    },
+    "hr_org_efficiency_metrics": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2024年"
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "9月"
+            },
+            {
+                "col_name": "statistical_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2024-09"
+            },
+            {
+                "col_name": "organization_statistical",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "智慧油田"
+            },
+            {
+                "col_name": "organization_display",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "智慧油田事业部"
+            },
+            {
+                "col_name": "avg_headcount_total",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "456.33"
+            },
+            {
+                "col_name": "avg_headcount_sales",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "total_labor_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 4)",
+                "sample_value": "10156.5979"
+            },
+            {
+                "col_name": "ytd_valuable_workload",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.00"
+            },
+            {
+                "col_name": "ytd_new_contract_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.00"
+            },
+            {
+                "col_name": "statistical_caliber_note",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "计算人效的数据口径为不含人力资源部业务部和SAP运维部数据"
+            }
+        ]
+    },
+    "hr_people_analytics_dashboard": {
+        "table_tag": "DIMENSION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "14"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "2024年"
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "TEXT",
+                "sample_value": "9月"
+            },
+            {
+                "col_name": "statistical_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "202409"
+            },
+            {
+                "col_name": "organization_statistical",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "新疆大区"
+            },
+            {
+                "col_name": "organization_display",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "新疆大区"
+            },
+            {
+                "col_name": "avg_headcount_total",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "262.22"
+            },
+            {
+                "col_name": "avg_headcount_sales",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "9.78"
+            },
+            {
+                "col_name": "total_labor_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 4)",
+                "sample_value": "3158.5333"
+            },
+            {
+                "col_name": "ytd_revenue",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "6375.0"
+            },
+            {
+                "col_name": "ytd_contribution_margin",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "-170.0"
+            },
+            {
+                "col_name": "ytd_valuable_workload",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "18360.0"
+            },
+            {
+                "col_name": "ytd_new_contract_value",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "18360.0"
+            },
+            {
+                "col_name": "statistical_caliber_note",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            },
+            {
+                "col_name": "is_latest_period",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            }
+        ]
+    },
+    "kunlun_intelligent_code": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "智慧党建事业部"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": "10"
+            },
+            {
+                "col_name": "change_compared_to_prev_report",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "上升+1"
+            },
+            {
+                "col_name": "active_days_ratio_monthly",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.81"
+            },
+            {
+                "col_name": "code_completion_adoption_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.19"
+            },
+            {
+                "col_name": "adoption_rate_deviation",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.11"
+            }
+        ]
+    },
+    "level1_org_sales_target_performance": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0946d3-15b2-6181-b9cd-a58c18ddf345"
+            },
+            {
+                "col_name": "first_level_org",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "兰州分公司"
+            },
+            {
+                "col_name": "annual_goal",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(30, 4)",
+                "sample_value": "60000000.0"
+            },
+            {
+                "col_name": "implemented_total",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(30, 4)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "completeness_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(30, 4)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "q3_target",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(30, 4)",
+                "sample_value": "42000000.0"
+            },
+            {
+                "col_name": "q3_gap",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(30, 4)",
+                "sample_value": "42000000.0"
+            }
+        ]
+    },
+    "pomp_phasecost": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(26212)",
+                "sample_value": "1f099eaf-f815-670c-b834-9116b59c6b18"
+            },
+            {
+                "col_name": "ProjectName",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国人民解放军空军后勤部采购服务站-便携式数字密度计"
+            },
+            {
+                "col_name": "ProjectNo",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2022GC0008"
+            },
+            {
+                "col_name": "Dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "油服产品与解决方案部"
+            },
+            {
+                "col_name": "Segment",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "智慧油服事业部"
+            },
+            {
+                "col_name": "SequenceKey",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "10011008"
+            },
+            {
+                "col_name": "Name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "项目收尾"
+            },
+            {
+                "col_name": "Type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "阶段"
+            },
+            {
+                "col_name": "Stage",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国人民解放军空军后勤部采购服务站-便携式数字密度计"
+            },
+            {
+                "col_name": "Status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "进行中"
+            },
+            {
+                "col_name": "PlannedStart",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2022-12-07"
+            },
+            {
+                "col_name": "PlannedEnd",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-12-15"
+            },
+            {
+                "col_name": "TotalCost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "9496.92"
+            },
+            {
+                "col_name": "LaborCost_Rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "2300.00"
+            },
+            {
+                "col_name": "StaffOutsourcingCost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "HwSwProcurementCost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "TechServiceOutsourcingCost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "OtherCosts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "7196.92"
+            },
+            {
+                "col_name": "LaborCost_Direct",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "2635.52"
+            }
+        ]
+    },
+    "pomp_poject_delivery_status": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0eccb1-d662-6443-9c31-f301a252f11a"
+            },
+            {
+                "col_name": "zh_cn_objname",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "华南大区"
+            },
+            {
+                "col_name": "jf_code",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "22"
+            },
+            {
+                "col_name": "wq_code",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "yqsl",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "LARGEINT",
+                "sample_value": "20"
+            }
+        ]
+    },
+    "pomp_view_pomp_allproject": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0eccb6-04a6-640f-941a-e1b2dddaae36"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "天津大港油田工程咨询有限公司涿州分公司云服务器资源租用"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "LX2022YW0042"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "东部大区"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "东部大区交付服务部"
+            },
+            {
+                "col_name": "proj_mgr",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "刘鸿飞"
+            },
+            {
+                "col_name": "proj_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "零星项目"
+            },
+            {
+                "col_name": "proj_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "已结项"
+            },
+            {
+                "col_name": "biz_cat",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "运维服务类"
+            },
+            {
+                "col_name": "proj_grade",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "D"
+            },
+            {
+                "col_name": "proj_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "零星项目"
+            },
+            {
+                "col_name": "contract_party",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "昆仑数智科技有限责任公司"
+            },
+            {
+                "col_name": "sales_proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "sales_cust_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "天津大港油田工程咨询有限公司涿州分公司"
+            },
+            {
+                "col_name": "cust_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "天津大港油田工程咨询有限公司涿州分公司"
+            },
+            {
+                "col_name": "market_cat",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "集团非统建"
+            },
+            {
+                "col_name": "acct_mgr",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "plan_start_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2022-12-05"
+            },
+            {
+                "col_name": "plan_const_comp_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-12-31"
+            },
+            {
+                "col_name": "plan_proj_close_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-12-31"
+            },
+            {
+                "col_name": "proj_appr_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2022-12-05 21:00:44"
+            },
+            {
+                "col_name": "int_accept_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "ext_accept_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "ext_accept_appr_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "filing_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-12-16 15:21:52"
+            },
+            {
+                "col_name": "proj_close_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "proj_suspend_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "proj_resume_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": ""
+            },
+            {
+                "col_name": "abnormal_close_reason",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "group_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "is_overseas",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "impl_location",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "is_digital_proj",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "plan_comp_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "100.0"
+            },
+            {
+                "col_name": "actual_comp_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "100.0"
+            },
+            {
+                "col_name": "int_staff_est_days",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "ext_staff_est_days",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "int_staff_act_days",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "ext_staff_act_days",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "budget_rev_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 4)",
+                "sample_value": "11.5644"
+            },
+            {
+                "col_name": "budget_rev_no_tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 4)",
+                "sample_value": "11.5644"
+            },
+            {
+                "col_name": "curr_yr_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "tax",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "next_yr_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "yr_after_next_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y21_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y22_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y23_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y24_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y25_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y26_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y21_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y22_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y23_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y24_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y25_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y26_base_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "cum_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "29.0042"
+            },
+            {
+                "col_name": "curr_yr_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y21_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "y22_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "4.5283"
+            },
+            {
+                "col_name": "y23_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "12.2379"
+            },
+            {
+                "col_name": "y24_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "8.3831"
+            },
+            {
+                "col_name": "y25_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "3.8548"
+            },
+            {
+                "col_name": "y26_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "received_amt",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_dir_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "9.2400"
+            },
+            {
+                "col_name": "base_budget",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "9.2400"
+            },
+            {
+                "col_name": "base_budget_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_labor",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_overseas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_staff_out",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_tech_out",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_equip",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_mat_self",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_mat_trade",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_travel",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_office",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_meeting",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_training",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_accept",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_transport",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_rent",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "base_budget_other",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_labor_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_labor_act",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_overseas",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_staff_out",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_tech_out",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_equip",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_mat_self",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_mat_trade",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_travel",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_office",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_meeting",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_training",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_accept",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_transport",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_rent",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "actual_cost_other",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "proj_est_profit",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "proj_est_profit_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "prev_yrs_value_work",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "curr_yr_value_work",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": "0.0000"
+            },
+            {
+                "col_name": "report_period",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            }
+        ]
+    },
+    "pomp_view_pomp_cost": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc86-520d-6073-9f2d-8b557ca8b420"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "延安油气公司2014年门户及IT运维服务项目"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2014YW067"
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "LARGEINT",
+                "sample_value": "2014"
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "LARGEINT",
+                "sample_value": "11"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "西北大区"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "西安分公司"
+            },
+            {
+                "col_name": "detail_acct_cat",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "会议费_万元"
+            },
+            {
+                "col_name": "actual_cost",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 4)",
+                "sample_value": "0.0000"
+            }
+        ]
+    },
+    "pomp_view_pomp_finance": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc8c-178a-69f7-8af9-51a18463e3af"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中石油集团昆仑MES试点建设项目可行性研究（旧）"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2024KF0136"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "智慧油田事业部"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "油气研究业务部"
+            },
+            {
+                "col_name": "curr_yr_estl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 87.5
+            },
+            {
+                "col_name": "curr_yr_cfmd_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "LARGEINT",
+                "sample_value": 2026
+            }
+        ]
+    },
+    "pomp_view_pomp_income": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc8f-f54a-6bef-851f-1760b49c98b5"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国石油学会数字化智能化管理平台建设"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2023KF0135"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "业务其他"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国石油双创示范基地运营中心"
+            },
+            {
+                "col_name": "seq_key",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "10011016"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "上线"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "阶段"
+            },
+            {
+                "col_name": "phase",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "中国石油学会数字化智能化管理平台建设"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "进行中"
+            },
+            {
+                "col_name": "plan_start_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2024-08-01"
+            },
+            {
+                "col_name": "plan_comp_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2024-08-10"
+            },
+            {
+                "col_name": "rev_cfm_amt",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "rev_cfm_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-12-25"
+            }
+        ]
+    },
+    "pomp_view_pomp_milestone": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc93-7d06-6d7c-bc4d-5bbca2a31919"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "天津市地方税务局以地控税项目"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2014KF037"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "项目启动与计划"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "阶段"
+            },
+            {
+                "col_name": "phase",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "天津市地方税务局以地控税项目"
+            },
+            {
+                "col_name": "est_workload_days",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "LARGEINT",
+                "sample_value": null
+            },
+            {
+                "col_name": "est_workload_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(18, 2)",
+                "sample_value": null
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "已完成"
+            },
+            {
+                "col_name": "plan_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-07-15"
+            },
+            {
+                "col_name": "plan_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-08-04"
+            },
+            {
+                "col_name": "actual_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-07-15"
+            },
+            {
+                "col_name": "actual_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-08-04"
+            },
+            {
+                "col_name": "base_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-07-15"
+            },
+            {
+                "col_name": "base_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2014-08-04"
+            }
+        ]
+    },
+    "pomp_view_pomp_problem": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc97-8e4a-65c8-8ced-b9854c3ceb54"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "万宝矿业（缅甸）公司-无线集群语音通讯系统-万宝铜矿项目-2018"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2018MM019"
+            },
+            {
+                "col_name": "issue_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "总成本超总预算，成本超支"
+            },
+            {
+                "col_name": "issue_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "管理类"
+            },
+            {
+                "col_name": "sec_cat",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "成本"
+            },
+            {
+                "col_name": "issue_level",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "高"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "原瑞飞哈萨克"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "海外事业部"
+            },
+            {
+                "col_name": "issue_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "已关闭"
+            },
+            {
+                "col_name": "handler",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "么燕生"
+            },
+            {
+                "col_name": "reporter",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "运营指挥中心"
+            },
+            {
+                "col_name": "report_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2019-06-03"
+            },
+            {
+                "col_name": "actual_resolve_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2019-10-28"
+            },
+            {
+                "col_name": "issue_desc",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "项目实际总成本超出总成本预算"
+            },
+            {
+                "col_name": "root_cause",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "实际项目金额大于预算金额，总成本依然在合同金额范围内。"
+            },
+            {
+                "col_name": "solution",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "无"
+            }
+        ]
+    },
+    "pomp_view_pomp_resource": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecc9b-2084-6b7a-a39a-33c09e337bad"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "信息系统安全检查与咨询（2016年）"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2016YW011"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "朱军"
+            },
+            {
+                "col_name": "res_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "咨询序列_7级"
+            },
+            {
+                "col_name": "aff_dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "网络安全咨询部"
+            },
+            {
+                "col_name": "category",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "内部"
+            },
+            {
+                "col_name": "plan_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2016-01-01"
+            },
+            {
+                "col_name": "plan_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2016-12-31"
+            },
+            {
+                "col_name": "actual_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2019-05-18"
+            },
+            {
+                "col_name": "actual_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "is_left",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            }
+        ]
+    },
+    "pomp_view_pomp_risk": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0c970e-c17d-6a8e-89f2-05ddb945dca2"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "西南医院2023年新专科楼模块化机房"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2023JC0044"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "政企大区售前团队"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "政企大区"
+            },
+            {
+                "col_name": "risk_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "进度延期风险"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "已消失"
+            },
+            {
+                "col_name": "resp_person",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "刘艳阳"
+            },
+            {
+                "col_name": "impact_val",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "risk_prob",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "1%-20%非常不可能，机会很小"
+            },
+            {
+                "col_name": "risk_impact",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "低"
+            },
+            {
+                "col_name": "risk_src_cat1",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "管理风险"
+            },
+            {
+                "col_name": "risk_src_cat2",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "进度风险"
+            }
+        ]
+    },
+    "pomp_view_pomp_timesheet": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0ecca1-fc84-69a1-b3b6-2d9eae944659"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国石油天然气集团有限公司网络安全检查平台建设项目"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2018KF067"
+            },
+            {
+                "col_name": "sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "网络安全事业部"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "网络安全产品与解决方案部"
+            },
+            {
+                "col_name": "emp_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "86217208"
+            },
+            {
+                "col_name": "emp_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "刘璐"
+            },
+            {
+                "col_name": "emp_sector",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "网络安全事业部"
+            },
+            {
+                "col_name": "emp_dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "网络安全研发部"
+            },
+            {
+                "col_name": "res_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "党工团管理序列_6级"
+            },
+            {
+                "col_name": "std_hrs",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "BIGINT",
+                "sample_value": 168
+            },
+            {
+                "col_name": "rec_hrs",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": 168.0
+            },
+            {
+                "col_name": "year",
+                "col_tag": "TIME_EVENT",
+                "col_type": "SMALLINT",
+                "sample_value": 2018
+            },
+            {
+                "col_name": "month",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TINYINT",
+                "sample_value": 12
+            }
+        ]
+    },
+    "pomp_view_satisfactionquota_detail": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0b6980-80d0-65a9-ae3a-9b9d226f2cb2"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2022KF0104"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国石油安全环保院碳资产集中管控平台"
+            },
+            {
+                "col_name": "proj_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "正常关闭"
+            },
+            {
+                "col_name": "proj_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "开发类"
+            },
+            {
+                "col_name": "survey_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "202306"
+            },
+            {
+                "col_name": "is_group_build",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "否"
+            },
+            {
+                "col_name": "aff_sector",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "智慧财金事业部"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "金融业务部"
+            },
+            {
+                "col_name": "proj_mgr",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "陈炼"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "薛彦宇"
+            },
+            {
+                "col_name": "sat_survey_cat",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "客户"
+            },
+            {
+                "col_name": "company",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "中国石油安全环保技术研究院"
+            },
+            {
+                "col_name": "position",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "技术经理"
+            },
+            {
+                "col_name": "proj_scale",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "1000万元以下"
+            },
+            {
+                "col_name": "prod_svc_quality",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "19.0"
+            },
+            {
+                "col_name": "proj_progress",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "LARGEINT",
+                "sample_value": "19.0"
+            },
+            {
+                "col_name": "staff_svc_cap",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "19.0"
+            },
+            {
+                "col_name": "work_eff",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "20.0"
+            },
+            {
+                "col_name": "svc_awareness",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "20.0"
+            },
+            {
+                "col_name": "total_score",
+                "col_tag": "VAL_SCORE",
+                "col_type": "LARGEINT",
+                "sample_value": "97"
+            },
+            {
+                "col_name": "comments",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            },
+            {
+                "col_name": "expect_coop",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            },
+            {
+                "col_name": "hse",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "否"
+            },
+            {
+                "col_name": "is_need_rect",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            },
+            {
+                "col_name": "cust_praise",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "否"
+            },
+            {
+                "col_name": "has_feedback",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "是"
+            },
+            {
+                "col_name": "is_replied",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "否"
+            },
+            {
+                "col_name": "has_valid_suggest",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "否"
+            },
+            {
+                "col_name": "opinion",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "意见和建议分类"
+            }
+        ]
+    },
+    "pomp_view_sec_pj_satisfaction": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0eccaa-64c4-6bee-a91a-63af02410b7e"
+            },
+            {
+                "col_name": "sat_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "2024年第四季度用户满意度调查"
+            },
+            {
+                "col_name": "sat_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2023YW0201-MYD-008"
+            },
+            {
+                "col_name": "phase_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "fcst_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "fcst_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "base_start_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "base_end_time",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": null
+            },
+            {
+                "col_name": "sat_survey_ym",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2024-12"
+            },
+            {
+                "col_name": "resp_person",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "李富华"
+            },
+            {
+                "col_name": "dept",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "大庆金桥成都分公司"
+            },
+            {
+                "col_name": "proj_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "四川石化IT运行维护2023-2026"
+            },
+            {
+                "col_name": "proj_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2023YW0201"
+            },
+            {
+                "col_name": "proj_status",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "执行中"
+            },
+            {
+                "col_name": "proj_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "运维类"
+            }
+        ]
+    },
+    "scientific_tech_achievement_income": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "一层组织"
+            },
+            {
+                "col_name": "pre_tech_achievement_income_completion_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": 2.0
+            },
+            {
+                "col_name": "tech_achievement_income_change_vs_prev_report",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "科技成果收入较上期汇报变化"
+            },
+            {
+                "col_name": "product_revenue",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "tech_dev_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "tech_ops_maint_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "tech_impl_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "tech_consult_rev",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "total_tech_achv_income",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DOUBLE",
+                "sample_value": 121.0
+            },
+            {
+                "col_name": "tech_achievement_income_completion_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": 2.0
+            }
+        ]
+    },
+    "unified_development_platform": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "dt",
+                "col_tag": "TIME_CREATE",
+                "col_type": "DATE",
+                "sample_value": "2025-11-21"
+            },
+            {
+                "col_name": "first_level",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "云计算事业部"
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "INT",
+                "sample_value": "2"
+            },
+            {
+                "col_name": "change_compared_to_prev_report",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "持平"
+            },
+            {
+                "col_name": "overall_application_status",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "100.0"
+            },
+            {
+                "col_name": "collaborative_development_coverage_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "1.0"
+            },
+            {
+                "col_name": "code_repository_coverage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "1.0"
+            },
+            {
+                "col_name": "low_code_coverage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "1.0"
+            },
+            {
+                "col_name": "high_code_coverage",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DOUBLE",
+                "sample_value": "1.0"
+            }
+        ]
+    },
+    "view_nd_incm_ys_sj_year": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f0a8d2a-af7f-6d3d-b27c-098676efe8c1"
+            },
+            {
+                "col_name": "current_year_actual_income",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(76, 2)",
+                "sample_value": "1.086236e+09"
+            },
+            {
+                "col_name": "current_year_stats_incm",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(76, 2)",
+                "sample_value": "4392000000.0"
+            },
+            {
+                "col_name": "current_year_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(76, 6)",
+                "sample_value": "0.247321"
+            },
+            {
+                "col_name": "last_year_actual_income",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(76, 2)",
+                "sample_value": "402550269.59"
+            },
+            {
+                "col_name": "last_year_stats_incm",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(76, 2)",
+                "sample_value": "3178000000.0"
+            },
+            {
+                "col_name": "last_year_rate",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "DECIMAL(76, 6)",
+                "sample_value": "0.126667"
+            }
+        ]
+    },
+    "view_pomp_cqxmmx": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "VARCHAR(255)",
+                "sample_value": "1f09a108-461e-604a-834c-83b89d21c18f"
+            },
+            {
+                "col_name": "project_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "CNPCI阿布扎比IT技术服务与链路租赁项目（2024.07-2025.06）"
+            },
+            {
+                "col_name": "project_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "JF2024YW0160"
+            },
+            {
+                "col_name": "planstartdate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2024-07-01"
+            },
+            {
+                "col_name": "planenddate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-07-31"
+            },
+            {
+                "col_name": "jhjsdate",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2025-06-30"
+            },
+            {
+                "col_name": "sctype",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "海外CNPC"
+            },
+            {
+                "col_name": "ywtype",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "运维服务类"
+            },
+            {
+                "col_name": "level_name",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "project_type",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "项目超期未结项"
+            },
+            {
+                "col_name": "zh_cn_dptname",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "瑞飞国际"
+            },
+            {
+                "col_name": "cqts",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "56"
+            },
+            {
+                "col_name": "zh_cn_istatename",
+                "col_tag": "STATUS_WORK",
+                "col_type": "TEXT",
+                "sample_value": "待结项"
+            }
+        ]
+    },
+    "view_pomp_phasecost_test": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "_col0",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "2015塔里木油田物资采购管理信息系统运维项目"
+            },
+            {
+                "col_name": "_col1",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2015YW064"
+            },
+            {
+                "col_name": "_col2",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "新疆分公司"
+            },
+            {
+                "col_name": "_col3",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "新疆大区"
+            },
+            {
+                "col_name": "sequencekey",
+                "col_tag": "ID_COMPOSITE",
+                "col_type": "TEXT",
+                "sample_value": "1000"
+            },
+            {
+                "col_name": "_col4",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "2015塔里木油田物资采购管理信息系统运维项目"
+            },
+            {
+                "col_name": "_col5",
+                "col_tag": "NAME_SHORT",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": null
+            },
+            {
+                "col_name": "_col6",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "测试"
+            },
+            {
+                "col_name": "_col7",
+                "col_tag": "STATUS_WORK",
+                "col_type": "VARCHAR(65533)",
+                "sample_value": "已完成"
+            },
+            {
+                "col_name": "_col8",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2015-12-28"
+            },
+            {
+                "col_name": "_col9",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATETIME",
+                "sample_value": "2015-12-31"
+            },
+            {
+                "col_name": "_col10",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "_col11",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": null
+            },
+            {
+                "col_name": "_col12",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": "0.0"
+            },
+            {
+                "col_name": "_col13",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": null
+            },
+            {
+                "col_name": "_col14",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": null
+            },
+            {
+                "col_name": "_col15",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(20, 2)",
+                "sample_value": null
+            },
+            {
+                "col_name": "_col16",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "DECIMAL(38, 2)",
+                "sample_value": null
+            }
+        ]
+    }
+}

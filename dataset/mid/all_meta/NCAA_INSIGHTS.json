@@ -1,0 +1,3477 @@
+{
+    "NCAA_ADJUSTED_METRICS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "tm_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 768
+            },
+            {
+                "col_name": "tm",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "West Virginia"
+            },
+            {
+                "col_name": "adj_rk",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 161.0
+            },
+            {
+                "col_name": "raw_rtg",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 57.843223517450205
+            },
+            {
+                "col_name": "raw_rk",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 148.0
+            },
+            {
+                "col_name": "adj_rtg",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 54.179426996736105
+            },
+            {
+                "col_name": "raw_stat",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 18.692552895179343
+            },
+            {
+                "col_name": "through_games_of",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2015-04-06"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2014
+            },
+            {
+                "col_name": "stat_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "tm_to_pct"
+            },
+            {
+                "col_name": "adj_stat",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 18.868623809468673
+            }
+        ]
+    },
+    "NCAA_FEATURE_ENGINEERING": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "efficiency_rating",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 97.704
+            },
+            {
+                "col_name": "team",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Ohio St."
+            },
+            {
+                "col_name": "pace_rating",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 68.038
+            },
+            {
+                "col_name": "pts_100poss",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": 24.826
+            },
+            {
+                "col_name": "poss_40min",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 66.233
+            },
+            {
+                "col_name": "efficiency_rank",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 11.0
+            },
+            {
+                "col_name": "pace_rank",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 106.0
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2014
+            }
+        ]
+    },
+    "NCAA_LATEST_DATE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "season",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2015
+            },
+            {
+                "col_name": "last_game",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "2016-04-04"
+            }
+        ]
+    },
+    "NCAA_MASCOTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "ID",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "2959bd24-7007-41ae-a3a3-abdf26888cfc"
+            },
+            {
+                "col_name": "MASCOT",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Hurricane"
+            },
+            {
+                "col_name": "TAX_FAMILY",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MASCOT_COMMON_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "NAME",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Golden Hurricane"
+            },
+            {
+                "col_name": "TAX_GENUS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "NON_TAX_TYPE",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Weather"
+            },
+            {
+                "col_name": "TAX_ORDER",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_KINGDOM",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_CLASS",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_DOMAIN",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_SUBSPECIES",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_PHYLUM",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "TAX_SPECIES",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "MARKET",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Tulsa"
+            },
+            {
+                "col_name": "MASCOT_NAME",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Captain Cane"
+            }
+        ]
+    },
+    "NCAA_MBB_GAMES_SR": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "a_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8598d1b6-106b-4083-a512-2e495729525a"
+            },
+            {
+                "col_name": "game_id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "0db13842-47e6-422b-a899-f9956cd94cd8"
+            },
+            {
+                "col_name": "h_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0d037a5d-827a-44dd-8b70-57603d671d5d"
+            },
+            {
+                "col_name": "venue_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Roosevelt Avenue"
+            },
+            {
+                "col_name": "a_steals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "conference_game",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "a_second_chance_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "h_points_off_turnovers",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 14.0
+            },
+            {
+                "col_name": "a_free_throws_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 66.7
+            },
+            {
+                "col_name": "venue_capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10000.0
+            },
+            {
+                "col_name": "scheduled_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2015-11-22"
+            },
+            {
+                "col_name": "a_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TEM"
+            },
+            {
+                "col_name": "gametime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1448227800000000
+            },
+            {
+                "col_name": "possession_arrow",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "0d037a5d-827a-44dd-8b70-57603d671d5d"
+            },
+            {
+                "col_name": "h_steals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "h_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "a_three_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 29
+            },
+            {
+                "col_name": "h_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "PAC12"
+            },
+            {
+                "col_name": "h_two_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 29
+            },
+            {
+                "col_name": "h_blocked_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_team_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_two_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "a_blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_free_throws_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "h_logo_small",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/u/utah.24.png"
+            },
+            {
+                "col_name": "a_logo_small",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/t/temple.24.png"
+            },
+            {
+                "col_name": "a_division_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "c5a8d640-5093-4044-851d-2c562e929994"
+            },
+            {
+                "col_name": "venue_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_three_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 26.1
+            },
+            {
+                "col_name": "h_three_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 23
+            },
+            {
+                "col_name": "h_league_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "cd4268ee-07aa-4c4d-a435-ec44ad2c76cb"
+            },
+            {
+                "col_name": "h_minutes",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "3:20:00"
+            },
+            {
+                "col_name": "tournament",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_division_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "a_field_goals_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 26
+            },
+            {
+                "col_name": "a_three_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 34.5
+            },
+            {
+                "col_name": "a_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 28
+            },
+            {
+                "col_name": "h_two_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 15
+            },
+            {
+                "col_name": "a_points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 68
+            },
+            {
+                "col_name": "h_ejections",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_league_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "cd4268ee-07aa-4c4d-a435-ec44ad2c76cb"
+            },
+            {
+                "col_name": "h_field_goals_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 52
+            },
+            {
+                "col_name": "created",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1519141738000000
+            },
+            {
+                "col_name": "a_assists_turnover_ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 2.17
+            },
+            {
+                "col_name": "h_three_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "h_free_throws_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 26
+            },
+            {
+                "col_name": "h_foulouts",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_conf_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Pacific 12"
+            },
+            {
+                "col_name": "h_personal_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "a_team_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "h_league_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "venue_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "3987a2bf-588a-4839-babf-0ee8d536454e"
+            },
+            {
+                "col_name": "neutral_site",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "a_assists",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "a_field_goals_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 66
+            },
+            {
+                "col_name": "h_points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 74
+            },
+            {
+                "col_name": "a_field_goals_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 39.4
+            },
+            {
+                "col_name": "a_conf_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "3b6a48d8-1f9c-484f-8ed0-ef0a540a0efe"
+            },
+            {
+                "col_name": "h_market",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Utah"
+            },
+            {
+                "col_name": "a_league_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAAM"
+            },
+            {
+                "col_name": "h_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "UTAH"
+            },
+            {
+                "col_name": "h_team_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_ejections",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "h_rank",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "a_free_throws_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "h_offensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "a_flagrant_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "a_blocked_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "a_points_off_turnovers",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "h_field_goals_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21
+            },
+            {
+                "col_name": "a_logo_large",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/t/temple.200.png"
+            },
+            {
+                "col_name": "a_player_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "h_points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 74
+            },
+            {
+                "col_name": "times_tied",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "tournament_game_no",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "coverage",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "full"
+            },
+            {
+                "col_name": "a_fast_break_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 2.0
+            },
+            {
+                "col_name": "venue_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Roberto Clemente Coliseum"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2015
+            },
+            {
+                "col_name": "a_points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 68
+            },
+            {
+                "col_name": "tournament_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "venue_country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "PRI"
+            },
+            {
+                "col_name": "h_second_chance_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "a_defensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21
+            },
+            {
+                "col_name": "lead_changes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "h_assists",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11
+            },
+            {
+                "col_name": "a_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Owls"
+            },
+            {
+                "col_name": "h_free_throws_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 34
+            },
+            {
+                "col_name": "a_minutes",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "3:20:00"
+            },
+            {
+                "col_name": "h_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 36
+            },
+            {
+                "col_name": "a_offensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "a_league_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "h_league_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAAM"
+            },
+            {
+                "col_name": "a_personal_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 27
+            },
+            {
+                "col_name": "venue_zip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "h_team_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "h_conf_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "04d5255d-b2dc-43df-9fa8-d296b0f8ccd7"
+            },
+            {
+                "col_name": "h_two_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.517
+            },
+            {
+                "col_name": "h_free_throws_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 76.5
+            },
+            {
+                "col_name": "h_flagrant_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "h_team_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "h_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Utes"
+            },
+            {
+                "col_name": "h_fast_break_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 4.0
+            },
+            {
+                "col_name": "attendance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "h_division_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "c5a8d640-5093-4044-851d-2c562e929994"
+            },
+            {
+                "col_name": "h_logo_large",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/u/utah.200.png"
+            },
+            {
+                "col_name": "h_field_goals_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 40.4
+            },
+            {
+                "col_name": "a_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "a_market",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Temple"
+            },
+            {
+                "col_name": "a_foulouts",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "a_logo_medium",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/t/temple.70.png"
+            },
+            {
+                "col_name": "a_coach_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_three_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "h_assists_turnover_ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.22
+            },
+            {
+                "col_name": "h_defensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 28
+            },
+            {
+                "col_name": "a_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "AAC"
+            },
+            {
+                "col_name": "periods",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "a_division_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "h_player_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "h_logo_medium",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/u/utah.70.png"
+            },
+            {
+                "col_name": "h_blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "a_two_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.432
+            },
+            {
+                "col_name": "a_conf_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "American Athletic"
+            },
+            {
+                "col_name": "a_team_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_rank",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "venue_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "San Juan"
+            },
+            {
+                "col_name": "h_coach_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "a_two_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 37
+            },
+            {
+                "col_name": "tournament_round",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "closed"
+            }
+        ]
+    },
+    "NCAA_MBB_HISTORICAL_TEAMS_GAMES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "team_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "511"
+            },
+            {
+                "col_name": "opp_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 50
+            },
+            {
+                "col_name": "opp_points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 86
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_current_division",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1996
+            },
+            {
+                "col_name": "attendance",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 78
+            },
+            {
+                "col_name": "opp_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "win",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "current_division",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "scheduled_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "NCAA_MBB_HISTORICAL_TEAMS_SEASONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "team_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 479
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "losses",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "ties",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1908
+            },
+            {
+                "col_name": "current_division",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "division",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "wins",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            }
+        ]
+    },
+    "NCAA_MBB_HISTORICAL_TOURNAMENT_GAMES": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "lose_code_ncaa",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 559
+            },
+            {
+                "col_name": "win_kaggle_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1396
+            },
+            {
+                "col_name": "lose_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "12d7f888-675b-459f-9099-a38f771d8a95"
+            },
+            {
+                "col_name": "win_code_ncaa",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 690
+            },
+            {
+                "col_name": "lose_kaggle_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1345
+            },
+            {
+                "col_name": "win_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "8598d1b6-106b-4083-a512-2e495729525a"
+            },
+            {
+                "col_name": "lose_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Purdue"
+            },
+            {
+                "col_name": "lose_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "PUR"
+            },
+            {
+                "col_name": "round",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 64
+            },
+            {
+                "col_name": "days_from_epoch",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 7742
+            },
+            {
+                "col_name": "win_seed",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "10"
+            },
+            {
+                "col_name": "lose_region",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "W"
+            },
+            {
+                "col_name": "win_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Owls"
+            },
+            {
+                "col_name": "game_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "1991-03-14"
+            },
+            {
+                "col_name": "lose_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Boilermakers"
+            },
+            {
+                "col_name": "win_school_ncaa",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Temple"
+            },
+            {
+                "col_name": "win_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 80
+            },
+            {
+                "col_name": "academic_year",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1990
+            },
+            {
+                "col_name": "lose_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 63
+            },
+            {
+                "col_name": "day",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Thursday"
+            },
+            {
+                "col_name": "num_ot",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "win_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TEM"
+            },
+            {
+                "col_name": "lose_school_ncaa",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Purdue"
+            },
+            {
+                "col_name": "lose_seed",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": "07"
+            },
+            {
+                "col_name": "win_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Temple"
+            },
+            {
+                "col_name": "win_region",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "W"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 1991
+            }
+        ]
+    },
+    "NCAA_MBB_PBP_SR": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "player_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3c6b9ea0-d4b2-470c-b24e-ac7535f372f2"
+            },
+            {
+                "col_name": "event_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "d4634b96-bfe8-4559-b3c5-75af94e3b533"
+            },
+            {
+                "col_name": "home_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "e9ca48b2-00ba-41c0-a02b-6885a2da1ff1"
+            },
+            {
+                "col_name": "away_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3db7336c-c18a-441b-912e-e2a4408f12ea"
+            },
+            {
+                "col_name": "game_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "09a90c93-8529-4fba-8700-f512c43b7fc6"
+            },
+            {
+                "col_name": "possession_arrow",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "3db7336c-c18a-441b-912e-e2a4408f12ea"
+            },
+            {
+                "col_name": "possession_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "e9ca48b2-00ba-41c0-a02b-6885a2da1ff1"
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "e9ca48b2-00ba-41c0-a02b-6885a2da1ff1"
+            },
+            {
+                "col_name": "venue_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5a50d887-0605-479c-b6bc-7b1077db5766"
+            },
+            {
+                "col_name": "venue_country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "USA"
+            },
+            {
+                "col_name": "venue_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Dean Smith Center"
+            },
+            {
+                "col_name": "shot_made",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "team_division_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "event_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "rebound"
+            },
+            {
+                "col_name": "game_no",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "three_point_shot",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "team_league_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "team_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "UNC"
+            },
+            {
+                "col_name": "venue_zip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "27599"
+            },
+            {
+                "col_name": "elapsed_time_sec",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1518
+            },
+            {
+                "col_name": "home_conf_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Atlantic Coast"
+            },
+            {
+                "col_name": "round",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "home_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ACC"
+            },
+            {
+                "col_name": "home_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "venue_capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21750
+            },
+            {
+                "col_name": "team_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ACC"
+            },
+            {
+                "col_name": "away_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "rebound"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "closed"
+            },
+            {
+                "col_name": "team_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "team_basket",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "left"
+            },
+            {
+                "col_name": "team_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Tar Heels"
+            },
+            {
+                "col_name": "scheduled_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1482969600000000
+            },
+            {
+                "col_name": "away_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Hawks"
+            },
+            {
+                "col_name": "event_coord_x",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 158.0
+            },
+            {
+                "col_name": "away_league_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "points_scored",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "event_description",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Kenny Williams offensive rebound"
+            },
+            {
+                "col_name": "turnover_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_conf_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Metro Atlantic Athletic"
+            },
+            {
+                "col_name": "event_coord_y",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 51.0
+            },
+            {
+                "col_name": "timestamp",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1482974557000000
+            },
+            {
+                "col_name": "home_division_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "conference_game",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "neutral_site",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "rebound_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "offensive"
+            },
+            {
+                "col_name": "attendance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20064
+            },
+            {
+                "col_name": "tournament",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "team_conf_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Atlantic Coast"
+            },
+            {
+                "col_name": "home_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "UNC"
+            },
+            {
+                "col_name": "away_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MAAC"
+            },
+            {
+                "col_name": "shot_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "timeout_duration",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": null
+            },
+            {
+                "col_name": "venue_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Chapel Hill"
+            },
+            {
+                "col_name": "home_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "North Carolina"
+            },
+            {
+                "col_name": "player_full_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Kenny Williams"
+            },
+            {
+                "col_name": "away_division_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "away_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Monmouth"
+            },
+            {
+                "col_name": "load_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1517485615480547
+            },
+            {
+                "col_name": "period",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "venue_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Old Nc Highway 10"
+            },
+            {
+                "col_name": "tournament_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "venue_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "NC"
+            },
+            {
+                "col_name": "home_league_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "team_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "North Carolina"
+            },
+            {
+                "col_name": "shot_subtype",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "away_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MONM"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2016
+            },
+            {
+                "col_name": "jersey_num",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 24
+            },
+            {
+                "col_name": "game_clock",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "14:42"
+            },
+            {
+                "col_name": "home_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Tar Heels"
+            }
+        ]
+    },
+    "NCAA_MBB_PLAYERS_GAMES_SR": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "game_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "f7b7fa03-7824-420e-99f4-a7154a8c9ee3"
+            },
+            {
+                "col_name": "field_goals_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "conf_alias",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "BIG12"
+            },
+            {
+                "col_name": "team_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Texas"
+            },
+            {
+                "col_name": "two_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 22.2
+            },
+            {
+                "col_name": "active",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "full_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Isaiah Taylor"
+            },
+            {
+                "col_name": "birthplace_country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": " USA"
+            },
+            {
+                "col_name": "personal_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "abbr_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "I.Taylor"
+            },
+            {
+                "col_name": "three_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "home_team",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "tournament_round",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "defensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "scheduled_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2014-01-22"
+            },
+            {
+                "col_name": "position",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G"
+            },
+            {
+                "col_name": "steals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "league_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "two_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "birthplace_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "CA"
+            },
+            {
+                "col_name": "tournament",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "starter",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "two_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "gametime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1390348800000000
+            },
+            {
+                "col_name": "first_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Isaiah"
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "NWT"
+            },
+            {
+                "col_name": "player_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "db084898-ace0-43bd-81d3-e93266d0cc7c"
+            },
+            {
+                "col_name": "free_throws_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "birth_place",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Hayward, CA, USA"
+            },
+            {
+                "col_name": "offensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "field_goals_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "three_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "sp_created",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1519142266000000
+            },
+            {
+                "col_name": "weight",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 170
+            },
+            {
+                "col_name": "division_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "assists",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "birthplace_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Hayward"
+            },
+            {
+                "col_name": "assists_turnover_ratio",
+                "col_tag": "VAL_RATING",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "primary_position",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "NA"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2013
+            },
+            {
+                "col_name": "last_name",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "Taylor"
+            },
+            {
+                "col_name": "tournament_game_no",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "minutes_int64",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 31
+            },
+            {
+                "col_name": "played",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "conf_name",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Big 12"
+            },
+            {
+                "col_name": "three_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "division_alias",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "height",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 73
+            },
+            {
+                "col_name": "blocked_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "points",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "team_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TEX"
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "6ed15092-2670-450a-99c2-61d861e87644"
+            },
+            {
+                "col_name": "free_throws_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "minutes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "TEXT",
+                "sample_value": "31:00"
+            },
+            {
+                "col_name": "neutral_site",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "jersey_number",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "team_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Longhorns"
+            },
+            {
+                "col_name": "field_goals_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 22.2
+            },
+            {
+                "col_name": "free_throws_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "flagrant_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "class",
+                "col_tag": "LEVEL",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "tournament_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": null
+            }
+        ]
+    },
+    "NCAA_MBB_TEAMS": {
+        "table_tag": "MASTER",
+        "colname_list": [
+            {
+                "col_name": "conf_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "c2d16439-b791-4f9b-84d9-80cf457a0676"
+            },
+            {
+                "col_name": "kaggle_team_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 1217
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "TEXT",
+                "sample_value": "5c7bf63f-bc39-43c5-9907-73b50b7a6b34"
+            },
+            {
+                "col_name": "league_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "cd4268ee-07aa-4c4d-a435-ec44ad2c76cb"
+            },
+            {
+                "col_name": "division_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "c5a8d640-5093-4044-851d-2c562e929994"
+            },
+            {
+                "col_name": "venue_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "94de06b6-4ae7-4fd1-bbd0-67b03a720215"
+            },
+            {
+                "col_name": "code_ncaa",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 275
+            },
+            {
+                "col_name": "logo_medium",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/h/harvard.70.png"
+            },
+            {
+                "col_name": "conf_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Ivy"
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Harvard"
+            },
+            {
+                "col_name": "venue_country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "USA"
+            },
+            {
+                "col_name": "turner_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Harvard University"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Crimson"
+            },
+            {
+                "col_name": "division_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "school_ncaa",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Harvard"
+            },
+            {
+                "col_name": "venue_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Soldiers Field Road"
+            },
+            {
+                "col_name": "venue_zip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "2163"
+            },
+            {
+                "col_name": "league_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAAM"
+            },
+            {
+                "col_name": "venue_capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2195
+            },
+            {
+                "col_name": "logo_small",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/h/harvard.24.png"
+            },
+            {
+                "col_name": "venue_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Allston"
+            },
+            {
+                "col_name": "alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "HARV"
+            },
+            {
+                "col_name": "division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "IVY"
+            },
+            {
+                "col_name": "league_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "logo_large",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/h/harvard.200.png"
+            },
+            {
+                "col_name": "venue_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MA"
+            },
+            {
+                "col_name": "venue_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Lavietes Pavilion"
+            }
+        ]
+    },
+    "NCAA_MBB_TEAMS_GAMES_SR": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "game_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "c94533d9-e5cb-4b54-95b2-9c4d887c8e93"
+            },
+            {
+                "col_name": "ejections",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "opp_field_goals_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 28
+            },
+            {
+                "col_name": "turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "venue_address",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "foulouts",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_free_throws_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "opp_division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "opp_field_goals_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 56
+            },
+            {
+                "col_name": "team_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "509aacc4-c121-46a2-800a-d5431ef181d2"
+            },
+            {
+                "col_name": "opp_division_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "c5a8d640-5093-4044-851d-2c562e929994"
+            },
+            {
+                "col_name": "opp_id",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "2778d005-cc14-4e58-9bf2-3fc37bffb62f"
+            },
+            {
+                "col_name": "opp_assists",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 12
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2015
+            },
+            {
+                "col_name": "opp_two_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 23
+            },
+            {
+                "col_name": "opp_offensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6
+            },
+            {
+                "col_name": "opp_league_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "cd4268ee-07aa-4c4d-a435-ec44ad2c76cb"
+            },
+            {
+                "col_name": "opp_blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "field_goals_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 23
+            },
+            {
+                "col_name": "tournament_game_no",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_field_goals_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 50.0
+            },
+            {
+                "col_name": "opp_points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 77
+            },
+            {
+                "col_name": "gametime",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1448415000000000
+            },
+            {
+                "col_name": "lead_changes",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 10
+            },
+            {
+                "col_name": "opp_points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 77
+            },
+            {
+                "col_name": "flagrant_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "win",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "opp_blocked_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "opp_team_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "personal_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 17
+            },
+            {
+                "col_name": "venue_zip",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "division_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "ILST"
+            },
+            {
+                "col_name": "points_off_turnovers",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 17
+            },
+            {
+                "col_name": "opp_logo_medium",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/m/maryland.70.png"
+            },
+            {
+                "col_name": "three_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 38.9
+            },
+            {
+                "col_name": "points_game",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 66
+            },
+            {
+                "col_name": "field_goals_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 54
+            },
+            {
+                "col_name": "free_throws_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 20
+            },
+            {
+                "col_name": "opp_conf_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Big Ten"
+            },
+            {
+                "col_name": "points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 66
+            },
+            {
+                "col_name": "opp_second_chance_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 4
+            },
+            {
+                "col_name": "opp_two_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.676
+            },
+            {
+                "col_name": "opp_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Maryland"
+            },
+            {
+                "col_name": "assists_turnover_ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.44
+            },
+            {
+                "col_name": "rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            },
+            {
+                "col_name": "league_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "cd4268ee-07aa-4c4d-a435-ec44ad2c76cb"
+            },
+            {
+                "col_name": "coverage",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "full"
+            },
+            {
+                "col_name": "opp_flagrant_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "home_team",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "venue_country",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "MEX"
+            },
+            {
+                "col_name": "venue_city",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Cancun"
+            },
+            {
+                "col_name": "opp_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MD"
+            },
+            {
+                "col_name": "venue_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Hard Rock Hotel Riviera Maya"
+            },
+            {
+                "col_name": "logo_large",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/i/illinois-st.200.png"
+            },
+            {
+                "col_name": "opp_division_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NCAA Division I"
+            },
+            {
+                "col_name": "two_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 16
+            },
+            {
+                "col_name": "opp_three_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "player_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "offensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 5
+            },
+            {
+                "col_name": "opp_assists_turnover_ratio",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 1.0
+            },
+            {
+                "col_name": "team_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "free_throws_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 65.0
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Illinois State"
+            },
+            {
+                "col_name": "three_points_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "opp_conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "BIG10"
+            },
+            {
+                "col_name": "opp_defensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21
+            },
+            {
+                "col_name": "opp_three_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 22.7
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Redbirds"
+            },
+            {
+                "col_name": "conf_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Missouri Valley"
+            },
+            {
+                "col_name": "opp_three_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 22
+            },
+            {
+                "col_name": "periods",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "fast_break_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "venue_state",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "defensive_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 17
+            },
+            {
+                "col_name": "conference_game",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "venue_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "189ba801-068e-41f7-a5f5-572308a915b6"
+            },
+            {
+                "col_name": "division_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "D1"
+            },
+            {
+                "col_name": "opp_conf_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "a30fe8ff-82d2-4521-bc8d-e08e6a9dbb52"
+            },
+            {
+                "col_name": "opp_foulouts",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "three_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 18
+            },
+            {
+                "col_name": "neutral_site",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": null
+            },
+            {
+                "col_name": "free_throws_made",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "conf_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "MVC"
+            },
+            {
+                "col_name": "opp_coach_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "opp_logo_small",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/m/maryland.24.png"
+            },
+            {
+                "col_name": "coach_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "opp_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 27
+            },
+            {
+                "col_name": "scheduled_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2015-11-25"
+            },
+            {
+                "col_name": "logo_medium",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/i/illinois-st.70.png"
+            },
+            {
+                "col_name": "minutes",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "3:20:00"
+            },
+            {
+                "col_name": "opp_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Terrapins"
+            },
+            {
+                "col_name": "tournament_round",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "conf_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "1d9219c1-696c-42a2-b1be-e8b438795521"
+            },
+            {
+                "col_name": "league_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAAM"
+            },
+            {
+                "col_name": "opp_ejections",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0.0
+            },
+            {
+                "col_name": "logo_small",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/i/illinois-st.24.png"
+            },
+            {
+                "col_name": "blocked_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "league_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "attendance",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 982.0
+            },
+            {
+                "col_name": "opp_free_throws_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 76.2
+            },
+            {
+                "col_name": "opp_minutes",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "3:20:00"
+            },
+            {
+                "col_name": "two_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 36
+            },
+            {
+                "col_name": "field_goals_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 42.6
+            },
+            {
+                "col_name": "blocks",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "closed"
+            },
+            {
+                "col_name": "times_tied",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 9
+            },
+            {
+                "col_name": "opp_free_throws_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 21
+            },
+            {
+                "col_name": "created",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1519141733000000
+            },
+            {
+                "col_name": "opp_league_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "NCAAM"
+            },
+            {
+                "col_name": "team_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "possession_arrow",
+                "col_tag": "REL_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "509aacc4-c121-46a2-800a-d5431ef181d2"
+            },
+            {
+                "col_name": "assists",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "team_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 7
+            },
+            {
+                "col_name": "two_points_pct",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "FLOAT",
+                "sample_value": 0.444
+            },
+            {
+                "col_name": "opp_logo_large",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "https://www.ncaa.com/sites/default/files/images/logos/schools/m/maryland.200.png"
+            },
+            {
+                "col_name": "opp_steals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 11
+            },
+            {
+                "col_name": "steals",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "division_id",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "c5a8d640-5093-4044-851d-2c562e929994"
+            },
+            {
+                "col_name": "opp_league_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "NCAA MEN"
+            },
+            {
+                "col_name": "opp_fast_break_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 12
+            },
+            {
+                "col_name": "second_chance_pts",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 8
+            },
+            {
+                "col_name": "tournament",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_team_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "opp_points_off_turnovers",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 13
+            },
+            {
+                "col_name": "opp_personal_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 18
+            },
+            {
+                "col_name": "tournament_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "opp_team_rebounds",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3
+            },
+            {
+                "col_name": "opp_player_tech_fouls",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 0
+            },
+            {
+                "col_name": "venue_capacity",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3500.0
+            },
+            {
+                "col_name": "opp_turnovers",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 12
+            },
+            {
+                "col_name": "opp_two_points_att",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 34
+            }
+        ]
+    },
+    "NCAA_METRIC_NAMES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "label",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "TO%"
+            },
+            {
+                "col_name": "concept_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Turnovers"
+            },
+            {
+                "col_name": "rd_dec",
+                "col_tag": "VAL_PERCENT",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "off_def_stat_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "def_to_pct"
+            },
+            {
+                "col_name": "off_or_def",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "Def"
+            },
+            {
+                "col_name": "stat_name",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "opp_to_pct"
+            },
+            {
+                "col_name": "rank_asc",
+                "col_tag": "STATUS_WORK",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            }
+        ]
+    },
+    "NCAA_NEW_METRICS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "team",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Purdue"
+            },
+            {
+                "col_name": "tm_def_eff_rtg",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 86.85964369606155
+            },
+            {
+                "col_name": "tm_net_eff_rk",
+                "col_tag": "LEVEL",
+                "col_type": "FLOAT",
+                "sample_value": 9.0
+            },
+            {
+                "col_name": "tm_net_eff_rtg",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 98.00671536111155
+            },
+            {
+                "col_name": "tm_off_eff_stat",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 120.16079992525405
+            },
+            {
+                "col_name": "tm_def_eff_stat",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 95.36940876063527
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2018
+            },
+            {
+                "col_name": "tm_off_eff_rtg",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 99.24300722858533
+            },
+            {
+                "col_name": "tm_def_eff_rk",
+                "col_tag": "LEVEL",
+                "col_type": "FLOAT",
+                "sample_value": 53.0
+            },
+            {
+                "col_name": "tm_net_eff_stat",
+                "col_tag": "VAL_SCORE",
+                "col_type": "FLOAT",
+                "sample_value": 24.791391164618798
+            },
+            {
+                "col_name": "tm_off_eff_rk",
+                "col_tag": "LEVEL",
+                "col_type": "FLOAT",
+                "sample_value": 5.0
+            }
+        ]
+    },
+    "NCAA_TEAM_COLORS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "5d77800f-1ae6-4b66-8e97-b0dbb8bbc717"
+            },
+            {
+                "col_name": "code_ncaa",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 797
+            },
+            {
+                "col_name": "market",
+                "col_tag": "LOCATION",
+                "col_type": "TEXT",
+                "sample_value": "Milwaukee"
+            },
+            {
+                "col_name": "color",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "#000000"
+            }
+        ]
+    },
+    "NCAA__2018_TOURNAMENT_RESULTS": {
+        "table_tag": "TRANSACTION",
+        "colname_list": [
+            {
+                "col_name": "label",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "win"
+            },
+            {
+                "col_name": "market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Radford"
+            },
+            {
+                "col_name": "season",
+                "col_tag": "TIME_BIRTH",
+                "col_type": "NUMBER",
+                "sample_value": 2018
+            },
+            {
+                "col_name": "seed",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": "16"
+            },
+            {
+                "col_name": "points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 71
+            },
+            {
+                "col_name": "game_date",
+                "col_tag": "TIME_EVENT",
+                "col_type": "DATE",
+                "sample_value": "2018-03-13"
+            },
+            {
+                "col_name": "alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "RAD"
+            },
+            {
+                "col_name": "opponent_market",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "LIU Brooklyn"
+            },
+            {
+                "col_name": "days_from_epoch",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 17603
+            },
+            {
+                "col_name": "opponent_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Blackbirds"
+            },
+            {
+                "col_name": "opponent_points",
+                "col_tag": "VAL_AMOUNT",
+                "col_type": "NUMBER",
+                "sample_value": 61
+            },
+            {
+                "col_name": "opponent_seed",
+                "col_tag": "VAL_RATING",
+                "col_type": "TEXT",
+                "sample_value": "16"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Highlanders"
+            },
+            {
+                "col_name": "opponent_alias",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "LIU"
+            },
+            {
+                "col_name": "day",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "Tuesday"
+            },
+            {
+                "col_name": "school_ncaa",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Radford"
+            },
+            {
+                "col_name": "round",
+                "col_tag": "LEVEL",
+                "col_type": "NUMBER",
+                "sample_value": 68
+            },
+            {
+                "col_name": "opponent_school_ncaa",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "LIU Brooklyn"
+            }
+        ]
+    },
+    "NCAA__2019_TOURNAMENT_SEEDS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "season",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 2019
+            },
+            {
+                "col_name": "school_ncaa",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Virginia"
+            },
+            {
+                "col_name": "seed",
+                "col_tag": "VAL_RATING",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    }
+}

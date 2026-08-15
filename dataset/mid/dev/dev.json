@@ -362,5 +362,75 @@
     "question": "I want to see the most concentrated 311 complaint types in different boroughs, examine how the urban issue profiles vary across districts, count combinations with at least 10 occurrences, and preview the top 20 records.",
     "evidence": "",
     "SQL": "SELECT sr.borough AS location, sr.complaint_type AS category_topic, COUNT(*) AS event_cnt FROM NEW_YORK_PLUS.NEW_YORK_311__311_SERVICE_REQUESTS sr GROUP BY sr.borough, sr.complaint_type HAVING COUNT(*) >= 10 ORDER BY event_cnt DESC LIMIT 20;"
+  },
+  {
+    "question_id": 297,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, how many distinct game_id records fall under each h_rank tier? Give me the top 10 tiers by count.",
+    "evidence": "",
+    "SQL": "SELECT h_rank, COUNT(DISTINCT game_id) AS entity_cnt FROM NCAA_INSIGHTS.NCAA_MBB_GAMES_SR GROUP BY h_rank ORDER BY entity_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 298,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, which records have a two_points_pct of at least 50? List the top 10 game_id by two_points_pct in descending order.",
+    "evidence": "",
+    "SQL": "SELECT game_id, two_points_pct FROM NCAA_INSIGHTS.NCAA_MBB_PLAYERS_GAMES_SR WHERE two_points_pct >= 50 ORDER BY two_points_pct DESC LIMIT 10;"
+  },
+  {
+    "question_id": 299,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, what is the h_two_points_pct-weighted total of h_points, and how does it compare with the raw total?",
+    "evidence": "",
+    "SQL": "SELECT SUM(h_points * h_two_points_pct / 100.0) AS weighted_amount, SUM(h_points) AS total_amount FROM NCAA_INSIGHTS.NCAA_MBB_GAMES_SR WHERE h_points IS NOT NULL AND h_two_points_pct IS NOT NULL;"
+  },
+  {
+    "question_id": 300,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, show the daily record count and the running cumulative count for each h_rank tier over 2015, ordered by tier and date.",
+    "evidence": "",
+    "SQL": "WITH per_day AS ( SELECT h_rank AS lvl, DATE(scheduled_date) AS d, COUNT(*) AS cnt FROM NCAA_INSIGHTS.NCAA_MBB_GAMES_SR WHERE CAST(scheduled_date AS DATETIME) >= '2015-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2016-01-01 00:00:00' GROUP BY h_rank, DATE(scheduled_date) ) SELECT lvl, d, cnt, SUM(cnt) OVER (PARTITION BY lvl ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY lvl, d;"
+  },
+  {
+    "question_id": 301,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, for each tournament_type, which h_rank accounts for the largest number of records? Keep only those where that tier covers at least half of the records for the topic.",
+    "evidence": "",
+    "SQL": "WITH cell AS ( SELECT tournament_type AS topic, h_rank AS lvl, COUNT(*) AS cnt FROM NCAA_INSIGHTS.NCAA_MBB_GAMES_SR GROUP BY tournament_type, h_rank ), topic_total AS ( SELECT topic, SUM(cnt) AS total FROM cell GROUP BY topic ), ranked AS ( SELECT c.topic, c.lvl, c.cnt, t.total, CAST(c.cnt AS DOUBLE) / NULLIF(t.total, 0) AS share, ROW_NUMBER() OVER (PARTITION BY c.topic ORDER BY c.cnt DESC) AS rn FROM cell c JOIN topic_total t ON c.topic = t.topic ) SELECT topic, lvl, cnt, share FROM ranked WHERE rn = 1 AND share >= 0.5 ORDER BY share DESC;"
+  },
+  {
+    "question_id": 302,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, retrieve play-by-play events whose event_description mentions an offensive rebound, and give me the first 5 event_id.",
+    "evidence": "",
+    "SQL": "SELECT event_id FROM NCAA_INSIGHTS.NCAA_MBB_PBP_SR WHERE event_description LIKE '%offensive rebound%' LIMIT 5;"
+  },
+  {
+    "question_id": 303,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, compare the number of records under each conf_name between 2015 and 2014, and give me the top 3 with the largest year-over-year increase.",
+    "evidence": "",
+    "SQL": "SELECT conf_name, SUM(CASE WHEN CAST(scheduled_date AS DATETIME) >= '2015-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2016-01-01 00:00:00' THEN 1 ELSE 0 END) AS curr_cnt, SUM(CASE WHEN CAST(scheduled_date AS DATETIME) >= '2014-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2015-01-01 00:00:00' THEN 1 ELSE 0 END) AS prev_cnt, ( SUM(CASE WHEN CAST(scheduled_date AS DATETIME) >= '2015-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2016-01-01 00:00:00' THEN 1 ELSE 0 END) - SUM(CASE WHEN CAST(scheduled_date AS DATETIME) >= '2014-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2015-01-01 00:00:00' THEN 1 ELSE 0 END) ) AS delta_cnt FROM NCAA_INSIGHTS.NCAA_MBB_PLAYERS_GAMES_SR GROUP BY conf_name ORDER BY delta_cnt DESC LIMIT 3;"
+  },
+  {
+    "question_id": 304,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, which opp_id have the highest proportion of records where win is true? Only consider those with at least 20 records, and give me the top 10.",
+    "evidence": "",
+    "SQL": "SELECT opp_id, SUM(CASE WHEN win = True THEN 1 ELSE 0 END) AS hit_cnt, COUNT(*) AS total_cnt, SUM(CASE WHEN win = True THEN 1 ELSE 0 END) / COUNT(*) AS hit_ratio FROM NCAA_INSIGHTS.NCAA_MBB_HISTORICAL_TEAMS_GAMES GROUP BY opp_id HAVING COUNT(*) >= 20 ORDER BY hit_ratio DESC LIMIT 10;"
+  },
+  {
+    "question_id": 305,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, during 2015, which type do the records whose event_description mentions three point plays mainly concentrate in? Give me the top 5.",
+    "evidence": "",
+    "SQL": "SELECT type, COUNT(*) AS event_cnt FROM NCAA_INSIGHTS.NCAA_MBB_PBP_SR WHERE CAST(scheduled_date AS DATETIME) >= '2015-01-01 00:00:00' AND CAST(scheduled_date AS DATETIME) < '2016-01-01 00:00:00' AND event_description LIKE '%three point%' GROUP BY type ORDER BY event_cnt DESC LIMIT 5;"
+  },
+  {
+    "question_id": 306,
+    "db_id": "NCAA_INSIGHTS",
+    "question": "In NCAA_INSIGHTS, how are the records distributed across venue_city and type combinations? Give me the top 10 by record count.",
+    "evidence": "",
+    "SQL": "SELECT venue_city, type, COUNT(*) AS event_cnt FROM NCAA_INSIGHTS.NCAA_MBB_PBP_SR GROUP BY venue_city, type ORDER BY event_cnt DESC LIMIT 10;"
   }
 ]

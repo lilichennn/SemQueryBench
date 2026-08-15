@@ -1,0 +1,978 @@
+[
+  {
+    "question_id": 1,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In COMPLEX_ORACLE, within each promo_category, how many times did promo_cost rise compared with the previous record in time order? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "WITH s AS ( SELECT promo_category AS c, promo_cost AS v, LAG(promo_cost) OVER (PARTITION BY promo_category ORDER BY CAST(promo_end_date AS DATETIME)) AS prev_v FROM COMPLEX_ORACLE.PROMOTIONS ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 2,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In DataManagementPlatform, within each resource_type_name, how many times did data_value rise compared with the previous record in time order? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "WITH s AS ( SELECT resource_type_name AS c, data_value AS v, LAG(data_value) OVER (PARTITION BY resource_type_name ORDER BY CAST(data_date AS DATETIME)) AS prev_v FROM `DataManagementPlatform`.`DW储气库注采日完成` ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 3,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In EU_SOCCER, within each season, how many times did LBD rise compared with the previous record in time order? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "WITH s AS ( SELECT season AS c, LBD AS v, LAG(LBD) OVER (PARTITION BY season ORDER BY CAST(date AS DATETIME)) AS prev_v FROM EU_SOCCER.MATCH ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 4,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In FINANCE__ECONOMICS, within each ASSET_CLASS, how many times did VALUE rise compared with the previous record in time order? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "WITH s AS ( SELECT ASSET_CLASS AS c, VALUE AS v, LAG(VALUE) OVER (PARTITION BY ASSET_CLASS ORDER BY CAST(DATE AS DATETIME)) AS prev_v FROM FINANCE__ECONOMICS.CYBERSYN_STOCK_PRICE_TIMESERIES ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 5,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In THELOOK_ECOMMERCE, within each product_category, how many times did cost rise compared with the previous record in time order? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "WITH s AS ( SELECT product_category AS c, cost AS v, LAG(cost) OVER (PARTITION BY product_category ORDER BY FROM_UNIXTIME(sold_at / 1000000)) AS prev_v FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 6,
+    "split": "train",
+    "sqa": "XM1",
+    "question": "In dge, within each sector, how many times did actual_cost rise compared with the previous record in time order? Give me the top 10.",
+    "db": "dge",
+    "sql": "WITH s AS ( SELECT sector AS c, actual_cost AS v, LAG(actual_cost) OVER (PARTITION BY sector ORDER BY CAST(filing_date AS DATETIME)) AS prev_v FROM dge.pomp_view_pomp_allproject ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 7,
+    "split": "test",
+    "sqa": "XM1",
+    "question": "In IOC_NaturalGas, within each DATA_TYPE, how many times did DATA_VALUE rise compared with the previous record in time order? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "WITH s AS ( SELECT DATA_TYPE AS c, DATA_VALUE AS v, LAG(DATA_VALUE) OVER (PARTITION BY DATA_TYPE ORDER BY CAST(DATA_DATE AS DATETIME)) AS prev_v FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 8,
+    "split": "test",
+    "sqa": "XM1",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, within each body_type, how many times did gross_vehicle_weight_rating rise compared with the previous record in time order? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "WITH s AS ( SELECT body_type AS c, gross_vehicle_weight_rating AS v, LAG(gross_vehicle_weight_rating) OVER (PARTITION BY body_type ORDER BY FROM_UNIXTIME(day_of_crash / 1000000)) AS prev_v FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 9,
+    "split": "test",
+    "sqa": "XM1",
+    "question": "In SAN_FRANCISCO_PLUS, within each subscriber_type, how many times did duration_sec rise compared with the previous record in time order? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "WITH s AS ( SELECT subscriber_type AS c, duration_sec AS v, LAG(duration_sec) OVER (PARTITION BY subscriber_type ORDER BY FROM_UNIXTIME(end_date / 1000000)) AS prev_v FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS ) SELECT c, COUNT(*) AS rises FROM s WHERE prev_v IS NOT NULL AND v > prev_v GROUP BY c ORDER BY rises DESC LIMIT 10;"
+  },
+  {
+    "question_id": 10,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In BRAZILIAN_E_COMMERCE, which order_id fall in the top quintile by payment_value? Give me the top 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "WITH q AS ( SELECT order_id AS e, payment_value AS v, NTILE(5) OVER (ORDER BY payment_value DESC) AS quintile FROM BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS WHERE payment_value IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 11,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In COMPLEX_ORACLE, which prod_id fall in the top quintile by unit_cost? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "WITH q AS ( SELECT prod_id AS e, unit_cost AS v, NTILE(5) OVER (ORDER BY unit_cost DESC) AS quintile FROM COMPLEX_ORACLE.COSTS WHERE unit_cost IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 12,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In DataManagementPlatform, which STATION_ID fall in the top quintile by DATA_VALUE_P? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "WITH q AS ( SELECT STATION_ID AS e, DATA_VALUE_P AS v, NTILE(5) OVER (ORDER BY DATA_VALUE_P DESC) AS quintile FROM `DataManagementPlatform`.`LNG日完成` WHERE DATA_VALUE_P IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 13,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In EU_SOCCER, which league_id fall in the top quintile by LBD? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "WITH q AS ( SELECT league_id AS e, LBD AS v, NTILE(5) OVER (ORDER BY LBD DESC) AS quintile FROM EU_SOCCER.MATCH WHERE LBD IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 14,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In FINANCE__ECONOMICS, which COUNTERPARTY_GEO_ID fall in the top quintile by VALUE? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "WITH q AS ( SELECT COUNTERPARTY_GEO_ID AS e, VALUE AS v, NTILE(5) OVER (ORDER BY VALUE DESC) AS quintile FROM FINANCE__ECONOMICS.CYBERSYN_BANK_FOR_INTERNATIONAL_SETTLEMENTS_TIMESERIES WHERE VALUE IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 15,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In META_KAGGLE, which ForumId fall in the top quintile by RewardQuantity? Give me the top 10.",
+    "db": "META_KAGGLE",
+    "sql": "WITH q AS ( SELECT ForumId AS e, RewardQuantity AS v, NTILE(5) OVER (ORDER BY RewardQuantity DESC) AS quintile FROM META_KAGGLE.COMPETITIONS WHERE RewardQuantity IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 16,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In ORACLE_SQL, which order_id fall in the top quintile by amount? Give me the top 10.",
+    "db": "ORACLE_SQL",
+    "sql": "WITH q AS ( SELECT order_id AS e, amount AS v, NTILE(5) OVER (ORDER BY amount DESC) AS quintile FROM ORACLE_SQL.ORDERLINES WHERE amount IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 17,
+    "split": "train",
+    "sqa": "XM2",
+    "question": "In THELOOK_ECOMMERCE, which product_id fall in the top quintile by cost? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "WITH q AS ( SELECT product_id AS e, cost AS v, NTILE(5) OVER (ORDER BY cost DESC) AS quintile FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS WHERE cost IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 18,
+    "split": "test",
+    "sqa": "XM2",
+    "question": "In IOC_NaturalGas, which REGION_ID fall in the top quintile by DATA_VALUE? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "WITH q AS ( SELECT REGION_ID AS e, DATA_VALUE AS v, NTILE(5) OVER (ORDER BY DATA_VALUE DESC) AS quintile FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE WHERE DATA_VALUE IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 19,
+    "split": "test",
+    "sqa": "XM2",
+    "question": "In IPL, which match_id fall in the top quintile by runs_scored? Give me the top 10.",
+    "db": "IPL",
+    "sql": "WITH q AS ( SELECT match_id AS e, runs_scored AS v, NTILE(5) OVER (ORDER BY runs_scored DESC) AS quintile FROM IPL.BATSMAN_SCORED WHERE runs_scored IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 20,
+    "split": "test",
+    "sqa": "XM2",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, which state_number fall in the top quintile by gross_vehicle_weight_rating? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "WITH q AS ( SELECT state_number AS e, gross_vehicle_weight_rating AS v, NTILE(5) OVER (ORDER BY gross_vehicle_weight_rating DESC) AS quintile FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 WHERE gross_vehicle_weight_rating IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 21,
+    "split": "test",
+    "sqa": "XM2",
+    "question": "In OPENAQ, which state_code fall in the top quintile by first_max_value? Give me the top 10.",
+    "db": "OPENAQ",
+    "sql": "WITH q AS ( SELECT state_code AS e, first_max_value AS v, NTILE(5) OVER (ORDER BY first_max_value DESC) AS quintile FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_CO_DAILY_SUMMARY WHERE first_max_value IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 22,
+    "split": "test",
+    "sqa": "XM2",
+    "question": "In SAN_FRANCISCO_PLUS, which end_station_id fall in the top quintile by duration_sec? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "WITH q AS ( SELECT end_station_id AS e, duration_sec AS v, NTILE(5) OVER (ORDER BY duration_sec DESC) AS quintile FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS WHERE duration_sec IS NOT NULL ) SELECT e, v FROM q WHERE quintile = 1 ORDER BY v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 23,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In BRAZILIAN_E_COMMERCE, what is the 90th-percentile product_length_cm within each product_category_name? Give me the top 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "WITH r AS ( SELECT product_category_name AS c, product_length_cm AS v, PERCENT_RANK() OVER (PARTITION BY product_category_name ORDER BY product_length_cm) AS pr FROM BRAZILIAN_E_COMMERCE.OLIST_PRODUCTS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 24,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In COMPLEX_ORACLE, what is the 90th-percentile household_size within each golf? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "WITH r AS ( SELECT golf AS c, household_size AS v, PERCENT_RANK() OVER (PARTITION BY golf ORDER BY household_size) AS pr FROM COMPLEX_ORACLE.SUPPLEMENTARY_DEMOGRAPHICS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 25,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In DataManagementPlatform, what is the 90th-percentile REQUIRE_NUM within each DATA_TYPE? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "WITH r AS ( SELECT DATA_TYPE AS c, REQUIRE_NUM AS v, PERCENT_RANK() OVER (PARTITION BY DATA_TYPE ORDER BY REQUIRE_NUM) AS pr FROM `DataManagementPlatform`.`LNG-日指定` ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 26,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In EU_SOCCER, what is the 90th-percentile home_team_goal within each season? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "WITH r AS ( SELECT season AS c, home_team_goal AS v, PERCENT_RANK() OVER (PARTITION BY season ORDER BY home_team_goal) AS pr FROM EU_SOCCER.MATCH ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 27,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In FINANCE__ECONOMICS, what is the 90th-percentile LATITUDE within each CHARTER_TYPE? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "WITH r AS ( SELECT CHARTER_TYPE AS c, LATITUDE AS v, PERCENT_RANK() OVER (PARTITION BY CHARTER_TYPE ORDER BY LATITUDE) AS pr FROM FINANCE__ECONOMICS.CYBERSYN_FDIC_BRANCH_LOCATIONS_INDEX ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 28,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In META_KAGGLE, what is the 90th-percentile NumPrizes within each RewardType? Give me the top 10.",
+    "db": "META_KAGGLE",
+    "sql": "WITH r AS ( SELECT RewardType AS c, NumPrizes AS v, PERCENT_RANK() OVER (PARTITION BY RewardType ORDER BY NumPrizes) AS pr FROM META_KAGGLE.COMPETITIONS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 29,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In THELOOK_ECOMMERCE, what is the 90th-percentile num_of_item within each gender? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "WITH r AS ( SELECT gender AS c, num_of_item AS v, PERCENT_RANK() OVER (PARTITION BY gender ORDER BY num_of_item) AS pr FROM THELOOK_ECOMMERCE.ORDERS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 30,
+    "split": "train",
+    "sqa": "XM3",
+    "question": "In dge, what is the 90th-percentile current_onsite_count within each person_type? Give me the top 10.",
+    "db": "dge",
+    "sql": "WITH r AS ( SELECT person_type AS c, current_onsite_count AS v, PERCENT_RANK() OVER (PARTITION BY person_type ORDER BY current_onsite_count) AS pr FROM dge.dge_outsource_staff_flow ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 31,
+    "split": "test",
+    "sqa": "XM3",
+    "question": "In IOC_NaturalGas, what is the 90th-percentile SELF_WELL_COUNT within each CATEGORY? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "WITH r AS ( SELECT CATEGORY AS c, SELF_WELL_COUNT AS v, PERCENT_RANK() OVER (PARTITION BY CATEGORY ORDER BY SELF_WELL_COUNT) AS pr FROM IOC_NaturalGas.NG_NATURAL_GAS_PRODUCTION ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 32,
+    "split": "test",
+    "sqa": "XM3",
+    "question": "In IPL, what is the 90th-percentile extra_runs within each extra_type? Give me the top 10.",
+    "db": "IPL",
+    "sql": "WITH r AS ( SELECT extra_type AS c, extra_runs AS v, PERCENT_RANK() OVER (PARTITION BY extra_type ORDER BY extra_runs) AS pr FROM IPL.EXTRA_RUNS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 33,
+    "split": "test",
+    "sqa": "XM3",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, what is the 90th-percentile number_of_occupants within each body_type? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "WITH r AS ( SELECT body_type AS c, number_of_occupants AS v, PERCENT_RANK() OVER (PARTITION BY body_type ORDER BY number_of_occupants) AS pr FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 34,
+    "split": "test",
+    "sqa": "XM3",
+    "question": "In SAN_FRANCISCO_PLUS, what is the 90th-percentile number_of_alarms within each call_type? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "WITH r AS ( SELECT call_type AS c, number_of_alarms AS v, PERCENT_RANK() OVER (PARTITION BY call_type ORDER BY number_of_alarms) AS pr FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 35,
+    "split": "test",
+    "sqa": "XM3",
+    "question": "In WIDE_WORLD_IMPORTERS, what is the 90th-percentile LatestRecordedPopulation within each CountryType? Give me the top 10.",
+    "db": "WIDE_WORLD_IMPORTERS",
+    "sql": "WITH r AS ( SELECT CountryType AS c, LatestRecordedPopulation AS v, PERCENT_RANK() OVER (PARTITION BY CountryType ORDER BY LatestRecordedPopulation) AS pr FROM WIDE_WORLD_IMPORTERS.APPLICATION_COUNTRIES ) SELECT c, MIN(v) AS p90_value FROM r WHERE pr >= 0.9 GROUP BY c ORDER BY p90_value DESC LIMIT 10;"
+  },
+  {
+    "question_id": 36,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In BRAZILIAN_E_COMMERCE, which product_id belong to a product_category_name carrying at least 20 records? Give me the first 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "SELECT product_id FROM BRAZILIAN_E_COMMERCE.OLIST_PRODUCTS WHERE product_category_name IN ( SELECT product_category_name FROM BRAZILIAN_E_COMMERCE.OLIST_PRODUCTS GROUP BY product_category_name HAVING COUNT(*) >= 20 ) ORDER BY product_id LIMIT 10;"
+  },
+  {
+    "question_id": 37,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE, which MetricID belong to a Type carrying at least 20 records? Give me the first 10.",
+    "db": "CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE",
+    "sql": "SELECT MetricID FROM CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE.DIM_CENSUSMETRICS WHERE Type IN ( SELECT Type FROM CENSUS_GALAXY__ZIP_CODE_TO_BLOCK_GROUP_SAMPLE.DIM_CENSUSMETRICS GROUP BY Type HAVING COUNT(*) >= 20 ) ORDER BY MetricID LIMIT 10;"
+  },
+  {
+    "question_id": 38,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In COMPLEX_ORACLE, which channel_id belong to a channel_class carrying at least 20 records? Give me the first 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT channel_id FROM COMPLEX_ORACLE.CHANNELS WHERE channel_class IN ( SELECT channel_class FROM COMPLEX_ORACLE.CHANNELS GROUP BY channel_class HAVING COUNT(*) >= 20 ) ORDER BY channel_id LIMIT 10;"
+  },
+  {
+    "question_id": 39,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In DataManagementPlatform, which VENDOR_ID belong to a DATA_TYPE carrying at least 20 records? Give me the first 10.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT VENDOR_ID FROM `DataManagementPlatform`.`LNG-日指定` WHERE DATA_TYPE IN ( SELECT DATA_TYPE FROM `DataManagementPlatform`.`LNG-日指定` GROUP BY DATA_TYPE HAVING COUNT(*) >= 20 ) ORDER BY VENDOR_ID LIMIT 10;"
+  },
+  {
+    "question_id": 40,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In EU_SOCCER, which team_api_id belong to a defencePressureClass carrying at least 20 records? Give me the first 10.",
+    "db": "EU_SOCCER",
+    "sql": "SELECT team_api_id FROM EU_SOCCER.TEAM_ATTRIBUTES WHERE defencePressureClass IN ( SELECT defencePressureClass FROM EU_SOCCER.TEAM_ATTRIBUTES GROUP BY defencePressureClass HAVING COUNT(*) >= 20 ) ORDER BY team_api_id LIMIT 10;"
+  },
+  {
+    "question_id": 41,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In FINANCE__ECONOMICS, which EMPLOYER_IDENTIFICATION_NUMBER belong to a CATEGORY carrying at least 20 records? Give me the first 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT EMPLOYER_IDENTIFICATION_NUMBER FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_ENTITIES WHERE CATEGORY IN ( SELECT CATEGORY FROM FINANCE__ECONOMICS.CYBERSYN_FINANCIAL_INSTITUTION_ENTITIES GROUP BY CATEGORY HAVING COUNT(*) >= 20 ) ORDER BY EMPLOYER_IDENTIFICATION_NUMBER LIMIT 10;"
+  },
+  {
+    "question_id": 42,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In THELOOK_ECOMMERCE, which product_sku belong to a product_category carrying at least 20 records? Give me the first 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT product_sku FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS WHERE product_category IN ( SELECT product_category FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS GROUP BY product_category HAVING COUNT(*) >= 20 ) ORDER BY product_sku LIMIT 10;"
+  },
+  {
+    "question_id": 43,
+    "split": "train",
+    "sqa": "XM4",
+    "question": "In dge, which proj_code belong to a sector carrying at least 20 records? Give me the first 10.",
+    "db": "dge",
+    "sql": "SELECT proj_code FROM dge.pomp_view_pomp_allproject WHERE sector IN ( SELECT sector FROM dge.pomp_view_pomp_allproject GROUP BY sector HAVING COUNT(*) >= 20 ) ORDER BY proj_code LIMIT 10;"
+  },
+  {
+    "question_id": 44,
+    "split": "test",
+    "sqa": "XM4",
+    "question": "In IOC_NaturalGas, which PRIMARY_ID belong to a DATA_TYPE carrying at least 20 records? Give me the first 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT PRIMARY_ID FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE WHERE DATA_TYPE IN ( SELECT DATA_TYPE FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE GROUP BY DATA_TYPE HAVING COUNT(*) >= 20 ) ORDER BY PRIMARY_ID LIMIT 10;"
+  },
+  {
+    "question_id": 45,
+    "split": "test",
+    "sqa": "XM4",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, which mcid_identification_number belong to a body_type carrying at least 20 records? Give me the first 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT mcid_identification_number FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 WHERE body_type IN ( SELECT body_type FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 GROUP BY body_type HAVING COUNT(*) >= 20 ) ORDER BY mcid_identification_number LIMIT 10;"
+  },
+  {
+    "question_id": 46,
+    "split": "test",
+    "sqa": "XM4",
+    "question": "In SAN_FRANCISCO_PLUS, which incident_number belong to a call_type carrying at least 20 records? Give me the first 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT incident_number FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS WHERE call_type IN ( SELECT call_type FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS GROUP BY call_type HAVING COUNT(*) >= 20 ) ORDER BY incident_number LIMIT 10;"
+  },
+  {
+    "question_id": 47,
+    "split": "test",
+    "sqa": "XM4",
+    "question": "In WIDE_WORLD_IMPORTERS, which IsoAlpha3Code belong to a CountryType carrying at least 20 records? Give me the first 10.",
+    "db": "WIDE_WORLD_IMPORTERS",
+    "sql": "SELECT IsoAlpha3Code FROM WIDE_WORLD_IMPORTERS.APPLICATION_COUNTRIES WHERE CountryType IN ( SELECT CountryType FROM WIDE_WORLD_IMPORTERS.APPLICATION_COUNTRIES GROUP BY CountryType HAVING COUNT(*) >= 20 ) ORDER BY IsoAlpha3Code LIMIT 10;"
+  },
+  {
+    "question_id": 48,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In BRAZILIAN_E_COMMERCE, which order_id accumulate a total payment_value more than ten times the overall average? Give me the top 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "SELECT order_id, SUM(payment_value) AS total FROM BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS GROUP BY order_id HAVING SUM(payment_value) > ( SELECT AVG(payment_value) * 10 FROM BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 49,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In COMPLEX_ORACLE, which prod_id accumulate a total unit_cost more than ten times the overall average? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT prod_id, SUM(unit_cost) AS total FROM COMPLEX_ORACLE.COSTS GROUP BY prod_id HAVING SUM(unit_cost) > ( SELECT AVG(unit_cost) * 10 FROM COMPLEX_ORACLE.COSTS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 50,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In DataManagementPlatform, which STATION_ID accumulate a total DATA_VALUE_P more than ten times the overall average? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT STATION_ID, SUM(DATA_VALUE_P) AS total FROM `DataManagementPlatform`.`LNG日完成` GROUP BY STATION_ID HAVING SUM(DATA_VALUE_P) > ( SELECT AVG(DATA_VALUE_P) * 10 FROM `DataManagementPlatform`.`LNG日完成` ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 51,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In EU_SOCCER, which league_id accumulate a total LBD more than ten times the overall average? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "SELECT league_id, SUM(LBD) AS total FROM EU_SOCCER.MATCH GROUP BY league_id HAVING SUM(LBD) > ( SELECT AVG(LBD) * 10 FROM EU_SOCCER.MATCH ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 52,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In FINANCE__ECONOMICS, which COUNTERPARTY_GEO_ID accumulate a total VALUE more than ten times the overall average? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT COUNTERPARTY_GEO_ID, SUM(VALUE) AS total FROM FINANCE__ECONOMICS.CYBERSYN_BANK_FOR_INTERNATIONAL_SETTLEMENTS_TIMESERIES GROUP BY COUNTERPARTY_GEO_ID HAVING SUM(VALUE) > ( SELECT AVG(VALUE) * 10 FROM FINANCE__ECONOMICS.CYBERSYN_BANK_FOR_INTERNATIONAL_SETTLEMENTS_TIMESERIES ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 53,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In META_KAGGLE, which ForumId accumulate a total RewardQuantity more than ten times the overall average? Give me the top 10.",
+    "db": "META_KAGGLE",
+    "sql": "SELECT ForumId, SUM(RewardQuantity) AS total FROM META_KAGGLE.COMPETITIONS GROUP BY ForumId HAVING SUM(RewardQuantity) > ( SELECT AVG(RewardQuantity) * 10 FROM META_KAGGLE.COMPETITIONS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 54,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In ORACLE_SQL, which order_id accumulate a total amount more than ten times the overall average? Give me the top 10.",
+    "db": "ORACLE_SQL",
+    "sql": "SELECT order_id, SUM(amount) AS total FROM ORACLE_SQL.ORDERLINES GROUP BY order_id HAVING SUM(amount) > ( SELECT AVG(amount) * 10 FROM ORACLE_SQL.ORDERLINES ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 55,
+    "split": "train",
+    "sqa": "XM5",
+    "question": "In THELOOK_ECOMMERCE, which product_id accumulate a total cost more than ten times the overall average? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT product_id, SUM(cost) AS total FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS GROUP BY product_id HAVING SUM(cost) > ( SELECT AVG(cost) * 10 FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 56,
+    "split": "test",
+    "sqa": "XM5",
+    "question": "In IOC_NaturalGas, which REGION_ID accumulate a total DATA_VALUE more than ten times the overall average? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT REGION_ID, SUM(DATA_VALUE) AS total FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE GROUP BY REGION_ID HAVING SUM(DATA_VALUE) > ( SELECT AVG(DATA_VALUE) * 10 FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 57,
+    "split": "test",
+    "sqa": "XM5",
+    "question": "In IPL, which match_id accumulate a total runs_scored more than ten times the overall average? Give me the top 10.",
+    "db": "IPL",
+    "sql": "SELECT match_id, SUM(runs_scored) AS total FROM IPL.BATSMAN_SCORED GROUP BY match_id HAVING SUM(runs_scored) > ( SELECT AVG(runs_scored) * 10 FROM IPL.BATSMAN_SCORED ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 58,
+    "split": "test",
+    "sqa": "XM5",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, which state_number accumulate a total gross_vehicle_weight_rating more than ten times the overall average? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT state_number, SUM(gross_vehicle_weight_rating) AS total FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 GROUP BY state_number HAVING SUM(gross_vehicle_weight_rating) > ( SELECT AVG(gross_vehicle_weight_rating) * 10 FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 59,
+    "split": "test",
+    "sqa": "XM5",
+    "question": "In OPENAQ, which state_code accumulate a total first_max_value more than ten times the overall average? Give me the top 10.",
+    "db": "OPENAQ",
+    "sql": "SELECT state_code, SUM(first_max_value) AS total FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_CO_DAILY_SUMMARY GROUP BY state_code HAVING SUM(first_max_value) > ( SELECT AVG(first_max_value) * 10 FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_CO_DAILY_SUMMARY ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 60,
+    "split": "test",
+    "sqa": "XM5",
+    "question": "In SAN_FRANCISCO_PLUS, which end_station_id accumulate a total duration_sec more than ten times the overall average? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT end_station_id, SUM(duration_sec) AS total FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS GROUP BY end_station_id HAVING SUM(duration_sec) > ( SELECT AVG(duration_sec) * 10 FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS ) ORDER BY total DESC LIMIT 10;"
+  },
+  {
+    "question_id": 61,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In COMPLEX_ORACLE, show the daily total unit_cost together with its 7-day moving average, ordered by date.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "WITH d AS ( SELECT DATE(CAST(time_id AS DATETIME)) AS day, SUM(unit_cost) AS amt FROM COMPLEX_ORACLE.COSTS GROUP BY DATE(CAST(time_id AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 62,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In DataManagementPlatform, show the daily total data_value together with its 7-day moving average, ordered by date.",
+    "db": "DataManagementPlatform",
+    "sql": "WITH d AS ( SELECT DATE(CAST(data_date AS DATETIME)) AS day, SUM(data_value) AS amt FROM `DataManagementPlatform`.`DW储气库注采日完成` GROUP BY DATE(CAST(data_date AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 63,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In EU_SOCCER, show the daily total LBD together with its 7-day moving average, ordered by date.",
+    "db": "EU_SOCCER",
+    "sql": "WITH d AS ( SELECT DATE(CAST(date AS DATETIME)) AS day, SUM(LBD) AS amt FROM EU_SOCCER.MATCH GROUP BY DATE(CAST(date AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 64,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In FINANCE__ECONOMICS, show the daily total VALUE together with its 7-day moving average, ordered by date.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "WITH d AS ( SELECT DATE(CAST(DATE AS DATETIME)) AS day, SUM(VALUE) AS amt FROM FINANCE__ECONOMICS.CYBERSYN_BUREAU_OF_LABOR_STATISTICS_EMPLOYMENT_TIMESERIES GROUP BY DATE(CAST(DATE AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 65,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In ORACLE_SQL, show the daily total cost together with its 7-day moving average, ordered by date.",
+    "db": "ORACLE_SQL",
+    "sql": "WITH d AS ( SELECT DATE(CAST(purchased AS DATETIME)) AS day, SUM(cost) AS amt FROM ORACLE_SQL.PURCHASES GROUP BY DATE(CAST(purchased AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 66,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In THELOOK_ECOMMERCE, show the daily total cost together with its 7-day moving average, ordered by date.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(sold_at / 1000000)) AS day, SUM(cost) AS amt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS GROUP BY DATE(FROM_UNIXTIME(sold_at / 1000000)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 67,
+    "split": "train",
+    "sqa": "XM6",
+    "question": "In dge, show the daily total total_labor_cost together with its 7-day moving average, ordered by date.",
+    "db": "dge",
+    "sql": "WITH d AS ( SELECT DATE(CAST(statistical_date AS DATETIME)) AS day, SUM(total_labor_cost) AS amt FROM dge.hr_org_efficiency_metrics GROUP BY DATE(CAST(statistical_date AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 68,
+    "split": "test",
+    "sqa": "XM6",
+    "question": "In IOC_NaturalGas, show the daily total DATA_VALUE together with its 7-day moving average, ordered by date.",
+    "db": "IOC_NaturalGas",
+    "sql": "WITH d AS ( SELECT DATE(CAST(DATA_DATE AS DATETIME)) AS day, SUM(DATA_VALUE) AS amt FROM IOC_NaturalGas.NG_CENTRAL_ASIA_GAS_PIPELINE_DATA GROUP BY DATE(CAST(DATA_DATE AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 69,
+    "split": "test",
+    "sqa": "XM6",
+    "question": "In IPL, show the daily total win_margin together with its 7-day moving average, ordered by date.",
+    "db": "IPL",
+    "sql": "WITH d AS ( SELECT DATE(CAST(match_date AS DATETIME)) AS day, SUM(win_margin) AS amt FROM IPL.MATCH GROUP BY DATE(CAST(match_date AS DATETIME)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 70,
+    "split": "test",
+    "sqa": "XM6",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, show the daily total land_use together with its 7-day moving average, ordered by date.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(timestamp_of_crash / 1000000)) AS day, SUM(land_use) AS amt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2015 GROUP BY DATE(FROM_UNIXTIME(timestamp_of_crash / 1000000)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 71,
+    "split": "test",
+    "sqa": "XM6",
+    "question": "In OPENAQ, show the daily total value together with its 7-day moving average, ordered by date.",
+    "db": "OPENAQ",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(timestamp / 1000000)) AS day, SUM(value) AS amt FROM OPENAQ.OPENAQ_GLOBAL_AIR_QUALITY GROUP BY DATE(FROM_UNIXTIME(timestamp / 1000000)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 72,
+    "split": "test",
+    "sqa": "XM6",
+    "question": "In SAN_FRANCISCO_PLUS, show the daily total duration_sec together with its 7-day moving average, ordered by date.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "WITH d AS ( SELECT DATE(FROM_UNIXTIME(end_date / 1000000)) AS day, SUM(duration_sec) AS amt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS GROUP BY DATE(FROM_UNIXTIME(end_date / 1000000)) ) SELECT day, amt, AVG(amt) OVER (ORDER BY day ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS moving_avg_7d FROM d ORDER BY day;"
+  },
+  {
+    "question_id": 73,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In BRAZILIAN_E_COMMERCE, within each payment_type, how many distinct pairs of order_id co-occur? Give me the top 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "SELECT a.payment_type, COUNT(*) AS pair_cnt FROM BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS a JOIN BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS b ON a.payment_type = b.payment_type AND a.order_id < b.order_id GROUP BY a.payment_type ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 74,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In COMPLEX_ORACLE, within each prod_category, how many distinct pairs of supplier_id co-occur? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT a.prod_category, COUNT(*) AS pair_cnt FROM COMPLEX_ORACLE.PRODUCTS a JOIN COMPLEX_ORACLE.PRODUCTS b ON a.prod_category = b.prod_category AND a.supplier_id < b.supplier_id GROUP BY a.prod_category ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 75,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In DataManagementPlatform, within each DATA_TYPE_ID, how many distinct pairs of STATION_ID co-occur? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT a.DATA_TYPE_ID, COUNT(*) AS pair_cnt FROM `DataManagementPlatform`.`LNG日完成` a JOIN `DataManagementPlatform`.`LNG日完成` b ON a.DATA_TYPE_ID = b.DATA_TYPE_ID AND a.STATION_ID < b.STATION_ID GROUP BY a.DATA_TYPE_ID ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 76,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In EU_SOCCER, within each season, how many distinct pairs of league_id co-occur? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "SELECT a.season, COUNT(*) AS pair_cnt FROM EU_SOCCER.MATCH a JOIN EU_SOCCER.MATCH b ON a.season = b.season AND a.league_id < b.league_id GROUP BY a.season ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 77,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In FINANCE__ECONOMICS, within each ASSET_CLASS, how many distinct pairs of PERMID_QUOTE_ID co-occur? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT a.ASSET_CLASS, COUNT(*) AS pair_cnt FROM FINANCE__ECONOMICS.CYBERSYN_PERMID_SECURITY_INDEX a JOIN FINANCE__ECONOMICS.CYBERSYN_PERMID_SECURITY_INDEX b ON a.ASSET_CLASS = b.ASSET_CLASS AND a.PERMID_QUOTE_ID < b.PERMID_QUOTE_ID GROUP BY a.ASSET_CLASS ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 78,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In META_KAGGLE, within each RewardType, how many distinct pairs of ForumId co-occur? Give me the top 10.",
+    "db": "META_KAGGLE",
+    "sql": "SELECT a.RewardType, COUNT(*) AS pair_cnt FROM META_KAGGLE.COMPETITIONS a JOIN META_KAGGLE.COMPETITIONS b ON a.RewardType = b.RewardType AND a.ForumId < b.ForumId GROUP BY a.RewardType ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 79,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In THELOOK_ECOMMERCE, within each product_category, how many distinct pairs of product_id co-occur? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT a.product_category, COUNT(*) AS pair_cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS a JOIN THELOOK_ECOMMERCE.INVENTORY_ITEMS b ON a.product_category = b.product_category AND a.product_id < b.product_id GROUP BY a.product_category ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 80,
+    "split": "train",
+    "sqa": "XM7",
+    "question": "In dge, within each project_type, how many distinct pairs of belong_dept_id co-occur? Give me the top 10.",
+    "db": "dge",
+    "sql": "SELECT a.project_type, COUNT(*) AS pair_cnt FROM dge.dge_project_detail a JOIN dge.dge_project_detail b ON a.project_type = b.project_type AND a.belong_dept_id < b.belong_dept_id GROUP BY a.project_type ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 81,
+    "split": "test",
+    "sqa": "XM7",
+    "question": "In IOC_NaturalGas, within each DATA_TYPE, how many distinct pairs of REGION_ID co-occur? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT a.DATA_TYPE, COUNT(*) AS pair_cnt FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE a JOIN IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE b ON a.DATA_TYPE = b.DATA_TYPE AND a.REGION_ID < b.REGION_ID GROUP BY a.DATA_TYPE ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 82,
+    "split": "test",
+    "sqa": "XM7",
+    "question": "In IPL, within each extra_type, how many distinct pairs of match_id co-occur? Give me the top 10.",
+    "db": "IPL",
+    "sql": "SELECT a.extra_type, COUNT(*) AS pair_cnt FROM IPL.EXTRA_RUNS a JOIN IPL.EXTRA_RUNS b ON a.extra_type = b.extra_type AND a.match_id < b.match_id GROUP BY a.extra_type ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 83,
+    "split": "test",
+    "sqa": "XM7",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, within each body_type, how many distinct pairs of state_number co-occur? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT a.body_type, COUNT(*) AS pair_cnt FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 a JOIN NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 b ON a.body_type = b.body_type AND a.state_number < b.state_number GROUP BY a.body_type ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 84,
+    "split": "test",
+    "sqa": "XM7",
+    "question": "In SAN_FRANCISCO_PLUS, within each subscriber_type, how many distinct pairs of end_station_id co-occur? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT a.subscriber_type, COUNT(*) AS pair_cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS a JOIN SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS b ON a.subscriber_type = b.subscriber_type AND a.end_station_id < b.end_station_id GROUP BY a.subscriber_type ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 85,
+    "split": "test",
+    "sqa": "XM7",
+    "question": "In WIDE_WORLD_IMPORTERS, within each CustomerCategoryID, how many distinct pairs of BuyingGroupID co-occur? Give me the top 10.",
+    "db": "WIDE_WORLD_IMPORTERS",
+    "sql": "SELECT a.CustomerCategoryID, COUNT(*) AS pair_cnt FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERS a JOIN WIDE_WORLD_IMPORTERS.SALES_CUSTOMERS b ON a.CustomerCategoryID = b.CustomerCategoryID AND a.BuyingGroupID < b.BuyingGroupID GROUP BY a.CustomerCategoryID ORDER BY pair_cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 86,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In BRAZILIAN_E_COMMERCE, which payment_type have the highest number of records per distinct order_id? Only consider those covering at least 5 entities.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "SELECT payment_type, COUNT(DISTINCT order_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT order_id) AS events_per_entity FROM BRAZILIAN_E_COMMERCE.OLIST_ORDER_PAYMENTS GROUP BY payment_type HAVING COUNT(DISTINCT order_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 87,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In COMPLEX_ORACLE, which prod_category have the highest number of records per distinct supplier_id? Only consider those covering at least 5 entities.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT prod_category, COUNT(DISTINCT supplier_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT supplier_id) AS events_per_entity FROM COMPLEX_ORACLE.PRODUCTS GROUP BY prod_category HAVING COUNT(DISTINCT supplier_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 88,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In DataManagementPlatform, which DATA_TYPE_ID have the highest number of records per distinct STATION_ID? Only consider those covering at least 5 entities.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT DATA_TYPE_ID, COUNT(DISTINCT STATION_ID) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT STATION_ID) AS events_per_entity FROM `DataManagementPlatform`.`LNG日完成` GROUP BY DATA_TYPE_ID HAVING COUNT(DISTINCT STATION_ID) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 89,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In EU_SOCCER, which season have the highest number of records per distinct league_id? Only consider those covering at least 5 entities.",
+    "db": "EU_SOCCER",
+    "sql": "SELECT season, COUNT(DISTINCT league_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT league_id) AS events_per_entity FROM EU_SOCCER.MATCH GROUP BY season HAVING COUNT(DISTINCT league_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 90,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In FINANCE__ECONOMICS, which ASSET_CLASS have the highest number of records per distinct PERMID_QUOTE_ID? Only consider those covering at least 5 entities.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT ASSET_CLASS, COUNT(DISTINCT PERMID_QUOTE_ID) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT PERMID_QUOTE_ID) AS events_per_entity FROM FINANCE__ECONOMICS.CYBERSYN_PERMID_SECURITY_INDEX GROUP BY ASSET_CLASS HAVING COUNT(DISTINCT PERMID_QUOTE_ID) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 91,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In META_KAGGLE, which RewardType have the highest number of records per distinct ForumId? Only consider those covering at least 5 entities.",
+    "db": "META_KAGGLE",
+    "sql": "SELECT RewardType, COUNT(DISTINCT ForumId) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT ForumId) AS events_per_entity FROM META_KAGGLE.COMPETITIONS GROUP BY RewardType HAVING COUNT(DISTINCT ForumId) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 92,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In THELOOK_ECOMMERCE, which product_category have the highest number of records per distinct product_id? Only consider those covering at least 5 entities.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT product_category, COUNT(DISTINCT product_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT product_id) AS events_per_entity FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS GROUP BY product_category HAVING COUNT(DISTINCT product_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 93,
+    "split": "train",
+    "sqa": "XM8",
+    "question": "In dge, which project_type have the highest number of records per distinct belong_dept_id? Only consider those covering at least 5 entities.",
+    "db": "dge",
+    "sql": "SELECT project_type, COUNT(DISTINCT belong_dept_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT belong_dept_id) AS events_per_entity FROM dge.dge_project_detail GROUP BY project_type HAVING COUNT(DISTINCT belong_dept_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 94,
+    "split": "test",
+    "sqa": "XM8",
+    "question": "In IOC_NaturalGas, which DATA_TYPE have the highest number of records per distinct REGION_ID? Only consider those covering at least 5 entities.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT DATA_TYPE, COUNT(DISTINCT REGION_ID) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT REGION_ID) AS events_per_entity FROM IOC_NaturalGas.NG_CUSTOMER_DAY_COMPLETE GROUP BY DATA_TYPE HAVING COUNT(DISTINCT REGION_ID) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 95,
+    "split": "test",
+    "sqa": "XM8",
+    "question": "In IPL, which extra_type have the highest number of records per distinct match_id? Only consider those covering at least 5 entities.",
+    "db": "IPL",
+    "sql": "SELECT extra_type, COUNT(DISTINCT match_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT match_id) AS events_per_entity FROM IPL.EXTRA_RUNS GROUP BY extra_type HAVING COUNT(DISTINCT match_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 96,
+    "split": "test",
+    "sqa": "XM8",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, which body_type have the highest number of records per distinct state_number? Only consider those covering at least 5 entities.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT body_type, COUNT(DISTINCT state_number) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT state_number) AS events_per_entity FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 GROUP BY body_type HAVING COUNT(DISTINCT state_number) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 97,
+    "split": "test",
+    "sqa": "XM8",
+    "question": "In SAN_FRANCISCO_PLUS, which subscriber_type have the highest number of records per distinct end_station_id? Only consider those covering at least 5 entities.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT subscriber_type, COUNT(DISTINCT end_station_id) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT end_station_id) AS events_per_entity FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_BIKESHARE_BIKESHARE_TRIPS GROUP BY subscriber_type HAVING COUNT(DISTINCT end_station_id) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 98,
+    "split": "test",
+    "sqa": "XM8",
+    "question": "In WIDE_WORLD_IMPORTERS, which CustomerCategoryID have the highest number of records per distinct BuyingGroupID? Only consider those covering at least 5 entities.",
+    "db": "WIDE_WORLD_IMPORTERS",
+    "sql": "SELECT CustomerCategoryID, COUNT(DISTINCT BuyingGroupID) AS entities, COUNT(*) AS events, CAST(COUNT(*) AS DOUBLE) / COUNT(DISTINCT BuyingGroupID) AS events_per_entity FROM WIDE_WORLD_IMPORTERS.SALES_CUSTOMERS GROUP BY CustomerCategoryID HAVING COUNT(DISTINCT BuyingGroupID) >= 5 ORDER BY events_per_entity DESC LIMIT 10;"
+  },
+  {
+    "question_id": 99,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In COMPLEX_ORACLE, what is the first and last promo_end_date for each promo_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT promo_name, MIN(CAST(promo_end_date AS DATETIME)) AS first_seen, MAX(CAST(promo_end_date AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM COMPLEX_ORACLE.PROMOTIONS GROUP BY promo_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 100,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In DataManagementPlatform, what is the first and last data_date for each resource_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT resource_name, MIN(CAST(data_date AS DATETIME)) AS first_seen, MAX(CAST(data_date AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM `DataManagementPlatform`.`DW储气库注采日完成` GROUP BY resource_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 101,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In FINANCE__ECONOMICS, what is the first and last DATE for each VARIABLE_NAME, and how many records does it have? Give me the top 10 by count.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT VARIABLE_NAME, MIN(CAST(DATE AS DATETIME)) AS first_seen, MAX(CAST(DATE AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM FINANCE__ECONOMICS.CYBERSYN_CYBERSYN_FINANCIAL_ECONOMIC_INDICATORS_TIMESERIES GROUP BY VARIABLE_NAME ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 102,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In META_KAGGLE, what is the first and last EvaluationDate for each Title, and how many records does it have? Give me the top 10 by count.",
+    "db": "META_KAGGLE",
+    "sql": "SELECT Title, MIN(CAST(EvaluationDate AS DATETIME)) AS first_seen, MAX(CAST(EvaluationDate AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM META_KAGGLE.KERNELVERSIONS GROUP BY Title ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 103,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In ORACLE_SQL, what is the first and last day for each symbol, and how many records does it have? Give me the top 10 by count.",
+    "db": "ORACLE_SQL",
+    "sql": "SELECT symbol, MIN(CAST(day AS DATETIME)) AS first_seen, MAX(CAST(day AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM ORACLE_SQL.TICKER GROUP BY symbol ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 104,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In THELOOK_ECOMMERCE, what is the first and last sold_at for each product_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT product_name, MIN(FROM_UNIXTIME(sold_at / 1000000)) AS first_seen, MAX(FROM_UNIXTIME(sold_at / 1000000)) AS last_seen, COUNT(*) AS cnt FROM THELOOK_ECOMMERCE.INVENTORY_ITEMS GROUP BY product_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 105,
+    "split": "train",
+    "sqa": "XM9",
+    "question": "In dge, what is the first and last year for each complete_plate_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "dge",
+    "sql": "SELECT complete_plate_name, MIN(FROM_UNIXTIME(year / 1000000)) AS first_seen, MAX(FROM_UNIXTIME(year / 1000000)) AS last_seen, COUNT(*) AS cnt FROM dge.dge_current_year_granted_patents GROUP BY complete_plate_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 106,
+    "split": "test",
+    "sqa": "XM9",
+    "question": "In IOC_NaturalGas, what is the first and last DATA_DATE for each RESOURCE_NAME, and how many records does it have? Give me the top 10 by count.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT RESOURCE_NAME, MIN(CAST(DATA_DATE AS DATETIME)) AS first_seen, MAX(CAST(DATA_DATE AS DATETIME)) AS last_seen, COUNT(*) AS cnt FROM IOC_NaturalGas.NG_CHUQIKU_DAY_COMPLETE GROUP BY RESOURCE_NAME ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 107,
+    "split": "test",
+    "sqa": "XM9",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, what is the first and last timestamp_of_crash for each ownership_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT ownership_name, MIN(FROM_UNIXTIME(timestamp_of_crash / 1000000)) AS first_seen, MAX(FROM_UNIXTIME(timestamp_of_crash / 1000000)) AS last_seen, COUNT(*) AS cnt FROM NHTSA_TRAFFIC_FATALITIES.ACCIDENT_2015 GROUP BY ownership_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 108,
+    "split": "test",
+    "sqa": "XM9",
+    "question": "In OPENAQ, what is the first and last first_max_datetime for each city_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "OPENAQ",
+    "sql": "SELECT city_name, MIN(FROM_UNIXTIME(first_max_datetime / 1000000)) AS first_seen, MAX(FROM_UNIXTIME(first_max_datetime / 1000000)) AS last_seen, COUNT(*) AS cnt FROM OPENAQ.EPA_HISTORICAL_AIR_QUALITY_AIR_QUALITY_ANNUAL_SUMMARY GROUP BY city_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 109,
+    "split": "test",
+    "sqa": "XM9",
+    "question": "In SAN_FRANCISCO_PLUS, what is the first and last closed_date for each agency_name, and how many records does it have? Give me the top 10 by count.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT agency_name, MIN(FROM_UNIXTIME(closed_date / 1000000)) AS first_seen, MAX(FROM_UNIXTIME(closed_date / 1000000)) AS last_seen, COUNT(*) AS cnt FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_311__311_SERVICE_REQUESTS GROUP BY agency_name ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 110,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In BRAZILIAN_E_COMMERCE, which product_category_name have the highest share of missing product_length_cm? Give me the top 10.",
+    "db": "BRAZILIAN_E_COMMERCE",
+    "sql": "SELECT product_category_name, SUM(CASE WHEN product_length_cm IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN product_length_cm IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM BRAZILIAN_E_COMMERCE.OLIST_PRODUCTS GROUP BY product_category_name ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 111,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In COMPLEX_ORACLE, which golf have the highest share of missing household_size? Give me the top 10.",
+    "db": "COMPLEX_ORACLE",
+    "sql": "SELECT golf, SUM(CASE WHEN household_size IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN household_size IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM COMPLEX_ORACLE.SUPPLEMENTARY_DEMOGRAPHICS GROUP BY golf ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 112,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In DataManagementPlatform, which DATA_TYPE have the highest share of missing REQUIRE_NUM? Give me the top 10.",
+    "db": "DataManagementPlatform",
+    "sql": "SELECT DATA_TYPE, SUM(CASE WHEN REQUIRE_NUM IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN REQUIRE_NUM IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM `DataManagementPlatform`.`LNG-日指定` GROUP BY DATA_TYPE ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 113,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In EU_SOCCER, which season have the highest share of missing home_team_goal? Give me the top 10.",
+    "db": "EU_SOCCER",
+    "sql": "SELECT season, SUM(CASE WHEN home_team_goal IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN home_team_goal IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM EU_SOCCER.MATCH GROUP BY season ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 114,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In FINANCE__ECONOMICS, which CHARTER_TYPE have the highest share of missing LATITUDE? Give me the top 10.",
+    "db": "FINANCE__ECONOMICS",
+    "sql": "SELECT CHARTER_TYPE, SUM(CASE WHEN LATITUDE IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN LATITUDE IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM FINANCE__ECONOMICS.CYBERSYN_FDIC_BRANCH_LOCATIONS_INDEX GROUP BY CHARTER_TYPE ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 115,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In META_KAGGLE, which RewardType have the highest share of missing NumPrizes? Give me the top 10.",
+    "db": "META_KAGGLE",
+    "sql": "SELECT RewardType, SUM(CASE WHEN NumPrizes IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN NumPrizes IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM META_KAGGLE.COMPETITIONS GROUP BY RewardType ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 116,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In THELOOK_ECOMMERCE, which gender have the highest share of missing num_of_item? Give me the top 10.",
+    "db": "THELOOK_ECOMMERCE",
+    "sql": "SELECT gender, SUM(CASE WHEN num_of_item IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN num_of_item IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM THELOOK_ECOMMERCE.ORDERS GROUP BY gender ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 117,
+    "split": "train",
+    "sqa": "XM10",
+    "question": "In dge, which person_type have the highest share of missing current_onsite_count? Give me the top 10.",
+    "db": "dge",
+    "sql": "SELECT person_type, SUM(CASE WHEN current_onsite_count IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN current_onsite_count IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM dge.dge_outsource_staff_flow GROUP BY person_type ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 118,
+    "split": "test",
+    "sqa": "XM10",
+    "question": "In IOC_NaturalGas, which CATEGORY have the highest share of missing SELF_WELL_COUNT? Give me the top 10.",
+    "db": "IOC_NaturalGas",
+    "sql": "SELECT CATEGORY, SUM(CASE WHEN SELF_WELL_COUNT IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN SELF_WELL_COUNT IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM IOC_NaturalGas.NG_NATURAL_GAS_PRODUCTION GROUP BY CATEGORY ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 119,
+    "split": "test",
+    "sqa": "XM10",
+    "question": "In IPL, which extra_type have the highest share of missing extra_runs? Give me the top 10.",
+    "db": "IPL",
+    "sql": "SELECT extra_type, SUM(CASE WHEN extra_runs IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN extra_runs IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM IPL.EXTRA_RUNS GROUP BY extra_type ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 120,
+    "split": "test",
+    "sqa": "XM10",
+    "question": "In NHTSA_TRAFFIC_FATALITIES, which body_type have the highest share of missing number_of_occupants? Give me the top 10.",
+    "db": "NHTSA_TRAFFIC_FATALITIES",
+    "sql": "SELECT body_type, SUM(CASE WHEN number_of_occupants IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN number_of_occupants IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM NHTSA_TRAFFIC_FATALITIES.PARKWORK_2018 GROUP BY body_type ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 121,
+    "split": "test",
+    "sqa": "XM10",
+    "question": "In SAN_FRANCISCO_PLUS, which call_type have the highest share of missing number_of_alarms? Give me the top 10.",
+    "db": "SAN_FRANCISCO_PLUS",
+    "sql": "SELECT call_type, SUM(CASE WHEN number_of_alarms IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN number_of_alarms IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM SAN_FRANCISCO_PLUS.SAN_FRANCISCO_SFFD_SERVICE_CALLS_SFFD_SERVICE_CALLS GROUP BY call_type ORDER BY missing_rate DESC LIMIT 10;"
+  },
+  {
+    "question_id": 122,
+    "split": "test",
+    "sqa": "XM10",
+    "question": "In WIDE_WORLD_IMPORTERS, which CountryType have the highest share of missing LatestRecordedPopulation? Give me the top 10.",
+    "db": "WIDE_WORLD_IMPORTERS",
+    "sql": "SELECT CountryType, SUM(CASE WHEN LatestRecordedPopulation IS NULL THEN 1 ELSE 0 END) AS missing_cnt, COUNT(*) AS total_cnt, CAST(SUM(CASE WHEN LatestRecordedPopulation IS NULL THEN 1 ELSE 0 END) AS DOUBLE) / COUNT(*) AS missing_rate FROM WIDE_WORLD_IMPORTERS.APPLICATION_COUNTRIES GROUP BY CountryType ORDER BY missing_rate DESC LIMIT 10;"
+  }
+]

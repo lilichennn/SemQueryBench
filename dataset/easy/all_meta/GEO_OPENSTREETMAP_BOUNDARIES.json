@@ -1,0 +1,1698 @@
+{
+    "GEO_OPENSTREETMAP_HISTORY_CHANGESETS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 64482521
+            },
+            {
+                "col_name": "osm_timestamp_min",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1542200268
+            },
+            {
+                "col_name": "ways",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "osm_timestamp_max",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1542200268
+            },
+            {
+                "col_name": "relations",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  8935454\n]"
+            },
+            {
+                "col_name": "nodes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_LAYERS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 295106180
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 295106180
+            },
+            {
+                "col_name": "layer_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "building"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"building\",\n    \"value\": \"house\"\n  },\n  {\n    \"key\": \"addr:city\",\n    \"value\": \"Raw"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x05\\x00\\x00\\x00S\\x94K\\xe3\\x17F4@U\\x84\\xe5\\x19E\\xe2I"
+            },
+            {
+                "col_name": "gdal_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "layer_code",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1500
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1492347889000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "layer_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "building"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_NODES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 9084
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2452124
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1147257414000000
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_FEATURES_POINTS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 2025539138
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\x81\\nG\\x90JaA@\\x15\\xa5\\x84`U\\xe5.\\xc0')"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1353536371000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"LAT\",\n    \"value\": \"-15.447917\"\n  },\n  {\n    \"key\": \"LONG\",\n    \"value\": \"34.76008"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_LAYERS": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 295106180
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 295106180
+            },
+            {
+                "col_name": "layer_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "building"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"building\",\n    \"value\": \"house\"\n  },\n  {\n    \"key\": \"addr:city\",\n    \"value\": \"Raw"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x05\\x00\\x00\\x00S\\x94K\\xe3\\x17F4@U\\x84\\xe5\\x19E\\xe2I"
+            },
+            {
+                "col_name": "gdal_type",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": null
+            },
+            {
+                "col_name": "layer_code",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1500
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1492347889000000
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "layer_class",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "building"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_NODES": {
+        "table_tag": "LOG",
+        "colname_list": [
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 9084
+            },
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 2452124
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[]"
+            },
+            {
+                "col_name": "longitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": ""
+            },
+            {
+                "col_name": "latitude",
+                "col_tag": "LOCATION",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_EVENT",
+                "col_type": "NUMBER",
+                "sample_value": 1147257414000000
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": null
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_RELATIONS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 12938404
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 107760848
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1625946685000000
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "kaartense"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"restriction\",\n    \"value\": \"only_straight_on\"\n  },\n  {\n    \"key\": \"type\",\n    \"val"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x13\\x00\\x00\\x00\\xcc\\xc3\\xf8\\x1fO\\xeaK\\xc0\\x06f\\x85\"\\xdd\\xc5=\\xc0\\xf"
+            },
+            {
+                "col_name": "members",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 901858250,\n    \"role\": \"from\",\n    \"type\": \"w\"\n  },\n  {\n    \"id\": 103450876,\n    \"ro"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_WAYS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 73165139
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 10475054
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x02\\x00\\x00\\x00\\x0b\\x00\\x00\\x00o\\xdc\\x18\\xf1\\xd3 ^\\xc0\\xedf\\xa1\\xf8\\x8c\\xb6A@\\xfaA]"
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "jumbanho"
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"gnis:fcode\",\n    \"value\": \"46003\"\n  },\n  {\n    \"key\": \"gnis:ftype\",\n    \"value\": \""
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1327342614000000
+            },
+            {
+                "col_name": "nodes",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 866315580\n  },\n  {\n    \"id\": 866469140\n  },\n  {\n    \"id\": 867906160\n  },\n  {\n    \"id"
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_HISTORY_RELATIONS": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "id",
+                "col_tag": "ID_MAIN",
+                "col_type": "NUMBER",
+                "sample_value": 12938404
+            },
+            {
+                "col_name": "changeset",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 107760848
+            },
+            {
+                "col_name": "visible",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": true
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_UPDATE",
+                "col_type": "NUMBER",
+                "sample_value": 1625946685000000
+            },
+            {
+                "col_name": "username",
+                "col_tag": "NAME_PERSON",
+                "col_type": "TEXT",
+                "sample_value": "kaartense"
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"restriction\",\n    \"value\": \"only_straight_on\"\n  },\n  {\n    \"key\": \"type\",\n    \"val"
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x13\\x00\\x00\\x00\\xcc\\xc3\\xf8\\x1fO\\xeaK\\xc0\\x06f\\x85\"\\xdd\\xc5=\\xc0\\xf"
+            },
+            {
+                "col_name": "members",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"id\": 901858250,\n    \"role\": \"from\",\n    \"type\": \"w\"\n  },\n  {\n    \"id\": 103450876,\n    \"ro"
+            },
+            {
+                "col_name": "version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_OPENSTREETMAP_PLANET_FEATURES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "osm_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 718495344
+            },
+            {
+                "col_name": "osm_way_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": null
+            },
+            {
+                "col_name": "geometry",
+                "col_tag": "DESC_LONG",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x98//\\xc0>3M\\xc0\\xc3?\\x110_HA\\xc0\\x18c\\xbb\\xd693M\\x"
+            },
+            {
+                "col_name": "osm_timestamp",
+                "col_tag": "TIME_CREATE",
+                "col_type": "NUMBER",
+                "sample_value": 1566855778000000
+            },
+            {
+                "col_name": "all_tags",
+                "col_tag": "DESC_LONG",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  {\n    \"key\": \"highway\",\n    \"value\": \"service\"\n  },\n  {\n    \"key\": \"service\",\n    \"value\": \"park"
+            },
+            {
+                "col_name": "feature_type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "lines"
+            },
+            {
+                "col_name": "osm_version",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ADJACENT_COUNTIES": {
+        "table_tag": "RELATION",
+        "colname_list": [
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"19067\",\n  \"19037\",\n  \"19019\",\n  \"19023\",\n  \"19065\",\n  \"19013\"\n]"
+            },
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "19017"
+            },
+            {
+                "col_name": "neighbors",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Floyd\",\n  \"Chickasaw\",\n  \"Buchanan\",\n  \"Butler\",\n  \"Fayette\",\n  \"Black Hawk\"\n]"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\",\n  \"Iowa\"\n]"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Iowa"
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Bremer County"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ADJACENT_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "AZ"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "04"
+            },
+            {
+                "col_name": "neighbors_fips_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"32\",\n  \"35\",\n  \"08\",\n  \"06\",\n  \"49\"\n]"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Arizona"
+            },
+            {
+                "col_name": "neighbors_state",
+                "col_tag": "REL_ENTITY",
+                "col_type": "VARIANT",
+                "sample_value": "[\n  \"Nevada\",\n  \"New Mexico\",\n  \"Colorado\",\n  \"California\",\n  \"Utah\"\n]"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CBSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "30700"
+            },
+            {
+                "col_name": "csa_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "339"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M1"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G3110"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "30700"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Lincoln, NE"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 34392021.0
+            },
+            {
+                "col_name": "cbsa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00X\\t\\x00\\x00\\x00\\x08X\\xabv:X\\xc0\\x7f\\'-\\\\VYD@.\\x8c\\xf"
+            },
+            {
+                "col_name": "msa_indicator",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "1"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3649266235.0
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00j\\xe7\\xea}\\x997X\\xc0\\xd8\\xac\\x8ew\\xa2hD@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Lincoln, NE Metro Area"
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -96.8687434
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 40.8174581
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COASTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "coastline_geom",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x02\\x00\\x00\\x00\\x0e\\x00\\x00\\x00\\xea\\xe1\\xcbD\\x11\\xf9R\\xc0\\xc7\\x83-v\\xfb\\xeeB@\\xea\\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Atlantic"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0624"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00M\\x00\\x00\\x00C|`"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3683678861
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\x18!<\\xda8\\x07^\\xc0,g\\xef\\x8c\\xb6uA@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 24"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 17832881475
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -120.112845
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 34.9196335
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CONGRESS_DISTRICT_116": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0624"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06"
+            },
+            {
+                "col_name": "district_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "24"
+            },
+            {
+                "col_name": "congress_session",
+                "col_tag": "TIME_EVENT",
+                "col_type": "TEXT",
+                "sample_value": "115"
+            },
+            {
+                "col_name": "district_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\\x03\\x00\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00M\\x00\\x00\\x00C|`"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "BOOLEAN",
+                "sample_value": false
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G5200"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C2"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 3683678861
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\x18!<\\xda8\\x07^\\xc0,g\\xef\\x8c\\xb6uA@')"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Congressional District 24"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 17832881475
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -120.112845
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 34.9196335
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_COUNTIES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "cbsa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "16980"
+            },
+            {
+                "col_name": "county_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01581101"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "06"
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "H1"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "G4020"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55081"
+            },
+            {
+                "col_name": "county_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55081"
+            },
+            {
+                "col_name": "csa_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "176"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "55"
+            },
+            {
+                "col_name": "met_div_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "29404"
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -90.6199687
+            },
+            {
+                "col_name": "county_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00x\\x04\\x00\\x00K\\x92\\xe7\\xfa>\\xbaV\\xc0\\xe5\\xcb\\x0b\\xb0"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Monroe County"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xcb\\xc22\\x91\\xad\\xa7V\\xc0-\\xbfg\\x7f\\xfb\\xf8E@')"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 18586826
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 2333329706
+            },
+            {
+                "col_name": "county_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Monroe"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.9451751
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CSA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "142"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -86.7482873
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xc7`j\\xf0\\xe3\\xafU\\xc05Lm\\xa9\\x83\\xc3@@')"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 33.5274555
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL CSA"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 347190038.0
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 17485172162.0
+            },
+            {
+                "col_name": "msa_lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "M0"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3100"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Birmingham-Hoover-Talladega, AL"
+            },
+            {
+                "col_name": "csa_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xc4\\x18\\x00\\x006\\xe34D\\x15\\xd1U\\xc0\\xc2\\x15P\\xa8\\xa"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_METROPOLITAN_DIVISIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "csa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "148"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "1446040484"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "M3"
+            },
+            {
+                "col_name": "cbsa_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "14460"
+            },
+            {
+                "col_name": "metdiv_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "40484"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 2752787746.0
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Rockingham County-Strafford County, NH"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00^\\xdf\\xe2<w\\xc4Q\\xc0\\xf4I\\x93\\xf7\\x16\\x8bE@')"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3120"
+            },
+            {
+                "col_name": "internal_point_latitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.0866384
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 297798686.0
+            },
+            {
+                "col_name": "internal_point_longitude",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -71.0697777
+            },
+            {
+                "col_name": "metdiv_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xe8\\x12\\x00\\x00\\xe6\\xc7_Z\\xd4\\xcfQ\\xc0\\x04h[\\xcd:\\x"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Rockingham County-Strafford County, NH Metro Division"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NATIONAL_OUTLINE": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "aff_geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "0100000US"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "US"
+            },
+            {
+                "col_name": "us_outline_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x06\\x00\\x00\\x00\"\\x01\\x00\\x00\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\x92\\x15\\x00\\x00c\\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "United States"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_NWS_FORECAST_REGIONS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "fe_area",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "nw"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Perkins"
+            },
+            {
+                "col_name": "cwa",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "UNR"
+            },
+            {
+                "col_name": "shape_geometry",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b\"\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00X\\x00\\x00\\x00\\xa9\\x86\\xff\\x9f\\x03\\xafY\\xc0/.\\x00 \\xf"
+            },
+            {
+                "col_name": "shortname",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "Perkins"
+            },
+            {
+                "col_name": "lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -102.4759
+            },
+            {
+                "col_name": "state_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SD002"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "SD"
+            },
+            {
+                "col_name": "zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "002"
+            },
+            {
+                "col_name": "time_zone",
+                "col_tag": "NAME_SHORT",
+                "col_type": "TEXT",
+                "sample_value": "M"
+            },
+            {
+                "col_name": "lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 45.4904
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_RAILWAYS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "NUMBER",
+                "sample_value": 110168314233
+            },
+            {
+                "col_name": "railway_geom",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "{\"type\":\"LineString\",\"coordinates\":[[-86.88663299999998,41.08432899999999],[-86.886527,41.0825389999"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "R1011"
+            },
+            {
+                "col_name": "full_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Louisville and Nashville RR"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_STATES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66"
+            },
+            {
+                "col_name": "state_gnis_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "01802705"
+            },
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "66"
+            },
+            {
+                "col_name": "state",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "GU"
+            },
+            {
+                "col_name": "division_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "0"
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 934337453
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 144.7719021
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "A"
+            },
+            {
+                "col_name": "int_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xd7f\\x08l\\xb3\\x18b@%V\\xebi,\\xe2*@')"
+            },
+            {
+                "col_name": "region_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "9"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 543555844
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Guam"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 13.4417451
+            },
+            {
+                "col_name": "state_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00`\\x02\\x00\\x00\\xe7v\\xf6\\x95\\x07\\x12b@\\xe8\\xf6\\x92\\xc6"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G4000"
+            },
+            {
+                "col_name": "lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "00"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_URBAN_AREAS": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "56413"
+            },
+            {
+                "col_name": "urban_area_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "56413"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\"/\\x10\\xa9\\x0e\\x85\\\\\\xc0\\xd5\\xeb\\x16\\x81\\xb1gB@')"
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 36.8101045
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -114.0790198
+            },
+            {
+                "col_name": "urban_area_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xde\\x03\\x00\\x00\\xfaMa\\xa5\\x82\\x86\\\\\\xc0!\\x88\\xf3p\\x"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Mesquite, NV--AZ"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "area_lsad_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "76"
+            },
+            {
+                "col_name": "lsad_name",
+                "col_tag": "DESC_LONG",
+                "col_type": "TEXT",
+                "sample_value": "Mesquite, NV--AZ Urban Cluster"
+            },
+            {
+                "col_name": "type",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "C"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3500"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 19891472.0
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 0.0
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_ZIP_CODES": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "zip_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "62874"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 3671025.0
+            },
+            {
+                "col_name": "internal_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 37.9187047
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "FLOAT",
+                "sample_value": 77610.0
+            },
+            {
+                "col_name": "fips_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "B5"
+            },
+            {
+                "col_name": "state_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "IL"
+            },
+            {
+                "col_name": "zip_code_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xc3\\x00\\x00\\x00\\x88\\xb7\\xce\\xbf]?V\\xc0A\\xae\\xd4\\xb3"
+            },
+            {
+                "col_name": "state_fips_code",
+                "col_tag": "REL_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "17"
+            },
+            {
+                "col_name": "county",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Franklin County"
+            },
+            {
+                "col_name": "functional_status",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "S"
+            },
+            {
+                "col_name": "state_name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Illinois"
+            },
+            {
+                "col_name": "internal_point_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x01\\x00\\x00\\x00\\xb1\\xdd=@w>V\\xc0;\\x97\\x98\\x1d\\x98\\xf5B@')"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G6350"
+            },
+            {
+                "col_name": "internal_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -88.9760285
+            },
+            {
+                "col_name": "city",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Orient city"
+            }
+        ]
+    },
+    "GEO_US_BOUNDARIES_CNECTA": {
+        "table_tag": "REFERENCE",
+        "colname_list": [
+            {
+                "col_name": "geo_id",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "cnecta_fips_code",
+                "col_tag": "ID_EXTERNAL",
+                "col_type": "TEXT",
+                "sample_value": "775"
+            },
+            {
+                "col_name": "lsad",
+                "col_tag": "STATUS_LIFE",
+                "col_type": "TEXT",
+                "sample_value": "M4"
+            },
+            {
+                "col_name": "mtfcc_feature_class_code",
+                "col_tag": "CATEGORY_TOPIC",
+                "col_type": "TEXT",
+                "sample_value": "G3200"
+            },
+            {
+                "col_name": "cnecta_geom",
+                "col_tag": "LOCATION",
+                "col_type": "BINARY",
+                "sample_value": "bytearray(b'\\x01\\x03\\x00\\x00\\x00\\x01\\x00\\x00\\x00\\xe9\\x1c\\x00\\x00\\xdca\\x13\\x99\\xb9\\x9eQ\\xc0\\xe5u\\xc4!"
+            },
+            {
+                "col_name": "int_point_lat",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": 43.8562034
+            },
+            {
+                "col_name": "int_point_lon",
+                "col_tag": "LOCATION",
+                "col_type": "FLOAT",
+                "sample_value": -70.3192682
+            },
+            {
+                "col_name": "area_water_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 1537827560
+            },
+            {
+                "col_name": "name_lsad",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME Combined NECTA"
+            },
+            {
+                "col_name": "name",
+                "col_tag": "NAME_ENTITY",
+                "col_type": "TEXT",
+                "sample_value": "Portland-Lewiston-South Portland, ME"
+            },
+            {
+                "col_name": "area_land_meters",
+                "col_tag": "VAL_QUANTITY",
+                "col_type": "NUMBER",
+                "sample_value": 6254813062
+            }
+        ]
+    }
+}

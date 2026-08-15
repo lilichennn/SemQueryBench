@@ -4,246 +4,29 @@ SELECT Component, HTAN_Participant_ID FROM ( SELECT Component, HTAN_Participant_
 SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX ORDER BY tide_range DESC LIMIT 5;
 SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX WHERE tide_range > (SELECT AVG(tide_range) FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX);
 SELECT mtfcc_feature_class_code AS Category, COUNT(*) AS record_count FROM NOAA_PORTS.GEO_US_BOUNDARIES_RAILWAYS GROUP BY mtfcc_feature_class_code ORDER BY record_count DESC LIMIT 3;
-SELECT t.name
-FROM main.NOAA_HURRICANES_HURRICANES t
-ORDER BY t.usa_wind DESC
-LIMIT 5;
-SELECT t.name
-FROM main.NOAA_HURRICANES_HURRICANES t
-ORDER BY t.dist2land DESC
-LIMIT 5;
-SELECT t.name
-FROM main.NOAA_HURRICANES_HURRICANES t
-ORDER BY t.landfall DESC
-LIMIT 5;
-SELECT t.name
-FROM main.NOAA_HURRICANES_HURRICANES t
-WHERE t.usa_wind > (SELECT AVG(usa_wind) FROM main.NOAA_HURRICANES_HURRICANES);
-SELECT h.name
-FROM main.NOAA_HURRICANES_HURRICANES h
-WHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES);
-SELECT h.name
-FROM main.NOAA_HURRICANES_HURRICANES h
-WHERE h.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES);
-SELECT h1.name
-FROM main.NOAA_HURRICANES_HURRICANES h1
-WHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin);
-SELECT h1.name
-FROM main.NOAA_HURRICANES_HURRICANES h1
-WHERE h1.dist2land > (SELECT AVG(dist2land) FROM main.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin);
-SELECT t1.basin, t1.name
-FROM (
- SELECT t1.basin, t1.name, t1.iso_time,
- ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn
- FROM main.NOAA_HURRICANES_HURRICANES t1
-) t
-WHERE rn = 1;
-SELECT t1.subbasin, t1.name
-FROM (
- SELECT t1.subbasin, t1.name, t1.iso_time,
- ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn
- FROM main.NOAA_HURRICANES_HURRICANES t1
-) t
-WHERE rn = 1;
-SELECT t1.season, t1.name
-FROM (
- SELECT t1.season, t1.name, t1.iso_time,
- ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn
- FROM main.NOAA_HURRICANES_HURRICANES t1
-) t
-WHERE rn = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT t1.basin, t1.name, t1.iso_time
-    FROM main.NOAA_HURRICANES_HURRICANES t1
-    WHERE t1.iso_time IS NOT NULL
-),
-with_prev AS (
-    SELECT t1.basin, t1.name, t1.iso_time,
-           LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT t1.basin, t1.name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time
-    FROM main.NOAA_HURRICANES_HURRICANES t1
-    WHERE t1.iso_time IS NOT NULL
-),
-with_prev AS (
-    SELECT t1.subbasin, t1.name, t1.iso_time,
-           LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT t1.subbasin, t1.name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT t1.season, t1.name, t1.iso_time
-    FROM main.NOAA_HURRICANES_HURRICANES t1
-    WHERE t1.iso_time IS NOT NULL
-),
-with_prev AS (
-    SELECT t1.season, t1.name, t1.iso_time,
-           LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT t1.season, t1.name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1;
-WITH base AS (
-    SELECT 
-        h.sid AS Entity,
-        h.iso_time AS Time,
-        h.bom_pressure AS Measure,
-        LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
-        LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL
-)
-SELECT DISTINCT Entity
-FROM base
-WHERE prev2 IS NOT NULL
-  AND Measure > prev1 AND prev1 > prev2;
-WITH base AS (
-    SELECT 
-        h.sid AS Entity,
-        h.iso_time AS Time,
-        h.usa_wind AS Measure,
-        LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
-        LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL
-)
-SELECT DISTINCT Entity
-FROM base
-WHERE prev2 IS NOT NULL
-  AND Measure > prev1 AND prev1 > prev2;
-WITH base AS (
-    SELECT 
-        h.sid AS Entity,
-        h.iso_time AS Time,
-        h.dist2land AS Measure,
-        LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1,
-        LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL
-)
-SELECT DISTINCT Entity
-FROM base
-WHERE prev2 IS NOT NULL
-  AND Measure > prev1 AND prev1 > prev2;
-WITH ranked AS (
-    SELECT 
-        h.basin AS Category,
-        h.sid AS Entity,
-        h.bom_pressure AS Measure,
-        NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.bom_pressure IS NOT NULL
-)
-SELECT Category, Entity
-FROM ranked
-WHERE quintile = 1;
-WITH ranked AS (
-    SELECT 
-        h.subbasin AS Category,
-        h.sid AS Entity,
-        h.usa_wind AS Measure,
-        NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.usa_wind IS NOT NULL
-)
-SELECT Category, Entity
-FROM ranked
-WHERE quintile = 1;
-WITH ranked AS (
-    SELECT 
-        h.season AS Category,
-        h.sid AS Entity,
-        h.dist2land AS Measure,
-        NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    WHERE h.dist2land IS NOT NULL
-)
-SELECT Category, Entity
-FROM ranked
-WHERE quintile = 1;
-WITH category_stats AS (
-    SELECT 
-        h.basin AS Category,
-        AVG(h.bom_pressure) AS avg_measure,
-        SUM(h.bom_pressure) AS total_measure
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    GROUP BY h.basin
-),
-ranked AS (
-    SELECT 
-        t.basin AS Category,
-        t.sid AS Entity,
-        t.bom_pressure AS Measure,
-        cs.avg_measure,
-        cs.total_measure,
-        t.bom_pressure / cs.total_measure * 100 AS pct_of_total,
-        ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn
-    FROM main.NOAA_HURRICANES_HURRICANES t
-    JOIN category_stats cs ON t.basin = cs.Category
-    WHERE t.bom_pressure > cs.avg_measure
-)
-SELECT Category, Entity, pct_of_total
-FROM ranked
-WHERE rn <= 5;
-WITH category_stats AS (
-    SELECT 
-        h.subbasin AS Category,
-        AVG(h.usa_wind) AS avg_measure,
-        SUM(h.usa_wind) AS total_measure
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    GROUP BY h.subbasin
-),
-ranked AS (
-    SELECT 
-        t.subbasin AS Category,
-        t.sid AS Entity,
-        t.usa_wind AS Measure,
-        cs.avg_measure,
-        cs.total_measure,
-        t.usa_wind / cs.total_measure * 100 AS pct_of_total,
-        ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn
-    FROM main.NOAA_HURRICANES_HURRICANES t
-    JOIN category_stats cs ON t.subbasin = cs.Category
-    WHERE t.usa_wind > cs.avg_measure
-)
-SELECT Category, Entity, pct_of_total
-FROM ranked
-WHERE rn <= 5;
-WITH category_stats AS (
-    SELECT 
-        h.season AS Category,
-        AVG(h.dist2land) AS avg_measure,
-        SUM(h.dist2land) AS total_measure
-    FROM main.NOAA_HURRICANES_HURRICANES h
-    GROUP BY h.season
-),
-ranked AS (
-    SELECT 
-        t.season AS Category,
-        t.sid AS Entity,
-        t.dist2land AS Measure,
-        cs.avg_measure,
-        cs.total_measure,
-        t.dist2land / cs.total_measure * 100 AS pct_of_total,
-        ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn
-    FROM main.NOAA_HURRICANES_HURRICANES t
-    JOIN category_stats cs ON t.season = cs.Category
-    WHERE t.dist2land > cs.avg_measure
-)
-SELECT Category, Entity, pct_of_total
-FROM ranked
-WHERE rn <= 5;
+SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.usa_wind DESC LIMIT 5
+SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.dist2land DESC LIMIT 5
+SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.landfall DESC LIMIT 5
+SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t WHERE t.usa_wind > (SELECT AVG(usa_wind) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)
+SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)
+SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)
+SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)
+SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)
+SELECT t1.basin, t1.name FROM ( SELECT t1.basin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1
+SELECT t1.subbasin, t1.name FROM ( SELECT t1.subbasin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1
+SELECT t1.season, t1.name FROM ( SELECT t1.season, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1
+WITH yearly_records AS ( SELECT DISTINCT t1.basin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.basin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.basin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1
+WITH yearly_records AS ( SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.subbasin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.subbasin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1
+WITH yearly_records AS ( SELECT DISTINCT t1.season, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.season, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.season, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1
+WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.bom_pressure AS Measure, LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2
+WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.usa_wind AS Measure, LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2
+WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.dist2land AS Measure, LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2
+WITH ranked AS ( SELECT h.basin AS Category, h.sid AS Entity, h.bom_pressure AS Measure, NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.bom_pressure IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1
+WITH ranked AS ( SELECT h.subbasin AS Category, h.sid AS Entity, h.usa_wind AS Measure, NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_wind IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1
+WITH ranked AS ( SELECT h.season AS Category, h.sid AS Entity, h.dist2land AS Measure, NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1
+WITH category_stats AS ( SELECT h.basin AS Category, AVG(h.bom_pressure) AS avg_measure, SUM(h.bom_pressure) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.basin ), ranked AS ( SELECT t.basin AS Category, t.sid AS Entity, t.bom_pressure AS Measure, cs.avg_measure, cs.total_measure, t.bom_pressure / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.basin = cs.Category WHERE t.bom_pressure > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5
+WITH category_stats AS ( SELECT h.subbasin AS Category, AVG(h.usa_wind) AS avg_measure, SUM(h.usa_wind) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.subbasin ), ranked AS ( SELECT t.subbasin AS Category, t.sid AS Entity, t.usa_wind AS Measure, cs.avg_measure, cs.total_measure, t.usa_wind / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.subbasin = cs.Category WHERE t.usa_wind > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5
+WITH category_stats AS ( SELECT h.season AS Category, AVG(h.dist2land) AS avg_measure, SUM(h.dist2land) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.season ), ranked AS ( SELECT t.season AS Category, t.sid AS Entity, t.dist2land AS Measure, cs.avg_measure, cs.total_measure, t.dist2land / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.season = cs.Category WHERE t.dist2land > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5
 SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY study_id HAVING COUNT(DISTINCT trait_category) > 1;
 SELECT trait_category, study_id FROM ( SELECT trait_category, study_id, posterior_prob, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY posterior_prob DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE rn = 1;
 SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE);
@@ -277,111 +60,24 @@ SELECT sic AS Category, SUM(public_float_usd) AS total_float FROM SEC_QUARTERLY_
 SELECT form AS Category, COUNT(*) AS record_count FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY form ORDER BY record_count DESC LIMIT 3;
 WITH sic_q3 AS ( SELECT sic AS Category, MIN(public_float_usd) AS q3 FROM ( SELECT sic, public_float_usd, PERCENT_RANK() OVER (PARTITION BY sic ORDER BY public_float_usd) AS pr FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE pr >= 0.75 GROUP BY sic ) SELECT t.sic, t.company_name, t.public_float_usd, t.submission_number FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN sic_q3 q ON t.sic = q.Category WHERE t.public_float_usd > q.q3;
 WITH yearly_avg AS ( SELECT sic AS Category, EXTRACT(YEAR FROM date_filed) AS Year, AVG(public_float_usd) AS avg_float FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic, EXTRACT(YEAR FROM date_filed) ), above_avg AS ( SELECT t.sic AS Category, t.company_name AS Entity, EXTRACT(YEAR FROM t.date_filed) AS Year, t.public_float_usd AS Measure, CASE WHEN t.public_float_usd > ya.avg_float THEN 1 ELSE 0 END AS above FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN yearly_avg ya ON t.sic = ya.Category AND EXTRACT(YEAR FROM t.date_filed) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
-SELECT n.COMPANY_NAME
-FROM main.NUMBERS n
-ORDER BY n.VALUE DESC
-LIMIT 5;
-SELECT qs.company_name
-FROM main.QUICK_SUMMARY qs
-ORDER BY qs.value DESC
-LIMIT 5;
-SELECT s.company_name
-FROM main.SUBMISSION s
-ORDER BY s.public_float_usd DESC
-LIMIT 5;
-SELECT p.measure_tag
-FROM main.PRESENTATION p
-GROUP BY p.measure_tag
-HAVING COUNT(DISTINCT p.statement) > 1;
-SELECT qs.company_name
-FROM main.QUICK_SUMMARY qs
-GROUP BY qs.company_name
-HAVING COUNT(DISTINCT qs.sic) > 1;
-SELECT s.company_name
-FROM main.SUBMISSION s
-GROUP BY s.company_name
-HAVING COUNT(DISTINCT s.form) > 1;
-SELECT t.MEASURE_TAG, t.COMPANY_NAME
-FROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM main.NUMBERS n) t
-WHERE t.rn = 1;
-SELECT t.measure_tag, t.company_name
-FROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM main.QUICK_SUMMARY qs) t
-WHERE t.rn = 1;
-SELECT t.sic, t.company_name
-FROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM main.SUBMISSION s) t
-WHERE t.rn = 1;
-SELECT n.COMPANY_NAME
-FROM main.NUMBERS n
-WHERE n.VALUE > (SELECT AVG(n.VALUE) FROM main.NUMBERS);
-SELECT n.COMPANY_NAME
-FROM main.NUMBERS n
-WHERE n.VALUE > (SELECT AVG(VALUE) FROM main.NUMBERS);
-SELECT n1.COMPANY_NAME
-FROM main.NUMBERS n1
-WHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM main.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG);
-SELECT sic, company_name
-FROM (
- SELECT sic, company_name, period_end_date,
- ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn
- FROM main.QUICK_SUMMARY
-) t
-WHERE rn = 1;
-SELECT form, company_name
-FROM (
- SELECT form, company_name, period_end_date,
- ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn
- FROM main.QUICK_SUMMARY
-) t
-WHERE rn = 1;
-SELECT measure_tag, company_name
-FROM (
- SELECT measure_tag, company_name, period_end_date,
- ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn
- FROM main.QUICK_SUMMARY
-) t
-WHERE rn = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT sic, company_name, period_end_date
-    FROM main.QUICK_SUMMARY
-    WHERE period_end_date IS NOT NULL
-),
-with_prev AS (
-    SELECT sic, company_name, period_end_date,
-           LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT sic, company_name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT form, company_name, period_end_date
-    FROM main.QUICK_SUMMARY
-    WHERE period_end_date IS NOT NULL
-),
-with_prev AS (
-    SELECT form, company_name, period_end_date,
-           LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT form, company_name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT measure_tag, company_name, period_end_date
-    FROM main.QUICK_SUMMARY
-    WHERE period_end_date IS NOT NULL
-),
-with_prev AS (
-    SELECT measure_tag, company_name, period_end_date,
-           LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time
-    FROM yearly_records
-)
-SELECT DISTINCT measure_tag, company_name
-FROM with_prev
-WHERE prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1;
+SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n ORDER BY n.VALUE DESC LIMIT 5
+SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs ORDER BY qs.value DESC LIMIT 5
+SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s ORDER BY s.public_float_usd DESC LIMIT 5
+SELECT p.measure_tag FROM SEC_QUARTERLY_FINANCIALS.PRESENTATION p GROUP BY p.measure_tag HAVING COUNT(DISTINCT p.statement) > 1
+SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs GROUP BY qs.company_name HAVING COUNT(DISTINCT qs.sic) > 1
+SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s GROUP BY s.company_name HAVING COUNT(DISTINCT s.form) > 1
+SELECT t.MEASURE_TAG, t.COMPANY_NAME FROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n) t WHERE t.rn = 1
+SELECT t.measure_tag, t.company_name FROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs) t WHERE t.rn = 1
+SELECT t.sic, t.company_name FROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s) t WHERE t.rn = 1
+SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(n.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)
+SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)
+SELECT n1.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n1 WHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG)
+SELECT sic, company_name FROM ( SELECT sic, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1
+SELECT form, company_name FROM ( SELECT form, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1
+SELECT measure_tag, company_name FROM ( SELECT measure_tag, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1
+WITH yearly_records AS ( SELECT DISTINCT sic, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT sic, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT sic, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1
+WITH yearly_records AS ( SELECT DISTINCT form, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT form, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT form, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1
+WITH yearly_records AS ( SELECT DISTINCT measure_tag, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT measure_tag, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT measure_tag, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1
 SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY PatientID HAVING COUNT(DISTINCT Modality) > 1;
 SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, SliceThickness, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY SliceThickness DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;
 SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t1 WHERE SliceThickness > (SELECT AVG(SliceThickness) FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t2 WHERE t2.Modality = t1.Modality);
@@ -410,137 +106,41 @@ WITH lagged AS ( SELECT evaluation_type AS Category, state_name AS Entity, inven
 SELECT evaluation_type AS Category, SUM(subplot_acres) AS total_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ORDER BY total_acres DESC LIMIT 3;
 WITH eval_q3 AS ( SELECT evaluation_type AS Category, MIN(subplot_acres) AS q3 FROM ( SELECT evaluation_type, subplot_acres, PERCENT_RANK() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres) AS pr FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE pr >= 0.75 GROUP BY evaluation_type ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_q3 q ON t.evaluation_type = q.Category WHERE t.subplot_acres > q.q3;
 WITH yearly_avg AS ( SELECT evaluation_type AS Category, inventory_year AS Year, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type, inventory_year ), above_avg AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.inventory_year AS Year, t.subplot_acres AS Measure, CASE WHEN t.subplot_acres > ya.avg_acres THEN 1 ELSE 0 END AS above FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN yearly_avg ya ON t.evaluation_type = ya.Category AND t.inventory_year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;
-SELECT p.plot_state_code_name
-FROM main.PLOT p
-ORDER BY p.measurement_year DESC
-LIMIT 5;
-SELECT p.plot_county_code
-FROM main.PLOT p
-ORDER BY p.elevation DESC
-LIMIT 5;
-SELECT p.plot_sequence_number
-FROM main.PLOT p
-ORDER BY p.remeasurement_period DESC
-LIMIT 5;
-SELECT p.plot_sequence_number
-FROM main.PLOT p
-GROUP BY p.plot_sequence_number
-HAVING COUNT(DISTINCT p.ecological_subsection_code) > 1;
-SELECT p.plot_sequence_number
-FROM main.PLOT p
-GROUP BY p.plot_sequence_number
-HAVING COUNT(DISTINCT p.sample_method_code_name) > 1;
-SELECT p.plot_sequence_number
-FROM main.PLOT p
-GROUP BY p.plot_sequence_number
-HAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1;
-SELECT p.plot_sequence_number
-FROM main.PLOT p
-WHERE p.elevation > (SELECT AVG(elevation) FROM main.PLOT);
-SELECT t1.species_common_name
-FROM main.PLOT_TREE t1
-WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2);
-SELECT t1.species_common_name
-FROM main.PLOT_TREE t1
-WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM main.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type);
-SELECT t1.plot_sequence_number
-FROM main.PLOT t1, main.PLOT t2
-WHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM main.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code);
-SELECT t.plot_state_code, t.plot_sequence_number
-FROM (
- SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,
- ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn
- FROM main.PLOT t
-) t
-WHERE rn = 1;
-WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM main.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM main.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70;
-WITH yearly_records AS (
-    SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year
-    FROM main.PLOT t
-    WHERE t.measurement_year IS NOT NULL
-),
-with_prev AS (
-    SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year,
-           LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time
-    FROM yearly_records t
-)
-SELECT DISTINCT t.plot_state_code, t.plot_sequence_number
-FROM with_prev t
-WHERE t.prev_time IS NOT NULL 
-  AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1;
-SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure
-FROM main.PLOT p
-GROUP BY p.evaluation_type
-ORDER BY total_measure DESC
-LIMIT 3;
-SELECT p.evaluation_type, COUNT(*) AS record_count
-FROM main.PLOT p
-GROUP BY p.evaluation_type
-ORDER BY record_count DESC
-LIMIT 3;
+SELECT p.plot_state_code_name FROM USFS_FIA.PLOT p ORDER BY p.measurement_year DESC LIMIT 5
+SELECT p.plot_county_code FROM USFS_FIA.PLOT p ORDER BY p.elevation DESC LIMIT 5
+SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p ORDER BY p.remeasurement_period DESC LIMIT 5
+SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.ecological_subsection_code) > 1
+SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.sample_method_code_name) > 1
+SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1
+SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p WHERE p.elevation > (SELECT AVG(elevation) FROM USFS_FIA.PLOT)
+SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2)
+SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type)
+SELECT t1.plot_sequence_number FROM USFS_FIA.PLOT t1, USFS_FIA.PLOT t2 WHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM USFS_FIA.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code)
+SELECT t.plot_state_code, t.plot_sequence_number FROM ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn FROM USFS_FIA.PLOT t ) t WHERE rn = 1
+WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM USFS_FIA.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM USFS_FIA.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70
+WITH yearly_records AS ( SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year FROM USFS_FIA.PLOT t WHERE t.measurement_year IS NOT NULL ), with_prev AS ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time FROM yearly_records t ) SELECT DISTINCT t.plot_state_code, t.plot_sequence_number FROM with_prev t WHERE t.prev_time IS NOT NULL AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1
+SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY total_measure DESC LIMIT 3
+SELECT p.evaluation_type, COUNT(*) AS record_count FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY record_count DESC LIMIT 3
 SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES ORDER BY frequency DESC LIMIT 5;
 SELECT title FROM WORD_VECTORS_US.NATURE GROUP BY title HAVING COUNT(DISTINCT category) > 1;
 SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES WHERE frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES);
 SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1;
 WITH yearly_records AS ( SELECT DISTINCT category AS Category, title AS Entity, EXTRACT(YEAR FROM CAST(date AS DATETIME)) AS Time FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;
 SELECT category AS Category, COUNT(*) AS record_count FROM WORD_VECTORS_US.NATURE GROUP BY category ORDER BY record_count DESC LIMIT 3;
-SELECT n.title
-FROM main.NATURE n
-ORDER BY n.citations DESC
-LIMIT 5;
-SELECT wf.word
-FROM main.WORD_FREQUENCIES wf
-ORDER BY wf.frequency DESC
-LIMIT 5;
-SELECT n.title
-FROM main.NATURE n
-GROUP BY n.title
-HAVING COUNT(DISTINCT n.category) > 1;
-SELECT n.organization_affiliated
-FROM main.NATURE n
-GROUP BY n.organization_affiliated
-HAVING COUNT(DISTINCT n.category) > 1;
-SELECT t.category, t.title
-FROM (
-SELECT n.category, n.title, n.citations,
- ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn
- FROM main.NATURE n
-) t
-WHERE t.rn = 1;
-SELECT t.category, t.organization_affiliated
-FROM (
-SELECT n.category, n.organization_affiliated, n.citations,
- ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn
- FROM main.NATURE n
-) t
-WHERE t.rn = 1;
-SELECT n.title
-FROM main.NATURE n
-WHERE n.citations > (SELECT AVG(n.citations) FROM main.NATURE n);
-SELECT w.word
-FROM main.WORD_FREQUENCIES w
-WHERE w.frequency > (SELECT AVG(frequency) FROM main.WORD_FREQUENCIES);
-SELECT n1.title
-FROM main.NATURE n1
-WHERE n1.citations > (SELECT AVG(n2.citations) FROM main.NATURE n2 WHERE n2.category = n1.category);
-SELECT category, title
-FROM (
- SELECT category, title, date,
- ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn
- FROM main.NATURE
-) t
-WHERE rn = 1;
-WITH yearly_records AS (
-    SELECT DISTINCT category, title, date
-    FROM main.NATURE
-    WHERE date IS NOT NULL
-),
-with_prev AS (
-    SELECT category, title, date,
-           LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date
-    FROM yearly_records
-)
-SELECT DISTINCT category, title
-FROM with_prev
-WHERE prev_date IS NOT NULL 
-  AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1;
+SELECT n.title FROM WORD_VECTORS_US.NATURE n ORDER BY n.citations DESC LIMIT 5
+SELECT wf.word FROM WORD_VECTORS_US.WORD_FREQUENCIES wf ORDER BY wf.frequency DESC LIMIT 5
+SELECT n.title FROM WORD_VECTORS_US.NATURE n GROUP BY n.title HAVING COUNT(DISTINCT n.category) > 1
+SELECT n.organization_affiliated FROM WORD_VECTORS_US.NATURE n GROUP BY n.organization_affiliated HAVING COUNT(DISTINCT n.category) > 1
+SELECT t.category, t.title FROM ( SELECT n.category, n.title, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1
+SELECT t.category, t.organization_affiliated FROM ( SELECT n.category, n.organization_affiliated, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1
+SELECT n.title FROM WORD_VECTORS_US.NATURE n WHERE n.citations > (SELECT AVG(n.citations) FROM WORD_VECTORS_US.NATURE n)
+SELECT w.word FROM WORD_VECTORS_US.WORD_FREQUENCIES w WHERE w.frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES)
+SELECT n1.title FROM WORD_VECTORS_US.NATURE n1 WHERE n1.citations > (SELECT AVG(n2.citations) FROM WORD_VECTORS_US.NATURE n2 WHERE n2.category = n1.category)
+SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1
+WITH yearly_records AS ( SELECT DISTINCT category, title, date FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT category, title, date, LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date FROM yearly_records ) SELECT DISTINCT category, title FROM with_prev WHERE prev_date IS NOT NULL AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1
+SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE GROUP BY Gene HAVING COUNT(DISTINCT MolClin) > 1;
+SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE r WHERE NOT EXISTS ( SELECT 1 FROM MITELMAN.PROD_CYTOCONVERTEDLOG l WHERE l.RefNo = r.RefNo );
+SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE WHERE RefNo IN (SELECT RefNo FROM MITELMAN.PROD_CYTOCONVERTEDLOG);
+SELECT Abnormality AS Category, SUM(TotalCases) AS total_cases FROM MITELMAN.PROD_RECURRENTNUMDATA GROUP BY Abnormality ORDER BY total_cases DESC LIMIT 3;
+SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;
+SELECT DISTINCT HTAN_Participant_ID FROM HTAN_1.HTAN_VERSIONED_CLINICAL_TIER1_DIAGNOSIS_R5 d WHERE NOT EXISTS ( SELECT 1 FROM HTAN_1.HTAN_VERSIONED_IMAGING_LEVEL2_METADATA_R2 i WHERE i.HTAN_Participant_ID = d.HTAN_Participant_ID );

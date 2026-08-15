@@ -1,0 +1,954 @@
+[
+  {
+    "question_id": 1,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In HTAN_1, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "HTAN_1",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(Years_Smoked AS DATETIME)) AS d, COUNT(*) AS cnt FROM HTAN_1.HTAN_VERSIONED_CLINICAL_TIER1_EXPOSURE_R5 GROUP BY DATE(CAST(Years_Smoked AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 2,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In HTAN_2, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "HTAN_2",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(Timepoint_Label AS DATETIME)) AS d, COUNT(*) AS cnt FROM HTAN_2.HTAN_CLINICAL_TIER3_BREAST_CURRENT GROUP BY DATE(CAST(Timepoint_Label AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 3,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In MITELMAN, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "MITELMAN",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(InvDate AS DATETIME)) AS d, COUNT(*) AS cnt FROM MITELMAN.PROD_CYTOGENINV GROUP BY DATE(CAST(InvDate AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 4,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In NOAA_PORTS, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "NOAA_PORTS",
+    "sql": "WITH per_day AS ( SELECT DATE(FROM_UNIXTIME(iso_time / 1000000)) AS d, COUNT(*) AS cnt FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES GROUP BY DATE(FROM_UNIXTIME(iso_time / 1000000)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 5,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In OPEN_TARGETS_GENETICS_2, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(pub_date AS DATETIME)) AS d, COUNT(*) AS cnt FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_STUDIES GROUP BY DATE(CAST(pub_date AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 6,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In SEC_QUARTERLY_FINANCIALS, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH per_day AS ( SELECT DATE(FROM_UNIXTIME(PERIOD_END_DATE / 1000000)) AS d, COUNT(*) AS cnt FROM SEC_QUARTERLY_FINANCIALS.NUMBERS GROUP BY DATE(FROM_UNIXTIME(PERIOD_END_DATE / 1000000)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 7,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In TCGA, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "TCGA",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(Time AS DATETIME)) AS d, COUNT(*) AS cnt FROM TCGA.TCGA_VERSIONED_SLIDE_IMAGES_GDC_R17 GROUP BY DATE(CAST(Time AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 8,
+    "split": "train",
+    "sqa": "XE1",
+    "question": "In USFS_FIA, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "USFS_FIA",
+    "sql": "WITH per_day AS ( SELECT DATE(FROM_UNIXTIME(measurement_year / 1000000)) AS d, COUNT(*) AS cnt FROM USFS_FIA.PLOT GROUP BY DATE(FROM_UNIXTIME(measurement_year / 1000000)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 9,
+    "split": "test",
+    "sqa": "XE1",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "WITH per_day AS ( SELECT DATE(FROM_UNIXTIME(osm_timestamp / 1000000)) AS d, COUNT(*) AS cnt FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_HISTORY_NODES GROUP BY DATE(FROM_UNIXTIME(osm_timestamp / 1000000)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 10,
+    "split": "test",
+    "sqa": "XE1",
+    "question": "In OPEN_TARGETS_GENETICS_1, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(pub_date AS DATETIME)) AS d, COUNT(*) AS cnt FROM OPEN_TARGETS_GENETICS_1.GENETICS_DISEASE_VARIANT_GENE GROUP BY DATE(CAST(pub_date AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 11,
+    "split": "test",
+    "sqa": "XE1",
+    "question": "In USDA_NASS_AGRICULTURE, show the daily record count together with the running cumulative count, ordered by date.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH per_day AS ( SELECT DATE(CAST(end_code AS DATETIME)) AS d, COUNT(*) AS cnt FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY DATE(CAST(end_code AS DATETIME)) ) SELECT d, cnt, SUM(cnt) OVER (ORDER BY d ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW) AS running_cnt FROM per_day ORDER BY d;"
+  },
+  {
+    "question_id": 12,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In HTAN_1, list pairs of Dataset_Name that share the same Data_Type. Give me the first 10 pairs.",
+    "db": "HTAN_1",
+    "sql": "SELECT a.Dataset_Name AS entity_a, b.Dataset_Name AS entity_b, a.Data_Type FROM HTAN_1.HTAN_VERSIONED_ACCESSORY_MANIFEST_R5 a JOIN HTAN_1.HTAN_VERSIONED_ACCESSORY_MANIFEST_R5 b ON a.Data_Type = b.Data_Type AND a.Dataset_Name < b.Dataset_Name ORDER BY a.Data_Type LIMIT 10;"
+  },
+  {
+    "question_id": 13,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In HTAN_2, list pairs of FILENAME that share the same IMAGING_ASSAY_TYPE. Give me the first 10 pairs.",
+    "db": "HTAN_2",
+    "sql": "SELECT a.FILENAME AS entity_a, b.FILENAME AS entity_b, a.IMAGING_ASSAY_TYPE FROM HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT a JOIN HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT b ON a.IMAGING_ASSAY_TYPE = b.IMAGING_ASSAY_TYPE AND a.FILENAME < b.FILENAME ORDER BY a.IMAGING_ASSAY_TYPE LIMIT 10;"
+  },
+  {
+    "question_id": 14,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In MITELMAN, list pairs of Gene that share the same MolClin. Give me the first 10 pairs.",
+    "db": "MITELMAN",
+    "sql": "SELECT a.Gene AS entity_a, b.Gene AS entity_b, a.MolClin FROM MITELMAN.PROD_MOLCLINGENE a JOIN MITELMAN.PROD_MOLCLINGENE b ON a.MolClin = b.MolClin AND a.Gene < b.Gene ORDER BY a.MolClin LIMIT 10;"
+  },
+  {
+    "question_id": 15,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In NOAA_PORTS, list pairs of name that share the same mtfcc_feature_class_code. Give me the first 10 pairs.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT a.name AS entity_a, b.name AS entity_b, a.mtfcc_feature_class_code FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA a JOIN NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA b ON a.mtfcc_feature_class_code = b.mtfcc_feature_class_code AND a.name < b.name ORDER BY a.mtfcc_feature_class_code LIMIT 10;"
+  },
+  {
+    "question_id": 16,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In OPEN_TARGETS_GENETICS_2, list pairs of gene_name that share the same biotype. Give me the first 10 pairs.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT a.gene_name AS entity_a, b.gene_name AS entity_b, a.biotype FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES a JOIN OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES b ON a.biotype = b.biotype AND a.gene_name < b.gene_name ORDER BY a.biotype LIMIT 10;"
+  },
+  {
+    "question_id": 17,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In SEC_QUARTERLY_FINANCIALS, list pairs of company_name that share the same sic. Give me the first 10 pairs.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT a.company_name AS entity_a, b.company_name AS entity_b, a.sic FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY a JOIN SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY b ON a.sic = b.sic AND a.company_name < b.company_name ORDER BY a.sic LIMIT 10;"
+  },
+  {
+    "question_id": 18,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In TCGA, list pairs of sample_type_name that share the same sample_type. Give me the first 10 pairs.",
+    "db": "TCGA",
+    "sql": "SELECT a.sample_type_name AS entity_a, b.sample_type_name AS entity_b, a.sample_type FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 a JOIN TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 b ON a.sample_type = b.sample_type AND a.sample_type_name < b.sample_type_name ORDER BY a.sample_type LIMIT 10;"
+  },
+  {
+    "question_id": 19,
+    "split": "train",
+    "sqa": "XE2",
+    "question": "In USFS_FIA, list pairs of state_name that share the same evaluation_type. Give me the first 10 pairs.",
+    "db": "USFS_FIA",
+    "sql": "SELECT a.state_name AS entity_a, b.state_name AS entity_b, a.evaluation_type FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES a JOIN USFS_FIA.ESTIMATED_TIMBERLAND_ACRES b ON a.evaluation_type = b.evaluation_type AND a.state_name < b.state_name ORDER BY a.evaluation_type LIMIT 10;"
+  },
+  {
+    "question_id": 20,
+    "split": "test",
+    "sqa": "XE2",
+    "question": "In GENOMICS_CANNABIS, list pairs of source that share the same type. Give me the first 10 pairs.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT a.source AS entity_a, b.source AS entity_b, a.type FROM GENOMICS_CANNABIS.CS10_GFF a JOIN GENOMICS_CANNABIS.CS10_GFF b ON a.type = b.type AND a.source < b.source ORDER BY a.type LIMIT 10;"
+  },
+  {
+    "question_id": 21,
+    "split": "test",
+    "sqa": "XE2",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, list pairs of lsad_name that share the same mtfcc_feature_class_code. Give me the first 10 pairs.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT a.lsad_name AS entity_a, b.lsad_name AS entity_b, a.mtfcc_feature_class_code FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 a JOIN GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 b ON a.mtfcc_feature_class_code = b.mtfcc_feature_class_code AND a.lsad_name < b.lsad_name ORDER BY a.mtfcc_feature_class_code LIMIT 10;"
+  },
+  {
+    "question_id": 22,
+    "split": "test",
+    "sqa": "XE2",
+    "question": "In OPEN_TARGETS_GENETICS_1, list pairs of gene_name that share the same biotype. Give me the first 10 pairs.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT a.gene_name AS entity_a, b.gene_name AS entity_b, a.biotype FROM OPEN_TARGETS_GENETICS_1.GENETICS_GENES a JOIN OPEN_TARGETS_GENETICS_1.GENETICS_GENES b ON a.biotype = b.biotype AND a.gene_name < b.gene_name ORDER BY a.biotype LIMIT 10;"
+  },
+  {
+    "question_id": 23,
+    "split": "test",
+    "sqa": "XE2",
+    "question": "In USDA_NASS_AGRICULTURE, list pairs of state_name that share the same sector_desc. Give me the first 10 pairs.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT a.state_name AS entity_a, b.state_name AS entity_b, a.sector_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS a JOIN USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS b ON a.sector_desc = b.sector_desc AND a.state_name < b.state_name ORDER BY a.sector_desc LIMIT 10;"
+  },
+  {
+    "question_id": 24,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In HTAN_1, which Biospecimen_Type have at least 5 records with a non-null Section_Number_in_Sequence? Give me the top 10 by count.",
+    "db": "HTAN_1",
+    "sql": "SELECT Biospecimen_Type, COUNT(*) AS cnt FROM HTAN_1.HTAN_VERSIONED_BIOSPECIMEN_R2 WHERE Section_Number_in_Sequence IS NOT NULL GROUP BY Biospecimen_Type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 25,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In HTAN_2, which EM_contrast_type have at least 5 records with a non-null SizeZ? Give me the top 10 by count.",
+    "db": "HTAN_2",
+    "sql": "SELECT EM_contrast_type, COUNT(*) AS cnt FROM HTAN_2.HTAN_ELECTRON_MICROSCOPY_LEVEL1_METADATA_CURRENT WHERE SizeZ IS NOT NULL GROUP BY EM_contrast_type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 26,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In MITELMAN, which Type have at least 5 records with a non-null End? Give me the top 10 by count.",
+    "db": "MITELMAN",
+    "sql": "SELECT Type, COUNT(*) AS cnt FROM MITELMAN.PROD_CYTOCONVERTED WHERE End IS NOT NULL GROUP BY Type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 27,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In NOAA_PORTS, which mtfcc_feature_class_code have at least 5 records with a non-null area_land_meters? Give me the top 10 by count.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT mtfcc_feature_class_code, COUNT(*) AS cnt FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA WHERE area_land_meters IS NOT NULL GROUP BY mtfcc_feature_class_code HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 28,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In OPEN_TARGETS_GENETICS_2, which trait_category have at least 5 records with a non-null num_assoc_loci? Give me the top 10 by count.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT trait_category, COUNT(*) AS cnt FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_DISEASE_VARIANT_GENE WHERE num_assoc_loci IS NOT NULL GROUP BY trait_category HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 29,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In SEC_QUARTERLY_FINANCIALS, which sic have at least 5 records with a non-null number_of_quarters? Give me the top 10 by count.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, COUNT(*) AS cnt FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE number_of_quarters IS NOT NULL GROUP BY sic HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 30,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In TCGA, which sample_type have at least 5 records with a non-null num_slides? Give me the top 10 by count.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type, COUNT(*) AS cnt FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 WHERE num_slides IS NOT NULL GROUP BY sample_type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 31,
+    "split": "train",
+    "sqa": "XE3",
+    "question": "In USFS_FIA, which evaluation_type have at least 5 records with a non-null subplot_acres? Give me the top 10 by count.",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, COUNT(*) AS cnt FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES WHERE subplot_acres IS NOT NULL GROUP BY evaluation_type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 32,
+    "split": "test",
+    "sqa": "XE3",
+    "question": "In GENOMICS_CANNABIS, which TYPE have at least 5 records with a non-null NUMALT? Give me the top 10 by count.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT TYPE, COUNT(*) AS cnt FROM GENOMICS_CANNABIS.MNPR01_201703 WHERE NUMALT IS NOT NULL GROUP BY TYPE HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 33,
+    "split": "test",
+    "sqa": "XE3",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, which feature_type have at least 5 records with a non-null osm_version? Give me the top 10 by count.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT feature_type, COUNT(*) AS cnt FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_FEATURES WHERE osm_version IS NOT NULL GROUP BY feature_type HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 34,
+    "split": "test",
+    "sqa": "XE3",
+    "question": "In OPEN_TARGETS_GENETICS_1, which type_id have at least 5 records with a non-null num_assoc_loci? Give me the top 10 by count.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT type_id, COUNT(*) AS cnt FROM OPEN_TARGETS_GENETICS_1.GENETICS_DISEASE_VARIANT_GENE WHERE num_assoc_loci IS NOT NULL GROUP BY type_id HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 35,
+    "split": "test",
+    "sqa": "XE3",
+    "question": "In USA_NAMES, which gender have at least 5 records with a non-null number? Give me the top 10 by count.",
+    "db": "USA_NAMES",
+    "sql": "SELECT gender, COUNT(*) AS cnt FROM USA_NAMES.USA_1910_2013 WHERE number IS NOT NULL GROUP BY gender HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 36,
+    "split": "test",
+    "sqa": "XE3",
+    "question": "In _1000_GENOMES, which SVTYPE have at least 5 records with a non-null AC? Give me the top 10 by count.",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT SVTYPE, COUNT(*) AS cnt FROM _1000_GENOMES.VARIANTS WHERE AC IS NOT NULL GROUP BY SVTYPE HAVING COUNT(*) >= 5 ORDER BY cnt DESC LIMIT 10;"
+  },
+  {
+    "question_id": 37,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In HTAN_1, which Filename have a Read_Length at or above the overall average? Give me the top 10.",
+    "db": "HTAN_1",
+    "sql": "SELECT Filename FROM HTAN_1.HTAN_VERSIONED_BULKRNASEQ_LEVEL1_METADATA_R2_V2 WHERE Read_Length >= ( SELECT AVG(Read_Length) FROM HTAN_1.HTAN_VERSIONED_BULKRNASEQ_LEVEL1_METADATA_R2_V2 ) ORDER BY Read_Length DESC LIMIT 10;"
+  },
+  {
+    "question_id": 38,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In HTAN_2, which Library_Preparation_Kit_Name have a File_Size at or above the overall average? Give me the top 10.",
+    "db": "HTAN_2",
+    "sql": "SELECT Library_Preparation_Kit_Name FROM HTAN_2.HTAN_BULKWES_LEVEL1_METADATA_CURRENT WHERE File_Size >= ( SELECT AVG(File_Size) FROM HTAN_2.HTAN_BULKWES_LEVEL1_METADATA_CURRENT ) ORDER BY File_Size DESC LIMIT 10;"
+  },
+  {
+    "question_id": 39,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In MITELMAN, which cytoband_name have a hg38_stop at or above the overall average? Give me the top 10.",
+    "db": "MITELMAN",
+    "sql": "SELECT cytoband_name FROM MITELMAN.PROD_CYTOBANDS_HG38 WHERE hg38_stop >= ( SELECT AVG(hg38_stop) FROM MITELMAN.PROD_CYTOBANDS_HG38 ) ORDER BY hg38_stop DESC LIMIT 10;"
+  },
+  {
+    "question_id": 40,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In NOAA_PORTS, which name have a area_land_meters at or above the overall average? Give me the top 10.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT name FROM NOAA_PORTS.GEO_US_BOUNDARIES_CBSA WHERE area_land_meters >= ( SELECT AVG(area_land_meters) FROM NOAA_PORTS.GEO_US_BOUNDARIES_CBSA ) ORDER BY area_land_meters DESC LIMIT 10;"
+  },
+  {
+    "question_id": 41,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In OPEN_TARGETS_GENETICS_2, which bio_feature have a num_tests at or above the overall average? Give me the top 10.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT bio_feature FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_MOLECULAR_TRAIT WHERE num_tests >= ( SELECT AVG(num_tests) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_MOLECULAR_TRAIT ) ORDER BY num_tests DESC LIMIT 10;"
+  },
+  {
+    "question_id": 42,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In SEC_QUARTERLY_FINANCIALS, which COMPANY_NAME have a NUM_DIMENSIONS at or above the overall average? Give me the top 10.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS WHERE NUM_DIMENSIONS >= ( SELECT AVG(NUM_DIMENSIONS) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS ) ORDER BY NUM_DIMENSIONS DESC LIMIT 10;"
+  },
+  {
+    "question_id": 43,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In TCGA, which sample_type_name have a num_slides at or above the overall average? Give me the top 10.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type_name FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 WHERE num_slides >= ( SELECT AVG(num_slides) FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 ) ORDER BY num_slides DESC LIMIT 10;"
+  },
+  {
+    "question_id": 44,
+    "split": "train",
+    "sqa": "XE4",
+    "question": "In USFS_FIA, which state_name have a subplot_acres at or above the overall average? Give me the top 10.",
+    "db": "USFS_FIA",
+    "sql": "SELECT state_name FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES WHERE subplot_acres >= ( SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES ) ORDER BY subplot_acres DESC LIMIT 10;"
+  },
+  {
+    "question_id": 45,
+    "split": "test",
+    "sqa": "XE4",
+    "question": "In GENOMICS_CANNABIS, which Sample_Name have a InsertSize at or above the overall average? Give me the top 10.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT Sample_Name FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO WHERE InsertSize >= ( SELECT AVG(InsertSize) FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO ) ORDER BY InsertSize DESC LIMIT 10;"
+  },
+  {
+    "question_id": 46,
+    "split": "test",
+    "sqa": "XE4",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, which name have a area_land_meters at or above the overall average? Give me the top 10.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT name FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CBSA WHERE area_land_meters >= ( SELECT AVG(area_land_meters) FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CBSA ) ORDER BY area_land_meters DESC LIMIT 10;"
+  },
+  {
+    "question_id": 47,
+    "split": "test",
+    "sqa": "XE4",
+    "question": "In OPEN_TARGETS_GENETICS_1, which pub_title have a num_assoc_loci at or above the overall average? Give me the top 10.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT pub_title FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE num_assoc_loci >= ( SELECT AVG(num_assoc_loci) FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) ORDER BY num_assoc_loci DESC LIMIT 10;"
+  },
+  {
+    "question_id": 48,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In HTAN_1, what is the spread between the highest and lowest Section_Number_in_Sequence within each Biospecimen_Type? Give me the 10 widest.",
+    "db": "HTAN_1",
+    "sql": "SELECT Biospecimen_Type, MIN(Section_Number_in_Sequence) AS min_v, MAX(Section_Number_in_Sequence) AS max_v, MAX(Section_Number_in_Sequence) - MIN(Section_Number_in_Sequence) AS span FROM HTAN_1.HTAN_VERSIONED_BIOSPECIMEN_R2 GROUP BY Biospecimen_Type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 49,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In HTAN_2, what is the spread between the highest and lowest SizeZ within each EM_contrast_type? Give me the 10 widest.",
+    "db": "HTAN_2",
+    "sql": "SELECT EM_contrast_type, MIN(SizeZ) AS min_v, MAX(SizeZ) AS max_v, MAX(SizeZ) - MIN(SizeZ) AS span FROM HTAN_2.HTAN_ELECTRON_MICROSCOPY_LEVEL1_METADATA_CURRENT GROUP BY EM_contrast_type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 50,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In MITELMAN, what is the spread between the highest and lowest End within each Type? Give me the 10 widest.",
+    "db": "MITELMAN",
+    "sql": "SELECT Type, MIN(End) AS min_v, MAX(End) AS max_v, MAX(End) - MIN(End) AS span FROM MITELMAN.PROD_CYTOCONVERTED GROUP BY Type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 51,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In NOAA_PORTS, what is the spread between the highest and lowest area_land_meters within each mtfcc_feature_class_code? Give me the 10 widest.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT mtfcc_feature_class_code, MIN(area_land_meters) AS min_v, MAX(area_land_meters) AS max_v, MAX(area_land_meters) - MIN(area_land_meters) AS span FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA GROUP BY mtfcc_feature_class_code ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 52,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In OPEN_TARGETS_GENETICS_2, what is the spread between the highest and lowest num_assoc_loci within each trait_category? Give me the 10 widest.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT trait_category, MIN(num_assoc_loci) AS min_v, MAX(num_assoc_loci) AS max_v, MAX(num_assoc_loci) - MIN(num_assoc_loci) AS span FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_DISEASE_VARIANT_GENE GROUP BY trait_category ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 53,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In SEC_QUARTERLY_FINANCIALS, what is the spread between the highest and lowest number_of_quarters within each sic? Give me the 10 widest.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, MIN(number_of_quarters) AS min_v, MAX(number_of_quarters) AS max_v, MAX(number_of_quarters) - MIN(number_of_quarters) AS span FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY GROUP BY sic ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 54,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In TCGA, what is the spread between the highest and lowest num_slides within each sample_type? Give me the 10 widest.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type, MIN(num_slides) AS min_v, MAX(num_slides) AS max_v, MAX(num_slides) - MIN(num_slides) AS span FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 GROUP BY sample_type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 55,
+    "split": "train",
+    "sqa": "XE5",
+    "question": "In USFS_FIA, what is the spread between the highest and lowest subplot_acres within each evaluation_type? Give me the 10 widest.",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, MIN(subplot_acres) AS min_v, MAX(subplot_acres) AS max_v, MAX(subplot_acres) - MIN(subplot_acres) AS span FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES GROUP BY evaluation_type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 56,
+    "split": "test",
+    "sqa": "XE5",
+    "question": "In GENOMICS_CANNABIS, what is the spread between the highest and lowest NUMALT within each TYPE? Give me the 10 widest.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT TYPE, MIN(NUMALT) AS min_v, MAX(NUMALT) AS max_v, MAX(NUMALT) - MIN(NUMALT) AS span FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY TYPE ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 57,
+    "split": "test",
+    "sqa": "XE5",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, what is the spread between the highest and lowest osm_version within each feature_type? Give me the 10 widest.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT feature_type, MIN(osm_version) AS min_v, MAX(osm_version) AS max_v, MAX(osm_version) - MIN(osm_version) AS span FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_FEATURES GROUP BY feature_type ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 58,
+    "split": "test",
+    "sqa": "XE5",
+    "question": "In OPEN_TARGETS_GENETICS_1, what is the spread between the highest and lowest num_assoc_loci within each type_id? Give me the 10 widest.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT type_id, MIN(num_assoc_loci) AS min_v, MAX(num_assoc_loci) AS max_v, MAX(num_assoc_loci) - MIN(num_assoc_loci) AS span FROM OPEN_TARGETS_GENETICS_1.GENETICS_DISEASE_VARIANT_GENE GROUP BY type_id ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 59,
+    "split": "test",
+    "sqa": "XE5",
+    "question": "In USA_NAMES, what is the spread between the highest and lowest number within each gender? Give me the 10 widest.",
+    "db": "USA_NAMES",
+    "sql": "SELECT gender, MIN(number) AS min_v, MAX(number) AS max_v, MAX(number) - MIN(number) AS span FROM USA_NAMES.USA_1910_2013 GROUP BY gender ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 60,
+    "split": "test",
+    "sqa": "XE5",
+    "question": "In _1000_GENOMES, what is the spread between the highest and lowest AC within each SVTYPE? Give me the 10 widest.",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT SVTYPE, MIN(AC) AS min_v, MAX(AC) AS max_v, MAX(AC) - MIN(AC) AS span FROM _1000_GENOMES.VARIANTS GROUP BY SVTYPE ORDER BY span DESC LIMIT 10;"
+  },
+  {
+    "question_id": 61,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In HTAN_1, how unique are the Dataset_Name values within each Data_Type? Give me the top 10 by distinct-to-total ratio.",
+    "db": "HTAN_1",
+    "sql": "SELECT Data_Type, COUNT(DISTINCT Dataset_Name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT Dataset_Name) AS DOUBLE) / COUNT(*) AS uniqueness FROM HTAN_1.HTAN_VERSIONED_ACCESSORY_MANIFEST_R5 GROUP BY Data_Type ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 62,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In HTAN_2, how unique are the FILENAME values within each IMAGING_ASSAY_TYPE? Give me the top 10 by distinct-to-total ratio.",
+    "db": "HTAN_2",
+    "sql": "SELECT IMAGING_ASSAY_TYPE, COUNT(DISTINCT FILENAME) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT FILENAME) AS DOUBLE) / COUNT(*) AS uniqueness FROM HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT GROUP BY IMAGING_ASSAY_TYPE ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 63,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In MITELMAN, how unique are the Gene values within each MolClin? Give me the top 10 by distinct-to-total ratio.",
+    "db": "MITELMAN",
+    "sql": "SELECT MolClin, COUNT(DISTINCT Gene) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT Gene) AS DOUBLE) / COUNT(*) AS uniqueness FROM MITELMAN.PROD_MOLCLINGENE GROUP BY MolClin ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 64,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In NOAA_PORTS, how unique are the name values within each mtfcc_feature_class_code? Give me the top 10 by distinct-to-total ratio.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT mtfcc_feature_class_code, COUNT(DISTINCT name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT name) AS DOUBLE) / COUNT(*) AS uniqueness FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA GROUP BY mtfcc_feature_class_code ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 65,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In OPEN_TARGETS_GENETICS_2, how unique are the gene_name values within each biotype? Give me the top 10 by distinct-to-total ratio.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT biotype, COUNT(DISTINCT gene_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT gene_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES GROUP BY biotype ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 66,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In SEC_QUARTERLY_FINANCIALS, how unique are the company_name values within each sic? Give me the top 10 by distinct-to-total ratio.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, COUNT(DISTINCT company_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT company_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY GROUP BY sic ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 67,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In TCGA, how unique are the sample_type_name values within each sample_type? Give me the top 10 by distinct-to-total ratio.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type, COUNT(DISTINCT sample_type_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT sample_type_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 GROUP BY sample_type ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 68,
+    "split": "train",
+    "sqa": "XE6",
+    "question": "In USFS_FIA, how unique are the state_name values within each evaluation_type? Give me the top 10 by distinct-to-total ratio.",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, COUNT(DISTINCT state_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT state_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES GROUP BY evaluation_type ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 69,
+    "split": "test",
+    "sqa": "XE6",
+    "question": "In GENOMICS_CANNABIS, how unique are the source values within each type? Give me the top 10 by distinct-to-total ratio.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT type, COUNT(DISTINCT source) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT source) AS DOUBLE) / COUNT(*) AS uniqueness FROM GENOMICS_CANNABIS.CS10_GFF GROUP BY type ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 70,
+    "split": "test",
+    "sqa": "XE6",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, how unique are the lsad_name values within each mtfcc_feature_class_code? Give me the top 10 by distinct-to-total ratio.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT mtfcc_feature_class_code, COUNT(DISTINCT lsad_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT lsad_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 GROUP BY mtfcc_feature_class_code ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 71,
+    "split": "test",
+    "sqa": "XE6",
+    "question": "In OPEN_TARGETS_GENETICS_1, how unique are the gene_name values within each biotype? Give me the top 10 by distinct-to-total ratio.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT biotype, COUNT(DISTINCT gene_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT gene_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM OPEN_TARGETS_GENETICS_1.GENETICS_GENES GROUP BY biotype ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 72,
+    "split": "test",
+    "sqa": "XE6",
+    "question": "In USDA_NASS_AGRICULTURE, how unique are the state_name values within each sector_desc? Give me the top 10 by distinct-to-total ratio.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT sector_desc, COUNT(DISTINCT state_name) AS distinct_entities, COUNT(*) AS rows_cnt, CAST(COUNT(DISTINCT state_name) AS DOUBLE) / COUNT(*) AS uniqueness FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ORDER BY uniqueness DESC LIMIT 10;"
+  },
+  {
+    "question_id": 73,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In HTAN_1, within each Imaging_Assay_Type, where is the largest drop in lineNum between consecutive ranks? Give me the top 10 gaps.",
+    "db": "HTAN_1",
+    "sql": "WITH ranked AS ( SELECT Imaging_Assay_Type AS c, image_filename AS e, lineNum AS v, LAG(lineNum) OVER (PARTITION BY Imaging_Assay_Type ORDER BY lineNum DESC) AS prev_v FROM HTAN_1.HTAN_VERSIONED_IMAGING_CHANNEL_METADATA_R3 ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 74,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In HTAN_2, within each IMAGING_ASSAY_TYPE, where is the largest drop in SIZEY between consecutive ranks? Give me the top 10 gaps.",
+    "db": "HTAN_2",
+    "sql": "WITH ranked AS ( SELECT IMAGING_ASSAY_TYPE AS c, FILENAME AS e, SIZEY AS v, LAG(SIZEY) OVER (PARTITION BY IMAGING_ASSAY_TYPE ORDER BY SIZEY DESC) AS prev_v FROM HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 75,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In NOAA_PORTS, within each mtfcc_feature_class_code, where is the largest drop in area_land_meters between consecutive ranks? Give me the top 10 gaps.",
+    "db": "NOAA_PORTS",
+    "sql": "WITH ranked AS ( SELECT mtfcc_feature_class_code AS c, name AS e, area_land_meters AS v, LAG(area_land_meters) OVER (PARTITION BY mtfcc_feature_class_code ORDER BY area_land_meters DESC) AS prev_v FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 76,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In OPEN_TARGETS_GENETICS_2, within each type_id, where is the largest drop in num_tests between consecutive ranks? Give me the top 10 gaps.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH ranked AS ( SELECT type_id AS c, bio_feature AS e, num_tests AS v, LAG(num_tests) OVER (PARTITION BY type_id ORDER BY num_tests DESC) AS prev_v FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_MOLECULAR_TRAIT ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 77,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In SEC_QUARTERLY_FINANCIALS, within each sic, where is the largest drop in number_of_quarters between consecutive ranks? Give me the top 10 gaps.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH ranked AS ( SELECT sic AS c, company_name AS e, number_of_quarters AS v, LAG(number_of_quarters) OVER (PARTITION BY sic ORDER BY number_of_quarters DESC) AS prev_v FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 78,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In TCGA, within each sample_type, where is the largest drop in num_slides between consecutive ranks? Give me the top 10 gaps.",
+    "db": "TCGA",
+    "sql": "WITH ranked AS ( SELECT sample_type AS c, sample_type_name AS e, num_slides AS v, LAG(num_slides) OVER (PARTITION BY sample_type ORDER BY num_slides DESC) AS prev_v FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 79,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In USFS_FIA, within each evaluation_type, where is the largest drop in subplot_acres between consecutive ranks? Give me the top 10 gaps.",
+    "db": "USFS_FIA",
+    "sql": "WITH ranked AS ( SELECT evaluation_type AS c, state_name AS e, subplot_acres AS v, LAG(subplot_acres) OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS prev_v FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 80,
+    "split": "train",
+    "sqa": "XE7",
+    "question": "In WORD_VECTORS_US, within each category, where is the largest drop in citations between consecutive ranks? Give me the top 10 gaps.",
+    "db": "WORD_VECTORS_US",
+    "sql": "WITH ranked AS ( SELECT category AS c, title AS e, citations AS v, LAG(citations) OVER (PARTITION BY category ORDER BY citations DESC) AS prev_v FROM WORD_VECTORS_US.NATURE ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 81,
+    "split": "test",
+    "sqa": "XE7",
+    "question": "In GENOMICS_CANNABIS, within each type, where is the largest drop in end between consecutive ranks? Give me the top 10 gaps.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH ranked AS ( SELECT type AS c, source AS e, end AS v, LAG(end) OVER (PARTITION BY type ORDER BY end DESC) AS prev_v FROM GENOMICS_CANNABIS.CS10_GFF ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 82,
+    "split": "test",
+    "sqa": "XE7",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, within each mtfcc_feature_class_code, where is the largest drop in area_land_meters between consecutive ranks? Give me the top 10 gaps.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "WITH ranked AS ( SELECT mtfcc_feature_class_code AS c, lsad_name AS e, area_land_meters AS v, LAG(area_land_meters) OVER (PARTITION BY mtfcc_feature_class_code ORDER BY area_land_meters DESC) AS prev_v FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 83,
+    "split": "test",
+    "sqa": "XE7",
+    "question": "In OPEN_TARGETS_GENETICS_1, within each trait_category, where is the largest drop in num_assoc_loci between consecutive ranks? Give me the top 10 gaps.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH ranked AS ( SELECT trait_category AS c, pub_title AS e, num_assoc_loci AS v, LAG(num_assoc_loci) OVER (PARTITION BY trait_category ORDER BY num_assoc_loci DESC) AS prev_v FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) SELECT c, e, v, prev_v - v AS gap_to_prev FROM ranked WHERE prev_v IS NOT NULL ORDER BY gap_to_prev DESC LIMIT 10;"
+  },
+  {
+    "question_id": 84,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In HTAN_1, which Dataset_Name belong to a Data_Type that has at least 10 records? Give me the first 10.",
+    "db": "HTAN_1",
+    "sql": "SELECT Dataset_Name FROM HTAN_1.HTAN_VERSIONED_ACCESSORY_MANIFEST_R5 WHERE Data_Type IN ( SELECT Data_Type FROM HTAN_1.HTAN_VERSIONED_ACCESSORY_MANIFEST_R5 GROUP BY Data_Type HAVING COUNT(*) >= 10 ) ORDER BY Dataset_Name LIMIT 10;"
+  },
+  {
+    "question_id": 85,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In HTAN_2, which FILENAME belong to a IMAGING_ASSAY_TYPE that has at least 10 records? Give me the first 10.",
+    "db": "HTAN_2",
+    "sql": "SELECT FILENAME FROM HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT WHERE IMAGING_ASSAY_TYPE IN ( SELECT IMAGING_ASSAY_TYPE FROM HTAN_2.HTAN_IMAGING_LEVEL2_METADATA_CURRENT GROUP BY IMAGING_ASSAY_TYPE HAVING COUNT(*) >= 10 ) ORDER BY FILENAME LIMIT 10;"
+  },
+  {
+    "question_id": 86,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In MITELMAN, which Gene belong to a MolClin that has at least 10 records? Give me the first 10.",
+    "db": "MITELMAN",
+    "sql": "SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE WHERE MolClin IN ( SELECT MolClin FROM MITELMAN.PROD_MOLCLINGENE GROUP BY MolClin HAVING COUNT(*) >= 10 ) ORDER BY Gene LIMIT 10;"
+  },
+  {
+    "question_id": 87,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In NOAA_PORTS, which name belong to a mtfcc_feature_class_code that has at least 10 records? Give me the first 10.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT name FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA WHERE mtfcc_feature_class_code IN ( SELECT mtfcc_feature_class_code FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA GROUP BY mtfcc_feature_class_code HAVING COUNT(*) >= 10 ) ORDER BY name LIMIT 10;"
+  },
+  {
+    "question_id": 88,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In OPEN_TARGETS_GENETICS_2, which gene_name belong to a biotype that has at least 10 records? Give me the first 10.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT gene_name FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES WHERE biotype IN ( SELECT biotype FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES GROUP BY biotype HAVING COUNT(*) >= 10 ) ORDER BY gene_name LIMIT 10;"
+  },
+  {
+    "question_id": 89,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In SEC_QUARTERLY_FINANCIALS, which company_name belong to a sic that has at least 10 records? Give me the first 10.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE sic IN ( SELECT sic FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY GROUP BY sic HAVING COUNT(*) >= 10 ) ORDER BY company_name LIMIT 10;"
+  },
+  {
+    "question_id": 90,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In TCGA, which sample_type_name belong to a sample_type that has at least 10 records? Give me the first 10.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type_name FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 WHERE sample_type IN ( SELECT sample_type FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 GROUP BY sample_type HAVING COUNT(*) >= 10 ) ORDER BY sample_type_name LIMIT 10;"
+  },
+  {
+    "question_id": 91,
+    "split": "train",
+    "sqa": "XE8",
+    "question": "In USFS_FIA, which state_name belong to a evaluation_type that has at least 10 records? Give me the first 10.",
+    "db": "USFS_FIA",
+    "sql": "SELECT state_name FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES WHERE evaluation_type IN ( SELECT evaluation_type FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES GROUP BY evaluation_type HAVING COUNT(*) >= 10 ) ORDER BY state_name LIMIT 10;"
+  },
+  {
+    "question_id": 92,
+    "split": "test",
+    "sqa": "XE8",
+    "question": "In GENOMICS_CANNABIS, which source belong to a type that has at least 10 records? Give me the first 10.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT source FROM GENOMICS_CANNABIS.CS10_GFF WHERE type IN ( SELECT type FROM GENOMICS_CANNABIS.CS10_GFF GROUP BY type HAVING COUNT(*) >= 10 ) ORDER BY source LIMIT 10;"
+  },
+  {
+    "question_id": 93,
+    "split": "test",
+    "sqa": "XE8",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, which lsad_name belong to a mtfcc_feature_class_code that has at least 10 records? Give me the first 10.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT lsad_name FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 WHERE mtfcc_feature_class_code IN ( SELECT mtfcc_feature_class_code FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CONGRESS_DISTRICT_115 GROUP BY mtfcc_feature_class_code HAVING COUNT(*) >= 10 ) ORDER BY lsad_name LIMIT 10;"
+  },
+  {
+    "question_id": 94,
+    "split": "test",
+    "sqa": "XE8",
+    "question": "In OPEN_TARGETS_GENETICS_1, which gene_name belong to a biotype that has at least 10 records? Give me the first 10.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT gene_name FROM OPEN_TARGETS_GENETICS_1.GENETICS_GENES WHERE biotype IN ( SELECT biotype FROM OPEN_TARGETS_GENETICS_1.GENETICS_GENES GROUP BY biotype HAVING COUNT(*) >= 10 ) ORDER BY gene_name LIMIT 10;"
+  },
+  {
+    "question_id": 95,
+    "split": "test",
+    "sqa": "XE8",
+    "question": "In USDA_NASS_AGRICULTURE, which state_name belong to a sector_desc that has at least 10 records? Give me the first 10.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE sector_desc IN ( SELECT sector_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc HAVING COUNT(*) >= 10 ) ORDER BY state_name LIMIT 10;"
+  },
+  {
+    "question_id": 96,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In HTAN_1, which Biospecimen_Type have an average Section_Number_in_Sequence above the overall average? Rank them from high to low.",
+    "db": "HTAN_1",
+    "sql": "SELECT Biospecimen_Type, AVG(Section_Number_in_Sequence) AS avg_v FROM HTAN_1.HTAN_VERSIONED_BIOSPECIMEN_R2 GROUP BY Biospecimen_Type HAVING AVG(Section_Number_in_Sequence) > ( SELECT AVG(Section_Number_in_Sequence) FROM HTAN_1.HTAN_VERSIONED_BIOSPECIMEN_R2 ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 97,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In HTAN_2, which EM_contrast_type have an average SizeZ above the overall average? Rank them from high to low.",
+    "db": "HTAN_2",
+    "sql": "SELECT EM_contrast_type, AVG(SizeZ) AS avg_v FROM HTAN_2.HTAN_ELECTRON_MICROSCOPY_LEVEL1_METADATA_CURRENT GROUP BY EM_contrast_type HAVING AVG(SizeZ) > ( SELECT AVG(SizeZ) FROM HTAN_2.HTAN_ELECTRON_MICROSCOPY_LEVEL1_METADATA_CURRENT ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 98,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In MITELMAN, which Type have an average End above the overall average? Rank them from high to low.",
+    "db": "MITELMAN",
+    "sql": "SELECT Type, AVG(End) AS avg_v FROM MITELMAN.PROD_CYTOCONVERTED GROUP BY Type HAVING AVG(End) > ( SELECT AVG(End) FROM MITELMAN.PROD_CYTOCONVERTED ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 99,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In NOAA_PORTS, which mtfcc_feature_class_code have an average area_land_meters above the overall average? Rank them from high to low.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT mtfcc_feature_class_code, AVG(area_land_meters) AS avg_v FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA GROUP BY mtfcc_feature_class_code HAVING AVG(area_land_meters) > ( SELECT AVG(area_land_meters) FROM NOAA_PORTS.GEO_US_BOUNDARIES_CNECTA ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 100,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In OPEN_TARGETS_GENETICS_2, which trait_category have an average num_assoc_loci above the overall average? Rank them from high to low.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT trait_category, AVG(num_assoc_loci) AS avg_v FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_DISEASE_VARIANT_GENE GROUP BY trait_category HAVING AVG(num_assoc_loci) > ( SELECT AVG(num_assoc_loci) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_DISEASE_VARIANT_GENE ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 101,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In SEC_QUARTERLY_FINANCIALS, which sic have an average number_of_quarters above the overall average? Rank them from high to low.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, AVG(number_of_quarters) AS avg_v FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY GROUP BY sic HAVING AVG(number_of_quarters) > ( SELECT AVG(number_of_quarters) FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 102,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In TCGA, which sample_type have an average num_slides above the overall average? Rank them from high to low.",
+    "db": "TCGA",
+    "sql": "SELECT sample_type, AVG(num_slides) AS avg_v FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 GROUP BY sample_type HAVING AVG(num_slides) > ( SELECT AVG(num_slides) FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 103,
+    "split": "train",
+    "sqa": "XE9",
+    "question": "In USFS_FIA, which evaluation_type have an average subplot_acres above the overall average? Rank them from high to low.",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, AVG(subplot_acres) AS avg_v FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES GROUP BY evaluation_type HAVING AVG(subplot_acres) > ( SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 104,
+    "split": "test",
+    "sqa": "XE9",
+    "question": "In GENOMICS_CANNABIS, which TYPE have an average NUMALT above the overall average? Rank them from high to low.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT TYPE, AVG(NUMALT) AS avg_v FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY TYPE HAVING AVG(NUMALT) > ( SELECT AVG(NUMALT) FROM GENOMICS_CANNABIS.MNPR01_201703 ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 105,
+    "split": "test",
+    "sqa": "XE9",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, which feature_type have an average osm_version above the overall average? Rank them from high to low.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT feature_type, AVG(osm_version) AS avg_v FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_FEATURES GROUP BY feature_type HAVING AVG(osm_version) > ( SELECT AVG(osm_version) FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_FEATURES ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 106,
+    "split": "test",
+    "sqa": "XE9",
+    "question": "In OPEN_TARGETS_GENETICS_1, which type_id have an average num_assoc_loci above the overall average? Rank them from high to low.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT type_id, AVG(num_assoc_loci) AS avg_v FROM OPEN_TARGETS_GENETICS_1.GENETICS_DISEASE_VARIANT_GENE GROUP BY type_id HAVING AVG(num_assoc_loci) > ( SELECT AVG(num_assoc_loci) FROM OPEN_TARGETS_GENETICS_1.GENETICS_DISEASE_VARIANT_GENE ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 107,
+    "split": "test",
+    "sqa": "XE9",
+    "question": "In USA_NAMES, which gender have an average number above the overall average? Rank them from high to low.",
+    "db": "USA_NAMES",
+    "sql": "SELECT gender, AVG(number) AS avg_v FROM USA_NAMES.USA_1910_2013 GROUP BY gender HAVING AVG(number) > ( SELECT AVG(number) FROM USA_NAMES.USA_1910_2013 ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 108,
+    "split": "test",
+    "sqa": "XE9",
+    "question": "In _1000_GENOMES, which SVTYPE have an average AC above the overall average? Rank them from high to low.",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT SVTYPE, AVG(AC) AS avg_v FROM _1000_GENOMES.VARIANTS GROUP BY SVTYPE HAVING AVG(AC) > ( SELECT AVG(AC) FROM _1000_GENOMES.VARIANTS ) ORDER BY avg_v DESC LIMIT 10;"
+  },
+  {
+    "question_id": 109,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In HTAN_1, split the records into quartiles by Read_Length and report the count and value range of each quartile.",
+    "db": "HTAN_1",
+    "sql": "WITH q AS ( SELECT Filename AS e, Read_Length AS v, NTILE(4) OVER (ORDER BY Read_Length) AS quartile FROM HTAN_1.HTAN_VERSIONED_BULKRNASEQ_LEVEL1_METADATA_R2_V2 WHERE Read_Length IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 110,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In HTAN_2, split the records into quartiles by File_Size and report the count and value range of each quartile.",
+    "db": "HTAN_2",
+    "sql": "WITH q AS ( SELECT Library_Preparation_Kit_Name AS e, File_Size AS v, NTILE(4) OVER (ORDER BY File_Size) AS quartile FROM HTAN_2.HTAN_BULKWES_LEVEL1_METADATA_CURRENT WHERE File_Size IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 111,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In MITELMAN, split the records into quartiles by hg38_stop and report the count and value range of each quartile.",
+    "db": "MITELMAN",
+    "sql": "WITH q AS ( SELECT cytoband_name AS e, hg38_stop AS v, NTILE(4) OVER (ORDER BY hg38_stop) AS quartile FROM MITELMAN.PROD_CYTOBANDS_HG38 WHERE hg38_stop IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 112,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In NOAA_PORTS, split the records into quartiles by area_land_meters and report the count and value range of each quartile.",
+    "db": "NOAA_PORTS",
+    "sql": "WITH q AS ( SELECT name AS e, area_land_meters AS v, NTILE(4) OVER (ORDER BY area_land_meters) AS quartile FROM NOAA_PORTS.GEO_US_BOUNDARIES_CBSA WHERE area_land_meters IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 113,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In OPEN_TARGETS_GENETICS_2, split the records into quartiles by num_tests and report the count and value range of each quartile.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH q AS ( SELECT bio_feature AS e, num_tests AS v, NTILE(4) OVER (ORDER BY num_tests) AS quartile FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_MOLECULAR_TRAIT WHERE num_tests IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 114,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In SEC_QUARTERLY_FINANCIALS, split the records into quartiles by NUM_DIMENSIONS and report the count and value range of each quartile.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH q AS ( SELECT COMPANY_NAME AS e, NUM_DIMENSIONS AS v, NTILE(4) OVER (ORDER BY NUM_DIMENSIONS) AS quartile FROM SEC_QUARTERLY_FINANCIALS.NUMBERS WHERE NUM_DIMENSIONS IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 115,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In TCGA, split the records into quartiles by num_slides and report the count and value range of each quartile.",
+    "db": "TCGA",
+    "sql": "WITH q AS ( SELECT sample_type_name AS e, num_slides AS v, NTILE(4) OVER (ORDER BY num_slides) AS quartile FROM TCGA.TCGA_VERSIONED_BIOSPECIMEN_GDC_2017_02 WHERE num_slides IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 116,
+    "split": "train",
+    "sqa": "XE10",
+    "question": "In USFS_FIA, split the records into quartiles by subplot_acres and report the count and value range of each quartile.",
+    "db": "USFS_FIA",
+    "sql": "WITH q AS ( SELECT state_name AS e, subplot_acres AS v, NTILE(4) OVER (ORDER BY subplot_acres) AS quartile FROM USFS_FIA.ESTIMATED_TIMBERLAND_ACRES WHERE subplot_acres IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 117,
+    "split": "test",
+    "sqa": "XE10",
+    "question": "In GENOMICS_CANNABIS, split the records into quartiles by InsertSize and report the count and value range of each quartile.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH q AS ( SELECT Sample_Name AS e, InsertSize AS v, NTILE(4) OVER (ORDER BY InsertSize) AS quartile FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO WHERE InsertSize IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 118,
+    "split": "test",
+    "sqa": "XE10",
+    "question": "In GEO_OPENSTREETMAP_BOUNDARIES, split the records into quartiles by area_land_meters and report the count and value range of each quartile.",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "WITH q AS ( SELECT name AS e, area_land_meters AS v, NTILE(4) OVER (ORDER BY area_land_meters) AS quartile FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_CBSA WHERE area_land_meters IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  },
+  {
+    "question_id": 119,
+    "split": "test",
+    "sqa": "XE10",
+    "question": "In OPEN_TARGETS_GENETICS_1, split the records into quartiles by num_assoc_loci and report the count and value range of each quartile.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH q AS ( SELECT pub_title AS e, num_assoc_loci AS v, NTILE(4) OVER (ORDER BY num_assoc_loci) AS quartile FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE num_assoc_loci IS NOT NULL ) SELECT quartile, COUNT(*) AS cnt, MIN(v) AS lo, MAX(v) AS hi FROM q GROUP BY quartile ORDER BY quartile;"
+  }
+]

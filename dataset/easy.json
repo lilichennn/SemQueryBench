@@ -1,0 +1,2330 @@
+[
+  {
+    "question_id": 71,
+    "split": "train",
+    "sqa": "S1",
+    "question": "In HTAN_1, for the combined sample of small cell lung cancer, which five cell types have the highest number of genes?",
+    "db": "HTAN_1",
+    "sql": "SELECT cell_type FROM HTAN_1.HTAN_VERSIONED_SCRNASEQ_MSK_SCLC_COMBINED_SAMPLES_R3 ORDER BY ngenes DESC LIMIT 5;"
+  },
+  {
+    "question_id": 166,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which cell types have been detected across multiple distinct experimental stages in SCRNASEQ_CHOP_SEURAT_POOL_LOGNORM_GINI_FIVEHD_DOWNSAMPLE_CURRENT from HTAN_2?",
+    "db": "HTAN_2",
+    "sql": "SELECT Cell_Type FROM HTAN_2.SCRNASEQ_CHOP_SEURAT_POOL_LOGNORM_GINI_FIVEHD_DOWNSAMPLE_CURRENT GROUP BY Cell_Type HAVING COUNT(DISTINCT Phase) > 1;"
+  },
+  {
+    "question_id": 167,
+    "split": "train",
+    "sqa": "S8",
+    "question": "In HTAN_2, for each exposure factor, i.e., Component, which participant has the record time farthest from the baseline date (the longest follow-up time)?",
+    "db": "HTAN_2",
+    "sql": "SELECT Component, HTAN_Participant_ID FROM ( SELECT Component, HTAN_Participant_ID, Start_Days_from_Index, ROW_NUMBER() OVER (PARTITION BY Component ORDER BY Start_Days_from_Index DESC) AS rn FROM HTAN_2.HTAN_CLINICAL_TIER1_EXPOSURE_CURRENT ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 163,
+    "split": "train",
+    "sqa": "S1",
+    "question": "According to the NOAA International Port Index, which ports worldwidely have the largest tidal ranges? Please list the top five.",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX ORDER BY tide_range DESC LIMIT 5;"
+  },
+  {
+    "question_id": 164,
+    "split": "train",
+    "sqa": "S4",
+    "question": "According to the NOAA International Port Index, which ports worldwidely are renowned for enormous tidal ranges (exceeding the average) that are suitable for tidal power development?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT port_name FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX WHERE tide_range > (SELECT AVG(tide_range) FROM NOAA_PORTS.GEO_INTERNATIONAL_PORTS_WORLD_PORT_INDEX);"
+  },
+  {
+    "question_id": 165,
+    "split": "train",
+    "sqa": "S18",
+    "question": "In the U.S. railway geographic data, classified by MTFCC level, what are the top three railway feature types with the largest number of records?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT mtfcc_feature_class_code AS Category, COUNT(*) AS record_count FROM NOAA_PORTS.GEO_US_BOUNDARIES_RAILWAYS GROUP BY mtfcc_feature_class_code ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 500,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which hurricanes have the highest recorded wind speeds?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.usa_wind DESC LIMIT 5"
+  },
+  {
+    "question_id": 499,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which hurricanes were the farthest from land?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.dist2land DESC LIMIT 5"
+  },
+  {
+    "question_id": 498,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which hurricanes had the highest landfall distances?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t ORDER BY t.landfall DESC LIMIT 5"
+  },
+  {
+    "question_id": 497,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which hurricanes had wind speeds above the average?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t WHERE t.usa_wind > (SELECT AVG(usa_wind) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
+  },
+  {
+    "question_id": 472,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which hurricanes have a pressure higher than the average pressure?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
+  },
+  {
+    "question_id": 471,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which hurricanes are farther from land than the average distance?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT h.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES)"
+  },
+  {
+    "question_id": 470,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which hurricanes in each basin have a pressure higher than the average pressure for that basin?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.usa_pressure > (SELECT AVG(usa_pressure) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
+  },
+  {
+    "question_id": 469,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which hurricanes in each basin are farther from land than the average distance for that basin?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT h1.name FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h1 WHERE h1.dist2land > (SELECT AVG(dist2land) FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h2 WHERE h2.basin = h1.basin)"
+  },
+  {
+    "question_id": 462,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which hurricanes are the most recent in each basin?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t1.basin, t1.name FROM ( SELECT t1.basin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.basin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 461,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which hurricanes are the most recent in each subbasin?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t1.subbasin, t1.name FROM ( SELECT t1.subbasin, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.subbasin ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 460,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which hurricanes are the most recent in each season?",
+    "db": "NOAA_PORTS",
+    "sql": "SELECT t1.season, t1.name FROM ( SELECT t1.season, t1.name, t1.iso_time, ROW_NUMBER() OVER (PARTITION BY t1.season ORDER BY t1.iso_time DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 459,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which hurricanes occurred in consecutive years within the same basin?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT t1.basin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.basin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.basin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.basin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 458,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which hurricanes occurred in consecutive years within the same subbasin?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT t1.subbasin, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.subbasin, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.subbasin, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.subbasin, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 457,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which hurricanes occurred in consecutive years within the same season?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT t1.season, t1.name, t1.iso_time FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t1 WHERE t1.iso_time IS NOT NULL ), with_prev AS ( SELECT t1.season, t1.name, t1.iso_time, LAG(t1.iso_time) OVER (PARTITION BY t1.season, t1.name ORDER BY t1.iso_time) AS prev_time FROM yearly_records ) SELECT DISTINCT t1.season, t1.name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM t1.iso_time) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 444,
+    "split": "train",
+    "sqa": "S11",
+    "question": "Which hurricanes show a consistent increase in pressure over three consecutive time points?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.bom_pressure AS Measure, LAG(h.bom_pressure, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.bom_pressure, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.bom_pressure IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
+  },
+  {
+    "question_id": 443,
+    "split": "train",
+    "sqa": "S11",
+    "question": "Which hurricanes show a consistent increase in wind speed over three consecutive time points?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.usa_wind AS Measure, LAG(h.usa_wind, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.usa_wind, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.usa_wind IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
+  },
+  {
+    "question_id": 442,
+    "split": "train",
+    "sqa": "S11",
+    "question": "Which hurricanes show a consistent increase in distance to land over three consecutive time points?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH base AS ( SELECT h.sid AS Entity, h.iso_time AS Time, h.dist2land AS Measure, LAG(h.dist2land, 1) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev1, LAG(h.dist2land, 2) OVER (PARTITION BY h.sid ORDER BY h.iso_time) AS prev2 FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.iso_time IS NOT NULL AND h.dist2land IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2"
+  },
+  {
+    "question_id": 441,
+    "split": "train",
+    "sqa": "S12",
+    "question": "Which hurricanes have the highest pressure in each basin, falling into the top quintile?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH ranked AS ( SELECT h.basin AS Category, h.sid AS Entity, h.bom_pressure AS Measure, NTILE(5) OVER (PARTITION BY h.basin ORDER BY h.bom_pressure DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.bom_pressure IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
+  },
+  {
+    "question_id": 440,
+    "split": "train",
+    "sqa": "S12",
+    "question": "Which hurricanes have the highest wind speed in each subbasin, falling into the top quintile?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH ranked AS ( SELECT h.subbasin AS Category, h.sid AS Entity, h.usa_wind AS Measure, NTILE(5) OVER (PARTITION BY h.subbasin ORDER BY h.usa_wind DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.usa_wind IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
+  },
+  {
+    "question_id": 439,
+    "split": "train",
+    "sqa": "S12",
+    "question": "Which hurricanes have the greatest distance to land in each season, falling into the top quintile?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH ranked AS ( SELECT h.season AS Category, h.sid AS Entity, h.dist2land AS Measure, NTILE(5) OVER (PARTITION BY h.season ORDER BY h.dist2land DESC) AS quintile FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h WHERE h.dist2land IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1"
+  },
+  {
+    "question_id": 438,
+    "split": "train",
+    "sqa": "S13",
+    "question": "Which hurricanes have a pressure above the average for their basin, and what percentage of the total pressure do they represent, showing the top 5 in each basin?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH category_stats AS ( SELECT h.basin AS Category, AVG(h.bom_pressure) AS avg_measure, SUM(h.bom_pressure) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.basin ), ranked AS ( SELECT t.basin AS Category, t.sid AS Entity, t.bom_pressure AS Measure, cs.avg_measure, cs.total_measure, t.bom_pressure / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.basin ORDER BY t.bom_pressure / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.basin = cs.Category WHERE t.bom_pressure > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
+  },
+  {
+    "question_id": 437,
+    "split": "train",
+    "sqa": "S13",
+    "question": "Which hurricanes have a wind speed above the average for their subbasin, and what percentage of the total wind speed do they represent, showing the top 5 in each subbasin?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH category_stats AS ( SELECT h.subbasin AS Category, AVG(h.usa_wind) AS avg_measure, SUM(h.usa_wind) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.subbasin ), ranked AS ( SELECT t.subbasin AS Category, t.sid AS Entity, t.usa_wind AS Measure, cs.avg_measure, cs.total_measure, t.usa_wind / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.subbasin ORDER BY t.usa_wind / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.subbasin = cs.Category WHERE t.usa_wind > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
+  },
+  {
+    "question_id": 436,
+    "split": "train",
+    "sqa": "S13",
+    "question": "Which hurricanes have a distance to land above the average for their season, and what percentage of the total distance do they represent, showing the top 5 in each season?",
+    "db": "NOAA_PORTS",
+    "sql": "WITH category_stats AS ( SELECT h.season AS Category, AVG(h.dist2land) AS avg_measure, SUM(h.dist2land) AS total_measure FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES h GROUP BY h.season ), ranked AS ( SELECT t.season AS Category, t.sid AS Entity, t.dist2land AS Measure, cs.avg_measure, cs.total_measure, t.dist2land / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.season ORDER BY t.dist2land / cs.total_measure DESC) AS rn FROM NOAA_PORTS.NOAA_HURRICANES_HURRICANES t JOIN category_stats cs ON t.season = cs.Category WHERE t.dist2land > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5"
+  },
+  {
+    "question_id": 127,
+    "split": "train",
+    "sqa": "S2",
+    "question": "In Open_Targets_Genetics_2, among the gene-variant diseases, which genetic research projects have simultaneously focused on multiple distinct categories of disease traits?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY study_id HAVING COUNT(DISTINCT trait_category) > 1;"
+  },
+  {
+    "question_id": 128,
+    "split": "train",
+    "sqa": "S3",
+    "question": "In the gene-variant diseases in the Open_Targets_Genetics_2 data, for each disease trait category, which study has the highest posterior probability?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT trait_category, study_id FROM ( SELECT trait_category, study_id, posterior_prob, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY posterior_prob DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 129,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Among the gene-variant-disease associations in Open_Targets_Genetics_2, which ones have genetic research evidence strength far exceeding the norm (above average) that are worth prioritizing for subsequent validation?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE);"
+  },
+  {
+    "question_id": 130,
+    "split": "train",
+    "sqa": "S5",
+    "question": "In OPEN_TARGETS_GENETICS_2, for gene-variant diseases, which disease-variant association studies lack corresponding molecular trait GWAS analysis results, potentially missing mechanism-level evidence?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT DISTINCT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE vd WHERE NOT EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS g WHERE g.study_id = vd.study_id );"
+  },
+  {
+    "question_id": 131,
+    "split": "train",
+    "sqa": "S6",
+    "question": "In the gene variant diseases in OPEN_TARGETS_GENETICS_2, which disease-variant association studies also have GWAS analysis results for molecular traits?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE study_id IN (SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_SA_GWAS);"
+  },
+  {
+    "question_id": 132,
+    "split": "train",
+    "sqa": "S7",
+    "question": "For the gene-variant-disease associations in OPEN_TARGETS_GENETICS_2, for each disease category, which genetic studies have posterior probabilities far exceeding the average level of similar studies, suggesting more reliable association evidence?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT study_id FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t1 WHERE posterior_prob > (SELECT AVG(posterior_prob) FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t2 WHERE t2.trait_category = t1.trait_category);"
+  },
+  {
+    "question_id": 133,
+    "split": "train",
+    "sqa": "S9",
+    "question": "For gene-variant diseases in OPEN_TARGETS_GENETICS_2, within each disease category, which studies have an initial sample size within the common range, neither too large nor too small (between 30% and 70%), possibly representing a typical cohort size? The results need to display disease category, study ID, initial sample size, trait report, and p-value.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), cat_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), cat_percentiles AS ( SELECT trait_category, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM cat_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_percentiles cp ON t.trait_category = cp.trait_category WHERE t.n_initial BETWEEN cp.p30 AND cp.p70;"
+  },
+  {
+    "question_id": 134,
+    "split": "train",
+    "sqa": "S12",
+    "question": "Among the gene-variant diseases in OPEN_TARGETS_GENETICS_2, which studies have the largest initial sample sizes within each disease category, qualifying as large-scale cohort studies in that disease area (top 20%)?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH ranked AS ( SELECT trait_category AS Category, study_id AS Entity, n_initial AS Measure, NTILE(5) OVER (PARTITION BY trait_category ORDER BY n_initial DESC) AS quintile FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE WHERE n_initial IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 135,
+    "split": "train",
+    "sqa": "S13",
+    "question": "For gene-variant diseases in OPEN_TARGETS_GENETICS_2, within each disease category, which studies have initial sample sizes that not only exceed the average of similar studies but also dominate the total sample size of that disease research? Please list the top five studies with the greatest contribution for each disease category, and the results should display the disease category, study ID, and the corresponding proportion.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH category_stats AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_measure, SUM(n_initial) AS total_measure FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, cs.avg_measure, cs.total_measure, t.n_initial / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial / cs.total_measure DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_stats cs ON t.trait_category = cs.Category WHERE t.n_initial > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 136,
+    "split": "train",
+    "sqa": "S14",
+    "question": "For gene-variant-disease associations in OPEN_TARGETS_GENETICS_2, for each disease, which studies have initial sample sizes significantly larger than the median among similar studies (in the top 50%), and thus may possess greater statistical power to detect rare variants?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH sorted_values AS ( SELECT trait_category, n_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ORDER BY trait_category, n_initial ), category_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_initial) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), category_median AS ( SELECT trait_category, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_initial FROM category_arrays ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_median m ON t.trait_category = m.trait_category WHERE t.n_initial > m.median_initial;"
+  },
+  {
+    "question_id": 137,
+    "split": "train",
+    "sqa": "S15",
+    "question": "For the gene-variant-disease data in OPEN_TARGETS_GENETICS_2, which studies have the largest initial sample size within each disease category? How much larger are they compared to the typical sample size of similar studies, and are they more likely to yield reliable genetic associations? The results should display disease category, study ID, initial sample size, average initial sample size, ratio of initial sample size exceeding the average, reported trait, and p-value.",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH category_avg AS ( SELECT trait_category AS Category, AVG(n_initial) AS avg_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.study_id AS Entity, t.n_initial AS Measure, ca.avg_initial, (t.n_initial - ca.avg_initial) / ca.avg_initial * 100 AS pct_above_avg, t.trait_reported, t.pval, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_initial DESC) AS rn FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN category_avg ca ON t.trait_category = ca.Category WHERE t.n_initial IS NOT NULL ) SELECT Category, Entity, Measure, avg_initial, pct_above_avg, trait_reported, pval FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 138,
+    "split": "train",
+    "sqa": "S17",
+    "question": "Which are the three diseases with the largest total initial sample sizes in OPEN_TARGETS_GENETICS_2?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT trait_category AS Category, SUM(n_initial) AS total_initial FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE GROUP BY trait_category ORDER BY total_initial DESC LIMIT 3;"
+  },
+  {
+    "question_id": 139,
+    "split": "train",
+    "sqa": "S18",
+    "question": "In the gene information of OPEN_TARGETS_GENETICS_2, what are the top three gene biotypes with the largest counts?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "SELECT biotype AS Category, COUNT(*) AS record_count FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_GENES GROUP BY biotype ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 140,
+    "split": "train",
+    "sqa": "S19",
+    "question": "In OPEN_TARGETS_GENETICS_2, for each disease category of gene-variant diseases, which studies rank in the top quartile of that category by initial sample size that are large-scale cohort studies?",
+    "db": "OPEN_TARGETS_GENETICS_2",
+    "sql": "WITH cat_q3 AS ( SELECT trait_category AS Category, MIN(n_initial) AS q3 FROM ( SELECT trait_category, n_initial, PERCENT_RANK() OVER (PARTITION BY trait_category ORDER BY n_initial) AS pr FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE ) t WHERE pr >= 0.75 GROUP BY trait_category ) SELECT t.trait_category, t.study_id, t.n_initial, t.trait_reported, t.pval FROM OPEN_TARGETS_GENETICS_2.OPEN_TARGETS_GENETICS_VARIANT_DISEASE t JOIN cat_q3 q ON t.trait_category = q.Category WHERE t.n_initial > q.q3;"
+  },
+  {
+    "question_id": 108,
+    "split": "train",
+    "sqa": "S1",
+    "question": "In the submitted quarterly reports filed by the U.S. Securities and Exchange Commission, which five companies have the highest public float?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ORDER BY public_float_usd DESC LIMIT 5;"
+  },
+  {
+    "question_id": 109,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which companies have filed reports under multiple different SIC industry classifications in the quarterly reports submitted to the SEC?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY company_name HAVING COUNT(DISTINCT sic) > 1;"
+  },
+  {
+    "question_id": 110,
+    "split": "train",
+    "sqa": "S3",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which company has the highest public float for each SIC industry?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, company_name FROM ( SELECT sic, company_name, public_float_usd, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 111,
+    "split": "train",
+    "sqa": "S4",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which companies have a public float that makes them industry giants, attracting significant investor attention (i.e., exceeding the average)?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE public_float_usd > (SELECT AVG(public_float_usd) FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION);"
+  },
+  {
+    "question_id": 112,
+    "split": "train",
+    "sqa": "S5",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which companies' reports have never been referenced as a parent report by other filings, implying they may not be the core of consolidated statements or may not be relied upon by other filings?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT DISTINCT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s WHERE NOT EXISTS ( SELECT 1 FROM SEC_QUARTERLY_FINANCIALS.RENDERING r WHERE r.parentreport = s.submission_number );"
+  },
+  {
+    "question_id": 113,
+    "split": "train",
+    "sqa": "S6",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which companies' reports are referenced as parent reports by other filings, possibly serving as the core of consolidated financial statements?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE submission_number IN (SELECT parentreport FROM SEC_QUARTERLY_FINANCIALS.RENDERING);"
+  },
+  {
+    "question_id": 114,
+    "split": "train",
+    "sqa": "S8",
+    "question": "Which company in each SIC industry most recently filed a quarterly report submitted to the U.S. Securities and Exchange Commission?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, company_name FROM ( SELECT sic, company_name, date_filed, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY date_filed DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 115,
+    "split": "train",
+    "sqa": "S9",
+    "question": "In the quarterly financial reports submitted to the U.S. Securities and Exchange Commission, which companies within each SIC industry have a public float that falls within the common range for that industry (i.e., 30% to 70%), representing mid-sized enterprises within the industry rather than giants or micro-enterprises?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH sorted_values AS ( SELECT sic, public_float_usd FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ORDER BY sic, public_float_usd ), sic_arrays AS ( SELECT sic, JSON_ARRAYAGG(public_float_usd) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sic ), sic_percentiles AS ( SELECT sic, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM sic_arrays ) SELECT t.sic, t.company_name, t.public_float_usd, t.submission_number, t.date_filed FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN sic_percentiles sp ON t.sic = sp.sic WHERE t.public_float_usd BETWEEN sp.p30 AND sp.p70;"
+  },
+  {
+    "question_id": 116,
+    "split": "train",
+    "sqa": "S10",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, within each SIC industry, which companies have submitted reports in consecutive years, demonstrating ongoing information disclosure?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT sic AS Category, company_name AS Entity, EXTRACT(YEAR FROM date_filed) AS Time FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE date_filed IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 117,
+    "split": "train",
+    "sqa": "S11",
+    "question": "Which companies have shown a continuous increase in public float in three consecutive SEC quarterly filings, indicating growing market confidence?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH base AS ( SELECT company_name AS Entity, str_to_date(date_filed, '%Y%m%d' ) AS Time, public_float_usd AS Measure, LAG(public_float_usd, 1) OVER (PARTITION BY company_name ORDER BY str_to_date(date_filed, '%Y%m%d' )) AS prev1, LAG(public_float_usd, 2) OVER (PARTITION BY company_name ORDER BY str_to_date(date_filed, '%Y%m%d' )) AS prev2 FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE date_filed IS NOT NULL AND public_float_usd IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 118,
+    "split": "train",
+    "sqa": "S12",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, for each SIC industry, which companies have the largest public float and rank as industry giants (within the top 20%)?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH ranked AS ( SELECT sic AS Category, company_name AS Entity, public_float_usd AS Measure, NTILE(5) OVER (PARTITION BY sic ORDER BY public_float_usd DESC) AS quintile FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE public_float_usd IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 119,
+    "split": "train",
+    "sqa": "S13",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, for each SIC industry, which companies have public floats that not only exceed the industry average but also constitute a major portion of the industry's total public float? Please list the top five companies contributing the most in each industry.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH category_stats AS ( SELECT sic AS Category, AVG(public_float_usd) AS avg_measure, SUM(public_float_usd) AS total_measure FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic ), ranked AS ( SELECT t.sic AS Category, t.company_name AS Entity, t.public_float_usd AS Measure, cs.avg_measure, cs.total_measure, t.public_float_usd / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.sic ORDER BY t.public_float_usd / cs.total_measure DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN category_stats cs ON t.sic = cs.Category WHERE t.public_float_usd > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 120,
+    "split": "train",
+    "sqa": "S14",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which companies have a public float far exceeding the typical level in their industry (by more than 50%), and whose reports are also cited as a core basis in other filings, making them potential industry benchmarks?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH sorted_values AS ( SELECT sic, public_float_usd FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ORDER BY sic, public_float_usd ), category_arrays AS ( SELECT sic, JSON_ARRAYAGG(public_float_usd) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sic ), category_median AS ( SELECT sic, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_float FROM category_arrays ) SELECT t.sic, t.company_name, t.public_float_usd, t.submission_number, t.date_filed FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN category_median m ON t.sic = m.sic WHERE t.public_float_usd > m.median_float AND EXISTS ( SELECT 1 FROM SEC_QUARTERLY_FINANCIALS.RENDERING r WHERE r.parentreport = t.submission_number );"
+  },
+  {
+    "question_id": 121,
+    "split": "train",
+    "sqa": "S15",
+    "question": "In the submitted quarterly financial reports filed with the U.S. Securities and Exchange Commission, which three companies have the largest public float within each SIC industry? How much higher are their market capitalizations compared to the general level of the industry, and can they be considered absolute leaders within their industries? Please display the SIC industry, company name, industry public float, industry average public float, the amount by which the public float exceeds the industry average, submission number, and filing date.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH sic_avg AS ( SELECT sic AS Category, AVG(public_float_usd) AS avg_float FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic ), ranked AS ( SELECT t.sic AS Category, t.company_name AS Entity, t.public_float_usd AS Measure, sa.avg_float, (t.public_float_usd - sa.avg_float) / sa.avg_float * 100 AS pct_above_avg, t.submission_number, t.date_filed, ROW_NUMBER() OVER (PARTITION BY t.sic ORDER BY t.public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN sic_avg sa ON t.sic = sa.Category WHERE t.public_float_usd IS NOT NULL ) SELECT Category, Entity, Measure, avg_float, pct_above_avg, submission_number, date_filed FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 122,
+    "split": "train",
+    "sqa": "S16",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, for each SIC industry, which companies experienced explosive growth in public float in consecutive reports, becoming the focus of market attention? Please list the top five companies with the most rapid growth in each industry. The results should display the SIC industry, company name, and growth rate.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH lagged AS ( SELECT sic AS Category, company_name AS Entity, date_filed AS Time, public_float_usd AS Measure, LAG(public_float_usd) OVER (PARTITION BY sic, company_name ORDER BY date_filed) AS prev_measure FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION WHERE public_float_usd IS NOT NULL AND date_filed IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 123,
+    "split": "train",
+    "sqa": "S17",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, which three SIC industries have the largest total public float?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic AS Category, SUM(public_float_usd) AS total_float FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic ORDER BY total_float DESC LIMIT 3;"
+  },
+  {
+    "question_id": 124,
+    "split": "train",
+    "sqa": "S18",
+    "question": "In the quarterly reports submitted to the U.S. Securities and Exchange Commission, what are the top three most frequently submitted form types?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT form AS Category, COUNT(*) AS record_count FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY form ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 125,
+    "split": "train",
+    "sqa": "S19",
+    "question": "In the quarterly reports submitted to the U.S. Securities and Exchange Commission, within each SIC industry, which companies have public float that ranks among the top in the industry, with a market value significantly higher than most companies in the industry (exceeding 75% of companies)? Display SIC industry, company name, public float, and the number of submissions.",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH sic_q3 AS ( SELECT sic AS Category, MIN(public_float_usd) AS q3 FROM ( SELECT sic, public_float_usd, PERCENT_RANK() OVER (PARTITION BY sic ORDER BY public_float_usd) AS pr FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION ) t WHERE pr >= 0.75 GROUP BY sic ) SELECT t.sic, t.company_name, t.public_float_usd, t.submission_number FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN sic_q3 q ON t.sic = q.Category WHERE t.public_float_usd > q.q3;"
+  },
+  {
+    "question_id": 126,
+    "split": "train",
+    "sqa": "S20",
+    "question": "In the submitted quarterly reports filed with the U.S. Securities and Exchange Commission, within each SIC industry, which companies have maintained a public float above the industry's average level for two consecutive years, demonstrating sustained market recognition?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH yearly_avg AS ( SELECT sic AS Category, EXTRACT(YEAR FROM date_filed) AS Year, AVG(public_float_usd) AS avg_float FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION GROUP BY sic, EXTRACT(YEAR FROM date_filed) ), above_avg AS ( SELECT t.sic AS Category, t.company_name AS Entity, EXTRACT(YEAR FROM t.date_filed) AS Year, t.public_float_usd AS Measure, CASE WHEN t.public_float_usd > ya.avg_float THEN 1 ELSE 0 END AS above FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION t JOIN yearly_avg ya ON t.sic = ya.Category AND EXTRACT(YEAR FROM t.date_filed) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 496,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which companies have the highest recorded values in this dataset?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n ORDER BY n.VALUE DESC LIMIT 5"
+  },
+  {
+    "question_id": 495,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which companies have the highest recorded values in the quick summary data?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs ORDER BY qs.value DESC LIMIT 5"
+  },
+  {
+    "question_id": 494,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which companies have the highest public float in USD?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s ORDER BY s.public_float_usd DESC LIMIT 5"
+  },
+  {
+    "question_id": 493,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which measure tags are associated with more than one type of financial statement?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT p.measure_tag FROM SEC_QUARTERLY_FINANCIALS.PRESENTATION p GROUP BY p.measure_tag HAVING COUNT(DISTINCT p.statement) > 1"
+  },
+  {
+    "question_id": 492,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which companies have more than one SIC code in the quick summary data?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT qs.company_name FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs GROUP BY qs.company_name HAVING COUNT(DISTINCT qs.sic) > 1"
+  },
+  {
+    "question_id": 491,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which companies have submitted more than one type of form?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT s.company_name FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s GROUP BY s.company_name HAVING COUNT(DISTINCT s.form) > 1"
+  },
+  {
+    "question_id": 490,
+    "split": "train",
+    "sqa": "S3",
+    "question": "For each measure tag, which company has the highest recorded value?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT t.MEASURE_TAG, t.COMPANY_NAME FROM (SELECT n.MEASURE_TAG, n.COMPANY_NAME, n.VALUE, ROW_NUMBER() OVER (PARTITION BY n.MEASURE_TAG ORDER BY n.VALUE DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n) t WHERE t.rn = 1"
+  },
+  {
+    "question_id": 489,
+    "split": "train",
+    "sqa": "S3",
+    "question": "For each measure tag, which company has the highest recorded value in the quick summary data?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT t.measure_tag, t.company_name FROM (SELECT qs.measure_tag, qs.company_name, qs.value, ROW_NUMBER() OVER (PARTITION BY qs.measure_tag ORDER BY qs.value DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY qs) t WHERE t.rn = 1"
+  },
+  {
+    "question_id": 488,
+    "split": "train",
+    "sqa": "S3",
+    "question": "For each SIC code, which company has the highest public float in USD?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT t.sic, t.company_name FROM (SELECT s.sic, s.company_name, s.public_float_usd, ROW_NUMBER() OVER (PARTITION BY s.sic ORDER BY s.public_float_usd DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.SUBMISSION s) t WHERE t.rn = 1"
+  },
+  {
+    "question_id": 487,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which companies have a recorded value higher than the average value in this dataset?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(n.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)"
+  },
+  {
+    "question_id": 468,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which companies have a value higher than the average value in the dataset?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT n.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n WHERE n.VALUE > (SELECT AVG(VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS)"
+  },
+  {
+    "question_id": 467,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which companies have a value higher than the average value for their respective measure tags?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT n1.COMPANY_NAME FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n1 WHERE n1.VALUE > (SELECT AVG(n2.VALUE) FROM SEC_QUARTERLY_FINANCIALS.NUMBERS n2 WHERE n2.MEASURE_TAG = n1.MEASURE_TAG)"
+  },
+  {
+    "question_id": 456,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which companies have the most recent period end date for each SIC code?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT sic, company_name FROM ( SELECT sic, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY sic ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 455,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which companies have the most recent period end date for each form type?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT form, company_name FROM ( SELECT form, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY form ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 454,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which companies have the most recent period end date for each measure tag?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "SELECT measure_tag, company_name FROM ( SELECT measure_tag, company_name, period_end_date, ROW_NUMBER() OVER (PARTITION BY measure_tag ORDER BY period_end_date DESC) AS rn FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 453,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which companies have consecutive yearly records for each SIC code?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT sic, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT sic, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY sic, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT sic, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 452,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which companies have consecutive yearly records for each form type?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT form, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT form, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY form, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT form, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 451,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which companies have consecutive yearly records for each measure tag?",
+    "db": "SEC_QUARTERLY_FINANCIALS",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT measure_tag, company_name, period_end_date FROM SEC_QUARTERLY_FINANCIALS.QUICK_SUMMARY WHERE period_end_date IS NOT NULL ), with_prev AS ( SELECT measure_tag, company_name, period_end_date, LAG(period_end_date) OVER (PARTITION BY measure_tag, company_name ORDER BY period_end_date) AS prev_time FROM yearly_records ) SELECT DISTINCT measure_tag, company_name FROM with_prev WHERE prev_time IS NOT NULL AND EXTRACT(YEAR FROM period_end_date) - EXTRACT(YEAR FROM prev_time) = 1"
+  },
+  {
+    "question_id": 204,
+    "split": "train",
+    "sqa": "S2",
+    "question": "In the TCGA radiology imaging data, which patients underwent multiple different imaging modalities?",
+    "db": "TCGA",
+    "sql": "SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY PatientID HAVING COUNT(DISTINCT Modality) > 1;"
+  },
+  {
+    "question_id": 205,
+    "split": "train",
+    "sqa": "S3",
+    "question": "In the TCGA radiology imaging data from June 2018, for each imaging modality, which patient has the largest slice thickness?",
+    "db": "TCGA",
+    "sql": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, SliceThickness, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY SliceThickness DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 206,
+    "split": "train",
+    "sqa": "S7",
+    "question": "In the TCGA radiological imaging data from June 2018, for each imaging modality, which patients' slice thicknesses exceed the typical scanning parameters of that modality, possibly representing thick-slice scans used to observe specific structures?",
+    "db": "TCGA",
+    "sql": "SELECT PatientID FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t1 WHERE SliceThickness > (SELECT AVG(SliceThickness) FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t2 WHERE t2.Modality = t1.Modality);"
+  },
+  {
+    "question_id": 207,
+    "split": "train",
+    "sqa": "S8",
+    "question": "In the TCGA radiology images data of June 2018, which patient corresponds to the most recently acquired image for each imaging modality?",
+    "db": "TCGA",
+    "sql": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, AcquisitionDate, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY AcquisitionDate DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 208,
+    "split": "train",
+    "sqa": "S9",
+    "question": "In the TCGA radiological imaging data from June 2018, for each imaging modality, which patients have slice thickness values within the common range for that modality, representing the parameter settings of routine clinical scans?",
+    "db": "TCGA",
+    "sql": "WITH sorted_values AS ( SELECT Modality, SliceThickness FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ORDER BY Modality, SliceThickness ), modality_arrays AS ( SELECT Modality, JSON_ARRAYAGG(SliceThickness) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Modality ), modality_percentiles AS ( SELECT Modality, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM modality_arrays ) SELECT t.Modality, t.PatientID, t.SliceThickness, t.StudyDate, t.SeriesDescription FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_percentiles mp ON t.Modality = mp.Modality WHERE t.SliceThickness BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 209,
+    "split": "train",
+    "sqa": "S10",
+    "question": "In the TCGA radiology imaging data from June 2018, under each imaging modality, which patients had imaging studies in adjacent years and might be important cases for long-term follow-up?",
+    "db": "TCGA",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT Modality AS Category, PatientID AS Entity, EXTRACT(YEAR FROM AcquisitionDate) AS Time FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 210,
+    "split": "train",
+    "sqa": "S11",
+    "question": "In the TCGA radiology imaging data from June 2018, which patients had scan slice thickness that progressively increased across three consecutive examinations, possibly corresponding to different clinical observation needs?",
+    "db": "TCGA",
+    "sql": "WITH base AS ( SELECT PatientID AS Entity, CAST(AcquisitionDate AS DATETIME) AS Time, SliceThickness AS Measure, LAG(SliceThickness, 1) OVER (PARTITION BY PatientID ORDER BY CAST(AcquisitionDate AS DATETIME)) AS prev1, LAG(SliceThickness, 2) OVER (PARTITION BY PatientID ORDER BY CAST(AcquisitionDate AS DATETIME)) AS prev2 FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL AND SliceThickness IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 211,
+    "split": "train",
+    "sqa": "S13",
+    "question": "In the TCGA radiological imaging data from June 2018, for each imaging modality, which patients have a slice thickness that not only exceeds the average value for that modality but also constitutes a significant portion of the total slice thickness of that modality? Please list the top five patients with the most prominent contribution for each modality.",
+    "db": "TCGA",
+    "sql": "WITH category_stats AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg_measure, SUM(SliceThickness) AS total_measure FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality ), ranked AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, t.SliceThickness AS Measure, cs.avg_measure, cs.total_measure, t.SliceThickness / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.Modality ORDER BY t.SliceThickness / cs.total_measure DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN category_stats cs ON t.Modality = cs.Category WHERE t.SliceThickness > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 212,
+    "split": "train",
+    "sqa": "S15",
+    "question": "In the TCGA radiology imaging data from June 2018, for each imaging modality, which patients correspond to the three examinations with the largest slice thickness? How much thicker are their slice thicknesses compared to the average slice thickness of the same type of examination, and were these special scans adopted to observe specific anatomical structures?",
+    "db": "TCGA",
+    "sql": "WITH modality_avg AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg_thickness FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality ), ranked AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, t.SliceThickness AS Measure, ma.avg_thickness, (t.SliceThickness - ma.avg_thickness) / ma.avg_thickness * 100 AS pct_above_avg, t.StudyDate, t.SeriesDescription, ROW_NUMBER() OVER (PARTITION BY t.Modality ORDER BY t.SliceThickness DESC) AS rn FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_avg ma ON t.Modality = ma.Category WHERE t.SliceThickness IS NOT NULL ) SELECT Category, Entity, Measure, avg_thickness, pct_above_avg, StudyDate, SeriesDescription FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 213,
+    "split": "train",
+    "sqa": "S16",
+    "question": "In the TCGA radiology imaging data from June 2018, for each imaging modality, which patients showed a significant increase in imaging slice thickness in subsequent examinations, possibly reflecting a major adjustment in clinical observation strategy? Please list the top five patients with the most prominent changes in slice thickness for each modality.",
+    "db": "TCGA",
+    "sql": "WITH lagged AS ( SELECT Modality AS Category, PatientID AS Entity, AcquisitionDate AS Time, SliceThickness AS Measure, LAG(SliceThickness) OVER (PARTITION BY Modality, PatientID ORDER BY AcquisitionDate) AS prev_measure FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE SliceThickness IS NOT NULL AND AcquisitionDate IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 214,
+    "split": "train",
+    "sqa": "S20",
+    "question": "In the TCGA radiological imaging data from June 2018, under each imaging modality, which patients had slice thicknesses that remained consistently above the average level for that modality that year for two consecutive years, potentially reflecting specific clinical observation requirements?",
+    "db": "TCGA",
+    "sql": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM AcquisitionDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality, EXTRACT(YEAR FROM AcquisitionDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.AcquisitionDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM TCGA.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.AcquisitionDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 1,
+    "split": "train",
+    "sqa": "S1",
+    "question": "In the forest land area estimation data, which states have the largest subplot area? Please list the top 5 states.",
+    "db": "USFS_FIA",
+    "sql": "SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY subplot_acres DESC LIMIT 5;"
+  },
+  {
+    "question_id": 2,
+    "split": "train",
+    "sqa": "S2",
+    "question": "In the population assessment data, which locations have undergone more than one distinct type of assessment?",
+    "db": "USFS_FIA",
+    "sql": "SELECT location_name FROM USFS_FIA.POPULATION_EVALUATION GROUP BY location_name HAVING COUNT(DISTINCT evaluation_identifier) > 1;"
+  },
+  {
+    "question_id": 3,
+    "split": "train",
+    "sqa": "S3",
+    "question": "In the forest land area estimation data, for each assessment type, which state has the largest subplot area?",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, subplot_acres, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 4,
+    "split": "train",
+    "sqa": "S4",
+    "question": "In the forest land area estimation data, which states have a subplot area higher than the overall average?",
+    "db": "USFS_FIA",
+    "sql": "SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES);"
+  },
+  {
+    "question_id": 5,
+    "split": "train",
+    "sqa": "S7",
+    "question": "In the forest land area estimation data, for each assessment type, which states have a subplot area higher than the average level of that assessment type?",
+    "db": "USFS_FIA",
+    "sql": "SELECT state_name FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t1 WHERE subplot_acres > (SELECT AVG(subplot_acres) FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t2 WHERE t2.evaluation_type = t1.evaluation_type);"
+  },
+  {
+    "question_id": 6,
+    "split": "train",
+    "sqa": "S8",
+    "question": "In the forest land area estimation data, which state corresponds to the most recent survey for each assessment type?",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type, state_name FROM ( SELECT evaluation_type, state_name, inventory_year, ROW_NUMBER() OVER (PARTITION BY evaluation_type ORDER BY inventory_year DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 7,
+    "split": "train",
+    "sqa": "S9",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas falling within the typical range for that type?",
+    "db": "USFS_FIA",
+    "sql": "WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), eval_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), eval_percentiles AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM eval_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_percentiles ep ON t.evaluation_type = ep.evaluation_type WHERE t.subplot_acres BETWEEN ep.p30 AND ep.p70;"
+  },
+  {
+    "question_id": 8,
+    "split": "train",
+    "sqa": "S10",
+    "question": "In the forest land area estimation data, for each assessment type, which states have consecutive years of inventory records?",
+    "db": "USFS_FIA",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 9,
+    "split": "train",
+    "sqa": "S11",
+    "question": "In the forest land area estimation data, which states have subplot areas that continuously increased over three consecutive inventories?",
+    "db": "USFS_FIA",
+    "sql": "WITH base AS ( SELECT state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres, 1) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev1, LAG(subplot_acres, 2) OVER (PARTITION BY state_name ORDER BY inventory_year) AS prev2 FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE inventory_year IS NOT NULL AND subplot_acres IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 10,
+    "split": "train",
+    "sqa": "S12",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas in the highest tier?",
+    "db": "USFS_FIA",
+    "sql": "WITH ranked AS ( SELECT evaluation_type AS Category, state_name AS Entity, subplot_acres AS Measure, NTILE(5) OVER (PARTITION BY evaluation_type ORDER BY subplot_acres DESC) AS quintile FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 11,
+    "split": "train",
+    "sqa": "S13",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas above the average level of that type and also have the largest proportion in the total area of that type? Please list the top 5 states.",
+    "db": "USFS_FIA",
+    "sql": "WITH category_stats AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_measure, SUM(subplot_acres) AS total_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, cs.avg_measure, cs.total_measure, t.subplot_acres / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres / cs.total_measure DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_stats cs ON t.evaluation_type = cs.Category WHERE t.subplot_acres > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 12,
+    "split": "train",
+    "sqa": "S14",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas above the median of that type?",
+    "db": "USFS_FIA",
+    "sql": "WITH sorted_values AS ( SELECT evaluation_type, subplot_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ORDER BY evaluation_type, subplot_acres ), category_arrays AS ( SELECT evaluation_type, JSON_ARRAYAGG(subplot_acres) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY evaluation_type ), category_median AS ( SELECT evaluation_type, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_acres FROM category_arrays ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN category_median m ON t.evaluation_type = m.evaluation_type WHERE t.subplot_acres > m.median_acres;"
+  },
+  {
+    "question_id": 13,
+    "split": "train",
+    "sqa": "S15",
+    "question": "For each evaluation type in the forest land area estimation data, what are the top three states with the largest subplot area, and by how much do their subplot areas exceed the average level of that evaluation type?",
+    "db": "USFS_FIA",
+    "sql": "WITH eval_avg AS ( SELECT evaluation_type AS Category, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ), ranked AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.subplot_acres AS Measure, ea.avg_acres, (t.subplot_acres - ea.avg_acres) / ea.avg_acres * 100 AS pct_above_avg, t.inventory_year, ROW_NUMBER() OVER (PARTITION BY t.evaluation_type ORDER BY t.subplot_acres DESC) AS rn FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_avg ea ON t.evaluation_type = ea.Category WHERE t.subplot_acres IS NOT NULL ) SELECT Category, Entity, Measure, avg_acres, pct_above_avg, inventory_year FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 14,
+    "split": "train",
+    "sqa": "S16",
+    "question": "In the forest land area estimation data, for each evaluation type, which states have the fastest-growing subplot area between two consecutive inventories? Please list the top 5 states.",
+    "db": "USFS_FIA",
+    "sql": "WITH lagged AS ( SELECT evaluation_type AS Category, state_name AS Entity, inventory_year AS Time, subplot_acres AS Measure, LAG(subplot_acres) OVER (PARTITION BY evaluation_type, state_name ORDER BY inventory_year) AS prev_measure FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES WHERE subplot_acres IS NOT NULL AND inventory_year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 15,
+    "split": "train",
+    "sqa": "S17",
+    "question": "In the forest land area estimation data, what are the three assessment types with the largest total area of subplots?",
+    "db": "USFS_FIA",
+    "sql": "SELECT evaluation_type AS Category, SUM(subplot_acres) AS total_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type ORDER BY total_acres DESC LIMIT 3;"
+  },
+  {
+    "question_id": 16,
+    "split": "train",
+    "sqa": "S19",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas that fall into the highest tier for that type?",
+    "db": "USFS_FIA",
+    "sql": "WITH eval_q3 AS ( SELECT evaluation_type AS Category, MIN(subplot_acres) AS q3 FROM ( SELECT evaluation_type, subplot_acres, PERCENT_RANK() OVER (PARTITION BY evaluation_type ORDER BY subplot_acres) AS pr FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES ) t WHERE pr >= 0.75 GROUP BY evaluation_type ) SELECT t.evaluation_type, t.state_name, t.subplot_acres, t.inventory_year FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN eval_q3 q ON t.evaluation_type = q.Category WHERE t.subplot_acres > q.q3;"
+  },
+  {
+    "question_id": 17,
+    "split": "train",
+    "sqa": "S20",
+    "question": "In the forest land area estimation data, for each assessment type, which states have subplot areas that are consecutively higher than the average level of that type for two years?",
+    "db": "USFS_FIA",
+    "sql": "WITH yearly_avg AS ( SELECT evaluation_type AS Category, inventory_year AS Year, AVG(subplot_acres) AS avg_acres FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES GROUP BY evaluation_type, inventory_year ), above_avg AS ( SELECT t.evaluation_type AS Category, t.state_name AS Entity, t.inventory_year AS Year, t.subplot_acres AS Measure, CASE WHEN t.subplot_acres > ya.avg_acres THEN 1 ELSE 0 END AS above FROM USFS_FIA.ESTIMATED_FORESTLAND_ACRES t JOIN yearly_avg ya ON t.evaluation_type = ya.Category AND t.inventory_year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 486,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which states have the most recent measurement years in the dataset?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_state_code_name FROM USFS_FIA.PLOT p ORDER BY p.measurement_year DESC LIMIT 5"
+  },
+  {
+    "question_id": 485,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which counties have the highest elevations in the dataset?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_county_code FROM USFS_FIA.PLOT p ORDER BY p.elevation DESC LIMIT 5"
+  },
+  {
+    "question_id": 484,
+    "split": "train",
+    "sqa": "S1",
+    "question": "Which plots have the longest remeasurement periods in the dataset?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p ORDER BY p.remeasurement_period DESC LIMIT 5"
+  },
+  {
+    "question_id": 483,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which plots are associated with more than one ecological subsection?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.ecological_subsection_code) > 1"
+  },
+  {
+    "question_id": 482,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which plots have been sampled using more than one method?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.sample_method_code_name) > 1"
+  },
+  {
+    "question_id": 481,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which plots have more than one distinct value for the pac_island_pnwrs field?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p GROUP BY p.plot_sequence_number HAVING COUNT(DISTINCT p.pac_island_pnwrs) > 1"
+  },
+  {
+    "question_id": 480,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which plots have an elevation higher than the average elevation in the dataset?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.plot_sequence_number FROM USFS_FIA.PLOT p WHERE p.elevation > (SELECT AVG(elevation) FROM USFS_FIA.PLOT)"
+  },
+  {
+    "question_id": 466,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which tree species have a gross cubic foot volume greater than the average?",
+    "db": "USFS_FIA",
+    "sql": "SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2)"
+  },
+  {
+    "question_id": 465,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which tree species have a gross cubic foot volume greater than the average for their evaluation type?",
+    "db": "USFS_FIA",
+    "sql": "SELECT t1.species_common_name FROM USFS_FIA.PLOT_TREE t1 WHERE t1.gross_cubicfoot_volume > (SELECT AVG(t2.gross_cubicfoot_volume) FROM USFS_FIA.PLOT_TREE t2 WHERE t2.evaluation_type = t1.evaluation_type)"
+  },
+  {
+    "question_id": 450,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which plots have a measurement year greater than the average measurement year for their state?",
+    "db": "USFS_FIA",
+    "sql": "SELECT t1.plot_sequence_number FROM USFS_FIA.PLOT t1, USFS_FIA.PLOT t2 WHERE t1.measurement_year > (SELECT AVG(t2.measurement_year) FROM USFS_FIA.PLOT t2 WHERE t2.plot_state_code = t1.plot_state_code)"
+  },
+  {
+    "question_id": 449,
+    "split": "train",
+    "sqa": "S3",
+    "question": "What are the most recent plots by state?",
+    "db": "USFS_FIA",
+    "sql": "SELECT t.plot_state_code, t.plot_sequence_number FROM ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, ROW_NUMBER() OVER (PARTITION BY t.plot_state_code ORDER BY t.measurement_year DESC) AS rn FROM USFS_FIA.PLOT t ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 448,
+    "split": "train",
+    "sqa": "S9",
+    "question": "Which plots have a measurement year between the 30th and 70th percentiles for their state?",
+    "db": "USFS_FIA",
+    "sql": "WITH sorted_values AS ( SELECT t.plot_state_code, t.measurement_year FROM USFS_FIA.PLOT t ORDER BY t.plot_state_code, t.measurement_year ), category_arrays AS ( SELECT t.plot_state_code, JSON_ARRAYAGG(t.measurement_year) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY t.plot_state_code ), category_percentiles AS ( SELECT t.plot_state_code, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM category_arrays ) SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, t.plot_created_date FROM USFS_FIA.PLOT t JOIN category_percentiles cp ON t.plot_state_code = cp.Category WHERE t.measurement_year BETWEEN cp.p30 AND cp.p70"
+  },
+  {
+    "question_id": 447,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which plots have consecutive annual measurements in the same state?",
+    "db": "USFS_FIA",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT t.plot_state_code, t.plot_sequence_number, t.measurement_year FROM USFS_FIA.PLOT t WHERE t.measurement_year IS NOT NULL ), with_prev AS ( SELECT t.plot_state_code, t.plot_sequence_number, t.measurement_year, LAG(t.measurement_year) OVER (PARTITION BY t.plot_state_code, t.plot_sequence_number ORDER BY t.measurement_year) AS prev_time FROM yearly_records t ) SELECT DISTINCT t.plot_state_code, t.plot_sequence_number FROM with_prev t WHERE t.prev_time IS NOT NULL AND EXTRACT(YEAR FROM t.measurement_year) - EXTRACT(YEAR FROM t.prev_time) = 1"
+  },
+  {
+    "question_id": 435,
+    "split": "train",
+    "sqa": "S17",
+    "question": "What are the top 3 evaluation types with the highest total macroplot acres?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.evaluation_type, SUM(p.macroplot_acres) AS total_measure FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY total_measure DESC LIMIT 3"
+  },
+  {
+    "question_id": 434,
+    "split": "train",
+    "sqa": "S18",
+    "question": "What are the top 3 evaluation types with the most records in the PLOT table?",
+    "db": "USFS_FIA",
+    "sql": "SELECT p.evaluation_type, COUNT(*) AS record_count FROM USFS_FIA.PLOT p GROUP BY p.evaluation_type ORDER BY record_count DESC LIMIT 3"
+  },
+  {
+    "question_id": 186,
+    "split": "train",
+    "sqa": "S1",
+    "question": "In the word frequency statistics based on American English, which words have the highest occurrence frequency? List the top five high-frequency words.",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES ORDER BY frequency DESC LIMIT 5;"
+  },
+  {
+    "question_id": 187,
+    "split": "train",
+    "sqa": "S2",
+    "question": "In the Nature journal dataset, which articles have titles assigned to multiple different article categories?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT title FROM WORD_VECTORS_US.NATURE GROUP BY title HAVING COUNT(DISTINCT category) > 1;"
+  },
+  {
+    "question_id": 188,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which words in an American English corpus are considered ultra-high-frequency words that are ubiquitous in daily life?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT word FROM WORD_VECTORS_US.WORD_FREQUENCIES WHERE frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES);"
+  },
+  {
+    "question_id": 189,
+    "split": "train",
+    "sqa": "S8",
+    "question": "What are the category names and titles of the articles with the latest publication dates under each article category in the Nature journal dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 190,
+    "split": "train",
+    "sqa": "S10",
+    "question": "In the Nature journal, which articles have publication records in consecutive years within each subject category, possibly indicating series studies or long-term tracking results?",
+    "db": "WORD_VECTORS_US",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT category AS Category, title AS Entity, EXTRACT(YEAR FROM CAST(date AS DATETIME)) AS Time FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 191,
+    "split": "train",
+    "sqa": "S18",
+    "question": "In the Nature journal dataset, what are the top three subject categories with the highest number of articles?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT category AS Category, COUNT(*) AS record_count FROM WORD_VECTORS_US.NATURE GROUP BY category ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 479,
+    "split": "train",
+    "sqa": "S1",
+    "question": "What are the top 5 most cited papers in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT n.title FROM WORD_VECTORS_US.NATURE n ORDER BY n.citations DESC LIMIT 5"
+  },
+  {
+    "question_id": 478,
+    "split": "train",
+    "sqa": "S1",
+    "question": "What are the top 5 most frequent words in the WORD_FREQUENCIES dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT wf.word FROM WORD_VECTORS_US.WORD_FREQUENCIES wf ORDER BY wf.frequency DESC LIMIT 5"
+  },
+  {
+    "question_id": 477,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which papers belong to more than one category in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT n.title FROM WORD_VECTORS_US.NATURE n GROUP BY n.title HAVING COUNT(DISTINCT n.category) > 1"
+  },
+  {
+    "question_id": 476,
+    "split": "train",
+    "sqa": "S2",
+    "question": "Which organizations have papers in more than one category in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT n.organization_affiliated FROM WORD_VECTORS_US.NATURE n GROUP BY n.organization_affiliated HAVING COUNT(DISTINCT n.category) > 1"
+  },
+  {
+    "question_id": 475,
+    "split": "train",
+    "sqa": "S3",
+    "question": "What is the most cited paper in each category in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT t.category, t.title FROM ( SELECT n.category, n.title, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1"
+  },
+  {
+    "question_id": 474,
+    "split": "train",
+    "sqa": "S3",
+    "question": "Which organization has the most cited paper in each category in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT t.category, t.organization_affiliated FROM ( SELECT n.category, n.organization_affiliated, n.citations, ROW_NUMBER() OVER (PARTITION BY n.category ORDER BY n.citations DESC) AS rn FROM WORD_VECTORS_US.NATURE n ) t WHERE t.rn = 1"
+  },
+  {
+    "question_id": 473,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which papers have more citations than the average in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT n.title FROM WORD_VECTORS_US.NATURE n WHERE n.citations > (SELECT AVG(n.citations) FROM WORD_VECTORS_US.NATURE n)"
+  },
+  {
+    "question_id": 464,
+    "split": "train",
+    "sqa": "S4",
+    "question": "Which words have a frequency higher than the average frequency in the dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT w.word FROM WORD_VECTORS_US.WORD_FREQUENCIES w WHERE w.frequency > (SELECT AVG(frequency) FROM WORD_VECTORS_US.WORD_FREQUENCIES)"
+  },
+  {
+    "question_id": 463,
+    "split": "train",
+    "sqa": "S7",
+    "question": "Which titles have more citations than the average number of citations in their category?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT n1.title FROM WORD_VECTORS_US.NATURE n1 WHERE n1.citations > (SELECT AVG(n2.citations) FROM WORD_VECTORS_US.NATURE n2 WHERE n2.category = n1.category)"
+  },
+  {
+    "question_id": 446,
+    "split": "train",
+    "sqa": "S3",
+    "question": "What are the most recent titles for each category in the NATURE dataset?",
+    "db": "WORD_VECTORS_US",
+    "sql": "SELECT category, title FROM ( SELECT category, title, date, ROW_NUMBER() OVER (PARTITION BY category ORDER BY date DESC) AS rn FROM WORD_VECTORS_US.NATURE ) t WHERE rn = 1"
+  },
+  {
+    "question_id": 445,
+    "split": "train",
+    "sqa": "S10",
+    "question": "Which categories and titles in the NATURE dataset have consecutive years of entries?",
+    "db": "WORD_VECTORS_US",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT category, title, date FROM WORD_VECTORS_US.NATURE WHERE date IS NOT NULL ), with_prev AS ( SELECT category, title, date, LAG(date) OVER (PARTITION BY category, title ORDER BY date) AS prev_date FROM yearly_records ) SELECT DISTINCT category, title FROM with_prev WHERE prev_date IS NOT NULL AND EXTRACT(YEAR FROM date) - EXTRACT(YEAR FROM prev_date) = 1"
+  },
+  {
+    "question_id": 83,
+    "split": "train",
+    "sqa": "S2",
+    "question": "In the Mitelman database, which genes are associated with multiple different molecular clinical classifications?",
+    "db": "MITELMAN",
+    "sql": "SELECT Gene FROM MITELMAN.PROD_MOLCLINGENE GROUP BY Gene HAVING COUNT(DISTINCT MolClin) > 1;"
+  },
+  {
+    "question_id": 84,
+    "split": "train",
+    "sqa": "S5",
+    "question": "In the Mitelman database, for which journals do distinct literature entries have no log records generated during the cytogenetic data conversion process, suggesting that they may not have been converted or that the conversion failed?",
+    "db": "MITELMAN",
+    "sql": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE r WHERE NOT EXISTS ( SELECT 1 FROM MITELMAN.PROD_CYTOCONVERTEDLOG l WHERE l.RefNo = r.RefNo );"
+  },
+  {
+    "question_id": 85,
+    "split": "train",
+    "sqa": "S6",
+    "question": "In Mitelman, which journals' literature entries (deduplicated) generated log records during the cytogenetic data conversion process?",
+    "db": "MITELMAN",
+    "sql": "SELECT DISTINCT Journal FROM MITELMAN.PROD_REFERENCE WHERE RefNo IN (SELECT RefNo FROM MITELMAN.PROD_CYTOCONVERTEDLOG);"
+  },
+  {
+    "question_id": 86,
+    "split": "train",
+    "sqa": "S17",
+    "question": "What are the three cytogenetic abnormalities with the highest total case counts in Mitelman?",
+    "db": "MITELMAN",
+    "sql": "SELECT Abnormality AS Category, SUM(TotalCases) AS total_cases FROM MITELMAN.PROD_RECURRENTNUMDATA GROUP BY Abnormality ORDER BY total_cases DESC LIMIT 3;"
+  },
+  {
+    "question_id": 87,
+    "split": "train",
+    "sqa": "S18",
+    "question": "In the Mitelman database, what are the top three journals that have the highest number of literature collected?",
+    "db": "MITELMAN",
+    "sql": "SELECT Journal AS Category, COUNT(*) AS record_count FROM MITELMAN.PROD_REFERENCE GROUP BY Journal ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 72,
+    "split": "dev",
+    "sqa": "S1",
+    "question": "In the Imaging Data Commons (IDC), which original datasets have the highest number of samples? List the top five.",
+    "db": "IDC",
+    "sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ORDER BY Subjects DESC LIMIT 5;"
+  },
+  {
+    "question_id": 73,
+    "split": "dev",
+    "sqa": "S2",
+    "question": "Which original datasets in the Image Data Commons (IDC) contain multiple different types of imaging data?",
+    "db": "IDC",
+    "sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA GROUP BY collection_name HAVING COUNT(DISTINCT ImageTypes) > 1;"
+  },
+  {
+    "question_id": 74,
+    "split": "dev",
+    "sqa": "S3",
+    "question": "In the image data sharing platform, for each image type, which original dataset has the largest number of samples?",
+    "db": "IDC",
+    "sql": "SELECT ImageTypes, collection_name FROM ( SELECT ImageTypes, collection_name, Subjects, ROW_NUMBER() OVER (PARTITION BY ImageTypes ORDER BY Subjects DESC) AS rn FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 75,
+    "split": "dev",
+    "sqa": "S4",
+    "question": "In the Imaging Data Commons (IDC), which original datasets have exceptionally large sample sizes that belong to rare large-scale cohort studies?",
+    "db": "IDC",
+    "sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE Subjects > (SELECT AVG(Subjects) FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA);"
+  },
+  {
+    "question_id": 76,
+    "split": "dev",
+    "sqa": "S6",
+    "question": "In the image data sharing platform, which original dataset's names also appear in the TCGA biospecimen information (project_short_name), suggesting a potential association between them?",
+    "db": "IDC",
+    "sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE collection_name IN (SELECT project_short_name FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9);"
+  },
+  {
+    "question_id": 77,
+    "split": "dev",
+    "sqa": "S7",
+    "question": "In the Imaging Data Commons (IDC), for each imaging type, which original datasets have sample sizes far exceeding the mean of similar datasets, thus qualifying as rare large-scale cohort studies?",
+    "db": "IDC",
+    "sql": "SELECT collection_name FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t1 WHERE Subjects > (SELECT AVG(Subjects) FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t2 WHERE t2.ImageTypes = t1.ImageTypes);"
+  },
+  {
+    "question_id": 78,
+    "split": "dev",
+    "sqa": "S8",
+    "question": "In the imaging data sharing platform, for each sample type, which project recently collected biological samples?",
+    "db": "IDC",
+    "sql": "SELECT sample_type, project_short_name FROM ( SELECT sample_type, project_short_name, days_to_collection, ROW_NUMBER() OVER (PARTITION BY sample_type ORDER BY days_to_collection DESC) AS rn FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 79,
+    "split": "dev",
+    "sqa": "S11",
+    "question": "In the imaging data sharing platform, which research projects had an increasing number of samples obtained in each of the three consecutive sample collections, possibly corresponding to an expanding research scale?",
+    "db": "IDC",
+    "sql": "WITH base AS ( SELECT project_short_name AS Entity, days_to_collection AS Time, num_portions AS Measure, LAG(num_portions, 1) OVER (PARTITION BY project_short_name ORDER BY days_to_collection) AS prev1, LAG(num_portions, 2) OVER (PARTITION BY project_short_name ORDER BY days_to_collection) AS prev2 FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 WHERE days_to_collection IS NOT NULL AND num_portions IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 80,
+    "split": "dev",
+    "sqa": "S12",
+    "question": "In the imaging data sharing platform, for each imaging type, which original datasets have sample sizes in the top 20% and are considered as exemplars of large cohort studies?",
+    "db": "IDC",
+    "sql": "WITH ranked AS ( SELECT ImageTypes AS Category, collection_name AS Entity, Subjects AS Measure, NTILE(5) OVER (PARTITION BY ImageTypes ORDER BY Subjects DESC) AS quintile FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA WHERE Subjects IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 81,
+    "split": "dev",
+    "sqa": "S13",
+    "question": "In the image data sharing platform, for each image type, which datasets have sample sizes not only exceeding the average level of that type but also serving as the primary source of the total sample size for that type? Please list the top five datasets with the greatest contribution for each image type.",
+    "db": "IDC",
+    "sql": "WITH category_stats AS ( SELECT ImageTypes AS Category, AVG(Subjects) AS avg_measure, SUM(Subjects) AS total_measure FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA GROUP BY ImageTypes ), ranked AS ( SELECT t.ImageTypes AS Category, t.collection_name AS Entity, t.Subjects AS Measure, cs.avg_measure, cs.total_measure, t.Subjects / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.ImageTypes ORDER BY t.Subjects / cs.total_measure DESC) AS rn FROM IDC.IDC_V17_ORIGINAL_COLLECTIONS_METADATA t JOIN category_stats cs ON t.ImageTypes = cs.Category WHERE t.Subjects > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 82,
+    "split": "dev",
+    "sqa": "S16",
+    "question": "In the biological sample information of the imaging data sharing platform, for each sample type, which projects have experienced a significant surge in sample collection volume in subsequent acquisitions, indicating rapid expansion of the research scale? Please list the top five projects with the most significant increase for each sample type.",
+    "db": "IDC",
+    "sql": "WITH lagged AS ( SELECT sample_type AS Category, project_short_name AS Entity, days_to_collection AS Time, num_portions AS Measure, LAG(num_portions) OVER (PARTITION BY sample_type, project_short_name ORDER BY days_to_collection) AS prev_measure FROM IDC.IDC_V17_TCGA_BIOSPECIMEN_REL9 WHERE num_portions IS NOT NULL AND days_to_collection IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 18,
+    "split": "dev",
+    "sqa": "S1",
+    "question": "In the New York City bike share station data, which stations have the largest capacity? Please list the top 5 stations.",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY capacity DESC LIMIT 5;"
+  },
+  {
+    "question_id": 19,
+    "split": "dev",
+    "sqa": "S3",
+    "question": "In the New York bike share station data, for each rental method, which station has the largest capacity?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT rental_methods, name FROM ( SELECT rental_methods, name, capacity, ROW_NUMBER() OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 20,
+    "split": "dev",
+    "sqa": "S4",
+    "question": "Among the New York bike-sharing station data, which stations have capacities above the overall average?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS);"
+  },
+  {
+    "question_id": 21,
+    "split": "dev",
+    "sqa": "S5",
+    "question": "In the New York bike sharing system, which stations have never been used as a trip origin?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT DISTINCT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS s WHERE NOT EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS t WHERE t.start_station_id = s.station_id );"
+  },
+  {
+    "question_id": 22,
+    "split": "dev",
+    "sqa": "S6",
+    "question": "Which stations have been used as trip start points in the New York bike-sharing system?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE station_id IN (SELECT start_station_id FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS);"
+  },
+  {
+    "question_id": 23,
+    "split": "dev",
+    "sqa": "S7",
+    "question": "In the New York bike share station data, for each rental method, which stations have a capacity higher than the average capacity for that rental method?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "SELECT name FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t1 WHERE capacity > (SELECT AVG(capacity) FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t2 WHERE t2.rental_methods = t1.rental_methods);"
+  },
+  {
+    "question_id": 24,
+    "split": "dev",
+    "sqa": "S9",
+    "question": "For each rental method in the New York bike share station data, which stations have capacities falling within the typical range for that method?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), method_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), method_percentiles AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM method_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_percentiles mp ON t.rental_methods = mp.rental_methods WHERE t.capacity BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 25,
+    "split": "dev",
+    "sqa": "S10",
+    "question": "In the New York bike-sharing ride records, for each user type, which starting stations have ride records in consecutive years?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT usertype AS Category, start_station_id AS Entity, EXTRACT(YEAR FROM CAST(starttime AS DATETIME)) AS Time FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE starttime IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 26,
+    "split": "dev",
+    "sqa": "S12",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have the capacity in the highest tier?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH ranked AS ( SELECT rental_methods AS Category, name AS Entity, capacity AS Measure, NTILE(5) OVER (PARTITION BY rental_methods ORDER BY capacity DESC) AS quintile FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS WHERE capacity IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 27,
+    "split": "dev",
+    "sqa": "S13",
+    "question": "In the New York shared bicycle station data, for each rental method, which stations have capacity above the average for that type and also account for the largest proportion of the total capacity of that type? Please list the top 5 stations.",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH category_stats AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_measure, SUM(capacity) AS total_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, cs.avg_measure, cs.total_measure, t.capacity / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity / cs.total_measure DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_stats cs ON t.rental_methods = cs.Category WHERE t.capacity > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 28,
+    "split": "dev",
+    "sqa": "S14",
+    "question": "Which stations in the New York bike-sharing station data have a capacity higher than the median for the same rental method and have actually been used as a trip start point?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH sorted_values AS ( SELECT rental_methods, capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS ORDER BY rental_methods, capacity ), category_arrays AS ( SELECT rental_methods, JSON_ARRAYAGG(capacity) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY rental_methods ), category_median AS ( SELECT rental_methods, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_capacity FROM category_arrays ) SELECT t.rental_methods, t.name, t.capacity, t.station_id, t.latitude, t.longitude FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN category_median m ON t.rental_methods = m.rental_methods WHERE t.capacity > m.median_capacity AND EXISTS ( SELECT 1 FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS tr WHERE tr.start_station_id = t.station_id );"
+  },
+  {
+    "question_id": 29,
+    "split": "dev",
+    "sqa": "S15",
+    "question": "In the NYC bike share station data, for each rental method, what are the top 3 stations with the largest capacity? How much higher is their capacity than the average level of that rental method?",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH method_avg AS ( SELECT rental_methods AS Category, AVG(capacity) AS avg_capacity FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS GROUP BY rental_methods ), ranked AS ( SELECT t.rental_methods AS Category, t.name AS Entity, t.capacity AS Measure, ma.avg_capacity, (t.capacity - ma.avg_capacity) / ma.avg_capacity * 100 AS pct_above_avg, t.station_id, t.latitude, t.longitude, ROW_NUMBER() OVER (PARTITION BY t.rental_methods ORDER BY t.capacity DESC) AS rn FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_STATIONS t JOIN method_avg ma ON t.rental_methods = ma.Category WHERE t.capacity IS NOT NULL ) SELECT Category, Entity, Measure, avg_capacity, pct_above_avg, station_id, latitude, longitude FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 141,
+    "split": "dev",
+    "sqa": "S1",
+    "question": "In the Simons Genome Diversity Project, which populations exhibit the highest autosomal heterozygosity? Please list the top five.",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ORDER BY HetRateAuto DESC LIMIT 5;"
+  },
+  {
+    "question_id": 142,
+    "split": "dev",
+    "sqa": "S2",
+    "question": "In the Simons Genome Diversity Project, which populations have samples that include both male and female individuals?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Population_ID HAVING COUNT(DISTINCT Gender) > 1;"
+  },
+  {
+    "question_id": 143,
+    "split": "dev",
+    "sqa": "S3",
+    "question": "In the Simons Genome Diversity Project, which populations have the highest autosomal heterozygosity rates among male and female groups respectively?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Gender, Population_ID FROM ( SELECT Gender, Population_ID, HetRateAuto, ROW_NUMBER() OVER (PARTITION BY Gender ORDER BY HetRateAuto DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 144,
+    "split": "dev",
+    "sqa": "S4",
+    "question": "Which populations in the Simons Genome Diversity Project exhibit particularly high genetic diversity (above the average level) and may represent groups with long-term admixture in history?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA WHERE HetRateAuto > (SELECT AVG(HetRateAuto) FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA);"
+  },
+  {
+    "question_id": 145,
+    "split": "dev",
+    "sqa": "S7",
+    "question": "Which populations within the Simons Genome Diversity Project have autosomal heterozygosity rates that exceed the sex-specific averages in males and females, respectively, suggesting more complex population histories?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t1 WHERE HetRateAuto > (SELECT AVG(HetRateAuto) FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t2 WHERE t2.Gender = t1.Gender);"
+  },
+  {
+    "question_id": 146,
+    "split": "dev",
+    "sqa": "S9",
+    "question": "Which populations among males and females in the Simons Genome Diversity Project exhibit autosomal heterozygosity within the typical range for each sex (between 30% and 70%), representing the average level of population genetic diversity?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "WITH sorted_values AS ( SELECT Gender, HetRateAuto FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ORDER BY Gender, HetRateAuto ), gender_arrays AS ( SELECT Gender, JSON_ARRAYAGG(HetRateAuto) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Gender ), gender_percentiles AS ( SELECT Gender, CAST(IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS FLOAT) AS p30, CAST(IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS FLOAT) AS p70 FROM gender_arrays ) SELECT t.Gender, t.Population_ID, t.HetRateAuto, t.Region, t.Country FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN gender_percentiles gp ON t.Gender = gp.Gender WHERE t.HetRateAuto BETWEEN LEAST(gp.p30, gp.p70) AND GREATEST(gp.p30, gp.p70);"
+  },
+  {
+    "question_id": 147,
+    "split": "dev",
+    "sqa": "S12",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female populations, which populations exhibit the most prominent genetic diversity (in the top 20%) that belongs to the group with the highest heterozygosity rates?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "WITH ranked AS ( SELECT Gender AS Category, Population_ID AS Entity, HetRateAuto AS Measure, NTILE(5) OVER (PARTITION BY Gender ORDER BY HetRateAuto DESC) AS quintile FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA WHERE HetRateAuto IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 148,
+    "split": "dev",
+    "sqa": "S13",
+    "question": "In the Simons Genome Diversity Project, when classified by male and female groups, which populations have autosomal heterozygosity rates that are not only higher than the average level for that sex, but also account for a significant share of the total genetic diversity of that sex? Please list the top five populations with the most prominent contributions for males and females, respectively.",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "WITH category_stats AS ( SELECT Gender AS Category, AVG(HetRateAuto) AS avg_measure, SUM(HetRateAuto) AS total_measure FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Gender ), ranked AS ( SELECT t.Gender AS Category, t.Population_ID AS Entity, t.HetRateAuto AS Measure, cs.avg_measure, cs.total_measure, t.HetRateAuto / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.Gender ORDER BY t.HetRateAuto / cs.total_measure DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN category_stats cs ON t.Gender = cs.Category WHERE t.HetRateAuto > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 149,
+    "split": "dev",
+    "sqa": "S15",
+    "question": "In the Simons Genome Diversity Project, which regions have populations with the highest autosomal heterozygosity rates among males and females? By how much do their heterozygosity rates exceed the average level for each sex group, and do they reflect special population history? The results should display sex, population, autosomal heterozygosity rate, average autosomal heterozygosity rate, proportion by which autosomal heterozygosity exceeds the average, region, and country.",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "WITH gender_avg AS ( SELECT Gender AS Category, AVG(HetRateAuto) AS avg_het FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Gender ), ranked AS ( SELECT t.Gender AS Category, t.Population_ID AS Entity, t.HetRateAuto AS Measure, ga.avg_het, (t.HetRateAuto - ga.avg_het) / ga.avg_het * 100 AS pct_above_avg, t.Region, t.Country, ROW_NUMBER() OVER (PARTITION BY t.Gender ORDER BY t.HetRateAuto DESC) AS rn FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN gender_avg ga ON t.Gender = ga.Category WHERE t.HetRateAuto IS NOT NULL ) SELECT Category, Entity, Measure, avg_het, pct_above_avg, Region, Country FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 150,
+    "split": "dev",
+    "sqa": "S17",
+    "question": "What are the three geographical regions with the highest total autosomal heterozygosity in the Simons Genome Diversity Project?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Region AS Category, SUM(HetRateAuto) AS total_het FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Region ORDER BY total_het DESC LIMIT 3;"
+  },
+  {
+    "question_id": 151,
+    "split": "dev",
+    "sqa": "S18",
+    "question": "In the Simons Genome Diversity Project, which are the top three geographical regions with the largest number of samples?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT Region AS Category, COUNT(*) AS record_count FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA GROUP BY Region ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 152,
+    "split": "dev",
+    "sqa": "S19",
+    "question": "In the Simons Genome Diversity Project, within each geographic region, which populations have autosomal heterozygosity in the top quartile of that region and may have unique population histories?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "WITH region_q3 AS ( SELECT Region AS Category, MIN(HetRateAuto) AS q3 FROM ( SELECT Region, HetRateAuto, PERCENT_RANK() OVER (PARTITION BY Region ORDER BY HetRateAuto) AS pr FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA ) t WHERE pr >= 0.75 GROUP BY Region ) SELECT t.Region, t.Population_ID, t.HetRateAuto, t.Country FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA t JOIN region_q3 q ON t.Region = q.Category WHERE t.HetRateAuto > q.q3;"
+  },
+  {
+    "question_id": 153,
+    "split": "dev",
+    "sqa": "S1",
+    "question": "Which genes have the highest expression levels in random samples of pancreatic cancer and kidney cancer from TCGA_HG38_DATA_V0? Please list the top five genes.",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT Gene FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ORDER BY Expr DESC LIMIT 5;"
+  },
+  {
+    "question_id": 154,
+    "split": "dev",
+    "sqa": "S2",
+    "question": "Which case samples in the TCGA_HG38_DATA_V0 clinical annotation data have multiple different types of annotation information (e.g., pathology, follow-up, treatment, etc.)?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS GROUP BY case_barcode HAVING COUNT(DISTINCT category) > 1;"
+  },
+  {
+    "question_id": 155,
+    "split": "dev",
+    "sqa": "S4",
+    "question": "In QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 of TCGA_HG38_DATA_V0, which genes exhibit abnormally high expression levels (above average) that are highly likely to be key drivers of tumorigenesis?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT Gene FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 WHERE Expr > (SELECT AVG(Expr) FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002);"
+  },
+  {
+    "question_id": 156,
+    "split": "dev",
+    "sqa": "S5",
+    "question": "In the TCGA_BIOCLIN_V0_CLINICAL table within the TCGA_HG38_DATA_V0 clinical data, which patient records have no additional clinical annotations, possibly representing cases with complete basic information but no special annotations?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT DISTINCT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_CLINICAL c WHERE NOT EXISTS ( SELECT 1 FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS a WHERE a.case_barcode = c.case_barcode );"
+  },
+  {
+    "question_id": 157,
+    "split": "dev",
+    "sqa": "S6",
+    "question": "In the clinical data of TCGA_HG38_DATA_V0, specifically in TCGA_BIOCLIN_V0_CLINICAL, which patients' records have additional clinical annotation information that can be used for in-depth analysis?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_CLINICAL WHERE case_barcode IN (SELECT case_barcode FROM TCGA_HG38_DATA_V0.TCGA_BIOCLIN_V0_ANNOTATIONS);"
+  },
+  {
+    "question_id": 158,
+    "split": "dev",
+    "sqa": "S12",
+    "question": "In the TCGA_HG38_DATA_V0 pancreatic cancer and kidney cancer research projects, specifically in QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002, which genes have the highest expression levels (top 20%) in each project and may be key drivers of tumorigenesis?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "WITH ranked AS ( SELECT project_short_name AS Category, Gene AS Entity, Expr AS Measure, NTILE(5) OVER (PARTITION BY project_short_name ORDER BY Expr DESC) AS quintile FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 WHERE Expr IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 159,
+    "split": "dev",
+    "sqa": "S14",
+    "question": "In the TCGA_HG38_DATA_V0 pancreatic cancer and kidney cancer samples of QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002, which genes have expression levels not only far exceeding the common level in similar projects (by more than 50%), but also have corresponding protein expression data available for validation, which may be key driver genes?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "WITH sorted_values AS ( SELECT project_short_name, Expr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ORDER BY project_short_name, Expr ), category_arrays AS ( SELECT project_short_name, JSON_ARRAYAGG(Expr) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY project_short_name ), category_median AS ( SELECT project_short_name, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_expr FROM category_arrays ) SELECT t.project_short_name, t.Gene, t.Expr, t.ID, t.Expr AS expression_level FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 t JOIN category_median m ON t.project_short_name = m.project_short_name WHERE t.Expr > m.median_expr AND EXISTS ( SELECT 1 FROM TCGA_HG38_DATA_V0.TCGA_HG38_DATA_V0_PROTEIN_EXPRESSION p WHERE p.gene_name = t.Gene );"
+  },
+  {
+    "question_id": 160,
+    "split": "dev",
+    "sqa": "S17",
+    "question": "In the pancreatic and renal cancer random sample QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 from TCGA_HG38_DATA_V0, what are the three research projects with the highest total gene expression?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT project_short_name AS Category, SUM(Expr) AS total_expr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 GROUP BY project_short_name ORDER BY total_expr DESC LIMIT 3;"
+  },
+  {
+    "question_id": 161,
+    "split": "dev",
+    "sqa": "S18",
+    "question": "What are the top three data categories with the highest number of files in the metadata of TCGA_HG38_DATA_V0?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "SELECT data_category AS Category, COUNT(*) AS record_count FROM TCGA_HG38_DATA_V0.TCGA_HG38_DATA_V0_TCGA_METADATA_DATA_HG38_R14 GROUP BY data_category ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 162,
+    "split": "dev",
+    "sqa": "S19",
+    "question": "In QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 within the pancreatic cancer and kidney cancer samples from TCGA_HG38_DATA_V0, for each cancer project, which genes have expression levels ranking in the top 25% of that project that may be key highly expressed genes?",
+    "db": "TCGA_HG38_DATA_V0",
+    "sql": "WITH proj_q3 AS ( SELECT project_short_name AS Category, MIN(Expr) AS q3 FROM ( SELECT project_short_name, Expr, PERCENT_RANK() OVER (PARTITION BY project_short_name ORDER BY Expr) AS pr FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 ) t WHERE pr >= 0.75 GROUP BY project_short_name ) SELECT t.project_short_name, t.Gene, t.Expr, t.ID FROM TCGA_HG38_DATA_V0.QOTM_PAAD_KIRP_RANDOM_SAMPLE_1002 t JOIN proj_q3 q ON t.project_short_name = q.Category WHERE t.Expr > q.q3;"
+  },
+  {
+    "question_id": 30,
+    "split": "dev",
+    "sqa": "S2",
+    "question": "In the imaging data from 2018, which patients experienced examinations with multiple different imaging modalities?",
+    "db": "TCGA_MITELMAN",
+    "sql": "SELECT PatientID FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY PatientID HAVING COUNT(DISTINCT Modality) > 1;"
+  },
+  {
+    "question_id": 31,
+    "split": "dev",
+    "sqa": "S3",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient's slice thickness is the highest?",
+    "db": "TCGA_MITELMAN",
+    "sql": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, SliceThickness, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY SliceThickness DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 32,
+    "split": "dev",
+    "sqa": "S7",
+    "question": "In the imaging data of 2018, for each imaging modality, which patients had slice thickness higher than the average of that modality?",
+    "db": "TCGA_MITELMAN",
+    "sql": "SELECT PatientID FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t1 WHERE SliceThickness > (SELECT AVG(SliceThickness) FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t2 WHERE t2.Modality = t1.Modality);"
+  },
+  {
+    "question_id": 33,
+    "split": "dev",
+    "sqa": "S8",
+    "question": "In the 2018 imaging data, for each imaging modality, which patient does the most recent imaging record belong to?",
+    "db": "TCGA_MITELMAN",
+    "sql": "SELECT Modality, PatientID FROM ( SELECT Modality, PatientID, AcquisitionDate, ROW_NUMBER() OVER (PARTITION BY Modality ORDER BY AcquisitionDate DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 34,
+    "split": "dev",
+    "sqa": "S9",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have slice thicknesses within the typical range for that modality?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH sorted_values AS ( SELECT Modality, SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ORDER BY Modality, SliceThickness ), modality_arrays AS ( SELECT Modality, JSON_ARRAYAGG(SliceThickness) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Modality ), modality_percentiles AS ( SELECT Modality, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM modality_arrays ) SELECT t.Modality, t.PatientID, t.SliceThickness, t.StudyDate, t.SeriesDescription FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_percentiles mp ON t.Modality = mp.Modality WHERE t.SliceThickness BETWEEN mp.p30 AND mp.p70;"
+  },
+  {
+    "question_id": 35,
+    "split": "dev",
+    "sqa": "S10",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients have imaging records in consecutive years?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT Modality AS Category, PatientID AS Entity, EXTRACT(YEAR FROM AcquisitionDate) AS Time FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 36,
+    "split": "dev",
+    "sqa": "S15",
+    "question": "In the imaging data of 2018, for each imaging modality, who are the top 3 patients with the highest slice thickness? How much higher is their slice thickness compared to the average level of that modality?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH modality_avg AS ( SELECT Modality AS Category, AVG(SliceThickness) AS avg_thickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality ), ranked AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, t.SliceThickness AS Measure, ma.avg_thickness, (t.SliceThickness - ma.avg_thickness) / ma.avg_thickness * 100 AS pct_above_avg, t.StudyDate, t.SeriesDescription, ROW_NUMBER() OVER (PARTITION BY t.Modality ORDER BY t.SliceThickness DESC) AS rn FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN modality_avg ma ON t.Modality = ma.Category WHERE t.SliceThickness IS NOT NULL ) SELECT Category, Entity, Measure, avg_thickness, pct_above_avg, StudyDate, SeriesDescription FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 37,
+    "split": "dev",
+    "sqa": "S20",
+    "question": "In the 2018 imaging data, for each imaging modality, which patients had a slice thickness for two consecutive years exceeding that year's average level of that modality?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM AcquisitionDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 GROUP BY Modality, EXTRACT(YEAR FROM AcquisitionDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.AcquisitionDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.AcquisitionDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 192,
+    "split": "test",
+    "sqa": "S2",
+    "question": "Which genetic variant sites were classified into multiple different variant types in the Cannabis genomics study of March 2017?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT variant_id FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY variant_id HAVING COUNT(DISTINCT TYPE) > 1;"
+  },
+  {
+    "question_id": 193,
+    "split": "test",
+    "sqa": "S3",
+    "question": "In the March 2017 study of cannabis genomics, for each genetic variant type, which variant site has the highest allele frequency?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT TYPE, variant_id FROM ( SELECT TYPE, variant_id, AF, ROW_NUMBER() OVER (PARTITION BY TYPE ORDER BY AF DESC) AS rn FROM GENOMICS_CANNABIS.MNPR01_201703 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 194,
+    "split": "test",
+    "sqa": "S5",
+    "question": "In the cannabis genomics project, which samples from March 2017 have raw project information that is not recorded in the detailed sample information table, possibly due to incomplete annotation or data incompleteness?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT DISTINCT Sample_Name FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO p WHERE NOT EXISTS ( SELECT 1 FROM GENOMICS_CANNABIS.SAMPLE_INFO_201703 s WHERE s.SRA_Sample_s = p.Sample_Name );"
+  },
+  {
+    "question_id": 195,
+    "split": "test",
+    "sqa": "S6",
+    "question": "Which samples' raw data from March 2017 in the cannabis genomics project were simultaneously recorded in the detailed sample information table?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT SRA_Sample FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO WHERE SRA_Sample IN (SELECT SRA_Sample_s FROM GENOMICS_CANNABIS.SAMPLE_INFO_201703);"
+  },
+  {
+    "question_id": 196,
+    "split": "test",
+    "sqa": "S7",
+    "question": "In the March 2017 study on cannabis genomics, for each type of genetic variation, which variant sites have allele frequencies significantly higher than the general level of that type, potentially being hotspots of natural selection?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT variant_id FROM GENOMICS_CANNABIS.MNPR01_201703 t1 WHERE AF > (SELECT AVG(AF) FROM GENOMICS_CANNABIS.MNPR01_201703 t2 WHERE t2.TYPE = t1.TYPE);"
+  },
+  {
+    "question_id": 197,
+    "split": "test",
+    "sqa": "S12",
+    "question": "In the March 2017 cannabis genomics study, which variant sites have the highest sequencing depth under each type of genetic variation and are considered high-confidence detection sites?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH ranked AS ( SELECT TYPE AS Category, variant_id AS Entity, DP AS Measure, NTILE(5) OVER (PARTITION BY TYPE ORDER BY DP DESC) AS quintile FROM GENOMICS_CANNABIS.MNPR01_201703 WHERE DP IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 198,
+    "split": "test",
+    "sqa": "S13",
+    "question": "In the March 2017 study on cannabis genomics, for each type of genetic variation, which variant sites have allele frequencies not only higher than the average level of that type but also predominantly reflect the main characteristics of that variation type? Please list the top five sites with the most prominent contribution in each variation category.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH category_stats AS ( SELECT TYPE AS Category, AVG(AF) AS avg_measure, SUM(AF) AS total_measure FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY TYPE ), ranked AS ( SELECT t.TYPE AS Category, t.variant_id AS Entity, t.AF AS Measure, cs.avg_measure, cs.total_measure, t.AF / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.TYPE ORDER BY t.AF / cs.total_measure DESC) AS rn FROM GENOMICS_CANNABIS.MNPR01_201703 t JOIN category_stats cs ON t.TYPE = cs.Category WHERE t.AF > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 199,
+    "split": "test",
+    "sqa": "S15",
+    "question": "In the cannabis genomics study from March 2017, for each variant type, where are the three loci with the highest allele frequencies located? How much higher are their frequencies compared to the average frequency of the same variant type, and could they be important functional loci?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH type_avg AS ( SELECT TYPE AS Category, AVG(AF) AS avg_af FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY TYPE ), ranked AS ( SELECT t.TYPE AS Category, t.variant_id AS Entity, t.AF AS Measure, ta.avg_af, (t.AF - ta.avg_af) / ta.avg_af * 100 AS pct_above_avg, t.start, t.DP, ROW_NUMBER() OVER (PARTITION BY t.TYPE ORDER BY t.AF DESC) AS rn FROM GENOMICS_CANNABIS.MNPR01_201703 t JOIN type_avg ta ON t.TYPE = ta.Category WHERE t.AF IS NOT NULL ) SELECT Category, Entity, Measure, avg_af, pct_above_avg, start, DP FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 200,
+    "split": "test",
+    "sqa": "S16",
+    "question": "In the cannabis genomics study of March 2017, for each type of genetic variant, which variant loci exhibit a significant leap in sequencing depth along chromosomal positions, becoming hotspot regions where detection confidence dramatically increases? Please list the top five loci with the largest jump magnitude within each variant type.",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH lagged AS ( SELECT TYPE, variant_id, start, DP, LAG(DP) OVER ( PARTITION BY TYPE ORDER BY start ASC ) AS prev_depth FROM GENOMICS_CANNABIS.MNPR01_201703 WHERE DP IS NOT NULL AND start IS NOT NULL ), growth AS ( SELECT TYPE, variant_id, start, DP, prev_depth, ROUND((DP - prev_depth) / NULLIF(prev_depth, 0) * 100, 2) AS jump_rate FROM lagged WHERE prev_depth IS NOT NULL AND prev_depth > 0 AND DP > prev_depth ), ranked AS ( SELECT TYPE AS Category, variant_id AS Entity, jump_rate, ROW_NUMBER() OVER (PARTITION BY TYPE ORDER BY jump_rate DESC) AS rn FROM growth ) SELECT Category, Entity, jump_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 201,
+    "split": "test",
+    "sqa": "S17",
+    "question": "In the Cannabis genomics study of March 2017, what are the three variant types with the highest total sequencing depth?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT TYPE AS Category, SUM(DP) AS total_depth FROM GENOMICS_CANNABIS.MNPR01_201703 GROUP BY TYPE ORDER BY total_depth DESC LIMIT 3;"
+  },
+  {
+    "question_id": 202,
+    "split": "test",
+    "sqa": "S18",
+    "question": "What are the top three organisms with the most samples in the cannabis genomics project?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "SELECT Organism AS Category, COUNT(*) AS record_count FROM GENOMICS_CANNABIS.CS3K_PROJECT_INFO GROUP BY Organism ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 203,
+    "split": "test",
+    "sqa": "S19",
+    "question": "In the March 2017 study of cannabis genomics, for each variant type, which loci have allele frequencies that are high-frequency within that type that significantly higher than most other loci?",
+    "db": "GENOMICS_CANNABIS",
+    "sql": "WITH type_q3 AS ( SELECT TYPE AS Category, MIN(AF) AS q3 FROM ( SELECT TYPE, AF, PERCENT_RANK() OVER (PARTITION BY TYPE ORDER BY AF) AS pr FROM GENOMICS_CANNABIS.MNPR01_201703 ) t WHERE pr >= 0.75 GROUP BY TYPE ) SELECT t.TYPE, t.variant_id, t.AF, t.start, t.DP FROM GENOMICS_CANNABIS.MNPR01_201703 t JOIN type_q3 q ON t.TYPE = q.Category WHERE t.AF > q.q3;"
+  },
+  {
+    "question_id": 58,
+    "split": "test",
+    "sqa": "S1",
+    "question": "In the 1000 Genomes project, which five samples have the highest Indel Ratio?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO ORDER BY LC_Indel_Ratio DESC LIMIT 5;"
+  },
+  {
+    "question_id": 59,
+    "split": "test",
+    "sqa": "S3",
+    "question": "In _1000_GENOMES, which sample has the highest insertion-deletion ratio in each super population?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Super_Population, Sample FROM ( SELECT Super_Population, Sample, LC_Indel_Ratio, ROW_NUMBER() OVER (PARTITION BY Super_Population ORDER BY LC_Indel_Ratio DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 60,
+    "split": "test",
+    "sqa": "S4",
+    "question": "In _1000_GENOMES, which samples have an abnormally high frequency of indel mutations?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO WHERE LC_Indel_Ratio > (SELECT AVG(LC_Indel_Ratio) FROM _1000_GENOMES.SAMPLE_INFO);"
+  },
+  {
+    "question_id": 61,
+    "split": "test",
+    "sqa": "S5",
+    "question": "In the _1000_GENOMES dataset, which samples lack corresponding family pedigree records and thus may not be usable for family-based genetic analysis?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT DISTINCT Sample FROM _1000_GENOMES.SAMPLE_INFO s WHERE NOT EXISTS ( SELECT 1 FROM _1000_GENOMES.PEDIGREE p WHERE p.Individual_ID = s.Sample );"
+  },
+  {
+    "question_id": 62,
+    "split": "test",
+    "sqa": "S6",
+    "question": "In _1000_GENOMES, which samples in the family pedigree records are available for genetic linkage analysis?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO WHERE Sample IN (SELECT Individual_ID FROM _1000_GENOMES.PEDIGREE);"
+  },
+  {
+    "question_id": 63,
+    "split": "test",
+    "sqa": "S7",
+    "question": "Within each superpopulation in _1000_GENOMES, which samples have significantly higher indel ratios than the population average, potentially indicating genomic instability?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Sample FROM _1000_GENOMES.SAMPLE_INFO t1 WHERE LC_Indel_Ratio > (SELECT AVG(LC_Indel_Ratio) FROM _1000_GENOMES.SAMPLE_INFO t2 WHERE t2.Super_Population = t1.Super_Population);"
+  },
+  {
+    "question_id": 64,
+    "split": "test",
+    "sqa": "S12",
+    "question": "In _1000_GENOMES, which samples in each super-population have the largest sequencing data volume and serve as benchmark samples for deep sequencing?",
+    "db": "_1000_GENOMES",
+    "sql": "WITH ranked AS ( SELECT Super_Population AS Category, Sample AS Entity, Total_LC_Sequence AS Measure, NTILE(5) OVER (PARTITION BY Super_Population ORDER BY Total_LC_Sequence DESC) AS quintile FROM _1000_GENOMES.SAMPLE_INFO WHERE Total_LC_Sequence IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 65,
+    "split": "test",
+    "sqa": "S13",
+    "question": "Within the _1000_GENOMES project, for each superpopulation, which samples have sequencing data volumes that are not only above the average level of that population but also serve as major contributors to the total sequencing data of that population? Please list the top five samples with the largest contribution within each superpopulation.",
+    "db": "_1000_GENOMES",
+    "sql": "WITH category_stats AS ( SELECT Super_Population AS Category, AVG(Total_LC_Sequence) AS avg_measure, SUM(Total_LC_Sequence) AS total_measure FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ), ranked AS ( SELECT t.Super_Population AS Category, t.Sample AS Entity, t.Total_LC_Sequence AS Measure, cs.avg_measure, cs.total_measure, t.Total_LC_Sequence / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.Super_Population ORDER BY t.Total_LC_Sequence / cs.total_measure DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO t JOIN category_stats cs ON t.Super_Population = cs.Category WHERE t.Total_LC_Sequence > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 66,
+    "split": "test",
+    "sqa": "S14",
+    "question": "In the 1000 Genomes Project, which samples have sequencing data volumes far exceeding the typical level of their population, are also present in the family information, and may become core samples for genetic linkage analysis?",
+    "db": "_1000_GENOMES",
+    "sql": "WITH sorted_values AS ( SELECT Super_Population, Total_LC_Sequence FROM _1000_GENOMES.SAMPLE_INFO ORDER BY Super_Population, Total_LC_Sequence ), category_arrays AS ( SELECT Super_Population, JSON_ARRAYAGG(Total_LC_Sequence) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Super_Population ), category_median AS ( SELECT Super_Population, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_seq FROM category_arrays ) SELECT t.Super_Population, t.Sample, t.Total_LC_Sequence, t.Population, t.LC_Passed_QC FROM _1000_GENOMES.SAMPLE_INFO t JOIN category_median m ON t.Super_Population = m.Super_Population WHERE t.Total_LC_Sequence > m.median_seq AND EXISTS ( SELECT 1 FROM _1000_GENOMES.PEDIGREE p WHERE p.Individual_ID = t.Sample );"
+  },
+  {
+    "question_id": 67,
+    "split": "test",
+    "sqa": "S15",
+    "question": "In the _1000_GENOMES dataset, for each superpopulation, which specific population do the samples with the highest sequencing data volume belong to? How much higher is their sequencing depth than the average of that population, and are they considered high-quality reference samples?",
+    "db": "_1000_GENOMES",
+    "sql": "WITH super_avg AS ( SELECT Super_Population AS Category, AVG(Total_LC_Sequence) AS avg_seq FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ), ranked AS ( SELECT t.Super_Population AS Category, t.Sample AS Entity, t.Total_LC_Sequence AS Measure, sa.avg_seq, (t.Total_LC_Sequence - sa.avg_seq) / sa.avg_seq * 100 AS pct_above_avg, t.Population, t.LC_Passed_QC, ROW_NUMBER() OVER (PARTITION BY t.Super_Population ORDER BY t.Total_LC_Sequence DESC) AS rn FROM _1000_GENOMES.SAMPLE_INFO t JOIN super_avg sa ON t.Super_Population = sa.Category WHERE t.Total_LC_Sequence IS NOT NULL ) SELECT Category, Entity, Measure, avg_seq, pct_above_avg, Population, LC_Passed_QC FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 68,
+    "split": "test",
+    "sqa": "S17",
+    "question": "Which three super populations in `_1000_GENOMES` have the largest total sequencing data?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Super_Population AS Category, SUM(Total_LC_Sequence) AS total_seq FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Super_Population ORDER BY total_seq DESC LIMIT 3;"
+  },
+  {
+    "question_id": 69,
+    "split": "test",
+    "sqa": "S18",
+    "question": "Which are the top three specific populations with the largest sample sizes in _1000_GENOMES?",
+    "db": "_1000_GENOMES",
+    "sql": "SELECT Population AS Category, COUNT(*) AS record_count FROM _1000_GENOMES.SAMPLE_INFO GROUP BY Population ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 70,
+    "split": "test",
+    "sqa": "S19",
+    "question": "In _1000_GENOMES, for each super population, which samples rank in the top 25% by sequencing data volume and serve as benchmark samples for deep sequencing?",
+    "db": "_1000_GENOMES",
+    "sql": "WITH super_q3 AS ( SELECT Super_Population AS Category, MIN(Total_LC_Sequence) AS q3 FROM ( SELECT Super_Population, Total_LC_Sequence, PERCENT_RANK() OVER (PARTITION BY Super_Population ORDER BY Total_LC_Sequence) AS pr FROM _1000_GENOMES.SAMPLE_INFO ) t WHERE pr >= 0.75 GROUP BY Super_Population ) SELECT t.Super_Population, t.Sample, t.Total_LC_Sequence, t.Population FROM _1000_GENOMES.SAMPLE_INFO t JOIN super_q3 q ON t.Super_Population = q.Category WHERE t.Total_LC_Sequence > q.q3;"
+  },
+  {
+    "question_id": 88,
+    "split": "test",
+    "sqa": "S1",
+    "question": "In the gene learning within Open_Targets_Genetics_1, which study sources report the highest number of cases? List the top five.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY n_cases DESC LIMIT 5;"
+  },
+  {
+    "question_id": 89,
+    "split": "test",
+    "sqa": "S2",
+    "question": "Which study sources in the gene learning of Open_Targets_Genetics_1 involve multiple different categories of traits?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY source HAVING COUNT(DISTINCT trait_category) > 1;"
+  },
+  {
+    "question_id": 90,
+    "split": "test",
+    "sqa": "S3",
+    "question": "In the genetic study in Open_Targets_Genetics_1, for each disease trait, which research institution reported the largest number of cases?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT trait_category, source FROM ( SELECT trait_category, source, n_cases, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY n_cases DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 91,
+    "split": "test",
+    "sqa": "S4",
+    "question": "Among the gene studies in Open_Targets_Genetics_1, which research institutions have achieved case scales comparable to large-scale clinical trials (exceeding the average level)?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases > (SELECT AVG(n_cases) FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES);"
+  },
+  {
+    "question_id": 92,
+    "split": "test",
+    "sqa": "S5",
+    "question": "Which sources of research findings from the gene study in OPEN_TARGETS_GENETICS_1 were not incorporated into the subsequent GWAS analysis dataset, possibly because they were not selected or the data failed quality control?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT DISTINCT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES s WHERE NOT EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS g WHERE g.study_id = s.study_id );"
+  },
+  {
+    "question_id": 93,
+    "split": "test",
+    "sqa": "S6",
+    "question": "Which sources of results from the gene learning in OPEN_TARGETS_GENETICS_1 were incorporated into the subsequent GWAS analysis dataset?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE study_id IN (SELECT study_id FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS);"
+  },
+  {
+    "question_id": 94,
+    "split": "test",
+    "sqa": "S7",
+    "question": "In gene learning within OPEN_TARGETS_GENETICS_1, for each disease/trait category, which source studies have case sizes exceeding the average size of similar studies and thus possess greater statistical power?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT source FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t1 WHERE n_cases > (SELECT AVG(n_cases) FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t2 WHERE t2.trait_category = t1.trait_category);"
+  },
+  {
+    "question_id": 95,
+    "split": "test",
+    "sqa": "S8",
+    "question": "In the gene learning within OPEN_TARGETS_GENETICS_1, which source institution completed the most recently published research for each disease trait?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT trait_category, source FROM ( SELECT trait_category, source, pub_date, ROW_NUMBER() OVER (PARTITION BY trait_category ORDER BY pub_date DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 96,
+    "split": "test",
+    "sqa": "S9",
+    "question": "In gene studies within OPEN_TARGETS_GENETICS_1, for each disease trait, which research institutions have a moderate case size—neither small-scale exploratory nor large-scale validation (falling between the 30th and 70th percentiles)—representing the typical study scale in the field?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH sorted_values AS ( SELECT trait_category, n_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY trait_category, n_cases ), cat_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_cases) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), cat_percentiles AS ( SELECT trait_category, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM cat_arrays ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN cat_percentiles cp ON t.trait_category = cp.trait_category WHERE t.n_cases BETWEEN cp.p30 AND cp.p70;"
+  },
+  {
+    "question_id": 97,
+    "split": "test",
+    "sqa": "S10",
+    "question": "In OPEN_TARGETS_GENETICS_1 for gene learning, within each disease trait category, which research institutions have published new studies in consecutive years, demonstrating sustained research investment?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT trait_category AS Category, source AS Entity, EXTRACT(YEAR FROM pub_date) AS Time FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE pub_date IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 98,
+    "split": "test",
+    "sqa": "S11",
+    "question": "In the gene learning within OPEN_TARGETS_GENETICS_1, which research institutions have published three consecutive studies with progressively larger case sizes, reflecting sustained research investment?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH base AS ( SELECT source AS Entity, pub_date AS Time, n_cases AS Measure, LAG(n_cases, 1) OVER (PARTITION BY source ORDER BY pub_date) AS prev1, LAG(n_cases, 2) OVER (PARTITION BY source ORDER BY pub_date) AS prev2 FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE pub_date IS NOT NULL AND n_cases IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 99,
+    "split": "test",
+    "sqa": "S12",
+    "question": "In gene learning within OPEN_TARGETS_GENETICS_1, for each type of disease trait, which research institutions have case sizes that rank in the top tier (top 20%) and serve as core data contributors in this field?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH ranked AS ( SELECT trait_category AS Category, source AS Entity, n_cases AS Measure, NTILE(5) OVER (PARTITION BY trait_category ORDER BY n_cases DESC) AS quintile FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 100,
+    "split": "test",
+    "sqa": "S13",
+    "question": "In OPEN_TARGETS_GENETICS_1 for gene learning, within each disease trait category, which research institutions not only have case sample sizes above the average of similar studies but also account for a significant proportion of total case numbers in that disease area? List the top five institutions contributing most prominently in each disease category.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH category_stats AS ( SELECT trait_category AS Category, AVG(n_cases) AS avg_measure, SUM(n_cases) AS total_measure FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.source AS Entity, t.n_cases AS Measure, cs.avg_measure, cs.total_measure, t.n_cases / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_cases / cs.total_measure DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_stats cs ON t.trait_category = cs.Category WHERE t.n_cases > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 101,
+    "split": "test",
+    "sqa": "S14",
+    "question": "In the gene study within OPEN_TARGETS_GENETICS_1, which research institutions have case numbers far exceeding the typical scale of similar studies (greater than 50%), and these data are also incorporated into subsequent GWAS analyses, potentially contributing more to genetic discoveries?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH sorted_values AS ( SELECT trait_category, n_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ORDER BY trait_category, n_cases ), category_arrays AS ( SELECT trait_category, JSON_ARRAYAGG(n_cases) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY trait_category ), category_median AS ( SELECT trait_category, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_cases FROM category_arrays ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_median m ON t.trait_category = m.trait_category WHERE t.n_cases > m.median_cases AND EXISTS ( SELECT 1 FROM OPEN_TARGETS_GENETICS_1.GENETICS_SA_GWAS s WHERE s.study_id = t.study_id );"
+  },
+  {
+    "question_id": 102,
+    "split": "test",
+    "sqa": "S15",
+    "question": "In the gene study in OPEN_TARGETS_GENETICS_1, for each disease trait category, which are the top three research institutions with the largest number of cases? How much higher are their case numbers compared to the average case scale of similar studies, and do they have a significant data advantage? Display the trait category, source, case size, average case size, percentage by which the case size exceeds the average, study ID, publication date, and other information.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH category_avg AS ( SELECT trait_category AS Category, AVG(n_cases) AS avg_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ), ranked AS ( SELECT t.trait_category AS Category, t.source AS Entity, t.n_cases AS Measure, ca.avg_cases, (t.n_cases - ca.avg_cases) / ca.avg_cases * 100 AS pct_above_avg, t.study_id, t.pub_date, ROW_NUMBER() OVER (PARTITION BY t.trait_category ORDER BY t.n_cases DESC) AS rn FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN category_avg ca ON t.trait_category = ca.Category WHERE t.n_cases IS NOT NULL ) SELECT Category, Entity, Measure, avg_cases, pct_above_avg, study_id, pub_date FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 103,
+    "split": "test",
+    "sqa": "S16",
+    "question": "In the gene learning within OPEN_TARGETS_GENETICS_1, for each disease trait category, which research institutions have rapidly expanded their case sizes in a short period, demonstrating strong research expansion trend? For each disease category, list the top five institutions with the most rapid growth, showing the trait category, source, and growth rate.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH lagged AS ( SELECT trait_category AS Category, source AS Entity, pub_date AS Time, n_cases AS Measure, LAG(n_cases) OVER (PARTITION BY trait_category, source ORDER BY pub_date) AS prev_measure FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES WHERE n_cases IS NOT NULL AND pub_date IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 104,
+    "split": "test",
+    "sqa": "S17",
+    "question": "In the gene learning of OPEN_TARGETS_GENETICS_1, which three disease trait categories have the highest total number of cases, and what are their corresponding counts?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT trait_category AS Category, SUM(n_cases) AS total_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category ORDER BY total_cases DESC LIMIT 3;"
+  },
+  {
+    "question_id": 105,
+    "split": "test",
+    "sqa": "S18",
+    "question": "In the gene learning in OPEN_TARGETS_GENETICS_1, which are the top three ancestral groups with the most studies, and what are the corresponding counts?",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "SELECT ancestry_initial AS Category, COUNT(*) AS record_count FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY ancestry_initial ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 106,
+    "split": "test",
+    "sqa": "S19",
+    "question": "In gene learning within OPEN_TARGETS_GENETICS_1, for each disease trait category, which research institutions have case sample sizes that belong to the leading group in the field, significantly larger than most similar studies (greater than 75%)? The results should display disease trait category, source, case sample size, study ID, and release date.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH cat_q3 AS ( SELECT trait_category AS Category, MIN(n_cases) AS q3 FROM ( SELECT trait_category, n_cases, PERCENT_RANK() OVER (PARTITION BY trait_category ORDER BY n_cases) AS pr FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES ) t WHERE pr >= 0.75 GROUP BY trait_category ) SELECT t.trait_category, t.source, t.n_cases, t.study_id, t.pub_date FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN cat_q3 q ON t.trait_category = q.Category WHERE t.n_cases > q.q3;"
+  },
+  {
+    "question_id": 107,
+    "split": "test",
+    "sqa": "S20",
+    "question": "In the gene learning in OPEN_TARGETS_GENETICS_1, for each disease trait category, which research institutions' case scales have exceeded the field’s average level for that year for two consecutive years, demonstrating sustained research capability? The results need to include the medical record trait category and source.",
+    "db": "OPEN_TARGETS_GENETICS_1",
+    "sql": "WITH yearly_avg AS ( SELECT trait_category AS Category, EXTRACT(YEAR FROM pub_date) AS Year, AVG(n_cases) AS avg_cases FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES GROUP BY trait_category, EXTRACT(YEAR FROM pub_date) ), above_avg AS ( SELECT t.trait_category AS Category, t.source AS Entity, EXTRACT(YEAR FROM t.pub_date) AS Year, t.n_cases AS Measure, CASE WHEN t.n_cases > ya.avg_cases THEN 1 ELSE 0 END AS above FROM OPEN_TARGETS_GENETICS_1.GENETICS_STUDIES t JOIN yearly_avg ya ON t.trait_category = ya.Category AND EXTRACT(YEAR FROM t.pub_date) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 168,
+    "split": "test",
+    "sqa": "S1",
+    "question": "According to the U.S. birth naming data from 1910 to 2013, which five states had the highest total number of births?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state FROM USA_NAMES.USA_1910_2013 ORDER BY number DESC LIMIT 5;"
+  },
+  {
+    "question_id": 169,
+    "split": "test",
+    "sqa": "S2",
+    "question": "In the U.S. birth records from 1910 to 2013, which states have records for both male and female births?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state FROM USA_NAMES.USA_1910_2013 GROUP BY state HAVING COUNT(DISTINCT gender) > 1;"
+  },
+  {
+    "question_id": 170,
+    "split": "test",
+    "sqa": "S3",
+    "question": "In the birth population statistics of the United States from 1910 to 2013, which state had the highest number of male births, and which state had the highest number of female births?",
+    "db": "USA_NAMES",
+    "sql": "SELECT gender, state FROM ( SELECT gender, state, number, ROW_NUMBER() OVER (PARTITION BY gender ORDER BY number DESC) AS rn FROM USA_NAMES.USA_1910_2013 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 171,
+    "split": "test",
+    "sqa": "S4",
+    "question": "According to U.S. birth records from 1910 to 2013, which states have historically been truly populous states?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state FROM USA_NAMES.USA_1910_2013 WHERE number > (SELECT AVG(number) FROM USA_NAMES.USA_1910_2013);"
+  },
+  {
+    "question_id": 172,
+    "split": "test",
+    "sqa": "S7",
+    "question": "According to U.S. birth records from 1910 to 2013, in the male and female populations, which states had a significantly higher number of births than the average for that gender in other states?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state FROM USA_NAMES.USA_1910_2013 t1 WHERE number > (SELECT AVG(number) FROM USA_NAMES.USA_1910_2013 t2 WHERE t2.gender = t1.gender);"
+  },
+  {
+    "question_id": 173,
+    "split": "test",
+    "sqa": "S8",
+    "question": "According to the United States birth records from 1910 to 2013, in which states were the latest statistics recorded for male and female infants, respectively?",
+    "db": "USA_NAMES",
+    "sql": "SELECT gender, state FROM ( SELECT gender, state, year, ROW_NUMBER() OVER (PARTITION BY gender ORDER BY year DESC) AS rn FROM USA_NAMES.USA_1910_2013 ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 174,
+    "split": "test",
+    "sqa": "S9",
+    "question": "Based on U.S. birth records from 1910 to 2013, among male and female infant groups, which states had annual birth counts that fell into the typical range for that gender, reflecting a common population size rather than extreme large or small states?",
+    "db": "USA_NAMES",
+    "sql": "WITH sorted_values AS ( SELECT gender, number FROM USA_NAMES.USA_1910_2013 ORDER BY gender, number ), gender_arrays AS ( SELECT gender, JSON_ARRAYAGG(number) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY gender ), gender_percentiles AS ( SELECT gender, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM gender_arrays ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN gender_percentiles gp ON t.gender = gp.gender WHERE t.number BETWEEN gp.p30 AND gp.p70;"
+  },
+  {
+    "question_id": 175,
+    "split": "test",
+    "sqa": "S10",
+    "question": "Based on U.S. birth records from 1910 to 2013, for male and female infant groups, which states have birth counts in every consecutive year, forming a complete population change trajectory?",
+    "db": "USA_NAMES",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT gender AS Category, state AS Entity, year AS Time FROM USA_NAMES.USA_1910_2013 WHERE year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 176,
+    "split": "test",
+    "sqa": "S11",
+    "question": "Based on the birth records of the United States from 1910 to 2013, which states experienced three consecutive years of rising annual birth numbers, possibly corresponding to population influx waves?",
+    "db": "USA_NAMES",
+    "sql": "WITH base AS ( SELECT state AS Entity, year AS Time, number AS Measure, LAG(number, 1) OVER (PARTITION BY state ORDER BY year) AS prev1, LAG(number, 2) OVER (PARTITION BY state ORDER BY year) AS prev2 FROM USA_NAMES.USA_1910_2013 WHERE year IS NOT NULL AND number IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 177,
+    "split": "test",
+    "sqa": "S12",
+    "question": "Based on U.S. birth records from 1910 to 2013, which states had the highest numbers of male and female births, respectively, making them the top representatives among populous states?",
+    "db": "USA_NAMES",
+    "sql": "WITH ranked AS ( SELECT gender AS Category, state AS Entity, number AS Measure, NTILE(5) OVER (PARTITION BY gender ORDER BY number DESC) AS quintile FROM USA_NAMES.USA_1910_2013 WHERE number IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 178,
+    "split": "test",
+    "sqa": "S13",
+    "question": "Based on U.S. birth records from 1910 to 2013, which states among male and female infant groups not only have birth counts exceeding the gender-specific average but also account for a significant share of that gender's total births? Please list the top five states with the largest contributions separately for male and female groups.",
+    "db": "USA_NAMES",
+    "sql": "WITH category_stats AS ( SELECT gender AS Category, AVG(number) AS avg_measure, SUM(number) AS total_measure FROM USA_NAMES.USA_1910_2013 GROUP BY gender ), ranked AS ( SELECT t.gender AS Category, t.state AS Entity, t.number AS Measure, cs.avg_measure, cs.total_measure, t.number / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.gender ORDER BY t.number / cs.total_measure DESC) AS rn FROM USA_NAMES.USA_1910_2013 t JOIN category_stats cs ON t.gender = cs.Category WHERE t.number > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 179,
+    "split": "test",
+    "sqa": "S14",
+    "question": "According to U.S. birth records from 1910 to 2013, which states had annual birth counts that stood out prominently within the male or female infant groups, far exceeding typical levels for that gender, possibly indicating concentrations of population influx or baby booms?",
+    "db": "USA_NAMES",
+    "sql": "WITH sorted_values AS ( SELECT gender, number FROM USA_NAMES.USA_1910_2013 ORDER BY gender, number ), gender_arrays AS ( SELECT gender, JSON_ARRAYAGG(number) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY gender ), category_median AS ( SELECT gender, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_number FROM gender_arrays ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN category_median m ON t.gender = m.gender WHERE t.number > m.median_number;"
+  },
+  {
+    "question_id": 180,
+    "split": "test",
+    "sqa": "S15",
+    "question": "Based on U.S. birth records from 1910 to 2013, for male and female infants respectively, in which years and states were the birth numbers particularly prominent? By how many percentage points did the birth scale in these states exceed the national average for that gender?",
+    "db": "USA_NAMES",
+    "sql": "WITH gender_avg AS ( SELECT gender AS Category, AVG(number) AS avg_number FROM USA_NAMES.USA_1910_2013 GROUP BY gender ), ranked AS ( SELECT t.gender AS Category, t.state AS Entity, t.number AS Measure, ga.avg_number, (t.number - ga.avg_number) / ga.avg_number * 100 AS pct_above_avg, t.year, ROW_NUMBER() OVER (PARTITION BY t.gender ORDER BY t.number DESC) AS rn FROM USA_NAMES.USA_1910_2013 t JOIN gender_avg ga ON t.gender = ga.Category WHERE t.number IS NOT NULL ) SELECT Category, Entity, Measure, avg_number, pct_above_avg, year FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 181,
+    "split": "test",
+    "sqa": "S16",
+    "question": "Based on the birth records in the United States from 1910 to 2013, among male and female infant populations, which states experienced explosive annual birth increases that may correspond to immigration waves or baby booms? Please list the top five states with the most significant increases for the male and female groups, respectively.",
+    "db": "USA_NAMES",
+    "sql": "WITH lagged AS ( SELECT gender AS Category, state AS Entity, year AS Time, number AS Measure, LAG(number) OVER (PARTITION BY gender, state ORDER BY year) AS prev_measure FROM USA_NAMES.USA_1910_2013 WHERE number IS NOT NULL AND year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 182,
+    "split": "test",
+    "sqa": "S17",
+    "question": "According to U.S. birth records from 1910 to 2013, which three states had the highest total number of births?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state AS Category, SUM(number) AS total_births FROM USA_NAMES.USA_1910_2013 GROUP BY state ORDER BY total_births DESC LIMIT 3;"
+  },
+  {
+    "question_id": 183,
+    "split": "test",
+    "sqa": "S18",
+    "question": "Based on the U.S. birth records from 1910 to 2013, what are the top three states with the most entries?",
+    "db": "USA_NAMES",
+    "sql": "SELECT state AS Category, COUNT(*) AS record_count FROM USA_NAMES.USA_1910_2013 GROUP BY state ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 184,
+    "split": "test",
+    "sqa": "S19",
+    "question": "Based on the U.S. birth records from 1910 to 2013, among the male and female infant cohorts, which states had annual birth counts that fell into the highest tier within each gender, far exceeding the levels of normal states?",
+    "db": "USA_NAMES",
+    "sql": "WITH gender_q3 AS ( SELECT gender AS Category, MIN(number) AS q3 FROM ( SELECT gender, number, PERCENT_RANK() OVER (PARTITION BY gender ORDER BY number) AS pr FROM USA_NAMES.USA_1910_2013 ) t WHERE pr >= 0.75 GROUP BY gender ) SELECT t.gender, t.state, t.number, t.year FROM USA_NAMES.USA_1910_2013 t JOIN gender_q3 q ON t.gender = q.Category WHERE t.number > q.q3;"
+  },
+  {
+    "question_id": 185,
+    "split": "test",
+    "sqa": "S20",
+    "question": "Based on the U.S. birth records from 1910 to 2013, among male and female infant groups, which states had annual birth numbers that exceeded the national average for that sex in two consecutive years, potentially indicating areas of sustained population growth?",
+    "db": "USA_NAMES",
+    "sql": "WITH yearly_avg AS ( SELECT gender AS Category, year AS Year, AVG(number) AS avg_number FROM USA_NAMES.USA_1910_2013 GROUP BY gender, year ), above_avg AS ( SELECT t.gender AS Category, t.state AS Entity, t.year AS Year, t.number AS Measure, CASE WHEN t.number > ya.avg_number THEN 1 ELSE 0 END AS above FROM USA_NAMES.USA_1910_2013 t JOIN yearly_avg ya ON t.gender = ya.Category AND t.year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 38,
+    "split": "test",
+    "sqa": "S1",
+    "question": "In the annual survey of the United States Department of Agriculture, which states rank top five in the production value of livestock products?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY value DESC LIMIT 5;"
+  },
+  {
+    "question_id": 39,
+    "split": "test",
+    "sqa": "S2",
+    "question": "In the USDA survey, which animals have multiple types of statistical data (from the statistical type descriptions)?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT commodity_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY commodity_desc HAVING COUNT(DISTINCT statisticcat_desc) > 1;"
+  },
+  {
+    "question_id": 40,
+    "split": "test",
+    "sqa": "S3",
+    "question": "In the USDA animal product survey data, what is the record with the maximum value under each industry category?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT sector_desc, commodity_desc FROM ( SELECT sector_desc, commodity_desc, value, ROW_NUMBER() OVER (PARTITION BY sector_desc ORDER BY value DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 41,
+    "split": "test",
+    "sqa": "S4",
+    "question": "In the annual survey of the United States Department of Agriculture, which states have a livestock product value higher than the average?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value > (SELECT AVG(value) FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS);"
+  },
+  {
+    "question_id": 42,
+    "split": "test",
+    "sqa": "S5",
+    "question": "In the USDA survey data, which states' livestock product data were not covered by the 2002 Census of Agriculture, possibly due to census omissions or newly added states?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT DISTINCT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ap WHERE NOT EXISTS ( SELECT 1 FROM USDA_NASS_AGRICULTURE.CENSUS_2002 c WHERE c.state_alpha = ap.state_alpha );"
+  },
+  {
+    "question_id": 43,
+    "split": "test",
+    "sqa": "S6",
+    "question": "Which states' livestock product data in the USDA survey are also covered by the 2002 Census of Agriculture?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT state_name FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE state_alpha IN (SELECT state_alpha FROM USDA_NASS_AGRICULTURE.CENSUS_2002);"
+  },
+  {
+    "question_id": 44,
+    "split": "test",
+    "sqa": "S7",
+    "question": "Which animal products in each industry category of the USDA survey data have a production value that exceeds the average level of that category, thereby becoming industry benchmarks?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT commodity_desc FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t1 WHERE value > (SELECT AVG(value) FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t2 WHERE t2.sector_desc = t1.sector_desc);"
+  },
+  {
+    "question_id": 45,
+    "split": "test",
+    "sqa": "S8",
+    "question": "In the USDA animal product survey, which animal was counted in the most recent year?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT sector_desc, commodity_desc FROM ( SELECT sector_desc, commodity_desc, year, ROW_NUMBER() OVER (PARTITION BY sector_desc ORDER BY year DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 46,
+    "split": "test",
+    "sqa": "S9",
+    "question": "In the USDA's survey of animal products, within each category, which products have output values at the typical level for that category—neither particularly outstanding nor especially low—representing the backbone of the industry?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH sorted_values AS ( SELECT sector_desc, value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY sector_desc, value ), sector_arrays AS ( SELECT sector_desc, JSON_ARRAYAGG(value) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sector_desc ), sector_percentiles AS ( SELECT sector_desc, IF( ABS((cnt-1)*0.3 - FLOOR((cnt-1)*0.3)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.3, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.3), ']')) * (1 - ((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.3), ']')) * (((cnt-1)*0.3 - FLOOR((cnt-1)*0.3))) ) AS p30, IF( ABS((cnt-1)*0.7 - FLOOR((cnt-1)*0.7)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', (cnt-1)*0.7, ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.7), ']')) * (1 - ((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.7), ']')) * (((cnt-1)*0.7 - FLOOR((cnt-1)*0.7))) ) AS p70 FROM sector_arrays ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_percentiles sp ON t.sector_desc = sp.sector_desc WHERE t.value BETWEEN sp.p30 AND sp.p70;"
+  },
+  {
+    "question_id": 47,
+    "split": "test",
+    "sqa": "S10",
+    "question": "In the USDA animal product surveys, within each category, which product production values have been recorded in consecutive years, forming a continuous time series?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH yearly_records AS ( SELECT DISTINCT sector_desc AS Category, commodity_desc AS Entity, year AS Time FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE year IS NOT NULL ), with_prev AS ( SELECT Category, Entity, Time, LAG(Time) OVER (PARTITION BY Category, Entity ORDER BY Time) AS prev_time FROM yearly_records ) SELECT DISTINCT Category, Entity FROM with_prev WHERE prev_time IS NOT NULL AND Time - prev_time = 1;"
+  },
+  {
+    "question_id": 48,
+    "split": "test",
+    "sqa": "S11",
+    "question": "Which products in the USDA animal products survey had annual output values that increased for three consecutive years, indicating strong market demand?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH base AS ( SELECT commodity_desc AS Entity, year AS Time, value AS Measure, LAG(value, 1) OVER (PARTITION BY commodity_desc ORDER BY year) AS prev1, LAG(value, 2) OVER (PARTITION BY commodity_desc ORDER BY year) AS prev2 FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE year IS NOT NULL AND value IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 49,
+    "split": "test",
+    "sqa": "S12",
+    "question": "In the USDA's animal and animal products survey, which agricultural products have output values that belong to the first tier and are star products within each industry category?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH ranked AS ( SELECT sector_desc AS Category, commodity_desc AS Entity, value AS Measure, NTILE(5) OVER (PARTITION BY sector_desc ORDER BY value DESC) AS quintile FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value IS NOT NULL ) SELECT Category, Entity FROM ranked WHERE quintile = 1;"
+  },
+  {
+    "question_id": 50,
+    "split": "test",
+    "sqa": "S13",
+    "question": "In the USDA's Animal and Animal Products survey, within each industry category, which agricultural products have a production value that is not only above the category's average but also accounts for a significant share of the category's total production value? Please list the top five most prominent agricultural products in each category.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH category_stats AS ( SELECT sector_desc AS Category, AVG(value) AS avg_measure, SUM(value) AS total_measure FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ), ranked AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.value AS Measure, cs.avg_measure, cs.total_measure, t.value / cs.total_measure * 100 AS pct_of_total, ROW_NUMBER() OVER (PARTITION BY t.sector_desc ORDER BY t.value / cs.total_measure DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN category_stats cs ON t.sector_desc = cs.Category WHERE t.value > cs.avg_measure ) SELECT Category, Entity, pct_of_total FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 51,
+    "split": "test",
+    "sqa": "S14",
+    "question": "In the USDA survey of animals and their products, which products have production values significantly higher than the typical level in the same industry, and are from states that also participated in the 2002 Census of Agriculture, making these data potentially more historically comparable?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH sorted_values AS ( SELECT sector_desc, value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ORDER BY sector_desc, value ), sector_arrays AS ( SELECT sector_desc, JSON_ARRAYAGG(value) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY sector_desc ), category_median AS ( SELECT sector_desc, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_value FROM sector_arrays ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN category_median m ON t.sector_desc = m.sector_desc WHERE t.value > m.median_value AND EXISTS ( SELECT 1 FROM USDA_NASS_AGRICULTURE.CENSUS_2002 c WHERE c.state_alpha = t.state_alpha );"
+  },
+  {
+    "question_id": 52,
+    "split": "test",
+    "sqa": "S15",
+    "question": "In the USDA survey of animals and their products, for each industry category, which states and years do the agricultural products with the highest production value come from? By how much do they exceed the average production value of their category, and do they qualify as the far-ahead “冠军作物”?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH sector_avg AS ( SELECT sector_desc AS Category, AVG(value) AS avg_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ), ranked AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.value AS Measure, sa.avg_value, (t.value - sa.avg_value) / sa.avg_value * 100 AS pct_above_avg, t.state_name, t.year, ROW_NUMBER() OVER (PARTITION BY t.sector_desc ORDER BY t.value DESC) AS rn FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_avg sa ON t.sector_desc = sa.Category WHERE t.value IS NOT NULL ) SELECT Category, Entity, Measure, avg_value, pct_above_avg, state_name, year FROM ranked WHERE rn <= 3;"
+  },
+  {
+    "question_id": 53,
+    "split": "test",
+    "sqa": "S16",
+    "question": "In the USDA's survey of animals and their products, within each industry category, which products' annual production value once experienced a dramatic surge, becoming the brightest stars of that year? Please list the top five products with the strongest growth momentum in each category.",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH lagged AS ( SELECT sector_desc AS Category, commodity_desc AS Entity, year AS Time, value AS Measure, LAG(value) OVER (PARTITION BY sector_desc, commodity_desc ORDER BY year) AS prev_measure FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS WHERE value IS NOT NULL AND year IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 54,
+    "split": "test",
+    "sqa": "S17",
+    "question": "In the USDA's survey of animals and their products, which three industry categories have the highest total output value?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT sector_desc AS Category, SUM(value) AS total_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc ORDER BY total_value DESC LIMIT 3;"
+  },
+  {
+    "question_id": 55,
+    "split": "test",
+    "sqa": "S18",
+    "question": "What are the top three data aggregation levels with the highest number of record entries in the United States Department of Agriculture's survey of animals and their products?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "SELECT agg_level_desc AS Category, COUNT(*) AS record_count FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY agg_level_desc ORDER BY record_count DESC LIMIT 3;"
+  },
+  {
+    "question_id": 56,
+    "split": "test",
+    "sqa": "S19",
+    "question": "In the USDA survey of animals and their products, within each industry category, which products' output values rank in the top tier (top 25 percent) of the category, i.e., exceeding the output values of the vast majority of other products?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH sector_q3 AS ( SELECT sector_desc AS Category, MIN(value) AS q3 FROM ( SELECT sector_desc, value, PERCENT_RANK() OVER (PARTITION BY sector_desc ORDER BY value) AS pr FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS ) t WHERE pr >= 0.75 GROUP BY sector_desc ) SELECT t.sector_desc, t.commodity_desc, t.value, t.state_name, t.year FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN sector_q3 q ON t.sector_desc = q.Category WHERE t.value > q.q3;"
+  },
+  {
+    "question_id": 57,
+    "split": "test",
+    "sqa": "S20",
+    "question": "In the USDA animal and animal product survey data, within each industry category, which products have an output value above the average level of that category for two consecutive years, demonstrating stable market performance?",
+    "db": "USDA_NASS_AGRICULTURE",
+    "sql": "WITH yearly_avg AS ( SELECT sector_desc AS Category, year AS Year, AVG(value) AS avg_value FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS GROUP BY sector_desc, year ), above_avg AS ( SELECT t.sector_desc AS Category, t.commodity_desc AS Entity, t.year AS Year, t.value AS Measure, CASE WHEN t.value > ya.avg_value THEN 1 ELSE 0 END AS above FROM USDA_NASS_AGRICULTURE.ANIMALS_PRODUCTS t JOIN yearly_avg ya ON t.sector_desc = ya.Category AND t.year = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 215,
+    "split": "dev",
+    "sqa": "S5",
+    "question": "In the Simons Genome Diversity Project data, which populations appear in the sample metadata but have no corresponding record in the sample attributes table?",
+    "db": "HUMAN_GENOME_VARIANTS",
+    "sql": "SELECT DISTINCT Population_ID FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_METADATA m WHERE NOT EXISTS ( SELECT 1 FROM HUMAN_GENOME_VARIANTS.SIMONS_GENOME_DIVERSITY_PROJECT_SAMPLE_ATTRIBUTES a WHERE a.population = m.Population_ID );"
+  },
+  {
+    "question_id": 216,
+    "split": "dev",
+    "sqa": "S11",
+    "question": "In the 2018 radiology imaging data, which patients had the slice thickness of their scans increase across three consecutive acquisition dates?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH base AS ( SELECT PatientID AS Entity, AcquisitionDate AS Time, SliceThickness AS Measure, LAG(SliceThickness, 1) OVER (PARTITION BY PatientID ORDER BY AcquisitionDate) AS prev1, LAG(SliceThickness, 2) OVER (PARTITION BY PatientID ORDER BY AcquisitionDate) AS prev2 FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 WHERE AcquisitionDate IS NOT NULL AND SliceThickness IS NOT NULL ) SELECT DISTINCT Entity FROM base WHERE prev2 IS NOT NULL AND Measure > prev1 AND prev1 > prev2;"
+  },
+  {
+    "question_id": 217,
+    "split": "dev",
+    "sqa": "S14",
+    "question": "In the 2018 radiology imaging data, which patients' scans have a slice thickness above the median level for the same imaging modality?",
+    "db": "TCGA_MITELMAN",
+    "sql": "WITH sorted_values AS ( SELECT Modality, SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 ORDER BY Modality, SliceThickness ), category_arrays AS ( SELECT Modality, JSON_ARRAYAGG(SliceThickness) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY Modality ), category_median AS ( SELECT Modality, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_thickness FROM category_arrays ) SELECT t.Modality, t.PatientID, t.SliceThickness FROM TCGA_MITELMAN.TCGA_VERSIONED_RADIOLOGY_IMAGES_TCIA_2018_06 t JOIN category_median m ON t.Modality = m.Modality WHERE t.SliceThickness > m.median_thickness;"
+  },
+  {
+    "question_id": 218,
+    "split": "dev",
+    "sqa": "S16",
+    "question": "In the New York bike-sharing trip data, for each user type, which starting stations experienced the sharpest surge in trip duration relative to the immediately preceding trip? List the top five stations for each user type.",
+    "db": "NEW_YORK_CITIBIKE_1",
+    "sql": "WITH lagged AS ( SELECT usertype AS Category, start_station_name AS Entity, starttime AS Time, tripduration AS Measure, LAG(tripduration) OVER (PARTITION BY usertype, start_station_name ORDER BY starttime) AS prev_measure FROM NEW_YORK_CITIBIKE_1.NEW_YORK_CITIBIKE_CITIBIKE_TRIPS WHERE tripduration IS NOT NULL AND starttime IS NOT NULL ), growth AS ( SELECT Category, Entity, Time, (Measure - prev_measure) / NULLIF(prev_measure, 0) * 100 AS growth_rate FROM lagged WHERE prev_measure IS NOT NULL AND prev_measure > 0 ), ranked AS ( SELECT Category, Entity, growth_rate, ROW_NUMBER() OVER (PARTITION BY Category ORDER BY growth_rate DESC) AS rn FROM growth ) SELECT Category, Entity, growth_rate FROM ranked WHERE rn <= 5;"
+  },
+  {
+    "question_id": 219,
+    "split": "dev",
+    "sqa": "S20",
+    "question": "In the imaging data sharing platform, for each imaging modality, which patients had a slice thickness exceeding that modality's average for the year in two consecutive years?",
+    "db": "IDC",
+    "sql": "WITH yearly_avg AS ( SELECT Modality AS Category, EXTRACT(YEAR FROM StudyDate) AS Year, AVG(SliceThickness) AS avg_thickness FROM IDC.IDC_V17_DICOM_PIVOT GROUP BY Modality, EXTRACT(YEAR FROM StudyDate) ), above_avg AS ( SELECT t.Modality AS Category, t.PatientID AS Entity, EXTRACT(YEAR FROM t.StudyDate) AS Year, t.SliceThickness AS Measure, CASE WHEN t.SliceThickness > ya.avg_thickness THEN 1 ELSE 0 END AS above FROM IDC.IDC_V17_DICOM_PIVOT t JOIN yearly_avg ya ON t.Modality = ya.Category AND EXTRACT(YEAR FROM t.StudyDate) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  },
+  {
+    "question_id": 220,
+    "split": "train",
+    "sqa": "S5",
+    "question": "In the HTAN_1 tumor atlas, which participants have a clinical diagnosis record but no Level 2 imaging data, possibly indicating that imaging for these cases has not yet been submitted?",
+    "db": "HTAN_1",
+    "sql": "SELECT DISTINCT HTAN_Participant_ID FROM HTAN_1.HTAN_VERSIONED_CLINICAL_TIER1_DIAGNOSIS_R5 d WHERE NOT EXISTS ( SELECT 1 FROM HTAN_1.HTAN_VERSIONED_IMAGING_LEVEL2_METADATA_R2 i WHERE i.HTAN_Participant_ID = d.HTAN_Participant_ID );"
+  },
+  {
+    "question_id": 221,
+    "split": "test",
+    "sqa": "S6",
+    "question": "In the US administrative boundary data, which counties have at least one recorded adjacent-county relationship?",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT county_name FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_COUNTIES WHERE county_fips_code IN ( SELECT county_fips_code FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ADJACENT_COUNTIES );"
+  },
+  {
+    "question_id": 222,
+    "split": "test",
+    "sqa": "S8",
+    "question": "For each OpenStreetMap contributor, which map node did they edit most recently?",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "SELECT username, id FROM ( SELECT username, id, osm_timestamp, ROW_NUMBER() OVER (PARTITION BY username ORDER BY osm_timestamp DESC) AS rn FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_PLANET_NODES ) t WHERE rn = 1;"
+  },
+  {
+    "question_id": 223,
+    "split": "test",
+    "sqa": "S14",
+    "question": "In the US ZIP code boundary data, which ZIP code areas have a land area larger than the median land area of all ZIP codes in the same state?",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "WITH sorted_values AS ( SELECT state_name, area_land_meters FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ZIP_CODES ORDER BY state_name, area_land_meters ), category_arrays AS ( SELECT state_name, JSON_ARRAYAGG(area_land_meters) AS values_array, COUNT(*) AS cnt FROM sorted_values GROUP BY state_name ), category_median AS ( SELECT state_name, IF( ABS((cnt-1)*0.5 - FLOOR((cnt-1)*0.5)) < 1e-9, JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')), JSON_EXTRACT(values_array, CONCAT('$[', FLOOR((cnt-1)*0.5), ']')) * (1 - ((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) + JSON_EXTRACT(values_array, CONCAT('$[', CEIL((cnt-1)*0.5), ']')) * (((cnt-1)*0.5 - FLOOR((cnt-1)*0.5))) ) AS median_area FROM category_arrays ) SELECT t.state_name, t.zip_code, t.area_land_meters FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_US_BOUNDARIES_ZIP_CODES t JOIN category_median m ON t.state_name = m.state_name WHERE t.area_land_meters > m.median_area;"
+  },
+  {
+    "question_id": 224,
+    "split": "test",
+    "sqa": "S20",
+    "question": "In the OpenStreetMap edit history, for each contributor, which nodes had a version number above that contributor's average for the year in two consecutive years?",
+    "db": "GEO_OPENSTREETMAP_BOUNDARIES",
+    "sql": "WITH yearly_avg AS ( SELECT username AS Category, EXTRACT(YEAR FROM CAST(osm_timestamp AS DATETIME)) AS Year, AVG(version) AS avg_version FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_HISTORY_NODES GROUP BY username, EXTRACT(YEAR FROM CAST(osm_timestamp AS DATETIME)) ), above_avg AS ( SELECT t.username AS Category, t.id AS Entity, EXTRACT(YEAR FROM CAST(t.osm_timestamp AS DATETIME)) AS Year, t.version AS Measure, CASE WHEN t.version > ya.avg_version THEN 1 ELSE 0 END AS above FROM GEO_OPENSTREETMAP_BOUNDARIES.GEO_OPENSTREETMAP_HISTORY_NODES t JOIN yearly_avg ya ON t.username = ya.Category AND EXTRACT(YEAR FROM CAST(t.osm_timestamp AS DATETIME)) = ya.Year ), consecutive AS ( SELECT Category, Entity, Year, above, LAG(above) OVER (PARTITION BY Category, Entity ORDER BY Year) AS prev_above FROM above_avg ) SELECT DISTINCT Category, Entity FROM consecutive WHERE above = 1 AND prev_above = 1;"
+  }
+]
